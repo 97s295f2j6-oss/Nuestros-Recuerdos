@@ -34,6 +34,7 @@
       padding: 35px 20px 70px;
     }
 
+
     /* =========================
        ENCABEZADO
     ========================= */
@@ -97,6 +98,7 @@
       margin: 40px auto;
     }
 
+
     /* =========================
        SECCIONES
     ========================= */
@@ -118,6 +120,7 @@
       margin-top: -15px;
       margin-bottom: 30px;
     }
+
 
     /* =========================
        TARJETAS
@@ -155,6 +158,7 @@
       font-size: 18px;
     }
 
+
     /* =========================
        FECHAS IMPORTANTES
     ========================= */
@@ -191,6 +195,7 @@
       line-height: 1.7;
       font-size: 17px;
     }
+
 
     /* =========================
        CUMPLEAÑOS
@@ -231,6 +236,7 @@
       max-width: 600px;
       margin: auto;
     }
+
 
     /* =========================
        LINEA DEL TIEMPO
@@ -281,6 +287,7 @@
       font-size: 17px;
     }
 
+
     /* =========================
        GALERIA
     ========================= */
@@ -304,6 +311,7 @@
       padding: 20px;
       font-size: 16px;
     }
+
 
     /* =========================
        CARTA
@@ -330,6 +338,7 @@
       font-style: italic;
     }
 
+
     /* =========================
        FUTURO
     ========================= */
@@ -354,6 +363,7 @@
       margin: auto;
     }
 
+
     /* =========================
        CERRAR SESION
     ========================= */
@@ -374,6 +384,7 @@
       background: rgba(255,255,255,0.05);
     }
 
+
     /* =========================
        FOOTER
     ========================= */
@@ -384,6 +395,7 @@
       color: #746b70;
       font-size: 14px;
     }
+
 
     /* =========================
        CORAZONES FLOTANTES
@@ -441,6 +453,7 @@
 
     }
 
+
     /* =========================
        CELULAR
     ========================= */
@@ -484,7 +497,9 @@
   </style>
 </head>
 
+
 <body>
+
 
   <!-- CORAZONES -->
 
@@ -493,7 +508,9 @@
   <div class="floating-heart f3">♡</div>
   <div class="floating-heart f4">♡</div>
 
+
   <div class="container">
+
 
     <!-- =========================
          ENCABEZADO
@@ -532,7 +549,9 @@
 
     </header>
 
+
     <div class="line"></div>
+
 
     <!-- =========================
          NUESTROS RECUERDOS
@@ -547,6 +566,7 @@
       <div class="section-subtitle">
         Todo lo que vale la pena guardar.
       </div>
+
 
       <div class="card">
 
@@ -565,6 +585,7 @@
         </p>
 
       </div>
+
 
       <div class="card">
 
@@ -586,6 +607,7 @@
       </div>
 
     </section>
+
 
     <!-- =========================
          FECHAS
@@ -623,6 +645,7 @@
 
 </section>
 
+
     <!-- =========================
          NUESTRA HISTORIA
     ========================= -->
@@ -636,6 +659,7 @@
       <div class="card">
 
         <div class="timeline">
+
 
           <div class="timeline-item">
 
@@ -655,6 +679,7 @@
 
           </div>
 
+
           <div class="timeline-item">
 
             <div class="timeline-date">
@@ -672,6 +697,7 @@
             </p>
 
           </div>
+
 
           <div class="timeline-item">
 
@@ -691,6 +717,7 @@
 
           </div>
 
+
           <div class="timeline-item">
 
             <div class="timeline-date">
@@ -708,11 +735,13 @@
 
           </div>
 
+
         </div>
 
       </div>
 
     </section>
+
 
     <!-- =========================
          FOTOS
@@ -727,6 +756,7 @@
       <div class="section-subtitle">
         Aquí vamos a guardar nuestras fotos.
       </div>
+
 
       <div class="gallery-placeholder">
 
@@ -754,6 +784,7 @@
 
     </section>
 
+
     <!-- =========================
          CARTAS
     ========================= -->
@@ -778,6 +809,7 @@
       </div>
 
     </section>
+
 
     <!-- =========================
          FUTURO
@@ -807,6 +839,7 @@
 
     </section>
 
+
     <!-- =========================
          CERRAR SESIÓN
     ========================= -->
@@ -815,11 +848,14 @@
       Cerrar sesión
     </button>
 
+
     <div class="footer">
       Hecho con ❤️ para nuestra historia
     </div>
 
+
   </div>
+
 
   <script>
 
@@ -972,6 +1008,7 @@
 
 }
 
+
     async function cerrarSesion() {
 
       try {
@@ -997,6 +1034,7 @@
 
       }
 
+
       localStorage.removeItem("access_token");
 
       window.location.href = "index.html";
@@ -1005,6 +1043,7 @@
     cargarFechas();
 
   </script>
+
 
 </body>
 </html>
