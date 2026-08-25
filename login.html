@@ -209,7 +209,6 @@
 
     </div>
 
-
     <script>
 
         const SUPABASE_URL =
@@ -218,174 +217,83 @@
         const SUPABASE_PUBLISHABLE_KEY =
             "sb_publishable_SO2UD4TJylooKs9dQaNAaw_oGeW9tuy";
 
+        const supabaseClient = supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLISHABLE_KEY
+        );
 
-        const supabaseClient =
-            supabase.createClient(
-                SUPABASE_URL,
-                SUPABASE_PUBLISHABLE_KEY
-            );
-
-
-        let usuarioSeleccionado =
-            "Miguel";
-
+        let usuarioSeleccionado = "Miguel";
 
         function seleccionarUsuario(usuario) {
 
-            usuarioSeleccionado =
-                usuario;
-
+            usuarioSeleccionado = usuario;
 
             const miguel =
-                document.getElementById(
-                    "miguelBtn"
-                );
-
+                document.getElementById("miguelBtn");
 
             const hannia =
-                document.getElementById(
-                    "hanniaBtn"
-                );
+                document.getElementById("hanniaBtn");
 
-
-            miguel.classList.remove(
-                "activo"
-            );
-
-            hannia.classList.remove(
-                "activo"
-            );
-
+            miguel.classList.remove("activo");
+            hannia.classList.remove("activo");
 
             if (usuario === "Miguel") {
-
-                miguel.classList.add(
-                    "activo"
-                );
-
+                miguel.classList.add("activo");
             } else {
-
-                hannia.classList.add(
-                    "activo"
-                );
-
+                hannia.classList.add("activo");
             }
-
         }
-
 
         async function entrar() {
 
             const email =
-                document
-                    .getElementById("email")
-                    .value
-                    .trim();
-
+                document.getElementById("email").value.trim();
 
             const password =
-                document
-                    .getElementById("password")
-                    .value;
-
+                document.getElementById("password").value;
 
             const mensaje =
-                document.getElementById(
-                    "mensaje"
-                );
-
+                document.getElementById("mensaje");
 
             const boton =
-                document.getElementById(
-                    "entrarBtn"
-                );
-
+                document.getElementById("entrarBtn");
 
             if (!email || !password) {
-
                 mensaje.textContent =
                     "Escribe tu correo y contraseña ❤️";
-
                 return;
-
             }
 
-
             boton.disabled = true;
+            boton.textContent = "Entrando...";
 
-            boton.textContent =
-                "Entrando...";
-
-            mensaje.textContent =
-                "";
-
+            mensaje.textContent = "";
 
             const { data, error } =
                 await supabaseClient.auth.signInWithPassword({
-
                     email: email,
-
                     password: password
-
                 });
-
 
             if (error) {
 
                 console.error(error);
 
-
                 mensaje.textContent =
                     "Correo o contraseña incorrectos.";
 
-
-                boton.disabled =
-                    false;
-
-
-                boton.textContent =
-                    "Entrar ❤️";
-
+                boton.disabled = false;
+                boton.textContent = "Entrar ❤️";
 
                 return;
-
             }
-
-
-            /*
-             * =================================
-             * GUARDAR SESIÓN
-             * =================================
-             *
-             * recuerdos.html utiliza este token
-             * para consultar nuestras fechas.
-             */
-
-            if (
-                data &&
-                data.session &&
-                data.session.access_token
-            ) {
-
-                localStorage.setItem(
-                    "access_token",
-                    data.session.access_token
-                );
-
-            }
-
 
             mensaje.textContent =
                 "Bienvenido a nuestra historia ❤️";
 
-
             setTimeout(() => {
-
-                window.location.href =
-                    "recuerdos.html";
-
+                window.location.href = "recuerdos.html";
             }, 800);
-
         }
 
     </script>
