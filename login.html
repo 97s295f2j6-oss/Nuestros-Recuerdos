@@ -6,6 +6,8 @@
 
     <title>Entrar | Nuestra Historia</title>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <style>
         * {
             box-sizing: border-box;
@@ -104,19 +106,22 @@
             padding: 15px;
             border: none;
             border-radius: 50px;
-            background: #ffffff;
-            color: #111111;
+            background: white;
+            color: #111;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 5px;
+        }
+
+        .boton:disabled {
+            opacity: 0.5;
         }
 
         .mensaje {
             margin-top: 18px;
             font-size: 14px;
             min-height: 20px;
-            opacity: 0.7;
+            opacity: 0.8;
         }
 
         .volver {
@@ -157,14 +162,28 @@
             <h2>¿Quién eres?</h2>
 
             <div class="usuario">
-                <button id="miguelBtn" class="activo" onclick="seleccionarUsuario('Miguel')">
+
+                <button
+                    id="miguelBtn"
+                    class="activo"
+                    onclick="seleccionarUsuario('Miguel')">
                     Miguel
                 </button>
 
-                <button id="hanniaBtn" onclick="seleccionarUsuario('Hannia')">
+                <button
+                    id="hanniaBtn"
+                    onclick="seleccionarUsuario('Hannia')">
                     Hannia
                 </button>
+
             </div>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Correo electrónico"
+                autocomplete="email"
+            >
 
             <input
                 type="password"
@@ -173,7 +192,10 @@
                 autocomplete="current-password"
             >
 
-            <button class="boton" onclick="entrar()">
+            <button
+                class="boton"
+                id="entrarBtn"
+                onclick="entrar()">
                 Entrar ❤️
             </button>
 
@@ -189,14 +211,28 @@
 
     <script>
 
+        const SUPABASE_URL =
+            "https://glnjxtnzfaxwzkeovqbn.supabase.co";
+
+        const SUPABASE_PUBLISHABLE_KEY =
+            "sb_publishable_SO2UD4TJylooKs9dQaNAaw_oGeW9tuy";
+
+        const supabaseClient = supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLISHABLE_KEY
+        );
+
         let usuarioSeleccionado = "Miguel";
 
         function seleccionarUsuario(usuario) {
 
             usuarioSeleccionado = usuario;
 
-            const miguel = document.getElementById("miguelBtn");
-            const hannia = document.getElementById("hanniaBtn");
+            const miguel =
+                document.getElementById("miguelBtn");
+
+            const hannia =
+                document.getElementById("hanniaBtn");
 
             miguel.classList.remove("activo");
             hannia.classList.remove("activo");
@@ -208,23 +244,56 @@
             }
         }
 
-        function entrar() {
+        async function entrar() {
 
-            const password = document.getElementById("password").value;
-            const mensaje = document.getElementById("mensaje");
+            const email =
+                document.getElementById("email").value.trim();
 
-            if (!password) {
-                mensaje.textContent = "Escribe tu contraseña ❤️";
+            const password =
+                document.getElementById("password").value;
+
+            const mensaje =
+                document.getElementById("mensaje");
+
+            const boton =
+                document.getElementById("entrarBtn");
+
+            if (!email || !password) {
+                mensaje.textContent =
+                    "Escribe tu correo y contraseña ❤️";
+                return;
+            }
+
+            boton.disabled = true;
+            boton.textContent = "Entrando...";
+
+            mensaje.textContent = "";
+
+            const { data, error } =
+                await supabaseClient.auth.signInWithPassword({
+                    email: email,
+                    password: password
+                });
+
+            if (error) {
+
+                console.error(error);
+
+                mensaje.textContent =
+                    "Correo o contraseña incorrectos.";
+
+                boton.disabled = false;
+                boton.textContent = "Entrar ❤️";
+
                 return;
             }
 
             mensaje.textContent =
-                "Estamos preparando nuestro espacio...";
+                "Bienvenido a nuestra historia ❤️";
 
-            /*
-                EL LOGIN REAL LO CONECTAREMOS
-                CON SUPABASE EN EL SIGUIENTE PASO.
-            */
+            setTimeout(() => {
+                window.location.href = "recuerdos.html";
+            }, 800);
         }
 
     </script>
