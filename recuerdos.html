@@ -1,0 +1,27 @@
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://glnjxtnzfaxwzkeovqbn.supabase.co";
+
+const SUPABASE_KEY = "TU_CLAVE_PUBLISHABLE";
+
+const supabase = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+async function verificarSesion() {
+
+    const { data: { session } } =
+        await supabase.auth.getSession();
+
+    if (!session) {
+        window.location.replace("login.html");
+        return;
+    }
+
+    console.log("Acceso autorizado ❤️");
+}
+
+verificarSesion();
+</script>
