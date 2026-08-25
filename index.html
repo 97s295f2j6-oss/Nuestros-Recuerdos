@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuestra Historia ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(
+                    circle at 50% 15%,
+                    #351522 0%,
+                    #160b12 35%,
+                    #08080b 75%
+                );
+            color: #ffffff;
+            font-family: Georgia, "Times New Roman", serif;
+            overflow-x: hidden;
+        }
+
+        .contenedor {
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+            padding: 40px 20px 70px;
+        }
+
+        .inicio {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .corazon {
+            font-size: 75px;
+            margin-bottom: 25px;
+            animation: latido 1.8s infinite;
+        }
+
+        .subtitulo {
+            color: #d8bfc9;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: clamp(48px, 11vw, 85px);
+            line-height: 1;
+            font-weight: normal;
+            margin-bottom: 18px;
+        }
+
+        .nombres {
+            font-size: 25px;
+            color: #d9c7ce;
+            margin-bottom: 35px;
+        }
+
+        .descripcion {
+            max-width: 650px;
+            color: #d7cfd3;
+            font-size: 19px;
+            line-height: 1.8;
+        }
+
+        .boton {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 15px 32px;
+            border-radius: 50px;
+            background: #ffffff;
+            color: #111111;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.15);
+        }
+
+        .linea {
+            width: 80px;
+            height: 1px;
+            background: #9b5269;
+            margin: 20px auto 70px;
+        }
+
+        .seccion {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .seccion h2 {
+            font-size: 36px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .seccion p {
+            max-width: 600px;
+            margin: auto;
+            color: #cfc6ca;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .tarjeta {
+            margin-top: 35px;
+            padding: 35px 25px;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.045);
+            border: 1px solid rgba(255,255,255,0.12);
+            backdrop-filter: blur(12px);
+        }
+
+        .icono {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #746b70;
+            font-size: 14px;
+        }
+
+        @keyframes latido {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.12);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .contenedor {
+                padding: 20px 17px 50px;
+            }
+
+            .corazon {
+                font-size: 60px;
+            }
+
+            .descripcion {
+                font-size: 18px;
+            }
+
+            .nombres {
+                font-size: 22px;
+            }
+
+            .seccion h2 {
+                font-size: 31px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="contenedor">
+
+        <section class="inicio">
+
+            <div class="corazon">
+                ❤️
+            </div>
+
+            <div class="subtitulo">
+                Un lugar para nosotros
+            </div>
+
+            <h1>
+                Nuestra Historia
+            </h1>
+
+            <div class="nombres">
+                Miguel & Hannia
+            </div>
+
+            <p class="descripcion">
+                Hay momentos que pasan una vez...
+                y otros que queremos recordar para siempre.
+                <br><br>
+                Este es nuestro pequeño lugar para guardar
+                todo lo que hemos vivido y todo lo que
+                todavía nos falta por vivir.
+            </p>
+
+            <a href="#historia" class="boton">
+                Entrar a nuestra historia ❤️
+            </a>
+
+        </section>
+
+        <div class="linea"></div>
+
+        <section class="seccion" id="historia">
+
+            <h2>
+                Bienvenidos a nuestro espacio ❤️
+            </h2>
+
+            <p>
+                Aquí comenzará nuestra historia digital.
+                Poco a poco iremos agregando nuestros
+                recuerdos, fotografías, fechas especiales,
+                cartas y todos esos momentos que queremos
+                conservar.
+            </p>
+
+            <div class="tarjeta">
+
+                <div class="icono">
+                    💌
+                </div>
+
+                <h2>
+                    Un lugar solamente nuestro
+                </h2>
+
+                <p>
+                    Lo mejor todavía está por escribirse.
+                </p>
+
+            </div>
+
+        </section>
+
+        <div class="footer">
+            Hecho con ❤️ para nuestra historia
+        </div>
+
+    </main>
+
+</body>
+</html>
