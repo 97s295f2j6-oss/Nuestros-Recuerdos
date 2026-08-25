@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nuestra Historia ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 20%, #351522 0%, #120b11 35%, #08080b 75%);
+      color: #fff;
+      font-family: Georgia, "Times New Roman", serif;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      padding: 35px 20px 70px;
+    }
+
+    .top {
+      text-align: center;
+      padding-top: 25px;
+    }
+
+    .heart {
+      font-size: 70px;
+      animation: heartbeat 1.8s infinite;
+      margin-bottom: 15px;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.12);
+      }
+    }
+
+    .subtitle {
+      color: #d8bfc9;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 10vw, 85px);
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    .names {
+      font-size: 25px;
+      color: #d9c7ce;
+      margin-bottom: 45px;
+    }
+
+    .intro {
+      max-width: 650px;
+      margin: auto;
+      text-align: center;
+      color: #d7cfd3;
+      font-size: 20px;
+      line-height: 1.8;
+    }
+
+    .line {
+      width: 80px;
+      height: 1px;
+      background: #9b5269;
+      margin: 35px auto;
+    }
+
+    .section {
+      margin-top: 55px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 25px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px;
+      padding: 28px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    }
+
+    .card h2 {
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #cfc6ca;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .memory-icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 25px;
+      border-left: 1px solid #713b4d;
+    }
+
+    .timeline-item {
+      margin-bottom: 35px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "♥";
+      position: absolute;
+      left: -37px;
+      top: 0;
+      color: #d75b7d;
+      font-size: 18px;
+    }
+
+    .date {
+      color: #d75b7d;
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-bottom: 7px;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 45px 20px;
+      color: #aaa0a5;
+    }
+
+    .empty .big {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .logout {
+      display: block;
+      margin: 45px auto 0;
+      background: transparent;
+      color: #aaa0a5;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 30px;
+      padding: 12px 25px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #746b70;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 25px 17px 50px;
+      }
+
+      .heart {
+        font-size: 60px;
+      }
+
+      .intro {
+        font-size: 18px;
+      }
+
+      .card {
+        padding: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="top">
+
+      <div class="heart">❤️</div>
+
+      <div class="subtitle">
+        Un lugar para nosotros
+      </div>
+
+      <h1>Nuestra Historia</h1>
+
+      <div class="names">
+        Miguel & Hannia
+      </div>
+
+      <div class="intro">
+        Hay momentos que pasan una vez...
+        y otros que queremos recordar para siempre.
+        <br><br>
+        Este es nuestro pequeño lugar para guardarlos.
+      </div>
+
+    </header>
+
+
+    <div class="line"></div>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        Nuestros recuerdos ❤️
+      </h2>
+
+      <div class="card">
+
+        <div class="memory-icon">📸</div>
+
+        <h2>Momentos que queremos guardar</h2>
+
+        <p>
+          Aquí iremos colocando nuestras fotos, historias,
+          momentos especiales y todas esas cosas que no
+          queremos olvidar.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="memory-icon">💌</div>
+
+        <h2>Para nosotros</h2>
+
+        <p>
+          Este espacio es solamente nuestro.
+          Un pequeño rincón para recordar todo lo que
+          hemos vivido juntos y todo lo que todavía
+          nos falta por vivir.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        Nuestra historia
+      </h2>
+
+      <div class="card">
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+
+            <div class="date">
+              EL COMIENZO
+            </div>
+
+            <h2>Todo empezó aquí ❤️</h2>
+
+            <p>
+              Este será el lugar donde podremos contar
+              cómo comenzó nuestra historia.
+            </p>
+
+          </div>
+
+
+          <div class="timeline-item">
+
+            <div class="date">
+              UN MOMENTO ESPECIAL
+            </div>
+
+            <h2>Un recuerdo que nunca olvidaremos</h2>
+
+            <p>
+              Aquí podremos agregar nuestras fechas,
+              fotografías y pequeños detalles.
+            </p>
+
+          </div>
+
+
+          <div class="timeline-item">
+
+            <div class="date">
+              CONTINUARÁ...
+            </div>
+
+            <h2>Lo mejor todavía está por escribirse.</h2>
+
+            <p>
+              Porque nuestra historia todavía tiene
+              muchas páginas por llenar.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <div class="card">
+
+        <div class="empty">
+
+          <div class="big">❤️</div>
+
+          <h2>Este espacio crecerá con nosotros</h2>
+
+          <p>
+            Próximamente podremos agregar fotos,
+            recuerdos, cartas, fechas importantes
+            y mucho más.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <button class="logout" onclick="cerrarSesion()">
+      Cerrar sesión
+    </button>
+
+
+    <div class="footer">
+      Hecho con ❤️ para nuestra historia
+    </div>
+
+  </div>
+
+
+  <script>
+    const SUPABASE_URL =
+      "https://glnjxtnzfaxwzkeovqbn.supabase.co";
+
+    const SUPABASE_KEY =
+      "sb_publishable_SO2UD4TJylooKs9dQaNAaw_oGeW9tuy";
+
+    async function cerrarSesion() {
+
+      try {
+
+        await fetch(
+          SUPABASE_URL + "/auth/v1/logout",
+          {
+            method: "POST",
+            headers: {
+              "apikey": SUPABASE_KEY,
+              "Authorization": "Bearer " + localStorage.getItem("access_token")
+            }
+          }
+        );
+
+      } catch (error) {
+        console.log(error);
+      }
+
+      localStorage.removeItem("access_token");
+
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>
