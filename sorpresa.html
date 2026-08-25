@@ -15,76 +15,101 @@
 
         body {
             min-height: 100vh;
-            background:
-                radial-gradient(circle at 50% 35%, rgba(255, 60, 110, 0.22), transparent 35%),
-                #09090d;
-            color: white;
             font-family: Georgia, "Times New Roman", serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background: #08080d;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .pagina {
+            min-height: 100vh;
+            padding: 70px 25px 100px;
             text-align: center;
+            position: relative;
             overflow: hidden;
         }
 
-        .contenedor {
-            width: 100%;
-            max-width: 520px;
-            padding: 30px;
-            animation: aparecer 1.5s ease;
+        .fondo {
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(
+                    circle at 50% 35%,
+                    rgba(150, 25, 70, 0.35),
+                    transparent 38%
+                ),
+                radial-gradient(
+                    circle at 20% 80%,
+                    rgba(110, 20, 80, 0.18),
+                    transparent 35%
+                );
+            z-index: -2;
         }
 
-        .corazon {
-            font-size: 75px;
+        .corazon-grande {
+            font-size: 90px;
             animation: latido 2s infinite;
-            margin-bottom: 25px;
+            margin-bottom: 55px;
         }
 
         .pequeno {
-            font-size: 14px;
-            letter-spacing: 5px;
+            color: #e06b9a;
+            font-size: 16px;
+            letter-spacing: 7px;
             text-transform: uppercase;
-            color: #d96b91;
-            margin-bottom: 18px;
+            margin-bottom: 35px;
         }
 
         h1 {
-            font-size: 48px;
-            line-height: 1.1;
-            margin-bottom: 18px;
+            font-size: 64px;
+            line-height: 1.05;
+            margin-bottom: 35px;
         }
 
-        .mensaje {
-            font-size: 19px;
+        .texto {
+            max-width: 650px;
+            margin: auto;
+            font-size: 22px;
             line-height: 1.8;
-            color: rgba(255,255,255,0.75);
-            margin-bottom: 40px;
+            color: #d8d1d5;
         }
 
-        .sorpresa {
+        .texto + .texto {
+            margin-top: 35px;
+        }
+
+        .corazon-pequeno {
+            margin: 35px 0;
+            font-size: 28px;
+            color: #d84c83;
+        }
+
+        .tarjeta {
+            max-width: 700px;
+            margin: 50px auto 0;
+            padding: 55px 30px;
             border: 1px solid rgba(255,255,255,0.25);
-            background: rgba(255,255,255,0.06);
-            backdrop-filter: blur(15px);
-            border-radius: 25px;
-            padding: 30px 22px;
-            box-shadow: 0 0 40px rgba(255, 50, 100, 0.08);
+            border-radius: 30px;
+            background: rgba(255,255,255,0.045);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.35);
         }
 
-        .sorpresa p {
-            font-size: 18px;
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 25px;
+        .tarjeta h2 {
+            font-size: 30px;
+            font-weight: normal;
+            color: #d8d1d5;
+            margin-bottom: 35px;
         }
 
         .boton {
             display: inline-block;
-            padding: 17px 35px;
+            padding: 20px 38px;
             border-radius: 50px;
             background: white;
-            color: #151015;
+            color: #171017;
             text-decoration: none;
-            font-family: Georgia, serif;
-            font-size: 17px;
+            font-size: 20px;
             transition: 0.3s;
         }
 
@@ -92,29 +117,66 @@
             transform: scale(1.05);
         }
 
+        /* SORPRESA */
+
+        #sorpresa {
+            display: none;
+            margin-top: 60px;
+            animation: aparecer 1.5s ease;
+        }
+
+        .mensaje-video {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .video-contenedor {
+            max-width: 700px;
+            margin: auto;
+            border-radius: 25px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.25);
+            background: #000;
+            box-shadow: 0 20px 70px rgba(0,0,0,0.6);
+        }
+
+        video {
+            width: 100%;
+            display: block;
+        }
+
+        .despedida {
+            margin-top: 40px;
+            font-size: 22px;
+            line-height: 1.7;
+            color: #d8d1d5;
+        }
+
+        .boton-historia {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 17px 30px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.05);
+        }
+
         .corazon-flotante {
-            position: absolute;
+            position: fixed;
             bottom: -30px;
-            color: #e85b82;
+            font-size: 20px;
+            color: #c94f80;
             opacity: 0;
             animation: flotar 8s linear infinite;
+            z-index: -1;
         }
 
-        .c1 { left: 15%; animation-delay: 1s; }
-        .c2 { left: 70%; animation-delay: 3s; }
-        .c3 { left: 40%; animation-delay: 5s; }
-        .c4 { left: 85%; animation-delay: 7s; }
-
-        @keyframes aparecer {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        .c1 { left: 10%; animation-delay: 1s; }
+        .c2 { left: 30%; animation-delay: 4s; }
+        .c3 { left: 65%; animation-delay: 2s; }
+        .c4 { left: 85%; animation-delay: 6s; }
 
         @keyframes latido {
             0%, 100% {
@@ -126,6 +188,18 @@
             }
         }
 
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         @keyframes flotar {
             0% {
                 transform: translateY(0);
@@ -133,7 +207,7 @@
             }
 
             15% {
-                opacity: 0.6;
+                opacity: 0.5;
             }
 
             85% {
@@ -146,13 +220,31 @@
             }
         }
 
-        @media (max-width: 500px) {
+        @media (max-width: 600px) {
+
             h1 {
-                font-size: 40px;
+                font-size: 50px;
             }
 
-            .mensaje {
-                font-size: 17px;
+            .corazon-grande {
+                font-size: 75px;
+            }
+
+            .texto {
+                font-size: 18px;
+            }
+
+            .pequeno {
+                font-size: 13px;
+                letter-spacing: 5px;
+            }
+
+            .tarjeta {
+                padding: 45px 20px;
+            }
+
+            .mensaje-video {
+                font-size: 25px;
             }
         }
     </style>
@@ -160,14 +252,16 @@
 
 <body>
 
+    <div class="fondo"></div>
+
     <div class="corazon-flotante c1">♡</div>
     <div class="corazon-flotante c2">♡</div>
     <div class="corazon-flotante c3">♡</div>
     <div class="corazon-flotante c4">♡</div>
 
-    <div class="contenedor">
+    <main class="pagina">
 
-        <div class="corazon">❤️</div>
+        <div class="corazon-grande">❤️</div>
 
         <div class="pequeno">
             Para alguien muy especial
@@ -178,27 +272,85 @@
             mi amor ❤️
         </h1>
 
-        <p class="mensaje">
-            Hoy es un día especial porque nació
-            una de las personas más importantes
-            de mi vida.
-            <br><br>
+        <p class="texto">
+            Hoy es un día especial porque nació una de
+            las personas más importantes de mi vida.
+        </p>
+
+        <p class="texto">
             Y preparé algo especialmente para ti...
         </p>
 
-        <div class="sorpresa">
+        <div class="corazon-pequeno">
+            ♡
+        </div>
 
-            <p>
+        <div class="tarjeta">
+
+            <h2>
                 Hay algo que quiero que veas.
-            </p>
+            </h2>
 
-            <a href="video.html" class="boton">
+            <button class="boton" onclick="mostrarSorpresa()">
                 Ver mi sorpresa 🎁
-            </a>
+            </button>
 
         </div>
 
-    </div>
+
+        <!-- SORPRESA -->
+
+        <section id="sorpresa">
+
+            <div class="mensaje-video">
+                ❤️ Esto es para ti, amor ❤️
+            </div>
+
+            <div class="video-contenedor">
+
+                <video controls playsinline>
+                    <source src="video.mp4" type="video/mp4">
+                    Tu navegador no puede reproducir este video.
+                </video>
+
+            </div>
+
+            <p class="despedida">
+                Espero que este pequeño detalle te recuerde
+                lo mucho que significas para mí. ❤️
+                <br><br>
+                Feliz cumpleaños, amor.
+            </p>
+
+            <a href="recuerdos.html" class="boton-historia">
+                Ahora sí... nuestra historia → 
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        function mostrarSorpresa() {
+
+            const sorpresa = document.getElementById("sorpresa");
+
+            sorpresa.style.display = "block";
+
+            setTimeout(() => {
+
+                sorpresa.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }, 100);
+
+        }
+
+    </script>
 
 </body>
 </html>
