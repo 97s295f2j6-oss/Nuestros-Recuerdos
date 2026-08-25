@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuestra Historia ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Georgia, "Times New Roman", serif;
+            background: #09090d;
+            color: white;
+            overflow: hidden;
+        }
+
+        .pantalla {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        .fondo {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 50% 40%, rgba(255, 70, 120, 0.20), transparent 35%),
+                radial-gradient(circle at 20% 80%, rgba(180, 60, 140, 0.12), transparent 30%);
+        }
+
+        .contenido {
+            position: relative;
+            z-index: 2;
+            max-width: 500px;
+            animation: aparecer 2s ease;
+        }
+
+        .corazon {
+            font-size: 55px;
+            margin-bottom: 25px;
+            animation: latido 2s infinite;
+        }
+
+        .pequeno {
+            font-size: 15px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            opacity: 0.65;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: 52px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+        .nombres {
+            font-size: 22px;
+            letter-spacing: 3px;
+            opacity: 0.85;
+            margin-bottom: 30px;
+        }
+
+        .descripcion {
+            font-size: 17px;
+            line-height: 1.8;
+            opacity: 0.72;
+            margin-bottom: 40px;
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 16px 32px;
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .boton:hover {
+            background: rgba(255,255,255,0.15);
+            transform: scale(1.04);
+        }
+
+        .corazon-flotante {
+            position: absolute;
+            opacity: 0;
+            animation: flotar 8s linear infinite;
+            font-size: 18px;
+        }
+
+        .c1 { left: 15%; bottom: -30px; animation-delay: 1s; }
+        .c2 { left: 70%; bottom: -30px; animation-delay: 4s; }
+        .c3 { left: 40%; bottom: -30px; animation-delay: 6s; }
+        .c4 { left: 85%; bottom: -30px; animation-delay: 2s; }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes latido {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.12);
+            }
+        }
+
+        @keyframes flotar {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.6;
+            }
+            85% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(-110vh);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 42px;
+            }
+
+            .nombres {
+                font-size: 18px;
+            }
+
+            .descripcion {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="pantalla">
+
+        <div class="fondo"></div>
+
+        <div class="corazon-flotante c1">♡</div>
+        <div class="corazon-flotante c2">♡</div>
+        <div class="corazon-flotante c3">♡</div>
+        <div class="corazon-flotante c4">♡</div>
+
+        <div class="contenido">
+
+            <div class="corazon">❤️</div>
+
+            <div class="pequeno">
+                Un lugar para nosotros
+            </div>
+
+            <h1>Nuestra Historia</h1>
+
+            <div class="nombres">
+                Miguel & Hannia
+            </div>
+
+            <p class="descripcion">
+                Hay momentos que pasan una vez...
+                y otros que queremos recordar para siempre.
+                <br><br>
+                Este es nuestro pequeño lugar para guardarlos.
+            </p>
+
+            <a href="login.html" class="boton">
+                Entrar a nuestra historia
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>
