@@ -615,51 +615,35 @@
 
     <section class="section">
 
-      <h2 class="section-title">
-        Fechas que guardamos 📅
-      </h2>
+  <h2 class="section-title">
+    Fechas que guardamos 📅
+  </h2>
 
-      <div class="section-subtitle">
-        Porque algunas fechas merecen quedarse para siempre.
+  <div class="section-subtitle">
+    Porque algunas fechas merecen quedarse para siempre.
+  </div>
+
+  <div id="fechas-container">
+
+    <div class="card fecha-card">
+
+      <div class="fecha">
+        CARGANDO...
       </div>
 
-
-      <div class="card fecha-card">
-
-        <div class="fecha">
-          28 DE AGOSTO
-        </div>
-
-        <div class="fecha-titulo">
-          🎂 El cumpleaños de mi amor
-        </div>
-
-        <div class="fecha-texto">
-          Un día especial porque nació una de las
-          personas más importantes de mi vida. ❤️
-        </div>
-
+      <div class="fecha-titulo">
+        ❤️ Nuestra historia
       </div>
 
-
-      <div class="card fecha-card">
-
-        <div class="fecha">
-          PRÓXIMAMENTE
-        </div>
-
-        <div class="fecha-titulo">
-          ❤️ Nuestra primera fecha especial
-        </div>
-
-        <div class="fecha-texto">
-          Aquí iremos guardando todas esas fechas
-          que tengan un significado especial para nosotros.
-        </div>
-
+      <div class="fecha-texto">
+        Estamos preparando nuestros momentos especiales...
       </div>
 
-    </section>
+    </div>
+
+  </div>
+
+</section>
 
 
     <!-- =========================
@@ -880,6 +864,149 @@
 
     const SUPABASE_KEY =
       "sb_publishable_SO2UD4TJylooKs9dQaNAaw_oGeW9tuy";
+    async function cargarFechas() {
+
+  const container =
+    document.getElementById("fechas-container");
+
+  const token =
+    localStorage.getItem("access_token");
+
+  if (!token) {
+    window.location.href = "login.html";
+    return;
+  }
+
+  try {
+
+    const respuesta = await fetch(
+      SUPABASE_URL +
+      "/rest/v1/fechas_especiales?select=*&activo=eq.true&order=fecha.asc",
+      {
+        headers: {
+          "apikey": SUPABASE_KEY,
+          "Authorization": "Bearer " + token
+        }
+      }
+    );
+
+    if (!respuesta.ok) {
+      throw new Error("No se pudieron cargar las fechas.");
+    }
+
+    const fechas = await respuesta.json();
+
+    container.innerHTML = "";
+
+    if (fechas.length === 0) {
+
+      container.innerHTML = `
+        <div class="card fecha-card">
+
+          <div class="fecha">
+            PRÓXIMAMENTE
+          </div>
+
+          <div class="fecha-titulo">
+            ❤️ Nuestra historia
+          </div>
+
+          <div class="fecha-texto">
+            Todavía no hemos agregado fechas especiales.
+          </div>
+
+        </div>
+      `;
+
+      return;
+    }
+
+    fechas.forEach(fecha => {
+
+      const fechaOriginal =
+        new Date(fecha.fecha + "T00:00:00");
+
+      const opciones = {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      };
+
+      const fechaBonita =
+        fechaOriginal.toLocaleDateString(
+          "es-MX",
+          opciones
+        );
+
+      let icono = "❤️";
+
+      if (fecha.tipo === "cumpleaños") {
+        icono = "🎂";
+      }
+
+      if (fecha.tipo === "aniversario") {
+        icono = "❤️";
+      }
+
+      if (fecha.tipo === "viaje") {
+        icono = "✈️";
+      }
+
+      if (fecha.tipo === "especial") {
+        icono = "✨";
+      }
+
+      const card = document.createElement("div");
+
+      card.className = "card fecha-card";
+
+      card.innerHTML = `
+
+        <div class="fecha">
+          ${fechaBonita}
+        </div>
+
+        <div class="fecha-titulo">
+          ${icono} ${fecha.titulo}
+        </div>
+
+        <div class="fecha-texto">
+          ${fecha.mensaje || ""}
+        </div>
+
+      `;
+
+      container.appendChild(card);
+
+    });
+
+  } catch (error) {
+
+    console.error(error);
+
+    container.innerHTML = `
+
+      <div class="card fecha-card">
+
+        <div class="fecha">
+          ALGO SALIÓ MAL
+        </div>
+
+        <div class="fecha-titulo">
+          ❤️ Nuestra historia
+        </div>
+
+        <div class="fecha-texto">
+          No pudimos cargar nuestros recuerdos.
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+}
 
 
     async function cerrarSesion() {
@@ -913,6 +1040,7 @@
       window.location.href = "index.html";
 
     }
+    cargarFechas();
 
   </script>
 
