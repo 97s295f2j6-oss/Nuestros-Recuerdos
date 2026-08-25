@@ -6,6 +6,9 @@
 
     <title>Entrar | Nuestra Historia</title>
 
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <style>
         * {
             box-sizing: border-box;
@@ -106,6 +109,10 @@
             cursor: pointer;
         }
 
+        .boton:disabled {
+            opacity: 0.6;
+        }
+
         .mensaje {
             margin-top: 18px;
             font-size: 14px;
@@ -171,10 +178,13 @@
             type="password"
             id="password"
             placeholder="Contraseña"
-            autocomplete="off"
+            autocomplete="current-password"
         >
 
-        <button class="boton" onclick="entrar()">
+        <button
+            id="entrarBtn"
+            class="boton"
+            onclick="entrar()">
             Entrar ❤️
         </button>
 
@@ -190,75 +200,195 @@
 
 <script>
 
-let usuarioSeleccionado = "Miguel";
+    // ==========================================
+    // SUPABASE
+    // ==========================================
 
-function seleccionarUsuario(usuario) {
+    const SUPABASE_URL =
+        "https://glnjxtnzfaxwzkeovqbn.supabase.co";
 
-    usuarioSeleccionado = usuario;
+    const SUPABASE_KEY =
+        "sb_publishable_SO2UD4TJylooKs9dQaNAaw_oGeW9tuy";
 
-    document.getElementById("miguelBtn")
-        .classList.remove("activo");
+    const supabaseClient =
+        supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_KEY
+        );
 
-    document.getElementById("hanniaBtn")
-        .classList.remove("activo");
 
-    if (usuario === "Miguel") {
+    // ==========================================
+    // USUARIOS
+    // ==========================================
 
-        document.getElementById("miguelBtn")
-            .classList.add("activo");
+    const usuarios = {
 
-    } else {
+        Miguel: "moralesguzmanmiguelangel123@gmail.com",
 
-        document.getElementById("hanniaBtn")
-            .classList.add("activo");
+        Hannia: "hannia28@gmail.com"
+
+    };
+
+
+    let usuarioSeleccionado = "Miguel";
+
+
+    // ==========================================
+    // SELECCIONAR USUARIO
+    // ==========================================
+
+    function seleccionarUsuario(usuario) {
+
+        usuarioSeleccionado = usuario;
+
+        document
+            .getElementById("miguelBtn")
+            .classList.remove("activo");
+
+        document
+            .getElementById("hanniaBtn")
+            .classList.remove("activo");
+
+
+        if (usuario === "Miguel") {
+
+            document
+                .getElementById("miguelBtn")
+                .classList.add("activo");
+
+        } else {
+
+            document
+                .getElementById("hanniaBtn")
+                .classList.add("activo");
+
+        }
+
+
+        document.getElementById("password").value = "";
+
+        document.getElementById("mensaje").textContent = "";
 
     }
-}
 
-function entrar() {
 
-    const password =
-        document.getElementById("password").value;
+    // ==========================================
+    // INICIAR SESIÓN
+    // ==========================================
 
-    const mensaje =
-        document.getElementById("mensaje");
+    async function entrar() {
 
-    if (!password) {
+        const password =
+            document
+                .getElementById("password")
+                .value
+                .trim();
 
-        mensaje.textContent =
-            "Escribe tu contraseña ❤️";
+        const mensaje =
+            document.getElementById("mensaje");
 
-        return;
+        const boton =
+            document.getElementById("entrarBtn");
+
+
+        if (!password) {
+
+            mensaje.textContent =
+                "Escribe tu contraseña ❤️";
+
+            return;
+
+        }
+
+
+        const email =
+            usuarios[usuarioSeleccionado];
+
+
+        boton.disabled = true;
+
+        boton.textContent = "Entrando...";
+
+
+        mensaje.textContent = "";
+
+
+        try {
+
+            const { data, error } =
+                await supabaseClient.auth.signInWithPassword({
+
+                    email: email,
+
+                    password: password
+
+                });
+
+
+            if (error) {
+
+                console.error(error);
+
+                mensaje.textContent =
+                    "Contraseña incorrecta ❤️";
+
+                boton.disabled = false;
+
+                boton.textContent = "Entrar ❤️";
+
+                return;
+
+            }
+
+
+            if (data.session) {
+
+                mensaje.textContent =
+                    "Bienvenido, " +
+                    usuarioSeleccionado +
+                    " ❤️";
+
+
+                setTimeout(function() {
+
+                    window.location.href =
+                        "recuerdos.html";
+
+                }, 700);
+
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+            mensaje.textContent =
+                "Ocurrió un error al iniciar sesión.";
+
+            boton.disabled = false;
+
+            boton.textContent = "Entrar ❤️";
+
+        }
+
     }
 
-    if (
-        usuarioSeleccionado === "Miguel" &&
-        password === "vIbjuv-wekred-jyhxu0"
-    ) {
 
-        mensaje.textContent =
-            "Bienvenido, Miguel ❤️";
+    // ==========================================
+    // ENTER PARA INICIAR SESIÓN
+    // ==========================================
 
-        setTimeout(function() {
+    document
+        .getElementById("password")
+        .addEventListener("keydown", function(event) {
 
-            window.location.href = "recuerdos.html";
+            if (event.key === "Enter") {
 
-        }, 700);
+                entrar();
 
-        return;
-    }
+            }
 
-    if (usuarioSeleccionado === "Hannia") {
-
-        mensaje.textContent =
-            "El acceso de Hannia todavía está pendiente ❤️";
-
-        return;
-    }
-
-    mensaje.textContent =
-        "Contraseña incorrecta ❤️";
-}
+        });
 
 </script>
 
