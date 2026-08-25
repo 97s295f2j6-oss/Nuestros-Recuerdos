@@ -29,104 +29,109 @@
 
         .contenedor {
             width: 100%;
-            max-width: 420px;
+            max-width: 720px;
             text-align: center;
         }
 
         .corazon {
-            font-size: 50px;
-            margin-bottom: 20px;
-            animation: latido 2s infinite;
+            font-size: 75px;
+            margin-bottom: 25px;
+            animation: latido 1.8s infinite;
         }
 
         h1 {
-            font-size: 38px;
+            font-size: clamp(48px, 10vw, 70px);
             font-weight: normal;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .subtitulo {
-            opacity: 0.6;
-            margin-bottom: 40px;
-            font-size: 15px;
+            color: #aaa;
+            font-size: 22px;
+            margin-bottom: 60px;
         }
 
         .tarjeta {
             background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 24px;
-            padding: 30px 25px;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 28px;
+            padding: 45px 35px;
         }
 
         .tarjeta h2 {
-            font-size: 20px;
+            font-size: 32px;
             font-weight: normal;
-            margin-bottom: 25px;
+            margin-bottom: 35px;
         }
 
         .usuario {
             display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 20px;
+            margin-bottom: 30px;
         }
 
         .usuario button {
             flex: 1;
-            padding: 13px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 16px;
+            border: 2px solid rgba(255,255,255,0.15);
             background: rgba(255,255,255,0.04);
             color: white;
-            font-size: 15px;
+            font-size: 20px;
+            cursor: pointer;
         }
 
         .usuario button.activo {
             background: rgba(255,80,120,0.2);
-            border-color: rgba(255,80,120,0.5);
+            border-color: #c93661;
         }
 
         input {
             width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 16px;
             border: 1px solid rgba(255,255,255,0.15);
-            background: rgba(0,0,0,0.25);
+            background: rgba(0,0,0,0.3);
             color: white;
-            font-size: 16px;
+            font-size: 19px;
             outline: none;
+        }
+
+        input:focus {
+            border-color: #c93661;
         }
 
         .boton {
             width: 100%;
-            padding: 15px;
+            padding: 20px;
             border: none;
             border-radius: 50px;
             background: white;
             color: #111;
-            font-size: 16px;
+            font-size: 20px;
             font-weight: bold;
             cursor: pointer;
         }
 
         .boton:disabled {
-            opacity: 0.6;
+            opacity: 0.5;
         }
 
         .mensaje {
-            margin-top: 18px;
-            font-size: 14px;
-            min-height: 20px;
-            opacity: 0.8;
+            margin-top: 25px;
+            min-height: 25px;
+            font-size: 16px;
+            color: #ddd;
         }
 
         .volver {
             display: inline-block;
-            margin-top: 25px;
+            margin-top: 30px;
             color: white;
             opacity: 0.5;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 16px;
         }
 
         @keyframes latido {
@@ -136,6 +141,22 @@
 
             50% {
                 transform: scale(1.1);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .tarjeta {
+                padding: 35px 25px;
+            }
+
+            .usuario {
+                gap: 12px;
+            }
+
+            .usuario button {
+                font-size: 17px;
+                padding: 17px 10px;
             }
         }
     </style>
@@ -201,7 +222,7 @@
 <script>
 
     // ==========================================
-    // SUPABASE
+    // CONFIGURACIÓN SUPABASE
     // ==========================================
 
     const SUPABASE_URL =
@@ -218,24 +239,11 @@
 
 
     // ==========================================
-    // USUARIOS
+    // USUARIO SELECCIONADO
     // ==========================================
-
-    const usuarios = {
-
-        Miguel: "moralesguzmanmiguelangel123@gmail.com",
-
-        Hannia: "hannia28@gmail.com"
-
-    };
-
 
     let usuarioSeleccionado = "Miguel";
 
-
-    // ==========================================
-    // SELECCIONAR USUARIO
-    // ==========================================
 
     function seleccionarUsuario(usuario) {
 
@@ -264,16 +272,18 @@
 
         }
 
+        document
+            .getElementById("password")
+            .value = "";
 
-        document.getElementById("password").value = "";
-
-        document.getElementById("mensaje").textContent = "";
-
+        document
+            .getElementById("mensaje")
+            .textContent = "";
     }
 
 
     // ==========================================
-    // INICIAR SESIÓN
+    // LOGIN
     // ==========================================
 
     async function entrar() {
@@ -297,18 +307,30 @@
                 "Escribe tu contraseña ❤️";
 
             return;
+        }
+
+
+        // Correos registrados en Supabase Auth
+
+        let email;
+
+        if (usuarioSeleccionado === "Miguel") {
+
+            email =
+                "moralesguzmanmiguelangel123@gmail.com";
+
+        } else {
+
+            email =
+                "hannia28@gmail.com";
 
         }
 
 
-        const email =
-            usuarios[usuarioSeleccionado];
-
-
         boton.disabled = true;
 
-        boton.textContent = "Entrando...";
-
+        boton.textContent =
+            "Entrando... ❤️";
 
         mensaje.textContent = "";
 
@@ -317,11 +339,8 @@
 
             const { data, error } =
                 await supabaseClient.auth.signInWithPassword({
-
                     email: email,
-
                     password: password
-
                 });
 
 
@@ -334,10 +353,10 @@
 
                 boton.disabled = false;
 
-                boton.textContent = "Entrar ❤️";
+                boton.textContent =
+                    "Entrar ❤️";
 
                 return;
-
             }
 
 
@@ -349,7 +368,7 @@
                     " ❤️";
 
 
-                setTimeout(function() {
+                setTimeout(() => {
 
                     window.location.href =
                         "recuerdos.html";
@@ -367,28 +386,10 @@
 
             boton.disabled = false;
 
-            boton.textContent = "Entrar ❤️";
-
+            boton.textContent =
+                "Entrar ❤️";
         }
-
     }
-
-
-    // ==========================================
-    // ENTER PARA INICIAR SESIÓN
-    // ==========================================
-
-    document
-        .getElementById("password")
-        .addEventListener("keydown", function(event) {
-
-            if (event.key === "Enter") {
-
-                entrar();
-
-            }
-
-        });
 
 </script>
 
