@@ -13,152 +13,410 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             min-height: 100vh;
             font-family: Georgia, "Times New Roman", serif;
-            background: #09090d;
-            color: white;
-            overflow: hidden;
+            background:
+                radial-gradient(circle at 50% 20%, #321321 0%, #120910 42%, #07070b 100%);
+            color: #fff;
+            overflow-x: hidden;
         }
 
-        .pantalla {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 30px;
-            position: relative;
-        }
+        /* =========================
+           FONDO
+        ========================= */
 
         .fondo {
-            position: absolute;
+            position: fixed;
             inset: 0;
-            background:
-                radial-gradient(circle at 50% 40%, rgba(255, 70, 120, 0.20), transparent 35%),
-                radial-gradient(circle at 20% 80%, rgba(180, 60, 140, 0.12), transparent 30%);
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
         }
 
-        .contenido {
-            position: relative;
-            z-index: 2;
-            max-width: 500px;
-            animation: aparecer 2s ease;
+        .luz {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(70px);
+            opacity: 0.35;
         }
 
-        .corazon {
-            font-size: 55px;
-            margin-bottom: 25px;
-            animation: latido 2s infinite;
+        .luz-1 {
+            width: 280px;
+            height: 280px;
+            background: #a92c62;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
-        .pequeno {
-            font-size: 15px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            opacity: 0.65;
-            margin-bottom: 18px;
+        .luz-2 {
+            width: 220px;
+            height: 220px;
+            background: #5e1d55;
+            bottom: 5%;
+            left: -80px;
         }
 
-        h1 {
-            font-size: 52px;
-            font-weight: normal;
-            margin-bottom: 10px;
+        .luz-3 {
+            width: 180px;
+            height: 180px;
+            background: #8c254d;
+            right: -60px;
+            top: 45%;
         }
 
-        .nombres {
-            font-size: 22px;
-            letter-spacing: 3px;
-            opacity: 0.85;
-            margin-bottom: 30px;
-        }
-
-        .descripcion {
-            font-size: 17px;
-            line-height: 1.8;
-            opacity: 0.72;
-            margin-bottom: 40px;
-        }
-
-        .boton {
-            display: inline-block;
-            padding: 16px 32px;
-            border: 1px solid rgba(255,255,255,0.35);
-            border-radius: 50px;
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-        }
-
-        .boton:hover {
-            background: rgba(255,255,255,0.15);
-            transform: scale(1.04);
-        }
+        /* =========================
+           CORAZONES
+        ========================= */
 
         .corazon-flotante {
             position: absolute;
+            bottom: -50px;
+            color: #ff6b93;
             opacity: 0;
-            animation: flotar 8s linear infinite;
             font-size: 18px;
+            animation: flotar 9s linear infinite;
         }
 
-        .c1 { left: 15%; bottom: -30px; animation-delay: 1s; }
-        .c2 { left: 70%; bottom: -30px; animation-delay: 4s; }
-        .c3 { left: 40%; bottom: -30px; animation-delay: 6s; }
-        .c4 { left: 85%; bottom: -30px; animation-delay: 2s; }
+        .c1 {
+            left: 10%;
+            animation-delay: 1s;
+        }
+
+        .c2 {
+            left: 28%;
+            animation-delay: 5s;
+            font-size: 13px;
+        }
+
+        .c3 {
+            left: 52%;
+            animation-delay: 3s;
+        }
+
+        .c4 {
+            left: 75%;
+            animation-delay: 7s;
+            font-size: 14px;
+        }
+
+        .c5 {
+            left: 90%;
+            animation-delay: 2s;
+            font-size: 12px;
+        }
+
+        @keyframes flotar {
+            0% {
+                transform: translateY(0) scale(0.7);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.55;
+            }
+
+            75% {
+                opacity: 0.25;
+            }
+
+            100% {
+                transform: translateY(-115vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* =========================
+           PORTADA
+        ========================= */
+
+        .portada {
+            min-height: 100vh;
+            min-height: 100svh;
+            position: relative;
+            z-index: 2;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 45px 25px;
+            text-align: center;
+        }
+
+        .contenido {
+            width: 100%;
+            max-width: 620px;
+            animation: aparecer 1.5s ease;
+        }
 
         @keyframes aparecer {
             from {
                 opacity: 0;
-                transform: translateY(25px);
+                transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
+        /* =========================
+           CORAZON PRINCIPAL
+        ========================= */
+
+        .corazon-principal {
+            font-size: 68px;
+            margin-bottom: 25px;
+            filter:
+                drop-shadow(0 0 15px rgba(255, 60, 100, 0.35))
+                drop-shadow(0 0 35px rgba(255, 60, 100, 0.15));
+
+            animation: latido 2.2s ease-in-out infinite;
+        }
+
         @keyframes latido {
             0%, 100% {
                 transform: scale(1);
             }
+
             50% {
-                transform: scale(1.12);
+                transform: scale(1.13);
             }
         }
 
-        @keyframes flotar {
-            0% {
-                transform: translateY(0);
-                opacity: 0;
-            }
-            15% {
-                opacity: 0.6;
-            }
-            85% {
-                opacity: 0.2;
-            }
-            100% {
-                transform: translateY(-110vh);
-                opacity: 0;
-            }
+        /* =========================
+           TEXTO SUPERIOR
+        ========================= */
+
+        .etiqueta {
+            font-size: 13px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #d7a8b8;
+            margin-bottom: 20px;
         }
+
+        h1 {
+            font-size: clamp(48px, 13vw, 82px);
+            line-height: 0.95;
+            font-weight: normal;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+
+            text-shadow:
+                0 0 25px rgba(255,255,255,0.06);
+        }
+
+        .nombres {
+            font-size: 23px;
+            letter-spacing: 4px;
+            color: #e8ccd6;
+            margin-bottom: 35px;
+        }
+
+        /* =========================
+           DESCRIPCION
+        ========================= */
+
+        .descripcion {
+            max-width: 560px;
+            margin: 0 auto 35px;
+
+            font-size: 18px;
+            line-height: 1.9;
+            color: #d8cbd0;
+        }
+
+        /* =========================
+           CUENTA REGRESIVA
+        ========================= */
+
+        .cumple {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto 35px;
+
+            padding: 22px 20px;
+
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 24px;
+
+            background: rgba(255,255,255,0.045);
+            backdrop-filter: blur(18px);
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.25),
+                inset 0 1px 0 rgba(255,255,255,0.05);
+        }
+
+        .cumple-titulo {
+            color: #e9789d;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .cumple-texto {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #eee3e7;
+        }
+
+        .contador {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .numero {
+            min-width: 65px;
+        }
+
+        .numero strong {
+            display: block;
+            font-size: 25px;
+            font-weight: normal;
+        }
+
+        .numero span {
+            display: block;
+            margin-top: 3px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #a99da3;
+        }
+
+        /* =========================
+           BOTON
+        ========================= */
+
+        .boton {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 245px;
+            padding: 17px 30px;
+
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+
+            color: white;
+            text-decoration: none;
+
+            font-size: 16px;
+            letter-spacing: 1px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.12),
+                    rgba(255,255,255,0.035)
+                );
+
+            backdrop-filter: blur(15px);
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .boton:hover {
+            transform: translateY(-3px) scale(1.02);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,90,135,0.25),
+                    rgba(255,255,255,0.08)
+                );
+
+            box-shadow:
+                0 12px 35px rgba(255,50,100,0.18);
+        }
+
+        .flecha {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .boton:hover .flecha {
+            transform: translateX(5px);
+        }
+
+        /* =========================
+           FIRMA
+        ========================= */
+
+        .firma {
+            margin-top: 35px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #8d7e85;
+        }
+
+        /* =========================
+           MOVIL
+        ========================= */
 
         @media (max-width: 500px) {
+
+            .portada {
+                padding: 35px 20px;
+            }
+
+            .corazon-principal {
+                font-size: 58px;
+                margin-bottom: 22px;
+            }
+
+            .etiqueta {
+                font-size: 10px;
+                letter-spacing: 4px;
+            }
+
             h1 {
-                font-size: 42px;
+                font-size: 51px;
             }
 
             .nombres {
-                font-size: 18px;
+                font-size: 19px;
+                letter-spacing: 3px;
             }
 
             .descripcion {
                 font-size: 16px;
+                line-height: 1.75;
+            }
+
+            .cumple {
+                padding: 20px 12px;
+            }
+
+            .contador {
+                gap: 5px;
+            }
+
+            .numero {
+                min-width: 58px;
+            }
+
+            .numero strong {
+                font-size: 22px;
+            }
+
+            .boton {
+                width: 100%;
             }
         }
     </style>
@@ -166,42 +424,161 @@
 
 <body>
 
-    <div class="pantalla">
-
-        <div class="fondo"></div>
+    <div class="fondo">
+        <div class="luz luz-1"></div>
+        <div class="luz luz-2"></div>
+        <div class="luz luz-3"></div>
 
         <div class="corazon-flotante c1">♡</div>
         <div class="corazon-flotante c2">♡</div>
         <div class="corazon-flotante c3">♡</div>
         <div class="corazon-flotante c4">♡</div>
+        <div class="corazon-flotante c5">♡</div>
+    </div>
+
+    <main class="portada">
 
         <div class="contenido">
 
-            <div class="corazon">❤️</div>
+            <div class="corazon-principal">
+                ❤️
+            </div>
 
-            <div class="pequeno">
+            <div class="etiqueta">
                 Un lugar para nosotros
             </div>
 
-            <h1>Nuestra Historia</h1>
+            <h1>
+                Nuestra<br>
+                Historia
+            </h1>
 
             <div class="nombres">
-                Miguel & Hannia
+                Miguel & Amor
             </div>
 
             <p class="descripcion">
                 Hay momentos que pasan una vez...
+                <br>
                 y otros que queremos recordar para siempre.
                 <br><br>
-                Este es nuestro pequeño lugar para guardarlos.
+                Este es nuestro pequeño lugar para
+                guardar todo lo que hemos vivido,
+                todo lo que somos y todo lo que
+                todavía nos falta por vivir.
             </p>
+
+            <div class="cumple">
+
+                <div class="cumple-titulo">
+                    Nuestro próximo momento ❤️
+                </div>
+
+                <div class="cumple-texto">
+                    El cumpleaños de mi amor
+                </div>
+
+                <div class="contador">
+
+                    <div class="numero">
+                        <strong id="dias">--</strong>
+                        <span>días</span>
+                    </div>
+
+                    <div class="numero">
+                        <strong id="horas">--</strong>
+                        <span>horas</span>
+                    </div>
+
+                    <div class="numero">
+                        <strong id="minutos">--</strong>
+                        <span>minutos</span>
+                    </div>
+
+                    <div class="numero">
+                        <strong id="segundos">--</strong>
+                        <span>segundos</span>
+                    </div>
+
+                </div>
+
+            </div>
 
             <a href="login.html" class="boton">
                 Entrar a nuestra historia
+                <span class="flecha">→</span>
             </a>
 
+            <div class="firma">
+                Hecho con ❤️ para nosotros
+            </div>
+
         </div>
-    </div>
+
+    </main>
+
+    <script>
+
+        function actualizarCuentaRegresiva() {
+
+            const ahora = new Date();
+
+            let cumple = new Date(
+                ahora.getFullYear(),
+                7,
+                28,
+                0,
+                0,
+                0
+            );
+
+            if (ahora > cumple) {
+                cumple = new Date(
+                    ahora.getFullYear() + 1,
+                    7,
+                    28,
+                    0,
+                    0,
+                    0
+                );
+            }
+
+            const diferencia = cumple - ahora;
+
+            const dias = Math.floor(
+                diferencia / (1000 * 60 * 60 * 24)
+            );
+
+            const horas = Math.floor(
+                (diferencia / (1000 * 60 * 60)) % 24
+            );
+
+            const minutos = Math.floor(
+                (diferencia / (1000 * 60)) % 60
+            );
+
+            const segundos = Math.floor(
+                (diferencia / 1000) % 60
+            );
+
+            document.getElementById("dias").textContent =
+                String(dias).padStart(2, "0");
+
+            document.getElementById("horas").textContent =
+                String(horas).padStart(2, "0");
+
+            document.getElementById("minutos").textContent =
+                String(minutos).padStart(2, "0");
+
+            document.getElementById("segundos").textContent =
+                String(segundos).padStart(2, "0");
+        }
+
+        actualizarCuentaRegresiva();
+
+        setInterval(actualizarCuentaRegresiva, 1000);
+
+    </script>
 
 </body>
 </html>
