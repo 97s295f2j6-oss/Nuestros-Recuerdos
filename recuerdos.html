@@ -722,7 +722,7 @@
 
 
     /* =========================================
-       FORMULARIO
+       FORMULARIO FOTOS
     ========================================= */
 
     .upload-form {
@@ -1006,39 +1006,506 @@
        CARTAS
     ========================================= */
 
-    .carta {
+    .cartas-section {
+
+      margin-top: 90px;
+    }
+
+
+    .cartas-header {
+
+      text-align: center;
+
+      margin-bottom: 35px;
+    }
+
+
+    .cartas-icon {
+
+      font-size: 55px;
+
+      margin-bottom: 15px;
+    }
+
+
+    .cartas-header h2 {
+
+      font-size: 38px;
+
+      margin-bottom: 12px;
+    }
+
+
+    .cartas-header p {
+
+      color: #bcaeb4;
+
+      font-size: 17px;
+
+      line-height: 1.7;
+
+      max-width: 650px;
+
+      margin: auto;
+    }
+
+
+    .carta-escribir {
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(
+            215,
+            91,
+            125,
+            0.14
+          ),
+          rgba(
+            255,
+            255,
+            255,
+            0.035
+          )
+        );
+
+      border:
+        1px solid
+        rgba(
+          215,
+          91,
+          125,
+          0.35
+        );
 
       text-align: center;
 
       padding:
-        45px
+        32px
+        25px;
+    }
+
+
+    .carta-escribir h3 {
+
+      font-size: 26px;
+
+      margin-bottom: 10px;
+    }
+
+
+    .carta-escribir p {
+
+      color: #cfc6ca;
+
+      font-size: 16px;
+
+      line-height: 1.6;
+
+      margin-bottom: 22px;
+    }
+
+
+    .carta-button {
+
+      border: none;
+
+      border-radius: 30px;
+
+      padding:
+        14px
+        28px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #d75b7d,
+          #a83f61
+        );
+
+      color: white;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 17px;
+
+      cursor: pointer;
+
+      box-shadow:
+        0
+        10px
+        30px
+        rgba(
+          215,
+          91,
+          125,
+          0.20
+        );
+    }
+
+
+    .carta-button:hover {
+
+      transform:
+        translateY(-2px);
+    }
+
+
+    .carta-form {
+
+      display: none;
+
+      margin-top: 25px;
+
+      text-align: left;
+    }
+
+
+    .carta-form.active {
+
+      display: block;
+    }
+
+
+    .carta-label {
+
+      display: block;
+
+      color: #d9c7ce;
+
+      font-size: 15px;
+
+      margin-bottom: 8px;
+
+      margin-top: 18px;
+    }
+
+
+    .carta-input,
+    .carta-textarea {
+
+      width: 100%;
+
+      border:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.16
+        );
+
+      border-radius: 15px;
+
+      background:
+        rgba(
+          0,
+          0,
+          0,
+          0.25
+        );
+
+      color: white;
+
+      padding:
+        14px
+        15px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 17px;
+
+      outline: none;
+    }
+
+
+    .carta-input:focus,
+    .carta-textarea:focus {
+
+      border-color:
+        rgba(
+          215,
+          91,
+          125,
+          0.70
+        );
+    }
+
+
+    .carta-textarea {
+
+      min-height: 240px;
+
+      resize: vertical;
+
+      line-height: 1.7;
+    }
+
+
+    .carta-form-buttons {
+
+      display: flex;
+
+      gap: 10px;
+
+      margin-top: 22px;
+    }
+
+
+    .guardar-carta,
+    .cancelar-carta {
+
+      flex: 1;
+
+      border: none;
+
+      border-radius: 25px;
+
+      padding:
+        14px
+        18px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 16px;
+
+      cursor: pointer;
+    }
+
+
+    .guardar-carta {
+
+      background:
+        #d75b7d;
+
+      color: white;
+    }
+
+
+    .guardar-carta:disabled {
+
+      opacity: 0.5;
+
+      cursor:
+        not-allowed;
+    }
+
+
+    .cancelar-carta {
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.07
+        );
+
+      color: #d8cdd2;
+
+      border:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.12
+        );
+    }
+
+
+    .carta-status {
+
+      display: none;
+
+      margin-top: 18px;
+
+      padding: 13px;
+
+      border-radius: 14px;
+
+      text-align: center;
+
+      font-size: 15px;
+    }
+
+
+    .carta-status.show {
+
+      display: block;
+    }
+
+
+    .carta-status.success {
+
+      background:
+        rgba(
+          80,
+          180,
+          120,
+          0.12
+        );
+
+      color:
+        #9be4b8;
+
+      border:
+        1px solid
+        rgba(
+          80,
+          180,
+          120,
+          0.25
+        );
+    }
+
+
+    .carta-status.error {
+
+      background:
+        rgba(
+          220,
+          70,
+          90,
+          0.12
+        );
+
+      color:
+        #ff9ba8;
+
+      border:
+        1px solid
+        rgba(
+          220,
+          70,
+          90,
+          0.25
+        );
+    }
+
+
+
+    /* =========================================
+       CARTA GUARDADA
+    ========================================= */
+
+    .cartas-container {
+
+      margin-top: 35px;
+    }
+
+
+    .carta-guardada {
+
+      position: relative;
+
+      overflow: hidden;
+
+      padding:
+        35px
         30px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(
+            255,
+            255,
+            255,
+            0.055
+          ),
+          rgba(
+            215,
+            91,
+            125,
+            0.055
+          )
+        );
     }
 
 
-    .carta-icon {
+    .carta-guardada::before {
 
-      font-size: 50px;
+      content: "💌";
 
-      margin-bottom: 20px;
+      position: absolute;
+
+      right: 25px;
+
+      top: 20px;
+
+      font-size: 35px;
+
+      opacity: 0.20;
     }
 
 
-    .carta h2 {
+    .carta-fecha {
 
-      font-size: 30px;
+      color: #d75b7d;
 
-      margin-bottom: 18px;
+      font-size: 13px;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 10px;
     }
 
 
-    .carta p {
+    .carta-titulo {
 
-      max-width: 600px;
+      font-size: 28px;
 
-      margin: auto;
+      margin-bottom: 12px;
+
+      padding-right: 45px;
+    }
+
+
+    .carta-autor {
+
+      color: #bcaeb4;
+
+      font-size: 14px;
+
+      margin-bottom: 22px;
+    }
+
+
+    .carta-contenido {
+
+      color: #d8d0d4;
+
+      font-size: 18px;
+
+      line-height: 1.9;
+
+      white-space: pre-wrap;
 
       font-style: italic;
+    }
+
+
+    .sin-cartas {
+
+      text-align: center;
+
+      color: #9d9298;
+
+      padding:
+        30px
+        20px;
     }
 
 
@@ -1296,6 +1763,38 @@
 
 
       .form-buttons {
+
+        flex-direction: column;
+      }
+
+
+      .cartas-header h2 {
+
+        font-size: 31px;
+      }
+
+
+      .carta-guardada {
+
+        padding:
+          28px
+          22px;
+      }
+
+
+      .carta-titulo {
+
+        font-size: 25px;
+      }
+
+
+      .carta-contenido {
+
+        font-size: 17px;
+      }
+
+
+      .carta-form-buttons {
 
         flex-direction: column;
       }
@@ -1633,10 +2132,6 @@
 
 
 
-      <!-- =======================================
-           BOTON SUBIR
-      ======================================== -->
-
       <div class="card upload-card">
 
 
@@ -1676,10 +2171,6 @@
         >
 
 
-
-        <!-- ===================================
-             FORMULARIO
-        ==================================== -->
 
         <div
           class="upload-form"
@@ -1778,10 +2269,6 @@
 
 
 
-      <!-- =======================================
-           FOTOS
-      ======================================== -->
-
       <div
         class="gallery-placeholder"
         id="recuerdos-container"
@@ -1807,16 +2294,18 @@
 
 
     <!-- =========================================
-         CARTAS
+         CARTAS PARA TI
     ========================================= -->
 
-    <section class="section">
+    <section
+      class="cartas-section"
+      id="cartas"
+    >
 
 
-      <div class="card carta">
+      <div class="cartas-header">
 
-
-        <div class="carta-icon">
+        <div class="cartas-icon">
           💌
         </div>
 
@@ -1831,8 +2320,155 @@
           Porque hay cosas que a veces es más bonito
           escribirlas que decirlas.
 
+          <br>
+
+          Un lugar para dejarnos palabras que podamos
+          guardar para siempre. ❤️
+
         </p>
 
+      </div>
+
+
+
+      <!-- =======================================
+           ESCRIBIR CARTA
+      ======================================== -->
+
+      <div class="card carta-escribir">
+
+
+        <h3>
+          ¿Quieres dejarme una carta? 💌
+        </h3>
+
+
+        <p>
+
+          Escribe algo que quieras que quede guardado
+          en nuestra historia.
+
+        </p>
+
+
+        <button
+          class="carta-button"
+          id="abrir-carta"
+          type="button"
+        >
+
+          ✍️ Escribir una carta
+
+        </button>
+
+
+
+        <!-- FORMULARIO CARTA -->
+
+        <div
+          class="carta-form"
+          id="carta-form"
+        >
+
+
+          <label
+            class="carta-label"
+            for="carta-titulo"
+          >
+
+            Título de la carta ❤️
+
+          </label>
+
+
+          <input
+            class="carta-input"
+            id="carta-titulo"
+            type="text"
+            maxlength="150"
+            placeholder="Ej. Para ti, mi amor..."
+          >
+
+
+
+          <label
+            class="carta-label"
+            for="carta-contenido"
+          >
+
+            Escribe tu carta 💌
+
+          </label>
+
+
+          <textarea
+            class="carta-textarea"
+            id="carta-contenido"
+            maxlength="5000"
+            placeholder="Escribe aquí todo eso que quieres decir..."
+          ></textarea>
+
+
+
+          <div class="carta-form-buttons">
+
+
+            <button
+              class="cancelar-carta"
+              id="cancelar-carta"
+              type="button"
+            >
+
+              Cancelar
+
+            </button>
+
+
+            <button
+              class="guardar-carta"
+              id="guardar-carta"
+              type="button"
+            >
+
+              ❤️ Guardar carta
+
+            </button>
+
+
+          </div>
+
+
+
+          <div
+            class="carta-status"
+            id="carta-status"
+          ></div>
+
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =======================================
+           CARTAS GUARDADAS
+      ======================================== -->
+
+      <div
+        class="cartas-container"
+        id="cartas-container"
+      >
+
+        <div class="card sin-cartas">
+
+          💌
+
+          <br><br>
+
+          Cargando nuestras cartas...
+
+        </div>
 
       </div>
 
@@ -1882,7 +2518,7 @@
 
 
     <!-- =========================================
-         CERRAR SESION
+         CERRAR SESIÓN
     ========================================= -->
 
     <button
@@ -1931,7 +2567,7 @@
 
 
     /* =====================================================
-       ELEMENTOS
+       ELEMENTOS - FOTOS
     ===================================================== */
 
     const abrirUpload =
@@ -1994,9 +2630,61 @@
       );
 
 
-
     let archivoSeleccionado =
       null;
+
+
+
+    /* =====================================================
+       ELEMENTOS - CARTAS
+    ===================================================== */
+
+    const abrirCarta =
+      document.getElementById(
+        "abrir-carta"
+      );
+
+
+    const cartaForm =
+      document.getElementById(
+        "carta-form"
+      );
+
+
+    const cartaTitulo =
+      document.getElementById(
+        "carta-titulo"
+      );
+
+
+    const cartaContenido =
+      document.getElementById(
+        "carta-contenido"
+      );
+
+
+    const guardarCarta =
+      document.getElementById(
+        "guardar-carta"
+      );
+
+
+    const cancelarCarta =
+      document.getElementById(
+        "cancelar-carta"
+      );
+
+
+    const cartaStatus =
+      document.getElementById(
+        "carta-status"
+      );
+
+
+    const cartasContainer =
+      document.getElementById(
+        "cartas-container"
+      );
 
 
 
@@ -2050,8 +2738,6 @@
         }
 
 
-        /* Limitar a 10 MB */
-
         if (
           archivo.size >
           10 * 1024 * 1024
@@ -2072,8 +2758,6 @@
         archivoSeleccionado =
           archivo;
 
-
-        /* Vista previa */
 
         const reader =
           new FileReader();
@@ -2118,7 +2802,7 @@
 
 
     /* =====================================================
-       CANCELAR
+       CANCELAR FOTO
     ===================================================== */
 
     cancelarUpload.addEventListener(
@@ -2168,7 +2852,7 @@
 
 
     /* =====================================================
-       MOSTRAR ESTADO
+       ESTADO FOTO
     ===================================================== */
 
     function mostrarEstado(
@@ -2182,6 +2866,88 @@
       uploadStatus.className =
         "upload-status show " +
         tipo;
+
+    }
+
+
+
+    /* =====================================================
+       ESTADO CARTA
+    ===================================================== */
+
+    function mostrarEstadoCarta(
+      mensaje,
+      tipo
+    ) {
+
+      cartaStatus.textContent =
+        mensaje;
+
+      cartaStatus.className =
+        "carta-status show " +
+        tipo;
+
+    }
+
+
+
+    /* =====================================================
+       ABRIR CARTA
+    ===================================================== */
+
+    abrirCarta.addEventListener(
+      "click",
+      function() {
+
+        cartaForm.classList.add(
+          "active"
+        );
+
+        cartaStatus.className =
+          "carta-status";
+
+        cartaStatus.textContent =
+          "";
+
+        cartaTitulo.focus();
+
+      }
+    );
+
+
+
+    /* =====================================================
+       CANCELAR CARTA
+    ===================================================== */
+
+    cancelarCarta.addEventListener(
+      "click",
+      function() {
+
+        limpiarCarta();
+
+      }
+    );
+
+
+
+    function limpiarCarta() {
+
+      cartaTitulo.value =
+        "";
+
+      cartaContenido.value =
+        "";
+
+      cartaForm.classList.remove(
+        "active"
+      );
+
+      cartaStatus.className =
+        "carta-status";
+
+      cartaStatus.textContent =
+        "";
 
     }
 
@@ -2234,6 +3000,8 @@
         cargarFechas();
 
         cargarRecuerdos();
+
+        cargarCartas();
 
 
       } catch (error) {
@@ -2448,22 +3216,63 @@
               "card fecha-card";
 
 
-            card.innerHTML = `
+            const fechaDiv =
+              document.createElement(
+                "div"
+              );
 
-              <div class="fecha">
-                ${fechaBonita}
-              </div>
 
-              <div class="fecha-titulo">
-                ${icono}
-                ${fecha.titulo}
-              </div>
+            fechaDiv.className =
+              "fecha";
 
-              <div class="fecha-texto">
-                ${fecha.mensaje || ""}
-              </div>
 
-            `;
+            fechaDiv.textContent =
+              fechaBonita;
+
+
+            const tituloDiv =
+              document.createElement(
+                "div"
+              );
+
+
+            tituloDiv.className =
+              "fecha-titulo";
+
+
+            tituloDiv.textContent =
+              icono +
+              " " +
+              fecha.titulo;
+
+
+            const mensajeDiv =
+              document.createElement(
+                "div"
+              );
+
+
+            mensajeDiv.className =
+              "fecha-texto";
+
+
+            mensajeDiv.textContent =
+              fecha.mensaje || "";
+
+
+            card.appendChild(
+              fechaDiv
+            );
+
+
+            card.appendChild(
+              tituloDiv
+            );
+
+
+            card.appendChild(
+              mensajeDiv
+            );
 
 
             container.appendChild(
@@ -2680,8 +3489,6 @@
             );
 
 
-            /* NUEVA COLUMNA DESCRIPCION */
-
             if (
               recuerdo.descripcion
             ) {
@@ -2817,11 +3624,6 @@
         );
 
 
-
-        /* ===================================
-           VERIFICAR SESIÓN
-        =================================== */
-
         const {
           data: sessionData,
           error: sessionError
@@ -2840,11 +3642,6 @@
 
         }
 
-
-
-        /* ===================================
-           CREAR NOMBRE ÚNICO
-        =================================== */
 
         const extension =
           archivoSeleccionado.name
@@ -2866,11 +3663,6 @@
         const ruta =
           nombreArchivo;
 
-
-
-        /* ===================================
-           SUBIR A STORAGE
-        =================================== */
 
         const {
           data: storageData,
@@ -2895,22 +3687,12 @@
 
         if (storageError) {
 
-          console.error(
-            "Storage error:",
-            storageError
-          );
-
           throw new Error(
             storageError.message
           );
 
         }
 
-
-
-        /* ===================================
-           OBTENER URL PÚBLICA
-        =================================== */
 
         const {
           data: publicData
@@ -2925,17 +3707,6 @@
         const url =
           publicData.publicUrl;
 
-
-        console.log(
-          "URL:",
-          url
-        );
-
-
-
-        /* ===================================
-           GUARDAR EN TABLA RECUERDOS
-        =================================== */
 
         const {
           data: insertData,
@@ -2964,11 +3735,6 @@
 
         if (insertError) {
 
-          console.error(
-            "Database error:",
-            insertError
-          );
-
           throw new Error(
             insertError.message
           );
@@ -2981,11 +3747,6 @@
           insertData
         );
 
-
-
-        /* ===================================
-           ÉXITO
-        =================================== */
 
         mostrarEstado(
           "¡Recuerdo guardado! ❤️",
@@ -3033,6 +3794,454 @@
           false;
 
         cancelarUpload.disabled =
+          false;
+
+      }
+
+    }
+
+
+
+    /* =====================================================
+       CARGAR CARTAS
+    ===================================================== */
+
+    async function cargarCartas() {
+
+      try {
+
+        const {
+          data,
+          error
+        } =
+          await supabaseClient
+            .from("cartas")
+            .select(
+              "id, titulo, contenido, autor_nombre, autor_email, created_at"
+            )
+            .order(
+              "created_at",
+              {
+                ascending:
+                  false
+              }
+            );
+
+
+        if (error) {
+
+          throw error;
+
+        }
+
+
+        cartasContainer.innerHTML =
+          "";
+
+
+        if (
+          !data ||
+          data.length === 0
+        ) {
+
+          cartasContainer.innerHTML = `
+
+            <div class="card sin-cartas">
+
+              💌
+
+              <br><br>
+
+              Todavía no hay cartas.
+
+              <br>
+
+              Tal vez podrías ser la primera persona
+              en dejar una. ❤️
+
+            </div>
+
+          `;
+
+          return;
+
+        }
+
+
+        data.forEach(
+          carta => {
+
+            const card =
+              document.createElement(
+                "div"
+              );
+
+
+            card.className =
+              "card carta-guardada";
+
+
+            const fecha =
+              document.createElement(
+                "div"
+              );
+
+
+            fecha.className =
+              "carta-fecha";
+
+
+            if (
+              carta.created_at
+            ) {
+
+              const fechaObjeto =
+                new Date(
+                  carta.created_at
+                );
+
+
+              fecha.textContent =
+                fechaObjeto.toLocaleDateString(
+                  "es-MX",
+                  {
+
+                    day:
+                      "numeric",
+
+                    month:
+                      "long",
+
+                    year:
+                      "numeric"
+
+                  }
+                );
+
+            }
+
+
+            const titulo =
+              document.createElement(
+                "div"
+              );
+
+
+            titulo.className =
+              "carta-titulo";
+
+
+            titulo.textContent =
+              "💌 " +
+              (
+                carta.titulo ||
+                "Una carta para ti"
+              );
+
+
+            const autor =
+              document.createElement(
+                "div"
+              );
+
+
+            autor.className =
+              "carta-autor";
+
+
+            autor.textContent =
+              "Escrita por " +
+              (
+                carta.autor_nombre ||
+                carta.autor_email ||
+                "Nosotros"
+              );
+
+
+            const contenido =
+              document.createElement(
+                "div"
+              );
+
+
+            contenido.className =
+              "carta-contenido";
+
+
+            contenido.textContent =
+              carta.contenido ||
+              "";
+
+
+            card.appendChild(
+              fecha
+            );
+
+
+            card.appendChild(
+              titulo
+            );
+
+
+            card.appendChild(
+              autor
+            );
+
+
+            card.appendChild(
+              contenido
+            );
+
+
+            cartasContainer.appendChild(
+              card
+            );
+
+          }
+        );
+
+
+      } catch (error) {
+
+        console.error(
+          "Error cargando cartas:",
+          error
+        );
+
+
+        cartasContainer.innerHTML = `
+
+          <div class="card sin-cartas">
+
+            ❤️
+
+            <br><br>
+
+            No pudimos cargar nuestras cartas.
+
+          </div>
+
+        `;
+
+      }
+
+    }
+
+
+
+    /* =====================================================
+       GUARDAR CARTA
+    ===================================================== */
+
+    guardarCarta.addEventListener(
+      "click",
+      guardarNuevaCarta
+    );
+
+
+
+    async function guardarNuevaCarta() {
+
+      const titulo =
+        cartaTitulo.value.trim();
+
+
+      const contenido =
+        cartaContenido.value.trim();
+
+
+      if (!titulo) {
+
+        mostrarEstadoCarta(
+          "Ponle un título a la carta ❤️",
+          "error"
+        );
+
+        cartaTitulo.focus();
+
+        return;
+
+      }
+
+
+      if (!contenido) {
+
+        mostrarEstadoCarta(
+          "Escribe algo en tu carta 💌",
+          "error"
+        );
+
+        cartaContenido.focus();
+
+        return;
+
+      }
+
+
+      try {
+
+        guardarCarta.disabled =
+          true;
+
+        cancelarCarta.disabled =
+          true;
+
+
+        mostrarEstadoCarta(
+          "Guardando nuestra carta... ❤️",
+          "success"
+        );
+
+
+        /* ===================================
+           OBTENER USUARIO ACTUAL
+        =================================== */
+
+        const {
+          data: userData,
+          error: userError
+        } =
+          await supabaseClient.auth.getUser();
+
+
+        if (userError) {
+
+          throw userError;
+
+        }
+
+
+        const usuario =
+          userData.user;
+
+
+        if (!usuario) {
+
+          throw new Error(
+            "Tu sesión expiró. Vuelve a iniciar sesión."
+          );
+
+        }
+
+
+        /* ===================================
+           OBTENER NOMBRE
+        =================================== */
+
+        const metadata =
+          usuario.user_metadata || {};
+
+
+        const nombre =
+          metadata.full_name ||
+          metadata.name ||
+          metadata.nombre ||
+          usuario.email ||
+          "Usuario";
+
+
+        /* ===================================
+           GUARDAR CARTA
+        =================================== */
+
+        const {
+          data,
+          error
+        } =
+          await supabaseClient
+            .from("cartas")
+            .insert([
+
+              {
+
+                titulo:
+                  titulo,
+
+                contenido:
+                  contenido,
+
+                autor_nombre:
+                  nombre,
+
+                autor_email:
+                  usuario.email || ""
+
+              }
+
+            ])
+            .select();
+
+
+        if (error) {
+
+          console.error(
+            "Error guardando carta:",
+            error
+          );
+
+          throw new Error(
+            error.message
+          );
+
+        }
+
+
+        console.log(
+          "Carta guardada:",
+          data
+        );
+
+
+        mostrarEstadoCarta(
+          "¡Carta guardada para siempre! 💌❤️",
+          "success"
+        );
+
+
+        await cargarCartas();
+
+
+        setTimeout(
+          function() {
+
+            limpiarCarta();
+
+            document
+              .getElementById("cartas")
+              .scrollIntoView({
+                behavior:
+                  "smooth"
+              });
+
+          },
+          1200
+        );
+
+
+      } catch (error) {
+
+        console.error(
+          "Error guardando carta:",
+          error
+        );
+
+
+        mostrarEstadoCarta(
+
+          "No se pudo guardar: " +
+          error.message,
+
+          "error"
+
+        );
+
+
+      } finally {
+
+        guardarCarta.disabled =
+          false;
+
+        cancelarCarta.disabled =
           false;
 
       }
