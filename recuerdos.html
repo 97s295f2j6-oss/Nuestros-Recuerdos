@@ -2291,7 +2291,10 @@
          NUESTRA HISTORIA
     ========================================= -->
 
-    <section class="section" id="historia">
+    <section
+      class="section"
+      id="historia"
+    >
 
       <h2 class="section-title">
         Nuestra historia
@@ -2321,9 +2324,7 @@
             </h2>
 
             <p>
-
               Estamos cargando nuestra historia...
-
             </p>
 
           </div>
@@ -2388,7 +2389,10 @@
           id="upload-form"
         >
 
-          <div class="preview" id="preview">
+          <div
+            class="preview"
+            id="preview"
+          >
 
             <img
               id="preview-img"
@@ -2541,8 +2545,6 @@
           ✍️ Escribir una carta
 
         </button>
-
-        <!-- FORMULARIO CARTA -->
 
         <div
           class="carta-form"
@@ -3300,14 +3302,17 @@
 
       } catch (error) {
 
-        console.error(error);
+        console.error(
+          "Error cargando fechas:",
+          error
+        );
 
         container.innerHTML = `
 
           <div class="card fecha-card">
 
             <div class="fecha">
-              ALGO SALIÓ MAL
+              PRÓXIMAMENTE
             </div>
 
             <div class="fecha-titulo">
@@ -3315,7 +3320,7 @@
             </div>
 
             <div class="fecha-texto">
-              No pudimos cargar nuestras fechas.
+              Aquí aparecerán nuestras fechas especiales.
             </div>
 
           </div>
@@ -3329,16 +3334,21 @@
     /* =====================================================
        CARGAR NUESTRA HISTORIA
        
-       TABLA SUPABASE:
-       - id
-       - created_at
-       - fecha
-       - titulo
-       - historia
-       - foto_url
+       CAMBIO IMPORTANTE:
+       Se utiliza select("*") para no depender de que
+       todas las columnas tengan exactamente los nombres
+       esperados.
+
+       Si Supabase devuelve un error, NO se muestra
+       "ALGO SALIÓ MAL". Se muestra una sección limpia.
     ===================================================== */
 
     async function cargarHistoria() {
+
+      const container =
+        document.getElementById(
+          "historia-container"
+        );
 
       try {
 
@@ -3348,24 +3358,31 @@
         } =
           await supabaseClient
             .from("historia")
-            .select(
-              "id, created_at, fecha, titulo, historia, foto_url"
-            )
+            .select("*")
             .order(
               "fecha",
               {
-                ascending:
-                  true
+                ascending: true
               }
             );
 
         if (error) {
 
+          console.error(
+            "ERROR SUPABASE HISTORIA:",
+            error
+          );
+
           throw error;
 
         }
 
-        historiaContainer.innerHTML =
+        console.log(
+          "HISTORIA CARGADA:",
+          data
+        );
+
+        container.innerHTML =
           "";
 
         const timeline =
@@ -3375,6 +3392,10 @@
 
         timeline.className =
           "timeline";
+
+        /* =========================================
+           SIN CAPÍTULOS
+        ========================================= */
 
         if (
           !data ||
@@ -3392,16 +3413,17 @@
           item.innerHTML = `
 
             <div class="timeline-date">
-              PRÓXIMAMENTE
+              NUESTRO COMIENZO ❤️
             </div>
 
             <h2>
-              Nuestra historia ❤️
+              Nuestra historia
             </h2>
 
             <p>
-              Todavía no hemos agregado capítulos
-              a nuestra historia.
+              Aquí vamos a guardar cada capítulo
+              de nuestra historia, cada recuerdo
+              y cada momento que queramos conservar.
             </p>
 
           `;
@@ -3410,13 +3432,17 @@
             item
           );
 
-          historiaContainer.appendChild(
+          container.appendChild(
             timeline
           );
 
           return;
 
         }
+
+        /* =========================================
+           MOSTRAR CAPÍTULOS
+        ========================================= */
 
         data.forEach(
           capitulo => {
@@ -3454,28 +3480,43 @@
                   "T00:00:00"
                 );
 
-              fechaBonita =
-                fechaObjeto.toLocaleDateString(
-                  "es-MX",
-                  {
+              if (
+                !isNaN(
+                  fechaObjeto.getTime()
+                )
+              ) {
 
-                    day:
-                      "numeric",
+                fechaBonita =
+                  fechaObjeto.toLocaleDateString(
+                    "es-MX",
+                    {
 
-                    month:
-                      "long",
+                      day:
+                        "numeric",
 
-                    year:
-                      "numeric"
+                      month:
+                        "long",
 
-                  }
-                );
+                      year:
+                        "numeric"
+
+                    }
+                  );
+
+              } else {
+
+                fechaBonita =
+                  String(
+                    capitulo.fecha
+                  );
+
+              }
 
             }
 
             fechaDiv.textContent =
               fechaBonita ||
-              "Nuestra historia";
+              "UN MOMENTO ESPECIAL";
 
             /* ===================================
                TITULO
@@ -3504,7 +3545,14 @@
 
             texto.textContent =
               capitulo.historia ||
+              capitulo.descripcion ||
+              capitulo.mensaje ||
+              capitulo.contenido ||
               "";
+
+            /* ===================================
+               AGREGAR ELEMENTOS
+            =================================== */
 
             item.appendChild(
               fechaDiv
@@ -3519,11 +3567,18 @@
             );
 
             /* ===================================
-               FOTO OPCIONAL
+               FOTO
             =================================== */
 
+            const foto =
+              capitulo.foto_url ||
+              capitulo.url ||
+              capitulo.Url ||
+              capitulo.imagen ||
+              "";
+
             if (
-              capitulo.foto_url
+              foto
             ) {
 
               const imagen =
@@ -3535,7 +3590,7 @@
                 "historia-foto";
 
               imagen.src =
-                capitulo.foto_url;
+                foto;
 
               imagen.alt =
                 capitulo.titulo ||
@@ -3546,6 +3601,11 @@
 
               imagen.onerror =
                 function() {
+
+                  console.warn(
+                    "No se pudo cargar la foto:",
+                    foto
+                  );
 
                   this.remove();
 
@@ -3564,33 +3624,43 @@
           }
         );
 
-        historiaContainer.appendChild(
+        container.appendChild(
           timeline
         );
 
       } catch (error) {
 
         console.error(
-          "Error cargando nuestra historia:",
+          "ERROR CARGANDO NUESTRA HISTORIA:",
           error
         );
 
-        historiaContainer.innerHTML = `
+        /*
+         * IMPORTANTE:
+         * Ya no mostramos "ALGO SALIÓ MAL".
+         * La página permanece bonita aunque la tabla
+         * todavía no esté disponible o exista un
+         * problema de permisos en Supabase.
+         */
+
+        container.innerHTML = `
 
           <div class="timeline">
 
             <div class="timeline-item">
 
               <div class="timeline-date">
-                ALGO SALIÓ MAL
+                NUESTRO COMIENZO ❤️
               </div>
 
               <h2>
-                Nuestra historia ❤️
+                Nuestra historia
               </h2>
 
               <p>
-                No pudimos cargar nuestra historia.
+                Aquí vamos a guardar cada capítulo
+                de nuestra historia, cada recuerdo
+                y cada momento que queramos conservar.
               </p>
 
             </div>
@@ -4023,16 +4093,6 @@
 
     /* =====================================================
        CARGAR CARTAS
-       
-       TABLA:
-       - id
-       - created_at
-       - titulo
-       - mensaje
-       - activo
-       - contenido
-       - autor_nombre
-       - autor_email
     ===================================================== */
 
     async function cargarCartas() {
