@@ -2347,57 +2347,36 @@
     ===================================================== */
 
     const abrirUpload =
-      document.getElementById(
-        "abrir-upload"
-      );
+      document.getElementById("abrir-upload");
 
     const fotoInput =
-      document.getElementById(
-        "foto-input"
-      );
+      document.getElementById("foto-input");
 
     const uploadForm =
-      document.getElementById(
-        "upload-form"
-      );
+      document.getElementById("upload-form");
 
     const preview =
-      document.getElementById(
-        "preview"
-      );
+      document.getElementById("preview");
 
     const previewImg =
-      document.getElementById(
-        "preview-img"
-      );
+      document.getElementById("preview-img");
 
     const tituloInput =
-      document.getElementById(
-        "titulo-input"
-      );
+      document.getElementById("titulo-input");
 
     const descripcionInput =
-      document.getElementById(
-        "descripcion-input"
-      );
+      document.getElementById("descripcion-input");
 
     const guardarUpload =
-      document.getElementById(
-        "guardar-upload"
-      );
+      document.getElementById("guardar-upload");
 
     const cancelarUpload =
-      document.getElementById(
-        "cancelar-upload"
-      );
+      document.getElementById("cancelar-upload");
 
     const uploadStatus =
-      document.getElementById(
-        "upload-status"
-      );
+      document.getElementById("upload-status");
 
-    let archivoSeleccionado =
-      null;
+    let archivoSeleccionado = null;
 
 
     /* =====================================================
@@ -2405,44 +2384,28 @@
     ===================================================== */
 
     const abrirCarta =
-      document.getElementById(
-        "abrir-carta"
-      );
+      document.getElementById("abrir-carta");
 
     const cartaForm =
-      document.getElementById(
-        "carta-form"
-      );
+      document.getElementById("carta-form");
 
     const cartaTitulo =
-      document.getElementById(
-        "carta-titulo"
-      );
+      document.getElementById("carta-titulo");
 
     const cartaContenido =
-      document.getElementById(
-        "carta-contenido"
-      );
+      document.getElementById("carta-contenido");
 
     const guardarCarta =
-      document.getElementById(
-        "guardar-carta"
-      );
+      document.getElementById("guardar-carta");
 
     const cancelarCarta =
-      document.getElementById(
-        "cancelar-carta"
-      );
+      document.getElementById("cancelar-carta");
 
     const cartaStatus =
-      document.getElementById(
-        "carta-status"
-      );
+      document.getElementById("carta-status");
 
     const cartasContainer =
-      document.getElementById(
-        "cartas-container"
-      );
+      document.getElementById("cartas-container");
 
 
     /* =====================================================
@@ -2471,15 +2434,11 @@
           event.target.files[0];
 
         if (!archivo) {
-
           return;
-
         }
 
         if (
-          !archivo.type.startsWith(
-            "image/"
-          )
+          !archivo.type.startsWith("image/")
         ) {
 
           mostrarEstado(
@@ -2488,7 +2447,6 @@
           );
 
           return;
-
         }
 
         if (
@@ -2504,7 +2462,6 @@
           fotoInput.value = "";
 
           return;
-
         }
 
         archivoSeleccionado =
@@ -2519,19 +2476,13 @@
             previewImg.src =
               e.target.result;
 
-            preview.classList.add(
-              "active"
-            );
+            preview.classList.add("active");
 
           };
 
-        reader.readAsDataURL(
-          archivo
-        );
+        reader.readAsDataURL(archivo);
 
-        uploadForm.classList.add(
-          "active"
-        );
+        uploadForm.classList.add("active");
 
         uploadStatus.className =
           "upload-status";
@@ -2576,13 +2527,9 @@
       previewImg.src =
         "";
 
-      preview.classList.remove(
-        "active"
-      );
+      preview.classList.remove("active");
 
-      uploadForm.classList.remove(
-        "active"
-      );
+      uploadForm.classList.remove("active");
 
       uploadStatus.className =
         "upload-status";
@@ -2639,9 +2586,7 @@
       "click",
       function() {
 
-        cartaForm.classList.add(
-          "active"
-        );
+        cartaForm.classList.add("active");
 
         cartaStatus.className =
           "carta-status";
@@ -2677,9 +2622,7 @@
       cartaContenido.value =
         "";
 
-      cartaForm.classList.remove(
-        "active"
-      );
+      cartaForm.classList.remove("active");
 
       cartaStatus.className =
         "carta-status";
@@ -2846,7 +2789,6 @@
           `;
 
           return;
-
         }
 
         fechas.forEach(
@@ -2860,14 +2802,11 @@
 
             const opciones = {
 
-              day:
-                "numeric",
+              day: "numeric",
 
-              month:
-                "long",
+              month: "long",
 
-              year:
-                "numeric"
+              year: "numeric"
 
             };
 
@@ -2881,8 +2820,7 @@
               "❤️";
 
             if (
-              fecha.tipo ===
-              "cumpleaños"
+              fecha.tipo === "cumpleaños"
             ) {
 
               icono =
@@ -2891,8 +2829,7 @@
             }
 
             if (
-              fecha.tipo ===
-              "aniversario"
+              fecha.tipo === "aniversario"
             ) {
 
               icono =
@@ -2901,8 +2838,7 @@
             }
 
             if (
-              fecha.tipo ===
-              "viaje"
+              fecha.tipo === "viaje"
             ) {
 
               icono =
@@ -2911,8 +2847,7 @@
             }
 
             if (
-              fecha.tipo ===
-              "especial"
+              fecha.tipo === "especial"
             ) {
 
               icono =
@@ -2921,17 +2856,13 @@
             }
 
             const card =
-              document.createElement(
-                "div"
-              );
+              document.createElement("div");
 
             card.className =
               "card fecha-card";
 
             const fechaDiv =
-              document.createElement(
-                "div"
-              );
+              document.createElement("div");
 
             fechaDiv.className =
               "fecha";
@@ -2940,9 +2871,7 @@
               fechaBonita;
 
             const tituloDiv =
-              document.createElement(
-                "div"
-              );
+              document.createElement("div");
 
             tituloDiv.className =
               "fecha-titulo";
@@ -2953,9 +2882,7 @@
               fecha.titulo;
 
             const mensajeDiv =
-              document.createElement(
-                "div"
-              );
+              document.createElement("div");
 
             mensajeDiv.className =
               "fecha-texto";
@@ -3109,17 +3036,13 @@
           recuerdo => {
 
             const card =
-              document.createElement(
-                "div"
-              );
+              document.createElement("div");
 
             card.className =
               "photo-card card";
 
             const imagen =
-              document.createElement(
-                "img"
-              );
+              document.createElement("img");
 
             imagen.src =
               recuerdo.Url;
@@ -3140,17 +3063,13 @@
               };
 
             const info =
-              document.createElement(
-                "div"
-              );
+              document.createElement("div");
 
             info.className =
               "photo-info";
 
             const titulo =
-              document.createElement(
-                "div"
-              );
+              document.createElement("div");
 
             titulo.className =
               "photo-title";
@@ -3168,9 +3087,7 @@
             ) {
 
               const descripcion =
-                document.createElement(
-                  "div"
-                );
+                document.createElement("div");
 
               descripcion.className =
                 "photo-description";
@@ -3444,8 +3361,16 @@
 
     /* =====================================================
        CARGAR CARTAS
-       IMPORTANTE:
-       La tabla "cartas" utiliza la columna "mensaje"
+       
+       LA TABLA ACTUAL TIENE:
+       - id
+       - created_at
+       - titulo
+       - mensaje   <-- OBLIGATORIO
+       - activo
+       - contenido
+       
+       Por eso usamos mensaje como fuente principal.
     ===================================================== */
 
     async function cargarCartas() {
@@ -3459,7 +3384,7 @@
           await supabaseClient
             .from("cartas")
             .select(
-              "id, titulo, mensaje, autor_nombre, autor_email, created_at"
+              "id, titulo, mensaje, contenido, autor_nombre, autor_email, created_at"
             )
             .order(
               "created_at",
@@ -3510,17 +3435,16 @@
           carta => {
 
             const card =
-              document.createElement(
-                "div"
-              );
+              document.createElement("div");
 
             card.className =
               "card carta-guardada";
 
+
+            /* FECHA */
+
             const fecha =
-              document.createElement(
-                "div"
-              );
+              document.createElement("div");
 
             fecha.className =
               "carta-fecha";
@@ -3553,10 +3477,11 @@
 
             }
 
+
+            /* TITULO */
+
             const titulo =
-              document.createElement(
-                "div"
-              );
+              document.createElement("div");
 
             titulo.className =
               "carta-titulo";
@@ -3568,10 +3493,11 @@
                 "Una carta para ti"
               );
 
+
+            /* AUTOR */
+
             const autor =
-              document.createElement(
-                "div"
-              );
+              document.createElement("div");
 
             autor.className =
               "carta-autor";
@@ -3584,23 +3510,27 @@
                 "Nosotros"
               );
 
+
+            /* CONTENIDO */
+
             const contenido =
-              document.createElement(
-                "div"
-              );
+              document.createElement("div");
 
             contenido.className =
               "carta-contenido";
 
             /*
-             * CORREGIDO:
-             * Antes era carta.contenido
-             * Ahora la columna real es mensaje
+             * MENSAJE ES LA COLUMNA OBLIGATORIA.
+             *
+             * CONTENIDO SE USA COMO RESPALDO
+             * POR SI EXISTE ALGUNA CARTA ANTIGUA.
              */
 
             contenido.textContent =
               carta.mensaje ||
+              carta.contenido ||
               "";
+
 
             card.appendChild(
               fecha
@@ -3642,6 +3572,12 @@
 
             No pudimos cargar nuestras cartas.
 
+            <br><br>
+
+            <small>
+              ${error.message}
+            </small>
+
           </div>
 
         `;
@@ -3666,8 +3602,13 @@
       const titulo =
         cartaTitulo.value.trim();
 
-      const contenido =
+      const mensaje =
         cartaContenido.value.trim();
+
+
+      /* ===================================
+         VALIDAR TITULO
+      =================================== */
 
       if (!titulo) {
 
@@ -3682,7 +3623,12 @@
 
       }
 
-      if (!contenido) {
+
+      /* ===================================
+         VALIDAR MENSAJE
+      =================================== */
+
+      if (!mensaje) {
 
         mostrarEstadoCarta(
           "Escribe algo en tu carta 💌",
@@ -3694,6 +3640,7 @@
         return;
 
       }
+
 
       try {
 
@@ -3753,11 +3700,45 @@
 
 
         /* ===================================
-           GUARDAR CARTA
+           DATOS DE LA CARTA
            
-           CORREGIDO:
-           Supabase espera "mensaje"
-           y no "contenido".
+           IMPORTANTE:
+           
+           "mensaje" ES OBLIGATORIO
+           EN TU TABLA SUPABASE.
+           
+           También guardamos "contenido"
+           para mantener compatibilidad.
+        =================================== */
+
+        const cartaData = {
+
+          titulo:
+            titulo,
+
+          mensaje:
+            mensaje,
+
+          contenido:
+            mensaje,
+
+          autor_nombre:
+            nombre,
+
+          autor_email:
+            usuario.email || ""
+
+        };
+
+
+        console.log(
+          "Datos que se enviarán a Supabase:",
+          cartaData
+        );
+
+
+        /* ===================================
+           INSERTAR CARTA
         =================================== */
 
         const {
@@ -3766,26 +3747,11 @@
         } =
           await supabaseClient
             .from("cartas")
-            .insert([
-
-              {
-
-                titulo:
-                  titulo,
-
-                mensaje:
-                  contenido,
-
-                autor_nombre:
-                  nombre,
-
-                autor_email:
-                  usuario.email || ""
-
-              }
-
-            ])
+            .insert(
+              cartaData
+            )
             .select();
+
 
         if (error) {
 
@@ -3800,17 +3766,33 @@
 
         }
 
+
         console.log(
-          "Carta guardada:",
+          "Carta guardada correctamente:",
           data
         );
+
+
+        /* ===================================
+           MOSTRAR ÉXITO
+        =================================== */
 
         mostrarEstadoCarta(
           "¡Carta guardada para siempre! 💌❤️",
           "success"
         );
 
+
+        /* ===================================
+           RECARGAR CARTAS
+        =================================== */
+
         await cargarCartas();
+
+
+        /* ===================================
+           LIMPIAR DESPUÉS DE GUARDAR
+        =================================== */
 
         setTimeout(
           function() {
@@ -3827,6 +3809,7 @@
           },
           1200
         );
+
 
       } catch (error) {
 
