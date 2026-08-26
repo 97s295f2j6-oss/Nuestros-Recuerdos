@@ -17,7 +17,6 @@
     src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
   ></script>
 
-
   <style>
 
     * {
@@ -65,7 +64,6 @@
         20px
         70px;
     }
-
 
     /* =========================================
        ENCABEZADO
@@ -173,7 +171,6 @@
         auto;
     }
 
-
     /* =========================================
        SECCIONES
     ========================================= */
@@ -204,7 +201,6 @@
 
       margin-bottom: 30px;
     }
-
 
     /* =========================================
        TARJETAS
@@ -289,7 +285,6 @@
       font-size: 18px;
     }
 
-
     /* =========================================
        FECHAS
     ========================================= */
@@ -344,7 +339,6 @@
 
       font-size: 17px;
     }
-
 
     /* =========================================
        TIMELINE
@@ -421,6 +415,44 @@
       font-size: 17px;
     }
 
+    /* =========================================
+       FOTO EN HISTORIA
+    ========================================= */
+
+    .historia-foto {
+
+      width: 100%;
+
+      max-height: 430px;
+
+      object-fit: cover;
+
+      display: block;
+
+      border-radius: 20px;
+
+      margin-top: 22px;
+
+      border:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.12
+        );
+
+      box-shadow:
+        0
+        15px
+        40px
+        rgba(
+          0,
+          0,
+          0,
+          0.30
+        );
+    }
 
     /* =========================================
        GALERIA
@@ -478,7 +510,6 @@
 
       overflow: hidden;
     }
-
 
     /* =========================================
        TARJETA DE FOTO
@@ -541,7 +572,6 @@
 
       line-height: 1.6;
     }
-
 
     /* =========================================
        BOTON AGREGAR RECUERDO
@@ -672,7 +702,6 @@
 
       display: none;
     }
-
 
     /* =========================================
        FORMULARIO FOTOS
@@ -935,7 +964,6 @@
           0.25
         );
     }
-
 
     /* =========================================
        CARTAS
@@ -1303,7 +1331,6 @@
         );
     }
 
-
     /* =========================================
        CARTA GUARDADA
     ========================================= */
@@ -1445,7 +1472,6 @@
         30px
         20px;
     }
-
 
     /* =========================================
        VISTA COMPLETA DE CARTA
@@ -1714,7 +1740,6 @@
       overflow: hidden;
     }
 
-
     /* =========================================
        FUTURO
     ========================================= */
@@ -1748,7 +1773,6 @@
 
       margin: auto;
     }
-
 
     /* =========================================
        CERRAR SESION
@@ -1787,7 +1811,6 @@
       cursor: pointer;
     }
 
-
     /* =========================================
        FOOTER
     ========================================= */
@@ -1802,7 +1825,6 @@
 
       font-size: 14px;
     }
-
 
     /* =========================================
        CORAZONES
@@ -1885,7 +1907,6 @@
 
     }
 
-
     /* =========================================
        CELULAR
     ========================================= */
@@ -1945,6 +1966,13 @@
         height: 360px;
       }
 
+      .historia-foto {
+
+        max-height: 380px;
+
+        border-radius: 16px;
+      }
+
       .form-buttons {
 
         flex-direction: column;
@@ -1976,7 +2004,6 @@
 
         flex-direction: column;
       }
-
 
       /* ================================
          MODAL CARTA - IPHONE
@@ -2053,9 +2080,7 @@
 
 </head>
 
-
 <body>
-
 
   <!-- =========================================
        MODAL CARTA COMPLETA
@@ -2082,32 +2107,26 @@
 
       </button>
 
-
       <div class="carta-modal-icono">
         💌
       </div>
-
 
       <div
         class="carta-modal-fecha"
         id="modal-carta-fecha"
       ></div>
 
-
       <div
         class="carta-modal-titulo"
         id="modal-carta-titulo"
       ></div>
-
 
       <div
         class="carta-modal-autor"
         id="modal-carta-autor"
       ></div>
 
-
       <div class="carta-modal-separador"></div>
-
 
       <div
         class="carta-modal-texto"
@@ -2117,7 +2136,6 @@
     </div>
 
   </div>
-
 
   <!-- =========================================
        CORAZONES
@@ -2131,9 +2149,7 @@
 
   <div class="floating-heart f4">♡</div>
 
-
   <div class="container">
-
 
     <!-- =========================================
          ENCABEZADO
@@ -2172,9 +2188,7 @@
 
     </header>
 
-
     <div class="line"></div>
-
 
     <!-- =========================================
          NUESTROS RECUERDOS
@@ -2210,7 +2224,6 @@
 
       </div>
 
-
       <div class="card">
 
         <div class="memory-icon">
@@ -2233,7 +2246,6 @@
       </div>
 
     </section>
-
 
     <!-- =========================================
          FECHAS
@@ -2275,111 +2287,52 @@
 
     </section>
 
-
     <!-- =========================================
          NUESTRA HISTORIA
     ========================================= -->
 
-    <section class="section">
+    <section class="section" id="historia">
 
       <h2 class="section-title">
         Nuestra historia
       </h2>
 
-      <div class="card">
+      <div class="section-subtitle">
+
+        Cada capítulo de nosotros merece ser recordado. ❤️
+
+      </div>
+
+      <div
+        class="card"
+        id="historia-container"
+      >
 
         <div class="timeline">
 
-
           <div class="timeline-item">
 
             <div class="timeline-date">
-              El comienzo
+              CARGANDO...
             </div>
 
             <h2>
-              Todo empezó aquí ❤️
+              Nuestra historia ❤️
             </h2>
 
             <p>
 
-              Aquí vamos a contar cómo comenzó nuestra
-              historia, cómo nos conocimos y qué fue
-              lo que hizo que todo empezara.
+              Estamos cargando nuestra historia...
 
             </p>
 
           </div>
-
-
-          <div class="timeline-item">
-
-            <div class="timeline-date">
-              Un momento especial
-            </div>
-
-            <h2>
-              Un recuerdo que nunca olvidaremos
-            </h2>
-
-            <p>
-
-              Aquí podremos colocar una fecha,
-              una fotografía y la historia detrás
-              de ese momento.
-
-            </p>
-
-          </div>
-
-
-          <div class="timeline-item">
-
-            <div class="timeline-date">
-              Nuestra historia
-            </div>
-
-            <h2>
-              Cada momento cuenta
-            </h2>
-
-            <p>
-
-              Porque no solamente importan los grandes
-              momentos. También cuentan las pequeñas
-              cosas que vivimos juntos.
-
-            </p>
-
-          </div>
-
-
-          <div class="timeline-item">
-
-            <div class="timeline-date">
-              Continuará...
-            </div>
-
-            <h2>
-              Lo mejor todavía está por escribirse.
-            </h2>
-
-            <p>
-
-              Nuestra historia todavía tiene muchas
-              páginas por llenar.
-
-            </p>
-
-          </div>
-
 
         </div>
 
       </div>
 
     </section>
-
 
     <!-- =========================================
          NUESTROS MOMENTOS
@@ -2396,7 +2349,6 @@
         Aquí vamos a guardar nuestras fotos.
 
       </div>
-
 
       <div class="card upload-card">
 
@@ -2431,7 +2383,6 @@
           accept="image/*"
         >
 
-
         <div
           class="upload-form"
           id="upload-form"
@@ -2445,7 +2396,6 @@
             >
 
           </div>
-
 
           <label
             class="form-label"
@@ -2464,7 +2414,6 @@
             placeholder="Ej. Nuestro primer recuerdo ❤️"
           >
 
-
           <label
             class="form-label"
             for="descripcion-input"
@@ -2480,7 +2429,6 @@
             maxlength="500"
             placeholder="Escribe algo que quieras recordar de este momento..."
           ></textarea>
-
 
           <div class="form-buttons">
 
@@ -2506,7 +2454,6 @@
 
           </div>
 
-
           <div
             class="upload-status"
             id="upload-status"
@@ -2515,7 +2462,6 @@
         </div>
 
       </div>
-
 
       <div
         class="gallery-placeholder"
@@ -2535,7 +2481,6 @@
       </div>
 
     </section>
-
 
     <!-- =========================================
          CARTAS PARA TI
@@ -2570,7 +2515,6 @@
 
       </div>
 
-
       <!-- =======================================
            ESCRIBIR CARTA
       ======================================== -->
@@ -2598,7 +2542,6 @@
 
         </button>
 
-
         <!-- FORMULARIO CARTA -->
 
         <div
@@ -2623,7 +2566,6 @@
             placeholder="Ej. Para ti, mi amor..."
           >
 
-
           <label
             class="carta-label"
             for="carta-contenido"
@@ -2639,7 +2581,6 @@
             maxlength="5000"
             placeholder="Escribe aquí todo eso que quieres decir..."
           ></textarea>
-
 
           <div class="carta-form-buttons">
 
@@ -2665,7 +2606,6 @@
 
           </div>
 
-
           <div
             class="carta-status"
             id="carta-status"
@@ -2674,7 +2614,6 @@
         </div>
 
       </div>
-
 
       <!-- =======================================
            CARTAS GUARDADAS
@@ -2698,7 +2637,6 @@
       </div>
 
     </section>
-
 
     <!-- =========================================
          FUTURO
@@ -2732,7 +2670,6 @@
 
     </section>
 
-
     <!-- =========================================
          CERRAR SESIÓN
     ========================================= -->
@@ -2746,19 +2683,15 @@
 
     </button>
 
-
     <div class="footer">
 
       Hecho con ❤️ para nuestra historia
 
     </div>
 
-
   </div>
 
-
   <script>
-
 
     /* =====================================================
        SUPABASE
@@ -2775,7 +2708,6 @@
         SUPABASE_URL,
         SUPABASE_KEY
       );
-
 
     /* =====================================================
        ELEMENTOS - FOTOS
@@ -2813,7 +2745,6 @@
 
     let archivoSeleccionado = null;
 
-
     /* =====================================================
        ELEMENTOS - CARTAS
     ===================================================== */
@@ -2842,7 +2773,6 @@
     const cartasContainer =
       document.getElementById("cartas-container");
 
-
     /* =====================================================
        ELEMENTOS - MODAL CARTA
     ===================================================== */
@@ -2865,6 +2795,14 @@
     const modalCartaTexto =
       document.getElementById("modal-carta-texto");
 
+    /* =====================================================
+       ELEMENTOS - HISTORIA
+    ===================================================== */
+
+    const historiaContainer =
+      document.getElementById(
+        "historia-container"
+      );
 
     /* =====================================================
        ABRIR SELECTOR DE FOTO
@@ -2878,7 +2816,6 @@
 
       }
     );
-
 
     /* =====================================================
        SELECCIONAR FOTO
@@ -2920,6 +2857,7 @@
           fotoInput.value = "";
 
           return;
+
         }
 
         archivoSeleccionado =
@@ -2953,7 +2891,6 @@
       }
     );
 
-
     /* =====================================================
        CANCELAR FOTO
     ===================================================== */
@@ -2966,7 +2903,6 @@
 
       }
     );
-
 
     function limpiarFormulario() {
 
@@ -2997,7 +2933,6 @@
 
     }
 
-
     /* =====================================================
        ESTADO FOTO
     ===================================================== */
@@ -3016,7 +2951,6 @@
 
     }
 
-
     /* =====================================================
        ESTADO CARTA
     ===================================================== */
@@ -3034,7 +2968,6 @@
         tipo;
 
     }
-
 
     /* =====================================================
        ABRIR FORMULARIO CARTA
@@ -3057,7 +2990,6 @@
       }
     );
 
-
     /* =====================================================
        CANCELAR CARTA
     ===================================================== */
@@ -3070,7 +3002,6 @@
 
       }
     );
-
 
     function limpiarCarta() {
 
@@ -3089,7 +3020,6 @@
         "";
 
     }
-
 
     /* =====================================================
        VERIFICAR SESIÓN
@@ -3133,6 +3063,8 @@
 
         cargarFechas();
 
+        cargarHistoria();
+
         cargarRecuerdos();
 
         cargarCartas();
@@ -3148,7 +3080,6 @@
       }
 
     }
-
 
     /* =====================================================
        CARGAR FECHAS
@@ -3395,6 +3326,282 @@
 
     }
 
+    /* =====================================================
+       CARGAR NUESTRA HISTORIA
+       
+       TABLA SUPABASE:
+       - id
+       - created_at
+       - fecha
+       - titulo
+       - historia
+       - foto_url
+    ===================================================== */
+
+    async function cargarHistoria() {
+
+      try {
+
+        const {
+          data,
+          error
+        } =
+          await supabaseClient
+            .from("historia")
+            .select(
+              "id, created_at, fecha, titulo, historia, foto_url"
+            )
+            .order(
+              "fecha",
+              {
+                ascending:
+                  true
+              }
+            );
+
+        if (error) {
+
+          throw error;
+
+        }
+
+        historiaContainer.innerHTML =
+          "";
+
+        const timeline =
+          document.createElement(
+            "div"
+          );
+
+        timeline.className =
+          "timeline";
+
+        if (
+          !data ||
+          data.length === 0
+        ) {
+
+          const item =
+            document.createElement(
+              "div"
+            );
+
+          item.className =
+            "timeline-item";
+
+          item.innerHTML = `
+
+            <div class="timeline-date">
+              PRÓXIMAMENTE
+            </div>
+
+            <h2>
+              Nuestra historia ❤️
+            </h2>
+
+            <p>
+              Todavía no hemos agregado capítulos
+              a nuestra historia.
+            </p>
+
+          `;
+
+          timeline.appendChild(
+            item
+          );
+
+          historiaContainer.appendChild(
+            timeline
+          );
+
+          return;
+
+        }
+
+        data.forEach(
+          capitulo => {
+
+            const item =
+              document.createElement(
+                "div"
+              );
+
+            item.className =
+              "timeline-item";
+
+            /* ===================================
+               FECHA
+            =================================== */
+
+            const fechaDiv =
+              document.createElement(
+                "div"
+              );
+
+            fechaDiv.className =
+              "timeline-date";
+
+            let fechaBonita =
+              "";
+
+            if (
+              capitulo.fecha
+            ) {
+
+              const fechaObjeto =
+                new Date(
+                  capitulo.fecha +
+                  "T00:00:00"
+                );
+
+              fechaBonita =
+                fechaObjeto.toLocaleDateString(
+                  "es-MX",
+                  {
+
+                    day:
+                      "numeric",
+
+                    month:
+                      "long",
+
+                    year:
+                      "numeric"
+
+                  }
+                );
+
+            }
+
+            fechaDiv.textContent =
+              fechaBonita ||
+              "Nuestra historia";
+
+            /* ===================================
+               TITULO
+            =================================== */
+
+            const titulo =
+              document.createElement(
+                "h2"
+              );
+
+            titulo.textContent =
+              "❤️ " +
+              (
+                capitulo.titulo ||
+                "Un capítulo de nosotros"
+              );
+
+            /* ===================================
+               HISTORIA
+            =================================== */
+
+            const texto =
+              document.createElement(
+                "p"
+              );
+
+            texto.textContent =
+              capitulo.historia ||
+              "";
+
+            item.appendChild(
+              fechaDiv
+            );
+
+            item.appendChild(
+              titulo
+            );
+
+            item.appendChild(
+              texto
+            );
+
+            /* ===================================
+               FOTO OPCIONAL
+            =================================== */
+
+            if (
+              capitulo.foto_url
+            ) {
+
+              const imagen =
+                document.createElement(
+                  "img"
+                );
+
+              imagen.className =
+                "historia-foto";
+
+              imagen.src =
+                capitulo.foto_url;
+
+              imagen.alt =
+                capitulo.titulo ||
+                "Un momento de nuestra historia ❤️";
+
+              imagen.loading =
+                "lazy";
+
+              imagen.onerror =
+                function() {
+
+                  this.remove();
+
+                };
+
+              item.appendChild(
+                imagen
+              );
+
+            }
+
+            timeline.appendChild(
+              item
+            );
+
+          }
+        );
+
+        historiaContainer.appendChild(
+          timeline
+        );
+
+      } catch (error) {
+
+        console.error(
+          "Error cargando nuestra historia:",
+          error
+        );
+
+        historiaContainer.innerHTML = `
+
+          <div class="timeline">
+
+            <div class="timeline-item">
+
+              <div class="timeline-date">
+                ALGO SALIÓ MAL
+              </div>
+
+              <h2>
+                Nuestra historia ❤️
+              </h2>
+
+              <p>
+                No pudimos cargar nuestra historia.
+              </p>
+
+            </div>
+
+          </div>
+
+        `;
+
+      }
+
+    }
 
     /* =====================================================
        CARGAR RECUERDOS
@@ -3599,7 +3806,6 @@
 
     }
 
-
     /* =====================================================
        SUBIR RECUERDO
     ===================================================== */
@@ -3608,7 +3814,6 @@
       "click",
       subirRecuerdo
     );
-
 
     async function subirRecuerdo() {
 
@@ -3816,17 +4021,18 @@
 
     }
 
-
     /* =====================================================
        CARGAR CARTAS
        
-       LA TABLA ACTUAL TIENE:
+       TABLA:
        - id
        - created_at
        - titulo
        - mensaje
        - activo
        - contenido
+       - autor_nombre
+       - autor_email
     ===================================================== */
 
     async function cargarCartas() {
@@ -3896,11 +4102,6 @@
             card.className =
               "card carta-guardada";
 
-
-            /* ===================================
-               FECHA
-            =================================== */
-
             const fecha =
               document.createElement("div");
 
@@ -3940,11 +4141,6 @@
 
             }
 
-
-            /* ===================================
-               TITULO
-            =================================== */
-
             const titulo =
               document.createElement("div");
 
@@ -3958,11 +4154,6 @@
             titulo.textContent =
               "💌 " +
               tituloReal;
-
-
-            /* ===================================
-               AUTOR
-            =================================== */
 
             const autor =
               document.createElement("div");
@@ -3979,11 +4170,6 @@
               "Escrita por " +
               autorReal;
 
-
-            /* ===================================
-               CONTENIDO
-            =================================== */
-
             const contenido =
               document.createElement("div");
 
@@ -3997,11 +4183,6 @@
 
             contenido.textContent =
               contenidoReal;
-
-
-            /* ===================================
-               ARMAR CARTA
-            =================================== */
 
             card.appendChild(
               fecha
@@ -4018,11 +4199,6 @@
             card.appendChild(
               contenido
             );
-
-
-            /* ===================================
-               ABRIR CARTA AL TOCAR
-            =================================== */
 
             card.addEventListener(
               "click",
@@ -4046,7 +4222,6 @@
 
               }
             );
-
 
             cartasContainer.appendChild(
               card
@@ -4086,7 +4261,6 @@
 
     }
 
-
     /* =====================================================
        GUARDAR CARTA
     ===================================================== */
@@ -4096,7 +4270,6 @@
       guardarNuevaCarta
     );
 
-
     async function guardarNuevaCarta() {
 
       const titulo =
@@ -4104,11 +4277,6 @@
 
       const mensaje =
         cartaContenido.value.trim();
-
-
-      /* ===================================
-         VALIDAR TITULO
-      =================================== */
 
       if (!titulo) {
 
@@ -4123,11 +4291,6 @@
 
       }
 
-
-      /* ===================================
-         VALIDAR MENSAJE
-      =================================== */
-
       if (!mensaje) {
 
         mostrarEstadoCarta(
@@ -4141,7 +4304,6 @@
 
       }
 
-
       try {
 
         guardarCarta.disabled =
@@ -4154,11 +4316,6 @@
           "Guardando nuestra carta... ❤️",
           "success"
         );
-
-
-        /* ===================================
-           OBTENER USUARIO ACTUAL
-        =================================== */
 
         const {
           data: userData,
@@ -4183,11 +4340,6 @@
 
         }
 
-
-        /* ===================================
-           OBTENER NOMBRE
-        =================================== */
-
         const metadata =
           usuario.user_metadata || {};
 
@@ -4197,11 +4349,6 @@
           metadata.nombre ||
           usuario.email ||
           "Usuario";
-
-
-        /* ===================================
-           DATOS DE LA CARTA
-        =================================== */
 
         const cartaData = {
 
@@ -4222,17 +4369,6 @@
 
         };
 
-
-        console.log(
-          "Datos que se enviarán a Supabase:",
-          cartaData
-        );
-
-
-        /* ===================================
-           INSERTAR CARTA
-        =================================== */
-
         const {
           data,
           error
@@ -4243,7 +4379,6 @@
               cartaData
             )
             .select();
-
 
         if (error) {
 
@@ -4258,33 +4393,17 @@
 
         }
 
-
         console.log(
           "Carta guardada correctamente:",
           data
         );
-
-
-        /* ===================================
-           MOSTRAR ÉXITO
-        =================================== */
 
         mostrarEstadoCarta(
           "¡Carta guardada para siempre! 💌❤️",
           "success"
         );
 
-
-        /* ===================================
-           RECARGAR CARTAS
-        =================================== */
-
         await cargarCartas();
-
-
-        /* ===================================
-           LIMPIAR DESPUÉS DE GUARDAR
-        =================================== */
 
         setTimeout(
           function() {
@@ -4301,7 +4420,6 @@
           },
           1200
         );
-
 
       } catch (error) {
 
@@ -4331,7 +4449,6 @@
 
     }
 
-
     /* =====================================================
        ABRIR CARTA COMPLETA
     ===================================================== */
@@ -4354,7 +4471,6 @@
       modalCartaTexto.textContent =
         carta.contenido;
 
-
       cartaModal.classList.add(
         "active"
       );
@@ -4369,7 +4485,6 @@
       );
 
     }
-
 
     /* =====================================================
        CERRAR CARTA COMPLETA
@@ -4392,12 +4507,10 @@
 
     }
 
-
     cerrarCartaModal.addEventListener(
       "click",
       cerrarCartaCompleta
     );
-
 
     /* =====================================================
        CERRAR TOCANDO FUERA
@@ -4419,7 +4532,6 @@
       }
     );
 
-
     /* =====================================================
        CERRAR CON ESC
     ===================================================== */
@@ -4439,7 +4551,6 @@
 
       }
     );
-
 
     /* =====================================================
        CERRAR SESIÓN
@@ -4463,16 +4574,13 @@
 
     }
 
-
     /* =====================================================
        INICIAR
     ===================================================== */
 
     verificarSesion();
 
-
   </script>
-
 
 </body>
 
