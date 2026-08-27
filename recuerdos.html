@@ -7,24 +7,17 @@
 
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-  >
-
-  <meta
-    name="format-detection"
-    content="telephone=no"
+    content="width=device-width, initial-scale=1.0"
   >
 
   <title>Nuestra Historia ❤️</title>
 
   <!-- SUPABASE -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+  ></script>
 
   <style>
-
-    /* =====================================================
-       RESET
-    ===================================================== */
 
     * {
       box-sizing: border-box;
@@ -34,8 +27,6 @@
 
     html {
       scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
-      text-size-adjust: 100%;
     }
 
     body {
@@ -58,25 +49,7 @@
         serif;
 
       overflow-x: hidden;
-
-      -webkit-font-smoothing: antialiased;
-
     }
-
-    button,
-    input,
-    textarea {
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    }
-
-    /* =====================================================
-       CONTENEDOR
-    ===================================================== */
 
     .container {
 
@@ -90,34 +63,29 @@
         35px
         20px
         70px;
-
     }
 
-    /* =====================================================
+    /* =========================================
        ENCABEZADO
-    ===================================================== */
+    ========================================= */
 
     .top {
 
       text-align: center;
 
       padding-top: 25px;
-
     }
 
     .heart {
 
-      font-size: 65px;
-
-      line-height: 1;
+      font-size: 70px;
 
       animation:
         heartbeat
         1.8s
         infinite;
 
-      margin-bottom: 18px;
-
+      margin-bottom: 15px;
     }
 
     @keyframes heartbeat {
@@ -125,13 +93,15 @@
       0%,
       100% {
 
-        transform: scale(1);
+        transform:
+          scale(1);
 
       }
 
       50% {
 
-        transform: scale(1.10);
+        transform:
+          scale(1.12);
 
       }
 
@@ -141,39 +111,36 @@
 
       color: #d8bfc9;
 
-      letter-spacing: 4px;
+      letter-spacing: 5px;
 
       text-transform: uppercase;
 
       font-size: 13px;
 
-      margin-bottom: 13px;
-
+      margin-bottom: 12px;
     }
 
     h1 {
 
       font-size:
         clamp(
-          46px,
-          9vw,
-          78px
+          48px,
+          10vw,
+          85px
         );
 
-      line-height: 1.05;
+      line-height: 1;
 
       margin-bottom: 15px;
-
     }
 
     .names {
 
-      font-size: 24px;
+      font-size: 25px;
 
       color: #d9c7ce;
 
-      margin-bottom: 42px;
-
+      margin-bottom: 45px;
     }
 
     .intro {
@@ -186,10 +153,9 @@
 
       color: #d7cfd3;
 
-      font-size: 19px;
+      font-size: 20px;
 
-      line-height: 1.75;
-
+      line-height: 1.8;
     }
 
     .line {
@@ -203,17 +169,15 @@
       margin:
         40px
         auto;
-
     }
 
-    /* =====================================================
+    /* =========================================
        SECCIONES
-    ===================================================== */
+    ========================================= */
 
     .section {
 
       margin-top: 70px;
-
     }
 
     .section-title {
@@ -222,10 +186,7 @@
 
       font-size: 36px;
 
-      line-height: 1.2;
-
-      margin-bottom: 25px;
-
+      margin-bottom: 30px;
     }
 
     .section-subtitle {
@@ -236,17 +197,14 @@
 
       font-size: 17px;
 
-      line-height: 1.6;
-
-      margin-top: -8px;
+      margin-top: -15px;
 
       margin-bottom: 30px;
-
     }
 
-    /* =====================================================
+    /* =========================================
        TARJETAS
-    ===================================================== */
+    ========================================= */
 
     .card {
 
@@ -290,10 +248,7 @@
           0.25
         );
 
-      transition:
-        transform 0.3s ease,
-        border-color 0.3s ease;
-
+      transition: 0.3s;
     }
 
     .card:hover {
@@ -308,7 +263,6 @@
           125,
           0.35
         );
-
     }
 
     .memory-icon {
@@ -316,17 +270,13 @@
       font-size: 38px;
 
       margin-bottom: 15px;
-
     }
 
     .card h2 {
 
       font-size: 27px;
 
-      line-height: 1.25;
-
       margin-bottom: 14px;
-
     }
 
     .card p {
@@ -336,19 +286,17 @@
       line-height: 1.75;
 
       font-size: 18px;
-
     }
 
-    /* =====================================================
+    /* =========================================
        FECHAS
-    ===================================================== */
+    ========================================= */
 
     .fecha-card {
 
       position: relative;
 
       overflow: hidden;
-
     }
 
     .fecha-card::after {
@@ -364,7 +312,6 @@
       font-size: 30px;
 
       opacity: 0.25;
-
     }
 
     .fecha {
@@ -378,21 +325,13 @@
       text-transform: uppercase;
 
       margin-bottom: 10px;
-
-      padding-right: 45px;
-
     }
 
     .fecha-titulo {
 
       font-size: 28px;
 
-      line-height: 1.3;
-
       margin-bottom: 12px;
-
-      padding-right: 25px;
-
     }
 
     .fecha-texto {
@@ -402,12 +341,11 @@
       line-height: 1.7;
 
       font-size: 17px;
-
     }
 
-    /* =====================================================
+    /* =========================================
        TIMELINE
-    ===================================================== */
+    ========================================= */
 
     .timeline {
 
@@ -418,7 +356,6 @@
       border-left:
         1px solid
         #713b4d;
-
     }
 
     .timeline-item {
@@ -426,13 +363,11 @@
       margin-bottom: 45px;
 
       position: relative;
-
     }
 
     .timeline-item:last-child {
 
       margin-bottom: 0;
-
     }
 
     .timeline-item::before {
@@ -452,7 +387,6 @@
       background: #120b11;
 
       padding: 2px;
-
     }
 
     .timeline-date {
@@ -463,22 +397,16 @@
 
       letter-spacing: 3px;
 
-      line-height: 1.5;
-
       margin-bottom: 9px;
 
       text-transform: uppercase;
-
     }
 
     .timeline-item h2 {
 
       font-size: 28px;
 
-      line-height: 1.3;
-
       margin-bottom: 12px;
-
     }
 
     .timeline-item p {
@@ -488,12 +416,11 @@
       line-height: 1.75;
 
       font-size: 17px;
-
     }
 
-    /* =====================================================
-       FOTO HISTORIA
-    ===================================================== */
+    /* =========================================
+       FOTO EN HISTORIA
+    ========================================= */
 
     .historia-foto {
 
@@ -528,12 +455,110 @@
           0,
           0.30
         );
-
     }
 
-    /* =====================================================
+    /* =========================================
+       AGREGAR CAPÍTULO
+    ========================================= */
+
+    .agregar-capitulo-card {
+
+      margin-top: 22px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(
+            215,
+            91,
+            125,
+            0.12
+          ),
+          rgba(
+            255,
+            255,
+            255,
+            0.035
+          )
+        );
+
+      border:
+        1px solid
+        rgba(
+          215,
+          91,
+          125,
+          0.30
+        );
+    }
+
+    .agregar-capitulo-icon {
+
+      font-size: 45px;
+
+      margin-bottom: 12px;
+    }
+
+    .agregar-capitulo-card h3 {
+
+      font-size: 25px;
+
+      margin-bottom: 10px;
+    }
+
+    .agregar-capitulo-card > p {
+
+      color: #cfc6ca;
+
+      font-size: 16px;
+
+      line-height: 1.6;
+
+      margin-bottom: 22px;
+    }
+
+    .capitulo-form {
+
+      display: none;
+
+      margin-top: 25px;
+
+      text-align: left;
+    }
+
+    .capitulo-form.active {
+
+      display: block;
+    }
+
+    #seleccionar-capitulo-foto {
+
+      width: 100%;
+
+      margin-bottom: 5px;
+    }
+
+    #capitulo-preview {
+
+      margin-top: 20px;
+    }
+
+    #capitulo-preview img {
+
+      width: 100%;
+
+      max-height: 350px;
+
+      object-fit: cover;
+
+      display: block;
+    }
+
+    /* =========================================
        GALERIA
-    ===================================================== */
+    ========================================= */
 
     .gallery-placeholder {
 
@@ -542,11 +567,10 @@
       grid-template-columns:
         repeat(
           2,
-          minmax(0, 1fr)
+          1fr
         );
 
       gap: 15px;
-
     }
 
     .photo-box {
@@ -587,12 +611,11 @@
       font-size: 16px;
 
       overflow: hidden;
-
     }
 
-    /* =====================================================
-       TARJETA FOTO
-    ===================================================== */
+    /* =========================================
+       TARJETA DE FOTO
+    ========================================= */
 
     .photo-card {
 
@@ -611,7 +634,6 @@
           255,
           0.035
         );
-
     }
 
     .photo-card img {
@@ -623,7 +645,6 @@
       object-fit: cover;
 
       display: block;
-
     }
 
     .photo-info {
@@ -634,7 +655,6 @@
         20px;
 
       text-align: left;
-
     }
 
     .photo-title {
@@ -643,10 +663,7 @@
 
       font-size: 20px;
 
-      line-height: 1.3;
-
       margin-bottom: 7px;
-
     }
 
     .photo-description {
@@ -656,12 +673,11 @@
       font-size: 16px;
 
       line-height: 1.6;
-
     }
 
-    /* =====================================================
-       AGREGAR RECUERDO
-    ===================================================== */
+    /* =========================================
+       BOTON AGREGAR RECUERDO
+    ========================================= */
 
     .upload-card {
 
@@ -696,7 +712,6 @@
       padding:
         28px
         22px;
-
     }
 
     .upload-icon {
@@ -704,17 +719,13 @@
       font-size: 45px;
 
       margin-bottom: 12px;
-
     }
 
     .upload-card h3 {
 
       font-size: 25px;
 
-      line-height: 1.3;
-
       margin-bottom: 10px;
-
     }
 
     .upload-card p {
@@ -726,7 +737,6 @@
       line-height: 1.6;
 
       margin-bottom: 22px;
-
     }
 
     .upload-button {
@@ -750,6 +760,11 @@
         14px
         25px;
 
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-size: 17px;
 
       cursor: pointer;
@@ -766,14 +781,12 @@
         );
 
       transition: 0.25s;
-
     }
 
     .upload-button:hover {
 
       transform:
         translateY(-2px);
-
     }
 
     .upload-button:disabled {
@@ -785,18 +798,16 @@
 
       transform:
         none;
-
     }
 
     #foto-input {
 
       display: none;
-
     }
 
-    /* =====================================================
-       FORMULARIO FOTO
-    ===================================================== */
+    /* =========================================
+       FORMULARIO FOTOS
+    ========================================= */
 
     .upload-form {
 
@@ -805,13 +816,11 @@
       margin-top: 25px;
 
       text-align: left;
-
     }
 
     .upload-form.active {
 
       display: block;
-
     }
 
     .form-label {
@@ -825,7 +834,6 @@
       margin-bottom: 8px;
 
       margin-top: 17px;
-
     }
 
     .form-input,
@@ -858,12 +866,14 @@
         14px
         15px;
 
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-size: 16px;
 
       outline: none;
-
-      -webkit-appearance: none;
-
     }
 
     .form-input:focus,
@@ -876,7 +886,6 @@
           125,
           0.70
         );
-
     }
 
     .form-textarea {
@@ -884,7 +893,6 @@
       min-height: 110px;
 
       resize: vertical;
-
     }
 
     .preview {
@@ -905,13 +913,11 @@
           255,
           0.15
         );
-
     }
 
     .preview.active {
 
       display: block;
-
     }
 
     .preview img {
@@ -923,7 +929,6 @@
       object-fit: cover;
 
       display: block;
-
     }
 
     .form-buttons {
@@ -933,7 +938,6 @@
       gap: 10px;
 
       margin-top: 22px;
-
     }
 
     .save-button,
@@ -949,10 +953,14 @@
         13px
         18px;
 
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-size: 16px;
 
       cursor: pointer;
-
     }
 
     .save-button {
@@ -961,7 +969,6 @@
         #d75b7d;
 
       color: white;
-
     }
 
     .save-button:disabled {
@@ -970,7 +977,6 @@
 
       cursor:
         not-allowed;
-
     }
 
     .cancel-button {
@@ -993,7 +999,6 @@
           255,
           0.12
         );
-
     }
 
     .upload-status {
@@ -1009,15 +1014,11 @@
       text-align: center;
 
       font-size: 15px;
-
-      line-height: 1.5;
-
     }
 
     .upload-status.show {
 
       display: block;
-
     }
 
     .upload-status.success {
@@ -1041,7 +1042,6 @@
           120,
           0.25
         );
-
     }
 
     .upload-status.error {
@@ -1065,17 +1065,15 @@
           90,
           0.25
         );
-
     }
 
-    /* =====================================================
+    /* =========================================
        CARTAS
-    ===================================================== */
+    ========================================= */
 
     .cartas-section {
 
       margin-top: 90px;
-
     }
 
     .cartas-header {
@@ -1083,7 +1081,6 @@
       text-align: center;
 
       margin-bottom: 35px;
-
     }
 
     .cartas-icon {
@@ -1091,17 +1088,13 @@
       font-size: 55px;
 
       margin-bottom: 15px;
-
     }
 
     .cartas-header h2 {
 
       font-size: 38px;
 
-      line-height: 1.2;
-
       margin-bottom: 12px;
-
     }
 
     .cartas-header p {
@@ -1115,7 +1108,6 @@
       max-width: 650px;
 
       margin: auto;
-
     }
 
     .carta-escribir {
@@ -1151,17 +1143,13 @@
       padding:
         32px
         25px;
-
     }
 
     .carta-escribir h3 {
 
       font-size: 26px;
 
-      line-height: 1.3;
-
       margin-bottom: 10px;
-
     }
 
     .carta-escribir p {
@@ -1173,7 +1161,6 @@
       line-height: 1.6;
 
       margin-bottom: 22px;
-
     }
 
     .carta-button {
@@ -1195,6 +1182,11 @@
 
       color: white;
 
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-size: 17px;
 
       cursor: pointer;
@@ -1209,7 +1201,12 @@
           125,
           0.20
         );
+    }
 
+    .carta-button:hover {
+
+      transform:
+        translateY(-2px);
     }
 
     .carta-form {
@@ -1219,13 +1216,11 @@
       margin-top: 25px;
 
       text-align: left;
-
     }
 
     .carta-form.active {
 
       display: block;
-
     }
 
     .carta-label {
@@ -1239,7 +1234,6 @@
       margin-bottom: 8px;
 
       margin-top: 18px;
-
     }
 
     .carta-input,
@@ -1272,12 +1266,14 @@
         14px
         15px;
 
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-size: 17px;
 
       outline: none;
-
-      -webkit-appearance: none;
-
     }
 
     .carta-input:focus,
@@ -1290,7 +1286,6 @@
           125,
           0.70
         );
-
     }
 
     .carta-textarea {
@@ -1300,7 +1295,6 @@
       resize: vertical;
 
       line-height: 1.7;
-
     }
 
     .carta-form-buttons {
@@ -1310,7 +1304,6 @@
       gap: 10px;
 
       margin-top: 22px;
-
     }
 
     .guardar-carta,
@@ -1326,10 +1319,14 @@
         14px
         18px;
 
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-size: 16px;
 
       cursor: pointer;
-
     }
 
     .guardar-carta {
@@ -1338,7 +1335,6 @@
         #d75b7d;
 
       color: white;
-
     }
 
     .guardar-carta:disabled {
@@ -1347,7 +1343,6 @@
 
       cursor:
         not-allowed;
-
     }
 
     .cancelar-carta {
@@ -1370,7 +1365,6 @@
           255,
           0.12
         );
-
     }
 
     .carta-status {
@@ -1386,13 +1380,11 @@
       text-align: center;
 
       font-size: 15px;
-
     }
 
     .carta-status.show {
 
       display: block;
-
     }
 
     .carta-status.success {
@@ -1416,7 +1408,6 @@
           120,
           0.25
         );
-
     }
 
     .carta-status.error {
@@ -1440,17 +1431,15 @@
           90,
           0.25
         );
-
     }
 
-    /* =====================================================
+    /* =========================================
        CARTA GUARDADA
-    ===================================================== */
+    ========================================= */
 
     .cartas-container {
 
       margin-top: 35px;
-
     }
 
     .carta-guardada {
@@ -1484,8 +1473,8 @@
 
       transition:
         transform 0.25s ease,
-        border-color 0.25s ease;
-
+        border-color 0.25s ease,
+        background 0.25s ease;
     }
 
     .carta-guardada::before {
@@ -1501,7 +1490,6 @@
       font-size: 35px;
 
       opacity: 0.20;
-
     }
 
     .carta-guardada:hover {
@@ -1516,7 +1504,12 @@
           125,
           0.55
         );
+    }
 
+    .carta-guardada:active {
+
+      transform:
+        scale(0.985);
     }
 
     .carta-fecha {
@@ -1530,19 +1523,15 @@
       text-transform: uppercase;
 
       margin-bottom: 10px;
-
     }
 
     .carta-titulo {
 
       font-size: 28px;
 
-      line-height: 1.3;
-
       margin-bottom: 12px;
 
       padding-right: 45px;
-
     }
 
     .carta-autor {
@@ -1552,7 +1541,6 @@
       font-size: 14px;
 
       margin-bottom: 22px;
-
     }
 
     .carta-contenido {
@@ -1574,7 +1562,6 @@
       -webkit-box-orient: vertical;
 
       overflow: hidden;
-
     }
 
     .sin-cartas {
@@ -1586,12 +1573,11 @@
       padding:
         30px
         20px;
-
     }
 
-    /* =====================================================
+    /* =========================================
        MODAL CARTA
-    ===================================================== */
+    ========================================= */
 
     .carta-modal {
 
@@ -1630,7 +1616,6 @@
       transition:
         opacity 0.35s ease,
         visibility 0.35s ease;
-
     }
 
     .carta-modal.active {
@@ -1638,7 +1623,6 @@
       opacity: 1;
 
       visibility: visible;
-
     }
 
     .carta-modal-contenido {
@@ -1699,7 +1683,6 @@
           0.36,
           1
         );
-
     }
 
     .carta-modal.active
@@ -1708,7 +1691,6 @@
       transform:
         translateY(0)
         scale(1);
-
     }
 
     .carta-modal-cerrar {
@@ -1756,6 +1738,21 @@
 
       justify-content: center;
 
+      transition: 0.25s;
+    }
+
+    .carta-modal-cerrar:hover {
+
+      background:
+        rgba(
+          215,
+          91,
+          125,
+          0.25
+        );
+
+      transform:
+        rotate(90deg);
     }
 
     .carta-modal-icono {
@@ -1765,7 +1762,6 @@
       font-size: 55px;
 
       margin-bottom: 20px;
-
     }
 
     .carta-modal-fecha {
@@ -1781,7 +1777,6 @@
       text-transform: uppercase;
 
       margin-bottom: 15px;
-
     }
 
     .carta-modal-titulo {
@@ -1800,7 +1795,6 @@
       margin-bottom: 18px;
 
       color: white;
-
     }
 
     .carta-modal-autor {
@@ -1812,7 +1806,6 @@
       font-size: 15px;
 
       margin-bottom: 35px;
-
     }
 
     .carta-modal-separador {
@@ -1827,7 +1820,6 @@
         0
         auto
         35px;
-
     }
 
     .carta-modal-texto {
@@ -1843,18 +1835,16 @@
       font-style: italic;
 
       text-align: left;
-
     }
 
     body.carta-modal-abierta {
 
       overflow: hidden;
-
     }
 
-    /* =====================================================
+    /* =========================================
        FUTURO
-    ===================================================== */
+    ========================================= */
 
     .futuro {
 
@@ -1863,7 +1853,6 @@
       padding:
         50px
         25px;
-
     }
 
     .futuro-icon {
@@ -1871,17 +1860,13 @@
       font-size: 50px;
 
       margin-bottom: 20px;
-
     }
 
     .futuro h2 {
 
       font-size: 31px;
 
-      line-height: 1.3;
-
       margin-bottom: 18px;
-
     }
 
     .futuro p {
@@ -1889,12 +1874,11 @@
       max-width: 600px;
 
       margin: auto;
-
     }
 
-    /* =====================================================
-       LOGOUT
-    ===================================================== */
+    /* =========================================
+       CERRAR SESION
+    ========================================= */
 
     .logout {
 
@@ -1927,12 +1911,11 @@
       font-size: 15px;
 
       cursor: pointer;
-
     }
 
-    /* =====================================================
+    /* =========================================
        FOOTER
-    ===================================================== */
+    ========================================= */
 
     .footer {
 
@@ -1943,12 +1926,11 @@
       color: #746b70;
 
       font-size: 14px;
-
     }
 
-    /* =====================================================
-       CORAZONES FLOTANTES
-    ===================================================== */
+    /* =========================================
+       CORAZONES
+    ========================================= */
 
     .floating-heart {
 
@@ -1967,7 +1949,6 @@
       pointer-events: none;
 
       z-index: -1;
-
     }
 
     .f1 {
@@ -1975,7 +1956,6 @@
       left: 10%;
 
       animation-delay: 1s;
-
     }
 
     .f2 {
@@ -1983,7 +1963,6 @@
       left: 30%;
 
       animation-delay: 4s;
-
     }
 
     .f3 {
@@ -1991,7 +1970,6 @@
       left: 65%;
 
       animation-delay: 2s;
-
     }
 
     .f4 {
@@ -1999,7 +1977,6 @@
       left: 85%;
 
       animation-delay: 6s;
-
     }
 
     @keyframes floatHeart {
@@ -2010,19 +1987,16 @@
           translateY(0);
 
         opacity: 0;
-
       }
 
       15% {
 
         opacity: 0.5;
-
       }
 
       85% {
 
         opacity: 0.15;
-
       }
 
       100% {
@@ -2031,258 +2005,67 @@
           translateY(-110vh);
 
         opacity: 0;
-
       }
 
     }
 
-    /* =====================================================
+    /* =========================================
        CELULAR
-    ===================================================== */
+    ========================================= */
 
     @media (max-width: 600px) {
 
       .container {
 
-        width: 100%;
-
         padding:
-          22px
-          16px
+          25px
+          17px
           50px;
-
-      }
-
-      .top {
-
-        padding-top: 15px;
-
       }
 
       .heart {
 
-        font-size: 55px;
-
-        margin-bottom: 15px;
-
-      }
-
-      .subtitle {
-
-        font-size: 11px;
-
-        letter-spacing: 3px;
-
-      }
-
-      h1 {
-
-        font-size: 44px;
-
-        line-height: 1.05;
-
-        margin-bottom: 12px;
-
-      }
-
-      .names {
-
-        font-size: 20px;
-
-        margin-bottom: 32px;
-
+        font-size: 60px;
       }
 
       .intro {
 
-        font-size: 17px;
-
-        line-height: 1.7;
-
+        font-size: 18px;
       }
 
-      .line {
+      .names {
 
-        margin:
-          32px
-          auto;
-
+        font-size: 22px;
       }
 
-      /* -----------------------------------------
-         SECCIONES
-      ----------------------------------------- */
+      .card {
 
-      .section {
-
-        margin-top: 55px;
-
+        padding: 23px;
       }
 
       .section-title {
 
-        font-size: 30px;
-
-        line-height: 1.18;
-
-        margin-bottom: 20px;
-
+        font-size: 31px;
       }
 
-      .section-subtitle {
+      .gallery-placeholder {
 
-        font-size: 15px;
-
-        line-height: 1.55;
-
-        margin-bottom: 24px;
-
+        grid-template-columns: 1fr;
       }
 
-      /* -----------------------------------------
-         TARJETAS
-      ----------------------------------------- */
+      .photo-box {
 
-      .card {
-
-        padding:
-          21px
-          19px;
-
-        border-radius: 23px;
-
-        margin-bottom: 18px;
-
+        min-height: 160px;
       }
 
-      .memory-icon {
+      .photo-card {
 
-        font-size: 32px;
-
-        margin-bottom: 12px;
-
+        padding: 0;
       }
 
-      .card h2 {
+      .photo-card img {
 
-        font-size: 23px;
-
-        line-height: 1.3;
-
-        margin-bottom: 11px;
-
-      }
-
-      .card p {
-
-        font-size: 16px;
-
-        line-height: 1.7;
-
-      }
-
-      /* -----------------------------------------
-         FECHAS
-      ----------------------------------------- */
-
-      .fecha {
-
-        font-size: 11px;
-
-        letter-spacing: 2px;
-
-        line-height: 1.5;
-
-        padding-right: 35px;
-
-      }
-
-      .fecha-titulo {
-
-        font-size: 23px;
-
-        line-height: 1.3;
-
-        padding-right: 10px;
-
-      }
-
-      .fecha-texto {
-
-        font-size: 16px;
-
-        line-height: 1.65;
-
-      }
-
-      .fecha-card::after {
-
-        right: 17px;
-
-        top: 17px;
-
-        font-size: 24px;
-
-      }
-
-      /* -----------------------------------------
-         HISTORIA
-      ----------------------------------------- */
-
-      #historia-container {
-
-        padding:
-          21px
-          18px;
-
-      }
-
-      .timeline {
-
-        padding-left: 25px;
-
-      }
-
-      .timeline-item {
-
-        margin-bottom: 35px;
-
-      }
-
-      .timeline-item::before {
-
-        left: -36px;
-
-        font-size: 16px;
-
-      }
-
-      .timeline-date {
-
-        font-size: 10px;
-
-        letter-spacing: 2px;
-
-        line-height: 1.5;
-
-      }
-
-      .timeline-item h2 {
-
-        font-size: 23px;
-
-        line-height: 1.3;
-
-        margin-bottom: 10px;
-
-      }
-
-      .timeline-item p {
-
-        font-size: 16px;
-
-        line-height: 1.7;
-
+        height: 360px;
       }
 
       .historia-foto {
@@ -2290,213 +2073,45 @@
         max-height: 380px;
 
         border-radius: 16px;
-
-      }
-
-      /* -----------------------------------------
-         GALERIA
-      ----------------------------------------- */
-
-      .gallery-placeholder {
-
-        grid-template-columns: 1fr;
-
-        gap: 13px;
-
-      }
-
-      .photo-box {
-
-        min-height: 150px;
-
-        font-size: 15px;
-
-      }
-
-      .photo-card {
-
-        padding: 0;
-
-      }
-
-      .photo-card img {
-
-        height: 360px;
-
-      }
-
-      .photo-info {
-
-        padding:
-          16px
-          17px
-          18px;
-
-      }
-
-      .photo-title {
-
-        font-size: 19px;
-
-      }
-
-      .photo-description {
-
-        font-size: 15px;
-
-      }
-
-      /* -----------------------------------------
-         SUBIR FOTO
-      ----------------------------------------- */
-
-      .upload-card {
-
-        padding:
-          25px
-          18px;
-
-      }
-
-      .upload-icon {
-
-        font-size: 40px;
-
-      }
-
-      .upload-card h3 {
-
-        font-size: 23px;
-
-      }
-
-      .upload-card p {
-
-        font-size: 15px;
-
-      }
-
-      .upload-button {
-
-        width: 100%;
-
-        font-size: 16px;
-
-        padding:
-          13px
-          20px;
-
       }
 
       .form-buttons {
 
         flex-direction: column;
-
-      }
-
-      .save-button,
-      .cancel-button {
-
-        width: 100%;
-
-      }
-
-      /* -----------------------------------------
-         CARTAS
-      ----------------------------------------- */
-
-      .cartas-section {
-
-        margin-top: 65px;
-
-      }
-
-      .cartas-header {
-
-        margin-bottom: 25px;
-
-      }
-
-      .cartas-icon {
-
-        font-size: 45px;
-
-        margin-bottom: 12px;
-
       }
 
       .cartas-header h2 {
 
-        font-size: 30px;
-
+        font-size: 31px;
       }
 
-      .cartas-header p {
-
-        font-size: 15px;
-
-        line-height: 1.6;
-
-      }
-
-      .carta-escribir {
+      .carta-guardada {
 
         padding:
-          25px
-          18px;
-
+          28px
+          22px;
       }
 
-      .carta-escribir h3 {
+      .carta-titulo {
 
-        font-size: 22px;
-
+        font-size: 25px;
       }
 
-      .carta-escribir p {
+      .carta-contenido {
 
-        font-size: 15px;
-
-      }
-
-      .carta-button {
-
-        width: 100%;
-
-        font-size: 16px;
-
+        font-size: 17px;
       }
 
       .carta-form-buttons {
 
         flex-direction: column;
-
       }
-
-      .carta-titulo {
-
-        font-size: 23px;
-
-      }
-
-      .carta-contenido {
-
-        font-size: 16px;
-
-        line-height: 1.8;
-
-      }
-
-      /* -----------------------------------------
-         MODAL CARTA
-      ----------------------------------------- */
 
       .carta-modal {
 
         padding: 10px;
 
         align-items: center;
-
       }
 
       .carta-modal-contenido {
@@ -2506,118 +2121,61 @@
         max-height: 94vh;
 
         padding:
-          40px
-          20px
-          30px;
+          42px
+          22px
+          35px;
 
-        border-radius: 23px;
-
+        border-radius: 24px;
       }
 
       .carta-modal-cerrar {
 
-        right: 11px;
+        right: 12px;
 
-        top: 11px;
+        top: 12px;
 
-        width: 39px;
+        width: 40px;
 
-        height: 39px;
-
+        height: 40px;
       }
 
       .carta-modal-icono {
 
-        font-size: 45px;
+        font-size: 48px;
 
-        margin-bottom: 13px;
-
-      }
-
-      .carta-modal-fecha {
-
-        font-size: 10px;
-
-        letter-spacing: 2px;
-
+        margin-bottom: 15px;
       }
 
       .carta-modal-titulo {
 
-        font-size: 32px;
-
-        line-height: 1.15;
+        font-size: 34px;
 
         padding:
           0
-          20px;
-
+          25px;
       }
 
       .carta-modal-autor {
 
-        font-size: 14px;
-
-        margin-bottom: 25px;
-
+        margin-bottom: 28px;
       }
 
       .carta-modal-separador {
 
-        margin-bottom: 25px;
-
+        margin-bottom: 28px;
       }
 
       .carta-modal-texto {
 
-        font-size: 17px;
+        font-size: 18px;
 
-        line-height: 1.85;
-
+        line-height: 1.9;
       }
 
-      /* -----------------------------------------
-         FUTURO
-      ----------------------------------------- */
-
-      .futuro {
+      .agregar-capitulo-card {
 
         padding:
-          35px
-          18px;
-
-      }
-
-      .futuro-icon {
-
-        font-size: 42px;
-
-      }
-
-      .futuro h2 {
-
-        font-size: 25px;
-
-      }
-
-      .futuro p {
-
-        font-size: 16px;
-
-      }
-
-      .logout {
-
-        margin-top: 45px;
-
-      }
-
-      .footer {
-
-        margin-top: 45px;
-
-        font-size: 13px;
-
+          23px;
       }
 
     }
@@ -2628,9 +2186,9 @@
 
 <body>
 
-  <!-- =====================================================
-       MODAL CARTA
-  ===================================================== -->
+  <!-- =========================================
+       MODAL CARTA COMPLETA
+  ========================================= -->
 
   <div
     class="carta-modal"
@@ -2681,20 +2239,23 @@
 
   </div>
 
-  <!-- =====================================================
+  <!-- =========================================
        CORAZONES
-  ===================================================== -->
+  ========================================= -->
 
   <div class="floating-heart f1">♡</div>
+
   <div class="floating-heart f2">♡</div>
+
   <div class="floating-heart f3">♡</div>
+
   <div class="floating-heart f4">♡</div>
 
   <div class="container">
 
-    <!-- ===================================================
+    <!-- =========================================
          ENCABEZADO
-    =================================================== -->
+    ========================================= -->
 
     <header class="top">
 
@@ -2731,9 +2292,9 @@
 
     <div class="line"></div>
 
-    <!-- ===================================================
+    <!-- =========================================
          NUESTROS RECUERDOS
-    =================================================== -->
+    ========================================= -->
 
     <section class="section">
 
@@ -2756,9 +2317,11 @@
         </h2>
 
         <p>
+
           Aquí iremos colocando nuestras fotos,
           historias, momentos especiales y todas
           esas cosas que no queremos olvidar.
+
         </p>
 
       </div>
@@ -2774,19 +2337,21 @@
         </h2>
 
         <p>
+
           Este espacio es solamente nuestro.
           Un pequeño rincón para recordar todo lo que
           hemos vivido juntos y todo lo que todavía
           nos falta por vivir.
+
         </p>
 
       </div>
 
     </section>
 
-    <!-- ===================================================
+    <!-- =========================================
          FECHAS
-    =================================================== -->
+    ========================================= -->
 
     <section class="section">
 
@@ -2795,7 +2360,9 @@
       </h2>
 
       <div class="section-subtitle">
+
         Porque algunas fechas merecen quedarse para siempre.
+
       </div>
 
       <div id="fechas-container">
@@ -2811,7 +2378,9 @@
           </div>
 
           <div class="fecha-texto">
+
             Estamos preparando nuestros momentos especiales...
+
           </div>
 
         </div>
@@ -2820,9 +2389,9 @@
 
     </section>
 
-    <!-- ===================================================
+    <!-- =========================================
          NUESTRA HISTORIA
-    =================================================== -->
+    ========================================= -->
 
     <section
       class="section"
@@ -2834,7 +2403,9 @@
       </h2>
 
       <div class="section-subtitle">
+
         Cada capítulo de nosotros merece ser recordado. ❤️
+
       </div>
 
       <div
@@ -2864,11 +2435,143 @@
 
       </div>
 
+      <!-- =========================================
+           AGREGAR CAPÍTULO
+      ========================================= -->
+
+      <div class="card agregar-capitulo-card">
+
+        <div class="agregar-capitulo-icon">
+          📖❤️
+        </div>
+
+        <h3>
+          Agregar un capítulo
+        </h3>
+
+        <p>
+          Guarda otro momento importante de nuestra historia.
+        </p>
+
+        <button
+          class="upload-button"
+          id="abrir-capitulo"
+          type="button"
+        >
+          + Agregar capítulo
+        </button>
+
+        <input
+          type="file"
+          id="capitulo-foto-input"
+          accept="image/*"
+        >
+
+        <div
+          class="capitulo-form"
+          id="capitulo-form"
+        >
+
+          <label
+            class="form-label"
+            for="capitulo-fecha"
+          >
+            📅 Fecha
+          </label>
+
+          <input
+            class="form-input"
+            id="capitulo-fecha"
+            type="date"
+          >
+
+          <label
+            class="form-label"
+            for="capitulo-titulo"
+          >
+            ❤️ Título del capítulo
+          </label>
+
+          <input
+            class="form-input"
+            id="capitulo-titulo"
+            type="text"
+            maxlength="150"
+            placeholder="Ej. El día que nos conocimos ❤️"
+          >
+
+          <label
+            class="form-label"
+            for="capitulo-historia"
+          >
+            💌 Nuestra historia
+          </label>
+
+          <textarea
+            class="form-textarea"
+            id="capitulo-historia"
+            maxlength="5000"
+            placeholder="Cuéntanos qué pasó en este momento..."
+          ></textarea>
+
+          <label class="form-label">
+            📸 Foto del capítulo
+          </label>
+
+          <button
+            class="cancel-button"
+            id="seleccionar-capitulo-foto"
+            type="button"
+          >
+            📷 Seleccionar foto
+          </button>
+
+          <div
+            class="preview"
+            id="capitulo-preview"
+          >
+
+            <img
+              id="capitulo-preview-img"
+              alt="Vista previa del capítulo"
+            >
+
+          </div>
+
+          <div class="form-buttons">
+
+            <button
+              class="cancel-button"
+              id="cancelar-capitulo"
+              type="button"
+            >
+              Cancelar
+            </button>
+
+            <button
+              class="save-button"
+              id="guardar-capitulo"
+              type="button"
+            >
+              ❤️ Guardar capítulo
+            </button>
+
+          </div>
+
+          <div
+            class="upload-status"
+            id="capitulo-status"
+          ></div>
+
+        </div>
+
+      </div>
+
     </section>
 
-    <!-- ===================================================
+    <!-- =========================================
          NUESTROS MOMENTOS
-    =================================================== -->
+    ========================================= -->
 
     <section class="section">
 
@@ -2877,7 +2580,9 @@
       </h2>
 
       <div class="section-subtitle">
+
         Aquí vamos a guardar nuestras fotos.
+
       </div>
 
       <div class="card upload-card">
@@ -2891,8 +2596,10 @@
         </h3>
 
         <p>
+
           Guarda una foto especial de nosotros
           directamente desde tu teléfono.
+
         </p>
 
         <button
@@ -2900,7 +2607,9 @@
           id="abrir-upload"
           type="button"
         >
+
           + Agregar recuerdo
+
         </button>
 
         <input
@@ -2930,7 +2639,9 @@
             class="form-label"
             for="titulo-input"
           >
+
             Título ❤️
+
           </label>
 
           <input
@@ -2945,7 +2656,9 @@
             class="form-label"
             for="descripcion-input"
           >
+
             Cuéntanos sobre este momento 💌
+
           </label>
 
           <textarea
@@ -2962,7 +2675,9 @@
               id="cancelar-upload"
               type="button"
             >
+
               Cancelar
+
             </button>
 
             <button
@@ -2970,7 +2685,9 @@
               id="guardar-upload"
               type="button"
             >
+
               ❤️ Guardar recuerdo
+
             </button>
 
           </div>
@@ -3003,9 +2720,9 @@
 
     </section>
 
-    <!-- ===================================================
-         CARTAS
-    =================================================== -->
+    <!-- =========================================
+         CARTAS PARA TI
+    ========================================= -->
 
     <section
       class="cartas-section"
@@ -3043,8 +2760,10 @@
         </h3>
 
         <p>
+
           Escribe algo que quieras que quede guardado
           en nuestra historia.
+
         </p>
 
         <button
@@ -3052,7 +2771,9 @@
           id="abrir-carta"
           type="button"
         >
+
           ✍️ Escribir una carta
+
         </button>
 
         <div
@@ -3064,7 +2785,9 @@
             class="carta-label"
             for="carta-titulo"
           >
+
             Título de la carta ❤️
+
           </label>
 
           <input
@@ -3079,7 +2802,9 @@
             class="carta-label"
             for="carta-contenido"
           >
+
             Escribe tu carta 💌
+
           </label>
 
           <textarea
@@ -3096,7 +2821,9 @@
               id="cancelar-carta"
               type="button"
             >
+
               Cancelar
+
             </button>
 
             <button
@@ -3104,7 +2831,9 @@
               id="guardar-carta"
               type="button"
             >
+
               ❤️ Guardar carta
+
             </button>
 
           </div>
@@ -3137,9 +2866,9 @@
 
     </section>
 
-    <!-- ===================================================
+    <!-- =========================================
          FUTURO
-    =================================================== -->
+    ========================================= -->
 
     <section class="section">
 
@@ -3169,19 +2898,23 @@
 
     </section>
 
-    <!-- ===================================================
+    <!-- =========================================
          CERRAR SESIÓN
-    =================================================== -->
+    ========================================= -->
 
     <button
       class="logout"
       onclick="cerrarSesion()"
     >
+
       Cerrar sesión
+
     </button>
 
     <div class="footer">
+
       Hecho con ❤️ para nuestra historia
+
     </div>
 
   </div>
@@ -3204,94 +2937,225 @@
         SUPABASE_KEY
       );
 
+
     /* =====================================================
-       ELEMENTOS FOTOS
+       ELEMENTOS - FOTOS
     ===================================================== */
 
     const abrirUpload =
-      document.getElementById("abrir-upload");
+      document.getElementById(
+        "abrir-upload"
+      );
 
     const fotoInput =
-      document.getElementById("foto-input");
+      document.getElementById(
+        "foto-input"
+      );
 
     const uploadForm =
-      document.getElementById("upload-form");
+      document.getElementById(
+        "upload-form"
+      );
 
     const preview =
-      document.getElementById("preview");
+      document.getElementById(
+        "preview"
+      );
 
     const previewImg =
-      document.getElementById("preview-img");
+      document.getElementById(
+        "preview-img"
+      );
 
     const tituloInput =
-      document.getElementById("titulo-input");
+      document.getElementById(
+        "titulo-input"
+      );
 
     const descripcionInput =
-      document.getElementById("descripcion-input");
+      document.getElementById(
+        "descripcion-input"
+      );
 
     const guardarUpload =
-      document.getElementById("guardar-upload");
+      document.getElementById(
+        "guardar-upload"
+      );
 
     const cancelarUpload =
-      document.getElementById("cancelar-upload");
+      document.getElementById(
+        "cancelar-upload"
+      );
 
     const uploadStatus =
-      document.getElementById("upload-status");
+      document.getElementById(
+        "upload-status"
+      );
 
-    let archivoSeleccionado = null;
+    let archivoSeleccionado =
+      null;
+
 
     /* =====================================================
-       ELEMENTOS CARTAS
+       ELEMENTOS - CARTAS
     ===================================================== */
 
     const abrirCarta =
-      document.getElementById("abrir-carta");
+      document.getElementById(
+        "abrir-carta"
+      );
 
     const cartaForm =
-      document.getElementById("carta-form");
+      document.getElementById(
+        "carta-form"
+      );
 
     const cartaTitulo =
-      document.getElementById("carta-titulo");
+      document.getElementById(
+        "carta-titulo"
+      );
 
     const cartaContenido =
-      document.getElementById("carta-contenido");
+      document.getElementById(
+        "carta-contenido"
+      );
 
     const guardarCarta =
-      document.getElementById("guardar-carta");
+      document.getElementById(
+        "guardar-carta"
+      );
 
     const cancelarCarta =
-      document.getElementById("cancelar-carta");
+      document.getElementById(
+        "cancelar-carta"
+      );
 
     const cartaStatus =
-      document.getElementById("carta-status");
+      document.getElementById(
+        "carta-status"
+      );
 
     const cartasContainer =
-      document.getElementById("cartas-container");
+      document.getElementById(
+        "cartas-container"
+      );
+
 
     /* =====================================================
-       ELEMENTOS MODAL
+       ELEMENTOS - MODAL CARTA
     ===================================================== */
 
     const cartaModal =
-      document.getElementById("carta-modal");
+      document.getElementById(
+        "carta-modal"
+      );
 
     const cerrarCartaModal =
-      document.getElementById("cerrar-carta-modal");
+      document.getElementById(
+        "cerrar-carta-modal"
+      );
 
     const modalCartaFecha =
-      document.getElementById("modal-carta-fecha");
+      document.getElementById(
+        "modal-carta-fecha"
+      );
 
     const modalCartaTitulo =
-      document.getElementById("modal-carta-titulo");
+      document.getElementById(
+        "modal-carta-titulo"
+      );
 
     const modalCartaAutor =
-      document.getElementById("modal-carta-autor");
+      document.getElementById(
+        "modal-carta-autor"
+      );
 
     const modalCartaTexto =
-      document.getElementById("modal-carta-texto");
+      document.getElementById(
+        "modal-carta-texto"
+      );
+
 
     /* =====================================================
-       ABRIR FOTO
+       ELEMENTOS - HISTORIA
+    ===================================================== */
+
+    const historiaContainer =
+      document.getElementById(
+        "historia-container"
+      );
+
+
+    /* =====================================================
+       ELEMENTOS - AGREGAR CAPÍTULO
+    ===================================================== */
+
+    const abrirCapitulo =
+      document.getElementById(
+        "abrir-capitulo"
+      );
+
+    const capituloForm =
+      document.getElementById(
+        "capitulo-form"
+      );
+
+    const capituloFecha =
+      document.getElementById(
+        "capitulo-fecha"
+      );
+
+    const capituloTitulo =
+      document.getElementById(
+        "capitulo-titulo"
+      );
+
+    const capituloHistoria =
+      document.getElementById(
+        "capitulo-historia"
+      );
+
+    const capituloFotoInput =
+      document.getElementById(
+        "capitulo-foto-input"
+      );
+
+    const seleccionarCapituloFoto =
+      document.getElementById(
+        "seleccionar-capitulo-foto"
+      );
+
+    const capituloPreview =
+      document.getElementById(
+        "capitulo-preview"
+      );
+
+    const capituloPreviewImg =
+      document.getElementById(
+        "capitulo-preview-img"
+      );
+
+    const guardarCapitulo =
+      document.getElementById(
+        "guardar-capitulo"
+      );
+
+    const cancelarCapitulo =
+      document.getElementById(
+        "cancelar-capitulo"
+      );
+
+    const capituloStatus =
+      document.getElementById(
+        "capitulo-status"
+      );
+
+    let capituloFotoSeleccionada =
+      null;
+
+
+    /* =====================================================
+       ABRIR SELECTOR DE FOTO
     ===================================================== */
 
     abrirUpload.addEventListener(
@@ -3302,6 +3166,7 @@
 
       }
     );
+
 
     /* =====================================================
        SELECCIONAR FOTO
@@ -3319,7 +3184,9 @@
         }
 
         if (
-          !archivo.type.startsWith("image/")
+          !archivo.type.startsWith(
+            "image/"
+          )
         ) {
 
           mostrarEstado(
@@ -3327,7 +3194,8 @@
             "error"
           );
 
-          fotoInput.value = "";
+          fotoInput.value =
+            "";
 
           return;
 
@@ -3343,7 +3211,8 @@
             "error"
           );
 
-          fotoInput.value = "";
+          fotoInput.value =
+            "";
 
           return;
 
@@ -3386,14 +3255,20 @@
       }
     );
 
+
     /* =====================================================
-       LIMPIAR FORMULARIO FOTO
+       CANCELAR FOTO
     ===================================================== */
 
     cancelarUpload.addEventListener(
       "click",
-      limpiarFormulario
+      function() {
+
+        limpiarFormulario();
+
+      }
     );
+
 
     function limpiarFormulario() {
 
@@ -3428,6 +3303,7 @@
 
     }
 
+
     /* =====================================================
        ESTADO FOTO
     ===================================================== */
@@ -3445,6 +3321,7 @@
         tipo;
 
     }
+
 
     /* =====================================================
        ESTADO CARTA
@@ -3464,8 +3341,9 @@
 
     }
 
+
     /* =====================================================
-       ABRIR CARTA
+       ABRIR FORMULARIO CARTA
     ===================================================== */
 
     abrirCarta.addEventListener(
@@ -3487,14 +3365,20 @@
       }
     );
 
+
     /* =====================================================
        CANCELAR CARTA
     ===================================================== */
 
     cancelarCarta.addEventListener(
       "click",
-      limpiarCarta
+      function() {
+
+        limpiarCarta();
+
+      }
     );
+
 
     function limpiarCarta() {
 
@@ -3515,6 +3399,7 @@
         "";
 
     }
+
 
     /* =====================================================
        VERIFICAR SESIÓN
@@ -3578,6 +3463,7 @@
 
     }
 
+
     /* =====================================================
        CARGAR FECHAS
     ===================================================== */
@@ -3615,10 +3501,14 @@
 
         const respuesta =
           await fetch(
+
             SUPABASE_URL +
             "/rest/v1/fechas_especiales?select=*&activo=eq.true&order=fecha.asc",
+
             {
+
               headers: {
+
                 "apikey":
                   SUPABASE_KEY,
 
@@ -3628,8 +3518,11 @@
 
                 "Content-Type":
                   "application/json"
+
               }
+
             }
+
           );
 
         if (!respuesta.ok) {
@@ -3686,6 +3579,19 @@
                 "T00:00:00"
               );
 
+            const opciones = {
+
+              day:
+                "numeric",
+
+              month:
+                "long",
+
+              year:
+                "numeric"
+
+            };
+
             let fechaBonita =
               String(
                 fecha.fecha || ""
@@ -3700,11 +3606,7 @@
               fechaBonita =
                 fechaOriginal.toLocaleDateString(
                   "es-MX",
-                  {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric"
-                  }
+                  opciones
                 );
 
             }
@@ -3725,14 +3627,27 @@
               icono =
                 "🎂";
 
-            } else if (
+            }
+
+            if (
+              tipo === "aniversario"
+            ) {
+
+              icono =
+                "❤️";
+
+            }
+
+            if (
               tipo === "viaje"
             ) {
 
               icono =
                 "✈️";
 
-            } else if (
+            }
+
+            if (
               tipo === "especial"
             ) {
 
@@ -3839,8 +3754,9 @@
 
     }
 
+
     /* =====================================================
-       CARGAR HISTORIA
+       CARGAR NUESTRA HISTORIA
     ===================================================== */
 
     async function cargarHistoria() {
@@ -3887,6 +3803,11 @@
         timeline.className =
           "timeline";
 
+
+        /* =========================================
+           SIN CAPÍTULOS
+        ========================================= */
+
         if (
           !data ||
           data.length === 0
@@ -3930,6 +3851,11 @@
 
         }
 
+
+        /* =========================================
+           ORDENAR POR FECHA
+        ========================================= */
+
         data.sort(
           function(a, b) {
 
@@ -3937,15 +3863,21 @@
               !a.fecha &&
               !b.fecha
             ) {
+
               return 0;
+
             }
 
             if (!a.fecha) {
+
               return 1;
+
             }
 
             if (!b.fecha) {
+
               return -1;
+
             }
 
             return String(
@@ -3959,6 +3891,11 @@
           }
         );
 
+
+        /* =========================================
+           MOSTRAR CAPÍTULOS
+        ========================================= */
+
         data.forEach(
           capitulo => {
 
@@ -3969,6 +3906,11 @@
 
             item.className =
               "timeline-item";
+
+
+            /* ===================================
+               FECHA
+            =================================== */
 
             const fechaDiv =
               document.createElement(
@@ -4003,9 +3945,16 @@
                   fechaObjeto.toLocaleDateString(
                     "es-MX",
                     {
-                      day: "numeric",
-                      month: "long",
-                      year: "numeric"
+
+                      day:
+                        "numeric",
+
+                      month:
+                        "long",
+
+                      year:
+                        "numeric"
+
                     }
                   );
 
@@ -4024,6 +3973,11 @@
               fechaBonita ||
               "UN MOMENTO ESPECIAL";
 
+
+            /* ===================================
+               TITULO
+            =================================== */
+
             const titulo =
               document.createElement(
                 "h2"
@@ -4035,6 +3989,11 @@
                 capitulo.titulo ||
                 "Un capítulo de nosotros"
               );
+
+
+            /* ===================================
+               HISTORIA
+            =================================== */
 
             const texto =
               document.createElement(
@@ -4048,6 +4007,11 @@
               capitulo.contenido ||
               "";
 
+
+            /* ===================================
+               AGREGAR TEXTO
+            =================================== */
+
             item.appendChild(
               fechaDiv
             );
@@ -4060,6 +4024,11 @@
               texto
             );
 
+
+            /* ===================================
+               FOTO
+            =================================== */
+
             const foto =
               capitulo.foto_url ||
               capitulo.url ||
@@ -4067,7 +4036,9 @@
               capitulo.imagen ||
               "";
 
-            if (foto) {
+            if (
+              foto
+            ) {
 
               const imagen =
                 document.createElement(
@@ -4089,6 +4060,11 @@
 
               imagen.onerror =
                 function() {
+
+                  console.warn(
+                    "No se pudo cargar la foto:",
+                    foto
+                  );
 
                   this.remove();
 
@@ -4148,6 +4124,534 @@
 
     }
 
+
+    /* =====================================================
+       AGREGAR CAPÍTULO
+    ===================================================== */
+
+
+    /* =========================================
+       ABRIR FORMULARIO
+    ========================================= */
+
+    abrirCapitulo.addEventListener(
+      "click",
+      function() {
+
+        capituloForm.classList.add(
+          "active"
+        );
+
+        capituloStatus.className =
+          "upload-status";
+
+        capituloStatus.textContent =
+          "";
+
+        capituloTitulo.focus();
+
+      }
+    );
+
+
+    /* =========================================
+       SELECCIONAR FOTO
+    ========================================= */
+
+    seleccionarCapituloFoto.addEventListener(
+      "click",
+      function() {
+
+        capituloFotoInput.click();
+
+      }
+    );
+
+
+    /* =========================================
+       FOTO DEL CAPÍTULO
+    ========================================= */
+
+    capituloFotoInput.addEventListener(
+      "change",
+      function(event) {
+
+        const archivo =
+          event.target.files[0];
+
+        if (!archivo) {
+
+          return;
+
+        }
+
+
+        if (
+          !archivo.type.startsWith(
+            "image/"
+          )
+        ) {
+
+          mostrarEstadoCapitulo(
+            "Por favor selecciona una imagen.",
+            "error"
+          );
+
+          capituloFotoInput.value =
+            "";
+
+          return;
+
+        }
+
+
+        if (
+          archivo.size >
+          10 * 1024 * 1024
+        ) {
+
+          mostrarEstadoCapitulo(
+            "La foto es demasiado grande. Máximo 10 MB.",
+            "error"
+          );
+
+          capituloFotoInput.value =
+            "";
+
+          return;
+
+        }
+
+
+        capituloFotoSeleccionada =
+          archivo;
+
+
+        const reader =
+          new FileReader();
+
+
+        reader.onload =
+          function(e) {
+
+            capituloPreviewImg.src =
+              e.target.result;
+
+            capituloPreview.classList.add(
+              "active"
+            );
+
+          };
+
+
+        reader.readAsDataURL(
+          archivo
+        );
+
+      }
+    );
+
+
+    /* =========================================
+       CANCELAR CAPÍTULO
+    ========================================= */
+
+    cancelarCapitulo.addEventListener(
+      "click",
+      function() {
+
+        limpiarFormularioCapitulo();
+
+      }
+    );
+
+
+    /* =========================================
+       LIMPIAR FORMULARIO
+    ========================================= */
+
+    function limpiarFormularioCapitulo() {
+
+      capituloFotoSeleccionada =
+        null;
+
+      capituloFecha.value =
+        "";
+
+      capituloTitulo.value =
+        "";
+
+      capituloHistoria.value =
+        "";
+
+      capituloFotoInput.value =
+        "";
+
+      capituloPreviewImg.src =
+        "";
+
+      capituloPreview.classList.remove(
+        "active"
+      );
+
+      capituloForm.classList.remove(
+        "active"
+      );
+
+      capituloStatus.className =
+        "upload-status";
+
+      capituloStatus.textContent =
+        "";
+
+    }
+
+
+    /* =========================================
+       ESTADO CAPÍTULO
+    ========================================= */
+
+    function mostrarEstadoCapitulo(
+      mensaje,
+      tipo
+    ) {
+
+      capituloStatus.textContent =
+        mensaje;
+
+      capituloStatus.className =
+        "upload-status show " +
+        tipo;
+
+    }
+
+
+    /* =========================================
+       GUARDAR CAPÍTULO
+    ========================================= */
+
+    guardarCapitulo.addEventListener(
+      "click",
+      guardarNuevoCapitulo
+    );
+
+
+    async function guardarNuevoCapitulo() {
+
+      const fecha =
+        capituloFecha.value;
+
+      const titulo =
+        capituloTitulo.value.trim();
+
+      const historia =
+        capituloHistoria.value.trim();
+
+
+      /* =========================================
+         VALIDACIONES
+      ========================================= */
+
+      if (!fecha) {
+
+        mostrarEstadoCapitulo(
+          "Selecciona la fecha del capítulo 📅",
+          "error"
+        );
+
+        capituloFecha.focus();
+
+        return;
+
+      }
+
+
+      if (!titulo) {
+
+        mostrarEstadoCapitulo(
+          "Ponle un título al capítulo ❤️",
+          "error"
+        );
+
+        capituloTitulo.focus();
+
+        return;
+
+      }
+
+
+      if (!historia) {
+
+        mostrarEstadoCapitulo(
+          "Escribe qué pasó en este capítulo 💌",
+          "error"
+        );
+
+        capituloHistoria.focus();
+
+        return;
+
+      }
+
+
+      try {
+
+        guardarCapitulo.disabled =
+          true;
+
+        cancelarCapitulo.disabled =
+          true;
+
+        seleccionarCapituloFoto.disabled =
+          true;
+
+
+        mostrarEstadoCapitulo(
+          "Guardando nuestro capítulo... ❤️",
+          "success"
+        );
+
+
+        /* =========================================
+           VERIFICAR SESIÓN
+        ========================================= */
+
+        const {
+          data: sessionData,
+          error: sessionError
+        } =
+          await supabaseClient.auth.getSession();
+
+
+        if (
+          sessionError ||
+          !sessionData.session
+        ) {
+
+          throw new Error(
+            "Tu sesión expiró. Vuelve a iniciar sesión."
+          );
+
+        }
+
+
+        /* =========================================
+           FOTO OPCIONAL
+        ========================================= */
+
+        let fotoUrl =
+          "";
+
+
+        if (
+          capituloFotoSeleccionada
+        ) {
+
+          const extension =
+            capituloFotoSeleccionada.name
+              .split(".")
+              .pop()
+              .toLowerCase();
+
+
+          const nombreArchivo =
+            "historia_" +
+            Date.now() +
+            "_" +
+            Math.random()
+              .toString(36)
+              .substring(2, 10) +
+            "." +
+            extension;
+
+
+          const {
+            data: storageData,
+            error: storageError
+          } =
+            await supabaseClient.storage
+              .from("Recuerdos")
+              .upload(
+                nombreArchivo,
+                capituloFotoSeleccionada,
+                {
+
+                  cacheControl:
+                    "3600",
+
+                  upsert:
+                    false
+
+                }
+              );
+
+
+          if (storageError) {
+
+            throw new Error(
+              "No se pudo subir la foto: " +
+              storageError.message
+            );
+
+          }
+
+
+          const {
+            data: publicData
+          } =
+            supabaseClient.storage
+              .from("Recuerdos")
+              .getPublicUrl(
+                storageData.path
+              );
+
+
+          fotoUrl =
+            publicData.publicUrl;
+
+        }
+
+
+        /* =========================================
+           DATOS DEL CAPÍTULO
+        ========================================= */
+
+        const nuevoCapitulo = {
+
+          fecha:
+            fecha,
+
+          titulo:
+            titulo,
+
+          historia:
+            historia
+
+        };
+
+
+        /* =========================================
+           AGREGAR FOTO SI EXISTE
+        ========================================= */
+
+        if (fotoUrl) {
+
+          nuevoCapitulo.foto_url =
+            fotoUrl;
+
+        }
+
+
+        /* =========================================
+           INSERTAR EN SUPABASE
+        ========================================= */
+
+        const {
+          data,
+          error
+        } =
+          await supabaseClient
+            .from("historia")
+            .insert([
+              nuevoCapitulo
+            ])
+            .select();
+
+
+        if (error) {
+
+          console.error(
+            "ERROR GUARDANDO CAPÍTULO:",
+            error
+          );
+
+          throw new Error(
+            error.message
+          );
+
+        }
+
+
+        console.log(
+          "CAPÍTULO GUARDADO:",
+          data
+        );
+
+
+        /* =========================================
+           ÉXITO
+        ========================================= */
+
+        mostrarEstadoCapitulo(
+          "¡Capítulo guardado en nuestra historia! ❤️",
+          "success"
+        );
+
+
+        /* =========================================
+           RECARGAR HISTORIA
+        ========================================= */
+
+        await cargarHistoria();
+
+
+        /* =========================================
+           CERRAR FORMULARIO
+        ========================================= */
+
+        setTimeout(
+          function() {
+
+            limpiarFormularioCapitulo();
+
+            document
+              .getElementById(
+                "historia"
+              )
+              .scrollIntoView({
+                behavior:
+                  "smooth"
+              });
+
+          },
+          1200
+        );
+
+
+      } catch (error) {
+
+        console.error(
+          "ERROR GUARDANDO CAPÍTULO:",
+          error
+        );
+
+
+        mostrarEstadoCapitulo(
+
+          "No se pudo guardar: " +
+          error.message,
+
+          "error"
+
+        );
+
+
+      } finally {
+
+        guardarCapitulo.disabled =
+          false;
+
+        cancelarCapitulo.disabled =
+          false;
+
+        seleccionarCapituloFoto.disabled =
+          false;
+
+      }
+
+    }
+
+
     /* =====================================================
        CARGAR RECUERDOS
     ===================================================== */
@@ -4185,9 +4689,12 @@
 
         const respuesta =
           await fetch(
+
             SUPABASE_URL +
             "/rest/v1/recuerdos?select=*&order=created_at.desc",
+
             {
+
               headers: {
 
                 "apikey":
@@ -4201,10 +4708,20 @@
                   "application/json"
 
               }
+
             }
+
           );
 
         if (!respuesta.ok) {
+
+          const textoError =
+            await respuesta.text();
+
+          console.error(
+            "ERROR REST RECUERDOS:",
+            textoError
+          );
 
           throw new Error(
             "No se pudieron cargar los recuerdos."
@@ -4277,10 +4794,16 @@
             imagen.onerror =
               function() {
 
+                console.warn(
+                  "No se pudo cargar imagen:",
+                  urlFoto
+                );
+
                 this.style.display =
                   "none";
 
               };
+
 
             const info =
               document.createElement(
@@ -4289,6 +4812,7 @@
 
             info.className =
               "photo-info";
+
 
             const titulo =
               document.createElement(
@@ -4306,10 +4830,12 @@
               titulo
             );
 
+
             const descripcionTexto =
               recuerdo.descripcion ||
               recuerdo.mensaje ||
               "";
+
 
             if (
               descripcionTexto
@@ -4331,6 +4857,7 @@
               );
 
             }
+
 
             card.appendChild(
               imagen
@@ -4372,6 +4899,7 @@
 
     }
 
+
     /* =====================================================
        SUBIR RECUERDO
     ===================================================== */
@@ -4381,9 +4909,12 @@
       subirRecuerdo
     );
 
+
     async function subirRecuerdo() {
 
-      if (!archivoSeleccionado) {
+      if (
+        !archivoSeleccionado
+      ) {
 
         mostrarEstado(
           "Primero selecciona una foto ❤️",
@@ -4394,11 +4925,13 @@
 
       }
 
+
       const titulo =
         tituloInput.value.trim();
 
       const descripcion =
         descripcionInput.value.trim();
+
 
       if (!titulo) {
 
@@ -4413,6 +4946,7 @@
 
       }
 
+
       try {
 
         guardarUpload.disabled =
@@ -4421,16 +4955,19 @@
         cancelarUpload.disabled =
           true;
 
+
         mostrarEstado(
           "Subiendo nuestro recuerdo... ❤️",
           "success"
         );
+
 
         const {
           data: sessionData,
           error: sessionError
         } =
           await supabaseClient.auth.getSession();
+
 
         if (
           sessionError ||
@@ -4443,11 +4980,13 @@
 
         }
 
+
         const extension =
           archivoSeleccionado.name
             .split(".")
             .pop()
             .toLowerCase();
+
 
         const nombreArchivo =
           Date.now() +
@@ -4458,6 +4997,11 @@
           "." +
           extension;
 
+
+        const ruta =
+          nombreArchivo;
+
+
         const {
           data: storageData,
           error: storageError
@@ -4465,13 +5009,19 @@
           await supabaseClient.storage
             .from("Recuerdos")
             .upload(
-              nombreArchivo,
+              ruta,
               archivoSeleccionado,
               {
-                cacheControl: "3600",
-                upsert: false
+
+                cacheControl:
+                  "3600",
+
+                upsert:
+                  false
+
               }
             );
+
 
         if (storageError) {
 
@@ -4480,6 +5030,7 @@
           );
 
         }
+
 
         const {
           data: publicData
@@ -4490,8 +5041,10 @@
               storageData.path
             );
 
+
         const url =
           publicData.publicUrl;
+
 
         const {
           data: insertData,
@@ -4500,7 +5053,9 @@
           await supabaseClient
             .from("recuerdos")
             .insert([
+
               {
+
                 titulo:
                   titulo,
 
@@ -4509,9 +5064,12 @@
 
                 Url:
                   url
+
               }
+
             ])
             .select();
+
 
         if (insertError) {
 
@@ -4521,17 +5079,21 @@
 
         }
 
+
         console.log(
           "Recuerdo guardado:",
           insertData
         );
+
 
         mostrarEstado(
           "¡Recuerdo guardado! ❤️",
           "success"
         );
 
+
         await cargarRecuerdos();
+
 
         setTimeout(
           function() {
@@ -4543,12 +5105,14 @@
                 "recuerdos-container"
               )
               .scrollIntoView({
-                behavior: "smooth"
+                behavior:
+                  "smooth"
               });
 
           },
           1200
         );
+
 
       } catch (error) {
 
@@ -4557,11 +5121,16 @@
           error
         );
 
+
         mostrarEstado(
+
           "No se pudo guardar: " +
           error.message,
+
           "error"
+
         );
+
 
       } finally {
 
@@ -4574,6 +5143,7 @@
       }
 
     }
+
 
     /* =====================================================
        CARGAR CARTAS
@@ -4595,9 +5165,11 @@
             .order(
               "created_at",
               {
-                ascending: false
+                ascending:
+                  false
               }
             );
+
 
         if (error) {
 
@@ -4605,8 +5177,10 @@
 
         }
 
+
         cartasContainer.innerHTML =
           "";
+
 
         if (
           !data ||
@@ -4636,6 +5210,7 @@
 
         }
 
+
         data.forEach(
           carta => {
 
@@ -4647,6 +5222,7 @@
             card.className =
               "card carta-guardada";
 
+
             const fecha =
               document.createElement(
                 "div"
@@ -4655,8 +5231,10 @@
             fecha.className =
               "carta-fecha";
 
+
             let fechaBonita =
               "";
+
 
             if (
               carta.created_at
@@ -4666,6 +5244,7 @@
                 new Date(
                   carta.created_at
                 );
+
 
               if (
                 !isNaN(
@@ -4677,9 +5256,16 @@
                   fechaObjeto.toLocaleDateString(
                     "es-MX",
                     {
-                      day: "numeric",
-                      month: "long",
-                      year: "numeric"
+
+                      day:
+                        "numeric",
+
+                      month:
+                        "long",
+
+                      year:
+                        "numeric"
+
                     }
                   );
 
@@ -4687,8 +5273,10 @@
 
             }
 
+
             fecha.textContent =
               fechaBonita;
+
 
             const titulo =
               document.createElement(
@@ -4698,13 +5286,16 @@
             titulo.className =
               "carta-titulo";
 
+
             const tituloReal =
               carta.titulo ||
               "Una carta para ti";
 
+
             titulo.textContent =
               "💌 " +
               tituloReal;
+
 
             const autor =
               document.createElement(
@@ -4714,14 +5305,17 @@
             autor.className =
               "carta-autor";
 
+
             const autorReal =
               carta.autor_nombre ||
               carta.autor_email ||
               "Nosotros";
 
+
             autor.textContent =
               "Escrita por " +
               autorReal;
+
 
             const contenido =
               document.createElement(
@@ -4731,13 +5325,16 @@
             contenido.className =
               "carta-contenido";
 
+
             const contenidoReal =
               carta.mensaje ||
               carta.contenido ||
               "";
 
+
             contenido.textContent =
               contenidoReal;
+
 
             card.appendChild(
               fecha
@@ -4754,6 +5351,7 @@
             card.appendChild(
               contenido
             );
+
 
             card.addEventListener(
               "click",
@@ -4778,6 +5376,7 @@
               }
             );
 
+
             cartasContainer.appendChild(
               card
             );
@@ -4785,12 +5384,14 @@
           }
         );
 
+
       } catch (error) {
 
         console.error(
           "ERROR CARGANDO CARTAS:",
           error
         );
+
 
         cartasContainer.innerHTML = `
 
@@ -4810,6 +5411,7 @@
 
     }
 
+
     /* =====================================================
        GUARDAR CARTA
     ===================================================== */
@@ -4819,6 +5421,7 @@
       guardarNuevaCarta
     );
 
+
     async function guardarNuevaCarta() {
 
       const titulo =
@@ -4826,6 +5429,7 @@
 
       const mensaje =
         cartaContenido.value.trim();
+
 
       if (!titulo) {
 
@@ -4840,6 +5444,7 @@
 
       }
 
+
       if (!mensaje) {
 
         mostrarEstadoCarta(
@@ -4853,6 +5458,7 @@
 
       }
 
+
       try {
 
         guardarCarta.disabled =
@@ -4861,10 +5467,12 @@
         cancelarCarta.disabled =
           true;
 
+
         mostrarEstadoCarta(
           "Guardando nuestra carta... ❤️",
           "success"
         );
+
 
         const {
           data: userData,
@@ -4872,14 +5480,17 @@
         } =
           await supabaseClient.auth.getUser();
 
+
         if (userError) {
 
           throw userError;
 
         }
 
+
         const usuario =
           userData.user;
+
 
         if (!usuario) {
 
@@ -4889,9 +5500,11 @@
 
         }
 
+
         const metadata =
           usuario.user_metadata ||
           {};
+
 
         const nombre =
           metadata.full_name ||
@@ -4899,6 +5512,7 @@
           metadata.nombre ||
           usuario.email ||
           "Usuario";
+
 
         const cartaData = {
 
@@ -4920,6 +5534,7 @@
 
         };
 
+
         const {
           data,
           error
@@ -4931,7 +5546,13 @@
             )
             .select();
 
+
         if (error) {
+
+          console.error(
+            "ERROR GUARDANDO CARTA:",
+            error
+          );
 
           throw new Error(
             error.message
@@ -4939,17 +5560,21 @@
 
         }
 
+
         console.log(
           "CARTA GUARDADA:",
           data
         );
+
 
         mostrarEstadoCarta(
           "¡Carta guardada para siempre! 💌❤️",
           "success"
         );
 
+
         await cargarCartas();
+
 
         setTimeout(
           function() {
@@ -4961,12 +5586,14 @@
                 "cartas"
               )
               .scrollIntoView({
-                behavior: "smooth"
+                behavior:
+                  "smooth"
               });
 
           },
           1200
         );
+
 
       } catch (error) {
 
@@ -4975,11 +5602,16 @@
           error
         );
 
+
         mostrarEstadoCarta(
+
           "No se pudo guardar: " +
           error.message,
+
           "error"
+
         );
+
 
       } finally {
 
@@ -4992,6 +5624,7 @@
       }
 
     }
+
 
     /* =====================================================
        ABRIR CARTA COMPLETA
@@ -5032,8 +5665,9 @@
 
     }
 
+
     /* =====================================================
-       CERRAR CARTA
+       CERRAR CARTA COMPLETA
     ===================================================== */
 
     function cerrarCartaCompleta() {
@@ -5053,10 +5687,16 @@
 
     }
 
+
     cerrarCartaModal.addEventListener(
       "click",
       cerrarCartaCompleta
     );
+
+
+    /* =====================================================
+       CERRAR TOCANDO FUERA
+    ===================================================== */
 
     cartaModal.addEventListener(
       "click",
@@ -5073,6 +5713,11 @@
 
       }
     );
+
+
+    /* =====================================================
+       CERRAR CON ESC
+    ===================================================== */
 
     document.addEventListener(
       "keydown",
@@ -5091,6 +5736,7 @@
 
       }
     );
+
 
     /* =====================================================
        CERRAR SESIÓN
@@ -5116,6 +5762,7 @@
       );
 
     }
+
 
     /* =====================================================
        INICIAR
