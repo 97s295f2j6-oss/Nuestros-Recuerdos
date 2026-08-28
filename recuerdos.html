@@ -3,1888 +3,926 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Nuestra Historia ❤️</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
 
-/* =========================
-   BASE
-========================= */
-
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0
 }
 
 html{
-    scroll-behavior:smooth;
+  scroll-behavior:smooth
 }
 
 body{
-    min-height:100vh;
-
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            #3b1425 0%,
-            #190b14 30%,
-            #08080b 72%
-        );
-
-    color:#fff;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    overflow-x:hidden;
+  min-height:100vh;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      #3b1425 0%,
+      #190b14 30%,
+      #08080b 72%
+    );
+  color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
+  overflow-x:hidden
 }
 
 body.modal-open{
-    overflow:hidden;
+  overflow:hidden
 }
 
 button,
 input,
-textarea,
-select{
-    font:inherit;
+textarea{
+  font:inherit
 }
 
 button{
-    cursor:pointer;
+  cursor:pointer
 }
 
 .container{
-    width:100%;
-    max-width:1050px;
-    margin:auto;
-
-    padding:
-        28px
-        22px
-        70px;
+  width:100%;
+  max-width:1050px;
+  margin:auto;
+  padding:28px 22px 70px
 }
-
 
 /* =========================
    HEADER
 ========================= */
 
 .site-header{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:20px;
-
-    padding:
-        10px
-        4px
-        38px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:10px 4px 38px
 }
 
 .brand{
-
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:10px;
+  display:flex;
+  align-items:flex-start;
+  gap:10px
 }
 
 .brand h1{
-
-    font-size:
-        clamp(
-            34px,
-            6vw,
-            55px
-        );
-
-    line-height:.95;
+  font-size:clamp(34px,6vw,55px);
+  line-height:.95
 }
 
 .brand h1 span{
-    display:block;
+  display:block
 }
 
 .brand-heart{
-
-    font-size:42px;
-
-    line-height:1;
+  font-size:42px;
+  line-height:1
 }
 
 .add-top{
-
-    border:0;
-
-    border-radius:50px;
-
-    padding:
-        18px
-        30px;
-
-    color:white;
-
-    background:
-        linear-gradient(
-            135deg,
-            #df668e,
-            #b94369
-        );
-
-    box-shadow:
-        0 15px 40px
-        rgba(215,91,125,.25);
+  border:0;
+  border-radius:50px;
+  padding:18px 30px;
+  color:white;
+  background:
+    linear-gradient(
+      135deg,
+      #df668e,
+      #b94369
+    );
+  box-shadow:
+    0 15px 40px
+    rgba(215,91,125,.25)
 }
 
-
 /* =========================
-   SECCIONES
+   COMMON
 ========================= */
 
 .section{
-    margin-top:35px;
+  margin-top:35px
 }
 
 .section-heading{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    margin:
-        0
-        0
-        25px;
-
-    color:white;
-
-    font-size:
-        clamp(
-            31px,
-            5vw,
-            45px
-        );
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin:0 0 25px;
+  color:white;
+  font-size:clamp(31px,5vw,45px)
 }
 
 .section-heading:before,
 .section-heading:after{
-
-    content:"";
-
-    height:1px;
-
-    background:#713249;
-
-    flex:1;
+  content:"";
+  height:1px;
+  background:#713249;
+  flex:1
 }
 
 .section-heading span{
-
-    white-space:nowrap;
+  white-space:nowrap
 }
 
 .section-subtitle{
-
-    text-align:center;
-
-    color:#bcaeb4;
-
-    font-size:18px;
-
-    margin:
-        -8px
-        0
-        28px;
+  text-align:center;
+  color:#bcaeb4;
+  font-size:18px;
+  margin:-8px 0 28px
 }
 
 .card{
+  border:
+    1px solid
+    rgba(255,255,255,.13);
 
-    border:
-        1px solid
-        rgba(255,255,255,.13);
+  border-radius:28px;
 
-    border-radius:28px;
+  background:
+    rgba(255,255,255,.035);
 
-    background:
-        rgba(255,255,255,.035);
+  box-shadow:
+    0 25px 70px
+    rgba(0,0,0,.28);
 
-    box-shadow:
-        0 25px 70px
-        rgba(0,0,0,.28);
-
-    backdrop-filter:blur(12px);
-
-    -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px)
 }
 
-
 /* =========================
-   CARTA PRINCIPAL
+   CARTA HERO
 ========================= */
 
 .letter-hero{
+  position:relative;
+  overflow:hidden;
+  padding:48px 42% 48px 38px;
+  min-height:350px;
 
-    position:relative;
+  border:
+    1px solid
+    rgba(215,91,125,.55);
 
-    overflow:hidden;
-
-    padding:
-        48px
-        42%
-        48px
-        38px;
-
-    min-height:350px;
-
-    border:
-        1px solid
-        rgba(215,91,125,.55);
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(215,91,125,.10),
-            rgba(255,255,255,.025)
-        );
+  background:
+    linear-gradient(
+      135deg,
+      rgba(215,91,125,.10),
+      rgba(255,255,255,.025)
+    )
 }
 
 .letter-hero h2{
+  font-size:
+    clamp(
+      35px,
+      6vw,
+      54px
+    );
 
-    font-size:
-        clamp(
-            35px,
-            6vw,
-            54px
-        );
-
-    line-height:1.08;
-
-    margin-bottom:25px;
+  line-height:1.08;
+  margin-bottom:25px
 }
 
 .letter-hero p{
-
-    color:#d2c6cb;
-
-    font-size:20px;
-
-    line-height:1.65;
-
-    margin-bottom:28px;
+  color:#d2c6cb;
+  font-size:20px;
+  line-height:1.65;
+  margin-bottom:28px
 }
 
 .envelope-art{
+  position:absolute;
+  right:35px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:150px;
 
-    position:absolute;
-
-    right:35px;
-
-    top:50%;
-
-    transform:
-        translateY(-50%);
-
-    font-size:150px;
-
-    filter:
-        drop-shadow(
-            0 20px 25px
-            rgba(215,91,125,.2)
-        );
+  filter:
+    drop-shadow(
+      0 20px 25px
+      rgba(215,91,125,.2)
+    )
 }
 
 .pink-button{
+  border:0;
+  border-radius:50px;
+  padding:16px 28px;
+  color:white;
 
-    border:0;
+  background:
+    linear-gradient(
+      135deg,
+      #df668e,
+      #b94369
+    );
 
-    border-radius:50px;
+  box-shadow:
+    0 15px 35px
+    rgba(215,91,125,.22);
 
-    padding:
-        16px
-        28px;
-
-    color:white;
-
-    background:
-        linear-gradient(
-            135deg,
-            #df668e,
-            #b94369
-        );
-
-    box-shadow:
-        0 15px 35px
-        rgba(215,91,125,.22);
-
-    transition:.2s;
+  transition:.2s
 }
 
 .pink-button:hover{
-    transform:translateY(-2px);
+  transform:translateY(-2px)
 }
 
 .small-button{
+  border:
+    1px solid
+    rgba(215,91,125,.6);
 
-    border:
-        1px solid
-        rgba(215,91,125,.6);
+  border-radius:30px;
+  padding:11px 20px;
+  color:#e8a5ba;
 
-    border-radius:30px;
-
-    padding:
-        11px
-        20px;
-
-    color:#e8a5ba;
-
-    background:
-        rgba(215,91,125,.06);
+  background:
+    rgba(215,91,125,.06)
 }
-
-
-/* =========================
-   FORMULARIOS
-========================= */
-
-.form-panel{
-
-    display:none;
-
-    padding:25px;
-
-    margin-top:18px;
-}
-
-.form-panel.active{
-    display:block;
-}
-
-label{
-
-    display:block;
-
-    color:#d9c7ce;
-
-    font-size:15px;
-
-    margin:
-        17px
-        0
-        8px;
-}
-
-input,
-textarea,
-select{
-
-    width:100%;
-
-    border:
-        1px solid
-        rgba(255,255,255,.16);
-
-    border-radius:15px;
-
-    background:
-        rgba(0,0,0,.25);
-
-    color:#fff;
-
-    padding:14px;
-
-    outline:none;
-}
-
-input:focus,
-textarea:focus,
-select:focus{
-
-    border-color:#d75b7d;
-}
-
-textarea{
-
-    min-height:130px;
-
-    resize:vertical;
-
-    line-height:1.6;
-}
-
-.form-row{
-
-    display:flex;
-
-    gap:10px;
-
-    margin-top:20px;
-}
-
-.form-row > *{
-    flex:1;
-}
-
-.status{
-
-    display:none;
-
-    margin-top:15px;
-
-    padding:12px;
-
-    border-radius:13px;
-
-    text-align:center;
-}
-
-.status.show{
-    display:block;
-}
-
-.status.success{
-
-    background:
-        rgba(80,180,120,.12);
-
-    color:#9be4b8;
-}
-
-.status.error{
-
-    background:
-        rgba(220,70,90,.12);
-
-    color:#ff9ba8;
-}
-
-.preview{
-
-    display:none;
-
-    margin-top:15px;
-
-    border-radius:18px;
-
-    overflow:hidden;
-}
-
-.preview.active{
-    display:block;
-}
-
-.preview img{
-
-    width:100%;
-
-    max-height:350px;
-
-    object-fit:cover;
-}
-
 
 /* =========================
    RECUERDOS
 ========================= */
 
 .memories{
-
-    display:grid;
-
-    gap:18px;
+  display:grid;
+  gap:18px
 }
 
 .memory-card{
-
-    display:grid;
-
-    grid-template-columns:
-        43%
-        57%;
-
-    overflow:hidden;
-
-    min-height:270px;
+  display:grid;
+  grid-template-columns:43% 57%;
+  overflow:hidden;
+  min-height:270px
 }
 
 .memory-image-wrap{
-
-    min-height:270px;
-
-    background:#160d13;
+  min-height:270px;
+  background:#160d13
 }
 
 .memory-image{
-
-    width:100%;
-
-    height:100%;
-
-    min-height:270px;
-
-    object-fit:cover;
-
-    display:block;
+  width:100%;
+  height:100%;
+  min-height:270px;
+  object-fit:cover;
+  display:block
 }
 
 .memory-info{
-
-    padding:
-        27px
-        28px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:flex-start;
+  padding:27px 28px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start
 }
 
 .memory-date,
 .date-label{
-
-    color:#d75b7d;
-
-    text-transform:uppercase;
-
-    letter-spacing:3px;
-
-    font-size:13px;
-
-    margin-bottom:12px;
+  color:#d75b7d;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:13px;
+  margin-bottom:12px
 }
 
 .memory-title{
-
-    font-size:30px;
-
-    line-height:1.15;
-
-    margin-bottom:14px;
+  font-size:30px;
+  line-height:1.15;
+  margin-bottom:14px
 }
 
 .memory-desc{
-
-    color:#d0c5ca;
-
-    font-size:18px;
-
-    line-height:1.65;
-
-    white-space:pre-wrap;
+  color:#d0c5ca;
+  font-size:18px;
+  line-height:1.65;
+  white-space:pre-wrap
 }
 
 .memory-actions{
-
-    display:flex;
-
-    gap:9px;
-
-    flex-wrap:wrap;
-
-    margin-top:auto;
-
-    padding-top:20px;
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-top:auto;
+  padding-top:20px
 }
 
 .action{
+  border:
+    1px solid
+    rgba(215,91,125,.48);
 
-    border:
-        1px solid
-        rgba(215,91,125,.48);
+  border-radius:30px;
+  padding:10px 18px;
 
-    border-radius:30px;
+  background:
+    rgba(215,91,125,.08);
 
-    padding:
-        10px
-        18px;
-
-    background:
-        rgba(215,91,125,.08);
-
-    color:#e9a4ba;
+  color:#e9a4ba
 }
 
 .action.delete{
-
-    border-color:
-        rgba(220,70,90,.45);
+  border-color:
+    rgba(220,70,90,.45)
 }
 
 .center-action{
-
-    text-align:center;
-
-    margin:
-        25px
-        0;
+  text-align:center;
+  margin:25px 0
 }
 
+/* =========================
+   FORM
+========================= */
+
+.form-panel{
+  display:none;
+  padding:25px;
+  margin-top:18px
+}
+
+.form-panel.active{
+  display:block
+}
+
+label{
+  display:block;
+  color:#d9c7ce;
+  font-size:15px;
+  margin:17px 0 8px
+}
+
+input,
+textarea{
+  width:100%;
+
+  border:
+    1px solid
+    rgba(255,255,255,.16);
+
+  border-radius:15px;
+
+  background:
+    rgba(0,0,0,.25);
+
+  color:#fff;
+
+  padding:14px;
+  outline:none
+}
+
+textarea{
+  min-height:130px;
+  resize:vertical;
+  line-height:1.6
+}
+
+input:focus,
+textarea:focus{
+  border-color:#d75b7d
+}
+
+.form-row{
+  display:flex;
+  gap:10px;
+  margin-top:20px
+}
+
+.form-row>*{
+  flex:1
+}
+
+.status{
+  display:none;
+  margin-top:15px;
+  padding:12px;
+  border-radius:13px;
+  text-align:center
+}
+
+.status.show{
+  display:block
+}
+
+.status.success{
+  background:rgba(80,180,120,.12);
+  color:#9be4b8
+}
+
+.status.error{
+  background:rgba(220,70,90,.12);
+  color:#ff9ba8
+}
+
+.preview{
+  display:none;
+  margin-top:15px;
+  border-radius:18px;
+  overflow:hidden
+}
+
+.preview.active{
+  display:block
+}
+
+.preview img{
+  width:100%;
+  max-height:350px;
+  object-fit:cover
+}
 
 /* =========================
-   FECHAS ESPECIALES
+   FECHAS
 ========================= */
 
 .dates{
-
-    display:grid;
-
-    gap:16px;
+  display:grid;
+  gap:16px
 }
 
 .date-card{
-
-    position:relative;
-
-    padding:
-        26px
-        28px;
-
-    overflow:hidden;
+  position:relative;
+  padding:26px 28px;
+  overflow:hidden
 }
 
 .date-card:after{
-
-    content:"❤️";
-
-    position:absolute;
-
-    right:25px;
-
-    top:22px;
-
-    opacity:.15;
-
-    font-size:35px;
+  content:"❤️";
+  position:absolute;
+  right:25px;
+  top:22px;
+  opacity:.15;
+  font-size:35px
 }
 
 .date-top{
-
-    display:flex;
-
-    gap:15px;
-
-    align-items:flex-start;
+  display:flex;
+  gap:15px;
+  align-items:flex-start
 }
 
 .date-icon{
-    font-size:35px;
+  font-size:35px
 }
 
 .date-title{
-
-    font-size:27px;
-
-    margin-bottom:8px;
-
-    padding-right:35px;
+  font-size:27px;
+  margin-bottom:8px;
+  padding-right:35px
 }
 
 .date-message{
-
-    color:#cfc6ca;
-
-    font-size:17px;
-
-    line-height:1.65;
-
-    white-space:pre-wrap;
+  color:#cfc6ca;
+  font-size:17px;
+  line-height:1.65
 }
 
 .date-actions{
-
-    display:flex;
-
-    gap:9px;
-
-    margin-top:17px;
-
-    flex-wrap:wrap;
+  display:flex;
+  gap:9px;
+  margin-top:17px;
+  flex-wrap:wrap
 }
 
 .add-date{
-
-    padding:28px;
-
-    text-align:center;
-
-    margin-top:16px;
-
-    border-color:
-        rgba(215,91,125,.35);
+  padding:28px;
+  text-align:center;
+  margin-top:16px;
+  border-color:
+    rgba(215,91,125,.35)
 }
 
 .add-date p{
-
-    color:#cfc6ca;
-
-    margin:
-        10px
-        0
-        20px;
+  color:#cfc6ca;
+  margin:10px 0 20px
 }
 
 .date-form{
-
-    display:none;
-
-    text-align:left;
-
-    margin-top:20px;
+  display:none;
+  text-align:left;
+  margin-top:20px
 }
 
 .date-form.active{
-    display:block;
+  display:block
 }
-
 
 /* =========================
    HISTORIA
 ========================= */
 
 .timeline{
-
-    position:relative;
-
-    padding-left:34px;
-
-    border-left:
-        1px solid
-        #713b4d;
+  position:relative;
+  padding-left:34px;
+  border-left:
+    1px solid
+    #713b4d
 }
 
 .timeline-item{
-
-    position:relative;
-
-    margin-bottom:45px;
+  position:relative;
+  margin-bottom:45px
 }
 
 .timeline-item:before{
-
-    content:"♥";
-
-    position:absolute;
-
-    left:-46px;
-
-    top:0;
-
-    color:#d75b7d;
-
-    background:#120b11;
-
-    padding:3px;
-
-    font-size:18px;
+  content:"♥";
+  position:absolute;
+  left:-46px;
+  top:0;
+  color:#d75b7d;
+  background:#120b11;
+  padding:3px;
+  font-size:18px
 }
 
 .timeline-item:last-child{
-    margin-bottom:0;
+  margin-bottom:0
 }
 
 .timeline-title{
-
-    font-size:28px;
-
-    margin-bottom:12px;
+  font-size:28px;
+  margin-bottom:12px
 }
 
 .timeline-text{
-
-    color:#cfc6ca;
-
-    font-size:17px;
-
-    line-height:1.75;
-
-    white-space:pre-wrap;
+  color:#cfc6ca;
+  font-size:17px;
+  line-height:1.75;
+  white-space:pre-wrap
 }
 
 .history-image{
-
-    width:100%;
-
-    max-height:430px;
-
-    object-fit:cover;
-
-    border-radius:20px;
-
-    margin-top:20px;
+  width:100%;
+  max-height:430px;
+  object-fit:cover;
+  border-radius:20px;
+  margin-top:20px
 }
-
 
 /* =========================
    CARTAS
 ========================= */
 
 .letters{
-    margin-top:70px;
+  margin-top:70px
 }
 
 .letter-list{
-
-    display:grid;
-
-    gap:16px;
+  display:grid;
+  gap:16px
 }
 
 .saved-letter{
-
-    position:relative;
-
-    padding:
-        27px
-        28px;
-
-    overflow:hidden;
+  position:relative;
+  padding:27px 28px;
+  overflow:hidden
 }
 
 .saved-letter:before{
-
-    content:"💌";
-
-    position:absolute;
-
-    right:24px;
-
-    top:18px;
-
-    font-size:32px;
-
-    opacity:.16;
+  content:"💌";
+  position:absolute;
+  right:24px;
+  top:18px;
+  font-size:32px;
+  opacity:.16
 }
 
 .saved-letter h3{
-
-    font-size:28px;
-
-    margin-bottom:9px;
-
-    padding-right:40px;
+  font-size:28px;
+  margin-bottom:9px;
+  padding-right:40px
 }
 
 .letter-author{
-
-    color:#bcaeb4;
-
-    font-size:14px;
-
-    margin-bottom:16px;
+  color:#bcaeb4;
+  font-size:14px;
+  margin-bottom:16px
 }
 
 .letter-preview{
-
-    color:#d8d0d4;
-
-    font-size:18px;
-
-    line-height:1.75;
-
-    font-style:italic;
-
-    white-space:pre-wrap;
+  color:#d8d0d4;
+  font-size:18px;
+  line-height:1.75;
+  font-style:italic;
+  white-space:pre-wrap
 }
 
 .letter-actions{
-
-    display:flex;
-
-    gap:9px;
-
-    margin-top:18px;
-
-    flex-wrap:wrap;
+  display:flex;
+  gap:9px;
+  margin-top:18px;
+  flex-wrap:wrap
 }
-
 
 /* =========================
    MODALES
 ========================= */
 
 .modal{
+  position:fixed;
+  inset:0;
+  z-index:9999;
 
-    position:fixed;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-    inset:0;
+  padding:15px;
 
-    z-index:9999;
+  background:
+    rgba(5,3,6,.84);
 
-    display:flex;
+  backdrop-filter:blur(12px);
 
-    align-items:center;
+  opacity:0;
+  visibility:hidden;
 
-    justify-content:center;
-
-    padding:15px;
-
-    background:
-        rgba(5,3,6,.84);
-
-    backdrop-filter:blur(12px);
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:.3s;
+  transition:.3s
 }
 
 .modal.active{
-
-    opacity:1;
-
-    visibility:visible;
+  opacity:1;
+  visibility:visible
 }
 
 .modal-box{
+  width:100%;
+  max-width:850px;
+  max-height:92vh;
+  overflow:auto;
 
-    width:100%;
+  padding:
+    38px
+    30px
+    42px;
 
-    max-width:850px;
+  border-radius:28px;
 
-    max-height:92vh;
+  background:
+    linear-gradient(
+      145deg,
+      #181116,
+      #0d0a0d
+    );
 
-    overflow:auto;
+  border:
+    1px solid
+    rgba(215,91,125,.4);
 
-    padding:
-        38px
-        30px
-        42px;
+  box-shadow:
+    0 30px 90px
+    rgba(0,0,0,.65);
 
-    border-radius:28px;
+  transform:
+    translateY(25px)
+    scale(.97);
 
-    background:
-        linear-gradient(
-            145deg,
-            #181116,
-            #0d0a0d
-        );
-
-    border:
-        1px solid
-        rgba(215,91,125,.4);
-
-    box-shadow:
-        0 30px 90px
-        rgba(0,0,0,.65);
-
-    transform:
-        translateY(25px)
-        scale(.97);
-
-    transition:.35s;
+  transition:.35s
 }
 
 .modal.active .modal-box{
-
-    transform:none;
+  transform:none
 }
 
 .close{
+  position:absolute;
+  right:17px;
+  top:14px;
 
-    position:absolute;
+  width:42px;
+  height:42px;
 
-    right:17px;
+  border-radius:50%;
 
-    top:14px;
+  border:
+    1px solid
+    rgba(255,255,255,.15);
 
-    width:42px;
+  background:
+    rgba(255,255,255,.07);
 
-    height:42px;
+  color:#fff;
 
-    border-radius:50%;
-
-    border:
-        1px solid
-        rgba(255,255,255,.15);
-
-    background:
-        rgba(255,255,255,.07);
-
-    color:#fff;
-
-    font-size:24px;
+  font-size:24px
 }
 
 .modal-date{
+  text-align:center;
 
-    text-align:center;
+  color:#d75b7d;
 
-    color:#d75b7d;
+  letter-spacing:3px;
 
-    letter-spacing:3px;
+  text-transform:uppercase;
 
-    text-transform:uppercase;
+  font-size:13px;
 
-    font-size:13px;
-
-    margin-bottom:14px;
+  margin-bottom:14px
 }
 
 .modal h2{
+  text-align:center;
 
-    text-align:center;
+  font-size:
+    clamp(
+      32px,
+      7vw,
+      55px
+    );
 
-    font-size:
-        clamp(
-            32px,
-            7vw,
-            55px
-        );
-
-    margin-bottom:18px;
+  margin-bottom:18px
 }
 
 .modal-author{
-
-    text-align:center;
-
-    color:#bcaeb4;
-
-    margin-bottom:30px;
+  text-align:center;
+  color:#bcaeb4;
+  margin-bottom:30px
 }
 
 .modal-line{
+  width:70px;
+  height:1px;
 
-    width:70px;
+  background:#9b5269;
 
-    height:1px;
-
-    background:#9b5269;
-
-    margin:
-        0
-        auto
-        30px;
+  margin:
+    0
+    auto
+    30px
 }
 
 .modal-text{
-
-    font-size:20px;
-
-    line-height:2;
-
-    color:#ded5da;
-
-    white-space:pre-wrap;
-
-    font-style:italic;
+  font-size:20px;
+  line-height:2;
+  color:#ded5da;
+  white-space:pre-wrap;
+  font-style:italic
 }
 
-
 /* =========================
-   FINAL
+   FUTURO / FOOTER
 ========================= */
 
 .future{
-
-    text-align:center;
-
-    padding:
-        45px
-        25px;
-
-    margin-top:55px;
+  text-align:center;
+  padding:45px 25px;
+  margin-top:55px
 }
 
 .future h2{
-
-    font-size:31px;
-
-    margin-bottom:15px;
+  font-size:31px;
+  margin-bottom:15px
 }
 
 .future p{
-
-    color:#cfc6ca;
-
-    font-size:18px;
-
-    line-height:1.75;
+  color:#cfc6ca;
+  font-size:18px;
+  line-height:1.75
 }
 
 .logout{
+  display:block;
+  margin:45px auto 0;
 
-    display:block;
+  background:transparent;
 
-    margin:
-        45px
-        auto
-        0;
+  color:#aaa0a5;
 
-    background:transparent;
+  border:
+    1px solid
+    rgba(255,255,255,.15);
 
-    color:#aaa0a5;
+  border-radius:30px;
 
-    border:
-        1px solid
-        rgba(255,255,255,.15);
-
-    border-radius:30px;
-
-    padding:
-        12px
-        25px;
+  padding:
+    12px
+    25px
 }
 
 .footer{
-
-    text-align:center;
-
-    color:#746b70;
-
-    font-size:14px;
-
-    margin-top:35px;
+  text-align:center;
+  color:#746b70;
+  font-size:14px;
+  margin-top:35px
 }
 
-
-/* =========================================================
+/* =========================
    CELULAR
-   DISEÑO COMPACTO
-========================================================= */
+========================= */
 
 @media(max-width:700px){
 
-    .container{
-
-        padding:
-            18px
-            14px
-            50px;
-    }
-
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    .site-header{
-
-        align-items:center;
-
-        gap:10px;
-
-        padding:
-            8px
-            2px
-            25px;
-    }
-
-    .brand{
-
-        gap:7px;
-    }
-
-    .brand-heart{
-
-        font-size:29px;
-    }
-
-    .brand h1{
-
-        font-size:32px;
-
-        line-height:.95;
-    }
-
-    .add-top{
-
-        padding:
-            11px
-            16px;
-
-        font-size:14px;
-
-        line-height:1.15;
-    }
-
-
-    /* =========================
-       CARTA PRINCIPAL
-    ========================= */
-
-    .letter-hero{
-
-        padding:
-            28px
-            23px
-            125px;
-
-        min-height:395px;
-
-        border-radius:25px;
-    }
-
-    .letter-hero h2{
-
-        font-size:34px;
-
-        line-height:1.06;
-
-        margin-bottom:18px;
-    }
-
-    .letter-hero p{
-
-        font-size:16px;
-
-        line-height:1.55;
-
-        margin-bottom:22px;
-
-        max-width:330px;
-    }
-
-    .pink-button{
-
-        padding:
-            13px
-            20px;
-
-        font-size:15px;
-    }
-
-    .envelope-art{
-
-        font-size:78px;
-
-        right:22px;
-
-        top:auto;
-
-        bottom:17px;
-
-        transform:none;
-    }
-
-
-    /* =========================
-       SECCIONES
-    ========================= */
-
-    .section{
-
-        margin-top:30px;
-    }
-
-    .section-heading{
-
-        font-size:28px;
-
-        gap:8px;
-
-        margin-bottom:18px;
-    }
-
-    .section-heading span{
-
-        white-space:normal;
-
-        text-align:center;
-    }
-
-    .section-subtitle{
-
-        font-size:15px;
-
-        line-height:1.5;
-
-        margin:
-            -3px
-            0
-            21px;
-    }
-
-
-    /* =========================
-       RECUERDOS
-       HORIZONTAL EN CELULAR
-    ========================= */
-
-    .memories{
-
-        gap:14px;
-    }
-
-    .memory-card{
-
-        display:grid;
-
-        grid-template-columns:
-            40%
-            60%;
-
-        min-height:215px;
-
-        border-radius:22px;
-    }
-
-    .memory-image-wrap{
-
-        min-height:215px;
-
-        height:215px;
-    }
-
-    .memory-image{
-
-        min-height:215px;
-
-        height:215px;
-
-        object-fit:cover;
-    }
-
-    .memory-info{
-
-        padding:
-            17px
-            15px;
-
-        min-width:0;
-    }
-
-    .memory-date,
-    .date-label{
-
-        font-size:9px;
-
-        letter-spacing:1.7px;
-
-        margin-bottom:7px;
-
-        line-height:1.3;
-    }
-
-    .memory-title{
-
-        font-size:21px;
-
-        line-height:1.12;
-
-        margin-bottom:8px;
-    }
-
-    .memory-desc{
-
-        font-size:13px;
-
-        line-height:1.45;
-
-        display:-webkit-box;
-
-        -webkit-line-clamp:4;
-
-        -webkit-box-orient:vertical;
-
-        overflow:hidden;
-    }
-
-    .memory-actions{
-
-        gap:6px;
-
-        margin-top:10px;
-
-        padding-top:0;
-    }
-
-    .small-button,
-    .action{
-
-        padding:
-            7px
-            12px;
-
-        font-size:12px;
-    }
-
-    .center-action{
-
-        margin:
-            19px
-            0;
-    }
-
-
-    /* =========================
-       FORMULARIOS
-    ========================= */
-
-    .form-panel{
-
-        padding:19px;
-
-        border-radius:22px;
-    }
-
-    label{
-
-        font-size:14px;
-
-        margin:
-            14px
-            0
-            7px;
-    }
-
-    input,
-    textarea,
-    select{
-
-        padding:12px;
-
-        font-size:15px;
-
-        border-radius:13px;
-    }
-
-    textarea{
-
-        min-height:115px;
-    }
-
-    .form-row{
-
-        flex-direction:column;
-
-        gap:8px;
-    }
-
-    .form-row > *{
-
-        width:100%;
-    }
-
-
-    /* =========================
-       FECHAS
-    ========================= */
-
-    .dates{
-
-        gap:12px;
-    }
-
-    .date-card{
-
-        padding:
-            19px
-            18px;
-
-        border-radius:21px;
-    }
-
-    .date-card:after{
-
-        right:17px;
-
-        top:17px;
-
-        font-size:28px;
-    }
-
-    .date-top{
-
-        gap:11px;
-    }
-
-    .date-icon{
-
-        font-size:27px;
-    }
-
-    .date-title{
-
-        font-size:21px;
-
-        line-height:1.15;
-
-        margin-bottom:7px;
-
-        padding-right:25px;
-    }
-
-    .date-message{
-
-        font-size:14px;
-
-        line-height:1.5;
-    }
-
-    .date-actions{
-
-        gap:7px;
-
-        margin-top:13px;
-    }
-
-    .add-date{
-
-        padding:
-            24px
-            18px;
-
-        border-radius:22px;
-    }
-
-    .add-date h3{
-
-        font-size:22px !important;
-
-        line-height:1.2;
-    }
-
-    .add-date p{
-
-        font-size:15px;
-
-        line-height:1.5;
-    }
-
-
-    /* =========================
-       HISTORIA
-    ========================= */
-
-    #history-list{
-
-        padding:21px !important;
-
-        border-radius:22px;
-    }
-
-    .timeline{
-
-        padding-left:24px;
-    }
-
-    .timeline-item{
-
-        margin-bottom:32px;
-    }
-
-    .timeline-item:before{
-
-        left:-36px;
-
-        font-size:15px;
-    }
-
-    .timeline-title{
-
-        font-size:24px;
-
-        line-height:1.15;
-
-        margin-bottom:9px;
-    }
-
-    .timeline-text{
-
-        font-size:14px;
-
-        line-height:1.65;
-    }
-
-    .history-image{
-
-        max-height:300px;
-
-        margin-top:15px;
-
-        border-radius:17px;
-    }
-
-
-    /* =========================
-       CARTAS
-    ========================= */
-
-    .letters{
-
-        margin-top:48px;
-    }
-
-    .saved-letter{
-
-        padding:
-            20px
-            18px;
-
-        border-radius:21px;
-    }
-
-    .saved-letter:before{
-
-        right:17px;
-
-        top:14px;
-
-        font-size:27px;
-    }
-
-    .saved-letter h3{
-
-        font-size:22px;
-
-        line-height:1.2;
-
-        padding-right:30px;
-
-        margin-bottom:7px;
-    }
-
-    .letter-author{
-
-        font-size:12px;
-
-        margin-bottom:13px;
-    }
-
-    .letter-preview{
-
-        font-size:14px;
-
-        line-height:1.6;
-    }
-
-    .letter-actions{
-
-        gap:7px;
-
-        margin-top:14px;
-    }
-
-
-    /* =========================
-       FUTURO
-    ========================= */
-
-    .future{
-
-        padding:
-            32px
-            18px;
-
-        margin-top:40px;
-
-        border-radius:22px;
-    }
-
-    .future h2{
-
-        font-size:26px;
-
-        line-height:1.15;
-
-        margin-bottom:13px;
-    }
-
-    .future p{
-
-        font-size:15px;
-
-        line-height:1.65;
-    }
-
-
-    /* =========================
-       LOGOUT / FOOTER
-    ========================= */
-
-    .logout{
-
-        margin:
-            35px
-            auto
-            0;
-
-        padding:
-            10px
-            21px;
-
-        font-size:14px;
-    }
-
-    .footer{
-
-        font-size:12px;
-
-        margin-top:25px;
-    }
-
-
-    /* =========================
-       MODALES
-    ========================= */
-
-    .modal{
-
-        padding:10px;
-    }
-
-    .modal-box{
-
-        max-height:94vh;
-
-        padding:
-            30px
-            20px
-            28px;
-
-        border-radius:23px;
-    }
-
-    .modal h2{
-
-        font-size:31px;
-
-        line-height:1.1;
-    }
-
-    .modal-text{
-
-        font-size:16px;
-
-        line-height:1.8;
-    }
-
-}
-
-
-/* =========================
-   IPHONE MUY PEQUEÑO
-========================= */
-
-@media(max-width:390px){
-
-    .container{
-
-        padding-left:11px;
-
-        padding-right:11px;
-    }
-
-    .brand h1{
-
-        font-size:29px;
-    }
-
-    .brand-heart{
-
-        font-size:26px;
-    }
-
-    .add-top{
-
-        padding:
-            10px
-            13px;
-
-        font-size:13px;
-    }
-
-    .letter-hero{
-
-        padding:
-            25px
-            20px
-            115px;
-
-        min-height:370px;
-    }
-
-    .letter-hero h2{
-
-        font-size:31px;
-    }
-
-    .letter-hero p{
-
-        font-size:15px;
-    }
-
-    .envelope-art{
-
-        font-size:70px;
-
-        right:18px;
-    }
-
-    .section-heading{
-
-        font-size:26px;
-    }
-
-    .memory-card{
-
-        grid-template-columns:
-            39%
-            61%;
-
-        min-height:200px;
-    }
-
-    .memory-image-wrap,
-    .memory-image{
-
-        min-height:200px;
-
-        height:200px;
-    }
-
-    .memory-info{
-
-        padding:
-            14px
-            12px;
-    }
-
-    .memory-title{
-
-        font-size:19px;
-    }
-
-    .memory-desc{
-
-        font-size:12px;
-
-        -webkit-line-clamp:3;
-    }
-
-    .memory-date{
-
-        font-size:8px;
-
-        letter-spacing:1.3px;
-    }
-
-    .small-button,
-    .action{
-
-        padding:
-            6px
-            9px;
-
-        font-size:11px;
-    }
+  .container{
+    padding:
+      20px
+      15px
+      55px
+  }
+
+  .site-header{
+    align-items:center;
+    padding-bottom:25px
+  }
+
+  .brand-heart{
+    font-size:32px
+  }
+
+  .brand h1{
+    font-size:35px
+  }
+
+  .add-top{
+    padding:
+      14px
+      20px;
+
+    font-size:15px
+  }
+
+  .letter-hero{
+    padding:
+      32px
+      25px
+      150px;
+
+    min-height:470px
+  }
+
+  .letter-hero h2{
+    font-size:39px
+  }
+
+  .letter-hero p{
+    font-size:18px
+  }
+
+  .envelope-art{
+    font-size:100px;
+    right:25px;
+    top:auto;
+    bottom:20px;
+    transform:none
+  }
+
+  .section-heading{
+    font-size:32px;
+    gap:8px
+  }
+
+  .section-heading span{
+    white-space:normal;
+    text-align:center
+  }
+
+  .memory-card{
+    grid-template-columns:1fr
+  }
+
+  .memory-image-wrap,
+  .memory-image{
+    min-height:300px;
+    height:300px
+  }
+
+  .memory-info{
+    padding:22px
+  }
+
+  .memory-title{
+    font-size:27px
+  }
+
+  .memory-actions{
+    margin-top:18px
+  }
+
+  .form-row{
+    flex-direction:column
+  }
+
+  .date-card{
+    padding:23px
+  }
+
+  .date-title{
+    font-size:24px
+  }
+
+  .timeline{
+    padding-left:28px
+  }
+
+  .timeline-item:before{
+    left:-40px
+  }
 
 }
 
@@ -1895,71 +933,65 @@ textarea{
 
 <div class="container">
 
-
-<!-- =========================
-     HEADER
-========================= -->
-
 <header class="site-header">
 
-    <div class="brand">
+  <div class="brand">
 
-        <div class="brand-heart">
-            ❤️
-        </div>
-
-        <h1>
-            <span>Nuestra</span>
-            <span>historia</span>
-        </h1>
-
+    <div class="brand-heart">
+      ❤️
     </div>
 
-    <button
-        class="add-top"
-        id="top-add-memory">
+    <h1>
+      <span>Nuestra</span>
+      <span>historia</span>
+    </h1>
 
-        + Agregar<br>
-        recuerdo
+  </div>
 
-    </button>
+  <button
+    class="add-top"
+    id="top-add-memory">
+
+    + Agregar<br>
+    recuerdo
+
+  </button>
 
 </header>
 
 
 <!-- =========================
-     CARTA PRINCIPAL
+     CARTA DESTACADA
 ========================= -->
 
 <section class="card letter-hero">
 
-    <div>
+  <div>
 
-        <h2>
-            ¿Quieres<br>
-            dejarme una<br>
-            carta? 💌
-        </h2>
+    <h2>
+      ¿Quieres<br>
+      dejarme una<br>
+      carta? 💌
+    </h2>
 
-        <p>
-            Escribe algo que quieras que
-            quede guardado en nuestra
-            historia.
-        </p>
+    <p>
+      Escribe algo que quieras que
+      quede guardado en nuestra historia.
+    </p>
 
-        <button
-            class="pink-button"
-            id="open-letter">
+    <button
+      class="pink-button"
+      id="open-letter">
 
-            ✍️ Escribir una carta
+      ✍️ Escribir una carta
 
-        </button>
+    </button>
 
-    </div>
+  </div>
 
-    <div class="envelope-art">
-        💌
-    </div>
+  <div class="envelope-art">
+    💌
+  </div>
 
 </section>
 
@@ -1969,139 +1001,134 @@ textarea{
 ========================= -->
 
 <section
-    class="section"
-    id="recuerdos">
+  class="section"
+  id="recuerdos">
 
-    <h2 class="section-heading">
+  <h2 class="section-heading">
 
-        <span>
-            📸 Recuerdos ❤️
-        </span>
+    <span>
+      📸 Recuerdos ❤️
+    </span>
 
-    </h2>
+  </h2>
 
-    <div class="section-subtitle">
+  <div class="section-subtitle">
 
-        Todos esos momentos que queremos guardar.
+    Todos esos momentos que queremos guardar.
 
-    </div>
-
-
-    <!-- FORMULARIO RECUERDO -->
-
-    <div
-        class="card form-panel"
-        id="memory-form">
-
-        <div
-            class="preview"
-            id="memory-preview">
-
-            <img
-                id="memory-preview-img"
-                alt="Vista previa">
-
-        </div>
+  </div>
 
 
-        <label>
-            📸 Foto
-        </label>
-
-        <input
-            type="file"
-            id="memory-file"
-            accept="image/*">
-
-
-        <label>
-            ❤️ Título
-        </label>
-
-        <input
-            id="memory-title"
-            maxlength="150"
-            placeholder="Ej. Nuestra primera salida">
-
-
-        <label>
-            📅 Fecha del recuerdo
-        </label>
-
-        <input
-            id="memory-date"
-            type="date">
-
-
-        <label>
-            💌 Descripción
-        </label>
-
-        <textarea
-            id="memory-description"
-            maxlength="1000"
-            placeholder="Escribe algo que quieras recordar...">
-        </textarea>
-
-
-        <div class="form-row">
-
-            <button
-                class="action"
-                id="cancel-memory">
-
-                Cancelar
-
-            </button>
-
-            <button
-                class="pink-button"
-                id="save-memory">
-
-                ❤️ Guardar recuerdo
-
-            </button>
-
-        </div>
-
-
-        <div
-            class="status"
-            id="memory-status">
-        </div>
-
-    </div>
-
-
-    <!-- LISTA RECUERDOS -->
+  <div
+    class="card form-panel"
+    id="memory-form">
 
     <div
-        class="memories"
-        id="memories-list">
+      class="preview"
+      id="memory-preview">
 
-        <div class="card date-card">
-
-            📸
-            <br><br>
-
-            Cargando nuestros recuerdos...
-
-        </div>
+      <img
+        id="memory-preview-img"
+        alt="Vista previa">
 
     </div>
 
 
-    <div class="center-action">
+    <label for="memory-file">
+      📸 Foto
+    </label>
 
-        <button
-            class="pink-button"
-            id="show-all-memories">
+    <input
+      type="file"
+      id="memory-file"
+      accept="image/*">
 
-            Ver todos los recuerdos
 
-        </button>
+    <label for="memory-title">
+      ❤️ Título
+    </label>
+
+    <input
+      id="memory-title"
+      maxlength="150"
+      placeholder="Ej. Nuestra primera salida">
+
+
+    <label for="memory-date">
+      📅 Fecha del recuerdo
+    </label>
+
+    <input
+      id="memory-date"
+      type="date">
+
+
+    <label for="memory-description">
+      💌 Descripción
+    </label>
+
+    <textarea
+      id="memory-description"
+      maxlength="1000"
+      placeholder="Escribe algo que quieras recordar..."></textarea>
+
+
+    <div class="form-row">
+
+      <button
+        class="action"
+        id="cancel-memory">
+
+        Cancelar
+
+      </button>
+
+      <button
+        class="pink-button"
+        id="save-memory">
+
+        ❤️ Guardar recuerdo
+
+      </button>
 
     </div>
+
+
+    <div
+      class="status"
+      id="memory-status">
+    </div>
+
+  </div>
+
+
+  <div
+    class="memories"
+    id="memories-list">
+
+    <div class="card date-card">
+
+      📸
+      <br><br>
+
+      Cargando nuestros recuerdos...
+
+    </div>
+
+  </div>
+
+
+  <div class="center-action">
+
+    <button
+      class="pink-button"
+      id="show-all-memories">
+
+      Ver todos los recuerdos
+
+    </button>
+
+  </div>
 
 </section>
 
@@ -2111,329 +1138,329 @@ textarea{
 ========================= -->
 
 <section
-    class="section"
-    id="fechas">
+  class="section"
+  id="fechas">
 
-    <h2 class="section-heading">
+  <h2 class="section-heading">
 
-        <span>
-            📅 Fechas especiales ❤️
-        </span>
+    <span>
+      📅 Fechas especiales ❤️
+    </span>
 
-    </h2>
+  </h2>
+
+  <div class="section-subtitle">
+
+    Las fechas que queremos guardar para siempre.
+
+  </div>
 
 
-    <div class="section-subtitle">
+  <div
+    class="dates"
+    id="dates-list">
 
-        Las fechas que queremos guardar para siempre.
+    <div class="card date-card">
+
+      📅
+      <br><br>
+
+      Cargando nuestras fechas...
 
     </div>
+
+  </div>
+
+
+  <div class="card add-date">
+
+    <h3 style="font-size:26px">
+
+      ➕ Agregar una fecha especial
+
+    </h3>
+
+    <p>
+
+      Guarda un cumpleaños,
+      aniversario, viaje o cualquier
+      día importante para ustedes.
+
+    </p>
+
+
+    <button
+      class="pink-button"
+      id="open-date-form">
+
+      + Agregar fecha
+
+    </button>
 
 
     <div
-        class="dates"
-        id="dates-list">
-
-        <div class="card date-card">
-
-            📅
-            <br><br>
-
-            Cargando nuestras fechas...
-
-        </div>
-
-    </div>
+      class="date-form"
+      id="date-form">
 
 
-    <!-- AGREGAR FECHA -->
+      <label for="date-value">
+        📅 Fecha
+      </label>
 
-    <div class="card add-date">
+      <input
+        id="date-value"
+        type="date">
 
-        <h3 style="font-size:26px">
 
-            ➕ Agregar una fecha especial
+      <label for="date-type">
+        ✨ Tipo
+      </label>
 
-        </h3>
+      <select
+        id="date-type"
+        style="
+          width:100%;
+          border:1px solid rgba(255,255,255,.16);
+          border-radius:15px;
+          background:#140c11;
+          color:white;
+          padding:14px;
+        ">
 
-        <p>
+        <option value="especial">
+          ✨ Especial
+        </option>
 
-            Guarda un cumpleaños,
-            aniversario, viaje o cualquier
-            día importante para ustedes.
+        <option value="cumpleaños">
+          🎂 Cumpleaños
+        </option>
 
-        </p>
+        <option value="aniversario">
+          ❤️ Aniversario
+        </option>
 
+        <option value="viaje">
+          ✈️ Viaje
+        </option>
+
+      </select>
+
+
+      <label for="date-title">
+        ❤️ Título
+      </label>
+
+      <input
+        id="date-title"
+        maxlength="150"
+        placeholder="Ej. Cumpleaños de Hannia">
+
+
+      <label for="date-message">
+        💌 Mensaje
+      </label>
+
+      <textarea
+        id="date-message"
+        maxlength="1000"
+        placeholder="Escribe qué significa esta fecha para nosotros..."></textarea>
+
+
+      <div class="form-row">
 
         <button
-            class="pink-button"
-            id="open-date-form">
+          class="action"
+          id="cancel-date">
 
-            + Agregar fecha
+          Cancelar
 
         </button>
 
+        <button
+          class="pink-button"
+          id="save-date">
 
-        <div
-            class="date-form"
-            id="date-form">
+          ❤️ Guardar fecha
 
+        </button>
 
-            <label>
-                📅 Fecha
-            </label>
-
-            <input
-                id="date-value"
-                type="date">
+      </div>
 
 
-            <label>
-                ✨ Tipo
-            </label>
-
-            <select
-                id="date-type">
-
-                <option value="especial">
-                    ✨ Especial
-                </option>
-
-                <option value="cumpleaños">
-                    🎂 Cumpleaños
-                </option>
-
-                <option value="aniversario">
-                    ❤️ Aniversario
-                </option>
-
-                <option value="viaje">
-                    ✈️ Viaje
-                </option>
-
-            </select>
-
-
-            <label>
-                ❤️ Título
-            </label>
-
-            <input
-                id="date-title"
-                maxlength="150"
-                placeholder="Ej. Cumpleaños de Hannia">
-
-
-            <label>
-                💌 Mensaje
-            </label>
-
-            <textarea
-                id="date-message"
-                maxlength="1000"
-                placeholder="Escribe qué significa esta fecha para nosotros...">
-            </textarea>
-
-
-            <div class="form-row">
-
-                <button
-                    class="action"
-                    id="cancel-date">
-
-                    Cancelar
-
-                </button>
-
-                <button
-                    class="pink-button"
-                    id="save-date">
-
-                    ❤️ Guardar fecha
-
-                </button>
-
-            </div>
-
-
-            <div
-                class="status"
-                id="date-status">
-            </div>
-
-        </div>
+      <div
+        class="status"
+        id="date-status">
+      </div>
 
     </div>
+
+  </div>
 
 </section>
 
 
 <!-- =========================
-     NUESTRA HISTORIA
+     HISTORIA
 ========================= -->
 
 <section
-    class="section"
-    id="historia">
+  class="section"
+  id="historia">
 
-    <h2 class="section-heading">
+  <h2 class="section-heading">
 
-        <span>
-            📖 Nuestra historia ❤️
-        </span>
+    <span>
+      📖 Nuestra historia ❤️
+    </span>
 
-    </h2>
+  </h2>
+
+  <div class="section-subtitle">
+
+    Cada capítulo de nosotros merece ser recordado.
+
+  </div>
 
 
-    <div class="section-subtitle">
+  <div
+    class="card"
+    style="padding:30px"
+    id="history-list">
 
-        Cada capítulo de nosotros merece ser recordado.
+    <div class="timeline">
 
-    </div>
+      <div class="timeline-item">
 
-
-    <div
-        class="card"
-        style="padding:30px"
-        id="history-list">
-
-        <div class="timeline">
-
-            <div class="timeline-item">
-
-                <div class="memory-date">
-                    NUESTRO COMIENZO ❤️
-                </div>
-
-                <div class="timeline-title">
-                    Nuestra historia
-                </div>
-
-                <div class="timeline-text">
-                    Cargando nuestra historia...
-                </div>
-
-            </div>
-
+        <div class="memory-date">
+          NUESTRO COMIENZO ❤️
         </div>
 
+        <div class="timeline-title">
+          Nuestra historia
+        </div>
+
+        <div class="timeline-text">
+          Cargando nuestra historia...
+        </div>
+
+      </div>
+
     </div>
 
+  </div>
 
-    <!-- AGREGAR CAPÍTULO -->
+
+  <div
+    class="card add-date"
+    style="margin-top:18px">
+
+    <h3 style="font-size:26px">
+
+      📖❤️ Agregar un capítulo
+
+    </h3>
+
+    <p>
+
+      Guarda otro momento importante
+      de nuestra historia.
+
+    </p>
+
+
+    <button
+      class="pink-button"
+      id="open-chapter">
+
+      + Agregar capítulo
+
+    </button>
+
 
     <div
-        class="card add-date"
-        style="margin-top:18px">
+      class="date-form"
+      id="chapter-form">
 
-        <h3 style="font-size:26px">
 
-            📖❤️ Agregar un capítulo
+      <label for="chapter-date">
+        📅 Fecha
+      </label>
 
-        </h3>
+      <input
+        id="chapter-date"
+        type="date">
 
-        <p>
 
-            Guarda otro momento importante
-            de nuestra historia.
+      <label for="chapter-title">
+        ❤️ Título
+      </label>
 
-        </p>
+      <input
+        id="chapter-title"
+        maxlength="150"
+        placeholder="Ej. El día que nos conocimos">
 
+
+      <label for="chapter-text">
+        💌 Nuestra historia
+      </label>
+
+      <textarea
+        id="chapter-text"
+        maxlength="5000"
+        placeholder="Cuéntanos qué pasó..."></textarea>
+
+
+      <label for="chapter-file">
+        📸 Foto opcional
+      </label>
+
+      <input
+        id="chapter-file"
+        type="file"
+        accept="image/*">
+
+
+      <div
+        class="preview"
+        id="chapter-preview">
+
+        <img
+          id="chapter-preview-img"
+          alt="Vista previa">
+
+      </div>
+
+
+      <div class="form-row">
 
         <button
-            class="pink-button"
-            id="open-chapter">
+          class="action"
+          id="cancel-chapter">
 
-            + Agregar capítulo
+          Cancelar
 
         </button>
 
+        <button
+          class="pink-button"
+          id="save-chapter">
 
-        <div
-            class="date-form"
-            id="chapter-form">
+          ❤️ Guardar capítulo
 
+        </button>
 
-            <label>
-                📅 Fecha
-            </label>
-
-            <input
-                id="chapter-date"
-                type="date">
+      </div>
 
 
-            <label>
-                ❤️ Título
-            </label>
-
-            <input
-                id="chapter-title"
-                maxlength="150"
-                placeholder="Ej. El día que nos conocimos">
-
-
-            <label>
-                💌 Nuestra historia
-            </label>
-
-            <textarea
-                id="chapter-text"
-                maxlength="5000"
-                placeholder="Cuéntanos qué pasó...">
-            </textarea>
-
-
-            <label>
-                📸 Foto opcional
-            </label>
-
-            <input
-                type="file"
-                id="chapter-file"
-                accept="image/*">
-
-
-            <div
-                class="preview"
-                id="chapter-preview">
-
-                <img
-                    id="chapter-preview-img"
-                    alt="Vista previa">
-
-            </div>
-
-
-            <div class="form-row">
-
-                <button
-                    class="action"
-                    id="cancel-chapter">
-
-                    Cancelar
-
-                </button>
-
-                <button
-                    class="pink-button"
-                    id="save-chapter">
-
-                    ❤️ Guardar capítulo
-
-                </button>
-
-            </div>
-
-
-            <div
-                class="status"
-                id="chapter-status">
-            </div>
-
-        </div>
+      <div
+        class="status"
+        id="chapter-status">
+      </div>
 
     </div>
+
+  </div>
 
 </section>
 
@@ -2443,125 +1470,123 @@ textarea{
 ========================= -->
 
 <section
-    class="letters"
-    id="cartas">
+  class="letters"
+  id="cartas">
 
-    <h2 class="section-heading">
+  <h2 class="section-heading">
 
-        <span>
-            💌 Cartas para ti ❤️
-        </span>
+    <span>
+      💌 Cartas para ti ❤️
+    </span>
 
-    </h2>
+  </h2>
 
+  <div class="section-subtitle">
 
-    <div class="section-subtitle">
+    Porque hay cosas que es más bonito
+    escribirlas que decirlas.
 
-        Porque hay cosas que es más bonito
-        escribirlas que decirlas.
-
-    </div>
-
-
-    <div class="card add-date">
-
-        <h3 style="font-size:26px">
-
-            ¿Quieres dejarme una carta? 💌
-
-        </h3>
+  </div>
 
 
-        <p>
+  <div class="card add-date">
 
-            Escribe algo que quieras que
-            quede guardado en nuestra historia.
+    <h3 style="font-size:26px">
 
-        </p>
+      ¿Quieres dejarme una carta? 💌
 
-
-        <button
-            class="pink-button"
-            id="open-letter-2">
-
-            ✍️ Escribir una carta
-
-        </button>
+    </h3>
 
 
-        <div
-            class="date-form"
-            id="letter-form">
+    <p>
+
+      Escribe algo que quieras que
+      quede guardado en nuestra historia.
+
+    </p>
 
 
-            <label>
-                ❤️ Título de la carta
-            </label>
+    <button
+      class="pink-button"
+      id="open-letter-2">
 
-            <input
-                id="letter-title"
-                maxlength="150"
-                placeholder="Ej. Para ti, mi amor...">
+      ✍️ Escribir una carta
 
-
-            <label>
-                💌 Escribe tu carta
-            </label>
-
-            <textarea
-                id="letter-text"
-                maxlength="5000"
-                style="min-height:240px"
-                placeholder="Escribe aquí todo eso que quieres decir...">
-            </textarea>
-
-
-            <div class="form-row">
-
-                <button
-                    class="action"
-                    id="cancel-letter">
-
-                    Cancelar
-
-                </button>
-
-                <button
-                    class="pink-button"
-                    id="save-letter">
-
-                    ❤️ Guardar carta
-
-                </button>
-
-            </div>
-
-
-            <div
-                class="status"
-                id="letter-status">
-            </div>
-
-        </div>
-
-    </div>
+    </button>
 
 
     <div
-        class="letter-list"
-        id="letters-list"
-        style="margin-top:18px">
+      class="date-form"
+      id="letter-form">
 
-        <div class="card date-card">
 
-            💌
-            <br><br>
+      <label for="letter-title">
+        ❤️ Título de la carta
+      </label>
 
-            Cargando nuestras cartas...
+      <input
+        id="letter-title"
+        maxlength="150"
+        placeholder="Ej. Para ti, mi amor...">
 
-        </div>
+
+      <label for="letter-text">
+        💌 Escribe tu carta
+      </label>
+
+      <textarea
+        id="letter-text"
+        maxlength="5000"
+        style="min-height:240px"
+        placeholder="Escribe aquí todo eso que quieres decir..."></textarea>
+
+
+      <div class="form-row">
+
+        <button
+          class="action"
+          id="cancel-letter">
+
+          Cancelar
+
+        </button>
+
+        <button
+          class="pink-button"
+          id="save-letter">
+
+          ❤️ Guardar carta
+
+        </button>
+
+      </div>
+
+
+      <div
+        class="status"
+        id="letter-status">
+      </div>
 
     </div>
+
+  </div>
+
+
+  <div
+    class="letter-list"
+    id="letters-list"
+    style="margin-top:18px">
+
+    <div class="card date-card">
+
+      💌
+      <br><br>
+
+      Cargando nuestras cartas...
+
+    </div>
+
+  </div>
 
 </section>
 
@@ -2572,38 +1597,38 @@ textarea{
 
 <div class="card future">
 
-    <h2>
-        ✨ Lo que todavía nos falta vivir
-    </h2>
+  <h2>
+    ✨ Lo que todavía nos falta vivir
+  </h2>
 
-    <p>
+  <p>
 
-        Viajes, aventuras, cumpleaños,
-        días normales, días increíbles
-        y todos esos momentos que todavía
-        no conocemos.
+    Viajes, aventuras, cumpleaños,
+    días normales, días increíbles
+    y todos esos momentos que todavía
+    no conocemos.
 
-        <br><br>
+    <br><br>
 
-        Nuestra historia apenas sigue comenzando. ❤️
+    Nuestra historia apenas sigue comenzando. ❤️
 
-    </p>
+  </p>
 
 </div>
 
 
 <button
-    class="logout"
-    id="logout">
+  class="logout"
+  id="logout">
 
-    Cerrar sesión
+  Cerrar sesión
 
 </button>
 
 
 <div class="footer">
 
-    Hecho con ❤️ para nuestra historia
+  Hecho con ❤️ para nuestra historia
 
 </div>
 
@@ -2615,55 +1640,55 @@ textarea{
 ========================= -->
 
 <div
-    class="modal"
-    id="memory-modal"
-    aria-hidden="true">
+  class="modal"
+  id="memory-modal"
+  aria-hidden="true">
+
+  <div
+    class="modal-box"
+    style="position:relative">
+
+    <button
+      class="close"
+      data-close="memory-modal">
+
+      ×
+
+    </button>
+
 
     <div
-        class="modal-box"
-        style="position:relative">
-
-        <button
-            class="close"
-            data-close="memory-modal">
-
-            ×
-
-        </button>
-
-
-        <div
-            class="modal-date"
-            id="modal-memory-date">
-        </div>
-
-
-        <h2
-            id="modal-memory-title">
-        </h2>
-
-
-        <div class="modal-line"></div>
-
-
-        <img
-            id="modal-memory-image"
-            style="
-                width:100%;
-                max-height:500px;
-                object-fit:cover;
-                border-radius:20px;
-                margin-bottom:25px;
-            "
-            alt="">
-
-
-        <div
-            class="modal-text"
-            id="modal-memory-text">
-        </div>
-
+      class="modal-date"
+      id="modal-memory-date">
     </div>
+
+
+    <h2
+      id="modal-memory-title">
+    </h2>
+
+
+    <div class="modal-line"></div>
+
+
+    <img
+      id="modal-memory-image"
+      style="
+        width:100%;
+        max-height:500px;
+        object-fit:cover;
+        border-radius:20px;
+        margin-bottom:25px
+      "
+      alt="">
+
+
+    <div
+      class="modal-text"
+      id="modal-memory-text">
+    </div>
+
+  </div>
 
 </div>
 
@@ -2673,49 +1698,49 @@ textarea{
 ========================= -->
 
 <div
-    class="modal"
-    id="letter-modal"
-    aria-hidden="true">
+  class="modal"
+  id="letter-modal"
+  aria-hidden="true">
+
+  <div
+    class="modal-box"
+    style="position:relative">
+
+    <button
+      class="close"
+      data-close="letter-modal">
+
+      ×
+
+    </button>
+
 
     <div
-        class="modal-box"
-        style="position:relative">
-
-        <button
-            class="close"
-            data-close="letter-modal">
-
-            ×
-
-        </button>
-
-
-        <div
-            class="modal-date"
-            id="modal-letter-date">
-        </div>
-
-
-        <h2
-            id="modal-letter-title">
-        </h2>
-
-
-        <div
-            class="modal-author"
-            id="modal-letter-author">
-        </div>
-
-
-        <div class="modal-line"></div>
-
-
-        <div
-            class="modal-text"
-            id="modal-letter-text">
-        </div>
-
+      class="modal-date"
+      id="modal-letter-date">
     </div>
+
+
+    <h2
+      id="modal-letter-title">
+    </h2>
+
+
+    <div
+      class="modal-author"
+      id="modal-letter-author">
+    </div>
+
+
+    <div class="modal-line"></div>
+
+
+    <div
+      class="modal-text"
+      id="modal-letter-text">
+    </div>
+
+  </div>
 
 </div>
 
@@ -2734,8 +1759,8 @@ const SUPABASE_KEY =
 
 const supabaseClient =
 window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
+  SUPABASE_URL,
+  SUPABASE_KEY
 );
 
 
@@ -2762,128 +1787,130 @@ let selectedChapterFile = null;
 
 function iconForType(type){
 
-    const t =
-        String(type || "")
-        .toLowerCase();
+  const t =
+    String(type || "")
+    .toLowerCase();
 
-    if(
-        t === "cumpleaños" ||
-        t === "cumpleanos"
-    ){
-        return "🎂";
-    }
+  if(
+    t === "cumpleaños" ||
+    t === "cumpleanos"
+  ){
+    return "🎂";
+  }
 
-    if(t === "aniversario"){
-        return "❤️";
-    }
+  if(t === "aniversario"){
+    return "❤️";
+  }
 
-    if(t === "viaje"){
-        return "✈️";
-    }
+  if(t === "viaje"){
+    return "✈️";
+  }
 
-    return "✨";
+  return "✨";
 }
 
 
 function prettyDate(value){
 
-    if(!value){
-        return "";
-    }
+  if(!value){
+    return "";
+  }
 
-    const d =
-        new Date(
-            String(value).length <= 10
-            ? String(value)+"T00:00:00"
-            : value
-        );
-
-    if(
-        isNaN(
-            d.getTime()
-        )
-    ){
-        return String(value);
-    }
-
-    return d.toLocaleDateString(
-        "es-MX",
-        {
-            day:"numeric",
-            month:"long",
-            year:"numeric"
-        }
+  const d =
+    new Date(
+      String(value).length <= 10
+      ? String(value)+"T00:00:00"
+      : value
     );
+
+  if(
+    isNaN(
+      d.getTime()
+    )
+  ){
+    return String(value);
+  }
+
+  return d.toLocaleDateString(
+    "es-MX",
+    {
+      day:"numeric",
+      month:"long",
+      year:"numeric"
+    }
+  );
 }
 
 
 function showStatus(
-    element,
-    message,
-    type
+  el,
+  msg,
+  type
 ){
 
-    element.textContent =
-        message;
+  el.textContent =
+    msg;
 
-    element.className =
-        "status show " +
-        type;
+  el.className =
+    "status show " +
+    type;
 }
 
 
-function hideStatus(element){
+function hideStatus(el){
 
-    element.className =
-        "status";
+  el.className =
+    "status";
 
-    element.textContent = "";
+  el.textContent = "";
 }
 
 
 function openModal(id){
 
-    const modal =
-        document.getElementById(id);
+  const m =
+    document.getElementById(id);
 
-    modal.classList.add("active");
+  m.classList.add(
+    "active"
+  );
 
-    modal.setAttribute(
-        "aria-hidden",
-        "false"
-    );
+  m.setAttribute(
+    "aria-hidden",
+    "false"
+  );
 
-    document.body.classList.add(
-        "modal-open"
-    );
+  document.body.classList.add(
+    "modal-open"
+  );
 }
 
 
 function closeModal(id){
 
-    const modal =
-        document.getElementById(id);
+  const m =
+    document.getElementById(id);
 
-    modal.classList.remove(
-        "active"
+  m.classList.remove(
+    "active"
+  );
+
+  m.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  if(
+    !document.querySelector(
+      ".modal.active"
+    )
+  ){
+
+    document.body.classList.remove(
+      "modal-open"
     );
 
-    modal.setAttribute(
-        "aria-hidden",
-        "true"
-    );
-
-    if(
-        !document.querySelector(
-            ".modal.active"
-        )
-    ){
-
-        document.body.classList.remove(
-            "modal-open"
-        );
-
-    }
+  }
 }
 
 
@@ -2893,27 +1920,27 @@ function closeModal(id){
 
 async function requireSession(){
 
-    const {
-        data,
-        error
-    } =
-        await supabaseClient
-        .auth
-        .getSession();
+  const {
+    data,
+    error
+  } =
+    await supabaseClient
+    .auth
+    .getSession();
 
-    if(
-        error ||
-        !data.session
-    ){
+  if(
+    error ||
+    !data.session
+  ){
 
-        window.location.replace(
-            "login.html"
-        );
+    window.location.replace(
+      "login.html"
+    );
 
-        return null;
-    }
+    return null;
+  }
 
-    return data.session;
+  return data.session;
 }
 
 
@@ -2923,12 +1950,12 @@ async function requireSession(){
 
 function storagePublicUrl(path){
 
-    return supabaseClient
-        .storage
-        .from("Recuerdos")
-        .getPublicUrl(path)
-        .data
-        .publicUrl;
+  return supabaseClient
+    .storage
+    .from("Recuerdos")
+    .getPublicUrl(path)
+    .data
+    .publicUrl;
 }
 
 
@@ -2938,198 +1965,200 @@ function storagePublicUrl(path){
 
 const memoryForm =
 document.getElementById(
-    "memory-form"
+  "memory-form"
 );
 
 const memoryFile =
 document.getElementById(
-    "memory-file"
+  "memory-file"
 );
 
 const memoryTitle =
 document.getElementById(
-    "memory-title"
+  "memory-title"
 );
 
 const memoryDate =
 document.getElementById(
-    "memory-date"
+  "memory-date"
 );
 
 const memoryDescription =
 document.getElementById(
-    "memory-description"
+  "memory-description"
 );
 
 const memoryPreview =
 document.getElementById(
-    "memory-preview"
+  "memory-preview"
 );
 
 const memoryPreviewImg =
 document.getElementById(
-    "memory-preview-img"
+  "memory-preview-img"
 );
 
 const memoryStatus =
 document.getElementById(
-    "memory-status"
+  "memory-status"
 );
 
 
 function resetMemoryForm(){
 
-    editingMemoryId = null;
+  editingMemoryId = null;
 
-    selectedMemoryFile = null;
+  selectedMemoryFile = null;
 
-    memoryFile.value = "";
+  memoryFile.value = "";
 
-    memoryTitle.value = "";
+  memoryTitle.value = "";
 
-    memoryDate.value = "";
+  memoryDate.value = "";
 
-    memoryDescription.value = "";
+  memoryDescription.value = "";
 
-    memoryPreview.classList.remove(
-        "active"
-    );
+  memoryPreview.classList.remove(
+    "active"
+  );
 
-    memoryPreviewImg.src = "";
+  memoryPreviewImg.src = "";
 
-    memoryForm.classList.remove(
-        "active"
-    );
+  memoryForm.classList.remove(
+    "active"
+  );
 
-    hideStatus(
-        memoryStatus
-    );
+  hideStatus(
+    memoryStatus
+  );
 }
 
 
 function openMemoryForm(
-    memory = null
+  memory = null
 ){
 
-    memoryForm.classList.add(
-        "active"
-    );
+  memoryForm.classList.add(
+    "active"
+  );
 
-    hideStatus(
-        memoryStatus
-    );
+  hideStatus(
+    memoryStatus
+  );
 
-    editingMemoryId =
-        memory?.id || null;
+  editingMemoryId =
+    memory?.id || null;
 
-    memoryTitle.value =
-        memory?.titulo || "";
+  memoryTitle.value =
+    memory?.titulo || "";
 
-    memoryDate.value =
-        memory?.fecha || "";
+  memoryDate.value =
+    memory?.fecha || "";
 
-    memoryDescription.value =
-        memory?.descripcion ||
-        memory?.mensaje ||
-        "";
+  memoryDescription.value =
+    memory?.descripcion ||
+    memory?.mensaje ||
+    "";
 
-    selectedMemoryFile = null;
+  selectedMemoryFile = null;
 
-    memoryFile.value = "";
+  memoryFile.value = "";
 
-    memoryPreview.classList.remove(
-        "active"
-    );
+  memoryPreview.classList.remove(
+    "active"
+  );
 
-    memoryPreviewImg.src = "";
+  memoryPreviewImg.src = "";
 
-    memoryTitle.focus();
+  memoryTitle.focus();
 
-    document
-        .getElementById("recuerdos")
-        .scrollIntoView({
-            behavior:"smooth",
-            block:"start"
-        });
+  document
+    .getElementById(
+      "recuerdos"
+    )
+    .scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
 }
 
 
 document
-    .getElementById(
-        "top-add-memory"
-    )
-    .onclick =
-        () => openMemoryForm();
+  .getElementById(
+    "top-add-memory"
+  )
+  .onclick =
+    () => openMemoryForm();
 
 
 memoryFile.onchange =
 function(event){
 
-    const file =
-        event.target.files[0];
+  const file =
+    event.target.files[0];
 
-    if(!file){
-        return;
-    }
+  if(!file){
+    return;
+  }
 
-    if(
-        !file.type.startsWith(
-            "image/"
-        )
-    ){
+  if(
+    !file.type.startsWith(
+      "image/"
+    )
+  ){
 
-        showStatus(
-            memoryStatus,
-            "Selecciona una imagen.",
-            "error"
-        );
-
-        return;
-    }
-
-    if(
-        file.size >
-        10 * 1024 * 1024
-    ){
-
-        showStatus(
-            memoryStatus,
-            "La foto debe pesar máximo 10 MB.",
-            "error"
-        );
-
-        return;
-    }
-
-    selectedMemoryFile =
-        file;
-
-    const reader =
-        new FileReader();
-
-    reader.onload =
-        function(event){
-
-            memoryPreviewImg.src =
-                event.target.result;
-
-            memoryPreview.classList.add(
-                "active"
-            );
-        };
-
-    reader.readAsDataURL(
-        file
+    showStatus(
+      memoryStatus,
+      "Selecciona una imagen.",
+      "error"
     );
+
+    return;
+  }
+
+  if(
+    file.size >
+    10 * 1024 * 1024
+  ){
+
+    showStatus(
+      memoryStatus,
+      "La foto debe pesar máximo 10 MB.",
+      "error"
+    );
+
+    return;
+  }
+
+  selectedMemoryFile =
+    file;
+
+  const reader =
+    new FileReader();
+
+  reader.onload =
+    function(event){
+
+      memoryPreviewImg.src =
+        event.target.result;
+
+      memoryPreview.classList.add(
+        "active"
+      );
+    };
+
+  reader.readAsDataURL(
+    file
+  );
 };
 
 
 document
-    .getElementById(
-        "cancel-memory"
-    )
-    .onclick =
-        resetMemoryForm;
+  .getElementById(
+    "cancel-memory"
+  )
+  .onclick =
+    resetMemoryForm;
 
 
 /* =========================================================
@@ -3138,220 +2167,220 @@ document
 
 async function saveMemory(){
 
-    const session =
-        await requireSession();
+  const session =
+    await requireSession();
 
-    if(!session){
-        return;
+  if(!session){
+    return;
+  }
+
+  const title =
+    memoryTitle.value.trim();
+
+  const date =
+    memoryDate.value;
+
+  const description =
+    memoryDescription.value.trim();
+
+
+  if(!title){
+
+    showStatus(
+      memoryStatus,
+      "Ponle un título al recuerdo ❤️",
+      "error"
+    );
+
+    return;
+  }
+
+
+  if(!date){
+
+    showStatus(
+      memoryStatus,
+      "Selecciona la fecha del recuerdo 📅",
+      "error"
+    );
+
+    return;
+  }
+
+
+  const button =
+    document.getElementById(
+      "save-memory"
+    );
+
+  button.disabled = true;
+
+
+  try{
+
+    let url = null;
+
+
+    if(selectedMemoryFile){
+
+      const extension =
+        selectedMemoryFile
+        .name
+        .split(".")
+        .pop()
+        .toLowerCase();
+
+
+      const path =
+        "recuerdo_" +
+        Date.now() +
+        "_" +
+        Math.random()
+          .toString(36)
+          .slice(2,9) +
+        "." +
+        extension;
+
+
+      const {
+        data,
+        error
+      } =
+        await supabaseClient
+        .storage
+        .from("Recuerdos")
+        .upload(
+          path,
+          selectedMemoryFile,
+          {
+            cacheControl:"3600",
+            upsert:false
+          }
+        );
+
+
+      if(error){
+        throw error;
+      }
+
+
+      url =
+        storagePublicUrl(
+          data.path
+        );
     }
 
-    const title =
-        memoryTitle.value.trim();
 
-    const date =
-        memoryDate.value;
+    if(editingMemoryId){
 
-    const description =
-        memoryDescription.value.trim();
+      const update = {
+
+        titulo:title,
+
+        descripcion:
+          description,
+
+        fecha:date
+
+      };
 
 
-    if(!title){
+      if(url){
+        update.Url = url;
+      }
 
-        showStatus(
-            memoryStatus,
-            "Ponle un título al recuerdo ❤️",
-            "error"
+
+      const {
+        error
+      } =
+        await supabaseClient
+        .from("recuerdos")
+        .update(update)
+        .eq(
+          "id",
+          editingMemoryId
         );
 
-        return;
+
+      if(error){
+        throw error;
+      }
+
+
+      showStatus(
+        memoryStatus,
+        "¡Recuerdo actualizado! ❤️",
+        "success"
+      );
+
+    }else{
+
+      const {
+        error
+      } =
+        await supabaseClient
+        .from("recuerdos")
+        .insert([
+
+          {
+            titulo:title,
+
+            descripcion:
+              description,
+
+            fecha:date,
+
+            Url:url || ""
+
+          }
+
+        ]);
+
+
+      if(error){
+        throw error;
+      }
+
+
+      showStatus(
+        memoryStatus,
+        "¡Recuerdo guardado! ❤️",
+        "success"
+      );
     }
 
 
-    if(!date){
-
-        showStatus(
-            memoryStatus,
-            "Selecciona la fecha del recuerdo 📅",
-            "error"
-        );
-
-        return;
-    }
+    await loadMemories();
 
 
-    const button =
-        document.getElementById(
-            "save-memory"
-        );
+    setTimeout(
+      resetMemoryForm,
+      900
+    );
 
-    button.disabled = true;
+  }catch(error){
 
+    showStatus(
+      memoryStatus,
+      "No se pudo guardar: " +
+      error.message,
+      "error"
+    );
 
-    try{
+  }finally{
 
-        let url = null;
+    button.disabled = false;
 
-
-        if(selectedMemoryFile){
-
-            const extension =
-                selectedMemoryFile
-                .name
-                .split(".")
-                .pop()
-                .toLowerCase();
-
-
-            const path =
-                "recuerdo_" +
-                Date.now() +
-                "_" +
-                Math.random()
-                    .toString(36)
-                    .slice(2,9) +
-                "." +
-                extension;
-
-
-            const {
-                data,
-                error
-            } =
-                await supabaseClient
-                .storage
-                .from("Recuerdos")
-                .upload(
-                    path,
-                    selectedMemoryFile,
-                    {
-                        cacheControl:"3600",
-                        upsert:false
-                    }
-                );
-
-
-            if(error){
-                throw error;
-            }
-
-
-            url =
-                storagePublicUrl(
-                    data.path
-                );
-        }
-
-
-        if(editingMemoryId){
-
-            const update = {
-
-                titulo:title,
-
-                descripcion:
-                    description,
-
-                fecha:date
-
-            };
-
-
-            if(url){
-                update.Url = url;
-            }
-
-
-            const {
-                error
-            } =
-                await supabaseClient
-                .from("recuerdos")
-                .update(update)
-                .eq(
-                    "id",
-                    editingMemoryId
-                );
-
-
-            if(error){
-                throw error;
-            }
-
-
-            showStatus(
-                memoryStatus,
-                "¡Recuerdo actualizado! ❤️",
-                "success"
-            );
-
-        }else{
-
-            const {
-                error
-            } =
-                await supabaseClient
-                .from("recuerdos")
-                .insert([
-
-                    {
-                        titulo:title,
-
-                        descripcion:
-                            description,
-
-                        fecha:date,
-
-                        Url:url || ""
-
-                    }
-
-                ]);
-
-
-            if(error){
-                throw error;
-            }
-
-
-            showStatus(
-                memoryStatus,
-                "¡Recuerdo guardado! ❤️",
-                "success"
-            );
-        }
-
-
-        await loadMemories();
-
-
-        setTimeout(
-            resetMemoryForm,
-            900
-        );
-
-    }catch(error){
-
-        showStatus(
-            memoryStatus,
-            "No se pudo guardar: " +
-            error.message,
-            "error"
-        );
-
-    }finally{
-
-        button.disabled = false;
-
-    }
+  }
 }
 
 
 document
-    .getElementById(
-        "save-memory"
-    )
-    .onclick =
-        saveMemory;
+  .getElementById(
+    "save-memory"
+  )
+  .onclick =
+    saveMemory;
 
 
 /* =========================================================
@@ -3360,344 +2389,344 @@ document
 
 async function loadMemories(){
 
-    const box =
-        document.getElementById(
-            "memories-list"
-        );
+  const box =
+    document.getElementById(
+      "memories-list"
+    );
 
 
-    try{
+  try{
 
-        const session =
-            await requireSession();
+    const session =
+      await requireSession();
 
-        if(!session){
-            return;
+    if(!session){
+      return;
+    }
+
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient
+      .from("recuerdos")
+      .select("*")
+      .order(
+        "fecha",
+        {
+          ascending:false
+        }
+      )
+      .order(
+        "created_at",
+        {
+          ascending:false
+        }
+      );
+
+
+    if(error){
+      throw error;
+    }
+
+
+    box.innerHTML = "";
+
+
+    if(
+      !data ||
+      !data.length
+    ){
+
+      box.innerHTML = `
+
+        <div class="card date-card">
+
+          📸
+          <br><br>
+
+          Todavía no hay recuerdos
+          para mostrar.
+
+        </div>
+
+      `;
+
+      return;
+    }
+
+
+    data.forEach(
+      function(memory){
+
+        const card =
+          document.createElement(
+            "article"
+          );
+
+        card.className =
+          "card memory-card";
+
+
+        const imageWrap =
+          document.createElement(
+            "div"
+          );
+
+        imageWrap.className =
+          "memory-image-wrap";
+
+
+        const image =
+          document.createElement(
+            "img"
+          );
+
+        image.className =
+          "memory-image";
+
+
+        const url =
+          memory.Url ||
+          memory.url ||
+          memory.foto_url ||
+          memory.imagen ||
+          "";
+
+
+        image.src = url;
+
+        image.alt =
+          memory.titulo ||
+          "Nuestro recuerdo ❤️";
+
+
+        image.loading =
+          "lazy";
+
+
+        if(!url){
+
+          image.style.display =
+            "none";
         }
 
 
-        const {
-            data,
-            error
-        } =
-            await supabaseClient
-            .from("recuerdos")
-            .select("*")
-            .order(
-                "fecha",
-                {
-                    ascending:false
-                }
-            )
-            .order(
-                "created_at",
-                {
-                    ascending:false
-                }
+        imageWrap.appendChild(
+          image
+        );
+
+
+        const info =
+          document.createElement(
+            "div"
+          );
+
+        info.className =
+          "memory-info";
+
+
+        const date =
+          document.createElement(
+            "div"
+          );
+
+        date.className =
+          "memory-date";
+
+
+        date.textContent =
+          prettyDate(
+            memory.fecha ||
+            memory.created_at
+          );
+
+
+        const title =
+          document.createElement(
+            "div"
+          );
+
+        title.className =
+          "memory-title";
+
+
+        title.textContent =
+          memory.titulo ||
+          "Nuestro recuerdo ❤️";
+
+
+        const description =
+          document.createElement(
+            "div"
+          );
+
+        description.className =
+          "memory-desc";
+
+
+        description.textContent =
+          memory.descripcion ||
+          memory.mensaje ||
+          "";
+
+
+        const actions =
+          document.createElement(
+            "div"
+          );
+
+        actions.className =
+          "memory-actions";
+
+
+        const view =
+          document.createElement(
+            "button"
+          );
+
+        view.className =
+          "small-button";
+
+        view.textContent =
+          "Ver recuerdo";
+
+
+        view.onclick =
+          function(){
+
+            document
+              .getElementById(
+                "modal-memory-date"
+              )
+              .textContent =
+              date.textContent;
+
+
+            document
+              .getElementById(
+                "modal-memory-title"
+              )
+              .textContent =
+              "❤️ " +
+              title.textContent;
+
+
+            document
+              .getElementById(
+                "modal-memory-text"
+              )
+              .textContent =
+              description.textContent;
+
+
+            const modalImage =
+              document
+              .getElementById(
+                "modal-memory-image"
+              );
+
+
+            modalImage.src =
+              url;
+
+
+            modalImage.style.display =
+              url
+              ? "block"
+              : "none";
+
+
+            openModal(
+              "memory-modal"
+            );
+
+          };
+
+
+        const edit =
+          document.createElement(
+            "button"
+          );
+
+        edit.className =
+          "action";
+
+        edit.textContent =
+          "✏️ Editar";
+
+
+        edit.onclick =
+          () =>
+            openMemoryForm(
+              memory
             );
 
 
-        if(error){
-            throw error;
-        }
+        const deleteButton =
+          document.createElement(
+            "button"
+          );
 
+        deleteButton.className =
+          "action delete";
 
-        box.innerHTML = "";
+        deleteButton.textContent =
+          "🗑️ Eliminar";
 
 
-        if(
-            !data ||
-            !data.length
-        ){
+        deleteButton.onclick =
+          () =>
+            deleteMemory(
+              memory.id
+            );
 
-            box.innerHTML = `
 
-                <div class="card date-card">
-
-                    📸
-                    <br><br>
-
-                    Todavía no hay recuerdos
-                    para mostrar.
-
-                </div>
-
-            `;
-
-            return;
-        }
-
-
-        data.forEach(
-            function(memory){
-
-                const card =
-                    document.createElement(
-                        "article"
-                    );
-
-                card.className =
-                    "card memory-card";
-
-
-                const imageWrap =
-                    document.createElement(
-                        "div"
-                    );
-
-                imageWrap.className =
-                    "memory-image-wrap";
-
-
-                const image =
-                    document.createElement(
-                        "img"
-                    );
-
-                image.className =
-                    "memory-image";
-
-
-                const url =
-                    memory.Url ||
-                    memory.url ||
-                    memory.foto_url ||
-                    memory.imagen ||
-                    "";
-
-
-                image.src = url;
-
-                image.alt =
-                    memory.titulo ||
-                    "Nuestro recuerdo ❤️";
-
-
-                image.loading =
-                    "lazy";
-
-
-                if(!url){
-
-                    image.style.display =
-                        "none";
-                }
-
-
-                imageWrap.appendChild(
-                    image
-                );
-
-
-                const info =
-                    document.createElement(
-                        "div"
-                    );
-
-                info.className =
-                    "memory-info";
-
-
-                const date =
-                    document.createElement(
-                        "div"
-                    );
-
-                date.className =
-                    "memory-date";
-
-
-                date.textContent =
-                    prettyDate(
-                        memory.fecha ||
-                        memory.created_at
-                    );
-
-
-                const title =
-                    document.createElement(
-                        "div"
-                    );
-
-                title.className =
-                    "memory-title";
-
-
-                title.textContent =
-                    memory.titulo ||
-                    "Nuestro recuerdo ❤️";
-
-
-                const description =
-                    document.createElement(
-                        "div"
-                    );
-
-                description.className =
-                    "memory-desc";
-
-
-                description.textContent =
-                    memory.descripcion ||
-                    memory.mensaje ||
-                    "";
-
-
-                const actions =
-                    document.createElement(
-                        "div"
-                    );
-
-                actions.className =
-                    "memory-actions";
-
-
-                const view =
-                    document.createElement(
-                        "button"
-                    );
-
-                view.className =
-                    "small-button";
-
-                view.textContent =
-                    "Ver recuerdo";
-
-
-                view.onclick =
-                    function(){
-
-                        document
-                            .getElementById(
-                                "modal-memory-date"
-                            )
-                            .textContent =
-                            date.textContent;
-
-
-                        document
-                            .getElementById(
-                                "modal-memory-title"
-                            )
-                            .textContent =
-                            "❤️ " +
-                            title.textContent;
-
-
-                        document
-                            .getElementById(
-                                "modal-memory-text"
-                            )
-                            .textContent =
-                            description.textContent;
-
-
-                        const modalImage =
-                            document
-                            .getElementById(
-                                "modal-memory-image"
-                            );
-
-
-                        modalImage.src =
-                            url;
-
-
-                        modalImage.style.display =
-                            url
-                            ? "block"
-                            : "none";
-
-
-                        openModal(
-                            "memory-modal"
-                        );
-
-                    };
-
-
-                const edit =
-                    document.createElement(
-                        "button"
-                    );
-
-                edit.className =
-                    "action";
-
-                edit.textContent =
-                    "✏️ Editar";
-
-
-                edit.onclick =
-                    () =>
-                        openMemoryForm(
-                            memory
-                        );
-
-
-                const deleteButton =
-                    document.createElement(
-                        "button"
-                    );
-
-                deleteButton.className =
-                    "action delete";
-
-                deleteButton.textContent =
-                    "🗑️ Eliminar";
-
-
-                deleteButton.onclick =
-                    () =>
-                        deleteMemory(
-                            memory.id
-                        );
-
-
-                actions.append(
-                    view,
-                    edit,
-                    deleteButton
-                );
-
-
-                info.append(
-                    date,
-                    title,
-                    description,
-                    actions
-                );
-
-
-                card.append(
-                    imageWrap,
-                    info
-                );
-
-
-                box.appendChild(
-                    card
-                );
-
-            }
+        actions.append(
+          view,
+          edit,
+          deleteButton
         );
 
 
-    }catch(error){
+        info.append(
+          date,
+          title,
+          description,
+          actions
+        );
 
-        console.error(error);
 
-        box.innerHTML = `
+        card.append(
+          imageWrap,
+          info
+        );
 
-            <div class="card date-card">
 
-                ❤️ No se pudieron cargar
-                los recuerdos.
+        box.appendChild(
+          card
+        );
 
-            </div>
+      }
+    );
 
-        `;
-    }
+
+  }catch(error){
+
+    console.error(error);
+
+    box.innerHTML = `
+
+      <div class="card date-card">
+
+        ❤️ No se pudieron cargar
+        los recuerdos.
+
+      </div>
+
+    `;
+  }
 }
 
 
@@ -3707,39 +2736,39 @@ async function loadMemories(){
 
 async function deleteMemory(id){
 
-    if(
-        !confirm(
-            "¿Quieres eliminar este recuerdo?"
-        )
-    ){
-        return;
-    }
+  if(
+    !confirm(
+      "¿Quieres eliminar este recuerdo?"
+    )
+  ){
+    return;
+  }
 
 
-    const {
-        error
-    } =
-        await supabaseClient
-        .from("recuerdos")
-        .delete()
-        .eq(
-            "id",
-            id
-        );
+  const {
+    error
+  } =
+    await supabaseClient
+    .from("recuerdos")
+    .delete()
+    .eq(
+      "id",
+      id
+    );
 
 
-    if(error){
+  if(error){
 
-        alert(
-            "No se pudo eliminar: " +
-            error.message
-        );
+    alert(
+      "No se pudo eliminar: " +
+      error.message
+    );
 
-    }else{
+  }else{
 
-        loadMemories();
+    loadMemories();
 
-    }
+  }
 }
 
 
@@ -3749,132 +2778,132 @@ async function deleteMemory(id){
 
 const dateForm =
 document.getElementById(
-    "date-form"
+  "date-form"
 );
 
 const dateStatus =
 document.getElementById(
-    "date-status"
+  "date-status"
 );
 
 
 function resetDateForm(){
 
-    editingDateId = null;
+  editingDateId = null;
 
-    document
-        .getElementById(
-            "date-value"
-        )
-        .value = "";
-
-
-    document
-        .getElementById(
-            "date-type"
-        )
-        .value = "especial";
+  document
+    .getElementById(
+      "date-value"
+    )
+    .value = "";
 
 
-    document
-        .getElementById(
-            "date-title"
-        )
-        .value = "";
+  document
+    .getElementById(
+      "date-type"
+    )
+    .value = "especial";
 
 
-    document
-        .getElementById(
-            "date-message"
-        )
-        .value = "";
+  document
+    .getElementById(
+      "date-title"
+    )
+    .value = "";
 
 
-    dateForm.classList.remove(
-        "active"
-    );
+  document
+    .getElementById(
+      "date-message"
+    )
+    .value = "";
 
 
-    hideStatus(
-        dateStatus
-    );
+  dateForm.classList.remove(
+    "active"
+  );
+
+
+  hideStatus(
+    dateStatus
+  );
 }
 
 
 function openDateForm(
-    row = null
+  row = null
 ){
 
-    dateForm.classList.add(
-        "active"
-    );
+  dateForm.classList.add(
+    "active"
+  );
 
-    hideStatus(
-        dateStatus
-    );
-
-
-    editingDateId =
-        row?.id || null;
+  hideStatus(
+    dateStatus
+  );
 
 
-    document
-        .getElementById(
-            "date-value"
-        )
-        .value =
-        row?.fecha || "";
+  editingDateId =
+    row?.id || null;
 
 
-    document
-        .getElementById(
-            "date-type"
-        )
-        .value =
-        row?.tipo || "especial";
+  document
+    .getElementById(
+      "date-value"
+    )
+    .value =
+    row?.fecha || "";
 
 
-    document
-        .getElementById(
-            "date-title"
-        )
-        .value =
-        row?.titulo || "";
+  document
+    .getElementById(
+      "date-type"
+    )
+    .value =
+    row?.tipo || "especial";
 
 
-    document
-        .getElementById(
-            "date-message"
-        )
-        .value =
-        row?.mensaje ||
-        row?.descripcion ||
-        "";
+  document
+    .getElementById(
+      "date-title"
+    )
+    .value =
+    row?.titulo || "";
 
 
-    document
-        .getElementById(
-            "date-title"
-        )
-        .focus();
+  document
+    .getElementById(
+      "date-message"
+    )
+    .value =
+    row?.mensaje ||
+    row?.descripcion ||
+    "";
+
+
+  document
+    .getElementById(
+      "date-title"
+    )
+    .focus();
 }
 
 
 document
-    .getElementById(
-        "open-date-form"
-    )
-    .onclick =
-        () =>
-            openDateForm();
+  .getElementById(
+    "open-date-form"
+  )
+  .onclick =
+    () =>
+      openDateForm();
 
 
 document
-    .getElementById(
-        "cancel-date"
-    )
-    .onclick =
-        resetDateForm;
+  .getElementById(
+    "cancel-date"
+  )
+  .onclick =
+    resetDateForm;
 
 
 /* =========================================================
@@ -3883,173 +2912,181 @@ document
 
 async function saveDate(){
 
-    const session =
-        await requireSession();
+  const session =
+    await requireSession();
 
-    if(!session){
-        return;
+  if(!session){
+    return;
+  }
+
+
+  const fecha =
+    document
+    .getElementById(
+      "date-value"
+    )
+    .value;
+
+
+  const tipo =
+    document
+    .getElementById(
+      "date-type"
+    )
+    .value;
+
+
+  const titulo =
+    document
+    .getElementById(
+      "date-title"
+    )
+    .value
+    .trim();
+
+
+  const mensaje =
+    document
+    .getElementById(
+      "date-message"
+    )
+    .value
+    .trim();
+
+
+  if(!fecha){
+
+    showStatus(
+      dateStatus,
+      "Selecciona la fecha 📅",
+      "error"
+    );
+
+    return;
+  }
+
+
+  if(!titulo){
+
+    showStatus(
+      dateStatus,
+      "Ponle un título ❤️",
+      "error"
+    );
+
+    return;
+  }
+
+
+  const button =
+    document.getElementById(
+      "save-date"
+    );
+
+  button.disabled = true;
+
+
+  try{
+
+    /*
+      CAMBIO IMPORTANTE:
+
+      Se eliminó:
+      descripcion:mensaje
+
+      porque esa columna NO existe
+      en fechas_especiales.
+    */
+
+    const payload = {
+
+      fecha:fecha,
+
+      tipo:tipo,
+
+      titulo:titulo,
+
+      mensaje:mensaje,
+
+      activo:true
+
+    };
+
+
+    let result;
+
+
+    if(editingDateId){
+
+      result =
+        await supabaseClient
+        .from("fechas_especiales")
+        .update(payload)
+        .eq(
+          "id",
+          editingDateId
+        );
+
+    }else{
+
+      result =
+        await supabaseClient
+        .from("fechas_especiales")
+        .insert([
+          payload
+        ]);
+
     }
 
 
-    const fecha =
-        document
-        .getElementById(
-            "date-value"
-        )
-        .value;
-
-
-    const tipo =
-        document
-        .getElementById(
-            "date-type"
-        )
-        .value;
-
-
-    const titulo =
-        document
-        .getElementById(
-            "date-title"
-        )
-        .value
-        .trim();
-
-
-    const mensaje =
-        document
-        .getElementById(
-            "date-message"
-        )
-        .value
-        .trim();
-
-
-    if(!fecha){
-
-        showStatus(
-            dateStatus,
-            "Selecciona la fecha 📅",
-            "error"
-        );
-
-        return;
+    if(result.error){
+      throw result.error;
     }
 
 
-    if(!titulo){
+    showStatus(
+      dateStatus,
 
-        showStatus(
-            dateStatus,
-            "Ponle un título ❤️",
-            "error"
-        );
+      editingDateId
+      ? "¡Fecha actualizada! ❤️"
+      : "¡Fecha guardada! ❤️",
 
-        return;
-    }
-
-
-    const button =
-        document.getElementById(
-            "save-date"
-        );
-
-    button.disabled = true;
+      "success"
+    );
 
 
-    try{
-
-        const payload = {
-
-            fecha:fecha,
-
-            tipo:tipo,
-
-            titulo:titulo,
-
-            mensaje:mensaje,
-
-            descripcion:mensaje,
-
-            activo:true
-
-        };
+    await loadDates();
 
 
-        let result;
+    setTimeout(
+      resetDateForm,
+      900
+    );
 
 
-        if(editingDateId){
+  }catch(error){
 
-            result =
-                await supabaseClient
-                .from("fechas_especiales")
-                .update(payload)
-                .eq(
-                    "id",
-                    editingDateId
-                );
+    showStatus(
+      dateStatus,
+      "No se pudo guardar: " +
+      error.message,
+      "error"
+    );
 
-        }else{
+  }finally{
 
-            result =
-                await supabaseClient
-                .from("fechas_especiales")
-                .insert([
-                    payload
-                ]);
+    button.disabled = false;
 
-        }
-
-
-        if(result.error){
-            throw result.error;
-        }
-
-
-        showStatus(
-            dateStatus,
-
-            editingDateId
-            ? "¡Fecha actualizada! ❤️"
-            : "¡Fecha guardada! ❤️",
-
-            "success"
-        );
-
-
-        await loadDates();
-
-
-        setTimeout(
-            resetDateForm,
-            900
-        );
-
-
-    }catch(error){
-
-        showStatus(
-            dateStatus,
-            "No se pudo guardar: " +
-            error.message,
-            "error"
-        );
-
-    }finally{
-
-        button.disabled = false;
-
-    }
+  }
 }
 
 
 document
-    .getElementById(
-        "save-date"
-    )
-    .onclick =
-        saveDate;
+  .getElementById(
+    "save-date"
+  )
+  .onclick =
+    saveDate;
 
 
 /* =========================================================
@@ -4058,251 +3095,253 @@ document
 
 async function loadDates(){
 
-    const box =
-        document.getElementById(
-            "dates-list"
+  const box =
+    document.getElementById(
+      "dates-list"
+    );
+
+
+  try{
+
+    const session =
+      await requireSession();
+
+    if(!session){
+      return;
+    }
+
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient
+      .from("fechas_especiales")
+      .select("*")
+      .eq(
+        "activo",
+        true
+      )
+      .order(
+        "fecha",
+        {
+          ascending:true
+        }
+      );
+
+
+    if(error){
+      throw error;
+    }
+
+
+    box.innerHTML = "";
+
+
+    if(
+      !data ||
+      !data.length
+    ){
+
+      box.innerHTML = `
+
+        <div class="card date-card">
+
+          📅
+          <br><br>
+
+          Todavía no hay
+          fechas especiales.
+
+        </div>
+
+      `;
+
+      return;
+    }
+
+
+    data.forEach(
+      function(dateRow){
+
+        const card =
+          document.createElement(
+            "article"
+          );
+
+        card.className =
+          "card date-card";
+
+
+        const top =
+          document.createElement(
+            "div"
+          );
+
+        top.className =
+          "date-top";
+
+
+        const icon =
+          document.createElement(
+            "div"
+          );
+
+        icon.className =
+          "date-icon";
+
+        icon.textContent =
+          iconForType(
+            dateRow.tipo
+          );
+
+
+        const content =
+          document.createElement(
+            "div"
+          );
+
+
+        const date =
+          document.createElement(
+            "div"
+          );
+
+        date.className =
+          "date-label";
+
+        date.textContent =
+          prettyDate(
+            dateRow.fecha
+          );
+
+
+        const title =
+          document.createElement(
+            "div"
+          );
+
+        title.className =
+          "date-title";
+
+        title.textContent =
+          dateRow.titulo ||
+          "Momento especial";
+
+
+        const message =
+          document.createElement(
+            "div"
+          );
+
+        message.className =
+          "date-message";
+
+        message.textContent =
+          dateRow.mensaje ||
+          dateRow.descripcion ||
+          "";
+
+
+        content.append(
+          date,
+          title,
+          message
         );
 
 
-    try{
-
-        const session =
-            await requireSession();
-
-        if(!session){
-            return;
-        }
+        top.append(
+          icon,
+          content
+        );
 
 
-        const {
-            data,
-            error
-        } =
-            await supabaseClient
-            .from("fechas_especiales")
-            .select("*")
-            .eq(
-                "activo",
-                true
-            )
-            .order(
-                "fecha",
-                {
-                    ascending:true
-                }
+        card.append(
+          top
+        );
+
+
+        const actions =
+          document.createElement(
+            "div"
+          );
+
+        actions.className =
+          "date-actions";
+
+
+        const edit =
+          document.createElement(
+            "button"
+          );
+
+        edit.className =
+          "action";
+
+        edit.textContent =
+          "✏️ Editar";
+
+
+        edit.onclick =
+          () =>
+            openDateForm(
+              dateRow
             );
 
 
-        if(error){
-            throw error;
-        }
+        const deleteButton =
+          document.createElement(
+            "button"
+          );
+
+        deleteButton.className =
+          "action delete";
+
+        deleteButton.textContent =
+          "🗑️ Eliminar";
 
 
-        box.innerHTML = "";
+        deleteButton.onclick =
+          () =>
+            deleteDate(
+              dateRow.id
+            );
 
 
-        if(
-            !data ||
-            !data.length
-        ){
-
-            box.innerHTML = `
-
-                <div class="card date-card">
-
-                    📅
-                    <br><br>
-
-                    Todavía no hay
-                    fechas especiales.
-
-                </div>
-
-            `;
-
-            return;
-        }
-
-
-        data.forEach(
-            function(dateRow){
-
-                const card =
-                    document.createElement(
-                        "article"
-                    );
-
-                card.className =
-                    "card date-card";
-
-
-                const top =
-                    document.createElement(
-                        "div"
-                    );
-
-                top.className =
-                    "date-top";
-
-
-                const icon =
-                    document.createElement(
-                        "div"
-                    );
-
-                icon.className =
-                    "date-icon";
-
-                icon.textContent =
-                    iconForType(
-                        dateRow.tipo
-                    );
-
-
-                const content =
-                    document.createElement(
-                        "div"
-                    );
-
-
-                const date =
-                    document.createElement(
-                        "div"
-                    );
-
-                date.className =
-                    "date-label";
-
-                date.textContent =
-                    prettyDate(
-                        dateRow.fecha
-                    );
-
-
-                const title =
-                    document.createElement(
-                        "div"
-                    );
-
-                title.className =
-                    "date-title";
-
-                title.textContent =
-                    dateRow.titulo ||
-                    "Momento especial";
-
-
-                const message =
-                    document.createElement(
-                        "div"
-                    );
-
-                message.className =
-                    "date-message";
-
-                message.textContent =
-                    dateRow.mensaje ||
-                    dateRow.descripcion ||
-                    "";
-
-
-                content.append(
-                    date,
-                    title,
-                    message
-                );
-
-
-                top.append(
-                    icon,
-                    content
-                );
-
-
-                card.append(
-                    top
-                );
-
-
-                const actions =
-                    document.createElement(
-                        "div"
-                    );
-
-                actions.className =
-                    "date-actions";
-
-
-                const edit =
-                    document.createElement(
-                        "button"
-                    );
-
-                edit.className =
-                    "action";
-
-                edit.textContent =
-                    "✏️ Editar";
-
-                edit.onclick =
-                    () =>
-                        openDateForm(
-                            dateRow
-                        );
-
-
-                const deleteButton =
-                    document.createElement(
-                        "button"
-                    );
-
-                deleteButton.className =
-                    "action delete";
-
-                deleteButton.textContent =
-                    "🗑️ Eliminar";
-
-                deleteButton.onclick =
-                    () =>
-                        deleteDate(
-                            dateRow.id
-                        );
-
-
-                actions.append(
-                    edit,
-                    deleteButton
-                );
-
-
-                card.append(
-                    actions
-                );
-
-
-                box.appendChild(
-                    card
-                );
-
-            }
+        actions.append(
+          edit,
+          deleteButton
         );
 
 
-    }catch(error){
+        card.append(
+          actions
+        );
 
-        console.error(error);
 
-        box.innerHTML = `
+        box.appendChild(
+          card
+        );
 
-            <div class="card date-card">
+      }
+    );
 
-                ❤️ No se pudieron cargar
-                las fechas.
 
-            </div>
+  }catch(error){
 
-        `;
-    }
+    console.error(error);
+
+    box.innerHTML = `
+
+      <div class="card date-card">
+
+        ❤️ No se pudieron cargar
+        las fechas.
+
+      </div>
+
+    `;
+  }
 }
 
 
@@ -4312,39 +3351,39 @@ async function loadDates(){
 
 async function deleteDate(id){
 
-    if(
-        !confirm(
-            "¿Quieres eliminar esta fecha especial?"
-        )
-    ){
-        return;
-    }
+  if(
+    !confirm(
+      "¿Quieres eliminar esta fecha especial?"
+    )
+  ){
+    return;
+  }
 
 
-    const {
-        error
-    } =
-        await supabaseClient
-        .from("fechas_especiales")
-        .delete()
-        .eq(
-            "id",
-            id
-        );
+  const {
+    error
+  } =
+    await supabaseClient
+    .from("fechas_especiales")
+    .delete()
+    .eq(
+      "id",
+      id
+    );
 
 
-    if(error){
+  if(error){
 
-        alert(
-            "No se pudo eliminar: " +
-            error.message
-        );
+    alert(
+      "No se pudo eliminar: " +
+      error.message
+    );
 
-    }else{
+  }else{
 
-        loadDates();
+    loadDates();
 
-    }
+  }
 }
 
 
@@ -4354,158 +3393,158 @@ async function deleteDate(id){
 
 const chapterForm =
 document.getElementById(
-    "chapter-form"
+  "chapter-form"
 );
 
 const chapterStatus =
 document.getElementById(
-    "chapter-status"
+  "chapter-status"
 );
 
 const chapterFile =
 document.getElementById(
-    "chapter-file"
+  "chapter-file"
 );
 
 
 function resetChapter(){
 
-    editingChapterId = null;
+  editingChapterId = null;
 
-    selectedChapterFile = null;
-
-
-    document
-        .getElementById(
-            "chapter-date"
-        )
-        .value = "";
+  selectedChapterFile = null;
 
 
-    document
-        .getElementById(
-            "chapter-title"
-        )
-        .value = "";
+  document
+    .getElementById(
+      "chapter-date"
+    )
+    .value = "";
 
 
-    document
-        .getElementById(
-            "chapter-text"
-        )
-        .value = "";
+  document
+    .getElementById(
+      "chapter-title"
+    )
+    .value = "";
 
 
-    chapterFile.value = "";
+  document
+    .getElementById(
+      "chapter-text"
+    )
+    .value = "";
 
 
-    document
-        .getElementById(
-            "chapter-preview"
-        )
-        .classList.remove(
-            "active"
-        );
+  chapterFile.value = "";
 
 
-    chapterForm.classList.remove(
-        "active"
+  document
+    .getElementById(
+      "chapter-preview"
+    )
+    .classList.remove(
+      "active"
     );
 
 
-    hideStatus(
-        chapterStatus
-    );
+  chapterForm.classList.remove(
+    "active"
+  );
+
+
+  hideStatus(
+    chapterStatus
+  );
 }
 
 
 document
-    .getElementById(
-        "open-chapter"
-    )
-    .onclick =
-        function(){
+  .getElementById(
+    "open-chapter"
+  )
+  .onclick =
+    function(){
 
-            chapterForm.classList.add(
-                "active"
-            );
+      chapterForm.classList.add(
+        "active"
+      );
 
-            document
-                .getElementById(
-                    "chapter-title"
-                )
-                .focus();
+      document
+        .getElementById(
+          "chapter-title"
+        )
+        .focus();
 
-        };
+    };
 
 
 document
-    .getElementById(
-        "cancel-chapter"
-    )
-    .onclick =
-        resetChapter;
+  .getElementById(
+    "cancel-chapter"
+  )
+  .onclick =
+    resetChapter;
 
 
 chapterFile.onchange =
 function(event){
 
-    const file =
-        event.target.files[0];
+  const file =
+    event.target.files[0];
 
-    if(!file){
-        return;
-    }
+  if(!file){
+    return;
+  }
 
 
-    if(
-        file.size >
-        10 * 1024 * 1024
-    ){
+  if(
+    file.size >
+    10 * 1024 * 1024
+  ){
 
-        showStatus(
-            chapterStatus,
-            "Máximo 10 MB.",
-            "error"
+    showStatus(
+      chapterStatus,
+      "Máximo 10 MB.",
+      "error"
+    );
+
+    return;
+  }
+
+
+  selectedChapterFile =
+    file;
+
+
+  const reader =
+    new FileReader();
+
+
+  reader.onload =
+    function(event){
+
+      document
+        .getElementById(
+          "chapter-preview-img"
+        )
+        .src =
+        event.target.result;
+
+
+      document
+        .getElementById(
+          "chapter-preview"
+        )
+        .classList.add(
+          "active"
         );
 
-        return;
-    }
+    };
 
 
-    selectedChapterFile =
-        file;
-
-
-    const reader =
-        new FileReader();
-
-
-    reader.onload =
-        function(event){
-
-            document
-                .getElementById(
-                    "chapter-preview-img"
-                )
-                .src =
-                event.target.result;
-
-
-            document
-                .getElementById(
-                    "chapter-preview"
-                )
-                .classList.add(
-                    "active"
-                );
-
-        };
-
-
-    reader.readAsDataURL(
-        file
-    );
+  reader.readAsDataURL(
+    file
+  );
 
 };
 
@@ -4516,229 +3555,229 @@ function(event){
 
 async function saveChapter(){
 
-    const session =
-        await requireSession();
+  const session =
+    await requireSession();
 
-    if(!session){
-        return;
+  if(!session){
+    return;
+  }
+
+
+  const fecha =
+    document
+    .getElementById(
+      "chapter-date"
+    )
+    .value;
+
+
+  const titulo =
+    document
+    .getElementById(
+      "chapter-title"
+    )
+    .value
+    .trim();
+
+
+  const historia =
+    document
+    .getElementById(
+      "chapter-text"
+    )
+    .value
+    .trim();
+
+
+  if(!fecha){
+
+    showStatus(
+      chapterStatus,
+      "Selecciona la fecha 📅",
+      "error"
+    );
+
+    return;
+  }
+
+
+  if(!titulo){
+
+    showStatus(
+      chapterStatus,
+      "Ponle un título ❤️",
+      "error"
+    );
+
+    return;
+  }
+
+
+  if(!historia){
+
+    showStatus(
+      chapterStatus,
+      "Escribe la historia 💌",
+      "error"
+    );
+
+    return;
+  }
+
+
+  const button =
+    document.getElementById(
+      "save-chapter"
+    );
+
+  button.disabled = true;
+
+
+  try{
+
+    let foto_url = null;
+
+
+    if(selectedChapterFile){
+
+      const extension =
+        selectedChapterFile
+        .name
+        .split(".")
+        .pop()
+        .toLowerCase();
+
+
+      const path =
+        "historia_" +
+        Date.now() +
+        "_" +
+        Math.random()
+          .toString(36)
+          .slice(2,9) +
+        "." +
+        extension;
+
+
+      const {
+        data,
+        error
+      } =
+        await supabaseClient
+        .storage
+        .from("Recuerdos")
+        .upload(
+          path,
+          selectedChapterFile,
+          {
+            cacheControl:"3600",
+            upsert:false
+          }
+        );
+
+
+      if(error){
+        throw error;
+      }
+
+
+      foto_url =
+        storagePublicUrl(
+          data.path
+        );
+
     }
 
 
-    const fecha =
-        document
-        .getElementById(
-            "chapter-date"
-        )
-        .value;
+    const payload = {
+
+      fecha:fecha,
+
+      titulo:titulo,
+
+      historia:historia
+
+    };
 
 
-    const titulo =
-        document
-        .getElementById(
-            "chapter-title"
-        )
-        .value
-        .trim();
+    if(foto_url){
 
+      payload.foto_url =
+        foto_url;
 
-    const historia =
-        document
-        .getElementById(
-            "chapter-text"
-        )
-        .value
-        .trim();
-
-
-    if(!fecha){
-
-        showStatus(
-            chapterStatus,
-            "Selecciona la fecha 📅",
-            "error"
-        );
-
-        return;
     }
 
 
-    if(!titulo){
+    let result;
 
-        showStatus(
-            chapterStatus,
-            "Ponle un título ❤️",
-            "error"
+
+    if(editingChapterId){
+
+      result =
+        await supabaseClient
+        .from("historia")
+        .update(payload)
+        .eq(
+          "id",
+          editingChapterId
         );
 
-        return;
+    }else{
+
+      result =
+        await supabaseClient
+        .from("historia")
+        .insert([
+          payload
+        ]);
+
     }
 
 
-    if(!historia){
-
-        showStatus(
-            chapterStatus,
-            "Escribe la historia 💌",
-            "error"
-        );
-
-        return;
+    if(result.error){
+      throw result.error;
     }
 
 
-    const button =
-        document.getElementById(
-            "save-chapter"
-        );
-
-    button.disabled = true;
-
-
-    try{
-
-        let foto_url = null;
+    showStatus(
+      chapterStatus,
+      "¡Capítulo guardado! ❤️",
+      "success"
+    );
 
 
-        if(selectedChapterFile){
-
-            const extension =
-                selectedChapterFile
-                .name
-                .split(".")
-                .pop()
-                .toLowerCase();
+    await loadHistory();
 
 
-            const path =
-                "historia_" +
-                Date.now() +
-                "_" +
-                Math.random()
-                    .toString(36)
-                    .slice(2,9) +
-                "." +
-                extension;
+    setTimeout(
+      resetChapter,
+      900
+    );
 
 
-            const {
-                data,
-                error
-            } =
-                await supabaseClient
-                .storage
-                .from("Recuerdos")
-                .upload(
-                    path,
-                    selectedChapterFile,
-                    {
-                        cacheControl:"3600",
-                        upsert:false
-                    }
-                );
+  }catch(error){
 
+    showStatus(
+      chapterStatus,
+      "No se pudo guardar: " +
+      error.message,
+      "error"
+    );
 
-            if(error){
-                throw error;
-            }
+  }finally{
 
+    button.disabled = false;
 
-            foto_url =
-                storagePublicUrl(
-                    data.path
-                );
-
-        }
-
-
-        const payload = {
-
-            fecha:fecha,
-
-            titulo:titulo,
-
-            historia:historia
-
-        };
-
-
-        if(foto_url){
-
-            payload.foto_url =
-                foto_url;
-
-        }
-
-
-        let result;
-
-
-        if(editingChapterId){
-
-            result =
-                await supabaseClient
-                .from("historia")
-                .update(payload)
-                .eq(
-                    "id",
-                    editingChapterId
-                );
-
-        }else{
-
-            result =
-                await supabaseClient
-                .from("historia")
-                .insert([
-                    payload
-                ]);
-
-        }
-
-
-        if(result.error){
-            throw result.error;
-        }
-
-
-        showStatus(
-            chapterStatus,
-            "¡Capítulo guardado! ❤️",
-            "success"
-        );
-
-
-        await loadHistory();
-
-
-        setTimeout(
-            resetChapter,
-            900
-        );
-
-
-    }catch(error){
-
-        showStatus(
-            chapterStatus,
-            "No se pudo guardar: " +
-            error.message,
-            "error"
-        );
-
-    }finally{
-
-        button.disabled = false;
-
-    }
+  }
 }
 
 
 document
-    .getElementById(
-        "save-chapter"
-    )
-    .onclick =
-        saveChapter;
+  .getElementById(
+    "save-chapter"
+  )
+  .onclick =
+    saveChapter;
 
 
 /* =========================================================
@@ -4747,334 +3786,335 @@ document
 
 async function loadHistory(){
 
-    const box =
-        document.getElementById(
-            "history-list"
-        );
+  const box =
+    document.getElementById(
+      "history-list"
+    );
 
 
-    try{
+  try{
 
-        const session =
-            await requireSession();
+    const session =
+      await requireSession();
 
-        if(!session){
-            return;
-        }
-
-
-        const {
-            data,
-            error
-        } =
-            await supabaseClient
-            .from("historia")
-            .select("*")
-            .order(
-                "fecha",
-                {
-                    ascending:true
-                }
-            );
-
-
-        if(error){
-            throw error;
-        }
-
-
-        box.innerHTML = "";
-
-
-        const timeline =
-            document.createElement(
-                "div"
-            );
-
-        timeline.className =
-            "timeline";
-
-
-        if(
-            !data ||
-            !data.length
-        ){
-
-            timeline.innerHTML = `
-
-                <div class="timeline-item">
-
-                    <div class="memory-date">
-
-                        NUESTRO COMIENZO ❤️
-
-                    </div>
-
-                    <div class="timeline-title">
-
-                        Nuestra historia
-
-                    </div>
-
-                    <div class="timeline-text">
-
-                        Aquí vamos a guardar cada
-                        capítulo de nuestra historia.
-
-                    </div>
-
-                </div>
-
-            `;
-
-            box.appendChild(
-                timeline
-            );
-
-            return;
-        }
-
-
-        data.forEach(
-            function(history){
-
-                const item =
-                    document.createElement(
-                        "div"
-                    );
-
-                item.className =
-                    "timeline-item";
-
-
-                const date =
-                    document.createElement(
-                        "div"
-                    );
-
-                date.className =
-                    "memory-date";
-
-                date.textContent =
-                    prettyDate(
-                        history.fecha
-                    ) ||
-                    "UN MOMENTO ESPECIAL";
-
-
-                const title =
-                    document.createElement(
-                        "div"
-                    );
-
-                title.className =
-                    "timeline-title";
-
-                title.textContent =
-                    "❤️ " +
-                    (
-                        history.titulo ||
-                        "Un capítulo de nosotros"
-                    );
-
-
-                const text =
-                    document.createElement(
-                        "div"
-                    );
-
-                text.className =
-                    "timeline-text";
-
-                text.textContent =
-                    history.historia ||
-                    history.descripcion ||
-                    history.mensaje ||
-                    "";
-
-
-                item.append(
-                    date,
-                    title,
-                    text
-                );
-
-
-                const url =
-                    history.foto_url ||
-                    history.url ||
-                    history.Url ||
-                    history.imagen ||
-                    "";
-
-
-                if(url){
-
-                    const image =
-                        document.createElement(
-                            "img"
-                        );
-
-                    image.className =
-                        "history-image";
-
-                    image.src =
-                        url;
-
-                    image.loading =
-                        "lazy";
-
-                    item.appendChild(
-                        image
-                    );
-
-                }
-
-
-                const actions =
-                    document.createElement(
-                        "div"
-                    );
-
-                actions.className =
-                    "date-actions";
-
-
-                const edit =
-                    document.createElement(
-                        "button"
-                    );
-
-                edit.className =
-                    "action";
-
-                edit.textContent =
-                    "✏️ Editar";
-
-
-                edit.onclick =
-                    function(){
-
-                        editingChapterId =
-                            history.id;
-
-
-                        chapterForm.classList.add(
-                            "active"
-                        );
-
-
-                        document
-                            .getElementById(
-                                "chapter-date"
-                            )
-                            .value =
-                            history.fecha ||
-                            "";
-
-
-                        document
-                            .getElementById(
-                                "chapter-title"
-                            )
-                            .value =
-                            history.titulo ||
-                            "";
-
-
-                        document
-                            .getElementById(
-                                "chapter-text"
-                            )
-                            .value =
-                            history.historia ||
-                            history.descripcion ||
-                            "";
-
-
-                        document
-                            .getElementById(
-                                "historia"
-                            )
-                            .scrollIntoView({
-                                behavior:"smooth"
-                            });
-
-                    };
-
-
-                const deleteButton =
-                    document.createElement(
-                        "button"
-                    );
-
-                deleteButton.className =
-                    "action delete";
-
-                deleteButton.textContent =
-                    "🗑️ Eliminar";
-
-
-                deleteButton.onclick =
-                    () =>
-                        deleteChapter(
-                            history.id
-                        );
-
-
-                actions.append(
-                    edit,
-                    deleteButton
-                );
-
-
-                item.append(
-                    actions
-                );
-
-
-                timeline.appendChild(
-                    item
-                );
-
-            }
-        );
-
-
-        box.appendChild(
-            timeline
-        );
-
-
-    }catch(error){
-
-        console.error(error);
-
-        box.innerHTML = `
-
-            <div class="timeline">
-
-                <div class="timeline-item">
-
-                    <div class="timeline-title">
-
-                        Nuestra historia
-
-                    </div>
-
-                    <div class="timeline-text">
-
-                        No se pudo cargar la historia.
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        `;
-
+    if(!session){
+      return;
     }
+
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient
+      .from("historia")
+      .select("*")
+      .order(
+        "fecha",
+        {
+          ascending:true
+        }
+      );
+
+
+    if(error){
+      throw error;
+    }
+
+
+    box.innerHTML = "";
+
+
+    const timeline =
+      document.createElement(
+        "div"
+      );
+
+    timeline.className =
+      "timeline";
+
+
+    if(
+      !data ||
+      !data.length
+    ){
+
+      timeline.innerHTML = `
+
+        <div class="timeline-item">
+
+          <div class="memory-date">
+
+            NUESTRO COMIENZO ❤️
+
+          </div>
+
+          <div class="timeline-title">
+
+            Nuestra historia
+
+          </div>
+
+          <div class="timeline-text">
+
+            Aquí vamos a guardar cada
+            capítulo de nuestra historia.
+
+          </div>
+
+        </div>
+
+      `;
+
+
+      box.appendChild(
+        timeline
+      );
+
+      return;
+    }
+
+
+    data.forEach(
+      function(history){
+
+        const item =
+          document.createElement(
+            "div"
+          );
+
+        item.className =
+          "timeline-item";
+
+
+        const date =
+          document.createElement(
+            "div"
+          );
+
+        date.className =
+          "memory-date";
+
+        date.textContent =
+          prettyDate(
+            history.fecha
+          ) ||
+          "UN MOMENTO ESPECIAL";
+
+
+        const title =
+          document.createElement(
+            "div"
+          );
+
+        title.className =
+          "timeline-title";
+
+        title.textContent =
+          "❤️ " +
+          (
+            history.titulo ||
+            "Un capítulo de nosotros"
+          );
+
+
+        const text =
+          document.createElement(
+            "div"
+          );
+
+        text.className =
+          "timeline-text";
+
+        text.textContent =
+          history.historia ||
+          history.descripcion ||
+          history.mensaje ||
+          "";
+
+
+        item.append(
+          date,
+          title,
+          text
+        );
+
+
+        const url =
+          history.foto_url ||
+          history.url ||
+          history.Url ||
+          history.imagen ||
+          "";
+
+
+        if(url){
+
+          const image =
+            document.createElement(
+              "img"
+            );
+
+          image.className =
+            "history-image";
+
+          image.src =
+            url;
+
+          image.loading =
+            "lazy";
+
+          item.appendChild(
+            image
+          );
+
+        }
+
+
+        const actions =
+          document.createElement(
+            "div"
+          );
+
+        actions.className =
+          "date-actions";
+
+
+        const edit =
+          document.createElement(
+            "button"
+          );
+
+        edit.className =
+          "action";
+
+        edit.textContent =
+          "✏️ Editar";
+
+
+        edit.onclick =
+          function(){
+
+            editingChapterId =
+              history.id;
+
+
+            chapterForm.classList.add(
+              "active"
+            );
+
+
+            document
+              .getElementById(
+                "chapter-date"
+              )
+              .value =
+              history.fecha ||
+              "";
+
+
+            document
+              .getElementById(
+                "chapter-title"
+              )
+              .value =
+              history.titulo ||
+              "";
+
+
+            document
+              .getElementById(
+                "chapter-text"
+              )
+              .value =
+              history.historia ||
+              history.descripcion ||
+              "";
+
+
+            document
+              .getElementById(
+                "historia"
+              )
+              .scrollIntoView({
+                behavior:"smooth"
+              });
+
+          };
+
+
+        const deleteButton =
+          document.createElement(
+            "button"
+          );
+
+        deleteButton.className =
+          "action delete";
+
+        deleteButton.textContent =
+          "🗑️ Eliminar";
+
+
+        deleteButton.onclick =
+          () =>
+            deleteChapter(
+              history.id
+            );
+
+
+        actions.append(
+          edit,
+          deleteButton
+        );
+
+
+        item.append(
+          actions
+        );
+
+
+        timeline.appendChild(
+          item
+        );
+
+      }
+    );
+
+
+    box.appendChild(
+      timeline
+    );
+
+
+  }catch(error){
+
+    console.error(error);
+
+    box.innerHTML = `
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+
+          <div class="timeline-title">
+
+            Nuestra historia
+
+          </div>
+
+          <div class="timeline-text">
+
+            No se pudo cargar la historia.
+
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
 }
 
 
@@ -5084,39 +4124,39 @@ async function loadHistory(){
 
 async function deleteChapter(id){
 
-    if(
-        !confirm(
-            "¿Quieres eliminar este capítulo?"
-        )
-    ){
-        return;
-    }
+  if(
+    !confirm(
+      "¿Quieres eliminar este capítulo?"
+    )
+  ){
+    return;
+  }
 
 
-    const {
-        error
-    } =
-        await supabaseClient
-        .from("historia")
-        .delete()
-        .eq(
-            "id",
-            id
-        );
+  const {
+    error
+  } =
+    await supabaseClient
+    .from("historia")
+    .delete()
+    .eq(
+      "id",
+      id
+    );
 
 
-    if(error){
+  if(error){
 
-        alert(
-            "No se pudo eliminar: " +
-            error.message
-        );
+    alert(
+      "No se pudo eliminar: " +
+      error.message
+    );
 
-    }else{
+  }else{
 
-        loadHistory();
+    loadHistory();
 
-    }
+  }
 }
 
 
@@ -5126,112 +4166,112 @@ async function deleteChapter(id){
 
 const letterForm =
 document.getElementById(
-    "letter-form"
+  "letter-form"
 );
 
 const letterStatus =
 document.getElementById(
-    "letter-status"
+  "letter-status"
 );
 
 
 function openLetterForm(
-    row = null
+  row = null
 ){
 
-    letterForm.classList.add(
-        "active"
-    );
+  letterForm.classList.add(
+    "active"
+  );
 
-    hideStatus(
-        letterStatus
-    );
-
-
-    editingLetterId =
-        row?.id || null;
+  hideStatus(
+    letterStatus
+  );
 
 
-    document
-        .getElementById(
-            "letter-title"
-        )
-        .value =
-        row?.titulo || "";
+  editingLetterId =
+    row?.id || null;
 
 
-    document
-        .getElementById(
-            "letter-text"
-        )
-        .value =
-        row?.mensaje ||
-        row?.contenido ||
-        "";
+  document
+    .getElementById(
+      "letter-title"
+    )
+    .value =
+    row?.titulo || "";
 
 
-    document
-        .getElementById(
-            "letter-title"
-        )
-        .focus();
+  document
+    .getElementById(
+      "letter-text"
+    )
+    .value =
+    row?.mensaje ||
+    row?.contenido ||
+    "";
+
+
+  document
+    .getElementById(
+      "letter-title"
+    )
+    .focus();
 }
 
 
 function resetLetter(){
 
-    editingLetterId = null;
+  editingLetterId = null;
 
 
-    document
-        .getElementById(
-            "letter-title"
-        )
-        .value = "";
+  document
+    .getElementById(
+      "letter-title"
+    )
+    .value = "";
 
 
-    document
-        .getElementById(
-            "letter-text"
-        )
-        .value = "";
+  document
+    .getElementById(
+      "letter-text"
+    )
+    .value = "";
 
 
-    letterForm.classList.remove(
-        "active"
-    );
+  letterForm.classList.remove(
+    "active"
+  );
 
 
-    hideStatus(
-        letterStatus
-    );
+  hideStatus(
+    letterStatus
+  );
 }
 
 
 document
-    .getElementById(
-        "open-letter"
-    )
-    .onclick =
-        () =>
-            openLetterForm();
+  .getElementById(
+    "open-letter"
+  )
+  .onclick =
+    () =>
+      openLetterForm();
 
 
 document
-    .getElementById(
-        "open-letter-2"
-    )
-    .onclick =
-        () =>
-            openLetterForm();
+  .getElementById(
+    "open-letter-2"
+  )
+  .onclick =
+    () =>
+      openLetterForm();
 
 
 document
-    .getElementById(
-        "cancel-letter"
-    )
-    .onclick =
-        resetLetter;
+  .getElementById(
+    "cancel-letter"
+  )
+  .onclick =
+    resetLetter;
 
 
 /* =========================================================
@@ -5240,186 +4280,186 @@ document
 
 async function saveLetter(){
 
-    const session =
-        await requireSession();
+  const session =
+    await requireSession();
 
-    if(!session){
-        return;
+  if(!session){
+    return;
+  }
+
+
+  const titulo =
+    document
+    .getElementById(
+      "letter-title"
+    )
+    .value
+    .trim();
+
+
+  const mensaje =
+    document
+    .getElementById(
+      "letter-text"
+    )
+    .value
+    .trim();
+
+
+  if(!titulo){
+
+    showStatus(
+      letterStatus,
+      "Ponle un título a la carta ❤️",
+      "error"
+    );
+
+    return;
+  }
+
+
+  if(!mensaje){
+
+    showStatus(
+      letterStatus,
+      "Escribe tu carta 💌",
+      "error"
+    );
+
+    return;
+  }
+
+
+  const button =
+    document.getElementById(
+      "save-letter"
+    );
+
+  button.disabled = true;
+
+
+  try{
+
+    const {
+      data:userData
+    } =
+      await supabaseClient
+      .auth
+      .getUser();
+
+
+    const user =
+      userData.user;
+
+
+    if(!user){
+
+      throw new Error(
+        "Tu sesión expiró."
+      );
+
+    }
+
+
+    const metadata =
+      user.user_metadata ||
+      {};
+
+
+    const nombre =
+      metadata.full_name ||
+      metadata.name ||
+      metadata.nombre ||
+      user.email ||
+      "Usuario";
+
+
+    const payload = {
+
+      titulo:titulo,
+
+      mensaje:mensaje,
+
+      contenido:mensaje,
+
+      autor_nombre:nombre,
+
+      autor_email:
+        user.email || ""
+
+    };
+
+
+    let result;
+
+
+    if(editingLetterId){
+
+      result =
+        await supabaseClient
+        .from("cartas")
+        .update(payload)
+        .eq(
+          "id",
+          editingLetterId
+        );
+
+    }else{
+
+      result =
+        await supabaseClient
+        .from("cartas")
+        .insert([
+          payload
+        ]);
+
     }
 
 
-    const titulo =
-        document
-        .getElementById(
-            "letter-title"
-        )
-        .value
-        .trim();
-
-
-    const mensaje =
-        document
-        .getElementById(
-            "letter-text"
-        )
-        .value
-        .trim();
-
-
-    if(!titulo){
-
-        showStatus(
-            letterStatus,
-            "Ponle un título a la carta ❤️",
-            "error"
-        );
-
-        return;
+    if(result.error){
+      throw result.error;
     }
 
 
-    if(!mensaje){
-
-        showStatus(
-            letterStatus,
-            "Escribe tu carta 💌",
-            "error"
-        );
-
-        return;
-    }
+    showStatus(
+      letterStatus,
+      "¡Carta guardada para siempre! 💌❤️",
+      "success"
+    );
 
 
-    const button =
-        document.getElementById(
-            "save-letter"
-        );
-
-    button.disabled = true;
+    await loadLetters();
 
 
-    try{
-
-        const {
-            data:userData
-        } =
-            await supabaseClient
-            .auth
-            .getUser();
+    setTimeout(
+      resetLetter,
+      900
+    );
 
 
-        const user =
-            userData.user;
+  }catch(error){
 
+    showStatus(
+      letterStatus,
+      "No se pudo guardar: " +
+      error.message,
+      "error"
+    );
 
-        if(!user){
+  }finally{
 
-            throw new Error(
-                "Tu sesión expiró."
-            );
+    button.disabled = false;
 
-        }
-
-
-        const metadata =
-            user.user_metadata ||
-            {};
-
-
-        const nombre =
-            metadata.full_name ||
-            metadata.name ||
-            metadata.nombre ||
-            user.email ||
-            "Usuario";
-
-
-        const payload = {
-
-            titulo:titulo,
-
-            mensaje:mensaje,
-
-            contenido:mensaje,
-
-            autor_nombre:nombre,
-
-            autor_email:
-                user.email || ""
-
-        };
-
-
-        let result;
-
-
-        if(editingLetterId){
-
-            result =
-                await supabaseClient
-                .from("cartas")
-                .update(payload)
-                .eq(
-                    "id",
-                    editingLetterId
-                );
-
-        }else{
-
-            result =
-                await supabaseClient
-                .from("cartas")
-                .insert([
-                    payload
-                ]);
-
-        }
-
-
-        if(result.error){
-            throw result.error;
-        }
-
-
-        showStatus(
-            letterStatus,
-            "¡Carta guardada para siempre! 💌❤️",
-            "success"
-        );
-
-
-        await loadLetters();
-
-
-        setTimeout(
-            resetLetter,
-            900
-        );
-
-
-    }catch(error){
-
-        showStatus(
-            letterStatus,
-            "No se pudo guardar: " +
-            error.message,
-            "error"
-        );
-
-    }finally{
-
-        button.disabled = false;
-
-    }
+  }
 }
 
 
 document
-    .getElementById(
-        "save-letter"
-    )
-    .onclick =
-        saveLetter;
+  .getElementById(
+    "save-letter"
+  )
+  .onclick =
+    saveLetter;
 
 
 /* =========================================================
@@ -5428,277 +4468,277 @@ document
 
 async function loadLetters(){
 
-    const box =
-        document.getElementById(
-            "letters-list"
-        );
+  const box =
+    document.getElementById(
+      "letters-list"
+    );
 
 
-    try{
+  try{
 
-        const session =
-            await requireSession();
+    const session =
+      await requireSession();
 
-        if(!session){
-            return;
+    if(!session){
+      return;
+    }
+
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient
+      .from("cartas")
+      .select("*")
+      .order(
+        "created_at",
+        {
+          ascending:false
         }
+      );
 
 
-        const {
-            data,
-            error
-        } =
-            await supabaseClient
-            .from("cartas")
-            .select("*")
-            .order(
-                "created_at",
-                {
-                    ascending:false
-                }
+    if(error){
+      throw error;
+    }
+
+
+    box.innerHTML = "";
+
+
+    if(
+      !data ||
+      !data.length
+    ){
+
+      box.innerHTML = `
+
+        <div class="card date-card">
+
+          💌
+          <br><br>
+
+          Todavía no hay cartas.
+
+        </div>
+
+      `;
+
+      return;
+    }
+
+
+    data.forEach(
+      function(letter){
+
+        const card =
+          document.createElement(
+            "article"
+          );
+
+        card.className =
+          "card saved-letter";
+
+
+        const date =
+          document.createElement(
+            "div"
+          );
+
+        date.className =
+          "memory-date";
+
+        date.textContent =
+          prettyDate(
+            letter.created_at
+          );
+
+
+        const title =
+          document.createElement(
+            "h3"
+          );
+
+        title.textContent =
+          "💌 " +
+          (
+            letter.titulo ||
+            "Una carta para ti"
+          );
+
+
+        const author =
+          document.createElement(
+            "div"
+          );
+
+        author.className =
+          "letter-author";
+
+        author.textContent =
+          "✍️ Escrita por " +
+          (
+            letter.autor_nombre ||
+            letter.autor_email ||
+            "Nosotros"
+          );
+
+
+        const text =
+          document.createElement(
+            "div"
+          );
+
+        text.className =
+          "letter-preview";
+
+        text.textContent =
+          letter.mensaje ||
+          letter.contenido ||
+          "";
+
+
+        const actions =
+          document.createElement(
+            "div"
+          );
+
+        actions.className =
+          "letter-actions";
+
+
+        const view =
+          document.createElement(
+            "button"
+          );
+
+        view.className =
+          "small-button";
+
+        view.textContent =
+          "💌 Leer carta";
+
+
+        view.onclick =
+          function(){
+
+            document
+              .getElementById(
+                "modal-letter-date"
+              )
+              .textContent =
+              date.textContent;
+
+
+            document
+              .getElementById(
+                "modal-letter-title"
+              )
+              .textContent =
+              title.textContent;
+
+
+            document
+              .getElementById(
+                "modal-letter-author"
+              )
+              .textContent =
+              author.textContent;
+
+
+            document
+              .getElementById(
+                "modal-letter-text"
+              )
+              .textContent =
+              text.textContent;
+
+
+            openModal(
+              "letter-modal"
+            );
+
+          };
+
+
+        const edit =
+          document.createElement(
+            "button"
+          );
+
+        edit.className =
+          "action";
+
+        edit.textContent =
+          "✏️ Editar";
+
+
+        edit.onclick =
+          () =>
+            openLetterForm(
+              letter
             );
 
 
-        if(error){
-            throw error;
-        }
+        const deleteButton =
+          document.createElement(
+            "button"
+          );
 
+        deleteButton.className =
+          "action delete";
 
-        box.innerHTML = "";
+        deleteButton.textContent =
+          "🗑️ Eliminar";
 
 
-        if(
-            !data ||
-            !data.length
-        ){
+        deleteButton.onclick =
+          () =>
+            deleteLetter(
+              letter.id
+            );
 
-            box.innerHTML = `
 
-                <div class="card date-card">
-
-                    💌
-                    <br><br>
-
-                    Todavía no hay cartas.
-
-                </div>
-
-            `;
-
-            return;
-        }
-
-
-        data.forEach(
-            function(letter){
-
-                const card =
-                    document.createElement(
-                        "article"
-                    );
-
-                card.className =
-                    "card saved-letter";
-
-
-                const date =
-                    document.createElement(
-                        "div"
-                    );
-
-                date.className =
-                    "memory-date";
-
-                date.textContent =
-                    prettyDate(
-                        letter.created_at
-                    );
-
-
-                const title =
-                    document.createElement(
-                        "h3"
-                    );
-
-                title.textContent =
-                    "💌 " +
-                    (
-                        letter.titulo ||
-                        "Una carta para ti"
-                    );
-
-
-                const author =
-                    document.createElement(
-                        "div"
-                    );
-
-                author.className =
-                    "letter-author";
-
-                author.textContent =
-                    "✍️ Escrita por " +
-                    (
-                        letter.autor_nombre ||
-                        letter.autor_email ||
-                        "Nosotros"
-                    );
-
-
-                const text =
-                    document.createElement(
-                        "div"
-                    );
-
-                text.className =
-                    "letter-preview";
-
-                text.textContent =
-                    letter.mensaje ||
-                    letter.contenido ||
-                    "";
-
-
-                const actions =
-                    document.createElement(
-                        "div"
-                    );
-
-                actions.className =
-                    "letter-actions";
-
-
-                const view =
-                    document.createElement(
-                        "button"
-                    );
-
-                view.className =
-                    "small-button";
-
-                view.textContent =
-                    "💌 Leer carta";
-
-
-                view.onclick =
-                    function(){
-
-                        document
-                            .getElementById(
-                                "modal-letter-date"
-                            )
-                            .textContent =
-                            date.textContent;
-
-
-                        document
-                            .getElementById(
-                                "modal-letter-title"
-                            )
-                            .textContent =
-                            title.textContent;
-
-
-                        document
-                            .getElementById(
-                                "modal-letter-author"
-                            )
-                            .textContent =
-                            author.textContent;
-
-
-                        document
-                            .getElementById(
-                                "modal-letter-text"
-                            )
-                            .textContent =
-                            text.textContent;
-
-
-                        openModal(
-                            "letter-modal"
-                        );
-
-                    };
-
-
-                const edit =
-                    document.createElement(
-                        "button"
-                    );
-
-                edit.className =
-                    "action";
-
-                edit.textContent =
-                    "✏️ Editar";
-
-
-                edit.onclick =
-                    () =>
-                        openLetterForm(
-                            letter
-                        );
-
-
-                const deleteButton =
-                    document.createElement(
-                        "button"
-                    );
-
-                deleteButton.className =
-                    "action delete";
-
-                deleteButton.textContent =
-                    "🗑️ Eliminar";
-
-
-                deleteButton.onclick =
-                    () =>
-                        deleteLetter(
-                            letter.id
-                        );
-
-
-                actions.append(
-                    view,
-                    edit,
-                    deleteButton
-                );
-
-
-                card.append(
-                    date,
-                    title,
-                    author,
-                    text,
-                    actions
-                );
-
-
-                box.appendChild(
-                    card
-                );
-
-            }
+        actions.append(
+          view,
+          edit,
+          deleteButton
         );
 
 
-    }catch(error){
+        card.append(
+          date,
+          title,
+          author,
+          text,
+          actions
+        );
 
-        console.error(error);
 
-        box.innerHTML = `
+        box.appendChild(
+          card
+        );
 
-            <div class="card date-card">
+      }
+    );
 
-                ❤️ No se pudieron cargar
-                las cartas.
 
-            </div>
+  }catch(error){
 
-        `;
-    }
+    console.error(error);
+
+    box.innerHTML = `
+
+      <div class="card date-card">
+
+        ❤️ No se pudieron cargar
+        las cartas.
+
+      </div>
+
+    `;
+  }
 }
 
 
@@ -5708,166 +4748,166 @@ async function loadLetters(){
 
 async function deleteLetter(id){
 
-    if(
-        !confirm(
-            "¿Quieres eliminar esta carta?"
-        )
-    ){
-        return;
-    }
+  if(
+    !confirm(
+      "¿Quieres eliminar esta carta?"
+    )
+  ){
+    return;
+  }
 
 
-    const {
-        error
-    } =
-        await supabaseClient
-        .from("cartas")
-        .delete()
-        .eq(
-            "id",
-            id
-        );
+  const {
+    error
+  } =
+    await supabaseClient
+    .from("cartas")
+    .delete()
+    .eq(
+      "id",
+      id
+    );
 
 
-    if(error){
+  if(error){
 
-        alert(
-            "No se pudo eliminar: " +
-            error.message
-        );
+    alert(
+      "No se pudo eliminar: " +
+      error.message
+    );
 
-    }else{
+  }else{
 
-        loadLetters();
+    loadLetters();
 
-    }
+  }
 }
 
 
 /* =========================================================
-   MODALES
+   CERRAR MODALES
 ========================================================= */
 
 document
-    .querySelectorAll(
-        "[data-close]"
-    )
-    .forEach(
-        function(button){
+  .querySelectorAll(
+    "[data-close]"
+  )
+  .forEach(
+    function(button){
 
-            button.onclick =
-                function(){
+      button.onclick =
+        function(){
 
-                    closeModal(
-                        button.dataset.close
-                    );
+          closeModal(
+            button.dataset.close
+          );
 
-                };
+        };
 
-        }
-    );
+    }
+  );
 
 
 document
-    .querySelectorAll(
-        ".modal"
-    )
-    .forEach(
-        function(modal){
+  .querySelectorAll(
+    ".modal"
+  )
+  .forEach(
+    function(modal){
 
-            modal.addEventListener(
-                "click",
-                function(event){
+      modal.addEventListener(
+        "click",
+        function(event){
 
-                    if(
-                        event.target ===
-                        modal
-                    ){
+          if(
+            event.target ===
+            modal
+          ){
 
-                        closeModal(
-                            modal.id
-                        );
-
-                    }
-
-                }
+            closeModal(
+              modal.id
             );
 
+          }
+
         }
-    );
+      );
+
+    }
+  );
 
 
 document.addEventListener(
-    "keydown",
-    function(event){
+  "keydown",
+  function(event){
 
-        if(
-            event.key === "Escape"
-        ){
+    if(
+      event.key === "Escape"
+    ){
 
-            document
-                .querySelectorAll(
-                    ".modal.active"
-                )
-                .forEach(
-                    function(modal){
+      document
+        .querySelectorAll(
+          ".modal.active"
+        )
+        .forEach(
+          function(modal){
 
-                        closeModal(
-                            modal.id
-                        );
+            closeModal(
+              modal.id
+            );
 
-                    }
-                );
-
-        }
+          }
+        );
 
     }
+
+  }
 );
 
 
 /* =========================================================
-   VER TODOS LOS RECUERDOS
+   BOTÓN VER TODOS
 ========================================================= */
 
 document
-    .getElementById(
-        "show-all-memories"
-    )
-    .onclick =
-        function(){
+  .getElementById(
+    "show-all-memories"
+  )
+  .onclick =
+    function(){
 
-            document
-                .getElementById(
-                    "memories-list"
-                )
-                .scrollIntoView({
-                    behavior:"smooth",
-                    block:"start"
-                });
+      document
+        .getElementById(
+          "memories-list"
+        )
+        .scrollIntoView({
+          behavior:"smooth",
+          block:"start"
+        });
 
-        };
+    };
 
 
 /* =========================================================
-   CERRAR SESIÓN
+   SESIÓN
 ========================================================= */
 
 document
-    .getElementById(
-        "logout"
-    )
-    .onclick =
-        async function(){
+  .getElementById(
+    "logout"
+  )
+  .onclick =
+    async function(){
 
-            await supabaseClient
-                .auth
-                .signOut();
+      await supabaseClient
+        .auth
+        .signOut();
 
-            window.location.replace(
-                "login.html"
-            );
+      window.location.replace(
+        "login.html"
+      );
 
-        };
+    };
 
 
 /* =========================================================
@@ -5876,25 +4916,25 @@ document
 
 async function init(){
 
-    const session =
-        await requireSession();
+  const session =
+    await requireSession();
 
-    if(!session){
-        return;
-    }
+  if(!session){
+    return;
+  }
 
 
-    await Promise.all([
+  await Promise.all([
 
-        loadMemories(),
+    loadMemories(),
 
-        loadDates(),
+    loadDates(),
 
-        loadHistory(),
+    loadHistory(),
 
-        loadLetters()
+    loadLetters()
 
-    ]);
+  ]);
 
 }
 
