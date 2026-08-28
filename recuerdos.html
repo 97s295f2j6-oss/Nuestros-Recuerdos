@@ -223,64 +223,6 @@ button:disabled{
 
 
 /* =========================================================
-   CARTA PRINCIPAL
-========================================================= */
-
-.letter-hero{
-  position:relative;
-  min-height:240px;
-  overflow:hidden;
-
-  padding:
-    34px
-    300px
-    34px
-    30px;
-
-  border:
-    1px solid
-    rgba(194,57,96,.72);
-
-  border-radius:20px;
-
-  background:
-    linear-gradient(
-      120deg,
-      rgba(37,13,25,.96),
-      rgba(12,9,13,.98)
-    );
-}
-
-.letter-hero h2{
-  font-size:clamp(30px,4.5vw,42px);
-  line-height:1.15;
-  margin-bottom:15px;
-}
-
-.letter-hero p{
-  color:#d0c3c9;
-  font-size:18px;
-  line-height:1.6;
-  max-width:550px;
-  margin-bottom:22px;
-}
-
-.envelope-art{
-  position:absolute;
-  right:38px;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:125px;
-
-  filter:
-    drop-shadow(
-      0 15px 25px
-      rgba(190,50,90,.22)
-    );
-}
-
-
-/* =========================================================
    SECCIONES
 ========================================================= */
 
@@ -336,7 +278,85 @@ button:disabled{
 
 
 /* =========================================================
-   SOLO DE HANNIA
+   BIENVENIDA
+========================================================= */
+
+.welcome-section{
+  margin-top:0;
+  margin-bottom:38px;
+}
+
+.welcome-intro{
+  padding:
+    38px
+    25px
+    30px;
+
+  text-align:center;
+
+  border:
+    1px solid
+    rgba(194,57,96,.72);
+
+  border-radius:24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(37,13,25,.97),
+      rgba(12,9,13,.98)
+    );
+
+  box-shadow:
+    0 20px 60px
+    rgba(0,0,0,.35);
+}
+
+.welcome-heart{
+  font-size:68px;
+  line-height:1;
+  margin-bottom:20px;
+
+  filter:
+    drop-shadow(
+      0 10px 20px
+      rgba(220,50,90,.30)
+    );
+}
+
+.welcome-intro h2{
+  font-size:clamp(32px,6vw,48px);
+  line-height:1.15;
+  margin-bottom:14px;
+}
+
+.welcome-line{
+  width:80px;
+  height:1px;
+  margin:22px auto;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #c34c70,
+      transparent
+    );
+}
+
+.welcome-intro p{
+  max-width:720px;
+  margin:auto;
+
+  color:#cfc1c8;
+
+  font-size:18px;
+  line-height:1.75;
+}
+
+
+/* =========================================================
+   COSAS QUE AMO
 ========================================================= */
 
 .hannia-section{
@@ -417,7 +437,7 @@ button:disabled{
 
 
 /* =========================================================
-   COSAS QUE AMO
+   COSAS QUE AMO - FORM
 ========================================================= */
 
 .love-form{
@@ -585,6 +605,236 @@ button:disabled{
 .empty-love p{
   font-size:16px;
   line-height:1.6;
+}
+
+
+/* =========================================================
+   CONTADOR ❤️
+========================================================= */
+
+.counter-section{
+  margin-top:38px;
+}
+
+.counter-card{
+  position:relative;
+  overflow:hidden;
+
+  padding:
+    42px
+    30px
+    35px;
+
+  text-align:center;
+
+  border:
+    1px solid
+    rgba(194,57,96,.72);
+
+  border-radius:24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(37,13,25,.97),
+      rgba(12,9,13,.98)
+    );
+
+  box-shadow:
+    0 20px 60px
+    rgba(0,0,0,.35);
+}
+
+.counter-card:before{
+  content:"❤️";
+
+  position:absolute;
+
+  left:4%;
+  top:3%;
+
+  font-size:115px;
+
+  opacity:.035;
+
+  pointer-events:none;
+}
+
+.counter-card:after{
+  content:"❤️";
+
+  position:absolute;
+
+  right:4%;
+  bottom:1%;
+
+  font-size:120px;
+
+  opacity:.035;
+
+  pointer-events:none;
+}
+
+.counter-hourglass{
+  position:relative;
+  z-index:1;
+
+  font-size:68px;
+  line-height:1;
+
+  margin-bottom:17px;
+}
+
+.counter-title{
+  position:relative;
+  z-index:1;
+
+  font-size:clamp(34px,6vw,52px);
+
+  line-height:1.15;
+
+  margin-bottom:14px;
+}
+
+.counter-date{
+  position:relative;
+  z-index:1;
+
+  color:#cfc1c8;
+
+  font-size:22px;
+
+  line-height:1.5;
+
+  margin-bottom:28px;
+}
+
+.counter-date strong{
+  color:#fff;
+}
+
+.counter-line{
+  width:80px;
+  height:1px;
+
+  margin:
+    0
+    auto
+    28px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #c34c70,
+      transparent
+    );
+}
+
+.counter-subtitle{
+  position:relative;
+  z-index:1;
+
+  color:#fff;
+
+  font-size:30px;
+
+  line-height:1.3;
+
+  margin-bottom:25px;
+}
+
+.counter-values{
+  position:relative;
+  z-index:1;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:20px;
+
+  max-width:900px;
+
+  margin:
+    0
+    auto
+    30px;
+}
+
+.counter-unit{
+  min-height:180px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:20px 15px;
+
+  border:
+    1px solid
+    rgba(165,49,84,.65);
+
+  border-radius:24px;
+
+  background:
+    rgba(12,7,12,.48);
+
+  box-shadow:
+    inset 0 0 30px
+    rgba(150,40,75,.04);
+
+  transition:.2s;
+}
+
+.counter-unit:hover{
+  border-color:
+    rgba(210,70,110,.85);
+
+  transform:
+    translateY(-2px);
+}
+
+.counter-number{
+  font-size:clamp(52px,7vw,78px);
+
+  line-height:1;
+
+  font-weight:700;
+
+  color:#fff;
+
+  margin-bottom:17px;
+}
+
+.counter-label{
+  color:#d15a7e;
+
+  font-size:16px;
+
+  letter-spacing:5px;
+
+  text-transform:uppercase;
+}
+
+.counter-final{
+  position:relative;
+  z-index:1;
+
+  color:#cfc1c8;
+
+  font-size:25px;
+
+  line-height:1.5;
+}
+
+.counter-final span{
+  color:#fff;
 }
 
 
@@ -899,7 +1149,7 @@ textarea{
 
 
 /* =========================================================
-   🌎 NUESTROS LUGARES
+   NUESTROS LUGARES
 ========================================================= */
 
 .places-section{
@@ -1162,229 +1412,6 @@ textarea{
   color:#a99ba2;
   font-size:15px;
   margin-bottom:15px;
-}
-
-
-/* =========================================================
-   ⏳ NUESTRO CONTADOR
-========================================================= */
-
-.counter-section{
-  margin-top:48px;
-}
-
-.counter-card{
-  position:relative;
-  overflow:hidden;
-
-  padding:42px 30px 45px;
-
-  text-align:center;
-
-  border:
-    1px solid
-    rgba(194,57,96,.72);
-
-  border-radius:24px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(37,13,25,.97),
-      rgba(12,9,13,.98)
-    );
-
-  box-shadow:
-    0 20px 60px
-    rgba(0,0,0,.35);
-}
-
-.counter-card:before{
-  content:"❤️";
-
-  position:absolute;
-
-  left:-20px;
-  top:-30px;
-
-  font-size:130px;
-
-  opacity:.035;
-}
-
-.counter-card:after{
-  content:"❤️";
-
-  position:absolute;
-
-  right:-20px;
-  bottom:-35px;
-
-  font-size:130px;
-
-  opacity:.035;
-}
-
-.counter-icon{
-  position:relative;
-  z-index:1;
-
-  font-size:62px;
-
-  line-height:1;
-
-  margin-bottom:15px;
-
-  filter:
-    drop-shadow(
-      0 10px 20px
-      rgba(220,50,90,.25)
-    );
-}
-
-.counter-title{
-  position:relative;
-  z-index:1;
-
-  color:#fff;
-
-  font-size:
-    clamp(32px,6vw,46px);
-
-  line-height:1.15;
-
-  margin-bottom:12px;
-}
-
-.counter-subtitle{
-  position:relative;
-  z-index:1;
-
-  color:#cfc1c8;
-
-  font-size:18px;
-
-  line-height:1.6;
-}
-
-.counter-subtitle strong{
-  color:#fff;
-}
-
-.counter-line{
-  width:80px;
-  height:1px;
-
-  margin:
-    23px
-    auto
-    25px;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      #c34c70,
-      transparent
-    );
-}
-
-.counter-intro{
-  position:relative;
-  z-index:1;
-
-  color:#fff;
-
-  font-size:
-    clamp(25px,4vw,34px);
-
-  margin-bottom:25px;
-}
-
-.counter-values{
-  position:relative;
-  z-index:1;
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  max-width:720px;
-
-  margin:auto;
-
-  gap:18px;
-}
-
-.counter-value{
-  min-height:145px;
-
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:center;
-
-  justify-content:center;
-
-  padding:20px;
-
-  border:
-    1px solid
-    rgba(194,57,96,.30);
-
-  border-radius:20px;
-
-  background:
-    rgba(15,8,13,.55);
-
-  box-shadow:
-    inset 0 0 30px
-    rgba(190,50,90,.035);
-}
-
-.counter-value span{
-  color:#fff;
-
-  font-size:
-    clamp(40px,6vw,62px);
-
-  font-weight:700;
-
-  line-height:1;
-
-  font-variant-numeric:
-    tabular-nums;
-
-  text-shadow:
-    0 5px 20px
-    rgba(220,60,100,.15);
-}
-
-.counter-value small{
-  margin-top:13px;
-
-  color:#d15a7e;
-
-  text-transform:uppercase;
-
-  letter-spacing:3px;
-
-  font-size:12px;
-}
-
-.counter-message{
-  position:relative;
-  z-index:1;
-
-  margin-top:30px;
-
-  color:#c4b8be;
-
-  font-size:18px;
-
-  line-height:1.7;
 }
 
 
@@ -1776,25 +1803,22 @@ textarea{
     font-size:14px;
   }
 
-  .letter-hero{
-    min-height:310px;
-    padding:27px 22px 125px;
+  .welcome-intro{
+    padding:32px 18px 27px;
   }
 
-  .letter-hero h2{
+  .welcome-heart{
+    font-size:58px;
+    margin-bottom:15px;
+  }
+
+  .welcome-intro h2{
     font-size:32px;
   }
 
-  .letter-hero p{
-    font-size:17px;
-  }
-
-  .envelope-art{
-    font-size:90px;
-    right:22px;
-    bottom:10px;
-    top:auto;
-    transform:none;
+  .welcome-intro p{
+    font-size:16px;
+    line-height:1.7;
   }
 
   .section{
@@ -1815,6 +1839,8 @@ textarea{
     font-size:15px;
     line-height:1.5;
   }
+
+  /* COSAS QUE AMO */
 
   .hannia-section{
     margin-top:30px;
@@ -1882,6 +1908,68 @@ textarea{
     width:100%;
   }
 
+  /* CONTADOR */
+
+  .counter-section{
+    margin-top:30px;
+  }
+
+  .counter-card{
+    padding:32px 17px 28px;
+  }
+
+  .counter-hourglass{
+    font-size:57px;
+    margin-bottom:14px;
+  }
+
+  .counter-title{
+    font-size:34px;
+  }
+
+  .counter-date{
+    font-size:18px;
+    line-height:1.5;
+    margin-bottom:22px;
+  }
+
+  .counter-line{
+    margin-bottom:22px;
+  }
+
+  .counter-subtitle{
+    font-size:25px;
+    margin-bottom:20px;
+  }
+
+  .counter-values{
+    gap:8px;
+    margin-bottom:23px;
+  }
+
+  .counter-unit{
+    min-height:130px;
+    padding:15px 5px;
+    border-radius:18px;
+  }
+
+  .counter-number{
+    font-size:43px;
+    margin-bottom:12px;
+  }
+
+  .counter-label{
+    font-size:10px;
+    letter-spacing:2px;
+  }
+
+  .counter-final{
+    font-size:19px;
+    line-height:1.5;
+  }
+
+  /* RECUERDOS */
+
   .memory-card{
     grid-template-columns:1fr;
     min-height:0;
@@ -1928,6 +2016,8 @@ textarea{
     flex-direction:column;
   }
 
+  /* FECHAS */
+
   .date-card{
     padding:21px 20px;
   }
@@ -1943,6 +2033,8 @@ textarea{
   .add-date{
     padding:23px 18px;
   }
+
+  /* NUESTROS LUGARES */
 
   .places-section{
     margin-top:35px;
@@ -2016,62 +2108,6 @@ textarea{
     width:100%;
   }
 
-
-  /* CONTADOR */
-
-  .counter-section{
-    margin-top:35px;
-  }
-
-  .counter-card{
-    padding:
-      32px
-      18px
-      35px;
-  }
-
-  .counter-icon{
-    font-size:54px;
-  }
-
-  .counter-title{
-    font-size:32px;
-  }
-
-  .counter-subtitle{
-    font-size:16px;
-  }
-
-  .counter-intro{
-    font-size:26px;
-  }
-
-  .counter-values{
-    gap:8px;
-  }
-
-  .counter-value{
-    min-height:120px;
-    padding:14px 8px;
-    border-radius:16px;
-  }
-
-  .counter-value span{
-    font-size:38px;
-  }
-
-  .counter-value small{
-    margin-top:10px;
-    letter-spacing:2px;
-    font-size:10px;
-  }
-
-  .counter-message{
-    font-size:16px;
-    margin-top:25px;
-  }
-
-
   #history-list{
     padding:22px 18px;
   }
@@ -2136,6 +2172,10 @@ textarea{
 }
 
 
+/* =========================================================
+   PANTALLAS MUY PEQUEÑAS
+========================================================= */
+
 @media(max-width:390px){
 
   .brand h1{
@@ -2147,8 +2187,41 @@ textarea{
     font-size:13px;
   }
 
-  .letter-hero h2{
+  .welcome-intro h2{
     font-size:29px;
+  }
+
+  .counter-title{
+    font-size:30px;
+  }
+
+  .counter-date{
+    font-size:16px;
+  }
+
+  .counter-subtitle{
+    font-size:22px;
+  }
+
+  .counter-values{
+    gap:5px;
+  }
+
+  .counter-unit{
+    min-height:115px;
+  }
+
+  .counter-number{
+    font-size:36px;
+  }
+
+  .counter-label{
+    font-size:8px;
+    letter-spacing:1px;
+  }
+
+  .counter-final{
+    font-size:17px;
   }
 
   .memory-image-wrap,
@@ -2163,31 +2236,6 @@ textarea{
 
   .letter-actions{
     flex-direction:column;
-  }
-
-  .counter-card{
-    padding:
-      28px
-      13px
-      30px;
-  }
-
-  .counter-values{
-    gap:6px;
-  }
-
-  .counter-value{
-    min-height:105px;
-    padding:10px 5px;
-  }
-
-  .counter-value span{
-    font-size:31px;
-  }
-
-  .counter-value small{
-    font-size:9px;
-    letter-spacing:1px;
   }
 
 }
@@ -2214,7 +2262,7 @@ textarea{
     </div>
 
     <h1>
-      Solo de Hannia ❤️
+      Bienvenida a nuestra historia ❤️
     </h1>
 
   </div>
@@ -2231,41 +2279,38 @@ textarea{
 
 
 <!-- =========================================================
-     CARTA DESTACADA
+     BIENVENIDA
 ========================================================= -->
 
-<section class="card letter-hero">
+<section
+  class="welcome-section"
+  id="bienvenida">
 
-  <div>
+  <div class="welcome-intro">
+
+    <div class="welcome-heart">
+      ❤️
+    </div>
 
     <h2>
-      ¿Quieres dejarme una carta? 💌
+      Bienvenida a nuestra historia ❤️
     </h2>
 
+    <div class="welcome-line"></div>
+
     <p>
-      Escribe algo que quieras que quede
-      guardado en nuestra historia.
+      Un pequeño espacio para guardar cada
+      momento, cada recuerdo y cada capítulo
+      que vayamos escribiendo juntos.
     </p>
 
-    <button
-      class="pink-button"
-      id="open-letter">
-
-      ✍️ Escribir una carta
-
-    </button>
-
-  </div>
-
-  <div class="envelope-art">
-    ❤️
   </div>
 
 </section>
 
 
 <!-- =========================================================
-     SOLO DE HANNIA
+     COSAS QUE AMO
 ========================================================= -->
 
 <section
@@ -2377,6 +2422,91 @@ textarea{
   <div
     class="love-list"
     id="love-list">
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTADOR
+========================================================= -->
+
+<section
+  class="counter-section"
+  id="contador">
+
+  <div class="counter-card">
+
+    <div class="counter-hourglass">
+      ⏳
+    </div>
+
+    <h2 class="counter-title">
+      Nuestro contador ❤️
+    </h2>
+
+    <div class="counter-date">
+      Desde el <strong>2 de agosto de 2026</strong>
+    </div>
+
+    <div class="counter-line"></div>
+
+    <div class="counter-subtitle">
+      Llevamos juntos
+    </div>
+
+    <div class="counter-values">
+
+      <div class="counter-unit">
+
+        <div
+          class="counter-number"
+          id="counter-days">
+          00
+        </div>
+
+        <div class="counter-label">
+          Días
+        </div>
+
+      </div>
+
+
+      <div class="counter-unit">
+
+        <div
+          class="counter-number"
+          id="counter-hours">
+          00
+        </div>
+
+        <div class="counter-label">
+          Horas
+        </div>
+
+      </div>
+
+
+      <div class="counter-unit">
+
+        <div
+          class="counter-number"
+          id="counter-minutes">
+          00
+        </div>
+
+        <div class="counter-label">
+          Minutos
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="counter-final">
+      del resto de nuestra vida <span>❤️</span>
+    </div>
+
   </div>
 
 </section>
@@ -2644,7 +2774,7 @@ textarea{
 
 
 <!-- =========================================================
-     🌎 NUESTROS LUGARES
+     NUESTROS LUGARES
 ========================================================= -->
 
 <section
@@ -2854,85 +2984,6 @@ textarea{
     <div
       class="place-list"
       id="pending-places">
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     ⏳ NUESTRO CONTADOR
-========================================================= -->
-
-<section
-  class="counter-section"
-  id="contador">
-
-  <div class="counter-card">
-
-    <div class="counter-icon">
-      ⏳
-    </div>
-
-    <div class="counter-title">
-      Nuestro contador ❤️
-    </div>
-
-    <div class="counter-subtitle">
-      Desde el <strong>2 de agosto de 2026</strong>
-    </div>
-
-    <div class="counter-line"></div>
-
-    <div class="counter-intro">
-      Llevamos juntos
-    </div>
-
-    <div class="counter-values">
-
-      <div class="counter-value">
-
-        <span id="counter-days">
-          0
-        </span>
-
-        <small>
-          días
-        </small>
-
-      </div>
-
-
-      <div class="counter-value">
-
-        <span id="counter-hours">
-          00
-        </span>
-
-        <small>
-          horas
-        </small>
-
-      </div>
-
-
-      <div class="counter-value">
-
-        <span id="counter-minutes">
-          00
-        </span>
-
-        <small>
-          minutos
-        </small>
-
-      </div>
-
-    </div>
-
-    <div class="counter-message">
-      Y que vaya cambiando automáticamente. ❤️
     </div>
 
   </div>
@@ -3234,7 +3285,7 @@ textarea{
 
 
 <div class="footer">
-  Hecho con ❤️ para ti
+  Hecho para el amor de mi vida ❤️
 </div>
 
 
@@ -3569,6 +3620,95 @@ function storagePublicUrl(path){
     .data
     .publicUrl;
 }
+
+
+/* =========================================================
+   CONTADOR
+========================================================= */
+
+const relationshipStart =
+new Date(
+  "2026-08-02T00:00:00"
+);
+
+
+function updateCounter(){
+
+  const now =
+    new Date();
+
+  let difference =
+    now.getTime() -
+    relationshipStart.getTime();
+
+
+  if(difference < 0){
+
+    difference = 0;
+
+  }
+
+
+  const totalSeconds =
+    Math.floor(
+      difference / 1000
+    );
+
+
+  const totalMinutes =
+    Math.floor(
+      totalSeconds / 60
+    );
+
+
+  const totalHours =
+    Math.floor(
+      totalMinutes / 60
+    );
+
+
+  const days =
+    Math.floor(
+      totalHours / 24
+    );
+
+
+  const hours =
+    totalHours % 24;
+
+
+  const minutes =
+    totalMinutes % 60;
+
+
+  document.getElementById(
+    "counter-days"
+  ).textContent =
+    String(days);
+
+
+  document.getElementById(
+    "counter-hours"
+  ).textContent =
+    String(hours)
+    .padStart(2,"0");
+
+
+  document.getElementById(
+    "counter-minutes"
+  ).textContent =
+    String(minutes)
+    .padStart(2,"0");
+
+}
+
+
+updateCounter();
+
+setInterval(
+  updateCounter,
+  1000
+);
 
 
 /* =========================================================
@@ -3976,32 +4116,51 @@ resetLoveForm;
 const PLACES_STORAGE_KEY =
 "hannia_nuestros_lugares_v1";
 
+
 const placeName =
-document.getElementById("place-name");
+document.getElementById(
+  "place-name"
+);
 
 const placeLocation =
-document.getElementById("place-location");
+document.getElementById(
+  "place-location"
+);
 
 const placeType =
-document.getElementById("place-type");
+document.getElementById(
+  "place-type"
+);
 
 const placeDate =
-document.getElementById("place-date");
+document.getElementById(
+  "place-date"
+);
 
 const placeDescription =
-document.getElementById("place-description");
+document.getElementById(
+  "place-description"
+);
 
 const placeMaps =
-document.getElementById("place-maps");
+document.getElementById(
+  "place-maps"
+);
 
 const placeStatus =
-document.getElementById("place-status");
+document.getElementById(
+  "place-status"
+);
 
 const savePlaceButton =
-document.getElementById("save-place");
+document.getElementById(
+  "save-place"
+);
 
 const cancelPlaceButton =
-document.getElementById("cancel-place");
+document.getElementById(
+  "cancel-place"
+);
 
 
 function getPlaces(){
@@ -4029,7 +4188,6 @@ function getPlaces(){
     return [];
 
   }
-
 }
 
 
@@ -6756,6 +6914,7 @@ function openLetterForm(
     row?.contenido ||
     "";
 
+
 }
 
 
@@ -6786,12 +6945,9 @@ function resetLetter(){
 }
 
 
-document.getElementById(
-  "open-letter"
-).onclick =
-  () =>
-    openLetterForm();
-
+/* =========================================================
+   ABRIR CARTA
+========================================================= */
 
 document.getElementById(
   "open-letter-2"
@@ -7286,138 +7442,6 @@ async function deleteLetter(id){
   }
 
 }
-
-
-/* =========================================================
-   ⏳ NUESTRO CONTADOR
-========================================================= */
-
-/*
-   IMPORTANTE:
-   El contador comienza el 2 de agosto de 2026.
-   Hora inicial: 00:00:00
-
-   Es independiente de Supabase.
-*/
-
-const RELATIONSHIP_START =
-  new Date(
-    "2026-08-02T00:00:00"
-  );
-
-
-function updateRelationshipCounter(){
-
-  const now =
-    new Date();
-
-
-  let difference =
-    now.getTime() -
-    RELATIONSHIP_START.getTime();
-
-
-  /*
-     Si por alguna razón el reloj está antes
-     de la fecha de inicio, mostramos 0.
-  */
-
-  if(difference < 0){
-
-    difference = 0;
-
-  }
-
-
-  const totalMinutes =
-    Math.floor(
-      difference /
-      (1000 * 60)
-    );
-
-
-  const days =
-    Math.floor(
-      totalMinutes /
-      (60 * 24)
-    );
-
-
-  const hours =
-    Math.floor(
-      (totalMinutes % (60 * 24)) /
-      60
-    );
-
-
-  const minutes =
-    totalMinutes % 60;
-
-
-  const daysElement =
-    document.getElementById(
-      "counter-days"
-    );
-
-
-  const hoursElement =
-    document.getElementById(
-      "counter-hours"
-    );
-
-
-  const minutesElement =
-    document.getElementById(
-      "counter-minutes"
-    );
-
-
-  if(daysElement){
-
-    daysElement.textContent =
-      days.toLocaleString(
-        "es-MX"
-      );
-
-  }
-
-
-  if(hoursElement){
-
-    hoursElement.textContent =
-      String(hours)
-      .padStart(2,"0");
-
-  }
-
-
-  if(minutesElement){
-
-    minutesElement.textContent =
-      String(minutes)
-      .padStart(2,"0");
-
-  }
-
-}
-
-
-/*
-   Actualizar inmediatamente
-   al abrir la página.
-*/
-
-updateRelationshipCounter();
-
-
-/*
-   Actualizar cada minuto.
-*/
-
-setInterval(
-  updateRelationshipCounter,
-  60 * 1000
-);
 
 
 /* =========================================================
