@@ -80,7 +80,7 @@ button:disabled{
 
 
 /* =========================================================
-   HEADER ORIGINAL
+   HEADER
 ========================================================= */
 
 .site-header{
@@ -188,42 +188,36 @@ button:disabled{
   transform:translateY(-2px);
 }
 
-.small-button{
-  border:
-    1px solid
-    rgba(184,58,96,.65);
-
-  border-radius:30px;
-  padding:10px 20px;
-  color:#d98ba5;
-  background:rgba(130,32,63,.08);
-  transition:.2s;
-}
-
-.small-button:hover{
-  background:rgba(150,40,75,.16);
-}
-
+.small-button,
 .action{
   border:
     1px solid
     rgba(177,54,91,.58);
 
   border-radius:30px;
-  padding:10px 20px;
 
-  background:rgba(105,27,51,.07);
+  padding:
+    10px
+    20px;
+
+  background:
+    rgba(105,27,51,.07);
+
   color:#d58aa2;
 
   transition:.2s;
 }
 
+.small-button:hover,
 .action:hover{
-  background:rgba(150,40,75,.15);
+  background:
+    rgba(150,40,75,.15);
 }
 
 .action.delete{
-  border-color:rgba(155,48,65,.52);
+  border-color:
+    rgba(155,48,65,.52);
+
   color:#cc8796;
 }
 
@@ -273,12 +267,9 @@ button:disabled{
 
 .envelope-art{
   position:absolute;
-
   right:38px;
   top:50%;
-
   transform:translateY(-50%);
-
   font-size:125px;
 
   filter:
@@ -345,18 +336,19 @@ button:disabled{
 
 
 /* =========================================================
-   COSAS QUE AMO
-   IMPORTANTE:
-   ESTA SECCIÓN NO VA ARRIBA.
-   VA DESPUÉS DE RECUERDOS.
+   SOLO DE HANNIA
 ========================================================= */
 
-.love-section{
+.hannia-section{
   margin-top:38px;
 }
 
-.love-intro{
-  padding:38px 25px 30px;
+.hannia-intro{
+  padding:
+    38px
+    25px
+    30px;
+
   text-align:center;
 
   border:
@@ -377,7 +369,7 @@ button:disabled{
     rgba(0,0,0,.35);
 }
 
-.love-heart{
+.hannia-heart{
   font-size:68px;
   line-height:1;
   margin-bottom:20px;
@@ -389,13 +381,17 @@ button:disabled{
     );
 }
 
-.love-intro h2{
+.hannia-intro h2{
   font-size:clamp(32px,6vw,48px);
   line-height:1.15;
   margin-bottom:14px;
 }
 
-.love-line{
+.hannia-intro h2 span{
+  color:#fff;
+}
+
+.hannia-line{
   width:80px;
   height:1px;
   margin:22px auto;
@@ -409,18 +405,19 @@ button:disabled{
     );
 }
 
-.love-intro p{
+.hannia-intro p{
   max-width:720px;
   margin:auto;
 
   color:#cfc1c8;
+
   font-size:18px;
   line-height:1.75;
 }
 
 
 /* =========================================================
-   FORMULARIO COSAS QUE AMO
+   COSAS QUE AMO
 ========================================================= */
 
 .love-form{
@@ -470,11 +467,6 @@ button:disabled{
   flex:1;
 }
 
-
-/* =========================================================
-   LISTA COSAS QUE AMO
-========================================================= */
-
 .love-list{
   display:grid;
   gap:15px;
@@ -483,9 +475,7 @@ button:disabled{
 
 .love-card{
   display:grid;
-
   grid-template-columns:120px 1fr;
-
   align-items:center;
   gap:20px;
 
@@ -509,7 +499,9 @@ button:disabled{
 }
 
 .love-card:hover{
-  border-color:rgba(190,59,99,.72);
+  border-color:
+    rgba(190,59,99,.72);
+
   transform:translateY(-2px);
 }
 
@@ -607,7 +599,6 @@ button:disabled{
 
 .memory-card{
   display:grid;
-
   grid-template-columns:50% 50%;
 
   min-height:270px;
@@ -625,7 +616,8 @@ button:disabled{
 }
 
 .memory-card:hover{
-  border-color:rgba(190,59,99,.72);
+  border-color:
+    rgba(190,59,99,.72);
 }
 
 .memory-image-wrap{
@@ -636,13 +628,10 @@ button:disabled{
 
 .memory-image{
   display:block;
-
   width:100%;
   height:100%;
   min-height:270px;
-
   object-fit:cover;
-
   transition:.35s;
 }
 
@@ -654,17 +643,14 @@ button:disabled{
   display:flex;
   flex-direction:column;
   align-items:flex-start;
-
   padding:24px 25px;
 }
 
 .memory-date{
   color:#d15a7e;
-
   text-transform:uppercase;
   letter-spacing:3px;
   font-size:12px;
-
   margin-bottom:10px;
 }
 
@@ -740,9 +726,11 @@ select{
   border-radius:13px;
 
   background:#100b10;
+
   color:#fff;
 
   padding:13px;
+
   outline:none;
 }
 
@@ -835,12 +823,9 @@ textarea{
 
 .date-card:after{
   content:"❤️";
-
   position:absolute;
-
   right:23px;
   top:19px;
-
   font-size:34px;
   opacity:.12;
 }
@@ -914,6 +899,273 @@ textarea{
 
 
 /* =========================================================
+   🌎 NUESTROS LUGARES
+========================================================= */
+
+.places-section{
+  margin-top:48px;
+}
+
+.places-intro{
+  padding:38px 25px 30px;
+  text-align:center;
+
+  border:
+    1px solid
+    rgba(194,57,96,.72);
+
+  border-radius:24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(37,13,25,.97),
+      rgba(12,9,13,.98)
+    );
+
+  box-shadow:
+    0 20px 60px
+    rgba(0,0,0,.35);
+}
+
+.places-globe{
+  font-size:65px;
+  line-height:1;
+  margin-bottom:15px;
+}
+
+.places-intro h2{
+  font-size:clamp(31px,6vw,46px);
+  line-height:1.15;
+  margin-bottom:15px;
+}
+
+.places-intro p{
+  max-width:720px;
+  margin:auto;
+
+  color:#cfc1c8;
+  font-size:18px;
+  line-height:1.7;
+}
+
+.places-form{
+  margin-top:18px;
+  padding:25px;
+}
+
+.places-form h3{
+  font-size:25px;
+  margin-bottom:5px;
+}
+
+.places-form-subtitle{
+  color:#a99ba2;
+  font-size:15px;
+  line-height:1.5;
+  margin-bottom:15px;
+}
+
+.place-status{
+  display:none;
+  margin-top:15px;
+  padding:12px;
+  border-radius:12px;
+  text-align:center;
+}
+
+.place-status.show{
+  display:block;
+}
+
+.place-status.success{
+  background:rgba(70,160,105,.10);
+  color:#91d7ab;
+}
+
+.place-status.error{
+  background:rgba(190,45,65,.10);
+  color:#ff9aa9;
+}
+
+.place-form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.place-form-buttons{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
+}
+
+.place-form-buttons>*{
+  flex:1;
+}
+
+.place-list{
+  display:grid;
+  gap:15px;
+  margin-top:18px;
+}
+
+.place-card{
+  position:relative;
+  overflow:hidden;
+  padding:24px 25px;
+
+  border:
+    1px solid
+    rgba(135,44,75,.58);
+
+  border-radius:22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(27,18,24,.92),
+      rgba(11,9,12,.95)
+    );
+
+  transition:.2s;
+}
+
+.place-card:hover{
+  border-color:
+    rgba(190,59,99,.72);
+
+  transform:translateY(-2px);
+}
+
+.place-card-top{
+  display:flex;
+  align-items:flex-start;
+  gap:17px;
+}
+
+.place-icon{
+  width:64px;
+  height:64px;
+
+  flex-shrink:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:
+    rgba(128,30,63,.16);
+
+  font-size:31px;
+}
+
+.place-card-content{
+  min-width:0;
+  flex:1;
+}
+
+.place-status-label{
+  display:inline-block;
+
+  margin-bottom:7px;
+
+  color:#d15a7e;
+
+  text-transform:uppercase;
+
+  letter-spacing:2px;
+
+  font-size:11px;
+}
+
+.place-title{
+  color:#fff;
+  font-size:26px;
+  line-height:1.2;
+  margin-bottom:7px;
+}
+
+.place-location{
+  color:#c9bbc2;
+  font-size:16px;
+  line-height:1.5;
+}
+
+.place-description{
+  color:#c0b4bb;
+  font-size:16px;
+  line-height:1.65;
+  white-space:pre-wrap;
+  margin-top:14px;
+}
+
+.place-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+.place-actions button{
+  flex:1;
+  min-width:130px;
+  text-align:center;
+}
+
+.place-empty{
+  padding:35px 25px;
+  text-align:center;
+
+  color:#a99ba2;
+
+  border:
+    1px dashed
+    rgba(194,57,96,.45);
+
+  border-radius:20px;
+
+  background:
+    rgba(20,10,16,.45);
+}
+
+.place-empty-icon{
+  font-size:43px;
+  margin-bottom:10px;
+}
+
+.place-empty h3{
+  color:#fff;
+  font-size:23px;
+  margin-bottom:8px;
+}
+
+.place-empty p{
+  font-size:16px;
+  line-height:1.6;
+}
+
+.places-subsection{
+  margin-top:25px;
+}
+
+.places-subsection-title{
+  text-align:center;
+  font-size:26px;
+  margin-bottom:12px;
+}
+
+.places-counter{
+  text-align:center;
+  color:#a99ba2;
+  font-size:15px;
+  margin-bottom:15px;
+}
+
+
+/* =========================================================
    HISTORIA
 ========================================================= */
 
@@ -943,7 +1195,6 @@ textarea{
   content:"♥";
 
   position:absolute;
-
   left:-43px;
   top:-3px;
 
@@ -956,7 +1207,6 @@ textarea{
 
   color:#d4577e;
   background:#120b10;
-
   border-radius:50%;
   font-size:14px;
 }
@@ -1004,13 +1254,10 @@ textarea{
 }
 
 .saved-letter:before{
-  content:"❤️";
-
+  content:"💌";
   position:absolute;
-
   right:23px;
   top:17px;
-
   font-size:31px;
   opacity:.13;
 }
@@ -1072,7 +1319,6 @@ textarea{
   content:"❤️";
 
   position:absolute;
-
   left:7%;
   top:15px;
 
@@ -1084,7 +1330,6 @@ textarea{
   content:"❤️";
 
   position:absolute;
-
   right:7%;
   bottom:10px;
 
@@ -1115,7 +1360,7 @@ textarea{
 
 
 /* =========================================================
-   FOOTER
+   LOGOUT / FOOTER
 ========================================================= */
 
 .logout{
@@ -1127,6 +1372,7 @@ textarea{
     rgba(255,255,255,.14);
 
   border-radius:30px;
+
   padding:11px 23px;
 
   color:#9d9298;
@@ -1156,7 +1402,8 @@ textarea{
 
   padding:15px;
 
-  background:rgba(3,2,5,.88);
+  background:
+    rgba(3,2,5,.88);
 
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
@@ -1178,6 +1425,7 @@ textarea{
   width:100%;
   max-width:850px;
   max-height:92vh;
+
   overflow:auto;
 
   padding:38px 30px 40px;
@@ -1212,7 +1460,6 @@ textarea{
 
 .close{
   position:absolute;
-
   right:15px;
   top:13px;
 
@@ -1227,7 +1474,8 @@ textarea{
 
   color:#fff;
 
-  background:rgba(255,255,255,.06);
+  background:
+    rgba(255,255,255,.06);
 
   font-size:23px;
 }
@@ -1238,7 +1486,6 @@ textarea{
 
   text-transform:uppercase;
   letter-spacing:3px;
-
   font-size:12px;
   margin-bottom:12px;
 }
@@ -1308,11 +1555,7 @@ textarea{
 
   .letter-hero{
     min-height:310px;
-
-    padding:
-      27px
-      22px
-      125px;
+    padding:27px 22px 125px;
   }
 
   .letter-hero h2{
@@ -1325,12 +1568,9 @@ textarea{
 
   .envelope-art{
     font-size:90px;
-
     right:22px;
     bottom:10px;
-
     top:auto;
-
     transform:none;
   }
 
@@ -1353,27 +1593,26 @@ textarea{
     line-height:1.5;
   }
 
+  /* SOLO HANNIA */
 
-  /* COSAS QUE AMO */
-
-  .love-section{
+  .hannia-section{
     margin-top:30px;
   }
 
-  .love-intro{
+  .hannia-intro{
     padding:32px 18px 27px;
   }
 
-  .love-heart{
+  .hannia-heart{
     font-size:58px;
     margin-bottom:15px;
   }
 
-  .love-intro h2{
+  .hannia-intro h2{
     font-size:32px;
   }
 
-  .love-intro p{
+  .hannia-intro p{
     font-size:16px;
     line-height:1.7;
   }
@@ -1421,7 +1660,6 @@ textarea{
   .love-actions button{
     width:100%;
   }
-
 
   /* RECUERDOS */
 
@@ -1471,6 +1709,8 @@ textarea{
     flex-direction:column;
   }
 
+  /* FECHAS */
+
   .date-card{
     padding:21px 20px;
   }
@@ -1485,6 +1725,80 @@ textarea{
 
   .add-date{
     padding:23px 18px;
+  }
+
+  /* NUESTROS LUGARES */
+
+  .places-section{
+    margin-top:35px;
+  }
+
+  .places-intro{
+    padding:30px 18px 25px;
+  }
+
+  .places-globe{
+    font-size:57px;
+  }
+
+  .places-intro h2{
+    font-size:31px;
+  }
+
+  .places-intro p{
+    font-size:16px;
+    line-height:1.7;
+  }
+
+  .places-form{
+    padding:21px 18px;
+  }
+
+  .places-form h3{
+    font-size:23px;
+  }
+
+  .place-form-row{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+
+  .place-form-buttons{
+    flex-direction:column;
+  }
+
+  .place-card{
+    padding:21px 18px;
+  }
+
+  .place-card-top{
+    gap:12px;
+  }
+
+  .place-icon{
+    width:55px;
+    height:55px;
+    font-size:27px;
+  }
+
+  .place-title{
+    font-size:23px;
+  }
+
+  .place-location{
+    font-size:15px;
+  }
+
+  .place-description{
+    font-size:15px;
+  }
+
+  .place-actions{
+    flex-direction:column;
+  }
+
+  .place-actions button{
+    width:100%;
   }
 
   #history-list{
@@ -1608,7 +1922,7 @@ textarea{
     </div>
 
     <h1>
-      Cartas & Recuerdos ❤️
+      Solo de Hannia ❤️
     </h1>
 
   </div>
@@ -1633,7 +1947,7 @@ textarea{
   <div>
 
     <h2>
-      ¿Quieres dejarme una carta? ❤️
+      ¿Quieres dejarme una carta? 💌
     </h2>
 
     <p>
@@ -1659,8 +1973,125 @@ textarea{
 
 
 <!-- =========================================================
+     SOLO DE HANNIA
+========================================================= -->
+
+<section
+  class="hannia-section"
+  id="solo-hannia">
+
+  <div class="hannia-intro">
+
+    <div class="hannia-heart">
+      ❤️
+    </div>
+
+    <h2>
+      Cosas que amo de ti
+      <span>❤️</span>
+    </h2>
+
+    <div class="hannia-line"></div>
+
+    <p>
+      Porque hay pequeños detalles de ti que quizá
+      no siempre te digo, pero que recuerdo y amo.
+    </p>
+
+  </div>
+
+
+  <div
+    class="card love-form"
+    id="love-form">
+
+    <h3>
+      ❤️ Agregar algo que amo de ti
+    </h3>
+
+    <div class="love-form-subtitle">
+      Tú decides qué quieres guardar aquí.
+      Puedes agregar todos los detalles que quieras.
+    </div>
+
+    <div class="love-form-grid">
+
+      <div class="love-emoji-field">
+
+        <label for="love-emoji">
+          Emoji
+        </label>
+
+        <input
+          id="love-emoji"
+          maxlength="4"
+          value="❤️"
+          placeholder="❤️">
+
+      </div>
+
+      <div>
+
+        <label for="love-title">
+          Título
+        </label>
+
+        <input
+          id="love-title"
+          maxlength="150"
+          placeholder="Ej. Tu forma de sonreír">
+
+      </div>
+
+    </div>
+
+    <label for="love-description">
+      ¿Por qué lo amas?
+    </label>
+
+    <textarea
+      id="love-description"
+      maxlength="1000"
+      placeholder="Escribe aquí lo que quieras decir sobre ella..."></textarea>
+
+    <div class="love-form-buttons">
+
+      <button
+        class="action"
+        id="cancel-love"
+        style="display:none;">
+
+        Cancelar
+
+      </button>
+
+      <button
+        class="pink-button"
+        id="save-love">
+
+        ❤️ Agregar a la lista
+
+      </button>
+
+    </div>
+
+    <div
+      class="status"
+      id="love-status">
+    </div>
+
+  </div>
+
+  <div
+    class="love-list"
+    id="love-list">
+  </div>
+
+</section>
+
+
+<!-- =========================================================
      RECUERDOS
-     ESTA SECCIÓN VA ANTES DE COSAS QUE AMO
 ========================================================= -->
 
 <section
@@ -1678,9 +2109,6 @@ textarea{
   <div class="section-subtitle">
     Todos esos momentos que queremos guardar.
   </div>
-
-
-  <!-- FORMULARIO RECUERDO -->
 
   <div
     class="card form-panel"
@@ -1758,24 +2186,17 @@ textarea{
 
   </div>
 
-
-  <!-- LISTA RECUERDOS -->
-
   <div
     class="memories"
     id="memories-list">
 
     <div class="card date-card">
-
       📸
       <br><br>
-
       Cargando nuestros recuerdos...
-
     </div>
 
   </div>
-
 
   <div class="center-action">
 
@@ -1787,136 +2208,6 @@ textarea{
 
     </button>
 
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     COSAS QUE AMO DE TI
-     AHORA ESTÁ DESPUÉS DE RECUERDOS
-========================================================= -->
-
-<section
-  class="love-section"
-  id="solo-hannia">
-
-  <div class="love-intro">
-
-    <div class="love-heart">
-      ❤️
-    </div>
-
-    <h2>
-      Cosas que amo de ti
-    </h2>
-
-    <div class="love-line"></div>
-
-    <p>
-      Porque hay pequeños detalles de ti que quizá
-      no siempre te digo, pero que recuerdo y amo.
-    </p>
-
-  </div>
-
-
-  <!-- FORMULARIO -->
-
-  <div
-    class="card love-form"
-    id="love-form">
-
-    <h3>
-      ❤️ Agregar algo que amo de ti
-    </h3>
-
-    <div class="love-form-subtitle">
-
-      Tú decides qué quieres guardar aquí.
-      Puedes agregar todos los detalles que quieras.
-
-    </div>
-
-
-    <div class="love-form-grid">
-
-      <div class="love-emoji-field">
-
-        <label for="love-emoji">
-          Emoji
-        </label>
-
-        <input
-          id="love-emoji"
-          maxlength="8"
-          value="❤️"
-          placeholder="❤️">
-
-      </div>
-
-
-      <div>
-
-        <label for="love-title">
-          Título
-        </label>
-
-        <input
-          id="love-title"
-          maxlength="150"
-          placeholder="Ej. Tu forma de sonreír">
-
-      </div>
-
-    </div>
-
-
-    <label for="love-description">
-      ¿Por qué lo amas?
-    </label>
-
-    <textarea
-      id="love-description"
-      maxlength="1000"
-      placeholder="Escribe aquí lo que quieras decir sobre ella..."></textarea>
-
-
-    <div class="love-form-buttons">
-
-      <button
-        class="action"
-        id="cancel-love"
-        style="display:none;">
-
-        Cancelar
-
-      </button>
-
-      <button
-        class="pink-button"
-        id="save-love">
-
-        ❤️ Agregar a la lista
-
-      </button>
-
-    </div>
-
-
-    <div
-      class="status"
-      id="love-status">
-    </div>
-
-  </div>
-
-
-  <!-- LISTA -->
-
-  <div
-    class="love-list"
-    id="love-list">
   </div>
 
 </section>
@@ -1942,22 +2233,17 @@ textarea{
     Las fechas que queremos guardar para siempre.
   </div>
 
-
   <div
     class="dates"
     id="dates-list">
 
     <div class="card date-card">
-
       📅
       <br><br>
-
       Cargando nuestras fechas...
-
     </div>
 
   </div>
-
 
   <div class="card add-date">
 
@@ -1979,7 +2265,6 @@ textarea{
 
     </button>
 
-
     <div
       class="date-form"
       id="date-form">
@@ -1991,7 +2276,6 @@ textarea{
       <input
         id="date-value"
         type="date">
-
 
       <label for="date-type">
         ✨ Tipo
@@ -2017,7 +2301,6 @@ textarea{
 
       </select>
 
-
       <label for="date-title">
         ❤️ Título
       </label>
@@ -2027,7 +2310,6 @@ textarea{
         maxlength="150"
         placeholder="Ej. Cumpleaños de Hannia">
 
-
       <label for="date-message">
         💌 Mensaje
       </label>
@@ -2036,7 +2318,6 @@ textarea{
         id="date-message"
         maxlength="1000"
         placeholder="Escribe qué significa esta fecha para nosotros..."></textarea>
-
 
       <div class="form-row">
 
@@ -2058,12 +2339,241 @@ textarea{
 
       </div>
 
-
       <div
         class="status"
         id="date-status">
       </div>
 
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     🌎 NUESTROS LUGARES
+========================================================= -->
+
+<section
+  class="places-section"
+  id="lugares">
+
+  <div class="places-intro">
+
+    <div class="places-globe">
+      🌎
+    </div>
+
+    <h2>
+      Nuestros lugares ❤️
+    </h2>
+
+    <div class="hannia-line"></div>
+
+    <p>
+      Un pequeño recorrido por los lugares que forman
+      parte de nuestra historia y por todos aquellos
+      que todavía nos falta conocer juntos.
+    </p>
+
+  </div>
+
+
+  <!-- =======================================================
+       FORMULARIO
+  ======================================================= -->
+
+  <div
+    class="card places-form"
+    id="place-form">
+
+    <h3>
+      📍 Agregar un lugar
+    </h3>
+
+    <div class="places-form-subtitle">
+      Tú decides qué lugares quieres guardar
+      en nuestra historia.
+    </div>
+
+
+    <div class="place-form-row">
+
+      <div>
+
+        <label for="place-name">
+          ❤️ Nombre del lugar
+        </label>
+
+        <input
+          id="place-name"
+          maxlength="150"
+          placeholder="Ej. Nuestra primera salida">
+
+      </div>
+
+
+      <div>
+
+        <label for="place-location">
+          📍 Ubicación
+        </label>
+
+        <input
+          id="place-location"
+          maxlength="200"
+          placeholder="Ej. Tijuana, Baja California">
+
+      </div>
+
+    </div>
+
+
+    <div class="place-form-row">
+
+      <div>
+
+        <label for="place-type">
+          ✨ Tipo de lugar
+        </label>
+
+        <select id="place-type">
+
+          <option value="conocimos">
+            📍 Donde nos conocimos
+          </option>
+
+          <option value="primera-salida">
+            ❤️ Primera salida
+          </option>
+
+          <option value="primer-viaje">
+            ✈️ Primer viaje
+          </option>
+
+          <option value="especial">
+            ❤️ Lugar especial
+          </option>
+
+          <option value="pendiente">
+            ✈️ Lugar que queremos conocer
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div>
+
+        <label for="place-date">
+          📅 Fecha
+        </label>
+
+        <input
+          id="place-date"
+          type="date">
+
+      </div>
+
+    </div>
+
+
+    <label for="place-description">
+      💌 ¿Por qué es importante?
+    </label>
+
+    <textarea
+      id="place-description"
+      maxlength="1000"
+      placeholder="Cuéntame qué significa este lugar para ustedes..."></textarea>
+
+
+    <label for="place-maps">
+      🗺️ Link de Google Maps opcional
+    </label>
+
+    <input
+      id="place-maps"
+      type="url"
+      placeholder="Pega aquí el enlace de Google Maps">
+
+
+    <div class="place-form-buttons">
+
+      <button
+        class="action"
+        id="cancel-place"
+        style="display:none;">
+
+        Cancelar
+
+      </button>
+
+
+      <button
+        class="pink-button"
+        id="save-place">
+
+        ❤️ Guardar lugar
+
+      </button>
+
+    </div>
+
+
+    <div
+      class="place-status"
+      id="place-status">
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       VISITADOS
+  ======================================================= -->
+
+  <div class="places-subsection">
+
+    <div class="places-subsection-title">
+      ❤️ Lugares que forman nuestra historia
+    </div>
+
+    <div
+      class="places-counter"
+      id="visited-counter">
+      0 lugares guardados
+    </div>
+
+    <div
+      class="place-list"
+      id="visited-places">
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       PENDIENTES
+  ======================================================= -->
+
+  <div class="places-subsection">
+
+    <div class="places-subsection-title">
+      ✈️ Lugares que todavía nos faltan
+    </div>
+
+    <div
+      class="places-counter"
+      id="pending-counter">
+      0 lugares pendientes
+    </div>
+
+    <div
+      class="place-list"
+      id="pending-places">
     </div>
 
   </div>
@@ -2090,7 +2600,6 @@ textarea{
   <div class="section-subtitle">
     Cada capítulo de nosotros merece ser recordado.
   </div>
-
 
   <div
     class="card"
@@ -2132,7 +2641,6 @@ textarea{
       de nuestra historia.
     </p>
 
-
     <button
       class="pink-button"
       id="open-chapter">
@@ -2140,7 +2648,6 @@ textarea{
       + Agregar capítulo
 
     </button>
-
 
     <div
       class="date-form"
@@ -2154,7 +2661,6 @@ textarea{
         id="chapter-date"
         type="date">
 
-
       <label for="chapter-title">
         ❤️ Título
       </label>
@@ -2163,7 +2669,6 @@ textarea{
         id="chapter-title"
         maxlength="150"
         placeholder="Ej. El día que nos conocimos">
-
 
       <label for="chapter-text">
         💌 Nuestra historia
@@ -2174,7 +2679,6 @@ textarea{
         maxlength="5000"
         placeholder="Cuéntanos qué pasó..."></textarea>
 
-
       <label for="chapter-file">
         📸 Foto opcional
       </label>
@@ -2183,7 +2687,6 @@ textarea{
         id="chapter-file"
         type="file"
         accept="image/*">
-
 
       <div
         class="preview"
@@ -2194,7 +2697,6 @@ textarea{
           alt="Vista previa">
 
       </div>
-
 
       <div class="form-row">
 
@@ -2215,7 +2717,6 @@ textarea{
         </button>
 
       </div>
-
 
       <div
         class="status"
@@ -2246,24 +2747,20 @@ textarea{
   </h2>
 
   <div class="section-subtitle">
-
     Porque hay cosas que es más bonito
     escribirlas que decirlas.
-
   </div>
-
 
   <div class="card add-date">
 
     <h3>
-      ¿Quieres dejarme una carta? ❤️
+      ¿Quieres dejarme una carta? 💌
     </h3>
 
     <p>
       Escribe algo que quieras que
       quede guardado en nuestra historia.
     </p>
-
 
     <button
       class="pink-button"
@@ -2272,7 +2769,6 @@ textarea{
       ✍️ Escribir una carta
 
     </button>
-
 
     <div
       class="date-form"
@@ -2287,7 +2783,6 @@ textarea{
         maxlength="150"
         placeholder="Ej. Para ti, mi amor...">
 
-
       <label for="letter-text">
         💌 Escribe tu carta
       </label>
@@ -2297,7 +2792,6 @@ textarea{
         maxlength="5000"
         style="min-height:240px"
         placeholder="Escribe aquí todo eso que quieres decir..."></textarea>
-
 
       <div class="form-row">
 
@@ -2319,7 +2813,6 @@ textarea{
 
       </div>
 
-
       <div
         class="status"
         id="letter-status">
@@ -2328,7 +2821,6 @@ textarea{
     </div>
 
   </div>
-
 
   <div
     class="letter-list"
@@ -2356,11 +2848,10 @@ textarea{
 <div class="card future">
 
   <h2>
-    Lo que todavía nos falta vivir ❤️
+    ✨ Lo que todavía nos falta vivir
   </h2>
 
   <p>
-
     Viajes, aventuras, cumpleaños,
     días normales, días increíbles
     y todos esos momentos que todavía
@@ -2369,7 +2860,6 @@ textarea{
     <br><br>
 
     Nuestra historia apenas sigue comenzando. ❤️
-
   </p>
 
 </div>
@@ -2520,6 +3010,7 @@ let selectedMemoryFile = null;
 let selectedChapterFile = null;
 
 let editingLoveId = null;
+let editingPlaceId = null;
 
 
 /* =========================================================
@@ -2551,6 +3042,28 @@ function iconForType(type){
 }
 
 
+function iconForPlace(type){
+
+  if(type === "conocimos"){
+    return "📍";
+  }
+
+  if(type === "primera-salida"){
+    return "❤️";
+  }
+
+  if(type === "primer-viaje"){
+    return "✈️";
+  }
+
+  if(type === "pendiente"){
+    return "✈️";
+  }
+
+  return "❤️";
+}
+
+
 function prettyDate(value){
 
   if(!value){
@@ -2579,7 +3092,11 @@ function prettyDate(value){
 }
 
 
-function showStatus(el,msg,type){
+function showStatus(
+  el,
+  msg,
+  type
+){
 
   el.textContent = msg;
 
@@ -2591,9 +3108,10 @@ function showStatus(el,msg,type){
 
 function hideStatus(el){
 
-  el.className = "status";
-  el.textContent = "";
+  el.className =
+    "status";
 
+  el.textContent = "";
 }
 
 
@@ -2646,7 +3164,6 @@ function closeModal(id){
     );
 
   }
-
 }
 
 
@@ -2692,58 +3209,39 @@ function storagePublicUrl(path){
     .getPublicUrl(path)
     .data
     .publicUrl;
-
 }
 
 
 /* =========================================================
-   COSAS QUE AMO
-   SOLO LOCALSTORAGE
+   ❤️ COSAS QUE AMO
 ========================================================= */
 
 const LOVE_STORAGE_KEY =
-"hannia_cosas_que_amo_v2";
-
+"hannia_cosas_que_amo_v1";
 
 const loveForm =
-document.getElementById(
-  "love-form"
-);
+document.getElementById("love-form");
 
 const loveTitle =
-document.getElementById(
-  "love-title"
-);
+document.getElementById("love-title");
 
 const loveDescription =
-document.getElementById(
-  "love-description"
-);
+document.getElementById("love-description");
 
 const loveEmoji =
-document.getElementById(
-  "love-emoji"
-);
+document.getElementById("love-emoji");
 
 const loveStatus =
-document.getElementById(
-  "love-status"
-);
+document.getElementById("love-status");
 
 const loveList =
-document.getElementById(
-  "love-list"
-);
+document.getElementById("love-list");
 
 const saveLoveButton =
-document.getElementById(
-  "save-love"
-);
+document.getElementById("save-love");
 
 const cancelLoveButton =
-document.getElementById(
-  "cancel-love"
-);
+document.getElementById("cancel-love");
 
 
 function getLoveItems(){
@@ -2768,15 +3266,9 @@ function getLoveItems(){
 
   }catch(error){
 
-    console.error(
-      "Error leyendo cosas que amo:",
-      error
-    );
-
     return [];
 
   }
-
 }
 
 
@@ -2811,14 +3303,9 @@ function resetLoveForm(){
 
 function editLoveItem(id){
 
-  const items =
-    getLoveItems();
-
   const item =
-    items.find(
-      function(row){
-        return row.id === id;
-      }
+    getLoveItems().find(
+      row => row.id === id
     );
 
   if(!item){
@@ -2847,8 +3334,6 @@ function editLoveItem(id){
     block:"center"
   });
 
-  loveTitle.focus();
-
 }
 
 
@@ -2856,23 +3341,18 @@ function deleteLoveItem(id){
 
   if(
     !confirm(
-      "¿Quieres eliminar este detalle? ❤️"
+      "¿Quieres eliminar este detalle de Hannia? ❤️"
     )
   ){
     return;
   }
 
   const items =
-    getLoveItems();
-
-  const filtered =
-    items.filter(
-      function(item){
-        return item.id !== id;
-      }
+    getLoveItems().filter(
+      item => item.id !== id
     );
 
-  saveLoveItems(filtered);
+  saveLoveItems(items);
 
   renderLoveItems();
 
@@ -2885,7 +3365,6 @@ function renderLoveItems(){
     getLoveItems();
 
   loveList.innerHTML = "";
-
 
   if(!items.length){
 
@@ -2903,8 +3382,8 @@ function renderLoveItems(){
 
         <p>
           Todavía no has agregado ninguno.
-          Escribe arriba las cosas que amas
-          de Hannia y aparecerán aquí.
+          Escribe arriba las cosas que amas de Hannia
+          y aparecerán aquí.
         </p>
 
       </div>
@@ -2915,140 +3394,105 @@ function renderLoveItems(){
   }
 
 
-  items.forEach(
-    function(item){
+  items.forEach(item => {
 
-      const card =
-        document.createElement(
-          "article"
-        );
+    const card =
+      document.createElement("article");
 
-      card.className =
-        "love-card";
+    card.className =
+      "love-card";
 
 
-      const icon =
-        document.createElement(
-          "div"
-        );
+    const icon =
+      document.createElement("div");
 
-      icon.className =
-        "love-icon";
+    icon.className =
+      "love-icon";
 
-      icon.textContent =
-        item.emoji || "❤️";
+    icon.textContent =
+      item.emoji || "❤️";
 
 
-      const content =
-        document.createElement(
-          "div"
-        );
+    const content =
+      document.createElement("div");
 
-      content.className =
-        "love-content";
+    content.className =
+      "love-content";
 
 
-      const title =
-        document.createElement(
-          "div"
-        );
+    const title =
+      document.createElement("div");
 
-      title.className =
-        "love-title";
+    title.className =
+      "love-title";
 
-      title.textContent =
-        item.title ||
-        "Algo que amo de ti";
+    title.textContent =
+      item.title ||
+      "Algo que amo de ti";
 
 
-      const description =
-        document.createElement(
-          "div"
-        );
+    const description =
+      document.createElement("div");
 
-      description.className =
-        "love-description";
+    description.className =
+      "love-description";
 
-      description.textContent =
-        item.description || "";
+    description.textContent =
+      item.description || "";
 
 
-      const actions =
-        document.createElement(
-          "div"
-        );
+    const actions =
+      document.createElement("div");
 
-      actions.className =
-        "love-actions";
+    actions.className =
+      "love-actions";
 
 
-      const edit =
-        document.createElement(
-          "button"
-        );
+    const edit =
+      document.createElement("button");
 
-      edit.className =
-        "action";
+    edit.className =
+      "action";
 
-      edit.textContent =
-        "✏️ Editar";
+    edit.textContent =
+      "✏️ Editar";
 
-      edit.onclick =
-        function(){
-
-          editLoveItem(
-            item.id
-          );
-
-        };
+    edit.onclick =
+      () => editLoveItem(item.id);
 
 
-      const deleteButton =
-        document.createElement(
-          "button"
-        );
+    const del =
+      document.createElement("button");
 
-      deleteButton.className =
-        "action delete";
+    del.className =
+      "action delete";
 
-      deleteButton.textContent =
-        "🗑️ Eliminar";
+    del.textContent =
+      "🗑️ Eliminar";
 
-      deleteButton.onclick =
-        function(){
-
-          deleteLoveItem(
-            item.id
-          );
-
-        };
+    del.onclick =
+      () => deleteLoveItem(item.id);
 
 
-      actions.append(
-        edit,
-        deleteButton
-      );
+    actions.append(
+      edit,
+      del
+    );
 
+    content.append(
+      title,
+      description,
+      actions
+    );
 
-      content.append(
-        title,
-        description,
-        actions
-      );
+    card.append(
+      icon,
+      content
+    );
 
+    loveList.appendChild(card);
 
-      card.append(
-        icon,
-        content
-      );
-
-
-      loveList.appendChild(
-        card
-      );
-
-    }
-  );
+  });
 
 }
 
@@ -3075,8 +3519,6 @@ function(){
       "error"
     );
 
-    loveTitle.focus();
-
     return;
   }
 
@@ -3085,11 +3527,9 @@ function(){
 
     showStatus(
       loveStatus,
-      "Escribe por qué amas ese detalle ❤️",
+      "Escribe por qué amas ese detalle 💌",
       "error"
     );
-
-    loveDescription.focus();
 
     return;
   }
@@ -3103,23 +3543,17 @@ function(){
 
     const index =
       items.findIndex(
-        function(item){
-          return item.id === editingLoveId;
-        }
+        item =>
+          item.id === editingLoveId
       );
 
     if(index !== -1){
 
       items[index] = {
-
         ...items[index],
-
-        title:title,
-
-        description:description,
-
-        emoji:emoji
-
+        title,
+        description,
+        emoji
       };
 
     }
@@ -3139,26 +3573,23 @@ function(){
       id:
         Date.now().toString() +
         Math.random()
-          .toString(36)
-          .slice(2,8),
+        .toString(36)
+        .slice(2,8),
 
-      title:title,
-
-      description:description,
-
-      emoji:emoji,
+      title,
+      description,
+      emoji,
 
       createdAt:
         new Date().toISOString()
 
     });
 
-
     saveLoveItems(items);
 
     showStatus(
       loveStatus,
-      "¡Agregado a las cosas que amas! ❤️",
+      "¡Agregado a las cosas que amas de ella! ❤️",
       "success"
     );
 
@@ -3167,11 +3598,8 @@ function(){
 
   renderLoveItems();
 
-
   setTimeout(
-    function(){
-      resetLoveForm();
-    },
+    resetLoveForm,
     700
   );
 
@@ -3183,10 +3611,733 @@ resetLoveForm;
 
 
 /* =========================================================
-   INICIAR COSAS QUE AMO
+   🌎 NUESTROS LUGARES
 ========================================================= */
 
-renderLoveItems();
+const PLACES_STORAGE_KEY =
+"hannia_nuestros_lugares_v1";
+
+
+const placeName =
+document.getElementById(
+  "place-name"
+);
+
+const placeLocation =
+document.getElementById(
+  "place-location"
+);
+
+const placeType =
+document.getElementById(
+  "place-type"
+);
+
+const placeDate =
+document.getElementById(
+  "place-date"
+);
+
+const placeDescription =
+document.getElementById(
+  "place-description"
+);
+
+const placeMaps =
+document.getElementById(
+  "place-maps"
+);
+
+const placeStatus =
+document.getElementById(
+  "place-status"
+);
+
+const savePlaceButton =
+document.getElementById(
+  "save-place"
+);
+
+const cancelPlaceButton =
+document.getElementById(
+  "cancel-place"
+);
+
+
+function getPlaces(){
+
+  try{
+
+    const saved =
+      localStorage.getItem(
+        PLACES_STORAGE_KEY
+      );
+
+    if(!saved){
+      return [];
+    }
+
+    const parsed =
+      JSON.parse(saved);
+
+    return Array.isArray(parsed)
+      ? parsed
+      : [];
+
+  }catch(error){
+
+    return [];
+
+  }
+}
+
+
+function savePlaces(items){
+
+  localStorage.setItem(
+    PLACES_STORAGE_KEY,
+    JSON.stringify(items)
+  );
+
+}
+
+
+function resetPlaceForm(){
+
+  editingPlaceId = null;
+
+  placeName.value = "";
+  placeLocation.value = "";
+  placeType.value = "conocimos";
+  placeDate.value = "";
+  placeDescription.value = "";
+  placeMaps.value = "";
+
+  savePlaceButton.textContent =
+    "❤️ Guardar lugar";
+
+  cancelPlaceButton.style.display =
+    "none";
+
+  placeStatus.className =
+    "place-status";
+
+  placeStatus.textContent = "";
+
+}
+
+
+function editPlace(id){
+
+  const item =
+    getPlaces().find(
+      place => place.id === id
+    );
+
+  if(!item){
+    return;
+  }
+
+  editingPlaceId = id;
+
+  placeName.value =
+    item.name || "";
+
+  placeLocation.value =
+    item.location || "";
+
+  placeType.value =
+    item.type || "especial";
+
+  placeDate.value =
+    item.date || "";
+
+  placeDescription.value =
+    item.description || "";
+
+  placeMaps.value =
+    item.maps || "";
+
+  savePlaceButton.textContent =
+    "❤️ Guardar cambios";
+
+  cancelPlaceButton.style.display =
+    "block";
+
+  document
+    .getElementById("place-form")
+    .scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
+
+}
+
+
+function deletePlace(id){
+
+  if(
+    !confirm(
+      "¿Quieres eliminar este lugar? ❤️"
+    )
+  ){
+    return;
+  }
+
+  const items =
+    getPlaces().filter(
+      place => place.id !== id
+    );
+
+  savePlaces(items);
+
+  renderPlaces();
+
+}
+
+
+function renderPlaces(){
+
+  const places =
+    getPlaces();
+
+  const visited =
+    document.getElementById(
+      "visited-places"
+    );
+
+  const pending =
+    document.getElementById(
+      "pending-places"
+    );
+
+  visited.innerHTML = "";
+  pending.innerHTML = "";
+
+
+  const visitedPlaces =
+    places.filter(
+      place =>
+        place.type !== "pendiente"
+    );
+
+
+  const pendingPlaces =
+    places.filter(
+      place =>
+        place.type === "pendiente"
+    );
+
+
+  document.getElementById(
+    "visited-counter"
+  ).textContent =
+    visitedPlaces.length +
+    (
+      visitedPlaces.length === 1
+      ? " lugar guardado"
+      : " lugares guardados"
+    );
+
+
+  document.getElementById(
+    "pending-counter"
+  ).textContent =
+    pendingPlaces.length +
+    (
+      pendingPlaces.length === 1
+      ? " lugar pendiente"
+      : " lugares pendientes"
+    );
+
+
+  if(!visitedPlaces.length){
+
+    visited.innerHTML = `
+
+      <div class="place-empty">
+
+        <div class="place-empty-icon">
+          ❤️
+        </div>
+
+        <h3>
+          Aquí empieza nuestro recorrido
+        </h3>
+
+        <p>
+          Agrega los lugares que ya forman
+          parte de nuestra historia.
+        </p>
+
+      </div>
+
+    `;
+
+  }else{
+
+    visitedPlaces.forEach(
+      place =>
+        createPlaceCard(
+          place,
+          visited
+        )
+    );
+
+  }
+
+
+  if(!pendingPlaces.length){
+
+    pending.innerHTML = `
+
+      <div class="place-empty">
+
+        <div class="place-empty-icon">
+          ✈️
+        </div>
+
+        <h3>
+          Todavía podemos llenar esta lista
+        </h3>
+
+        <p>
+          Agrega ese lugar al que algún día
+          queremos ir juntos.
+        </p>
+
+      </div>
+
+    `;
+
+  }else{
+
+    pendingPlaces.forEach(
+      place =>
+        createPlaceCard(
+          place,
+          pending
+        )
+    );
+
+  }
+
+}
+
+
+function createPlaceCard(
+  place,
+  container
+){
+
+  const card =
+    document.createElement(
+      "article"
+    );
+
+  card.className =
+    "place-card";
+
+
+  const top =
+    document.createElement(
+      "div"
+    );
+
+  top.className =
+    "place-card-top";
+
+
+  const icon =
+    document.createElement(
+      "div"
+    );
+
+  icon.className =
+    "place-icon";
+
+  icon.textContent =
+    iconForPlace(place.type);
+
+
+  const content =
+    document.createElement(
+      "div"
+    );
+
+  content.className =
+    "place-card-content";
+
+
+  const statusLabel =
+    document.createElement(
+      "div"
+    );
+
+  statusLabel.className =
+    "place-status-label";
+
+  statusLabel.textContent =
+    place.type === "pendiente"
+    ? "LUGAR QUE NOS FALTA"
+    : "PARTE DE NUESTRA HISTORIA";
+
+
+  const title =
+    document.createElement(
+      "div"
+    );
+
+  title.className =
+    "place-title";
+
+  title.textContent =
+    place.name ||
+    "Lugar especial";
+
+
+  const location =
+    document.createElement(
+      "div"
+    );
+
+  location.className =
+    "place-location";
+
+  location.textContent =
+    "📍 " +
+    (
+      place.location ||
+      "Ubicación no especificada"
+    );
+
+
+  content.append(
+    statusLabel,
+    title,
+    location
+  );
+
+
+  top.append(
+    icon,
+    content
+  );
+
+
+  card.append(
+    top
+  );
+
+
+  if(place.date){
+
+    const date =
+      document.createElement(
+        "div"
+      );
+
+    date.className =
+      "place-location";
+
+    date.style.marginTop =
+      "9px";
+
+    date.textContent =
+      "📅 " +
+      prettyDate(
+        place.date
+      );
+
+    card.append(
+      date
+    );
+
+  }
+
+
+  if(place.description){
+
+    const description =
+      document.createElement(
+        "div"
+      );
+
+    description.className =
+      "place-description";
+
+    description.textContent =
+      place.description;
+
+    card.append(
+      description
+    );
+
+  }
+
+
+  const actions =
+    document.createElement(
+      "div"
+    );
+
+  actions.className =
+    "place-actions";
+
+
+  if(place.maps){
+
+    const maps =
+      document.createElement(
+        "button"
+      );
+
+    maps.className =
+      "small-button";
+
+    maps.textContent =
+      "🗺️ Ver en mapa";
+
+    maps.onclick =
+      function(){
+
+        window.open(
+          place.maps,
+          "_blank"
+        );
+
+      };
+
+    actions.append(
+      maps
+    );
+
+  }else if(place.location){
+
+    const maps =
+      document.createElement(
+        "button"
+      );
+
+    maps.className =
+      "small-button";
+
+    maps.textContent =
+      "🗺️ Buscar mapa";
+
+    maps.onclick =
+      function(){
+
+        const query =
+          encodeURIComponent(
+            place.location
+          );
+
+        window.open(
+          "https://www.google.com/maps/search/?api=1&query=" +
+          query,
+          "_blank"
+        );
+
+      };
+
+    actions.append(
+      maps
+    );
+
+  }
+
+
+  const edit =
+    document.createElement(
+      "button"
+    );
+
+  edit.className =
+    "action";
+
+  edit.textContent =
+    "✏️ Editar";
+
+  edit.onclick =
+    () =>
+      editPlace(
+        place.id
+      );
+
+
+  const del =
+    document.createElement(
+      "button"
+    );
+
+  del.className =
+    "action delete";
+
+  del.textContent =
+    "🗑️ Eliminar";
+
+  del.onclick =
+    () =>
+      deletePlace(
+        place.id
+      );
+
+
+  actions.append(
+    edit,
+    del
+  );
+
+
+  card.append(
+    actions
+  );
+
+
+  container.appendChild(
+    card
+  );
+
+}
+
+
+savePlaceButton.onclick =
+function(){
+
+  const name =
+    placeName.value.trim();
+
+  const location =
+    placeLocation.value.trim();
+
+  const type =
+    placeType.value;
+
+  const date =
+    placeDate.value;
+
+  const description =
+    placeDescription.value.trim();
+
+  const maps =
+    placeMaps.value.trim();
+
+
+  if(!name){
+
+    placeStatus.textContent =
+      "Ponle un nombre al lugar ❤️";
+
+    placeStatus.className =
+      "place-status show error";
+
+    return;
+  }
+
+
+  if(!location){
+
+    placeStatus.textContent =
+      "Escribe dónde está el lugar 📍";
+
+    placeStatus.className =
+      "place-status show error";
+
+    return;
+  }
+
+
+  const places =
+    getPlaces();
+
+
+  if(editingPlaceId){
+
+    const index =
+      places.findIndex(
+        place =>
+          place.id === editingPlaceId
+      );
+
+
+    if(index !== -1){
+
+      places[index] = {
+
+        ...places[index],
+
+        name,
+        location,
+        type,
+        date,
+        description,
+        maps
+
+      };
+
+    }
+
+
+    savePlaces(
+      places
+    );
+
+
+    placeStatus.textContent =
+      "¡Lugar actualizado! ❤️";
+
+  }else{
+
+    places.unshift({
+
+      id:
+        Date.now().toString() +
+        Math.random()
+        .toString(36)
+        .slice(2,8),
+
+      name,
+      location,
+      type,
+      date,
+      description,
+      maps,
+
+      createdAt:
+        new Date().toISOString()
+
+    });
+
+
+    savePlaces(
+      places
+    );
+
+
+    placeStatus.textContent =
+      "¡Lugar guardado en nuestra historia! ❤️";
+
+  }
+
+
+  placeStatus.className =
+    "place-status show success";
+
+
+  renderPlaces();
+
+
+  setTimeout(
+    resetPlaceForm,
+    800
+  );
+
+};
+
+
+cancelPlaceButton.onclick =
+resetPlaceForm;
 
 
 /* =========================================================
@@ -3254,18 +4405,23 @@ function resetMemoryForm(){
     "active"
   );
 
-  hideStatus(memoryStatus);
-
+  hideStatus(
+    memoryStatus
+  );
 }
 
 
-function openMemoryForm(memory=null){
+function openMemoryForm(
+  memory = null
+){
 
   memoryForm.classList.add(
     "active"
   );
 
-  hideStatus(memoryStatus);
+  hideStatus(
+    memoryStatus
+  );
 
   editingMemoryId =
     memory?.id || null;
@@ -3308,7 +4464,8 @@ document
     "top-add-memory"
   )
   .onclick =
-    () => openMemoryForm();
+    () =>
+      openMemoryForm();
 
 
 memoryFile.onchange =
@@ -3452,8 +4609,8 @@ async function saveMemory(){
         Date.now() +
         "_" +
         Math.random()
-          .toString(36)
-          .slice(2,9) +
+        .toString(36)
+        .slice(2,9) +
         "." +
         extension;
 
@@ -3493,9 +4650,7 @@ async function saveMemory(){
       const update = {
 
         titulo:title,
-
         descripcion:description,
-
         fecha:date
 
       };
@@ -3571,8 +4726,6 @@ async function saveMemory(){
 
 
   }catch(error){
-
-    console.error(error);
 
     showStatus(
       memoryStatus,
@@ -3720,10 +4873,8 @@ async function loadMemories(){
 
 
         if(!url){
-
           image.style.display =
             "none";
-
         }
 
 
@@ -3814,7 +4965,6 @@ async function loadMemories(){
               .textContent =
               date.textContent;
 
-
             document
               .getElementById(
                 "modal-memory-title"
@@ -3823,7 +4973,6 @@ async function loadMemories(){
               "❤️ " +
               title.textContent;
 
-
             document
               .getElementById(
                 "modal-memory-text"
@@ -3831,13 +4980,10 @@ async function loadMemories(){
               .textContent =
               description.textContent;
 
-
             const modalImage =
-              document
-              .getElementById(
+              document.getElementById(
                 "modal-memory-image"
               );
-
 
             modalImage.src = url;
 
@@ -3845,7 +4991,6 @@ async function loadMemories(){
               url
               ? "block"
               : "none";
-
 
             openModal(
               "memory-modal"
@@ -3865,7 +5010,6 @@ async function loadMemories(){
         edit.textContent =
           "✏️ Editar";
 
-
         edit.onclick =
           () =>
             openMemoryForm(
@@ -3883,7 +5027,6 @@ async function loadMemories(){
 
         deleteButton.textContent =
           "🗑️ Eliminar";
-
 
         deleteButton.onclick =
           () =>
@@ -3940,10 +5083,6 @@ async function loadMemories(){
 
 }
 
-
-/* =========================================================
-   ELIMINAR RECUERDO
-========================================================= */
 
 async function deleteMemory(id){
 
@@ -4003,96 +5142,89 @@ function resetDateForm(){
 
   editingDateId = null;
 
-  document
-    .getElementById("date-value")
-    .value = "";
+  document.getElementById(
+    "date-value"
+  ).value = "";
 
-  document
-    .getElementById("date-type")
-    .value = "especial";
+  document.getElementById(
+    "date-type"
+  ).value = "especial";
 
-  document
-    .getElementById("date-title")
-    .value = "";
+  document.getElementById(
+    "date-title"
+  ).value = "";
 
-  document
-    .getElementById("date-message")
-    .value = "";
+  document.getElementById(
+    "date-message"
+  ).value = "";
 
   dateForm.classList.remove(
     "active"
   );
 
-  hideStatus(dateStatus);
+  hideStatus(
+    dateStatus
+  );
 
 }
 
 
-function openDateForm(row=null){
+function openDateForm(
+  row = null
+){
 
   dateForm.classList.add(
     "active"
   );
 
-  hideStatus(dateStatus);
+  hideStatus(
+    dateStatus
+  );
 
   editingDateId =
     row?.id || null;
 
 
-  document
-    .getElementById("date-value")
-    .value =
+  document.getElementById(
+    "date-value"
+  ).value =
     row?.fecha || "";
 
 
-  document
-    .getElementById("date-type")
-    .value =
+  document.getElementById(
+    "date-type"
+  ).value =
     row?.tipo || "especial";
 
 
-  document
-    .getElementById("date-title")
-    .value =
+  document.getElementById(
+    "date-title"
+  ).value =
     row?.titulo || "";
 
 
-  document
-    .getElementById("date-message")
-    .value =
+  document.getElementById(
+    "date-message"
+  ).value =
     row?.mensaje ||
     row?.descripcion ||
     "";
 
-
-  document
-    .getElementById("date-title")
-    .focus();
-
 }
 
 
-document
-  .getElementById(
-    "open-date-form"
-  )
-  .onclick =
-    () =>
-      openDateForm();
+document.getElementById(
+  "open-date-form"
+).onclick =
+  () =>
+    openDateForm();
 
 
-document
-  .getElementById(
-    "cancel-date"
-  )
-  .onclick =
-    resetDateForm;
+document.getElementById(
+  "cancel-date"
+).onclick =
+  resetDateForm;
 
-
-/* =========================================================
-   GUARDAR FECHA
-========================================================= */
 
 async function saveDate(){
 
@@ -4105,29 +5237,24 @@ async function saveDate(){
 
 
   const fecha =
-    document
-    .getElementById("date-value")
-    .value;
-
+    document.getElementById(
+      "date-value"
+    ).value;
 
   const tipo =
-    document
-    .getElementById("date-type")
-    .value;
-
+    document.getElementById(
+      "date-type"
+    ).value;
 
   const titulo =
-    document
-    .getElementById("date-title")
-    .value
-    .trim();
-
+    document.getElementById(
+      "date-title"
+    ).value.trim();
 
   const mensaje =
-    document
-    .getElementById("date-message")
-    .value
-    .trim();
+    document.getElementById(
+      "date-message"
+    ).value.trim();
 
 
   if(!fecha){
@@ -4166,10 +5293,10 @@ async function saveDate(){
 
     const payload = {
 
-      fecha:fecha,
-      tipo:tipo,
-      titulo:titulo,
-      mensaje:mensaje,
+      fecha,
+      tipo,
+      titulo,
+      mensaje,
       activo:true
 
     };
@@ -4208,11 +5335,9 @@ async function saveDate(){
 
     showStatus(
       dateStatus,
-
       editingDateId
       ? "¡Fecha actualizada! ❤️"
       : "¡Fecha guardada! ❤️",
-
       "success"
     );
 
@@ -4244,17 +5369,11 @@ async function saveDate(){
 }
 
 
-document
-  .getElementById(
-    "save-date"
-  )
-  .onclick =
-    saveDate;
+document.getElementById(
+  "save-date"
+).onclick =
+  saveDate;
 
-
-/* =========================================================
-   CARGAR FECHAS
-========================================================= */
 
 async function loadDates(){
 
@@ -4419,7 +5538,9 @@ async function loadDates(){
         );
 
 
-        card.append(top);
+        card.append(
+          top
+        );
 
 
         const actions =
@@ -4449,18 +5570,18 @@ async function loadDates(){
             );
 
 
-        const deleteButton =
+        const del =
           document.createElement(
             "button"
           );
 
-        deleteButton.className =
+        del.className =
           "action delete";
 
-        deleteButton.textContent =
+        del.textContent =
           "🗑️ Eliminar";
 
-        deleteButton.onclick =
+        del.onclick =
           () =>
             deleteDate(
               dateRow.id
@@ -4469,14 +5590,12 @@ async function loadDates(){
 
         actions.append(
           edit,
-          deleteButton
+          del
         );
-
 
         card.append(
           actions
         );
-
 
         box.appendChild(
           card
@@ -4487,8 +5606,6 @@ async function loadDates(){
 
 
   }catch(error){
-
-    console.error(error);
 
     box.innerHTML = `
 
@@ -4505,10 +5622,6 @@ async function loadDates(){
 
 }
 
-
-/* =========================================================
-   ELIMINAR FECHA
-========================================================= */
 
 async function deleteDate(id){
 
@@ -4574,61 +5687,57 @@ function resetChapter(){
   editingChapterId = null;
   selectedChapterFile = null;
 
-  document
-    .getElementById("chapter-date")
-    .value = "";
+  document.getElementById(
+    "chapter-date"
+  ).value = "";
 
-  document
-    .getElementById("chapter-title")
-    .value = "";
+  document.getElementById(
+    "chapter-title"
+  ).value = "";
 
-  document
-    .getElementById("chapter-text")
-    .value = "";
+  document.getElementById(
+    "chapter-text"
+  ).value = "";
 
   chapterFile.value = "";
 
-  document
-    .getElementById("chapter-preview")
-    .classList.remove(
-      "active"
-    );
+  document.getElementById(
+    "chapter-preview"
+  ).classList.remove(
+    "active"
+  );
 
   chapterForm.classList.remove(
     "active"
   );
 
-  hideStatus(chapterStatus);
+  hideStatus(
+    chapterStatus
+  );
 
 }
 
 
-document
-  .getElementById(
-    "open-chapter"
-  )
-  .onclick =
-    function(){
+document.getElementById(
+  "open-chapter"
+).onclick =
+function(){
 
-      chapterForm.classList.add(
-        "active"
-      );
+  chapterForm.classList.add(
+    "active"
+  );
 
-      document
-        .getElementById(
-          "chapter-title"
-        )
-        .focus();
+  document.getElementById(
+    "chapter-title"
+  ).focus();
 
-    };
+};
 
 
-document
-  .getElementById(
-    "cancel-chapter"
-  )
-  .onclick =
-    resetChapter;
+document.getElementById(
+  "cancel-chapter"
+).onclick =
+resetChapter;
 
 
 chapterFile.onchange =
@@ -4640,7 +5749,6 @@ function(event){
   if(!file){
     return;
   }
-
 
   if(
     !file.type.startsWith("image/")
@@ -4654,7 +5762,6 @@ function(event){
 
     return;
   }
-
 
   if(
     file.size >
@@ -4670,7 +5777,6 @@ function(event){
     return;
   }
 
-
   selectedChapterFile = file;
 
 
@@ -4681,21 +5787,17 @@ function(event){
   reader.onload =
     function(event){
 
-      document
-        .getElementById(
-          "chapter-preview-img"
-        )
-        .src =
+      document.getElementById(
+        "chapter-preview-img"
+      ).src =
         event.target.result;
 
 
-      document
-        .getElementById(
-          "chapter-preview"
-        )
-        .classList.add(
-          "active"
-        );
+      document.getElementById(
+        "chapter-preview"
+      ).classList.add(
+        "active"
+      );
 
     };
 
@@ -4704,10 +5806,6 @@ function(event){
 
 };
 
-
-/* =========================================================
-   GUARDAR CAPÍTULO
-========================================================= */
 
 async function saveChapter(){
 
@@ -4720,23 +5818,19 @@ async function saveChapter(){
 
 
   const fecha =
-    document
-    .getElementById("chapter-date")
-    .value;
-
+    document.getElementById(
+      "chapter-date"
+    ).value;
 
   const titulo =
-    document
-    .getElementById("chapter-title")
-    .value
-    .trim();
-
+    document.getElementById(
+      "chapter-title"
+    ).value.trim();
 
   const historia =
-    document
-    .getElementById("chapter-text")
-    .value
-    .trim();
+    document.getElementById(
+      "chapter-text"
+    ).value.trim();
 
 
   if(!fecha){
@@ -4767,7 +5861,7 @@ async function saveChapter(){
 
     showStatus(
       chapterStatus,
-      "Escribe la historia ❤️",
+      "Escribe la historia 💌",
       "error"
     );
 
@@ -4803,8 +5897,8 @@ async function saveChapter(){
         Date.now() +
         "_" +
         Math.random()
-          .toString(36)
-          .slice(2,9) +
+        .toString(36)
+        .slice(2,9) +
         "." +
         extension;
 
@@ -4841,9 +5935,9 @@ async function saveChapter(){
 
     const payload = {
 
-      fecha:fecha,
-      titulo:titulo,
-      historia:historia
+      fecha,
+      titulo,
+      historia
 
     };
 
@@ -4921,17 +6015,11 @@ async function saveChapter(){
 }
 
 
-document
-  .getElementById(
-    "save-chapter"
-  )
-  .onclick =
-    saveChapter;
+document.getElementById(
+  "save-chapter"
+).onclick =
+saveChapter;
 
-
-/* =========================================================
-   CARGAR HISTORIA
-========================================================= */
 
 async function loadHistory(){
 
@@ -5041,8 +6129,7 @@ async function loadHistory(){
         date.textContent =
           prettyDate(
             history.fecha
-          ) ||
-          "UN MOMENTO ESPECIAL";
+          );
 
 
         const title =
@@ -5101,7 +6188,8 @@ async function loadHistory(){
           image.className =
             "history-image";
 
-          image.src = url;
+          image.src =
+            url;
 
           image.loading =
             "lazy";
@@ -5140,57 +6228,53 @@ async function loadHistory(){
             editingChapterId =
               history.id;
 
+
             chapterForm.classList.add(
               "active"
             );
 
-            document
-              .getElementById(
-                "chapter-date"
-              )
-              .value =
+
+            document.getElementById(
+              "chapter-date"
+            ).value =
               history.fecha || "";
 
-            document
-              .getElementById(
-                "chapter-title"
-              )
-              .value =
+
+            document.getElementById(
+              "chapter-title"
+            ).value =
               history.titulo || "";
 
-            document
-              .getElementById(
-                "chapter-text"
-              )
-              .value =
+
+            document.getElementById(
+              "chapter-text"
+            ).value =
               history.historia ||
               history.descripcion ||
               "";
 
-            document
-              .getElementById(
-                "historia"
-              )
-              .scrollIntoView({
-                behavior:"smooth"
-              });
+
+            document.getElementById(
+              "historia"
+            ).scrollIntoView({
+              behavior:"smooth"
+            });
 
           };
 
 
-        const deleteButton =
+        const del =
           document.createElement(
             "button"
           );
 
-        deleteButton.className =
+        del.className =
           "action delete";
 
-        deleteButton.textContent =
+        del.textContent =
           "🗑️ Eliminar";
 
-
-        deleteButton.onclick =
+        del.onclick =
           () =>
             deleteChapter(
               history.id
@@ -5199,7 +6283,7 @@ async function loadHistory(){
 
         actions.append(
           edit,
-          deleteButton
+          del
         );
 
 
@@ -5222,8 +6306,6 @@ async function loadHistory(){
 
 
   }catch(error){
-
-    console.error(error);
 
     box.innerHTML = `
 
@@ -5249,10 +6331,6 @@ async function loadHistory(){
 
 }
 
-
-/* =========================================================
-   ELIMINAR CAPÍTULO
-========================================================= */
 
 async function deleteChapter(id){
 
@@ -5308,35 +6386,35 @@ document.getElementById(
 );
 
 
-function openLetterForm(row=null){
+function openLetterForm(
+  row = null
+){
 
   letterForm.classList.add(
     "active"
   );
 
-  hideStatus(letterStatus);
+  hideStatus(
+    letterStatus
+  );
 
   editingLetterId =
     row?.id || null;
 
 
-  document
-    .getElementById("letter-title")
-    .value =
+  document.getElementById(
+    "letter-title"
+  ).value =
     row?.titulo || "";
 
 
-  document
-    .getElementById("letter-text")
-    .value =
+  document.getElementById(
+    "letter-text"
+  ).value =
     row?.mensaje ||
     row?.contenido ||
     "";
 
-
-  document
-    .getElementById("letter-title")
-    .focus();
 
 }
 
@@ -5345,52 +6423,48 @@ function resetLetter(){
 
   editingLetterId = null;
 
-  document
-    .getElementById("letter-title")
-    .value = "";
 
-  document
-    .getElementById("letter-text")
-    .value = "";
+  document.getElementById(
+    "letter-title"
+  ).value = "";
+
+
+  document.getElementById(
+    "letter-text"
+  ).value = "";
+
 
   letterForm.classList.remove(
     "active"
   );
 
-  hideStatus(letterStatus);
+
+  hideStatus(
+    letterStatus
+  );
 
 }
 
 
-document
-  .getElementById(
-    "open-letter"
-  )
-  .onclick =
-    () =>
-      openLetterForm();
+document.getElementById(
+  "open-letter"
+).onclick =
+  () =>
+    openLetterForm();
 
 
-document
-  .getElementById(
-    "open-letter-2"
-  )
-  .onclick =
-    () =>
-      openLetterForm();
+document.getElementById(
+  "open-letter-2"
+).onclick =
+  () =>
+    openLetterForm();
 
 
-document
-  .getElementById(
-    "cancel-letter"
-  )
-  .onclick =
-    resetLetter;
+document.getElementById(
+  "cancel-letter"
+).onclick =
+  resetLetter;
 
-
-/* =========================================================
-   GUARDAR CARTA
-========================================================= */
 
 async function saveLetter(){
 
@@ -5403,17 +6477,15 @@ async function saveLetter(){
 
 
   const titulo =
-    document
-    .getElementById("letter-title")
-    .value
-    .trim();
+    document.getElementById(
+      "letter-title"
+    ).value.trim();
 
 
   const mensaje =
-    document
-    .getElementById("letter-text")
-    .value
-    .trim();
+    document.getElementById(
+      "letter-text"
+    ).value.trim();
 
 
   if(!titulo){
@@ -5432,7 +6504,7 @@ async function saveLetter(){
 
     showStatus(
       letterStatus,
-      "Escribe tu carta ❤️",
+      "Escribe tu carta 💌",
       "error"
     );
 
@@ -5486,10 +6558,8 @@ async function saveLetter(){
 
     const payload = {
 
-      titulo:titulo,
-
-      mensaje:mensaje,
-
+      titulo,
+      mensaje,
       contenido:mensaje,
 
       autor_nombre:nombre,
@@ -5533,7 +6603,7 @@ async function saveLetter(){
 
     showStatus(
       letterStatus,
-      "¡Carta guardada para siempre! ❤️",
+      "¡Carta guardada para siempre! 💌❤️",
       "success"
     );
 
@@ -5565,17 +6635,11 @@ async function saveLetter(){
 }
 
 
-document
-  .getElementById(
-    "save-letter"
-  )
-  .onclick =
-    saveLetter;
+document.getElementById(
+  "save-letter"
+).onclick =
+saveLetter;
 
-
-/* =========================================================
-   CARGAR CARTAS
-========================================================= */
 
 async function loadLetters(){
 
@@ -5672,7 +6736,7 @@ async function loadLetters(){
           );
 
         title.textContent =
-          "❤️ " +
+          "💌 " +
           (
             letter.titulo ||
             "Una carta para ti"
@@ -5728,41 +6792,33 @@ async function loadLetters(){
           "small-button";
 
         view.textContent =
-          "❤️ Leer carta";
+          "💌 Leer carta";
 
 
         view.onclick =
           function(){
 
-            document
-              .getElementById(
-                "modal-letter-date"
-              )
-              .textContent =
+            document.getElementById(
+              "modal-letter-date"
+            ).textContent =
               date.textContent;
 
 
-            document
-              .getElementById(
-                "modal-letter-title"
-              )
-              .textContent =
+            document.getElementById(
+              "modal-letter-title"
+            ).textContent =
               title.textContent;
 
 
-            document
-              .getElementById(
-                "modal-letter-author"
-              )
-              .textContent =
+            document.getElementById(
+              "modal-letter-author"
+            ).textContent =
               author.textContent;
 
 
-            document
-              .getElementById(
-                "modal-letter-text"
-              )
-              .textContent =
+            document.getElementById(
+              "modal-letter-text"
+            ).textContent =
               text.textContent;
 
 
@@ -5792,19 +6848,19 @@ async function loadLetters(){
             );
 
 
-        const deleteButton =
+        const del =
           document.createElement(
             "button"
           );
 
-        deleteButton.className =
+        del.className =
           "action delete";
 
-        deleteButton.textContent =
+        del.textContent =
           "🗑️ Eliminar";
 
 
-        deleteButton.onclick =
+        del.onclick =
           () =>
             deleteLetter(
               letter.id
@@ -5814,7 +6870,7 @@ async function loadLetters(){
         actions.append(
           view,
           edit,
-          deleteButton
+          del
         );
 
 
@@ -5837,8 +6893,6 @@ async function loadLetters(){
 
   }catch(error){
 
-    console.error(error);
-
     box.innerHTML = `
 
       <div class="card date-card">
@@ -5854,10 +6908,6 @@ async function loadLetters(){
 
 }
 
-
-/* =========================================================
-   ELIMINAR CARTA
-========================================================= */
 
 async function deleteLetter(id){
 
@@ -6026,6 +7076,11 @@ document
 /* =========================================================
    INICIAR
 ========================================================= */
+
+renderLoveItems();
+
+renderPlaces();
+
 
 async function init(){
 
