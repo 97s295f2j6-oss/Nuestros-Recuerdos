@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Nuestra Historia ❤️</title>
 
     <style>
+
+        /* =========================================================
+           CONFIGURACIÓN GENERAL
+        ========================================================= */
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -19,246 +25,1869 @@
 
         body {
             min-height: 100vh;
+            overflow-x: hidden;
+
             background:
                 radial-gradient(
-                    circle at 50% 15%,
-                    #351522 0%,
-                    #160b12 35%,
-                    #08080b 75%
+                    circle at 50% 10%,
+                    rgba(104, 25, 53, 0.45),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 0% 50%,
+                    rgba(100, 20, 50, 0.25),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 100% 70%,
+                    rgba(100, 20, 50, 0.25),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    145deg,
+                    #17080f,
+                    #08070a 55%,
+                    #12070d
                 );
+
             color: #ffffff;
-            font-family: Georgia, "Times New Roman", serif;
-            overflow-x: hidden;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            transition:
+                background .5s ease;
         }
+
+
+        /* =========================================================
+           FONDO DECORATIVO
+        ========================================================= */
+
+        .fondo {
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            overflow: hidden;
+
+            z-index: 0;
+        }
+
+
+        .luz {
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 70, 110, 0.08);
+
+            filter: blur(70px);
+
+            animation:
+                flotarLuz
+                8s
+                ease-in-out
+                infinite;
+        }
+
+
+        .luz-1 {
+            top: -100px;
+            left: -100px;
+        }
+
+
+        .luz-2 {
+            right: -120px;
+            top: 35%;
+
+            animation-delay: 2s;
+        }
+
+
+        .luz-3 {
+            bottom: -150px;
+            left: 30%;
+
+            animation-delay: 4s;
+        }
+
+
+        /* =========================================================
+           ESTRELLAS
+        ========================================================= */
+
+        .estrella {
+            position: absolute;
+
+            color:
+                rgba(
+                    255,
+                    200,
+                    210,
+                    .8
+                );
+
+            font-size: 10px;
+
+            animation:
+                aparecer
+                3s
+                ease-in-out
+                infinite,
+
+                flotar
+                7s
+                ease-in-out
+                infinite;
+        }
+
+
+        .e1 {
+            top: 7%;
+            left: 8%;
+            animation-delay: 0s;
+        }
+
+
+        .e2 {
+            top: 15%;
+            left: 52%;
+            animation-delay: 1s;
+        }
+
+
+        .e3 {
+            top: 23%;
+            right: 12%;
+            animation-delay: 2s;
+        }
+
+
+        .e4 {
+            top: 42%;
+            left: 5%;
+            animation-delay: 1.5s;
+        }
+
+
+        .e5 {
+            top: 58%;
+            right: 7%;
+            animation-delay: 2.5s;
+        }
+
+
+        .e6 {
+            top: 72%;
+            left: 10%;
+            animation-delay: 3s;
+        }
+
+
+        .e7 {
+            top: 83%;
+            right: 18%;
+            animation-delay: 1s;
+        }
+
+
+        .e8 {
+            top: 91%;
+            left: 45%;
+            animation-delay: 2s;
+        }
+
+
+        /* =========================================================
+           CORAZONES FLOTANTES
+        ========================================================= */
+
+        .corazon-flotante {
+            position: absolute;
+
+            color:
+                rgba(
+                    255,
+                    70,
+                    100,
+                    .35
+                );
+
+            font-size: 18px;
+
+            animation:
+                flotarCorazon
+                9s
+                ease-in-out
+                infinite;
+        }
+
+
+        .c1 {
+            top: 14%;
+            left: 12%;
+        }
+
+
+        .c2 {
+            top: 31%;
+            right: 7%;
+
+            animation-delay: 2s;
+        }
+
+
+        .c3 {
+            top: 66%;
+            left: 5%;
+
+            animation-delay: 4s;
+        }
+
+
+        .c4 {
+            top: 81%;
+            right: 9%;
+
+            animation-delay: 1s;
+        }
+
+
+        /* =========================================================
+           CONTENEDOR
+        ========================================================= */
 
         .contenedor {
+            position: relative;
+
+            z-index: 2;
+
             width: 100%;
-            max-width: 900px;
+
+            max-width: 1000px;
+
             margin: auto;
-            padding: 40px 20px 70px;
+
+            padding:
+                40px
+                25px
+                70px;
+
+            transition:
+                opacity .7s ease,
+                transform .8s ease;
         }
+
+
+        /* =========================================================
+           PORTADA
+        ========================================================= */
 
         .inicio {
-            min-height: 90vh;
+            min-height: 100vh;
+
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
+
             justify-content: center;
+
             text-align: center;
+
+            position: relative;
         }
+
+
+        /* =========================================================
+           CORAZÓN NEÓN
+        ========================================================= */
 
         .corazon {
-            font-size: 75px;
-            margin-bottom: 25px;
-            animation: latido 1.8s infinite;
+            position: relative;
+
+            width: 100px;
+            height: 100px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 20px;
+
+            font-size: 0;
         }
+
+
+        .corazon::before {
+            content: "♡";
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 105px;
+
+            font-weight: 300;
+
+            color: #ff8299;
+
+            line-height: 1;
+
+            text-shadow:
+                0 0 5px #ff6b85,
+                0 0 15px #ff4265,
+                0 0 30px rgba(255,60,90,.8),
+                0 0 60px rgba(255,40,80,.45);
+
+            animation:
+                latidoNeon
+                2s
+                ease-in-out
+                infinite;
+        }
+
+
+        /* =========================================================
+           SUBTÍTULO
+        ========================================================= */
 
         .subtitulo {
-            color: #d8bfc9;
-            letter-spacing: 5px;
+            position: relative;
+
+            color: #e9b8c3;
+
+            letter-spacing: 8px;
+
             text-transform: uppercase;
+
             font-size: 13px;
-            margin-bottom: 15px;
+
+            margin-bottom: 18px;
+
+            font-weight: 500;
         }
+
+
+        .subtitulo::before,
+        .subtitulo::after {
+            content: "•";
+
+            color: #ff7f96;
+
+            margin:
+                0
+                18px;
+        }
+
+
+        /* =========================================================
+           TÍTULO
+        ========================================================= */
 
         h1 {
-            font-size: clamp(48px, 11vw, 85px);
-            line-height: 1;
+            font-size:
+                clamp(
+                    48px,
+                    10vw,
+                    90px
+                );
+
+            line-height: .95;
+
             font-weight: normal;
+
             margin-bottom: 18px;
+
+            letter-spacing: -2px;
+
+            text-shadow:
+                0 4px 20px
+                rgba(0,0,0,.4);
         }
+
+
+        /* =========================================================
+           NOMBRES
+        ========================================================= */
 
         .nombres {
-            font-size: 25px;
-            color: #d9c7ce;
-            margin-bottom: 35px;
+            position: relative;
+
+            font-family:
+                "Brush Script MT",
+                "Segoe Script",
+                cursive;
+
+            font-size:
+                clamp(
+                    32px,
+                    6vw,
+                    52px
+                );
+
+            color: #ff91a5;
+
+            margin-bottom: 32px;
+
+            text-shadow:
+                0 0 15px
+                rgba(255,90,120,.35);
         }
+
+
+        .nombres::after {
+            content: "♥";
+
+            display: block;
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size: 16px;
+
+            margin-top: 5px;
+
+            color: #ff7b94;
+
+            letter-spacing: 25px;
+        }
+
+
+        /* =========================================================
+           DESCRIPCIÓN
+        ========================================================= */
 
         .descripcion {
-            max-width: 650px;
-            color: #d7cfd3;
+            max-width: 700px;
+
+            color: #ded1d5;
+
             font-size: 19px;
-            line-height: 1.8;
+
+            line-height: 1.85;
+
+            text-shadow:
+                0 2px 10px
+                rgba(0,0,0,.4);
         }
+
+
+        /* =========================================================
+           POLAROIDS
+        ========================================================= */
+
+        .polaroid {
+            position: absolute;
+
+            width: 155px;
+
+            padding:
+                10px
+                10px
+                18px;
+
+            background: #cdb6b1;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,.5);
+
+            opacity: .65;
+
+            transition:
+                .5s ease;
+
+            pointer-events: none;
+        }
+
+
+        .polaroid img {
+            width: 100%;
+
+            height: 150px;
+
+            object-fit: cover;
+
+            display: block;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #5e2634,
+                    #161015
+                );
+        }
+
+
+        .polaroid-izq {
+            left: -65px;
+            top: 38%;
+
+            transform:
+                rotate(-14deg);
+        }
+
+
+        .polaroid-der {
+            right: -65px;
+            top: 50%;
+
+            transform:
+                rotate(14deg);
+        }
+
+
+        /* =========================================================
+           BOTÓN PRINCIPAL
+        ========================================================= */
 
         .boton {
-            display: inline-block;
-            margin-top: 40px;
-            padding: 15px 32px;
-            border-radius: 50px;
-            background: #ffffff;
-            color: #111111;
+            position: relative;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            margin-top: 42px;
+
+            padding:
+                19px
+                45px;
+
+            min-width: 310px;
+
+            border-radius: 60px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff8196,
+                    #dc365c
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,.25);
+
+            color: white;
+
             text-decoration: none;
+
             font-family: Arial, sans-serif;
-            font-size: 16px;
+
+            font-size: 17px;
+
             font-weight: bold;
-            transition: 0.3s;
+
+            box-shadow:
+                0 0 15px
+                rgba(255,70,100,.5),
+
+                0 10px 35px
+                rgba(220,40,80,.3);
+
+            overflow: hidden;
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease;
         }
+
+
+        .boton::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: -100%;
+
+            width: 60%;
+
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,.35),
+                    transparent
+                );
+
+            transform:
+                skewX(-20deg);
+
+            animation:
+                brilloBoton
+                4s
+                infinite;
+        }
+
 
         .boton:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255,255,255,0.15);
+            transform:
+                translateY(-5px)
+                scale(1.02);
+
+            box-shadow:
+                0 0 30px
+                rgba(255,70,100,.7),
+
+                0 15px 45px
+                rgba(220,40,80,.45);
         }
 
-        .linea {
-            width: 80px;
-            height: 1px;
-            background: #9b5269;
-            margin: 20px auto 70px;
+
+        .boton:active {
+            transform:
+                scale(.97);
         }
+
+
+        /* =========================================================
+           SEPARADOR
+        ========================================================= */
+
+        .linea {
+            width: 180px;
+
+            height: 1px;
+
+            margin:
+                10px
+                auto
+                70px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #a64c65,
+                    transparent
+                );
+
+            position: relative;
+        }
+
+
+        .linea::after {
+            content: "♥";
+
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform:
+                translate(-50%,-50%);
+
+            padding:
+                0
+                12px;
+
+            background: #0d080c;
+
+            color: #ff7c95;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           SECCIÓN
+        ========================================================= */
 
         .seccion {
             text-align: center;
-            padding: 50px 0;
+
+            padding:
+                60px
+                0;
         }
 
+
         .seccion h2 {
-            font-size: 36px;
+            font-size:
+                clamp(
+                    32px,
+                    6vw,
+                    48px
+                );
+
             font-weight: normal;
+
+            margin-bottom: 25px;
+
+            line-height: 1.2;
+        }
+
+
+        .seccion > p {
+            max-width: 680px;
+
+            margin: auto;
+
+            color: #cfc3c8;
+
+            font-size: 18px;
+
+            line-height: 1.85;
+        }
+
+
+        /* =========================================================
+           TARJETA GLASS
+        ========================================================= */
+
+        .tarjeta {
+            position: relative;
+
+            margin:
+                55px
+                auto
+                0;
+
+            max-width: 760px;
+
+            padding:
+                60px
+                35px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.06),
+                    rgba(255,255,255,.025)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,.14);
+
+            backdrop-filter:
+                blur(18px);
+
+            -webkit-backdrop-filter:
+                blur(18px);
+
+            box-shadow:
+                0 25px 70px
+                rgba(0,0,0,.35);
+
+            overflow: hidden;
+        }
+
+
+        .tarjeta::before {
+            content: "";
+
+            position: absolute;
+
+            width: 200px;
+            height: 200px;
+
+            top: -100px;
+            right: -80px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,70,110,.08);
+
+            filter: blur(30px);
+        }
+
+
+        .icono {
+            width: 80px;
+            height: 80px;
+
+            margin:
+                0
+                auto
+                25px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,.05);
+
+            border:
+                1px solid
+                rgba(255,255,255,.15);
+
+            font-size: 38px;
+
+            box-shadow:
+                0 0 25px
+                rgba(255,70,100,.12);
+        }
+
+
+        .tarjeta h2 {
+            font-size:
+                clamp(
+                    30px,
+                    6vw,
+                    42px
+                );
+
             margin-bottom: 20px;
         }
 
-        .seccion p {
-            max-width: 600px;
-            margin: auto;
-            color: #cfc6ca;
+
+        .tarjeta h2::after {
+            content: "♥";
+
+            display: block;
+
+            font-size: 13px;
+
+            color: #ff8197;
+
+            margin-top: 18px;
+
+            letter-spacing: 20px;
+        }
+
+
+        .tarjeta p {
+            color: #cfc4c8;
+
             font-size: 18px;
-            line-height: 1.8;
+
+            line-height: 1.7;
         }
 
-        .tarjeta {
-            margin-top: 35px;
-            padding: 35px 25px;
-            border-radius: 25px;
-            background: rgba(255,255,255,0.045);
-            border: 1px solid rgba(255,255,255,0.12);
-            backdrop-filter: blur(12px);
-        }
 
-        .icono {
-            font-size: 45px;
-            margin-bottom: 15px;
-        }
+        /* =========================================================
+           FOOTER
+        ========================================================= */
 
         .footer {
             text-align: center;
-            margin-top: 60px;
-            color: #746b70;
-            font-size: 14px;
+
+            margin-top: 80px;
+
+            color: #796d72;
+
+            font-size: 15px;
+
+            letter-spacing: .5px;
         }
 
-        @keyframes latido {
-            0%, 100% {
+
+        /* =========================================================
+           TRANSICIÓN HACIA LOGIN
+        ========================================================= */
+
+        .page-transition {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 99999;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #3b1423 0%,
+                    #180a11 45%,
+                    #050507 100%
+                );
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+            transition:
+                opacity .75s ease,
+                visibility .75s ease;
+        }
+
+
+        .page-transition.active {
+            opacity: 1;
+
+            visibility: visible;
+
+            pointer-events: auto;
+        }
+
+
+        /* =========================================================
+           BRILLO DE TRANSICIÓN
+        ========================================================= */
+
+        .page-transition::before {
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(
+                    255,
+                    70,
+                    110,
+                    .10
+                );
+
+            filter: blur(80px);
+
+            opacity: 0;
+
+            transform: scale(.5);
+
+            transition:
+                opacity 1s ease,
+                transform 1.2s ease;
+        }
+
+
+        .page-transition.active::before {
+            opacity: 1;
+
+            transform: scale(1.5);
+        }
+
+
+        /* =========================================================
+           CORAZÓN DE TRANSICIÓN
+        ========================================================= */
+
+        .transition-heart {
+            position: relative;
+
+            z-index: 2;
+
+            font-size: 72px;
+
+            line-height: 1;
+
+            opacity: 0;
+
+            transform:
+                scale(.55)
+                translateY(20px);
+
+            filter:
+                drop-shadow(
+                    0 0 5px
+                    rgba(255,70,100,.7)
+                );
+
+            transition:
+                opacity .6s ease,
+                transform .8s
+                cubic-bezier(.2,.8,.2,1),
+                filter .8s ease;
+        }
+
+
+        .page-transition.active
+        .transition-heart {
+
+            opacity: 1;
+
+            transform:
+                scale(1)
+                translateY(0);
+
+            filter:
+                drop-shadow(
+                    0 0 10px
+                    rgba(255,70,100,.9)
+                )
+                drop-shadow(
+                    0 0 35px
+                    rgba(255,40,80,.55)
+                );
+
+            animation:
+                transitionHeartBeat
+                1.4s
+                ease-in-out
+                infinite;
+        }
+
+
+        /* =========================================================
+           TEXTO DE TRANSICIÓN
+        ========================================================= */
+
+        .transition-text {
+            position: relative;
+
+            z-index: 2;
+
+            margin-top: 25px;
+
+            color: #e8c6ce;
+
+            font-size: 15px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            opacity: 0;
+
+            transform:
+                translateY(10px);
+
+            transition:
+                opacity .7s ease .25s,
+                transform .7s ease .25s;
+        }
+
+
+        .page-transition.active
+        .transition-text {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =========================================================
+           SALIDA DE LA PORTADA
+        ========================================================= */
+
+        body.leaving .contenedor {
+
+            animation:
+                pageExit
+                .8s
+                cubic-bezier(.65,0,.35,1)
+                forwards;
+        }
+
+
+        @keyframes pageExit {
+
+            0% {
+                opacity: 1;
+
+                transform:
+                    scale(1)
+                    translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+
+                transform:
+                    scale(.97)
+                    translateY(-15px);
+            }
+
+        }
+
+
+        /* =========================================================
+           ANIMACIONES
+        ========================================================= */
+
+        @keyframes latidoNeon {
+
+            0%,
+            100% {
+                transform: scale(1);
+
+                opacity: .9;
+            }
+
+            50% {
+                transform: scale(1.1);
+
+                opacity: 1;
+            }
+
+        }
+
+
+        @keyframes transitionHeartBeat {
+
+            0%,
+            100% {
                 transform: scale(1);
             }
 
             50% {
-                transform: scale(1.12);
+                transform: scale(1.10);
             }
+
         }
 
-        @media (max-width: 600px) {
+
+        @keyframes flotar {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-15px);
+            }
+
+        }
+
+
+        @keyframes aparecer {
+
+            0%,
+            100% {
+                opacity: .2;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+        }
+
+
+        @keyframes flotarCorazon {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(-5deg);
+
+                opacity: .25;
+            }
+
+            50% {
+                transform:
+                    translateY(-30px)
+                    rotate(8deg);
+
+                opacity: .65;
+            }
+
+        }
+
+
+        @keyframes flotarLuz {
+
+            0%,
+            100% {
+                transform:
+                    translate(0,0)
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    translate(30px,-25px)
+                    scale(1.15);
+            }
+
+        }
+
+
+        @keyframes brilloBoton {
+
+            0% {
+                left: -100%;
+            }
+
+            35% {
+                left: 130%;
+            }
+
+            100% {
+                left: 130%;
+            }
+
+        }
+
+
+        /* =========================================================
+           CELULARES
+        ========================================================= */
+
+        @media (max-width: 700px) {
 
             .contenedor {
-                padding: 20px 17px 50px;
+
+                padding:
+                    20px
+                    18px
+                    50px;
             }
+
+
+            .inicio {
+
+                min-height: 100svh;
+
+                padding-top: 20px;
+            }
+
 
             .corazon {
-                font-size: 60px;
+
+                margin-bottom: 12px;
             }
 
-            .descripcion {
-                font-size: 18px;
+
+            .corazon::before {
+
+                font-size: 85px;
             }
+
+
+            .subtitulo {
+
+                font-size: 10px;
+
+                letter-spacing: 5px;
+            }
+
+
+            .subtitulo::before,
+            .subtitulo::after {
+
+                margin:
+                    0
+                    8px;
+            }
+
+
+            h1 {
+
+                font-size: 50px;
+
+                letter-spacing: -1px;
+            }
+
 
             .nombres {
-                font-size: 22px;
+
+                font-size: 34px;
+
+                margin-bottom: 25px;
             }
 
-            .seccion h2 {
-                font-size: 31px;
+
+            .descripcion {
+
+                font-size: 17px;
+
+                line-height: 1.7;
+
+                max-width: 350px;
             }
+
+
+            .boton {
+
+                width: 100%;
+
+                min-width: 0;
+
+                max-width: 340px;
+
+                padding:
+                    18px
+                    20px;
+
+                font-size: 16px;
+            }
+
+
+            .polaroid {
+
+                display: none;
+            }
+
+
+            .linea {
+
+                margin-bottom: 35px;
+            }
+
+
+            .seccion {
+
+                padding:
+                    40px
+                    0;
+            }
+
+
+            .seccion > p {
+
+                font-size: 17px;
+
+                line-height: 1.75;
+            }
+
+
+            .tarjeta {
+
+                padding:
+                    45px
+                    20px;
+
+                margin-top: 40px;
+
+                border-radius: 25px;
+            }
+
+
+            .tarjeta p {
+
+                font-size: 17px;
+            }
+
+
+            .footer {
+
+                margin-top: 50px;
+            }
+
+
+            .transition-heart {
+
+                font-size: 62px;
+            }
+
+
+            .transition-text {
+
+                font-size: 11px;
+
+                letter-spacing: 3px;
+
+                text-align: center;
+            }
+
         }
+
+
+        /* =========================================================
+           PANTALLAS MUY PEQUEÑAS
+        ========================================================= */
+
+        @media (max-width: 380px) {
+
+            h1 {
+
+                font-size: 43px;
+            }
+
+
+            .nombres {
+
+                font-size: 30px;
+            }
+
+
+            .descripcion {
+
+                font-size: 16px;
+            }
+
+
+            .boton {
+
+                font-size: 15px;
+            }
+
+        }
+
+
+        /* =========================================================
+           REDUCCIÓN DE MOVIMIENTO
+        ========================================================= */
+
+        @media (
+            prefers-reduced-motion: reduce
+        ) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    .01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                scroll-behavior:
+                    auto !important;
+
+                transition-duration:
+                    .01ms !important;
+            }
+
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
+
+    <!-- =========================================================
+         FONDO DECORATIVO
+    ========================================================= -->
+
+    <div class="fondo">
+
+        <div class="luz luz-1"></div>
+
+        <div class="luz luz-2"></div>
+
+        <div class="luz luz-3"></div>
+
+
+        <span class="estrella e1">
+            ✦
+        </span>
+
+        <span class="estrella e2">
+            ✧
+        </span>
+
+        <span class="estrella e3">
+            ✦
+        </span>
+
+        <span class="estrella e4">
+            ✧
+        </span>
+
+        <span class="estrella e5">
+            ✦
+        </span>
+
+        <span class="estrella e6">
+            ✧
+        </span>
+
+        <span class="estrella e7">
+            ✦
+        </span>
+
+        <span class="estrella e8">
+            ✧
+        </span>
+
+
+        <span class="corazon-flotante c1">
+            ♥
+        </span>
+
+        <span class="corazon-flotante c2">
+            ♥
+        </span>
+
+        <span class="corazon-flotante c3">
+            ♥
+        </span>
+
+        <span class="corazon-flotante c4">
+            ♥
+        </span>
+
+    </div>
+
+
+    <!-- =========================================================
+         TRANSICIÓN HACIA LOGIN
+    ========================================================= -->
+
+    <div
+        class="page-transition"
+        id="page-transition"
+    >
+
+        <div class="transition-heart">
+            ❤️
+        </div>
+
+        <div class="transition-text">
+            Entrando a nuestra historia...
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         CONTENIDO PRINCIPAL
+    ========================================================= -->
+
     <main class="contenedor">
+
+
+        <!-- =====================================================
+             PORTADA
+        ===================================================== -->
 
         <section class="inicio">
 
-            <div class="corazon">
-                ❤️
+
+            <!-- POLAROID IZQUIERDA -->
+
+            <div
+                class="polaroid polaroid-izq"
+            >
+
+                <img
+                    src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=500&q=80"
+                    alt="Recuerdo"
+                >
+
             </div>
+
+
+            <!-- POLAROID DERECHA -->
+
+            <div
+                class="polaroid polaroid-der"
+            >
+
+                <img
+                    src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=500&q=80"
+                    alt="Recuerdo"
+                >
+
+            </div>
+
+
+            <!-- CORAZÓN -->
+
+            <div class="corazon"></div>
+
+
+            <!-- SUBTÍTULO -->
 
             <div class="subtitulo">
                 Un lugar para nosotros
             </div>
 
+
+            <!-- TÍTULO -->
+
             <h1>
                 Nuestra Historia
             </h1>
+
+
+            <!-- NOMBRES -->
 
             <div class="nombres">
                 Miguel & Hannia
             </div>
 
+
+            <!-- DESCRIPCIÓN -->
+
             <p class="descripcion">
+
                 Hay momentos que pasan una vez...
+
+                <br>
+
                 y otros que queremos recordar para siempre.
+
                 <br><br>
+
                 Este es nuestro pequeño lugar para guardar
                 todo lo que hemos vivido y todo lo que
                 todavía nos falta por vivir.
+
             </p>
 
-            <!-- CAMBIO: ahora abre login.html -->
-            <a href="login.html" class="boton">
-                Entrar a nuestra historia ❤️
+
+            <!-- =================================================
+                 BOTÓN HACIA LOGIN
+            ================================================== -->
+
+            <a
+                href="login.html"
+                class="boton"
+                id="entrar-historia"
+            >
+
+                ✨
+
+                <span>
+                    Entrar a nuestra historia
+                </span>
+
+                ❤️
+
             </a>
+
 
         </section>
 
+
+        <!-- =====================================================
+             SEPARADOR
+        ===================================================== -->
+
         <div class="linea"></div>
 
-        <section class="seccion" id="historia">
+
+        <!-- =====================================================
+             SEGUNDA SECCIÓN
+        ===================================================== -->
+
+        <section
+            class="seccion"
+            id="historia"
+        >
 
             <h2>
                 Bienvenidos a nuestro espacio ❤️
             </h2>
 
+
             <p>
+
                 Aquí comenzará nuestra historia digital.
                 Poco a poco iremos agregando nuestros
                 recuerdos, fotografías, fechas especiales,
                 cartas y todos esos momentos que queremos
                 conservar.
+
             </p>
 
+
+            <!-- =================================================
+                 TARJETA
+            ================================================== -->
+
             <div class="tarjeta">
+
 
                 <div class="icono">
                     💌
                 </div>
 
+
                 <h2>
                     Un lugar solamente nuestro
                 </h2>
+
 
                 <p>
                     Lo mejor todavía está por escribirse.
                 </p>
 
+
             </div>
+
 
         </section>
 
+
+        <!-- =====================================================
+             FOOTER
+        ===================================================== -->
+
         <div class="footer">
+
             Hecho con ❤️ para nuestra historia
+
         </div>
 
+
     </main>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
+
+    <script>
+
+        /* =========================================================
+           TRANSICIÓN HACIA LOGIN
+        ========================================================= */
+
+        const entrarHistoria =
+            document.getElementById(
+                "entrar-historia"
+            );
+
+
+        const pageTransition =
+            document.getElementById(
+                "page-transition"
+            );
+
+
+        if (
+            entrarHistoria &&
+            pageTransition
+        ) {
+
+            entrarHistoria.addEventListener(
+                "click",
+                function(event) {
+
+                    /*
+                     * Evita el cambio inmediato
+                     * de página.
+                     */
+
+                    event.preventDefault();
+
+
+                    /*
+                     * Evita que el usuario
+                     * active la animación
+                     * varias veces.
+                     */
+
+                    if (
+                        document.body.classList.contains(
+                            "leaving"
+                        )
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    /*
+                     * Animación de salida
+                     * de la portada.
+                     */
+
+                    document.body.classList.add(
+                        "leaving"
+                    );
+
+
+                    /*
+                     * Dejamos que la portada
+                     * comience a desaparecer.
+                     */
+
+                    setTimeout(
+                        function() {
+
+                            pageTransition.classList.add(
+                                "active"
+                            );
+
+                        },
+                        150
+                    );
+
+
+                    /*
+                     * Finalmente abrimos
+                     * login.html.
+                     */
+
+                    setTimeout(
+                        function() {
+
+                            window.location.href =
+                                "login.html";
+
+                        },
+                        1150
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =========================================================
+           EVITAR REENVÍO DEL FORMATO AL REGRESAR
+        ========================================================= */
+
+        window.addEventListener(
+            "pageshow",
+            function(event) {
+
+                if (
+                    event.persisted
+                ) {
+
+                    document.body.classList.remove(
+                        "leaving"
+                    );
+
+                    if (
+                        pageTransition
+                    ) {
+
+                        pageTransition.classList.remove(
+                            "active"
+                        );
+
+                    }
+
+                }
+
+            }
+        );
+
+    </script>
+
 
 </body>
 </html>
