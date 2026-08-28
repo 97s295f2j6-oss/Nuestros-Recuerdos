@@ -11,6 +11,10 @@
 
 <style>
 
+/* =========================================================
+   BASE
+========================================================= */
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -76,7 +80,7 @@ button:disabled{
 
 
 /* =========================================================
-   HEADER
+   HEADER ORIGINAL
 ========================================================= */
 
 .site-header{
@@ -191,18 +195,13 @@ button:disabled{
 
   border-radius:30px;
   padding:10px 20px;
-
   color:#d98ba5;
-
-  background:
-    rgba(130,32,63,.08);
-
+  background:rgba(130,32,63,.08);
   transition:.2s;
 }
 
 .small-button:hover{
-  background:
-    rgba(150,40,75,.16);
+  background:rgba(150,40,75,.16);
 }
 
 .action{
@@ -213,23 +212,18 @@ button:disabled{
   border-radius:30px;
   padding:10px 20px;
 
-  background:
-    rgba(105,27,51,.07);
-
+  background:rgba(105,27,51,.07);
   color:#d58aa2;
 
   transition:.2s;
 }
 
 .action:hover{
-  background:
-    rgba(150,40,75,.15);
+  background:rgba(150,40,75,.15);
 }
 
 .action.delete{
-  border-color:
-    rgba(155,48,65,.52);
-
+  border-color:rgba(155,48,65,.52);
   color:#cc8796;
 }
 
@@ -311,6 +305,7 @@ button:disabled{
   margin:0 0 8px;
 
   font-size:clamp(29px,4vw,38px);
+
   text-align:center;
 }
 
@@ -350,25 +345,18 @@ button:disabled{
 
 
 /* =========================================================
-   SOLO DE HANNIA
+   COSAS QUE AMO
+   IMPORTANTE:
+   ESTA SECCIÓN NO VA ARRIBA.
+   VA DESPUÉS DE RECUERDOS.
 ========================================================= */
 
-.hannia-section{
-  display:block !important;
-  visibility:visible !important;
-  opacity:1 !important;
-
+.love-section{
   margin-top:38px;
 }
 
-.hannia-intro{
-  display:block !important;
-
-  padding:
-    38px
-    25px
-    30px;
-
+.love-intro{
+  padding:38px 25px 30px;
   text-align:center;
 
   border:
@@ -389,7 +377,7 @@ button:disabled{
     rgba(0,0,0,.35);
 }
 
-.hannia-heart{
+.love-heart{
   font-size:68px;
   line-height:1;
   margin-bottom:20px;
@@ -401,26 +389,15 @@ button:disabled{
     );
 }
 
-.hannia-intro h2{
+.love-intro h2{
   font-size:clamp(32px,6vw,48px);
   line-height:1.15;
   margin-bottom:14px;
 }
 
-.hannia-intro p{
-  max-width:720px;
-  margin:auto;
-
-  color:#cfc1c8;
-
-  font-size:18px;
-  line-height:1.75;
-}
-
-.hannia-line{
+.love-line{
   width:80px;
   height:1px;
-
   margin:22px auto;
 
   background:
@@ -430,6 +407,15 @@ button:disabled{
       #c34c70,
       transparent
     );
+}
+
+.love-intro p{
+  max-width:720px;
+  margin:auto;
+
+  color:#cfc1c8;
+  font-size:18px;
+  line-height:1.75;
 }
 
 
@@ -498,9 +484,7 @@ button:disabled{
 .love-card{
   display:grid;
 
-  grid-template-columns:
-    120px
-    1fr;
+  grid-template-columns:120px 1fr;
 
   align-items:center;
   gap:20px;
@@ -525,9 +509,7 @@ button:disabled{
 }
 
 .love-card:hover{
-  border-color:
-    rgba(190,59,99,.72);
-
+  border-color:rgba(190,59,99,.72);
   transform:translateY(-2px);
 }
 
@@ -584,9 +566,7 @@ button:disabled{
 
 .empty-love{
   padding:35px 25px;
-
   text-align:center;
-
   color:#a99ba2;
 
   border:
@@ -628,9 +608,7 @@ button:disabled{
 .memory-card{
   display:grid;
 
-  grid-template-columns:
-    50%
-    50%;
+  grid-template-columns:50% 50%;
 
   min-height:270px;
   overflow:hidden;
@@ -647,8 +625,7 @@ button:disabled{
 }
 
 .memory-card:hover{
-  border-color:
-    rgba(190,59,99,.72);
+  border-color:rgba(190,59,99,.72);
 }
 
 .memory-image-wrap{
@@ -683,9 +660,11 @@ button:disabled{
 
 .memory-date{
   color:#d15a7e;
+
   text-transform:uppercase;
   letter-spacing:3px;
   font-size:12px;
+
   margin-bottom:10px;
 }
 
@@ -717,11 +696,6 @@ button:disabled{
   text-align:center;
 }
 
-
-/* =========================================================
-   BOTÓN TODOS
-========================================================= */
-
 .center-action{
   display:flex;
   justify-content:center;
@@ -749,11 +723,8 @@ button:disabled{
 
 label{
   display:block;
-
   color:#cdbec5;
-
   font-size:14px;
-
   margin:16px 0 7px;
 }
 
@@ -769,11 +740,9 @@ select{
   border-radius:13px;
 
   background:#100b10;
-
   color:#fff;
 
   padding:13px;
-
   outline:none;
 }
 
@@ -810,12 +779,9 @@ textarea{
 
 .status{
   display:none;
-
   margin-top:15px;
   padding:12px;
-
   border-radius:12px;
-
   text-align:center;
 }
 
@@ -824,26 +790,19 @@ textarea{
 }
 
 .status.success{
-  background:
-    rgba(70,160,105,.10);
-
+  background:rgba(70,160,105,.10);
   color:#91d7ab;
 }
 
 .status.error{
-  background:
-    rgba(190,45,65,.10);
-
+  background:rgba(190,45,65,.10);
   color:#ff9aa9;
 }
 
 .preview{
   display:none;
-
   margin-top:15px;
-
   overflow:hidden;
-
   border-radius:17px;
 }
 
@@ -870,9 +829,7 @@ textarea{
 
 .date-card{
   position:relative;
-
   padding:23px 25px;
-
   overflow:hidden;
 }
 
@@ -885,7 +842,6 @@ textarea{
   top:19px;
 
   font-size:34px;
-
   opacity:.12;
 }
 
@@ -902,43 +858,30 @@ textarea{
 
 .date-title{
   color:#fff;
-
   font-size:26px;
-
   line-height:1.2;
-
   margin-bottom:8px;
-
   padding-right:40px;
 }
 
 .date-message{
   color:#c2b6bd;
-
   font-size:16px;
-
   line-height:1.65;
 }
 
 .date-label{
   color:#d15a7e;
-
   text-transform:uppercase;
-
   letter-spacing:3px;
-
   font-size:12px;
-
   margin-bottom:9px;
 }
 
 .date-actions{
   display:flex;
-
   gap:8px;
-
   flex-wrap:wrap;
-
   margin-top:15px;
 }
 
@@ -946,9 +889,7 @@ textarea{
   text-align:center;
   padding:25px;
   margin-top:15px;
-
-  border-color:
-    rgba(165,49,84,.48);
+  border-color:rgba(165,49,84,.48);
 }
 
 .add-date h3{
@@ -957,9 +898,7 @@ textarea{
 
 .add-date p{
   color:#a99da3;
-
   line-height:1.6;
-
   margin:9px 0 19px;
 }
 
@@ -984,7 +923,6 @@ textarea{
 
 .timeline{
   position:relative;
-
   padding-left:30px;
 
   border-left:
@@ -1013,16 +951,13 @@ textarea{
   height:25px;
 
   display:flex;
-
   align-items:center;
   justify-content:center;
 
   color:#d4577e;
-
   background:#120b10;
 
   border-radius:50%;
-
   font-size:14px;
 }
 
@@ -1034,25 +969,17 @@ textarea{
 
 .timeline-text{
   color:#c4b9bf;
-
   font-size:17px;
-
   line-height:1.75;
-
   white-space:pre-wrap;
 }
 
 .history-image{
   display:block;
-
   width:100%;
-
   max-height:430px;
-
   object-fit:cover;
-
   border-radius:17px;
-
   margin-top:18px;
 }
 
@@ -1072,14 +999,12 @@ textarea{
 
 .saved-letter{
   position:relative;
-
   padding:23px 25px;
-
   overflow:hidden;
 }
 
 .saved-letter:before{
-  content:"💌";
+  content:"❤️";
 
   position:absolute;
 
@@ -1087,55 +1012,39 @@ textarea{
   top:17px;
 
   font-size:31px;
-
   opacity:.13;
 }
 
 .saved-letter h3{
   font-size:26px;
-
   line-height:1.25;
-
   margin-bottom:8px;
-
   padding-right:45px;
 }
 
 .letter-author{
   color:#91868d;
-
   font-size:13px;
-
   margin-bottom:14px;
 }
 
 .letter-preview{
   color:#cec4c9;
-
   font-size:17px;
-
   line-height:1.75;
-
   font-style:italic;
-
   white-space:pre-wrap;
 
   display:-webkit-box;
-
   -webkit-line-clamp:3;
-
   -webkit-box-orient:vertical;
-
   overflow:hidden;
 }
 
 .letter-actions{
   display:flex;
-
   gap:8px;
-
   margin-top:16px;
-
   flex-wrap:wrap;
 }
 
@@ -1152,13 +1061,10 @@ textarea{
 
 .future{
   position:relative;
-
   overflow:hidden;
-
   text-align:center;
 
   padding:43px 25px;
-
   margin-top:48px;
 }
 
@@ -1171,7 +1077,6 @@ textarea{
   top:15px;
 
   font-size:100px;
-
   opacity:.07;
 }
 
@@ -1184,7 +1089,6 @@ textarea{
   bottom:10px;
 
   font-size:100px;
-
   opacity:.07;
 }
 
@@ -1193,9 +1097,7 @@ textarea{
   z-index:1;
 
   font-size:31px;
-
   line-height:1.2;
-
   margin-bottom:16px;
 }
 
@@ -1204,24 +1106,20 @@ textarea{
   z-index:1;
 
   max-width:750px;
-
   margin:auto;
 
   color:#c4b8be;
-
   font-size:18px;
-
   line-height:1.8;
 }
 
 
 /* =========================================================
-   LOGOUT / FOOTER
+   FOOTER
 ========================================================= */
 
 .logout{
   display:block;
-
   margin:35px auto 0;
 
   border:
@@ -1229,21 +1127,16 @@ textarea{
     rgba(255,255,255,.14);
 
   border-radius:30px;
-
   padding:11px 23px;
 
   color:#9d9298;
-
   background:transparent;
 }
 
 .footer{
   text-align:center;
-
   color:#655c62;
-
   font-size:13px;
-
   margin-top:25px;
 }
 
@@ -1254,20 +1147,16 @@ textarea{
 
 .modal{
   position:fixed;
-
   inset:0;
-
   z-index:9999;
 
   display:flex;
-
   align-items:center;
   justify-content:center;
 
   padding:15px;
 
-  background:
-    rgba(3,2,5,.88);
+  background:rgba(3,2,5,.88);
 
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
@@ -1288,9 +1177,7 @@ textarea{
 
   width:100%;
   max-width:850px;
-
   max-height:92vh;
-
   overflow:auto;
 
   padding:38px 30px 40px;
@@ -1340,23 +1227,19 @@ textarea{
 
   color:#fff;
 
-  background:
-    rgba(255,255,255,.06);
+  background:rgba(255,255,255,.06);
 
   font-size:23px;
 }
 
 .modal-date{
   text-align:center;
-
   color:#d25b7f;
 
   text-transform:uppercase;
-
   letter-spacing:3px;
 
   font-size:12px;
-
   margin-bottom:12px;
 }
 
@@ -1366,38 +1249,28 @@ textarea{
   font-size:clamp(31px,6vw,52px);
 
   line-height:1.15;
-
   margin-bottom:18px;
 }
 
 .modal-author{
   text-align:center;
-
   color:#9e9299;
-
   font-size:14px;
-
   margin-bottom:25px;
 }
 
 .modal-line{
   width:70px;
   height:1px;
-
   background:#91465f;
-
   margin:0 auto 27px;
 }
 
 .modal-text{
   color:#d9cfd4;
-
   font-size:19px;
-
   line-height:1.9;
-
   white-space:pre-wrap;
-
   font-style:italic;
 }
 
@@ -1481,37 +1354,32 @@ textarea{
   }
 
 
-  /* SOLO DE HANNIA */
+  /* COSAS QUE AMO */
 
-  .hannia-section{
+  .love-section{
     margin-top:30px;
   }
 
-  .hannia-intro{
-    padding:
-      32px
-      18px
-      27px;
+  .love-intro{
+    padding:32px 18px 27px;
   }
 
-  .hannia-heart{
+  .love-heart{
     font-size:58px;
     margin-bottom:15px;
   }
 
-  .hannia-intro h2{
+  .love-intro h2{
     font-size:32px;
   }
 
-  .hannia-intro p{
+  .love-intro p{
     font-size:16px;
     line-height:1.7;
   }
 
   .love-form{
-    padding:
-      21px
-      18px;
+    padding:21px 18px;
   }
 
   .love-form h3{
@@ -1528,12 +1396,8 @@ textarea{
 
   .love-card{
     grid-template-columns:1fr;
-
     text-align:center;
-
-    padding:
-      24px
-      19px;
+    padding:24px 19px;
   }
 
   .love-icon{
@@ -1577,10 +1441,7 @@ textarea{
   }
 
   .memory-info{
-    padding:
-      20px
-      20px
-      21px;
+    padding:20px;
   }
 
   .memory-title{
@@ -1597,10 +1458,7 @@ textarea{
 
   .memory-actions .action,
   .memory-actions .small-button{
-    padding:
-      10px
-      12px;
-
+    padding:10px 12px;
     font-size:14px;
   }
 
@@ -1614,9 +1472,7 @@ textarea{
   }
 
   .date-card{
-    padding:
-      21px
-      20px;
+    padding:21px 20px;
   }
 
   .date-title{
@@ -1628,15 +1484,11 @@ textarea{
   }
 
   .add-date{
-    padding:
-      23px
-      18px;
+    padding:23px 18px;
   }
 
   #history-list{
-    padding:
-      22px
-      18px;
+    padding:22px 18px;
   }
 
   .timeline{
@@ -1656,9 +1508,7 @@ textarea{
   }
 
   .saved-letter{
-    padding:
-      21px
-      20px;
+    padding:21px 20px;
   }
 
   .saved-letter h3{
@@ -1674,9 +1524,7 @@ textarea{
   }
 
   .future{
-    padding:
-      35px
-      20px;
+    padding:35px 20px;
   }
 
   .future h2{
@@ -1688,10 +1536,7 @@ textarea{
   }
 
   .modal-box{
-    padding:
-      37px
-      21px
-      30px;
+    padding:37px 21px 30px;
   }
 
   .modal h2{
@@ -1707,7 +1552,7 @@ textarea{
 
 
 /* =========================================================
-   PANTALLAS PEQUEÑAS
+   PANTALLAS MUY PEQUEÑAS
 ========================================================= */
 
 @media(max-width:390px){
@@ -1717,10 +1562,7 @@ textarea{
   }
 
   .add-top{
-    padding:
-      10px
-      13px;
-
+    padding:10px 13px;
     font-size:13px;
   }
 
@@ -1766,11 +1608,10 @@ textarea{
     </div>
 
     <h1>
-      Solo de Hannia ❤️
+      Cartas & Recuerdos ❤️
     </h1>
 
   </div>
-
 
   <button
     class="add-top"
@@ -1784,7 +1625,7 @@ textarea{
 
 
 <!-- =========================================================
-     CARTA PRINCIPAL
+     CARTA DESTACADA
 ========================================================= -->
 
 <section class="card letter-hero">
@@ -1792,7 +1633,7 @@ textarea{
   <div>
 
     <h2>
-      ¿Quieres dejarme una carta? 💌
+      ¿Quieres dejarme una carta? ❤️
     </h2>
 
     <p>
@@ -1810,7 +1651,6 @@ textarea{
 
   </div>
 
-
   <div class="envelope-art">
     ❤️
   </div>
@@ -1819,16 +1659,151 @@ textarea{
 
 
 <!-- =========================================================
-     COSAS QUE AMO DE TI
+     RECUERDOS
+     ESTA SECCIÓN VA ANTES DE COSAS QUE AMO
 ========================================================= -->
 
 <section
-  class="hannia-section"
+  class="section"
+  id="recuerdos">
+
+  <h2 class="section-heading">
+
+    <span>
+      📸 Recuerdos ❤️
+    </span>
+
+  </h2>
+
+  <div class="section-subtitle">
+    Todos esos momentos que queremos guardar.
+  </div>
+
+
+  <!-- FORMULARIO RECUERDO -->
+
+  <div
+    class="card form-panel"
+    id="memory-form">
+
+    <div
+      class="preview"
+      id="memory-preview">
+
+      <img
+        id="memory-preview-img"
+        alt="Vista previa">
+
+    </div>
+
+    <label for="memory-file">
+      📸 Foto
+    </label>
+
+    <input
+      type="file"
+      id="memory-file"
+      accept="image/*">
+
+    <label for="memory-title">
+      ❤️ Título
+    </label>
+
+    <input
+      id="memory-title"
+      maxlength="150"
+      placeholder="Ej. Nuestra primera salida">
+
+    <label for="memory-date">
+      📅 Fecha del recuerdo
+    </label>
+
+    <input
+      id="memory-date"
+      type="date">
+
+    <label for="memory-description">
+      💌 Descripción
+    </label>
+
+    <textarea
+      id="memory-description"
+      maxlength="1000"
+      placeholder="Escribe algo que quieras recordar..."></textarea>
+
+    <div class="form-row">
+
+      <button
+        class="action"
+        id="cancel-memory">
+
+        Cancelar
+
+      </button>
+
+      <button
+        class="pink-button"
+        id="save-memory">
+
+        ❤️ Guardar recuerdo
+
+      </button>
+
+    </div>
+
+    <div
+      class="status"
+      id="memory-status">
+    </div>
+
+  </div>
+
+
+  <!-- LISTA RECUERDOS -->
+
+  <div
+    class="memories"
+    id="memories-list">
+
+    <div class="card date-card">
+
+      📸
+      <br><br>
+
+      Cargando nuestros recuerdos...
+
+    </div>
+
+  </div>
+
+
+  <div class="center-action">
+
+    <button
+      class="pink-button"
+      id="show-all-memories">
+
+      Ver todos los recuerdos
+
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     COSAS QUE AMO DE TI
+     AHORA ESTÁ DESPUÉS DE RECUERDOS
+========================================================= -->
+
+<section
+  class="love-section"
   id="solo-hannia">
 
-  <div class="hannia-intro">
+  <div class="love-intro">
 
-    <div class="hannia-heart">
+    <div class="love-heart">
       ❤️
     </div>
 
@@ -1836,7 +1811,7 @@ textarea{
       Cosas que amo de ti
     </h2>
 
-    <div class="hannia-line"></div>
+    <div class="love-line"></div>
 
     <p>
       Porque hay pequeños detalles de ti que quizá
@@ -1846,9 +1821,7 @@ textarea{
   </div>
 
 
-  <!-- =======================================================
-       FORMULARIO
-  ======================================================= -->
+  <!-- FORMULARIO -->
 
   <div
     class="card love-form"
@@ -1876,7 +1849,7 @@ textarea{
 
         <input
           id="love-emoji"
-          maxlength="4"
+          maxlength="8"
           value="❤️"
           placeholder="❤️">
 
@@ -1920,7 +1893,6 @@ textarea{
 
       </button>
 
-
       <button
         class="pink-button"
         id="save-love">
@@ -1940,159 +1912,18 @@ textarea{
   </div>
 
 
-  <!-- =======================================================
-       LISTA
-  ======================================================= -->
+  <!-- LISTA -->
 
   <div
     class="love-list"
     id="love-list">
-
   </div>
 
 </section>
 
 
 <!-- =========================================================
-     RECUERDOS
-========================================================= -->
-
-<section
-  class="section"
-  id="recuerdos">
-
-  <h2 class="section-heading">
-
-    <span>
-      📸 Recuerdos ❤️
-    </span>
-
-  </h2>
-
-
-  <div class="section-subtitle">
-    Todos esos momentos que queremos guardar.
-  </div>
-
-
-  <div
-    class="card form-panel"
-    id="memory-form">
-
-
-    <div
-      class="preview"
-      id="memory-preview">
-
-      <img
-        id="memory-preview-img"
-        alt="Vista previa">
-
-    </div>
-
-
-    <label for="memory-file">
-      📸 Foto
-    </label>
-
-    <input
-      type="file"
-      id="memory-file"
-      accept="image/*">
-
-
-    <label for="memory-title">
-      ❤️ Título
-    </label>
-
-    <input
-      id="memory-title"
-      maxlength="150"
-      placeholder="Ej. Nuestra primera salida">
-
-
-    <label for="memory-date">
-      📅 Fecha del recuerdo
-    </label>
-
-    <input
-      id="memory-date"
-      type="date">
-
-
-    <label for="memory-description">
-      💌 Descripción
-    </label>
-
-    <textarea
-      id="memory-description"
-      maxlength="1000"
-      placeholder="Escribe algo que quieras recordar..."></textarea>
-
-
-    <div class="form-row">
-
-      <button
-        class="action"
-        id="cancel-memory">
-
-        Cancelar
-
-      </button>
-
-
-      <button
-        class="pink-button"
-        id="save-memory">
-
-        ❤️ Guardar recuerdo
-
-      </button>
-
-    </div>
-
-
-    <div
-      class="status"
-      id="memory-status">
-    </div>
-
-  </div>
-
-
-  <div
-    class="memories"
-    id="memories-list">
-
-    <div class="card date-card">
-
-      📸
-      <br><br>
-
-      Cargando nuestros recuerdos...
-
-    </div>
-
-  </div>
-
-
-  <div class="center-action">
-
-    <button
-      class="pink-button"
-      id="show-all-memories">
-
-      Ver todos los recuerdos
-
-    </button>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     FECHAS
+     FECHAS ESPECIALES
 ========================================================= -->
 
 <section
@@ -2106,7 +1937,6 @@ textarea{
     </span>
 
   </h2>
-
 
   <div class="section-subtitle">
     Las fechas que queremos guardar para siempre.
@@ -2141,7 +1971,6 @@ textarea{
       para ustedes.
     </p>
 
-
     <button
       class="pink-button"
       id="open-date-form">
@@ -2154,7 +1983,6 @@ textarea{
     <div
       class="date-form"
       id="date-form">
-
 
       <label for="date-value">
         📅 Fecha
@@ -2220,7 +2048,6 @@ textarea{
 
         </button>
 
-
         <button
           class="pink-button"
           id="save-date">
@@ -2259,7 +2086,6 @@ textarea{
     </span>
 
   </h2>
-
 
   <div class="section-subtitle">
     Cada capítulo de nosotros merece ser recordado.
@@ -2319,7 +2145,6 @@ textarea{
     <div
       class="date-form"
       id="chapter-form">
-
 
       <label for="chapter-date">
         📅 Fecha
@@ -2381,7 +2206,6 @@ textarea{
 
         </button>
 
-
         <button
           class="pink-button"
           id="save-chapter">
@@ -2421,17 +2245,18 @@ textarea{
 
   </h2>
 
-
   <div class="section-subtitle">
+
     Porque hay cosas que es más bonito
     escribirlas que decirlas.
+
   </div>
 
 
   <div class="card add-date">
 
     <h3>
-      ¿Quieres dejarme una carta? 💌
+      ¿Quieres dejarme una carta? ❤️
     </h3>
 
     <p>
@@ -2452,7 +2277,6 @@ textarea{
     <div
       class="date-form"
       id="letter-form">
-
 
       <label for="letter-title">
         ❤️ Título de la carta
@@ -2484,7 +2308,6 @@ textarea{
           Cancelar
 
         </button>
-
 
         <button
           class="pink-button"
@@ -2533,10 +2356,11 @@ textarea{
 <div class="card future">
 
   <h2>
-    ✨ Lo que todavía nos falta vivir
+    Lo que todavía nos falta vivir ❤️
   </h2>
 
   <p>
+
     Viajes, aventuras, cumpleaños,
     días normales, días increíbles
     y todos esos momentos que todavía
@@ -2545,6 +2369,7 @@ textarea{
     <br><br>
 
     Nuestra historia apenas sigue comenzando. ❤️
+
   </p>
 
 </div>
@@ -2586,20 +2411,16 @@ textarea{
 
     </button>
 
-
     <div
       class="modal-date"
       id="modal-memory-date">
     </div>
 
-
     <h2
       id="modal-memory-title">
     </h2>
 
-
     <div class="modal-line"></div>
-
 
     <img
       id="modal-memory-image"
@@ -2611,7 +2432,6 @@ textarea{
         margin-bottom:23px;
       "
       alt="">
-
 
     <div
       class="modal-text"
@@ -2642,26 +2462,21 @@ textarea{
 
     </button>
 
-
     <div
       class="modal-date"
       id="modal-letter-date">
     </div>
 
-
     <h2
       id="modal-letter-title">
     </h2>
-
 
     <div
       class="modal-author"
       id="modal-letter-author">
     </div>
 
-
     <div class="modal-line"></div>
-
 
     <div
       class="modal-text"
@@ -2704,10 +2519,37 @@ let editingLetterId = null;
 let selectedMemoryFile = null;
 let selectedChapterFile = null;
 
+let editingLoveId = null;
+
 
 /* =========================================================
    UTILIDADES
 ========================================================= */
+
+function iconForType(type){
+
+  const t =
+    String(type || "")
+    .toLowerCase();
+
+  if(
+    t === "cumpleaños" ||
+    t === "cumpleanos"
+  ){
+    return "🎂";
+  }
+
+  if(t === "aniversario"){
+    return "❤️";
+  }
+
+  if(t === "viaje"){
+    return "✈️";
+  }
+
+  return "✨";
+}
+
 
 function prettyDate(value){
 
@@ -2737,36 +2579,7 @@ function prettyDate(value){
 }
 
 
-function iconForType(type){
-
-  const t =
-    String(type || "")
-    .toLowerCase();
-
-  if(
-    t === "cumpleaños" ||
-    t === "cumpleanos"
-  ){
-    return "🎂";
-  }
-
-  if(t === "aniversario"){
-    return "❤️";
-  }
-
-  if(t === "viaje"){
-    return "✈️";
-  }
-
-  return "✨";
-}
-
-
-function showStatus(
-  el,
-  msg,
-  type
-){
+function showStatus(el,msg,type){
 
   el.textContent = msg;
 
@@ -2779,8 +2592,8 @@ function showStatus(
 function hideStatus(el){
 
   el.className = "status";
-
   el.textContent = "";
+
 }
 
 
@@ -2833,6 +2646,7 @@ function closeModal(id){
     );
 
   }
+
 }
 
 
@@ -2878,27 +2692,17 @@ function storagePublicUrl(path){
     .getPublicUrl(path)
     .data
     .publicUrl;
+
 }
 
 
 /* =========================================================
-   ❤️ COSAS QUE AMO DE TI
+   COSAS QUE AMO
+   SOLO LOCALSTORAGE
 ========================================================= */
 
-/*
-   IMPORTANTE:
-
-   Cambiamos v1 por v2.
-
-   Esto hace que los ejemplos anteriores
-   de mango, tiburón, etc. NO vuelvan a cargar.
-*/
-
 const LOVE_STORAGE_KEY =
-  "hannia_cosas_que_amo_v2";
-
-
-let editingLoveId = null;
+"hannia_cosas_que_amo_v2";
 
 
 const loveForm =
@@ -2972,26 +2776,16 @@ function getLoveItems(){
     return [];
 
   }
+
 }
 
 
 function saveLoveItems(items){
 
-  try{
-
-    localStorage.setItem(
-      LOVE_STORAGE_KEY,
-      JSON.stringify(items)
-    );
-
-  }catch(error){
-
-    console.error(
-      "Error guardando cosas que amo:",
-      error
-    );
-
-  }
+  localStorage.setItem(
+    LOVE_STORAGE_KEY,
+    JSON.stringify(items)
+  );
 
 }
 
@@ -3001,9 +2795,7 @@ function resetLoveForm(){
   editingLoveId = null;
 
   loveTitle.value = "";
-
   loveDescription.value = "";
-
   loveEmoji.value = "❤️";
 
   saveLoveButton.textContent =
@@ -3012,9 +2804,7 @@ function resetLoveForm(){
   cancelLoveButton.style.display =
     "none";
 
-  hideStatus(
-    loveStatus
-  );
+  hideStatus(loveStatus);
 
 }
 
@@ -3027,9 +2817,7 @@ function editLoveItem(id){
   const item =
     items.find(
       function(row){
-
         return row.id === id;
-
       }
     );
 
@@ -3068,33 +2856,23 @@ function deleteLoveItem(id){
 
   if(
     !confirm(
-      "¿Quieres eliminar este detalle de Hannia? ❤️"
+      "¿Quieres eliminar este detalle? ❤️"
     )
   ){
-
     return;
-
   }
-
 
   const items =
     getLoveItems();
 
-
   const filtered =
     items.filter(
       function(item){
-
         return item.id !== id;
-
       }
     );
 
-
-  saveLoveItems(
-    filtered
-  );
-
+  saveLoveItems(filtered);
 
   renderLoveItems();
 
@@ -3106,14 +2884,8 @@ function renderLoveItems(){
   const items =
     getLoveItems();
 
-
   loveList.innerHTML = "";
 
-
-  /*
-     Si no hay nada agregado,
-     mostramos solamente este mensaje.
-  */
 
   if(!items.length){
 
@@ -3131,8 +2903,8 @@ function renderLoveItems(){
 
         <p>
           Todavía no has agregado ninguno.
-          Escribe arriba las cosas que amas de Hannia
-          y aparecerán aquí.
+          Escribe arriba las cosas que amas
+          de Hannia y aparecerán aquí.
         </p>
 
       </div>
@@ -3164,8 +2936,7 @@ function renderLoveItems(){
         "love-icon";
 
       icon.textContent =
-        item.emoji ||
-        "❤️";
+        item.emoji || "❤️";
 
 
       const content =
@@ -3199,8 +2970,7 @@ function renderLoveItems(){
         "love-description";
 
       description.textContent =
-        item.description ||
-        "";
+        item.description || "";
 
 
       const actions =
@@ -3223,7 +2993,6 @@ function renderLoveItems(){
       edit.textContent =
         "✏️ Editar";
 
-
       edit.onclick =
         function(){
 
@@ -3244,7 +3013,6 @@ function renderLoveItems(){
 
       deleteButton.textContent =
         "🗑️ Eliminar";
-
 
       deleteButton.onclick =
         function(){
@@ -3317,7 +3085,7 @@ function(){
 
     showStatus(
       loveStatus,
-      "Escribe por qué amas ese detalle 💌",
+      "Escribe por qué amas ese detalle ❤️",
       "error"
     );
 
@@ -3336,12 +3104,9 @@ function(){
     const index =
       items.findIndex(
         function(item){
-
           return item.id === editingLoveId;
-
         }
       );
-
 
     if(index !== -1){
 
@@ -3359,18 +3124,13 @@ function(){
 
     }
 
-
-    saveLoveItems(
-      items
-    );
-
+    saveLoveItems(items);
 
     showStatus(
       loveStatus,
       "¡Detalle actualizado! ❤️",
       "success"
     );
-
 
   }else{
 
@@ -3394,14 +3154,11 @@ function(){
     });
 
 
-    saveLoveItems(
-      items
-    );
-
+    saveLoveItems(items);
 
     showStatus(
       loveStatus,
-      "¡Agregado a las cosas que amas de ella! ❤️",
+      "¡Agregado a las cosas que amas! ❤️",
       "success"
     );
 
@@ -3413,9 +3170,7 @@ function(){
 
   setTimeout(
     function(){
-
       resetLoveForm();
-
     },
     700
   );
@@ -3427,9 +3182,9 @@ cancelLoveButton.onclick =
 resetLoveForm;
 
 
-/*
-   CARGAMOS LA LISTA
-*/
+/* =========================================================
+   INICIAR COSAS QUE AMO
+========================================================= */
 
 renderLoveItems();
 
@@ -3482,15 +3237,11 @@ document.getElementById(
 function resetMemoryForm(){
 
   editingMemoryId = null;
-
   selectedMemoryFile = null;
 
   memoryFile.value = "";
-
   memoryTitle.value = "";
-
   memoryDate.value = "";
-
   memoryDescription.value = "";
 
   memoryPreview.classList.remove(
@@ -3503,24 +3254,18 @@ function resetMemoryForm(){
     "active"
   );
 
-  hideStatus(
-    memoryStatus
-  );
+  hideStatus(memoryStatus);
 
 }
 
 
-function openMemoryForm(
-  memory = null
-){
+function openMemoryForm(memory=null){
 
   memoryForm.classList.add(
     "active"
   );
 
-  hideStatus(
-    memoryStatus
-  );
+  hideStatus(memoryStatus);
 
   editingMemoryId =
     memory?.id || null;
@@ -3576,7 +3321,6 @@ function(event){
     return;
   }
 
-
   if(
     !file.type.startsWith("image/")
   ){
@@ -3589,7 +3333,6 @@ function(event){
 
     return;
   }
-
 
   if(
     file.size >
@@ -3605,13 +3348,10 @@ function(event){
     return;
   }
 
-
   selectedMemoryFile = file;
-
 
   const reader =
     new FileReader();
-
 
   reader.onload =
     function(event){
@@ -3624,7 +3364,6 @@ function(event){
       );
 
     };
-
 
   reader.readAsDataURL(file);
 
@@ -3651,7 +3390,6 @@ async function saveMemory(){
   if(!session){
     return;
   }
-
 
   const title =
     memoryTitle.value.trim();
@@ -3756,8 +3494,7 @@ async function saveMemory(){
 
         titulo:title,
 
-        descripcion:
-          description,
+        descripcion:description,
 
         fecha:date
 
@@ -3791,7 +3528,6 @@ async function saveMemory(){
         "¡Recuerdo actualizado! ❤️",
         "success"
       );
-
 
     }else{
 
@@ -3827,7 +3563,6 @@ async function saveMemory(){
 
 
     await loadMemories();
-
 
     setTimeout(
       resetMemoryForm,
@@ -4269,84 +4004,62 @@ function resetDateForm(){
   editingDateId = null;
 
   document
-    .getElementById(
-      "date-value"
-    )
+    .getElementById("date-value")
     .value = "";
 
   document
-    .getElementById(
-      "date-type"
-    )
+    .getElementById("date-type")
     .value = "especial";
 
   document
-    .getElementById(
-      "date-title"
-    )
+    .getElementById("date-title")
     .value = "";
 
   document
-    .getElementById(
-      "date-message"
-    )
+    .getElementById("date-message")
     .value = "";
 
   dateForm.classList.remove(
     "active"
   );
 
-  hideStatus(
-    dateStatus
-  );
+  hideStatus(dateStatus);
 
 }
 
 
-function openDateForm(
-  row = null
-){
+function openDateForm(row=null){
 
   dateForm.classList.add(
     "active"
   );
 
-  hideStatus(
-    dateStatus
-  );
+  hideStatus(dateStatus);
 
   editingDateId =
     row?.id || null;
 
 
   document
-    .getElementById(
-      "date-value"
-    )
+    .getElementById("date-value")
     .value =
     row?.fecha || "";
 
 
   document
-    .getElementById(
-      "date-type"
-    )
+    .getElementById("date-type")
     .value =
     row?.tipo || "especial";
 
 
   document
-    .getElementById(
-      "date-title"
-    )
+    .getElementById("date-title")
     .value =
     row?.titulo || "";
 
 
   document
-    .getElementById(
-      "date-message"
-    )
+    .getElementById("date-message")
     .value =
     row?.mensaje ||
     row?.descripcion ||
@@ -4354,9 +4067,7 @@ function openDateForm(
 
 
   document
-    .getElementById(
-      "date-title"
-    )
+    .getElementById("date-title")
     .focus();
 
 }
@@ -4395,34 +4106,26 @@ async function saveDate(){
 
   const fecha =
     document
-    .getElementById(
-      "date-value"
-    )
+    .getElementById("date-value")
     .value;
 
 
   const tipo =
     document
-    .getElementById(
-      "date-type"
-    )
+    .getElementById("date-type")
     .value;
 
 
   const titulo =
     document
-    .getElementById(
-      "date-title"
-    )
+    .getElementById("date-title")
     .value
     .trim();
 
 
   const mensaje =
     document
-    .getElementById(
-      "date-message"
-    )
+    .getElementById("date-message")
     .value
     .trim();
 
@@ -4716,9 +4419,7 @@ async function loadDates(){
         );
 
 
-        card.append(
-          top
-        );
+        card.append(top);
 
 
         const actions =
@@ -4741,7 +4442,6 @@ async function loadDates(){
         edit.textContent =
           "✏️ Editar";
 
-
         edit.onclick =
           () =>
             openDateForm(
@@ -4759,7 +4459,6 @@ async function loadDates(){
 
         deleteButton.textContent =
           "🗑️ Eliminar";
-
 
         deleteButton.onclick =
           () =>
@@ -4873,51 +4572,33 @@ document.getElementById(
 function resetChapter(){
 
   editingChapterId = null;
-
   selectedChapterFile = null;
 
-
   document
-    .getElementById(
-      "chapter-date"
-    )
+    .getElementById("chapter-date")
     .value = "";
 
-
   document
-    .getElementById(
-      "chapter-title"
-    )
+    .getElementById("chapter-title")
     .value = "";
 
-
   document
-    .getElementById(
-      "chapter-text"
-    )
+    .getElementById("chapter-text")
     .value = "";
-
 
   chapterFile.value = "";
 
-
   document
-    .getElementById(
-      "chapter-preview"
-    )
+    .getElementById("chapter-preview")
     .classList.remove(
       "active"
     );
-
 
   chapterForm.classList.remove(
     "active"
   );
 
-
-  hideStatus(
-    chapterStatus
-  );
+  hideStatus(chapterStatus);
 
 }
 
@@ -5040,26 +4721,20 @@ async function saveChapter(){
 
   const fecha =
     document
-    .getElementById(
-      "chapter-date"
-    )
+    .getElementById("chapter-date")
     .value;
 
 
   const titulo =
     document
-    .getElementById(
-      "chapter-title"
-    )
+    .getElementById("chapter-title")
     .value
     .trim();
 
 
   const historia =
     document
-    .getElementById(
-      "chapter-text"
-    )
+    .getElementById("chapter-text")
     .value
     .trim();
 
@@ -5092,7 +4767,7 @@ async function saveChapter(){
 
     showStatus(
       chapterStatus,
-      "Escribe la historia 💌",
+      "Escribe la historia ❤️",
       "error"
     );
 
@@ -5167,9 +4842,7 @@ async function saveChapter(){
     const payload = {
 
       fecha:fecha,
-
       titulo:titulo,
-
       historia:historia
 
     };
@@ -5428,8 +5101,7 @@ async function loadHistory(){
           image.className =
             "history-image";
 
-          image.src =
-            url;
+          image.src = url;
 
           image.loading =
             "lazy";
@@ -5468,11 +5140,9 @@ async function loadHistory(){
             editingChapterId =
               history.id;
 
-
             chapterForm.classList.add(
               "active"
             );
-
 
             document
               .getElementById(
@@ -5481,14 +5151,12 @@ async function loadHistory(){
               .value =
               history.fecha || "";
 
-
             document
               .getElementById(
                 "chapter-title"
               )
               .value =
               history.titulo || "";
-
 
             document
               .getElementById(
@@ -5498,7 +5166,6 @@ async function loadHistory(){
               history.historia ||
               history.descripcion ||
               "";
-
 
             document
               .getElementById(
@@ -5641,35 +5308,26 @@ document.getElementById(
 );
 
 
-function openLetterForm(
-  row = null
-){
+function openLetterForm(row=null){
 
   letterForm.classList.add(
     "active"
   );
 
-  hideStatus(
-    letterStatus
-  );
-
+  hideStatus(letterStatus);
 
   editingLetterId =
     row?.id || null;
 
 
   document
-    .getElementById(
-      "letter-title"
-    )
+    .getElementById("letter-title")
     .value =
     row?.titulo || "";
 
 
   document
-    .getElementById(
-      "letter-text"
-    )
+    .getElementById("letter-text")
     .value =
     row?.mensaje ||
     row?.contenido ||
@@ -5677,9 +5335,7 @@ function openLetterForm(
 
 
   document
-    .getElementById(
-      "letter-title"
-    )
+    .getElementById("letter-title")
     .focus();
 
 }
@@ -5689,29 +5345,19 @@ function resetLetter(){
 
   editingLetterId = null;
 
-
   document
-    .getElementById(
-      "letter-title"
-    )
+    .getElementById("letter-title")
     .value = "";
 
-
   document
-    .getElementById(
-      "letter-text"
-    )
+    .getElementById("letter-text")
     .value = "";
-
 
   letterForm.classList.remove(
     "active"
   );
 
-
-  hideStatus(
-    letterStatus
-  );
+  hideStatus(letterStatus);
 
 }
 
@@ -5758,18 +5404,14 @@ async function saveLetter(){
 
   const titulo =
     document
-    .getElementById(
-      "letter-title"
-    )
+    .getElementById("letter-title")
     .value
     .trim();
 
 
   const mensaje =
     document
-    .getElementById(
-      "letter-text"
-    )
+    .getElementById("letter-text")
     .value
     .trim();
 
@@ -5790,7 +5432,7 @@ async function saveLetter(){
 
     showStatus(
       letterStatus,
-      "Escribe tu carta 💌",
+      "Escribe tu carta ❤️",
       "error"
     );
 
@@ -5891,7 +5533,7 @@ async function saveLetter(){
 
     showStatus(
       letterStatus,
-      "¡Carta guardada para siempre! 💌❤️",
+      "¡Carta guardada para siempre! ❤️",
       "success"
     );
 
@@ -6030,7 +5672,7 @@ async function loadLetters(){
           );
 
         title.textContent =
-          "💌 " +
+          "❤️ " +
           (
             letter.titulo ||
             "Una carta para ti"
@@ -6086,7 +5728,7 @@ async function loadLetters(){
           "small-button";
 
         view.textContent =
-          "💌 Leer carta";
+          "❤️ Leer carta";
 
 
         view.onclick =
@@ -6386,14 +6028,6 @@ document
 ========================================================= */
 
 async function init(){
-
-  /*
-     Primero aseguramos que la sección
-     de "Cosas que amo" se dibuje.
-  */
-
-  renderLoveItems();
-
 
   const session =
     await requireSession();
