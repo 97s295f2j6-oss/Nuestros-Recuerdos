@@ -779,10 +779,6 @@ button:disabled{
   margin-bottom:25px;
 }
 
-/* =========================================================
-   CONTADOR - 4 UNIDADES
-========================================================= */
-
 .counter-values{
   position:relative;
   z-index:1;
@@ -948,8 +944,6 @@ button:disabled{
 
   padding:25px;
 }
-
-/* FECHA SIEMPRE EN SU PROPIO RENGLÓN */
 
 .memory-date{
   display:block;
@@ -2108,8 +2102,6 @@ textarea{
     line-height:1.5;
   }
 
-  /* COSAS QUE AMO */
-
   .hannia-section{
     margin-top:5px;
   }
@@ -2179,8 +2171,6 @@ textarea{
     width:100%;
   }
 
-  /* CONTADOR */
-
   .counter-section{
     margin-top:30px;
   }
@@ -2247,8 +2237,6 @@ textarea{
     line-height:1.5;
   }
 
-  /* RECUERDOS */
-
   .memory-card{
     grid-template-columns:1fr;
 
@@ -2306,8 +2294,6 @@ textarea{
     flex-direction:column;
   }
 
-  /* FECHAS */
-
   .date-card{
     padding:21px 20px;
   }
@@ -2323,8 +2309,6 @@ textarea{
   .add-date{
     padding:23px 18px;
   }
-
-  /* LUGARES */
 
   .places-section{
     margin-top:35px;
@@ -2400,8 +2384,6 @@ textarea{
     width:100%;
   }
 
-  /* HISTORIA */
-
   #history-list{
     padding:22px 18px;
   }
@@ -2421,8 +2403,6 @@ textarea{
   .timeline-text{
     font-size:16px;
   }
-
-  /* CARTAS */
 
   .saved-letter{
     padding:21px 20px;
@@ -2466,10 +2446,6 @@ textarea{
   }
 
 }
-
-/* =========================================================
-   PANTALLAS MUY PEQUEÑAS
-========================================================= */
 
 @media(max-width:390px){
 
@@ -2534,10 +2510,6 @@ textarea{
 
 }
 
-/* =========================================================
-   ACCESIBILIDAD
-========================================================= */
-
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
@@ -2555,10 +2527,6 @@ select:focus-visible{
 <body>
 
 <div class="container">
-
-<!-- =========================================================
-     HEADER
-========================================================= -->
 
 <header class="site-header">
 
@@ -2583,10 +2551,6 @@ select:focus-visible{
   </button>
 
 </header>
-
-<!-- =========================================================
-     COSAS QUE AMO
-========================================================= -->
 
 <section
   class="hannia-section"
@@ -2695,10 +2659,6 @@ select:focus-visible{
 
 </section>
 
-<!-- =========================================================
-     CONTADOR
-========================================================= -->
-
 <section
   class="counter-section"
   id="contador">
@@ -2726,59 +2686,23 @@ select:focus-visible{
     <div class="counter-values">
 
       <div class="counter-unit">
-
-        <div
-          class="counter-number"
-          id="counter-days">
-          00
-        </div>
-
-        <div class="counter-label">
-          Días
-        </div>
-
+        <div class="counter-number" id="counter-days">00</div>
+        <div class="counter-label">Días</div>
       </div>
 
       <div class="counter-unit">
-
-        <div
-          class="counter-number"
-          id="counter-hours">
-          00
-        </div>
-
-        <div class="counter-label">
-          Horas
-        </div>
-
+        <div class="counter-number" id="counter-hours">00</div>
+        <div class="counter-label">Horas</div>
       </div>
 
       <div class="counter-unit">
-
-        <div
-          class="counter-number"
-          id="counter-minutes">
-          00
-        </div>
-
-        <div class="counter-label">
-          Minutos
-        </div>
-
+        <div class="counter-number" id="counter-minutes">00</div>
+        <div class="counter-label">Minutos</div>
       </div>
 
       <div class="counter-unit">
-
-        <div
-          class="counter-number"
-          id="counter-seconds">
-          00
-        </div>
-
-        <div class="counter-label">
-          Segundos
-        </div>
-
+        <div class="counter-number" id="counter-seconds">00</div>
+        <div class="counter-label">Segundos</div>
       </div>
 
     </div>
@@ -2791,20 +2715,12 @@ select:focus-visible{
 
 </section>
 
-<!-- =========================================================
-     RECUERDOS
-========================================================= -->
-
 <section
   class="section"
   id="recuerdos">
 
   <h2 class="section-heading">
-
-    <span>
-      📸 Recuerdos ❤️
-    </span>
-
+    <span>📸 Recuerdos ❤️</span>
   </h2>
 
   <div class="section-subtitle">
@@ -2865,17 +2781,13 @@ select:focus-visible{
       <button
         class="action"
         id="cancel-memory">
-
         Cancelar
-
       </button>
 
       <button
         class="pink-button"
         id="save-memory">
-
         ❤️ Guardar recuerdo
-
       </button>
 
     </div>
@@ -2913,20 +2825,12 @@ select:focus-visible{
 
 </section>
 
-<!-- =========================================================
-     FECHAS ESPECIALES
-========================================================= -->
-
 <section
   class="section"
   id="fechas">
 
   <h2 class="section-heading">
-
-    <span>
-      📅 Fechas especiales ❤️
-    </span>
-
+    <span>📅 Fechas especiales ❤️</span>
   </h2>
 
   <div class="section-subtitle">
@@ -2969,50 +2873,31 @@ select:focus-visible{
       class="date-form"
       id="date-form">
 
-      <label for="date-value">
-        📅 Fecha
-      </label>
+      <label for="date-value">📅 Fecha</label>
 
       <input
         id="date-value"
         type="date">
 
-      <label for="date-type">
-        ✨ Tipo
-      </label>
+      <label for="date-type">✨ Tipo</label>
 
       <select id="date-type">
 
-        <option value="especial">
-          ✨ Especial
-        </option>
-
-        <option value="cumpleaños">
-          🎂 Cumpleaños
-        </option>
-
-        <option value="aniversario">
-          ❤️ Aniversario
-        </option>
-
-        <option value="viaje">
-          ✈️ Viaje
-        </option>
+        <option value="especial">✨ Especial</option>
+        <option value="cumpleaños">🎂 Cumpleaños</option>
+        <option value="aniversario">❤️ Aniversario</option>
+        <option value="viaje">✈️ Viaje</option>
 
       </select>
 
-      <label for="date-title">
-        ❤️ Título
-      </label>
+      <label for="date-title">❤️ Título</label>
 
       <input
         id="date-title"
         maxlength="150"
         placeholder="Ej. Cumpleaños de Hannia">
 
-      <label for="date-message">
-        💌 Mensaje
-      </label>
+      <label for="date-message">💌 Mensaje</label>
 
       <textarea
         id="date-message"
@@ -3024,17 +2909,13 @@ select:focus-visible{
         <button
           class="action"
           id="cancel-date">
-
           Cancelar
-
         </button>
 
         <button
           class="pink-button"
           id="save-date">
-
           ❤️ Guardar fecha
-
         </button>
 
       </div>
@@ -3049,10 +2930,6 @@ select:focus-visible{
   </div>
 
 </section>
-
-<!-- =========================================================
-     NUESTROS LUGARES
-========================================================= -->
 
 <section
   class="places-section"
@@ -3193,17 +3070,13 @@ select:focus-visible{
         class="action"
         id="cancel-place"
         style="display:none;">
-
         Cancelar
-
       </button>
 
       <button
         class="pink-button"
         id="save-place">
-
         ❤️ Guardar lugar
-
       </button>
 
     </div>
@@ -3255,20 +3128,12 @@ select:focus-visible{
 
 </section>
 
-<!-- =========================================================
-     HISTORIA
-========================================================= -->
-
 <section
   class="section"
   id="historia">
 
   <h2 class="section-heading">
-
-    <span>
-      📖 Nuestra historia ❤️
-    </span>
-
+    <span>📖 Nuestra historia ❤️</span>
   </h2>
 
   <div class="section-subtitle">
@@ -3317,44 +3182,34 @@ select:focus-visible{
     <button
       class="pink-button"
       id="open-chapter">
-
       + Agregar capítulo
-
     </button>
 
     <div
       class="date-form"
       id="chapter-form">
 
-      <label for="chapter-date">
-        📅 Fecha
-      </label>
+      <label for="chapter-date">📅 Fecha</label>
 
       <input
         id="chapter-date"
         type="date">
 
-      <label for="chapter-title">
-        ❤️ Título
-      </label>
+      <label for="chapter-title">❤️ Título</label>
 
       <input
         id="chapter-title"
         maxlength="150"
         placeholder="Ej. El día que nos conocimos">
 
-      <label for="chapter-text">
-        💌 Nuestra historia
-      </label>
+      <label for="chapter-text">💌 Nuestra historia</label>
 
       <textarea
         id="chapter-text"
         maxlength="5000"
         placeholder="Cuéntanos qué pasó..."></textarea>
 
-      <label for="chapter-file">
-        📸 Foto opcional
-      </label>
+      <label for="chapter-file">📸 Foto opcional</label>
 
       <input
         id="chapter-file"
@@ -3376,17 +3231,13 @@ select:focus-visible{
         <button
           class="action"
           id="cancel-chapter">
-
           Cancelar
-
         </button>
 
         <button
           class="pink-button"
           id="save-chapter">
-
           ❤️ Guardar capítulo
-
         </button>
 
       </div>
@@ -3402,20 +3253,12 @@ select:focus-visible{
 
 </section>
 
-<!-- =========================================================
-     CARTAS
-========================================================= -->
-
 <section
   class="letters"
   id="cartas">
 
   <h2 class="section-heading">
-
-    <span>
-      💌 Cartas para ti ❤️
-    </span>
-
+    <span>💌 Cartas para ti ❤️</span>
   </h2>
 
   <div class="section-subtitle">
@@ -3437,9 +3280,7 @@ select:focus-visible{
     <button
       class="pink-button"
       id="open-letter-2">
-
       ✍️ Escribir una carta
-
     </button>
 
     <div
@@ -3470,17 +3311,13 @@ select:focus-visible{
         <button
           class="action"
           id="cancel-letter">
-
           Cancelar
-
         </button>
 
         <button
           class="pink-button"
           id="save-letter">
-
           ❤️ Guardar carta
-
         </button>
 
       </div>
@@ -3512,10 +3349,6 @@ select:focus-visible{
 
 </section>
 
-<!-- =========================================================
-     FUTURO
-========================================================= -->
-
 <div class="card future">
 
   <h2>
@@ -3538,9 +3371,7 @@ select:focus-visible{
 <button
   class="logout"
   id="logout">
-
   Cerrar sesión
-
 </button>
 
 <div class="footer">
@@ -3548,10 +3379,6 @@ select:focus-visible{
 </div>
 
 </div>
-
-<!-- =========================================================
-     MODAL RECUERDO
-========================================================= -->
 
 <div
   class="modal"
@@ -3563,9 +3390,7 @@ select:focus-visible{
     <button
       class="close"
       data-close="memory-modal">
-
       ×
-
     </button>
 
     <div
@@ -3573,9 +3398,7 @@ select:focus-visible{
       id="modal-memory-date">
     </div>
 
-    <h2
-      id="modal-memory-title">
-    </h2>
+    <h2 id="modal-memory-title"></h2>
 
     <div class="modal-line"></div>
 
@@ -3599,10 +3422,6 @@ select:focus-visible{
 
 </div>
 
-<!-- =========================================================
-     MODAL CARTA
-========================================================= -->
-
 <div
   class="modal"
   id="letter-modal"
@@ -3613,9 +3432,7 @@ select:focus-visible{
     <button
       class="close"
       data-close="letter-modal">
-
       ×
-
     </button>
 
     <div
@@ -3623,9 +3440,7 @@ select:focus-visible{
       id="modal-letter-date">
     </div>
 
-    <h2
-      id="modal-letter-title">
-    </h2>
+    <h2 id="modal-letter-title"></h2>
 
     <div
       class="modal-author"
@@ -3944,7 +3759,8 @@ setInterval(
 );
 
 /* =========================================================
-   ❤️ COSAS QUE AMO - SUPABASE
+   ❤️ COSAS QUE AMO
+   DATOS COMPARTIDOS
 ========================================================= */
 
 const loveForm =
@@ -3973,6 +3789,18 @@ document.getElementById("cancel-love");
 
 const LOVE_STORAGE_KEY =
 "hannia_cosas_que_amo_v1";
+
+/*
+=========================================================
+IMPORTANTE:
+
+Los registros de "cosas_que_amo" ahora se consultan
+SIN .eq("user_id", session.user.id).
+
+Eso permite que todos los usuarios autorizados
+por las políticas RLS de Supabase vean la lista completa.
+=========================================================
+*/
 
 async function migrateLoveItems(){
 
@@ -4030,10 +3858,6 @@ async function migrateLoveItems(){
     .from("cosas_que_amo")
     .select(
       "titulo,descripcion,emoji"
-    )
-    .eq(
-      "user_id",
-      session.user.id
     );
 
   if(error){
@@ -4148,10 +3972,6 @@ async function editLoveItem(id){
       "id",
       id
     )
-    .eq(
-      "user_id",
-      session.user.id
-    )
     .single();
 
   if(error || !data){
@@ -4212,10 +4032,6 @@ async function deleteLoveItem(id){
     .eq(
       "id",
       id
-    )
-    .eq(
-      "user_id",
-      session.user.id
     );
 
   if(error){
@@ -4335,6 +4151,21 @@ async function loadLoveItems(){
 
   loveList.innerHTML = "";
 
+  /*
+  =========================================================
+  CAMBIO PRINCIPAL
+
+  ANTES:
+    .eq("user_id", session.user.id)
+
+  AHORA:
+    SIN FILTRO POR user_id
+
+  Así Hannia puede ver lo que tú guardaste
+  y tú puedes ver lo que Hannia guardó.
+  =========================================================
+  */
+
   const {
     data,
     error
@@ -4342,10 +4173,6 @@ async function loadLoveItems(){
     await supabaseClient
     .from("cosas_que_amo")
     .select("*")
-    .eq(
-      "user_id",
-      session.user.id
-    )
     .order(
       "created_at",
       {
@@ -4373,7 +4200,8 @@ async function loadLoveItems(){
         </h3>
 
         <p>
-          Revisa la conexión con Supabase.
+          Revisa la conexión con Supabase
+          y las políticas de acceso.
         </p>
 
       </div>
@@ -4398,9 +4226,7 @@ async function loadLoveItems(){
         </h3>
 
         <p>
-          Todavía no has agregado ninguno.
-          Escribe arriba las cosas que amas de Hannia
-          y aparecerán aquí.
+          Todavía no han agregado ninguno.
         </p>
 
       </div>
@@ -4482,10 +4308,6 @@ async function(){
         .eq(
           "id",
           editingLoveId
-        )
-        .eq(
-          "user_id",
-          session.user.id
         );
 
       if(error){
@@ -4563,7 +4385,8 @@ cancelLoveButton.onclick =
 resetLoveForm;
 
 /* =========================================================
-   🌎 NUESTROS LUGARES - SUPABASE
+   🌎 NUESTROS LUGARES
+   DATOS COMPARTIDOS
 ========================================================= */
 
 const placeName =
@@ -4662,6 +4485,12 @@ async function migratePlaces(){
     return;
   }
 
+  /*
+  CAMBIO:
+  Se revisan todos los lugares, no solamente
+  los pertenecientes al usuario actual.
+  */
+
   const {
     data:existing,
     error
@@ -4670,10 +4499,6 @@ async function migratePlaces(){
     .from("lugares")
     .select(
       "nombre,ubicacion,tipo,fecha"
-    )
-    .eq(
-      "user_id",
-      session.user.id
     );
 
   if(error){
@@ -4811,10 +4636,6 @@ async function editPlace(id){
       "id",
       id
     )
-    .eq(
-      "user_id",
-      session.user.id
-    )
     .single();
 
   if(error || !data){
@@ -4886,10 +4707,6 @@ async function deletePlace(id){
     .eq(
       "id",
       id
-    )
-    .eq(
-      "user_id",
-      session.user.id
     );
 
   if(error){
@@ -5184,6 +5001,26 @@ async function loadPlaces(){
   visited.innerHTML = "";
   pending.innerHTML = "";
 
+  /*
+  =========================================================
+  CAMBIO PRINCIPAL
+
+  ANTES:
+
+  .eq(
+    "user_id",
+    session.user.id
+  )
+
+  AHORA:
+
+  NO se filtra por user_id.
+
+  Por lo tanto, Hannia verá tus lugares y tú
+  verás los lugares que ella agregue.
+  =========================================================
+  */
+
   const {
     data,
     error
@@ -5191,10 +5028,6 @@ async function loadPlaces(){
     await supabaseClient
     .from("lugares")
     .select("*")
-    .eq(
-      "user_id",
-      session.user.id
-    )
     .order(
       "created_at",
       {
@@ -5223,7 +5056,8 @@ async function loadPlaces(){
         </h3>
 
         <p>
-          Revisa la conexión con Supabase.
+          Revisa la conexión con Supabase
+          y las políticas de acceso.
         </p>
 
       </div>
@@ -5443,10 +5277,6 @@ async function(){
         .eq(
           "id",
           editingPlaceId
-        )
-        .eq(
-          "user_id",
-          session.user.id
         );
 
       if(error){
@@ -5721,10 +5551,6 @@ document
   .onclick =
     resetMemoryForm;
 
-/* =========================================================
-   GUARDAR RECUERDO
-========================================================= */
-
 async function saveMemory(){
 
   const session =
@@ -5917,10 +5743,6 @@ document
   .onclick =
     saveMemory;
 
-/* =========================================================
-   CARGAR RECUERDOS
-========================================================= */
-
 async function loadMemories(){
 
   const box =
@@ -6028,10 +5850,8 @@ async function loadMemories(){
         image.loading = "lazy";
 
         if(!url){
-
           image.style.display =
             "none";
-
         }
 
         imageWrap.appendChild(
@@ -7237,6 +7057,7 @@ async function loadHistory(){
           item.appendChild(
             image
           );
+
         }
 
         const actions =
@@ -8027,17 +7848,9 @@ async function init(){
     return;
   }
 
-  /*
-     Primero migramos los datos antiguos.
-  */
-
   await migrateLoveItems();
 
   await migratePlaces();
-
-  /*
-     Después cargamos todo.
-  */
 
   await Promise.all([
 
