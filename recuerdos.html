@@ -28,6 +28,7 @@ html{
 body{
   min-height:100vh;
   overflow-x:hidden;
+
   background:
     radial-gradient(
       circle at 50% -10%,
@@ -36,7 +37,9 @@ body{
       #0b080d 65%,
       #050507 100%
     );
+
   color:#fff;
+
   font-family:
     Georgia,
     "Times New Roman",
@@ -85,7 +88,11 @@ button:disabled{
   align-items:center;
   justify-content:space-between;
   gap:20px;
-  padding:4px 2px 28px;
+
+  padding:
+    4px
+    2px
+    28px;
 }
 
 .brand{
@@ -105,24 +112,28 @@ button:disabled{
   letter-spacing:.2px;
 }
 
-.brand h1 span{
-  display:inline;
-}
-
 .add-top{
   border:0;
+
   border-radius:40px;
-  padding:13px 24px;
+
+  padding:
+    13px
+    24px;
+
   color:#fff;
+
   background:
     linear-gradient(
       135deg,
       #b83f68,
       #852744
     );
+
   box-shadow:
     0 10px 30px
     rgba(190,55,100,.22);
+
   transition:.2s;
 }
 
@@ -139,16 +150,20 @@ button:disabled{
   border:
     1px solid
     rgba(255,255,255,.13);
+
   border-radius:22px;
+
   background:
     linear-gradient(
       145deg,
       rgba(27,18,24,.92),
       rgba(11,9,12,.95)
     );
+
   box-shadow:
     0 20px 55px
     rgba(0,0,0,.35);
+
   backdrop-filter:blur(10px);
   -webkit-backdrop-filter:blur(10px);
 }
@@ -160,18 +175,26 @@ button:disabled{
 
 .pink-button{
   border:0;
+
   border-radius:40px;
-  padding:13px 25px;
+
+  padding:
+    13px
+    25px;
+
   color:#fff;
+
   background:
     linear-gradient(
       135deg,
       #c54370,
       #922c51
     );
+
   box-shadow:
     0 10px 30px
     rgba(194,60,105,.20);
+
   transition:.2s;
 }
 
@@ -183,11 +206,18 @@ button:disabled{
   border:
     1px solid
     rgba(184,58,96,.65);
+
   border-radius:30px;
-  padding:10px 20px;
+
+  padding:
+    10px
+    20px;
+
   color:#d98ba5;
+
   background:
     rgba(130,32,63,.08);
+
   transition:.2s;
 }
 
@@ -200,11 +230,18 @@ button:disabled{
   border:
     1px solid
     rgba(177,54,91,.58);
+
   border-radius:30px;
-  padding:10px 20px;
+
+  padding:
+    10px
+    20px;
+
   background:
     rgba(105,27,51,.07);
+
   color:#d58aa2;
+
   transition:.2s;
 }
 
@@ -216,6 +253,7 @@ button:disabled{
 .action.delete{
   border-color:
     rgba(155,48,65,.52);
+
   color:#cc8796;
 }
 
@@ -226,13 +264,23 @@ button:disabled{
 
 .letter-hero{
   position:relative;
+
   min-height:240px;
+
   overflow:hidden;
-  padding:34px 300px 34px 30px;
+
+  padding:
+    34px
+    300px
+    34px
+    30px;
+
   border:
     1px solid
     rgba(194,57,96,.72);
+
   border-radius:20px;
+
   background:
     linear-gradient(
       120deg,
@@ -248,24 +296,34 @@ button:disabled{
       4.5vw,
       42px
     );
+
   line-height:1.15;
+
   margin-bottom:15px;
 }
 
 .letter-hero p{
   color:#d0c3c9;
+
   font-size:18px;
+
   line-height:1.6;
+
   max-width:550px;
+
   margin-bottom:22px;
 }
 
 .envelope-art{
   position:absolute;
+
   right:38px;
   top:50%;
+
   transform:translateY(-50%);
+
   font-size:125px;
+
   filter:
     drop-shadow(
       0 15px 25px
@@ -285,22 +343,32 @@ button:disabled{
 .section-heading{
   display:flex;
   align-items:center;
+
   gap:15px;
-  margin:0 0 8px;
+
+  margin:
+    0
+    0
+    8px;
+
   font-size:
     clamp(
       29px,
       4vw,
       38px
     );
+
   text-align:center;
 }
 
 .section-heading:before,
 .section-heading:after{
   content:"";
+
   height:1px;
+
   flex:1;
+
   background:
     linear-gradient(
       90deg,
@@ -324,9 +392,326 @@ button:disabled{
 
 .section-subtitle{
   text-align:center;
+
   color:#a99ba2;
+
   font-size:17px;
+
   margin-bottom:22px;
+}
+
+
+/* =========================================================
+   SOLO DE HANNIA
+========================================================= */
+
+.hannia-section{
+  margin-top:38px;
+}
+
+.hannia-intro{
+  padding:
+    38px
+    25px
+    30px;
+
+  text-align:center;
+
+  border:
+    1px solid
+    rgba(194,57,96,.72);
+
+  border-radius:24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(37,13,25,.97),
+      rgba(12,9,13,.98)
+    );
+
+  box-shadow:
+    0 20px 60px
+    rgba(0,0,0,.35);
+}
+
+.hannia-heart{
+  font-size:68px;
+
+  line-height:1;
+
+  margin-bottom:20px;
+
+  filter:
+    drop-shadow(
+      0 10px 20px
+      rgba(220,50,90,.30)
+    );
+}
+
+.hannia-intro h2{
+  font-size:
+    clamp(
+      32px,
+      6vw,
+      48px
+    );
+
+  line-height:1.15;
+
+  margin-bottom:14px;
+}
+
+.hannia-intro h2 span{
+  color:#fff;
+}
+
+.hannia-line{
+  width:80px;
+
+  height:1px;
+
+  margin:
+    22px
+    auto;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #c34c70,
+      transparent
+    );
+}
+
+.hannia-intro p{
+  max-width:720px;
+
+  margin:auto;
+
+  color:#cfc1c8;
+
+  font-size:18px;
+
+  line-height:1.75;
+}
+
+
+/* =========================================================
+   FORMULARIO COSAS QUE AMO
+========================================================= */
+
+.love-form{
+  margin-top:18px;
+
+  padding:25px;
+}
+
+.love-form h3{
+  font-size:25px;
+
+  margin-bottom:6px;
+}
+
+.love-form-subtitle{
+  color:#a99ba2;
+
+  font-size:15px;
+
+  line-height:1.5;
+
+  margin-bottom:20px;
+}
+
+.love-form-grid{
+  display:grid;
+
+  grid-template-columns:
+    100px
+    1fr;
+
+  gap:12px;
+}
+
+.love-emoji-field{
+  text-align:center;
+}
+
+.love-emoji-field label{
+  text-align:center;
+}
+
+.love-emoji-field input{
+  text-align:center;
+
+  font-size:28px;
+
+  padding:
+    10px
+    5px;
+}
+
+.love-form-buttons{
+  display:flex;
+
+  gap:10px;
+
+  margin-top:18px;
+}
+
+.love-form-buttons>*{
+  flex:1;
+}
+
+
+/* =========================================================
+   LISTA COSAS QUE AMO
+========================================================= */
+
+.love-list{
+  display:grid;
+
+  gap:15px;
+
+  margin-top:18px;
+}
+
+.love-card{
+  display:grid;
+
+  grid-template-columns:
+    120px
+    1fr;
+
+  align-items:center;
+
+  gap:20px;
+
+  min-height:180px;
+
+  padding:
+    25px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.13);
+
+  border-radius:22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(27,18,24,.92),
+      rgba(11,9,12,.95)
+    );
+
+  transition:.2s;
+}
+
+.love-card:hover{
+  border-color:
+    rgba(190,59,99,.72);
+
+  transform:
+    translateY(-2px);
+}
+
+.love-icon{
+  width:90px;
+  height:90px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  margin:auto;
+
+  border-radius:50%;
+
+  background:
+    rgba(128,30,63,.16);
+
+  font-size:48px;
+
+  box-shadow:
+    inset 0 0 25px
+    rgba(190,50,90,.08);
+}
+
+.love-content{
+  min-width:0;
+}
+
+.love-title{
+  color:#fff;
+
+  font-size:27px;
+
+  line-height:1.25;
+
+  margin-bottom:9px;
+}
+
+.love-description{
+  color:#c7bbc1;
+
+  font-size:17px;
+
+  line-height:1.7;
+
+  white-space:pre-wrap;
+}
+
+.love-actions{
+  display:flex;
+
+  gap:8px;
+
+  margin-top:17px;
+
+  flex-wrap:wrap;
+}
+
+.love-actions button{
+  flex:1;
+}
+
+.empty-love{
+  padding:35px 25px;
+
+  text-align:center;
+
+  color:#a99ba2;
+
+  border:
+    1px dashed
+    rgba(194,57,96,.45);
+
+  border-radius:20px;
+
+  background:
+    rgba(20,10,16,.45);
+}
+
+.empty-love-heart{
+  font-size:42px;
+
+  margin-bottom:10px;
+}
+
+.empty-love h3{
+  color:#fff;
+
+  font-size:23px;
+
+  margin-bottom:8px;
+}
+
+.empty-love p{
+  font-size:16px;
+
+  line-height:1.6;
 }
 
 
@@ -336,19 +721,30 @@ button:disabled{
 
 .memories{
   display:grid;
+
   gap:15px;
 }
 
 .memory-card{
   display:grid;
-  grid-template-columns:50% 50%;
+
+  grid-template-columns:
+    50%
+    50%;
+
   min-height:270px;
+
   overflow:hidden;
+
   border:
     1px solid
     rgba(135,44,75,.58);
+
   border-radius:20px;
-  background:#0d0a0e;
+
+  background:
+    #0d0a0e;
+
   transition:.2s;
 }
 
@@ -359,16 +755,22 @@ button:disabled{
 
 .memory-image-wrap{
   min-height:270px;
+
   overflow:hidden;
+
   background:#08070a;
 }
 
 .memory-image{
   display:block;
+
   width:100%;
   height:100%;
+
   min-height:270px;
+
   object-fit:cover;
+
   transition:.35s;
 }
 
@@ -380,42 +782,60 @@ button:disabled{
   display:flex;
   flex-direction:column;
   align-items:flex-start;
-  padding:24px 25px;
+
+  padding:
+    24px
+    25px;
 }
 
 .memory-date{
   color:#d15a7e;
+
   text-transform:uppercase;
+
   letter-spacing:3px;
+
   font-size:12px;
+
   margin-bottom:10px;
 }
 
 .memory-title{
   color:#fff;
+
   font-size:27px;
+
   line-height:1.2;
+
   margin-bottom:12px;
 }
 
 .memory-desc{
   color:#c7bbc1;
+
   font-size:17px;
+
   line-height:1.65;
+
   white-space:pre-wrap;
 }
 
 .memory-actions{
   display:flex;
+
   gap:8px;
+
   width:100%;
+
   margin-top:auto;
+
   padding-top:18px;
 }
 
 .memory-actions .action,
 .memory-actions .small-button{
   flex:1;
+
   text-align:center;
 }
 
@@ -426,8 +846,13 @@ button:disabled{
 
 .center-action{
   display:flex;
+
   justify-content:center;
-  margin:17px 0 0;
+
+  margin:
+    17px
+    0
+    0;
 }
 
 #show-all-memories{
@@ -436,12 +861,14 @@ button:disabled{
 
 
 /* =========================================================
-   FORMULARIOS
+   FORMULARIOS GENERALES
 ========================================================= */
 
 .form-panel{
   display:none;
+
   padding:24px;
+
   margin-bottom:17px;
 }
 
@@ -451,22 +878,35 @@ button:disabled{
 
 label{
   display:block;
+
   color:#cdbec5;
+
   font-size:14px;
-  margin:16px 0 7px;
+
+  margin:
+    16px
+    0
+    7px;
 }
 
 input,
 textarea,
 select{
   width:100%;
+
   border:
     1px solid
     rgba(255,255,255,.14);
+
   border-radius:13px;
-  background:#100b10;
+
+  background:
+    #100b10;
+
   color:#fff;
+
   padding:13px;
+
   outline:none;
 }
 
@@ -479,6 +919,7 @@ input:focus,
 textarea:focus,
 select:focus{
   border-color:#bd4b70;
+
   box-shadow:
     0 0 0 3px
     rgba(190,65,105,.08);
@@ -486,13 +927,17 @@ select:focus{
 
 textarea{
   min-height:130px;
+
   resize:vertical;
+
   line-height:1.6;
 }
 
 .form-row{
   display:flex;
+
   gap:10px;
+
   margin-top:20px;
 }
 
@@ -502,9 +947,13 @@ textarea{
 
 .status{
   display:none;
+
   margin-top:15px;
+
   padding:12px;
+
   border-radius:12px;
+
   text-align:center;
 }
 
@@ -515,19 +964,24 @@ textarea{
 .status.success{
   background:
     rgba(70,160,105,.10);
+
   color:#91d7ab;
 }
 
 .status.error{
   background:
     rgba(190,45,65,.10);
+
   color:#ff9aa9;
 }
 
 .preview{
   display:none;
+
   margin-top:15px;
+
   overflow:hidden;
+
   border-radius:17px;
 }
 
@@ -537,8 +991,11 @@ textarea{
 
 .preview img{
   width:100%;
+
   max-height:350px;
+
   object-fit:cover;
+
   display:block;
 }
 
@@ -549,68 +1006,96 @@ textarea{
 
 .dates{
   display:grid;
+
   gap:14px;
 }
 
 .date-card{
   position:relative;
-  padding:23px 25px;
+
+  padding:
+    23px
+    25px;
+
   overflow:hidden;
 }
 
 .date-card:after{
   content:"❤️";
+
   position:absolute;
+
   right:23px;
   top:19px;
+
   font-size:34px;
+
   opacity:.12;
 }
 
 .date-top{
   display:flex;
+
   gap:15px;
+
   align-items:flex-start;
 }
 
 .date-icon{
   font-size:32px;
+
   line-height:1;
 }
 
 .date-title{
   color:#fff;
+
   font-size:26px;
+
   line-height:1.2;
+
   margin-bottom:8px;
+
   padding-right:40px;
 }
 
 .date-message{
   color:#c2b6bd;
+
   font-size:16px;
+
   line-height:1.65;
 }
 
 .date-label{
   color:#d15a7e;
+
   text-transform:uppercase;
+
   letter-spacing:3px;
+
   font-size:12px;
+
   margin-bottom:9px;
 }
 
 .date-actions{
   display:flex;
+
   gap:8px;
+
   flex-wrap:wrap;
+
   margin-top:15px;
 }
 
 .add-date{
   text-align:center;
+
   padding:25px;
+
   margin-top:15px;
+
   border-color:
     rgba(165,49,84,.48);
 }
@@ -621,13 +1106,20 @@ textarea{
 
 .add-date p{
   color:#a99da3;
+
   line-height:1.6;
-  margin:9px 0 19px;
+
+  margin:
+    9px
+    0
+    19px;
 }
 
 .date-form{
   display:none;
+
   text-align:left;
+
   margin-top:20px;
 }
 
@@ -646,7 +1138,9 @@ textarea{
 
 .timeline{
   position:relative;
+
   padding-left:30px;
+
   border-left:
     1px solid
     #653044;
@@ -654,6 +1148,7 @@ textarea{
 
 .timeline-item{
   position:relative;
+
   margin-bottom:42px;
 }
 
@@ -663,39 +1158,58 @@ textarea{
 
 .timeline-item:before{
   content:"♥";
+
   position:absolute;
+
   left:-43px;
   top:-3px;
+
   width:25px;
   height:25px;
+
   display:flex;
+
   align-items:center;
   justify-content:center;
+
   color:#d4577e;
+
   background:#120b10;
+
   border-radius:50%;
+
   font-size:14px;
 }
 
 .timeline-title{
   font-size:27px;
+
   line-height:1.2;
+
   margin-bottom:10px;
 }
 
 .timeline-text{
   color:#c4b9bf;
+
   font-size:17px;
+
   line-height:1.75;
+
   white-space:pre-wrap;
 }
 
 .history-image{
   display:block;
+
   width:100%;
+
   max-height:430px;
+
   object-fit:cover;
+
   border-radius:17px;
+
   margin-top:18px;
 }
 
@@ -710,230 +1224,86 @@ textarea{
 
 .letter-list{
   display:grid;
+
   gap:14px;
 }
 
 .saved-letter{
   position:relative;
-  padding:23px 25px;
+
+  padding:
+    23px
+    25px;
+
   overflow:hidden;
 }
 
 .saved-letter:before{
   content:"💌";
+
   position:absolute;
+
   right:23px;
   top:17px;
+
   font-size:31px;
+
   opacity:.13;
 }
 
 .saved-letter h3{
   font-size:26px;
+
   line-height:1.25;
+
   margin-bottom:8px;
+
   padding-right:45px;
 }
 
 .letter-author{
   color:#91868d;
+
   font-size:13px;
+
   margin-bottom:14px;
 }
 
 .letter-preview{
   color:#cec4c9;
+
   font-size:17px;
+
   line-height:1.75;
+
   font-style:italic;
+
   white-space:pre-wrap;
+
   display:-webkit-box;
+
   -webkit-line-clamp:3;
+
   -webkit-box-orient:vertical;
+
   overflow:hidden;
 }
 
 .letter-actions{
   display:flex;
+
   gap:8px;
+
   margin-top:16px;
+
   flex-wrap:wrap;
 }
 
 .letter-actions .action,
 .letter-actions .small-button{
   flex:1;
+
   text-align:center;
-}
-
-
-/* =========================================================
-   SOLO DE HANNIA ❤️
-========================================================= */
-
-.hannia-section{
-  margin-top:48px;
-}
-
-.hannia-card{
-  position:relative;
-  overflow:hidden;
-  padding:35px 30px;
-  border:
-    1px solid
-    rgba(190,59,98,.58);
-  border-radius:22px;
-  background:
-    radial-gradient(
-      circle at 90% 5%,
-      rgba(177,48,89,.14),
-      transparent 32%
-    ),
-    linear-gradient(
-      145deg,
-      rgba(27,18,24,.94),
-      rgba(11,9,12,.97)
-    );
-  box-shadow:
-    0 20px 55px
-    rgba(0,0,0,.35);
-}
-
-.hannia-header{
-  text-align:center;
-  margin-bottom:30px;
-}
-
-.hannia-emoji{
-  font-size:48px;
-  margin-bottom:10px;
-  filter:
-    drop-shadow(
-      0 8px 18px
-      rgba(190,50,90,.20)
-    );
-}
-
-.hannia-header h2{
-  font-size:
-    clamp(
-      30px,
-      4.5vw,
-      40px
-    );
-  line-height:1.15;
-  margin-bottom:12px;
-}
-
-.hannia-divider{
-  width:75px;
-  height:1px;
-  margin:18px auto;
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      #b8496d,
-      transparent
-    );
-}
-
-.hannia-header p{
-  max-width:650px;
-  margin:auto;
-  color:#bcaeb5;
-  font-size:17px;
-  line-height:1.7;
-}
-
-.hannia-list{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-}
-
-.hannia-item{
-  display:flex;
-  align-items:center;
-  gap:16px;
-  min-height:110px;
-  padding:20px;
-  border:
-    1px solid
-    rgba(255,255,255,.09);
-  border-radius:18px;
-  background:
-    rgba(255,255,255,.025);
-  transition:
-    transform .25s,
-    border-color .25s,
-    background .25s;
-}
-
-.hannia-item:hover{
-  transform:translateY(-3px);
-  border-color:
-    rgba(190,59,99,.55);
-  background:
-    rgba(150,40,75,.07);
-}
-
-.hannia-icon{
-  flex-shrink:0;
-  width:58px;
-  height:58px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background:
-    rgba(178,52,91,.12);
-  font-size:29px;
-}
-
-.hannia-item h3{
-  color:#fff;
-  font-size:20px;
-  line-height:1.25;
-  margin-bottom:5px;
-}
-
-.hannia-item p{
-  color:#a99da3;
-  font-size:15px;
-  line-height:1.5;
-}
-
-.hannia-message{
-  position:relative;
-  margin-top:20px;
-  padding:25px;
-  text-align:center;
-  border:
-    1px solid
-    rgba(190,59,98,.22);
-  border-radius:18px;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(170,47,84,.10),
-      rgba(255,255,255,.025)
-    );
-}
-
-.hannia-message p{
-  max-width:720px;
-  margin:auto;
-  color:#d5c9cf;
-  font-size:17px;
-  line-height:1.8;
-  font-style:italic;
-}
-
-.hannia-heart{
-  display:block;
-  margin-top:12px;
-  font-size:28px;
 }
 
 
@@ -943,45 +1313,71 @@ textarea{
 
 .future{
   position:relative;
+
   overflow:hidden;
+
   text-align:center;
-  padding:43px 25px;
+
+  padding:
+    43px
+    25px;
+
   margin-top:48px;
 }
 
 .future:before{
   content:"❤️";
+
   position:absolute;
+
   left:7%;
+
   top:15px;
+
   font-size:100px;
+
   opacity:.07;
 }
 
 .future:after{
   content:"❤️";
+
   position:absolute;
+
   right:7%;
+
   bottom:10px;
+
   font-size:100px;
+
   opacity:.07;
 }
 
 .future h2{
   position:relative;
+
   z-index:1;
+
   font-size:31px;
+
   line-height:1.2;
+
   margin-bottom:16px;
 }
 
 .future p{
   position:relative;
+
   z-index:1;
+
   max-width:750px;
+
   margin:auto;
+
   color:#c4b8be;
+
   font-size:18px;
+
   line-height:1.8;
 }
 
@@ -992,20 +1388,34 @@ textarea{
 
 .logout{
   display:block;
-  margin:35px auto 0;
+
+  margin:
+    35px
+    auto
+    0;
+
   border:
     1px solid
     rgba(255,255,255,.14);
+
   border-radius:30px;
-  padding:11px 23px;
+
+  padding:
+    11px
+    23px;
+
   color:#9d9298;
+
   background:transparent;
 }
 
 .footer{
   text-align:center;
+
   color:#655c62;
+
   font-size:13px;
+
   margin-top:25px;
 }
 
@@ -1016,49 +1426,74 @@ textarea{
 
 .modal{
   position:fixed;
+
   inset:0;
+
   z-index:9999;
+
   display:flex;
+
   align-items:center;
   justify-content:center;
+
   padding:15px;
+
   background:
     rgba(3,2,5,.88);
+
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
+
   opacity:0;
+
   visibility:hidden;
+
   transition:.25s;
 }
 
 .modal.active{
   opacity:1;
+
   visibility:visible;
 }
 
 .modal-box{
   position:relative;
+
   width:100%;
+
   max-width:850px;
+
   max-height:92vh;
+
   overflow:auto;
-  padding:38px 30px 40px;
+
+  padding:
+    38px
+    30px
+    40px;
+
   border-radius:25px;
+
   background:
     linear-gradient(
       145deg,
       #191116,
       #0d090d
     );
+
   border:
     1px solid
     rgba(190,59,98,.52);
+
   box-shadow:
     0 30px 90px
     rgba(0,0,0,.70);
+
   transform:
     translateY(20px)
     scale(.98);
+
   transition:.3s;
 }
 
@@ -1068,60 +1503,88 @@ textarea{
 
 .close{
   position:absolute;
+
   right:15px;
   top:13px;
+
   width:40px;
   height:40px;
+
   border-radius:50%;
+
   border:
     1px solid
     rgba(255,255,255,.14);
+
   color:#fff;
+
   background:
     rgba(255,255,255,.06);
+
   font-size:23px;
 }
 
 .modal-date{
   text-align:center;
+
   color:#d25b7f;
+
   text-transform:uppercase;
+
   letter-spacing:3px;
+
   font-size:12px;
+
   margin-bottom:12px;
 }
 
 .modal h2{
   text-align:center;
+
   font-size:
     clamp(
       31px,
       6vw,
       52px
     );
+
   line-height:1.15;
+
   margin-bottom:18px;
 }
 
 .modal-author{
   text-align:center;
+
   color:#9e9299;
+
   font-size:14px;
+
   margin-bottom:25px;
 }
 
 .modal-line{
   width:70px;
+
   height:1px;
+
   background:#91465f;
-  margin:0 auto 27px;
+
+  margin:
+    0
+    auto
+    27px;
 }
 
 .modal-text{
   color:#d9cfd4;
+
   font-size:19px;
+
   line-height:1.9;
+
   white-space:pre-wrap;
+
   font-style:italic;
 }
 
@@ -1133,7 +1596,10 @@ textarea{
 @media(max-width:700px){
 
   .container{
-    padding:18px 14px 50px;
+    padding:
+      18px
+      14px
+      50px;
   }
 
   .site-header{
@@ -1153,13 +1619,20 @@ textarea{
   }
 
   .add-top{
-    padding:11px 17px;
+    padding:
+      11px
+      17px;
+
     font-size:14px;
   }
 
   .letter-hero{
     min-height:310px;
-    padding:27px 22px 125px;
+
+    padding:
+      27px
+      22px
+      125px;
   }
 
   .letter-hero h2{
@@ -1172,9 +1645,12 @@ textarea{
 
   .envelope-art{
     font-size:90px;
+
     right:22px;
     bottom:10px;
+
     top:auto;
+
     transform:none;
   }
 
@@ -1184,36 +1660,129 @@ textarea{
 
   .section-heading{
     gap:8px;
+
     font-size:29px;
   }
 
   .section-heading span{
     white-space:normal;
+
     line-height:1.15;
   }
 
   .section-subtitle{
     font-size:15px;
+
     line-height:1.5;
   }
 
+
+  /* SOLO HANNIA */
+
+  .hannia-section{
+    margin-top:30px;
+  }
+
+  .hannia-intro{
+    padding:
+      32px
+      18px
+      27px;
+  }
+
+  .hannia-heart{
+    font-size:58px;
+
+    margin-bottom:15px;
+  }
+
+  .hannia-intro h2{
+    font-size:32px;
+  }
+
+  .hannia-intro p{
+    font-size:16px;
+
+    line-height:1.7;
+  }
+
+  .love-form{
+    padding:
+      21px
+      18px;
+  }
+
+  .love-form h3{
+    font-size:23px;
+  }
+
+  .love-form-grid{
+    grid-template-columns:80px 1fr;
+  }
+
+  .love-form-buttons{
+    flex-direction:column;
+  }
+
+  .love-card{
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+    padding:
+      24px
+      19px;
+  }
+
+  .love-icon{
+    width:82px;
+    height:82px;
+
+    font-size:42px;
+  }
+
+  .love-title{
+    font-size:24px;
+  }
+
+  .love-description{
+    font-size:16px;
+  }
+
+  .love-actions{
+    flex-direction:column;
+  }
+
+  .love-actions button{
+    width:100%;
+  }
+
+
+  /* RECUERDOS */
+
   .memory-card{
     grid-template-columns:1fr;
+
     min-height:0;
   }
 
   .memory-image-wrap{
     height:280px;
+
     min-height:280px;
   }
 
   .memory-image{
     height:280px;
+
     min-height:280px;
   }
 
   .memory-info{
-    padding:20px 20px 21px;
+    padding:
+      20px
+      20px
+      21px;
   }
 
   .memory-title{
@@ -1230,12 +1799,16 @@ textarea{
 
   .memory-actions .action,
   .memory-actions .small-button{
-    padding:10px 12px;
+    padding:
+      10px
+      12px;
+
     font-size:14px;
   }
 
   #show-all-memories{
     min-width:0;
+
     width:100%;
   }
 
@@ -1244,7 +1817,9 @@ textarea{
   }
 
   .date-card{
-    padding:21px 20px;
+    padding:
+      21px
+      20px;
   }
 
   .date-title{
@@ -1280,7 +1855,9 @@ textarea{
   }
 
   .saved-letter{
-    padding:21px 20px;
+    padding:
+      21px
+      20px;
   }
 
   .saved-letter h3{
@@ -1295,66 +1872,10 @@ textarea{
     flex-direction:row;
   }
 
-
-  /* SOLO DE HANNIA */
-
-  .hannia-section{
-    margin-top:38px;
-  }
-
-  .hannia-card{
-    padding:28px 18px;
-  }
-
-  .hannia-emoji{
-    font-size:42px;
-  }
-
-  .hannia-header h2{
-    font-size:30px;
-  }
-
-  .hannia-header p{
-    font-size:15px;
-    line-height:1.6;
-  }
-
-  .hannia-list{
-    grid-template-columns:1fr;
-    gap:12px;
-  }
-
-  .hannia-item{
-    min-height:95px;
-    padding:17px;
-  }
-
-  .hannia-icon{
-    width:52px;
-    height:52px;
-    font-size:26px;
-  }
-
-  .hannia-item h3{
-    font-size:18px;
-  }
-
-  .hannia-item p{
-    font-size:14px;
-  }
-
-  .hannia-message{
-    padding:21px 17px;
-  }
-
-  .hannia-message p{
-    font-size:15px;
-    line-height:1.75;
-  }
-
-
   .future{
-    padding:35px 20px;
+    padding:
+      35px
+      20px;
   }
 
   .future h2{
@@ -1366,7 +1887,10 @@ textarea{
   }
 
   .modal-box{
-    padding:37px 21px 30px;
+    padding:
+      37px
+      21px
+      30px;
   }
 
   .modal h2{
@@ -1375,6 +1899,7 @@ textarea{
 
   .modal-text{
     font-size:17px;
+
     line-height:1.8;
   }
 
@@ -1392,7 +1917,10 @@ textarea{
   }
 
   .add-top{
-    padding:10px 13px;
+    padding:
+      10px
+      13px;
+
     font-size:13px;
   }
 
@@ -1434,14 +1962,15 @@ textarea{
   <div class="brand">
 
     <div class="brand-heart">
-      💌
+      ❤️
     </div>
 
     <h1>
-      Cartas &amp; Recuerdos ❤️
+      Solo de Hannia ❤️
     </h1>
 
   </div>
+
 
   <button
     class="add-top"
@@ -1481,8 +2010,143 @@ textarea{
 
   </div>
 
+
   <div class="envelope-art">
-    💌
+    ❤️
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SOLO DE HANNIA
+========================================================= -->
+
+<section
+  class="hannia-section"
+  id="solo-hannia">
+
+  <div class="hannia-intro">
+
+    <div class="hannia-heart">
+      ❤️
+    </div>
+
+    <h2>
+      Cosas que amo de ti
+      <span>❤️</span>
+    </h2>
+
+    <div class="hannia-line"></div>
+
+    <p>
+      Porque hay pequeños detalles de ti que quizá
+      no siempre te digo, pero que recuerdo y amo.
+    </p>
+
+  </div>
+
+
+  <!-- =======================================================
+       FORMULARIO PARA AGREGAR COSAS
+  ======================================================= -->
+
+  <div
+    class="card love-form"
+    id="love-form">
+
+    <h3>
+      ❤️ Agregar algo que amo de ti
+    </h3>
+
+    <div class="love-form-subtitle">
+      Tú decides qué quieres guardar aquí.
+      Puedes agregar todos los detalles que quieras.
+    </div>
+
+
+    <div class="love-form-grid">
+
+      <div class="love-emoji-field">
+
+        <label for="love-emoji">
+          Emoji
+        </label>
+
+        <input
+          id="love-emoji"
+          maxlength="4"
+          value="❤️"
+          placeholder="❤️">
+
+      </div>
+
+
+      <div>
+
+        <label for="love-title">
+          Título
+        </label>
+
+        <input
+          id="love-title"
+          maxlength="150"
+          placeholder="Ej. Tu forma de sonreír">
+
+      </div>
+
+    </div>
+
+
+    <label for="love-description">
+      ¿Por qué lo amas?
+    </label>
+
+    <textarea
+      id="love-description"
+      maxlength="1000"
+      placeholder="Escribe aquí lo que quieras decir sobre ella..."></textarea>
+
+
+    <div class="love-form-buttons">
+
+      <button
+        class="action"
+        id="cancel-love"
+        style="display:none;">
+
+        Cancelar
+
+      </button>
+
+
+      <button
+        class="pink-button"
+        id="save-love">
+
+        ❤️ Agregar a la lista
+
+      </button>
+
+    </div>
+
+
+    <div
+      class="status"
+      id="love-status">
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       LISTA DINÁMICA
+  ======================================================= -->
+
+  <div
+    class="love-list"
+    id="love-list">
+
   </div>
 
 </section>
@@ -1504,14 +2168,18 @@ textarea{
 
   </h2>
 
+
   <div class="section-subtitle">
     Todos esos momentos que queremos guardar.
   </div>
 
 
+  <!-- FORMULARIO RECUERDO -->
+
   <div
     class="card form-panel"
     id="memory-form">
+
 
     <div
       class="preview"
@@ -1523,6 +2191,7 @@ textarea{
 
     </div>
 
+
     <label for="memory-file">
       📸 Foto
     </label>
@@ -1531,6 +2200,7 @@ textarea{
       type="file"
       id="memory-file"
       accept="image/*">
+
 
     <label for="memory-title">
       ❤️ Título
@@ -1541,6 +2211,7 @@ textarea{
       maxlength="150"
       placeholder="Ej. Nuestra primera salida">
 
+
     <label for="memory-date">
       📅 Fecha del recuerdo
     </label>
@@ -1548,6 +2219,7 @@ textarea{
     <input
       id="memory-date"
       type="date">
+
 
     <label for="memory-description">
       💌 Descripción
@@ -1557,6 +2229,7 @@ textarea{
       id="memory-description"
       maxlength="1000"
       placeholder="Escribe algo que quieras recordar..."></textarea>
+
 
     <div class="form-row">
 
@@ -1568,6 +2241,7 @@ textarea{
 
       </button>
 
+
       <button
         class="pink-button"
         id="save-memory">
@@ -1578,6 +2252,7 @@ textarea{
 
     </div>
 
+
     <div
       class="status"
       id="memory-status">
@@ -1585,6 +2260,8 @@ textarea{
 
   </div>
 
+
+  <!-- LISTA -->
 
   <div
     class="memories"
@@ -1633,9 +2310,11 @@ textarea{
 
   </h2>
 
+
   <div class="section-subtitle">
     Las fechas que queremos guardar para siempre.
   </div>
+
 
   <div
     class="dates"
@@ -1652,6 +2331,7 @@ textarea{
 
   </div>
 
+
   <div class="card add-date">
 
     <h3>
@@ -1664,6 +2344,7 @@ textarea{
       para ustedes.
     </p>
 
+
     <button
       class="pink-button"
       id="open-date-form">
@@ -1672,9 +2353,11 @@ textarea{
 
     </button>
 
+
     <div
       class="date-form"
       id="date-form">
+
 
       <label for="date-value">
         📅 Fecha
@@ -1683,6 +2366,7 @@ textarea{
       <input
         id="date-value"
         type="date">
+
 
       <label for="date-type">
         ✨ Tipo
@@ -1708,6 +2392,7 @@ textarea{
 
       </select>
 
+
       <label for="date-title">
         ❤️ Título
       </label>
@@ -1717,6 +2402,7 @@ textarea{
         maxlength="150"
         placeholder="Ej. Cumpleaños de Hannia">
 
+
       <label for="date-message">
         💌 Mensaje
       </label>
@@ -1725,6 +2411,7 @@ textarea{
         id="date-message"
         maxlength="1000"
         placeholder="Escribe qué significa esta fecha para nosotros..."></textarea>
+
 
       <div class="form-row">
 
@@ -1736,6 +2423,7 @@ textarea{
 
         </button>
 
+
         <button
           class="pink-button"
           id="save-date">
@@ -1745,6 +2433,7 @@ textarea{
         </button>
 
       </div>
+
 
       <div
         class="status"
@@ -1774,9 +2463,11 @@ textarea{
 
   </h2>
 
+
   <div class="section-subtitle">
     Cada capítulo de nosotros merece ser recordado.
   </div>
+
 
   <div
     class="card"
@@ -1804,6 +2495,7 @@ textarea{
 
   </div>
 
+
   <div
     class="card add-date"
     style="margin-top:16px">
@@ -1817,6 +2509,7 @@ textarea{
       de nuestra historia.
     </p>
 
+
     <button
       class="pink-button"
       id="open-chapter">
@@ -1825,9 +2518,11 @@ textarea{
 
     </button>
 
+
     <div
       class="date-form"
       id="chapter-form">
+
 
       <label for="chapter-date">
         📅 Fecha
@@ -1836,6 +2531,7 @@ textarea{
       <input
         id="chapter-date"
         type="date">
+
 
       <label for="chapter-title">
         ❤️ Título
@@ -1846,6 +2542,7 @@ textarea{
         maxlength="150"
         placeholder="Ej. El día que nos conocimos">
 
+
       <label for="chapter-text">
         💌 Nuestra historia
       </label>
@@ -1855,6 +2552,7 @@ textarea{
         maxlength="5000"
         placeholder="Cuéntanos qué pasó..."></textarea>
 
+
       <label for="chapter-file">
         📸 Foto opcional
       </label>
@@ -1863,6 +2561,7 @@ textarea{
         id="chapter-file"
         type="file"
         accept="image/*">
+
 
       <div
         class="preview"
@@ -1874,6 +2573,7 @@ textarea{
 
       </div>
 
+
       <div class="form-row">
 
         <button
@@ -1884,6 +2584,7 @@ textarea{
 
         </button>
 
+
         <button
           class="pink-button"
           id="save-chapter">
@@ -1893,6 +2594,7 @@ textarea{
         </button>
 
       </div>
+
 
       <div
         class="status"
@@ -1922,10 +2624,12 @@ textarea{
 
   </h2>
 
+
   <div class="section-subtitle">
     Porque hay cosas que es más bonito
     escribirlas que decirlas.
   </div>
+
 
   <div class="card add-date">
 
@@ -1938,6 +2642,7 @@ textarea{
       quede guardado en nuestra historia.
     </p>
 
+
     <button
       class="pink-button"
       id="open-letter-2">
@@ -1946,9 +2651,11 @@ textarea{
 
     </button>
 
+
     <div
       class="date-form"
       id="letter-form">
+
 
       <label for="letter-title">
         ❤️ Título de la carta
@@ -1958,6 +2665,7 @@ textarea{
         id="letter-title"
         maxlength="150"
         placeholder="Ej. Para ti, mi amor...">
+
 
       <label for="letter-text">
         💌 Escribe tu carta
@@ -1969,6 +2677,7 @@ textarea{
         style="min-height:240px"
         placeholder="Escribe aquí todo eso que quieres decir..."></textarea>
 
+
       <div class="form-row">
 
         <button
@@ -1978,6 +2687,7 @@ textarea{
           Cancelar
 
         </button>
+
 
         <button
           class="pink-button"
@@ -1989,6 +2699,7 @@ textarea{
 
       </div>
 
+
       <div
         class="status"
         id="letter-status">
@@ -1997,6 +2708,7 @@ textarea{
     </div>
 
   </div>
+
 
   <div
     class="letter-list"
@@ -2011,217 +2723,6 @@ textarea{
       Cargando nuestras cartas...
 
     </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     SOLO DE HANNIA ❤️
-========================================================= -->
-
-<section
-  class="section hannia-section"
-  id="hannia">
-
-  <h2 class="section-heading">
-
-    <span>
-      🥭🦈 Solo de Hannia ❤️
-    </span>
-
-  </h2>
-
-  <div class="section-subtitle">
-    Un pequeño rincón hecho especialmente para ti.
-  </div>
-
-  <div class="card hannia-card">
-
-
-    <div class="hannia-header">
-
-      <div class="hannia-emoji">
-        🥭🦈❤️
-      </div>
-
-      <h2>
-        Cosas que amo de ti ❤️
-      </h2>
-
-      <div class="hannia-divider"></div>
-
-      <p>
-        Porque hay pequeños detalles de ti
-        que quizá no siempre te digo,
-        pero que recuerdo y amo.
-      </p>
-
-    </div>
-
-
-    <div class="hannia-list">
-
-
-      <div class="hannia-item">
-
-        <div class="hannia-icon">
-          🥭
-        </div>
-
-        <div>
-
-          <h3>
-            Tu amor por los mangos
-          </h3>
-
-          <p>
-            Una de esas pequeñas cosas
-            que automáticamente me hacen
-            pensar en ti.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="hannia-item">
-
-        <div class="hannia-icon">
-          🦈
-        </div>
-
-        <div>
-
-          <h3>
-            Tu amor por los tiburones
-          </h3>
-
-          <p>
-            Porque hasta las cosas más
-            inesperadas terminan teniendo
-            un pedacito de ti.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="hannia-item">
-
-        <div class="hannia-icon">
-          ❤️
-        </div>
-
-        <div>
-
-          <h3>
-            La mujer que eres
-          </h3>
-
-          <p>
-            Tu forma de ser, tu cariño,
-            tu manera de demostrar amor
-            y esos detalles que te hacen
-            ser tú.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="hannia-item">
-
-        <div class="hannia-icon">
-          😂
-        </div>
-
-        <div>
-
-          <h3>
-            Todo lo que me hace reír contigo
-          </h3>
-
-          <p>
-            Esos momentos que quizá parecen
-            pequeños, pero que terminan siendo
-            de mis favoritos.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="hannia-item">
-
-        <div class="hannia-icon">
-          ✨
-        </div>
-
-        <div>
-
-          <h3>
-            Tus pequeños detalles
-          </h3>
-
-          <p>
-            Las cosas que haces sin darte cuenta
-            y que yo termino guardando en mi
-            memoria.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="hannia-item">
-
-        <div class="hannia-icon">
-          🥰
-        </div>
-
-        <div>
-
-          <h3>
-            Tu sonrisa
-          </h3>
-
-          <p>
-            Porque hay momentos en los que
-            simplemente verte sonreír hace
-            que todo valga la pena.
-          </p>
-
-        </div>
-
-      </div>
-
-
-    </div>
-
-
-    <div class="hannia-message">
-
-      <p>
-        "Quiero seguir descubriendo todas esas
-        pequeñas cosas que te hacen ser tú,
-        y seguir llenando esta página con
-        recuerdos que algún día podamos mirar
-        juntos y decir: mira todo lo que hemos vivido."
-      </p>
-
-      <span class="hannia-heart">
-        ❤️
-      </span>
-
-    </div>
-
 
   </div>
 
@@ -2288,16 +2789,20 @@ textarea{
 
     </button>
 
+
     <div
       class="modal-date"
       id="modal-memory-date">
     </div>
 
+
     <h2
       id="modal-memory-title">
     </h2>
 
+
     <div class="modal-line"></div>
+
 
     <img
       id="modal-memory-image"
@@ -2309,6 +2814,7 @@ textarea{
         margin-bottom:23px;
       "
       alt="">
+
 
     <div
       class="modal-text"
@@ -2339,21 +2845,26 @@ textarea{
 
     </button>
 
+
     <div
       class="modal-date"
       id="modal-letter-date">
     </div>
 
+
     <h2
       id="modal-letter-title">
     </h2>
+
 
     <div
       class="modal-author"
       id="modal-letter-author">
     </div>
 
+
     <div class="modal-line"></div>
+
 
     <div
       class="modal-text"
@@ -2395,6 +2906,8 @@ let editingLetterId = null;
 
 let selectedMemoryFile = null;
 let selectedChapterFile = null;
+
+let editingLoveId = null;
 
 
 /* =========================================================
@@ -2439,7 +2952,9 @@ function prettyDate(value){
       : value
     );
 
-  if(isNaN(d.getTime())){
+  if(
+    isNaN(d.getTime())
+  ){
     return String(value);
   }
 
@@ -2572,6 +3087,517 @@ function storagePublicUrl(path){
     .data
     .publicUrl;
 }
+
+
+/* =========================================================
+   ❤️ COSAS QUE AMO DE TI
+   SE GUARDAN EN EL TELÉFONO
+========================================================= */
+
+const LOVE_STORAGE_KEY =
+  "hannia_cosas_que_amo_v1";
+
+
+const loveForm =
+document.getElementById(
+  "love-form"
+);
+
+const loveTitle =
+document.getElementById(
+  "love-title"
+);
+
+const loveDescription =
+document.getElementById(
+  "love-description"
+);
+
+const loveEmoji =
+document.getElementById(
+  "love-emoji"
+);
+
+const loveStatus =
+document.getElementById(
+  "love-status"
+);
+
+const loveList =
+document.getElementById(
+  "love-list"
+);
+
+const saveLoveButton =
+document.getElementById(
+  "save-love"
+);
+
+const cancelLoveButton =
+document.getElementById(
+  "cancel-love"
+);
+
+
+function getLoveItems(){
+
+  try{
+
+    const saved =
+      localStorage.getItem(
+        LOVE_STORAGE_KEY
+      );
+
+    if(!saved){
+      return [];
+    }
+
+    const parsed =
+      JSON.parse(saved);
+
+    return Array.isArray(parsed)
+      ? parsed
+      : [];
+
+  }catch(error){
+
+    console.error(
+      "Error leyendo cosas que amo:",
+      error
+    );
+
+    return [];
+
+  }
+}
+
+
+function saveLoveItems(items){
+
+  localStorage.setItem(
+    LOVE_STORAGE_KEY,
+    JSON.stringify(items)
+  );
+
+}
+
+
+function resetLoveForm(){
+
+  editingLoveId = null;
+
+  loveTitle.value = "";
+
+  loveDescription.value = "";
+
+  loveEmoji.value = "❤️";
+
+  saveLoveButton.textContent =
+    "❤️ Agregar a la lista";
+
+  cancelLoveButton.style.display =
+    "none";
+
+  hideStatus(
+    loveStatus
+  );
+
+}
+
+
+function editLoveItem(id){
+
+  const items =
+    getLoveItems();
+
+  const item =
+    items.find(
+      function(row){
+        return row.id === id;
+      }
+    );
+
+  if(!item){
+    return;
+  }
+
+  editingLoveId = id;
+
+  loveTitle.value =
+    item.title || "";
+
+  loveDescription.value =
+    item.description || "";
+
+  loveEmoji.value =
+    item.emoji || "❤️";
+
+  saveLoveButton.textContent =
+    "❤️ Guardar cambios";
+
+  cancelLoveButton.style.display =
+    "block";
+
+  loveForm.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+
+  loveTitle.focus();
+
+}
+
+
+function deleteLoveItem(id){
+
+  if(
+    !confirm(
+      "¿Quieres eliminar este detalle de Hannia? ❤️"
+    )
+  ){
+    return;
+  }
+
+  const items =
+    getLoveItems();
+
+  const filtered =
+    items.filter(
+      function(item){
+        return item.id !== id;
+      }
+    );
+
+  saveLoveItems(
+    filtered
+  );
+
+  renderLoveItems();
+
+}
+
+
+function renderLoveItems(){
+
+  const items =
+    getLoveItems();
+
+  loveList.innerHTML = "";
+
+
+  if(!items.length){
+
+    loveList.innerHTML = `
+
+      <div class="empty-love">
+
+        <div class="empty-love-heart">
+          ❤️
+        </div>
+
+        <h3>
+          Aquí van tus detalles
+        </h3>
+
+        <p>
+          Todavía no has agregado ninguno.
+          Escribe arriba las cosas que amas de Hannia
+          y aparecerán aquí.
+        </p>
+
+      </div>
+
+    `;
+
+    return;
+  }
+
+
+  items.forEach(
+    function(item){
+
+      const card =
+        document.createElement(
+          "article"
+        );
+
+      card.className =
+        "love-card";
+
+
+      const icon =
+        document.createElement(
+          "div"
+        );
+
+      icon.className =
+        "love-icon";
+
+      icon.textContent =
+        item.emoji ||
+        "❤️";
+
+
+      const content =
+        document.createElement(
+          "div"
+        );
+
+      content.className =
+        "love-content";
+
+
+      const title =
+        document.createElement(
+          "div"
+        );
+
+      title.className =
+        "love-title";
+
+      title.textContent =
+        item.title ||
+        "Algo que amo de ti";
+
+
+      const description =
+        document.createElement(
+          "div"
+        );
+
+      description.className =
+        "love-description";
+
+      description.textContent =
+        item.description ||
+        "";
+
+
+      const actions =
+        document.createElement(
+          "div"
+        );
+
+      actions.className =
+        "love-actions";
+
+
+      const edit =
+        document.createElement(
+          "button"
+        );
+
+      edit.className =
+        "action";
+
+      edit.textContent =
+        "✏️ Editar";
+
+      edit.onclick =
+        function(){
+
+          editLoveItem(
+            item.id
+          );
+
+        };
+
+
+      const deleteButton =
+        document.createElement(
+          "button"
+        );
+
+      deleteButton.className =
+        "action delete";
+
+      deleteButton.textContent =
+        "🗑️ Eliminar";
+
+      deleteButton.onclick =
+        function(){
+
+          deleteLoveItem(
+            item.id
+          );
+
+        };
+
+
+      actions.append(
+        edit,
+        deleteButton
+      );
+
+
+      content.append(
+        title,
+        description,
+        actions
+      );
+
+
+      card.append(
+        icon,
+        content
+      );
+
+
+      loveList.appendChild(
+        card
+      );
+
+    }
+  );
+
+}
+
+
+saveLoveButton.onclick =
+function(){
+
+  const title =
+    loveTitle.value.trim();
+
+  const description =
+    loveDescription.value.trim();
+
+  const emoji =
+    loveEmoji.value.trim() ||
+    "❤️";
+
+
+  if(!title){
+
+    showStatus(
+      loveStatus,
+      "Ponle un título ❤️",
+      "error"
+    );
+
+    loveTitle.focus();
+
+    return;
+  }
+
+
+  if(!description){
+
+    showStatus(
+      loveStatus,
+      "Escribe por qué amas ese detalle 💌",
+      "error"
+    );
+
+    loveDescription.focus();
+
+    return;
+  }
+
+
+  const items =
+    getLoveItems();
+
+
+  if(editingLoveId){
+
+    const index =
+      items.findIndex(
+        function(item){
+          return item.id === editingLoveId;
+        }
+      );
+
+
+    if(index !== -1){
+
+      items[index] = {
+
+        ...items[index],
+
+        title:title,
+
+        description:description,
+
+        emoji:emoji
+
+      };
+
+    }
+
+
+    saveLoveItems(
+      items
+    );
+
+
+    showStatus(
+      loveStatus,
+      "¡Detalle actualizado! ❤️",
+      "success"
+    );
+
+
+  }else{
+
+    items.unshift({
+
+      id:
+        Date.now().toString() +
+        Math.random()
+          .toString(36)
+          .slice(2,8),
+
+      title:title,
+
+      description:description,
+
+      emoji:emoji,
+
+      createdAt:
+        new Date().toISOString()
+
+    });
+
+
+    saveLoveItems(
+      items
+    );
+
+
+    showStatus(
+      loveStatus,
+      "¡Agregado a las cosas que amas de ella! ❤️",
+      "success"
+    );
+
+  }
+
+
+  renderLoveItems();
+
+
+  setTimeout(
+    function(){
+
+      resetLoveForm();
+
+    },
+    700
+  );
+
+};
+
+
+cancelLoveButton.onclick =
+resetLoveForm;
+
+
+/* =========================================================
+   INICIAR COSAS QUE AMO
+========================================================= */
+
+renderLoveItems();
 
 
 /* =========================================================
@@ -2792,6 +3818,7 @@ async function saveMemory(){
   const description =
     memoryDescription.value.trim();
 
+
   if(!title){
 
     showStatus(
@@ -2802,6 +3829,7 @@ async function saveMemory(){
 
     return;
   }
+
 
   if(!date){
 
@@ -2814,6 +3842,7 @@ async function saveMemory(){
     return;
   }
 
+
   const button =
     document.getElementById(
       "save-memory"
@@ -2821,9 +3850,11 @@ async function saveMemory(){
 
   button.disabled = true;
 
+
   try{
 
     let url = null;
+
 
     if(selectedMemoryFile){
 
@@ -2832,6 +3863,7 @@ async function saveMemory(){
         .split(".")
         .pop()
         .toLowerCase();
+
 
       const path =
         "recuerdo_" +
@@ -2842,6 +3874,7 @@ async function saveMemory(){
           .slice(2,9) +
         "." +
         extension;
+
 
       const {
         data,
@@ -2859,9 +3892,11 @@ async function saveMemory(){
           }
         );
 
+
       if(error){
         throw error;
       }
+
 
       url =
         storagePublicUrl(
@@ -2869,6 +3904,7 @@ async function saveMemory(){
         );
 
     }
+
 
     if(editingMemoryId){
 
@@ -2883,9 +3919,11 @@ async function saveMemory(){
 
       };
 
+
       if(url){
         update.Url = url;
       }
+
 
       const {
         error
@@ -2898,9 +3936,11 @@ async function saveMemory(){
           editingMemoryId
         );
 
+
       if(error){
         throw error;
       }
+
 
       showStatus(
         memoryStatus,
@@ -2926,9 +3966,11 @@ async function saveMemory(){
 
         ]);
 
+
       if(error){
         throw error;
       }
+
 
       showStatus(
         memoryStatus,
@@ -2938,12 +3980,15 @@ async function saveMemory(){
 
     }
 
+
     await loadMemories();
+
 
     setTimeout(
       resetMemoryForm,
       900
     );
+
 
   }catch(error){
 
@@ -2983,6 +4028,7 @@ async function loadMemories(){
       "memories-list"
     );
 
+
   try{
 
     const session =
@@ -2991,6 +4037,7 @@ async function loadMemories(){
     if(!session){
       return;
     }
+
 
     const {
       data,
@@ -3012,11 +4059,14 @@ async function loadMemories(){
         }
       );
 
+
     if(error){
       throw error;
     }
 
+
     box.innerHTML = "";
+
 
     if(
       !data ||
@@ -3040,6 +4090,7 @@ async function loadMemories(){
       return;
     }
 
+
     data.forEach(
       function(memory){
 
@@ -3051,6 +4102,7 @@ async function loadMemories(){
         card.className =
           "card memory-card";
 
+
         const imageWrap =
           document.createElement(
             "div"
@@ -3058,6 +4110,7 @@ async function loadMemories(){
 
         imageWrap.className =
           "memory-image-wrap";
+
 
         const image =
           document.createElement(
@@ -3067,12 +4120,14 @@ async function loadMemories(){
         image.className =
           "memory-image";
 
+
         const url =
           memory.Url ||
           memory.url ||
           memory.foto_url ||
           memory.imagen ||
           "";
+
 
         image.src = url;
 
@@ -3082,6 +4137,7 @@ async function loadMemories(){
 
         image.loading = "lazy";
 
+
         if(!url){
 
           image.style.display =
@@ -3089,9 +4145,11 @@ async function loadMemories(){
 
         }
 
+
         imageWrap.appendChild(
           image
         );
+
 
         const info =
           document.createElement(
@@ -3100,6 +4158,7 @@ async function loadMemories(){
 
         info.className =
           "memory-info";
+
 
         const date =
           document.createElement(
@@ -3115,6 +4174,7 @@ async function loadMemories(){
             memory.created_at
           );
 
+
         const title =
           document.createElement(
             "div"
@@ -3126,6 +4186,7 @@ async function loadMemories(){
         title.textContent =
           memory.titulo ||
           "Nuestro recuerdo ❤️";
+
 
         const description =
           document.createElement(
@@ -3140,6 +4201,7 @@ async function loadMemories(){
           memory.mensaje ||
           "";
 
+
         const actions =
           document.createElement(
             "div"
@@ -3147,6 +4209,7 @@ async function loadMemories(){
 
         actions.className =
           "memory-actions";
+
 
         const view =
           document.createElement(
@@ -3159,6 +4222,7 @@ async function loadMemories(){
         view.textContent =
           "Ver recuerdo";
 
+
         view.onclick =
           function(){
 
@@ -3169,6 +4233,7 @@ async function loadMemories(){
               .textContent =
               date.textContent;
 
+
             document
               .getElementById(
                 "modal-memory-title"
@@ -3177,6 +4242,7 @@ async function loadMemories(){
               "❤️ " +
               title.textContent;
 
+
             document
               .getElementById(
                 "modal-memory-text"
@@ -3184,11 +4250,13 @@ async function loadMemories(){
               .textContent =
               description.textContent;
 
+
             const modalImage =
               document
               .getElementById(
                 "modal-memory-image"
               );
+
 
             modalImage.src = url;
 
@@ -3197,11 +4265,13 @@ async function loadMemories(){
               ? "block"
               : "none";
 
+
             openModal(
               "memory-modal"
             );
 
           };
+
 
         const edit =
           document.createElement(
@@ -3214,11 +4284,13 @@ async function loadMemories(){
         edit.textContent =
           "✏️ Editar";
 
+
         edit.onclick =
           () =>
             openMemoryForm(
               memory
             );
+
 
         const deleteButton =
           document.createElement(
@@ -3231,17 +4303,20 @@ async function loadMemories(){
         deleteButton.textContent =
           "🗑️ Eliminar";
 
+
         deleteButton.onclick =
           () =>
             deleteMemory(
               memory.id
             );
 
+
         actions.append(
           view,
           edit,
           deleteButton
         );
+
 
         info.append(
           date,
@@ -3250,10 +4325,12 @@ async function loadMemories(){
           actions
         );
 
+
         card.append(
           imageWrap,
           info
         );
+
 
         box.appendChild(
           card
@@ -3261,6 +4338,7 @@ async function loadMemories(){
 
       }
     );
+
 
   }catch(error){
 
@@ -3295,6 +4373,7 @@ async function deleteMemory(id){
     return;
   }
 
+
   const {
     error
   } =
@@ -3305,6 +4384,7 @@ async function deleteMemory(id){
       "id",
       id
     );
+
 
   if(error){
 
@@ -3389,12 +4469,14 @@ function openDateForm(
   editingDateId =
     row?.id || null;
 
+
   document
     .getElementById(
       "date-value"
     )
     .value =
     row?.fecha || "";
+
 
   document
     .getElementById(
@@ -3403,12 +4485,14 @@ function openDateForm(
     .value =
     row?.tipo || "especial";
 
+
   document
     .getElementById(
       "date-title"
     )
     .value =
     row?.titulo || "";
+
 
   document
     .getElementById(
@@ -3418,6 +4502,7 @@ function openDateForm(
     row?.mensaje ||
     row?.descripcion ||
     "";
+
 
   document
     .getElementById(
@@ -3457,6 +4542,7 @@ async function saveDate(){
     return;
   }
 
+
   const fecha =
     document
     .getElementById(
@@ -3464,12 +4550,14 @@ async function saveDate(){
     )
     .value;
 
+
   const tipo =
     document
     .getElementById(
       "date-type"
     )
     .value;
+
 
   const titulo =
     document
@@ -3479,6 +4567,7 @@ async function saveDate(){
     .value
     .trim();
 
+
   const mensaje =
     document
     .getElementById(
@@ -3486,6 +4575,7 @@ async function saveDate(){
     )
     .value
     .trim();
+
 
   if(!fecha){
 
@@ -3498,6 +4588,7 @@ async function saveDate(){
     return;
   }
 
+
   if(!titulo){
 
     showStatus(
@@ -3509,6 +4600,7 @@ async function saveDate(){
     return;
   }
 
+
   const button =
     document.getElementById(
       "save-date"
@@ -3516,19 +4608,26 @@ async function saveDate(){
 
   button.disabled = true;
 
+
   try{
 
     const payload = {
 
       fecha:fecha,
+
       tipo:tipo,
+
       titulo:titulo,
+
       mensaje:mensaje,
+
       activo:true
 
     };
 
+
     let result;
+
 
     if(editingDateId){
 
@@ -3552,24 +4651,31 @@ async function saveDate(){
 
     }
 
+
     if(result.error){
       throw result.error;
     }
 
+
     showStatus(
       dateStatus,
+
       editingDateId
       ? "¡Fecha actualizada! ❤️"
       : "¡Fecha guardada! ❤️",
+
       "success"
     );
 
+
     await loadDates();
+
 
     setTimeout(
       resetDateForm,
       900
     );
+
 
   }catch(error){
 
@@ -3607,6 +4713,7 @@ async function loadDates(){
       "dates-list"
     );
 
+
   try{
 
     const session =
@@ -3615,6 +4722,7 @@ async function loadDates(){
     if(!session){
       return;
     }
+
 
     const {
       data,
@@ -3634,11 +4742,14 @@ async function loadDates(){
         }
       );
 
+
     if(error){
       throw error;
     }
 
+
     box.innerHTML = "";
+
 
     if(
       !data ||
@@ -3662,6 +4773,7 @@ async function loadDates(){
       return;
     }
 
+
     data.forEach(
       function(dateRow){
 
@@ -3673,6 +4785,7 @@ async function loadDates(){
         card.className =
           "card date-card";
 
+
         const top =
           document.createElement(
             "div"
@@ -3680,6 +4793,7 @@ async function loadDates(){
 
         top.className =
           "date-top";
+
 
         const icon =
           document.createElement(
@@ -3694,10 +4808,12 @@ async function loadDates(){
             dateRow.tipo
           );
 
+
         const content =
           document.createElement(
             "div"
           );
+
 
         const date =
           document.createElement(
@@ -3712,6 +4828,7 @@ async function loadDates(){
             dateRow.fecha
           );
 
+
         const title =
           document.createElement(
             "div"
@@ -3723,6 +4840,7 @@ async function loadDates(){
         title.textContent =
           dateRow.titulo ||
           "Momento especial";
+
 
         const message =
           document.createElement(
@@ -3737,20 +4855,24 @@ async function loadDates(){
           dateRow.descripcion ||
           "";
 
+
         content.append(
           date,
           title,
           message
         );
 
+
         top.append(
           icon,
           content
         );
 
+
         card.append(
           top
         );
+
 
         const actions =
           document.createElement(
@@ -3759,6 +4881,7 @@ async function loadDates(){
 
         actions.className =
           "date-actions";
+
 
         const edit =
           document.createElement(
@@ -3771,11 +4894,13 @@ async function loadDates(){
         edit.textContent =
           "✏️ Editar";
 
+
         edit.onclick =
           () =>
             openDateForm(
               dateRow
             );
+
 
         const deleteButton =
           document.createElement(
@@ -3788,20 +4913,24 @@ async function loadDates(){
         deleteButton.textContent =
           "🗑️ Eliminar";
 
+
         deleteButton.onclick =
           () =>
             deleteDate(
               dateRow.id
             );
 
+
         actions.append(
           edit,
           deleteButton
         );
 
+
         card.append(
           actions
         );
+
 
         box.appendChild(
           card
@@ -3809,6 +4938,7 @@ async function loadDates(){
 
       }
     );
+
 
   }catch(error){
 
@@ -3843,6 +4973,7 @@ async function deleteDate(id){
     return;
   }
 
+
   const {
     error
   } =
@@ -3853,6 +4984,7 @@ async function deleteDate(id){
       "id",
       id
     );
+
 
   if(error){
 
@@ -3895,11 +5027,13 @@ function resetChapter(){
 
   selectedChapterFile = null;
 
+
   document
     .getElementById(
       "chapter-date"
     )
     .value = "";
+
 
   document
     .getElementById(
@@ -3907,13 +5041,16 @@ function resetChapter(){
     )
     .value = "";
 
+
   document
     .getElementById(
       "chapter-text"
     )
     .value = "";
 
+
   chapterFile.value = "";
+
 
   document
     .getElementById(
@@ -3923,9 +5060,11 @@ function resetChapter(){
       "active"
     );
 
+
   chapterForm.classList.remove(
     "active"
   );
+
 
   hideStatus(
     chapterStatus
@@ -3971,6 +5110,7 @@ function(event){
     return;
   }
 
+
   if(
     !file.type.startsWith("image/")
   ){
@@ -3983,6 +5123,7 @@ function(event){
 
     return;
   }
+
 
   if(
     file.size >
@@ -3998,10 +5139,13 @@ function(event){
     return;
   }
 
+
   selectedChapterFile = file;
+
 
   const reader =
     new FileReader();
+
 
   reader.onload =
     function(event){
@@ -4013,6 +5157,7 @@ function(event){
         .src =
         event.target.result;
 
+
       document
         .getElementById(
           "chapter-preview"
@@ -4022,6 +5167,7 @@ function(event){
         );
 
     };
+
 
   reader.readAsDataURL(file);
 
@@ -4041,12 +5187,14 @@ async function saveChapter(){
     return;
   }
 
+
   const fecha =
     document
     .getElementById(
       "chapter-date"
     )
     .value;
+
 
   const titulo =
     document
@@ -4056,6 +5204,7 @@ async function saveChapter(){
     .value
     .trim();
 
+
   const historia =
     document
     .getElementById(
@@ -4063,6 +5212,7 @@ async function saveChapter(){
     )
     .value
     .trim();
+
 
   if(!fecha){
 
@@ -4075,6 +5225,7 @@ async function saveChapter(){
     return;
   }
 
+
   if(!titulo){
 
     showStatus(
@@ -4085,6 +5236,7 @@ async function saveChapter(){
 
     return;
   }
+
 
   if(!historia){
 
@@ -4097,6 +5249,7 @@ async function saveChapter(){
     return;
   }
 
+
   const button =
     document.getElementById(
       "save-chapter"
@@ -4104,9 +5257,11 @@ async function saveChapter(){
 
   button.disabled = true;
 
+
   try{
 
     let foto_url = null;
+
 
     if(selectedChapterFile){
 
@@ -4117,6 +5272,7 @@ async function saveChapter(){
         .pop()
         .toLowerCase();
 
+
       const path =
         "historia_" +
         Date.now() +
@@ -4126,6 +5282,7 @@ async function saveChapter(){
           .slice(2,9) +
         "." +
         extension;
+
 
       const {
         data,
@@ -4143,9 +5300,11 @@ async function saveChapter(){
           }
         );
 
+
       if(error){
         throw error;
       }
+
 
       foto_url =
         storagePublicUrl(
@@ -4154,13 +5313,17 @@ async function saveChapter(){
 
     }
 
+
     const payload = {
 
       fecha:fecha,
+
       titulo:titulo,
+
       historia:historia
 
     };
+
 
     if(foto_url){
 
@@ -4169,7 +5332,9 @@ async function saveChapter(){
 
     }
 
+
     let result;
+
 
     if(editingChapterId){
 
@@ -4193,9 +5358,11 @@ async function saveChapter(){
 
     }
 
+
     if(result.error){
       throw result.error;
     }
+
 
     showStatus(
       chapterStatus,
@@ -4203,12 +5370,15 @@ async function saveChapter(){
       "success"
     );
 
+
     await loadHistory();
+
 
     setTimeout(
       resetChapter,
       900
     );
+
 
   }catch(error){
 
@@ -4246,6 +5416,7 @@ async function loadHistory(){
       "history-list"
     );
 
+
   try{
 
     const session =
@@ -4254,6 +5425,7 @@ async function loadHistory(){
     if(!session){
       return;
     }
+
 
     const {
       data,
@@ -4269,11 +5441,14 @@ async function loadHistory(){
         }
       );
 
+
     if(error){
       throw error;
     }
 
+
     box.innerHTML = "";
+
 
     const timeline =
       document.createElement(
@@ -4282,6 +5457,7 @@ async function loadHistory(){
 
     timeline.className =
       "timeline";
+
 
     if(
       !data ||
@@ -4309,12 +5485,14 @@ async function loadHistory(){
 
       `;
 
+
       box.appendChild(
         timeline
       );
 
       return;
     }
+
 
     data.forEach(
       function(history){
@@ -4326,6 +5504,7 @@ async function loadHistory(){
 
         item.className =
           "timeline-item";
+
 
         const date =
           document.createElement(
@@ -4340,6 +5519,7 @@ async function loadHistory(){
             history.fecha
           ) ||
           "UN MOMENTO ESPECIAL";
+
 
         const title =
           document.createElement(
@@ -4356,6 +5536,7 @@ async function loadHistory(){
             "Un capítulo de nosotros"
           );
 
+
         const text =
           document.createElement(
             "div"
@@ -4370,11 +5551,13 @@ async function loadHistory(){
           history.mensaje ||
           "";
 
+
         item.append(
           date,
           title,
           text
         );
+
 
         const url =
           history.foto_url ||
@@ -4382,6 +5565,7 @@ async function loadHistory(){
           history.Url ||
           history.imagen ||
           "";
+
 
         if(url){
 
@@ -4405,6 +5589,7 @@ async function loadHistory(){
 
         }
 
+
         const actions =
           document.createElement(
             "div"
@@ -4412,6 +5597,7 @@ async function loadHistory(){
 
         actions.className =
           "date-actions";
+
 
         const edit =
           document.createElement(
@@ -4424,15 +5610,18 @@ async function loadHistory(){
         edit.textContent =
           "✏️ Editar";
 
+
         edit.onclick =
           function(){
 
             editingChapterId =
               history.id;
 
+
             chapterForm.classList.add(
               "active"
             );
+
 
             document
               .getElementById(
@@ -4441,12 +5630,14 @@ async function loadHistory(){
               .value =
               history.fecha || "";
 
+
             document
               .getElementById(
                 "chapter-title"
               )
               .value =
               history.titulo || "";
+
 
             document
               .getElementById(
@@ -4457,6 +5648,7 @@ async function loadHistory(){
               history.descripcion ||
               "";
 
+
             document
               .getElementById(
                 "historia"
@@ -4466,6 +5658,7 @@ async function loadHistory(){
               });
 
           };
+
 
         const deleteButton =
           document.createElement(
@@ -4478,20 +5671,24 @@ async function loadHistory(){
         deleteButton.textContent =
           "🗑️ Eliminar";
 
+
         deleteButton.onclick =
           () =>
             deleteChapter(
               history.id
             );
 
+
         actions.append(
           edit,
           deleteButton
         );
 
+
         item.append(
           actions
         );
+
 
         timeline.appendChild(
           item
@@ -4500,9 +5697,11 @@ async function loadHistory(){
       }
     );
 
+
     box.appendChild(
       timeline
     );
+
 
   }catch(error){
 
@@ -4546,6 +5745,7 @@ async function deleteChapter(id){
     return;
   }
 
+
   const {
     error
   } =
@@ -4556,6 +5756,7 @@ async function deleteChapter(id){
       "id",
       id
     );
+
 
   if(error){
 
@@ -4599,8 +5800,10 @@ function openLetterForm(
     letterStatus
   );
 
+
   editingLetterId =
     row?.id || null;
+
 
   document
     .getElementById(
@@ -4608,6 +5811,7 @@ function openLetterForm(
     )
     .value =
     row?.titulo || "";
+
 
   document
     .getElementById(
@@ -4617,6 +5821,7 @@ function openLetterForm(
     row?.mensaje ||
     row?.contenido ||
     "";
+
 
   document
     .getElementById(
@@ -4630,11 +5835,13 @@ function resetLetter(){
 
   editingLetterId = null;
 
+
   document
     .getElementById(
       "letter-title"
     )
     .value = "";
+
 
   document
     .getElementById(
@@ -4642,9 +5849,11 @@ function resetLetter(){
     )
     .value = "";
 
+
   letterForm.classList.remove(
     "active"
   );
+
 
   hideStatus(
     letterStatus
@@ -4691,6 +5900,7 @@ async function saveLetter(){
     return;
   }
 
+
   const titulo =
     document
     .getElementById(
@@ -4699,6 +5909,7 @@ async function saveLetter(){
     .value
     .trim();
 
+
   const mensaje =
     document
     .getElementById(
@@ -4706,6 +5917,7 @@ async function saveLetter(){
     )
     .value
     .trim();
+
 
   if(!titulo){
 
@@ -4718,6 +5930,7 @@ async function saveLetter(){
     return;
   }
 
+
   if(!mensaje){
 
     showStatus(
@@ -4729,12 +5942,14 @@ async function saveLetter(){
     return;
   }
 
+
   const button =
     document.getElementById(
       "save-letter"
     );
 
   button.disabled = true;
+
 
   try{
 
@@ -4745,8 +5960,10 @@ async function saveLetter(){
       .auth
       .getUser();
 
+
     const user =
       userData.user;
+
 
     if(!user){
 
@@ -4756,9 +5973,11 @@ async function saveLetter(){
 
     }
 
+
     const metadata =
       user.user_metadata ||
       {};
+
 
     const nombre =
       metadata.full_name ||
@@ -4766,6 +5985,7 @@ async function saveLetter(){
       metadata.nombre ||
       user.email ||
       "Usuario";
+
 
     const payload = {
 
@@ -4782,7 +6002,9 @@ async function saveLetter(){
 
     };
 
+
     let result;
+
 
     if(editingLetterId){
 
@@ -4806,9 +6028,11 @@ async function saveLetter(){
 
     }
 
+
     if(result.error){
       throw result.error;
     }
+
 
     showStatus(
       letterStatus,
@@ -4816,12 +6040,15 @@ async function saveLetter(){
       "success"
     );
 
+
     await loadLetters();
+
 
     setTimeout(
       resetLetter,
       900
     );
+
 
   }catch(error){
 
@@ -4859,6 +6086,7 @@ async function loadLetters(){
       "letters-list"
     );
 
+
   try{
 
     const session =
@@ -4867,6 +6095,7 @@ async function loadLetters(){
     if(!session){
       return;
     }
+
 
     const {
       data,
@@ -4882,11 +6111,14 @@ async function loadLetters(){
         }
       );
 
+
     if(error){
       throw error;
     }
 
+
     box.innerHTML = "";
+
 
     if(
       !data ||
@@ -4909,6 +6141,7 @@ async function loadLetters(){
       return;
     }
 
+
     data.forEach(
       function(letter){
 
@@ -4919,6 +6152,7 @@ async function loadLetters(){
 
         card.className =
           "card saved-letter";
+
 
         const date =
           document.createElement(
@@ -4933,6 +6167,7 @@ async function loadLetters(){
             letter.created_at
           );
 
+
         const title =
           document.createElement(
             "h3"
@@ -4944,6 +6179,7 @@ async function loadLetters(){
             letter.titulo ||
             "Una carta para ti"
           );
+
 
         const author =
           document.createElement(
@@ -4961,6 +6197,7 @@ async function loadLetters(){
             "Nosotros"
           );
 
+
         const text =
           document.createElement(
             "div"
@@ -4974,6 +6211,7 @@ async function loadLetters(){
           letter.contenido ||
           "";
 
+
         const actions =
           document.createElement(
             "div"
@@ -4981,6 +6219,7 @@ async function loadLetters(){
 
         actions.className =
           "letter-actions";
+
 
         const view =
           document.createElement(
@@ -4993,6 +6232,7 @@ async function loadLetters(){
         view.textContent =
           "💌 Leer carta";
 
+
         view.onclick =
           function(){
 
@@ -5003,12 +6243,14 @@ async function loadLetters(){
               .textContent =
               date.textContent;
 
+
             document
               .getElementById(
                 "modal-letter-title"
               )
               .textContent =
               title.textContent;
+
 
             document
               .getElementById(
@@ -5017,6 +6259,7 @@ async function loadLetters(){
               .textContent =
               author.textContent;
 
+
             document
               .getElementById(
                 "modal-letter-text"
@@ -5024,11 +6267,13 @@ async function loadLetters(){
               .textContent =
               text.textContent;
 
+
             openModal(
               "letter-modal"
             );
 
           };
+
 
         const edit =
           document.createElement(
@@ -5041,11 +6286,13 @@ async function loadLetters(){
         edit.textContent =
           "✏️ Editar";
 
+
         edit.onclick =
           () =>
             openLetterForm(
               letter
             );
+
 
         const deleteButton =
           document.createElement(
@@ -5058,17 +6305,20 @@ async function loadLetters(){
         deleteButton.textContent =
           "🗑️ Eliminar";
 
+
         deleteButton.onclick =
           () =>
             deleteLetter(
               letter.id
             );
 
+
         actions.append(
           view,
           edit,
           deleteButton
         );
+
 
         card.append(
           date,
@@ -5078,12 +6328,14 @@ async function loadLetters(){
           actions
         );
 
+
         box.appendChild(
           card
         );
 
       }
     );
+
 
   }catch(error){
 
@@ -5118,6 +6370,7 @@ async function deleteLetter(id){
     return;
   }
 
+
   const {
     error
   } =
@@ -5128,6 +6381,7 @@ async function deleteLetter(id){
       "id",
       id
     );
+
 
   if(error){
 
@@ -5281,6 +6535,7 @@ async function init(){
   if(!session){
     return;
   }
+
 
   await Promise.all([
 
