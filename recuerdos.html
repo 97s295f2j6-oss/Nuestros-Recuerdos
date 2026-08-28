@@ -1,5990 +1,5093 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset="UTF-8">
+<title>Nuestra Historia ❤️</title>
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-  <title>Recuerdos ❤️</title>
+<style>
 
-  <!-- SUPABASE -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+/* =========================
+   BASE
+========================= */
 
-  <style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
-    /* =====================================================
-       RESET
-    ===================================================== */
+html{
+    scroll-behavior:smooth;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-
-      min-height: 100vh;
-
-      background:
+body{
+    min-height:100vh;
+    background:
         radial-gradient(
-          circle at 50% -10%,
-          #3a1525 0%,
-          #180c14 28%,
-          #09090c 68%,
-          #050507 100%
+            circle at 50% 0%,
+            #3b1425 0%,
+            #190b14 30%,
+            #08080b 72%
         );
+    color:#fff;
+    font-family:Georgia,"Times New Roman",serif;
+    overflow-x:hidden;
+}
 
-      color: #fff;
+body.modal-open{
+    overflow:hidden;
+}
 
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+button,
+input,
+textarea,
+select{
+    font:inherit;
+}
 
-      overflow-x: hidden;
-    }
+button{
+    cursor:pointer;
+}
 
-    button,
-    input,
-    textarea {
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-    }
+.container{
+    width:100%;
+    max-width:1050px;
+    margin:auto;
+    padding:28px 22px 70px;
+}
 
-    button {
-      -webkit-tap-highlight-color: transparent;
-    }
+/* =========================
+   HEADER
+========================= */
 
-    .container {
+.site-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:10px 4px 38px;
+}
 
-      width: 100%;
+.brand{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+}
 
-      max-width: 900px;
+.brand h1{
+    font-size:clamp(34px,6vw,55px);
+    line-height:.95;
+}
 
-      margin: auto;
+.brand h1 span{
+    display:block;
+}
 
-      padding:
-        18px
-        22px
-        70px;
-    }
+.brand-heart{
+    font-size:42px;
+    line-height:1;
+}
 
+.add-top{
+    border:0;
+    border-radius:50px;
+    padding:18px 30px;
+    color:white;
 
-    /* =====================================================
-       CORAZONES
-    ===================================================== */
-
-    .floating-heart {
-
-      position: fixed;
-
-      bottom: -30px;
-
-      color: #a44767;
-
-      opacity: 0;
-
-      pointer-events: none;
-
-      z-index: -1;
-
-      animation:
-        floatHeart
-        10s
-        linear
-        infinite;
-    }
-
-    .f1 {
-      left: 8%;
-      animation-delay: 1s;
-    }
-
-    .f2 {
-      left: 32%;
-      animation-delay: 5s;
-    }
-
-    .f3 {
-      left: 67%;
-      animation-delay: 2s;
-    }
-
-    .f4 {
-      left: 88%;
-      animation-delay: 7s;
-    }
-
-    @keyframes floatHeart {
-
-      0% {
-        transform: translateY(0);
-        opacity: 0;
-      }
-
-      15% {
-        opacity: .45;
-      }
-
-      80% {
-        opacity: .15;
-      }
-
-      100% {
-        transform: translateY(-110vh);
-        opacity: 0;
-      }
-    }
-
-
-    /* =====================================================
-       BARRA SUPERIOR
-    ===================================================== */
-
-    .top-bar {
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 15px;
-
-      margin-bottom: 28px;
-
-      padding:
-        5px
-        4px;
-    }
-
-    .brand {
-
-      font-size: 24px;
-
-      font-weight: bold;
-
-      letter-spacing: .3px;
-    }
-
-    .top-add-button {
-
-      border: none;
-
-      border-radius: 40px;
-
-      padding:
-        14px
-        27px;
-
-      background:
+    background:
         linear-gradient(
-          135deg,
-          #df6b91,
-          #ba4167
+            135deg,
+            #df668e,
+            #b94369
         );
 
-      color: white;
+    box-shadow:
+        0 15px 40px
+        rgba(215,91,125,.25);
+}
 
-      font-size: 17px;
+/* =========================
+   SECCIONES
+========================= */
 
-      cursor: pointer;
+.section{
+    margin-top:35px;
+}
 
-      box-shadow:
-        0
-        10px
-        30px
-        rgba(
-          215,
-          91,
-          125,
-          .25
+.section-heading{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin:0 0 25px;
+
+    color:white;
+
+    font-size:
+        clamp(
+            31px,
+            5vw,
+            45px
         );
+}
 
-      transition: .25s;
-    }
+.section-heading:before,
+.section-heading:after{
+    content:"";
+    height:1px;
+    background:#713249;
+    flex:1;
+}
 
-    .top-add-button:hover {
-      transform: translateY(-2px);
-    }
+.section-heading span{
+    white-space:nowrap;
+}
 
+.section-subtitle{
+    text-align:center;
+    color:#bcaeb4;
+    font-size:18px;
+    margin:-8px 0 28px;
+}
 
-    /* =====================================================
-       CARTA DESTACADA
-    ===================================================== */
-
-    .carta-destacada {
-
-      position: relative;
-
-      min-height: 225px;
-
-      border:
+.card{
+    border:
         1px solid
-        rgba(
-          215,
-          91,
-          125,
-          .55
-        );
+        rgba(255,255,255,.13);
 
-      border-radius: 28px;
+    border-radius:28px;
 
-      background:
-        linear-gradient(
-          135deg,
-          rgba(
-            40,
-            17,
-            28,
-            .95
-          ),
-          rgba(
-            13,
-            10,
-            14,
-            .98
-          )
-        );
+    background:
+        rgba(255,255,255,.035);
 
-      overflow: hidden;
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.28);
 
-      padding:
-        30px;
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+}
 
-      margin-bottom: 36px;
+/* =========================
+   CARTA PRINCIPAL
+========================= */
 
-      box-shadow:
-        0
-        25px
-        70px
-        rgba(
-          0,
-          0,
-          0,
-          .35
-        );
-    }
+.letter-hero{
+    position:relative;
+    overflow:hidden;
 
-    .carta-destacada-texto {
-
-      position: relative;
-
-      z-index: 2;
-
-      max-width: 58%;
-    }
-
-    .carta-destacada h2 {
-
-      font-size: 31px;
-
-      line-height: 1.15;
-
-      margin-bottom: 17px;
-    }
-
-    .carta-destacada p {
-
-      color: #d7cbd0;
-
-      font-size: 17px;
-
-      line-height: 1.55;
-
-      margin-bottom: 23px;
-    }
-
-    .envelope {
-
-      position: absolute;
-
-      right: 35px;
-
-      top: 25px;
-
-      width: 190px;
-
-      height: 150px;
-
-      font-size: 135px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      filter:
-        drop-shadow(
-          0
-          15px
-          25px
-          rgba(
-            0,
-            0,
-            0,
-            .35
-          )
-        );
-
-      transform:
-        rotate(-4deg);
-    }
-
-    .primary-button {
-
-      border: none;
-
-      border-radius: 35px;
-
-      padding:
-        14px
-        28px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #dc6187,
-          #bb4168
-        );
-
-      color: white;
-
-      font-size: 17px;
-
-      cursor: pointer;
-
-      box-shadow:
-        0
-        10px
-        28px
-        rgba(
-          215,
-          91,
-          125,
-          .24
-        );
-
-      transition: .25s;
-    }
-
-    .primary-button:hover {
-      transform: translateY(-2px);
-    }
-
-
-    /* =====================================================
-       TITULOS DE SECCION
-    ===================================================== */
-
-    .section-title {
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      gap: 14px;
-
-      margin:
-        28px
-        0
-        22px;
-
-      font-size: 34px;
-
-      text-align: center;
-    }
-
-    .section-title::before,
-    .section-title::after {
-
-      content: "";
-
-      height: 1px;
-
-      flex: 1;
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          #873a55
-        );
-    }
-
-    .section-title::after {
-
-      background:
-        linear-gradient(
-          90deg,
-          #873a55,
-          transparent
-        );
-    }
-
-    .section-subtitle {
-
-      text-align: center;
-
-      color: #a99ca3;
-
-      margin:
-        -8px
-        0
-        24px;
-
-      font-size: 16px;
-    }
-
-
-    /* =====================================================
-       RECUERDO
-    ===================================================== */
-
-    .recuerdos-list {
-
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 16px;
-    }
-
-    .recuerdo-card {
-
-      display: grid;
-
-      grid-template-columns:
+    padding:
+        48px
         42%
-        58%;
-
-      min-height: 285px;
-
-      overflow: hidden;
-
-      border:
-        1px solid
-        rgba(
-          255,
-          255,
-          255,
-          .14
-        );
-
-      border-radius: 24px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(
-            28,
-            20,
-            25,
-            .96
-          ),
-          rgba(
-            15,
-            12,
-            16,
-            .98
-          )
-        );
-
-      box-shadow:
-        0
-        18px
-        45px
-        rgba(
-          0,
-          0,
-          0,
-          .28
-        );
-
-      transition:
-        transform .25s,
-        border-color .25s;
-    }
-
-    .recuerdo-card:hover {
-
-      transform:
-        translateY(-2px);
-
-      border-color:
-        rgba(
-          215,
-          91,
-          125,
-          .38
-        );
-    }
-
-    .recuerdo-imagen {
-
-      position: relative;
-
-      min-height: 285px;
-
-      overflow: hidden;
-
-      background: #120d11;
-    }
-
-    .recuerdo-imagen img {
-
-      width: 100%;
-
-      height: 100%;
-
-      min-height: 285px;
-
-      object-fit: cover;
-
-      display: block;
-
-      transition:
-        transform .5s ease;
-    }
-
-    .recuerdo-card:hover
-    .recuerdo-imagen img {
-
-      transform:
-        scale(1.025);
-    }
-
-    .recuerdo-contenido {
-
-      padding:
-        23px
-        22px
-        18px;
-
-      display: flex;
-
-      flex-direction: column;
-    }
-
-    .recuerdo-fecha {
-
-      color: #d75b7d;
-
-      font-size: 13px;
-
-      letter-spacing: 3px;
-
-      text-transform: uppercase;
-
-      margin-bottom: 12px;
-    }
-
-    .recuerdo-titulo {
-
-      font-size: 27px;
-
-      line-height: 1.2;
-
-      margin-bottom: 13px;
-    }
-
-    .recuerdo-descripcion {
-
-      color: #d2c7cc;
-
-      font-size: 17px;
-
-      line-height: 1.65;
-
-      flex: 1;
-
-      display: -webkit-box;
-
-      -webkit-line-clamp: 4;
-
-      -webkit-box-orient: vertical;
-
-      overflow: hidden;
-    }
-
-    .recuerdo-ver {
-
-      align-self: center;
-
-      margin:
-        18px
-        0
-        0;
-
-      border:
-        1px solid
-        #8d3855;
-
-      background:
-        rgba(
-          55,
-          15,
-          30,
-          .20
-        );
-
-      color: #e5a8bb;
-
-      border-radius: 28px;
-
-      padding:
-        10px
-        30px;
-
-      font-size: 16px;
-
-      cursor: pointer;
-
-      transition: .25s;
-    }
-
-    .recuerdo-ver:hover {
-
-      background:
-        rgba(
-          215,
-          91,
-          125,
-          .13
-        );
-
-      border-color:
-        #d75b7d;
-    }
-
-    .recuerdo-acciones {
-
-      grid-column:
-        1 / -1;
-
-      display: grid;
-
-      grid-template-columns:
-        1fr
-        1fr;
-
-      border-top:
-        1px solid
-        rgba(
-          255,
-          255,
-          255,
-          .08
-        );
-
-      background:
-        rgba(
-          0,
-          0,
-          0,
-          .12
-        );
-    }
-
-    .accion-recuerdo {
-
-      border: none;
-
-      background: transparent;
-
-      color: #d99bad;
-
-      padding:
-        13px;
-
-      font-size: 16px;
-
-      cursor: pointer;
-
-      transition: .2s;
-    }
-
-    .accion-recuerdo:first-child {
-
-      border-right:
-        1px solid
-        rgba(
-          255,
-          255,
-          255,
-          .08
-        );
-    }
-
-    .accion-recuerdo:hover {
-
-      background:
-        rgba(
-          215,
-          91,
-          125,
-          .10
-        );
-    }
-
-    .accion-eliminar:hover {
-
-      color: #ff8e9e;
-
-      background:
-        rgba(
-          180,
-          40,
-          55,
-          .12
-        );
-    }
-
-
-    /* =====================================================
-       BOTONES VER TODOS
-    ===================================================== */
-
-    .center-button {
-
-      display: flex;
-
-      justify-content: center;
-
-      margin:
-        20px
-        0
+        48px
         38px;
-    }
 
-    .secondary-button {
+    min-height:350px;
 
-      border: none;
+    border:
+        1px solid
+        rgba(215,91,125,.55);
 
-      border-radius: 30px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(215,91,125,.10),
+            rgba(255,255,255,.025)
+        );
+}
 
-      padding:
-        13px
+.letter-hero h2{
+    font-size:
+        clamp(
+            35px,
+            6vw,
+            54px
+        );
+
+    line-height:1.08;
+    margin-bottom:25px;
+}
+
+.letter-hero p{
+    color:#d2c6cb;
+    font-size:20px;
+    line-height:1.65;
+    margin-bottom:28px;
+}
+
+.envelope-art{
+    position:absolute;
+
+    right:35px;
+    top:50%;
+
+    transform:
+        translateY(-50%);
+
+    font-size:150px;
+
+    filter:
+        drop-shadow(
+            0 20px 25px
+            rgba(215,91,125,.2)
+        );
+}
+
+.pink-button{
+    border:0;
+    border-radius:50px;
+
+    padding:
+        16px
         28px;
 
-      background:
+    color:white;
+
+    background:
         linear-gradient(
-          135deg,
-          #c95176,
-          #a83b5d
+            135deg,
+            #df668e,
+            #b94369
         );
 
-      color: white;
+    box-shadow:
+        0 15px 35px
+        rgba(215,91,125,.22);
 
-      font-size: 16px;
+    transition:.2s;
+}
 
-      cursor: pointer;
+.pink-button:hover{
+    transform:translateY(-2px);
+}
 
-      box-shadow:
-        0
-        10px
-        25px
-        rgba(
-          215,
-          91,
-          125,
-          .20
-        );
-    }
-
-
-    /* =====================================================
-       FORMULARIO RECUERDO
-    ===================================================== */
-
-    .form-card {
-
-      display: none;
-
-      margin-top: 18px;
-
-      padding:
-        25px;
-
-      border:
+.small-button{
+    border:
         1px solid
-        rgba(
-          215,
-          91,
-          125,
-          .35
-        );
+        rgba(215,91,125,.6);
 
-      border-radius: 24px;
+    border-radius:30px;
 
-      background:
-        rgba(
-          30,
-          15,
-          23,
-          .80
-        );
-    }
-
-    .form-card.active {
-      display: block;
-    }
-
-    .form-label {
-
-      display: block;
-
-      margin:
-        16px
-        0
-        7px;
-
-      color: #d8c4cc;
-
-      font-size: 15px;
-    }
-
-    .form-input,
-    .form-textarea {
-
-      width: 100%;
-
-      border:
-        1px solid
-        rgba(
-          255,
-          255,
-          255,
-          .15
-        );
-
-      border-radius: 14px;
-
-      background:
-        rgba(
-          0,
-          0,
-          0,
-          .28
-        );
-
-      color: white;
-
-      padding:
-        13px
-        14px;
-
-      font-size: 16px;
-
-      outline: none;
-    }
-
-    .form-input:focus,
-    .form-textarea:focus {
-
-      border-color:
-        #d75b7d;
-    }
-
-    .form-textarea {
-
-      min-height: 125px;
-
-      resize: vertical;
-
-      line-height: 1.6;
-    }
-
-    .form-file {
-
-      width: 100%;
-
-      color: #cfc3c8;
-
-      margin-top: 8px;
-    }
-
-    .preview {
-
-      display: none;
-
-      margin-top: 18px;
-
-      border-radius: 18px;
-
-      overflow: hidden;
-
-      border:
-        1px solid
-        rgba(
-          255,
-          255,
-          255,
-          .12
-        );
-    }
-
-    .preview.active {
-      display: block;
-    }
-
-    .preview img {
-
-      width: 100%;
-
-      max-height: 330px;
-
-      object-fit: cover;
-
-      display: block;
-    }
-
-    .form-buttons {
-
-      display: grid;
-
-      grid-template-columns:
-        1fr
-        1fr;
-
-      gap: 10px;
-
-      margin-top: 20px;
-    }
-
-    .save-button,
-    .cancel-button {
-
-      border: none;
-
-      border-radius: 25px;
-
-      padding:
-        13px;
-
-      font-size: 16px;
-
-      cursor: pointer;
-    }
-
-    .save-button {
-
-      background:
-        #d75b7d;
-
-      color: white;
-    }
-
-    .cancel-button {
-
-      background:
-        rgba(
-          255,
-          255,
-          255,
-          .06
-        );
-
-      color: #d0c5ca;
-
-      border:
-        1px solid
-        rgba(
-          255,
-          255,
-          255,
-          .13
-        );
-    }
-
-    .status {
-
-      display: none;
-
-      margin-top: 15px;
-
-      padding: 12px;
-
-      border-radius: 13px;
-
-      text-align: center;
-
-      font-size: 15px;
-    }
-
-    .status.show {
-      display: block;
-    }
-
-    .status.success {
-
-      color: #9be4b8;
-
-      background:
-        rgba(
-          70,
-          180,
-          115,
-          .10
-        );
-
-      border:
-        1px solid
-        rgba(
-          70,
-          180,
-          115,
-          .22
-        );
-    }
-
-    .status.error {
-
-      color: #ff9da8;
-
-      background:
-        rgba(
-          220,
-          60,
-          80,
-          .10
-        );
-
-      border:
-        1px solid
-        rgba(
-          220,
-          60,
-          80,
-          .22
-        );
-    }
-
-
-    /* =====================================================
-       CARTAS
-    ===================================================== */
-
-    .cartas-section {
-      margin-top: 18px;
-    }
-
-    .carta-guardada {
-
-      display: grid;
-
-      grid-template-columns:
-        1fr
-        auto;
-
-      gap: 18px;
-
-      padding:
-        22px;
-
-      border:
-        1px solid
-        rgba(
-          255,
-          255,
-          255,
-          .14
-        );
-
-      border-radius: 24px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(
-            28,
-            20,
-            25,
-            .95
-          ),
-          rgba(
-            15,
-            12,
-            16,
-            .98
-          )
-        );
-
-      margin-bottom: 14px;
-
-      transition: .25s;
-    }
-
-    .carta-guardada:hover {
-
-      border-color:
-        rgba(
-          215,
-          91,
-          125,
-          .40
-        );
-    }
-
-    .carta-info {
-      min-width: 0;
-    }
-
-    .carta-fecha {
-
-      color: #d75b7d;
-
-      font-size: 13px;
-
-      letter-spacing: 3px;
-
-      text-transform: uppercase;
-
-      margin-bottom: 10px;
-    }
-
-    .carta-titulo {
-
-      font-size: 25px;
-
-      line-height: 1.3;
-
-      margin-bottom: 8px;
-    }
-
-    .carta-autor {
-
-      color: #c0b2b9;
-
-      font-size: 14px;
-
-      margin-bottom: 17px;
-    }
-
-    .carta-preview {
-
-      color: #d7ced2;
-
-      font-size: 16px;
-
-      line-height: 1.65;
-
-      font-style: italic;
-
-      display: -webkit-box;
-
-      -webkit-line-clamp: 2;
-
-      -webkit-box-orient: vertical;
-
-      overflow: hidden;
-    }
-
-    .carta-acciones {
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: center;
-
-      gap: 10px;
-
-      min-width: 150px;
-    }
-
-    .carta-action {
-
-      border:
-        1px solid
-        #773149;
-
-      background:
-        rgba(
-          60,
-          20,
-          35,
-          .20
-        );
-
-      color: #dda0b3;
-
-      border-radius: 28px;
-
-      padding:
+    padding:
         11px
+        20px;
+
+    color:#e8a5ba;
+
+    background:
+        rgba(215,91,125,.06);
+}
+
+/* =========================
+   FORMULARIOS
+========================= */
+
+.form-panel{
+    display:none;
+    padding:25px;
+    margin-top:18px;
+}
+
+.form-panel.active{
+    display:block;
+}
+
+label{
+    display:block;
+    color:#d9c7ce;
+    font-size:15px;
+    margin:17px 0 8px;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.16);
+
+    border-radius:15px;
+
+    background:
+        rgba(0,0,0,.25);
+
+    color:#fff;
+
+    padding:14px;
+
+    outline:none;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+    border-color:#d75b7d;
+}
+
+textarea{
+    min-height:130px;
+    resize:vertical;
+    line-height:1.6;
+}
+
+.form-row{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.form-row > *{
+    flex:1;
+}
+
+.status{
+    display:none;
+    margin-top:15px;
+    padding:12px;
+    border-radius:13px;
+    text-align:center;
+}
+
+.status.show{
+    display:block;
+}
+
+.status.success{
+    background:rgba(80,180,120,.12);
+    color:#9be4b8;
+}
+
+.status.error{
+    background:rgba(220,70,90,.12);
+    color:#ff9ba8;
+}
+
+.preview{
+    display:none;
+    margin-top:15px;
+    border-radius:18px;
+    overflow:hidden;
+}
+
+.preview.active{
+    display:block;
+}
+
+.preview img{
+    width:100%;
+    max-height:350px;
+    object-fit:cover;
+}
+
+/* =========================
+   RECUERDOS
+========================= */
+
+.memories{
+    display:grid;
+    gap:18px;
+}
+
+.memory-card{
+    display:grid;
+
+    grid-template-columns:
+        43%
+        57%;
+
+    overflow:hidden;
+    min-height:270px;
+}
+
+.memory-image-wrap{
+    min-height:270px;
+    background:#160d13;
+}
+
+.memory-image{
+    width:100%;
+    height:100%;
+    min-height:270px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.memory-info{
+    padding:27px 28px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.memory-date,
+.date-label{
+    color:#d75b7d;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    font-size:13px;
+
+    margin-bottom:12px;
+}
+
+.memory-title{
+    font-size:30px;
+    line-height:1.15;
+
+    margin-bottom:14px;
+}
+
+.memory-desc{
+    color:#d0c5ca;
+
+    font-size:18px;
+
+    line-height:1.65;
+
+    white-space:pre-wrap;
+}
+
+.memory-actions{
+    display:flex;
+    gap:9px;
+    flex-wrap:wrap;
+
+    margin-top:auto;
+    padding-top:20px;
+}
+
+.action{
+    border:
+        1px solid
+        rgba(215,91,125,.48);
+
+    border-radius:30px;
+
+    padding:
+        10px
         18px;
 
-      font-size: 15px;
+    background:
+        rgba(215,91,125,.08);
 
-      cursor: pointer;
+    color:#e9a4ba;
+}
 
-      transition: .2s;
-    }
+.action.delete{
+    border-color:
+        rgba(220,70,90,.45);
+}
 
-    .carta-action:hover {
+.center-action{
+    text-align:center;
+    margin:25px 0;
+}
 
-      background:
-        rgba(
-          215,
-          91,
-          125,
-          .12
-        );
-    }
+/* =========================
+   FECHAS ESPECIALES
+========================= */
 
-    .carta-action.eliminar:hover {
+.dates{
+    display:grid;
+    gap:16px;
+}
 
-      color: #ff9aa7;
+.date-card{
+    position:relative;
 
-      border-color:
-        #a53b50;
-    }
+    padding:
+        26px
+        28px;
 
+    overflow:hidden;
+}
 
-    /* =====================================================
-       MODAL GENERAL
-    ===================================================== */
+.date-card:after{
+    content:"❤️";
 
-    .modal {
+    position:absolute;
 
-      position: fixed;
+    right:25px;
+    top:22px;
 
-      inset: 0;
+    opacity:.15;
 
-      z-index: 9999;
+    font-size:35px;
+}
 
-      display: flex;
+.date-top{
+    display:flex;
+    gap:15px;
+    align-items:flex-start;
+}
 
-      align-items: center;
+.date-icon{
+    font-size:35px;
+}
 
-      justify-content: center;
+.date-title{
+    font-size:27px;
 
-      padding: 15px;
+    margin-bottom:8px;
 
-      background:
-        rgba(
-          3,
-          2,
-          4,
-          .86
-        );
+    padding-right:35px;
+}
 
-      backdrop-filter:
-        blur(12px);
+.date-message{
+    color:#cfc6ca;
 
-      -webkit-backdrop-filter:
-        blur(12px);
+    font-size:17px;
 
-      opacity: 0;
+    line-height:1.65;
 
-      visibility: hidden;
+    white-space:pre-wrap;
+}
 
-      transition:
-        opacity .3s,
-        visibility .3s;
-    }
+.date-actions{
+    display:flex;
 
-    .modal.active {
+    gap:9px;
 
-      opacity: 1;
+    margin-top:17px;
 
-      visibility: visible;
-    }
+    flex-wrap:wrap;
+}
 
-    .modal-content {
+.add-date{
+    padding:28px;
 
-      width: 100%;
+    text-align:center;
 
-      max-width: 820px;
+    margin-top:16px;
 
-      max-height: 94vh;
+    border-color:
+        rgba(215,91,125,.35);
+}
 
-      overflow-y: auto;
+.add-date p{
+    color:#cfc6ca;
 
-      border:
-        1px solid
-        rgba(
-          215,
-          91,
-          125,
-          .40
-        );
-
-      border-radius: 28px;
-
-      background:
-        linear-gradient(
-          145deg,
-          #1b1117,
-          #0d0a0d
-        );
-
-      box-shadow:
+    margin:
+        10px
         0
+        20px;
+}
+
+.date-form{
+    display:none;
+
+    text-align:left;
+
+    margin-top:20px;
+}
+
+.date-form.active{
+    display:block;
+}
+
+/* =========================
+   HISTORIA
+========================= */
+
+.timeline{
+    position:relative;
+
+    padding-left:34px;
+
+    border-left:
+        1px solid
+        #713b4d;
+}
+
+.timeline-item{
+    position:relative;
+
+    margin-bottom:45px;
+}
+
+.timeline-item:before{
+    content:"♥";
+
+    position:absolute;
+
+    left:-46px;
+    top:0;
+
+    color:#d75b7d;
+
+    background:#120b11;
+
+    padding:3px;
+
+    font-size:18px;
+}
+
+.timeline-item:last-child{
+    margin-bottom:0;
+}
+
+.timeline-title{
+    font-size:28px;
+
+    margin-bottom:12px;
+}
+
+.timeline-text{
+    color:#cfc6ca;
+
+    font-size:17px;
+
+    line-height:1.75;
+
+    white-space:pre-wrap;
+}
+
+.history-image{
+    width:100%;
+
+    max-height:430px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    margin-top:20px;
+}
+
+/* =========================
+   CARTAS
+========================= */
+
+.letters{
+    margin-top:70px;
+}
+
+.letter-list{
+    display:grid;
+    gap:16px;
+}
+
+.saved-letter{
+    position:relative;
+
+    padding:
+        27px
+        28px;
+
+    overflow:hidden;
+}
+
+.saved-letter:before{
+    content:"💌";
+
+    position:absolute;
+
+    right:24px;
+    top:18px;
+
+    font-size:32px;
+
+    opacity:.16;
+}
+
+.saved-letter h3{
+    font-size:28px;
+
+    margin-bottom:9px;
+
+    padding-right:40px;
+}
+
+.letter-author{
+    color:#bcaeb4;
+
+    font-size:14px;
+
+    margin-bottom:16px;
+}
+
+.letter-preview{
+    color:#d8d0d4;
+
+    font-size:18px;
+
+    line-height:1.75;
+
+    font-style:italic;
+
+    white-space:pre-wrap;
+}
+
+.letter-actions{
+    display:flex;
+
+    gap:9px;
+
+    margin-top:18px;
+
+    flex-wrap:wrap;
+}
+
+/* =========================
+   MODALES
+========================= */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px;
+
+    background:
+        rgba(5,3,6,.84);
+
+    backdrop-filter:blur(12px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+}
+
+.modal.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.modal-box{
+    width:100%;
+
+    max-width:850px;
+
+    max-height:92vh;
+
+    overflow:auto;
+
+    padding:
+        38px
         30px
-        90px
-        rgba(
-          0,
-          0,
-          0,
-          .65
+        42px;
+
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #181116,
+            #0d0a0d
         );
 
-      padding:
-        25px;
+    border:
+        1px solid
+        rgba(215,91,125,.4);
 
-      position: relative;
+    box-shadow:
+        0 30px 90px
+        rgba(0,0,0,.65);
 
-      transform:
+    transform:
         translateY(25px)
         scale(.97);
 
-      transition:
-        transform .35s
-        cubic-bezier(
-          .22,
-          1,
-          .36,
-          1
-        );
-    }
+    transition:.35s;
+}
 
-    .modal.active
-    .modal-content {
+.modal.active .modal-box{
+    transform:none;
+}
 
-      transform:
-        translateY(0)
-        scale(1);
-    }
+.close{
+    position:absolute;
 
-    .modal-close {
+    right:17px;
+    top:14px;
 
-      position: absolute;
+    width:42px;
+    height:42px;
 
-      right: 15px;
+    border-radius:50%;
 
-      top: 13px;
-
-      width: 40px;
-
-      height: 40px;
-
-      border-radius: 50%;
-
-      border:
+    border:
         1px solid
-        rgba(
-          255,
-          255,
-          255,
-          .14
-        );
+        rgba(255,255,255,.15);
 
-      background:
-        rgba(
-          255,
-          255,
-          255,
-          .07
-        );
+    background:
+        rgba(255,255,255,.07);
 
-      color: white;
+    color:#fff;
 
-      font-size: 25px;
+    font-size:24px;
+}
 
-      cursor: pointer;
+.modal-date{
+    text-align:center;
 
-      z-index: 5;
-    }
+    color:#d75b7d;
 
+    letter-spacing:3px;
 
-    /* =====================================================
-       MODAL RECUERDO
-    ===================================================== */
+    text-transform:uppercase;
 
-    .modal-recuerdo-img {
+    font-size:13px;
 
-      width: 100%;
+    margin-bottom:14px;
+}
 
-      max-height: 65vh;
+.modal h2{
+    text-align:center;
 
-      object-fit: contain;
-
-      border-radius: 20px;
-
-      display: block;
-
-      background: #09080a;
-
-      margin-bottom: 22px;
-    }
-
-    .modal-recuerdo-fecha {
-
-      color: #d75b7d;
-
-      letter-spacing: 3px;
-
-      text-transform: uppercase;
-
-      font-size: 13px;
-
-      margin-bottom: 10px;
-    }
-
-    .modal-recuerdo-titulo {
-
-      font-size: 35px;
-
-      margin-bottom: 14px;
-    }
-
-    .modal-recuerdo-texto {
-
-      color: #d5cbd0;
-
-      font-size: 18px;
-
-      line-height: 1.8;
-
-      white-space: pre-wrap;
-    }
-
-
-    /* =====================================================
-       MODAL CARTA
-    ===================================================== */
-
-    .modal-carta-icon {
-
-      text-align: center;
-
-      font-size: 55px;
-
-      margin-bottom: 10px;
-    }
-
-    .modal-carta-fecha {
-
-      text-align: center;
-
-      color: #d75b7d;
-
-      letter-spacing: 3px;
-
-      text-transform: uppercase;
-
-      font-size: 13px;
-
-      margin-bottom: 14px;
-    }
-
-    .modal-carta-titulo {
-
-      text-align: center;
-
-      font-size:
+    font-size:
         clamp(
-          31px,
-          7vw,
-          55px
+            32px,
+            7vw,
+            55px
         );
 
-      line-height: 1.1;
+    margin-bottom:18px;
+}
 
-      margin-bottom: 13px;
-    }
+.modal-author{
+    text-align:center;
 
-    .modal-carta-autor {
+    color:#bcaeb4;
 
-      text-align: center;
+    margin-bottom:30px;
+}
 
-      color: #bcaeb4;
+.modal-line{
+    width:70px;
+    height:1px;
 
-      margin-bottom: 28px;
-    }
+    background:#9b5269;
 
-    .modal-separator {
-
-      width: 70px;
-
-      height: 1px;
-
-      background: #9b5269;
-
-      margin:
+    margin:
         0
         auto
-        28px;
-    }
+        30px;
+}
 
-    .modal-carta-texto {
+.modal-text{
+    font-size:20px;
 
-      color: #ddd4d9;
+    line-height:2;
 
-      font-size: 19px;
+    color:#ded5da;
 
-      line-height: 2;
+    white-space:pre-wrap;
 
-      font-style: italic;
+    font-style:italic;
+}
 
-      white-space: pre-wrap;
-    }
+/* =========================
+   FINAL
+========================= */
 
+.future{
+    text-align:center;
 
-    /* =====================================================
-       HISTORIA
-    ===================================================== */
+    padding:45px 25px;
 
-    .historia-section {
+    margin-top:55px;
+}
 
-      margin-top: 60px;
-    }
+.future h2{
+    font-size:31px;
 
-    .timeline {
+    margin-bottom:15px;
+}
 
-      position: relative;
+.future p{
+    color:#cfc6ca;
 
-      margin-top: 25px;
+    font-size:18px;
 
-      padding-left: 28px;
+    line-height:1.75;
+}
 
-      border-left:
-        1px solid
-        #73394d;
-    }
+.logout{
+    display:block;
 
-    .timeline-item {
-
-      position: relative;
-
-      margin-bottom: 40px;
-    }
-
-    .timeline-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .timeline-item::before {
-
-      content: "♥";
-
-      position: absolute;
-
-      left: -39px;
-
-      top: 0;
-
-      width: 20px;
-
-      height: 20px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      color: #d75b7d;
-
-      background: #100a0f;
-
-      font-size: 15px;
-    }
-
-    .timeline-date {
-
-      color: #d75b7d;
-
-      font-size: 13px;
-
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
-
-      margin-bottom: 8px;
-    }
-
-    .timeline-item h3 {
-
-      font-size: 27px;
-
-      margin-bottom: 10px;
-    }
-
-    .timeline-item p {
-
-      color: #cfc5ca;
-
-      font-size: 17px;
-
-      line-height: 1.7;
-    }
-
-    .historia-foto {
-
-      width: 100%;
-
-      max-height: 420px;
-
-      object-fit: cover;
-
-      border-radius: 18px;
-
-      margin-top: 17px;
-
-      display: block;
-    }
-
-    .historia-agregar {
-
-      margin-top: 25px;
-
-      text-align: center;
-    }
-
-
-    /* =====================================================
-       SIN CONTENIDO
-    ===================================================== */
-
-    .empty {
-
-      text-align: center;
-
-      padding:
-        30px
-        20px;
-
-      color: #9e9399;
-
-      border:
-        1px dashed
-        rgba(
-          255,
-          255,
-          255,
-          .16
-        );
-
-      border-radius: 20px;
-    }
-
-
-    /* =====================================================
-       FOOTER
-    ===================================================== */
-
-    .footer {
-
-      text-align: center;
-
-      color: #71676d;
-
-      margin-top: 65px;
-
-      font-size: 14px;
-
-      line-height: 1.7;
-    }
-
-    .logout {
-
-      display: block;
-
-      margin:
-        35px
+    margin:
+        45px
         auto
         0;
 
-      border:
+    background:transparent;
+
+    color:#aaa0a5;
+
+    border:
         1px solid
-        rgba(
-          255,
-          255,
-          255,
-          .13
-        );
+        rgba(255,255,255,.15);
 
-      background:
-        transparent;
+    border-radius:30px;
 
-      color: #aaa0a5;
+    padding:
+        12px
+        25px;
+}
 
-      border-radius: 25px;
+.footer{
+    text-align:center;
 
-      padding:
-        11px
-        24px;
+    color:#746b70;
 
-      cursor: pointer;
+    font-size:14px;
+
+    margin-top:35px;
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media(max-width:700px){
+
+    .container{
+        padding:
+            20px
+            15px
+            55px;
     }
 
+    .site-header{
+        align-items:center;
 
-    /* =====================================================
-       OCULTAR
-    ===================================================== */
-
-    .hidden-item {
-      display: none !important;
+        padding-bottom:25px;
     }
 
-
-    /* =====================================================
-       CELULAR
-    ===================================================== */
-
-    @media (max-width: 650px) {
-
-      .container {
-
-        padding:
-          12px
-          15px
-          55px;
-      }
-
-      .top-bar {
-
-        margin-bottom: 20px;
-      }
-
-      .brand {
-
-        font-size: 19px;
-      }
-
-      .top-add-button {
-
-        padding:
-          12px
-          19px;
-
-        font-size: 15px;
-      }
-
-      .carta-destacada {
-
-        padding:
-          24px
-          20px;
-
-        min-height: 250px;
-      }
-
-      .carta-destacada-texto {
-
-        max-width: 65%;
-      }
-
-      .carta-destacada h2 {
-
-        font-size: 25px;
-      }
-
-      .carta-destacada p {
-
-        font-size: 15px;
-      }
-
-      .envelope {
-
-        right: -5px;
-
-        top: 28px;
-
-        width: 145px;
-
-        font-size: 105px;
-
-        opacity: .95;
-      }
-
-      .primary-button {
-
-        padding:
-          12px
-          20px;
-
-        font-size: 15px;
-      }
-
-      .section-title {
-
-        font-size: 29px;
-
-        gap: 8px;
-
-        margin-top: 24px;
-      }
-
-      .section-subtitle {
-
-        font-size: 14px;
-      }
-
-      .recuerdo-card {
-
-        grid-template-columns:
-          44%
-          56%;
-
-        min-height: 260px;
-
-        border-radius: 22px;
-      }
-
-      .recuerdo-imagen {
-
-        min-height: 260px;
-      }
-
-      .recuerdo-imagen img {
-
-        min-height: 260px;
-      }
-
-      .recuerdo-contenido {
-
-        padding:
-          18px
-          14px
-          15px;
-      }
-
-      .recuerdo-fecha {
-
-        font-size: 10px;
-
-        letter-spacing: 2px;
-
-        margin-bottom: 9px;
-      }
-
-      .recuerdo-titulo {
-
-        font-size: 21px;
-      }
-
-      .recuerdo-descripcion {
-
-        font-size: 14px;
-
-        line-height: 1.55;
-
-        -webkit-line-clamp: 5;
-      }
-
-      .recuerdo-ver {
-
-        padding:
-          9px
-          18px;
-
-        font-size: 14px;
-
-        margin-top: 12px;
-      }
-
-      .accion-recuerdo {
-
-        font-size: 14px;
-
-        padding:
-          12px
-          7px;
-      }
-
-      .carta-guardada {
-
-        grid-template-columns: 1fr;
-
-        padding:
-          20px
-          17px;
-      }
-
-      .carta-titulo {
-
-        font-size: 22px;
-      }
-
-      .carta-acciones {
-
-        display: grid;
-
-        grid-template-columns:
-          1fr
-          1fr;
-
-        min-width: 0;
-      }
-
-      .carta-action {
-
-        padding:
-          10px
-          8px;
-      }
-
-      .modal {
-
-        padding: 8px;
-      }
-
-      .modal-content {
-
-        padding:
-          22px
-          18px
-          28px;
-
-        border-radius: 23px;
-      }
-
-      .modal-recuerdo-titulo {
-
-        font-size: 28px;
-      }
-
-      .modal-recuerdo-texto {
-
-        font-size: 17px;
-
-        line-height: 1.75;
-      }
-
-      .modal-carta-texto {
-
-        font-size: 17px;
-
-        line-height: 1.85;
-      }
-
-      .form-buttons {
-
-        grid-template-columns: 1fr;
-      }
-
+    .brand-heart{
+        font-size:32px;
     }
 
-  </style>
+    .brand h1{
+        font-size:35px;
+    }
 
+    .add-top{
+        padding:
+            14px
+            20px;
+
+        font-size:15px;
+    }
+
+    .letter-hero{
+
+        padding:
+            32px
+            25px
+            150px;
+
+        min-height:470px;
+    }
+
+    .letter-hero h2{
+        font-size:39px;
+    }
+
+    .letter-hero p{
+        font-size:18px;
+    }
+
+    .envelope-art{
+
+        font-size:100px;
+
+        right:25px;
+
+        top:auto;
+        bottom:20px;
+
+        transform:none;
+    }
+
+    .section-heading{
+        font-size:32px;
+        gap:8px;
+    }
+
+    .section-heading span{
+        white-space:normal;
+        text-align:center;
+    }
+
+    .memory-card{
+        grid-template-columns:1fr;
+    }
+
+    .memory-image-wrap,
+    .memory-image{
+        min-height:300px;
+        height:300px;
+    }
+
+    .memory-info{
+        padding:22px;
+    }
+
+    .memory-title{
+        font-size:27px;
+    }
+
+    .memory-actions{
+        margin-top:18px;
+    }
+
+    .form-row{
+        flex-direction:column;
+    }
+
+    .date-card{
+        padding:23px;
+    }
+
+    .date-title{
+        font-size:24px;
+    }
+
+    .timeline{
+        padding-left:28px;
+    }
+
+    .timeline-item:before{
+        left:-40px;
+    }
+}
+
+</style>
 </head>
-
 
 <body>
 
-  <!-- =====================================================
-       CORAZONES
-  ===================================================== -->
+<div class="container">
 
-  <div class="floating-heart f1">♡</div>
-  <div class="floating-heart f2">♡</div>
-  <div class="floating-heart f3">♡</div>
-  <div class="floating-heart f4">♡</div>
+<!-- =========================
+     HEADER
+========================= -->
 
+<header class="site-header">
 
-  <main class="container">
+    <div class="brand">
 
+        <div class="brand-heart">
+            ❤️
+        </div>
 
-    <!-- =====================================================
-         BARRA SUPERIOR
-    ===================================================== -->
-
-    <div class="top-bar">
-
-      <div class="brand">
-        ❤️ Nuestra historia
-      </div>
-
-      <button
-        class="top-add-button"
-        id="abrir-upload"
-        type="button"
-      >
-        + Agregar recuerdo
-      </button>
+        <h1>
+            <span>Nuestra</span>
+            <span>historia</span>
+        </h1>
 
     </div>
 
+    <button
+        class="add-top"
+        id="top-add-memory">
 
-    <!-- =====================================================
-         CARTA DESTACADA
-    ===================================================== -->
+        + Agregar<br>
+        recuerdo
 
-    <section class="carta-destacada">
+    </button>
 
-      <div class="carta-destacada-texto">
+</header>
+
+
+<!-- =========================
+     CARTA PRINCIPAL
+========================= -->
+
+<section class="card letter-hero">
+
+    <div>
 
         <h2>
-          ¿Quieres dejarme una carta? 💌
+            ¿Quieres<br>
+            dejarme una<br>
+            carta? 💌
         </h2>
 
         <p>
-          Escribe algo que quieras que quede guardado
-          en nuestra historia.
+            Escribe algo que quieras que
+            quede guardado en nuestra
+            historia.
         </p>
 
         <button
-          class="primary-button"
-          id="abrir-carta"
-          type="button"
-        >
-          ✍️ Escribir una carta
+            class="pink-button"
+            id="open-letter">
+
+            ✍️ Escribir una carta
+
         </button>
 
-      </div>
+    </div>
 
-      <div class="envelope">
+    <div class="envelope-art">
         💌
-      </div>
+    </div>
 
-    </section>
+</section>
 
 
-    <!-- =====================================================
-         FORMULARIO RECUERDO
-    ===================================================== -->
+<!-- =========================
+     RECUERDOS
+========================= -->
 
-    <section
-      class="form-card"
-      id="upload-form"
-    >
+<section
+    class="section"
+    id="recuerdos">
 
-      <h2>
-        📸 Agregar un recuerdo
-      </h2>
+    <h2 class="section-heading">
 
-      <label
-        class="form-label"
-        for="titulo-input"
-      >
-        ❤️ Título
-      </label>
+        <span>
+            📸 Recuerdos ❤️
+        </span>
 
-      <input
-        class="form-input"
-        id="titulo-input"
-        type="text"
-        maxlength="150"
-        placeholder="Ej. Nuestra primera salida"
-      >
+    </h2>
 
-      <label
-        class="form-label"
-        for="fecha-input"
-      >
-        📅 Fecha del recuerdo
-      </label>
+    <div class="section-subtitle">
 
-      <input
-        class="form-input"
-        id="fecha-input"
-        type="date"
-      >
+        Todos esos momentos que queremos guardar.
 
-      <label
-        class="form-label"
-        for="descripcion-input"
-      >
-        💌 Descripción
-      </label>
+    </div>
 
-      <textarea
-        class="form-textarea"
-        id="descripcion-input"
-        maxlength="1000"
-        placeholder="Escribe algo que quieras recordar..."
-      ></textarea>
 
-      <label
-        class="form-label"
-        for="foto-input"
-      >
-        📷 Foto
-      </label>
+    <!-- FORMULARIO RECUERDO -->
 
-      <input
-        class="form-file"
-        id="foto-input"
-        type="file"
-        accept="image/*"
-      >
+    <div
+        class="card form-panel"
+        id="memory-form">
 
-      <div
-        class="preview"
-        id="preview"
-      >
+        <div
+            class="preview"
+            id="memory-preview">
+
+            <img
+                id="memory-preview-img"
+                alt="Vista previa">
+
+        </div>
+
+
+        <label>
+            📸 Foto
+        </label>
+
+        <input
+            type="file"
+            id="memory-file"
+            accept="image/*">
+
+
+        <label>
+            ❤️ Título
+        </label>
+
+        <input
+            id="memory-title"
+            maxlength="150"
+            placeholder="Ej. Nuestra primera salida">
+
+
+        <label>
+            📅 Fecha del recuerdo
+        </label>
+
+        <input
+            id="memory-date"
+            type="date">
+
+
+        <label>
+            💌 Descripción
+        </label>
+
+        <textarea
+            id="memory-description"
+            maxlength="1000"
+            placeholder="Escribe algo que quieras recordar...">
+        </textarea>
+
+
+        <div class="form-row">
+
+            <button
+                class="action"
+                id="cancel-memory">
+
+                Cancelar
+
+            </button>
+
+            <button
+                class="pink-button"
+                id="save-memory">
+
+                ❤️ Guardar recuerdo
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="status"
+            id="memory-status">
+        </div>
+
+    </div>
+
+
+    <!-- LISTA RECUERDOS -->
+
+    <div
+        class="memories"
+        id="memories-list">
+
+        <div class="card date-card">
+
+            📸
+            <br><br>
+
+            Cargando nuestros recuerdos...
+
+        </div>
+
+    </div>
+
+
+    <div class="center-action">
+
+        <button
+            class="pink-button"
+            id="show-all-memories">
+
+            Ver todos los recuerdos
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FECHAS ESPECIALES
+========================= -->
+
+<section
+    class="section"
+    id="fechas">
+
+    <h2 class="section-heading">
+
+        <span>
+            📅 Fechas especiales ❤️
+        </span>
+
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        Las fechas que queremos guardar para siempre.
+
+    </div>
+
+
+    <div
+        class="dates"
+        id="dates-list">
+
+        <div class="card date-card">
+
+            📅
+            <br><br>
+
+            Cargando nuestras fechas...
+
+        </div>
+
+    </div>
+
+
+    <!-- AGREGAR FECHA -->
+
+    <div class="card add-date">
+
+        <h3 style="font-size:26px">
+
+            ➕ Agregar una fecha especial
+
+        </h3>
+
+        <p>
+
+            Guarda un cumpleaños,
+            aniversario, viaje o cualquier
+            día importante para ustedes.
+
+        </p>
+
+
+        <button
+            class="pink-button"
+            id="open-date-form">
+
+            + Agregar fecha
+
+        </button>
+
+
+        <div
+            class="date-form"
+            id="date-form">
+
+
+            <label>
+                📅 Fecha
+            </label>
+
+            <input
+                id="date-value"
+                type="date">
+
+
+            <label>
+                ✨ Tipo
+            </label>
+
+            <select
+                id="date-type">
+
+                <option value="especial">
+                    ✨ Especial
+                </option>
+
+                <option value="cumpleaños">
+                    🎂 Cumpleaños
+                </option>
+
+                <option value="aniversario">
+                    ❤️ Aniversario
+                </option>
+
+                <option value="viaje">
+                    ✈️ Viaje
+                </option>
+
+            </select>
+
+
+            <label>
+                ❤️ Título
+            </label>
+
+            <input
+                id="date-title"
+                maxlength="150"
+                placeholder="Ej. Cumpleaños de Hannia">
+
+
+            <label>
+                💌 Mensaje
+            </label>
+
+            <textarea
+                id="date-message"
+                maxlength="1000"
+                placeholder="Escribe qué significa esta fecha para nosotros...">
+            </textarea>
+
+
+            <div class="form-row">
+
+                <button
+                    class="action"
+                    id="cancel-date">
+
+                    Cancelar
+
+                </button>
+
+                <button
+                    class="pink-button"
+                    id="save-date">
+
+                    ❤️ Guardar fecha
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="status"
+                id="date-status">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     NUESTRA HISTORIA
+========================= -->
+
+<section
+    class="section"
+    id="historia">
+
+    <h2 class="section-heading">
+
+        <span>
+            📖 Nuestra historia ❤️
+        </span>
+
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        Cada capítulo de nosotros merece ser recordado.
+
+    </div>
+
+
+    <div
+        class="card"
+        style="padding:30px"
+        id="history-list">
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="memory-date">
+                    NUESTRO COMIENZO ❤️
+                </div>
+
+                <div class="timeline-title">
+                    Nuestra historia
+                </div>
+
+                <div class="timeline-text">
+                    Cargando nuestra historia...
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- AGREGAR CAPÍTULO -->
+
+    <div
+        class="card add-date"
+        style="margin-top:18px">
+
+        <h3 style="font-size:26px">
+
+            📖❤️ Agregar un capítulo
+
+        </h3>
+
+        <p>
+
+            Guarda otro momento importante
+            de nuestra historia.
+
+        </p>
+
+
+        <button
+            class="pink-button"
+            id="open-chapter">
+
+            + Agregar capítulo
+
+        </button>
+
+
+        <div
+            class="date-form"
+            id="chapter-form">
+
+
+            <label>
+                📅 Fecha
+            </label>
+
+            <input
+                id="chapter-date"
+                type="date">
+
+
+            <label>
+                ❤️ Título
+            </label>
+
+            <input
+                id="chapter-title"
+                maxlength="150"
+                placeholder="Ej. El día que nos conocimos">
+
+
+            <label>
+                💌 Nuestra historia
+            </label>
+
+            <textarea
+                id="chapter-text"
+                maxlength="5000"
+                placeholder="Cuéntanos qué pasó...">
+            </textarea>
+
+
+            <label>
+                📸 Foto opcional
+            </label>
+
+            <input
+                type="file"
+                id="chapter-file"
+                accept="image/*">
+
+
+            <div
+                class="preview"
+                id="chapter-preview">
+
+                <img
+                    id="chapter-preview-img"
+                    alt="Vista previa">
+
+            </div>
+
+
+            <div class="form-row">
+
+                <button
+                    class="action"
+                    id="cancel-chapter">
+
+                    Cancelar
+
+                </button>
+
+                <button
+                    class="pink-button"
+                    id="save-chapter">
+
+                    ❤️ Guardar capítulo
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="status"
+                id="chapter-status">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CARTAS
+========================= -->
+
+<section
+    class="letters"
+    id="cartas">
+
+    <h2 class="section-heading">
+
+        <span>
+            💌 Cartas para ti ❤️
+        </span>
+
+    </h2>
+
+
+    <div class="section-subtitle">
+
+        Porque hay cosas que es más bonito
+        escribirlas que decirlas.
+
+    </div>
+
+
+    <div class="card add-date">
+
+        <h3 style="font-size:26px">
+
+            ¿Quieres dejarme una carta? 💌
+
+        </h3>
+
+
+        <p>
+
+            Escribe algo que quieras que
+            quede guardado en nuestra historia.
+
+        </p>
+
+
+        <button
+            class="pink-button"
+            id="open-letter-2">
+
+            ✍️ Escribir una carta
+
+        </button>
+
+
+        <div
+            class="date-form"
+            id="letter-form">
+
+
+            <label>
+                ❤️ Título de la carta
+            </label>
+
+            <input
+                id="letter-title"
+                maxlength="150"
+                placeholder="Ej. Para ti, mi amor...">
+
+
+            <label>
+                💌 Escribe tu carta
+            </label>
+
+            <textarea
+                id="letter-text"
+                maxlength="5000"
+                style="min-height:240px"
+                placeholder="Escribe aquí todo eso que quieres decir...">
+            </textarea>
+
+
+            <div class="form-row">
+
+                <button
+                    class="action"
+                    id="cancel-letter">
+
+                    Cancelar
+
+                </button>
+
+                <button
+                    class="pink-button"
+                    id="save-letter">
+
+                    ❤️ Guardar carta
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="status"
+                id="letter-status">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="letter-list"
+        id="letters-list"
+        style="margin-top:18px">
+
+        <div class="card date-card">
+
+            💌
+            <br><br>
+
+            Cargando nuestras cartas...
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<div class="card future">
+
+    <h2>
+        ✨ Lo que todavía nos falta vivir
+    </h2>
+
+    <p>
+
+        Viajes, aventuras, cumpleaños,
+        días normales, días increíbles
+        y todos esos momentos que todavía
+        no conocemos.
+
+        <br><br>
+
+        Nuestra historia apenas sigue comenzando. ❤️
+
+    </p>
+
+</div>
+
+
+<button
+    class="logout"
+    id="logout">
+
+    Cerrar sesión
+
+</button>
+
+
+<div class="footer">
+
+    Hecho con ❤️ para nuestra historia
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     MODAL RECUERDO
+========================= -->
+
+<div
+    class="modal"
+    id="memory-modal"
+    aria-hidden="true">
+
+    <div
+        class="modal-box"
+        style="position:relative">
+
+        <button
+            class="close"
+            data-close="memory-modal">
+
+            ×
+
+        </button>
+
+
+        <div
+            class="modal-date"
+            id="modal-memory-date">
+        </div>
+
+
+        <h2
+            id="modal-memory-title">
+        </h2>
+
+
+        <div class="modal-line"></div>
+
 
         <img
-          id="preview-img"
-          alt="Vista previa"
-        >
+            id="modal-memory-image"
+            style="
+                width:100%;
+                max-height:500px;
+                object-fit:cover;
+                border-radius:20px;
+                margin-bottom:25px;
+            "
+            alt="">
 
-      </div>
-
-      <div class="form-buttons">
-
-        <button
-          class="cancel-button"
-          id="cancelar-upload"
-          type="button"
-        >
-          Cancelar
-        </button>
-
-        <button
-          class="save-button"
-          id="guardar-upload"
-          type="button"
-        >
-          ❤️ Guardar recuerdo
-        </button>
-
-      </div>
-
-      <div
-        class="status"
-        id="upload-status"
-      ></div>
-
-    </section>
-
-
-    <!-- =====================================================
-         RECUERDOS
-    ===================================================== -->
-
-    <section id="recuerdos">
-
-      <h2 class="section-title">
-        📸 Recuerdos ❤️
-      </h2>
-
-      <div class="section-subtitle">
-        Todos esos momentos que queremos guardar.
-      </div>
-
-      <div
-        class="recuerdos-list"
-        id="recuerdos-container"
-      >
-
-        <div class="empty">
-          📷<br><br>
-          Cargando nuestros recuerdos...
-        </div>
-
-      </div>
-
-      <div
-        class="center-button"
-        id="recuerdos-todos-container"
-        style="display:none;"
-      >
-
-        <button
-          class="secondary-button"
-          id="ver-todos-recuerdos"
-          type="button"
-        >
-          Ver todos los recuerdos
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         CARTAS
-    ===================================================== -->
-
-    <section
-      class="cartas-section"
-      id="cartas"
-    >
-
-      <h2 class="section-title">
-        💌 Cartas para ti ❤️
-      </h2>
-
-      <div class="section-subtitle">
-        Palabras que queremos guardar para siempre.
-      </div>
-
-
-      <!-- FORMULARIO CARTA -->
-
-      <div
-        class="form-card"
-        id="carta-form"
-      >
-
-        <h2>
-          💌 Escribir una carta
-        </h2>
-
-        <label
-          class="form-label"
-          for="carta-titulo"
-        >
-          Título
-        </label>
-
-        <input
-          class="form-input"
-          id="carta-titulo"
-          type="text"
-          maxlength="150"
-          placeholder="Ej. Feliz cumpleaños mi vida ❤️"
-        >
-
-        <label
-          class="form-label"
-          for="carta-contenido"
-        >
-          Tu carta
-        </label>
-
-        <textarea
-          class="form-textarea"
-          id="carta-contenido"
-          maxlength="5000"
-          style="min-height:230px;"
-          placeholder="Escribe aquí todo eso que quieres decir..."
-        ></textarea>
-
-        <div class="form-buttons">
-
-          <button
-            class="cancel-button"
-            id="cancelar-carta"
-            type="button"
-          >
-            Cancelar
-          </button>
-
-          <button
-            class="save-button"
-            id="guardar-carta"
-            type="button"
-          >
-            ❤️ Guardar carta
-          </button>
-
-        </div>
 
         <div
-          class="status"
-          id="carta-status"
-        ></div>
-
-      </div>
-
-
-      <div
-        id="cartas-container"
-        style="margin-top:20px;"
-      >
-
-        <div class="empty">
-          💌<br><br>
-          Cargando nuestras cartas...
+            class="modal-text"
+            id="modal-memory-text">
         </div>
-
-      </div>
-
-      <div
-        class="center-button"
-        id="cartas-todos-container"
-        style="display:none;"
-      >
-
-        <button
-          class="secondary-button"
-          id="ver-todas-cartas"
-          type="button"
-        >
-          Ver todas las cartas
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         HISTORIA
-    ===================================================== -->
-
-    <section
-      class="historia-section"
-      id="historia"
-    >
-
-      <h2 class="section-title">
-        📖 Nuestra historia ❤️
-      </h2>
-
-      <div class="section-subtitle">
-        Cada capítulo de nosotros merece ser recordado.
-      </div>
-
-      <div
-        id="historia-container"
-      >
-
-        <div class="empty">
-          📖<br><br>
-          Cargando nuestra historia...
-        </div>
-
-      </div>
-
-      <!-- AGREGAR CAPÍTULO -->
-
-      <div class="historia-agregar">
-
-        <button
-          class="secondary-button"
-          id="abrir-capitulo"
-          type="button"
-        >
-          📖 + Agregar capítulo
-        </button>
-
-      </div>
-
-      <div
-        class="form-card"
-        id="capitulo-form"
-      >
-
-        <h2>
-          📖 Nuevo capítulo
-        </h2>
-
-        <label
-          class="form-label"
-          for="capitulo-fecha"
-        >
-          📅 Fecha
-        </label>
-
-        <input
-          class="form-input"
-          id="capitulo-fecha"
-          type="date"
-        >
-
-        <label
-          class="form-label"
-          for="capitulo-titulo"
-        >
-          ❤️ Título
-        </label>
-
-        <input
-          class="form-input"
-          id="capitulo-titulo"
-          type="text"
-          maxlength="150"
-          placeholder="Ej. El día que nos conocimos ❤️"
-        >
-
-        <label
-          class="form-label"
-          for="capitulo-historia"
-        >
-          💌 Nuestra historia
-        </label>
-
-        <textarea
-          class="form-textarea"
-          id="capitulo-historia"
-          maxlength="5000"
-          placeholder="Cuéntanos qué pasó..."
-        ></textarea>
-
-        <label
-          class="form-label"
-          for="capitulo-foto-input"
-        >
-          📷 Foto
-        </label>
-
-        <input
-          class="form-file"
-          id="capitulo-foto-input"
-          type="file"
-          accept="image/*"
-        >
-
-        <div
-          class="preview"
-          id="capitulo-preview"
-        >
-
-          <img
-            id="capitulo-preview-img"
-            alt="Vista previa"
-          >
-
-        </div>
-
-        <div class="form-buttons">
-
-          <button
-            class="cancel-button"
-            id="cancelar-capitulo"
-            type="button"
-          >
-            Cancelar
-          </button>
-
-          <button
-            class="save-button"
-            id="guardar-capitulo"
-            type="button"
-          >
-            ❤️ Guardar capítulo
-          </button>
-
-        </div>
-
-        <div
-          class="status"
-          id="capitulo-status"
-        ></div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         CERRAR SESIÓN
-    ===================================================== -->
-
-    <button
-      class="logout"
-      id="logout"
-      type="button"
-    >
-      Cerrar sesión
-    </button>
-
-
-    <footer class="footer">
-
-      Hecho con ❤️ para nuestra historia
-
-      <br>
-
-      Miguel & Hannia ✨
-
-    </footer>
-
-  </main>
-
-
-  <!-- =====================================================
-       MODAL RECUERDO
-  ===================================================== -->
-
-  <div
-    class="modal"
-    id="recuerdo-modal"
-    aria-hidden="true"
-  >
-
-    <div class="modal-content">
-
-      <button
-        class="modal-close"
-        id="cerrar-recuerdo-modal"
-        type="button"
-      >
-        ×
-      </button>
-
-      <img
-        class="modal-recuerdo-img"
-        id="modal-recuerdo-img"
-        alt="Recuerdo"
-      >
-
-      <div
-        class="modal-recuerdo-fecha"
-        id="modal-recuerdo-fecha"
-      ></div>
-
-      <h2
-        class="modal-recuerdo-titulo"
-        id="modal-recuerdo-titulo"
-      ></h2>
-
-      <div
-        class="modal-recuerdo-texto"
-        id="modal-recuerdo-texto"
-      ></div>
 
     </div>
 
-  </div>
+</div>
 
 
-  <!-- =====================================================
-       MODAL CARTA
-  ===================================================== -->
+<!-- =========================
+     MODAL CARTA
+========================= -->
 
-  <div
+<div
     class="modal"
-    id="carta-modal"
-    aria-hidden="true"
-  >
+    id="letter-modal"
+    aria-hidden="true">
 
-    <div class="modal-content">
+    <div
+        class="modal-box"
+        style="position:relative">
 
-      <button
-        class="modal-close"
-        id="cerrar-carta-modal"
-        type="button"
-      >
-        ×
-      </button>
+        <button
+            class="close"
+            data-close="letter-modal">
 
-      <div class="modal-carta-icon">
-        💌
-      </div>
+            ×
 
-      <div
-        class="modal-carta-fecha"
-        id="modal-carta-fecha"
-      ></div>
+        </button>
 
-      <h2
-        class="modal-carta-titulo"
-        id="modal-carta-titulo"
-      ></h2>
 
-      <div
-        class="modal-carta-autor"
-        id="modal-carta-autor"
-      ></div>
+        <div
+            class="modal-date"
+            id="modal-letter-date">
+        </div>
 
-      <div class="modal-separator"></div>
 
-      <div
-        class="modal-carta-texto"
-        id="modal-carta-texto"
-      ></div>
+        <h2
+            id="modal-letter-title">
+        </h2>
+
+
+        <div
+            class="modal-author"
+            id="modal-letter-author">
+        </div>
+
+
+        <div class="modal-line"></div>
+
+
+        <div
+            class="modal-text"
+            id="modal-letter-text">
+        </div>
 
     </div>
 
-  </div>
+</div>
 
 
-  <!-- =====================================================
-       JAVASCRIPT
-  ===================================================== -->
+<script>
 
-  <script>
+/* =========================================================
+   SUPABASE
+========================================================= */
 
+const SUPABASE_URL =
+"https://glnjxtnzfaxwzkeovqbn.supabase.co";
 
-    /* =====================================================
-       SUPABASE
-    ===================================================== */
+const SUPABASE_KEY =
+"sb_publishable_SO2UD4TJylooKs9dQaNAaw_oGeW9tuy";
 
-    const SUPABASE_URL =
-      "https://glnjxtnzfaxwzkeovqbn.supabase.co";
+const supabaseClient =
+window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
 
-    const SUPABASE_KEY =
-      "sb_publishable_SO2UD4TJylooKs9dQaNAaw_oGeW9tuy";
 
-    const supabaseClient =
-      window.supabase.createClient(
-        SUPABASE_URL,
-        SUPABASE_KEY
-      );
+/* =========================================================
+   VARIABLES
+========================================================= */
 
+let editingMemoryId = null;
 
-    /* =====================================================
-       VARIABLES
-    ===================================================== */
+let editingDateId = null;
 
-    let archivoSeleccionado = null;
+let editingChapterId = null;
 
-    let capituloFotoSeleccionada = null;
+let editingLetterId = null;
 
-    let recuerdosData = [];
+let selectedMemoryFile = null;
 
-    let cartasData = [];
+let selectedChapterFile = null;
 
-    let mostrandoTodosRecuerdos = false;
 
-    let mostrandoTodasCartas = false;
+/* =========================================================
+   UTILIDADES
+========================================================= */
 
-    let recuerdoEditando = null;
+function iconForType(type){
 
+    const t =
+        String(type || "")
+        .toLowerCase();
 
-    /* =====================================================
-       ELEMENTOS
-    ===================================================== */
-
-    const abrirUpload =
-      document.getElementById("abrir-upload");
-
-    const uploadForm =
-      document.getElementById("upload-form");
-
-    const fotoInput =
-      document.getElementById("foto-input");
-
-    const preview =
-      document.getElementById("preview");
-
-    const previewImg =
-      document.getElementById("preview-img");
-
-    const tituloInput =
-      document.getElementById("titulo-input");
-
-    const fechaInput =
-      document.getElementById("fecha-input");
-
-    const descripcionInput =
-      document.getElementById("descripcion-input");
-
-    const guardarUpload =
-      document.getElementById("guardar-upload");
-
-    const cancelarUpload =
-      document.getElementById("cancelar-upload");
-
-    const uploadStatus =
-      document.getElementById("upload-status");
-
-    const recuerdosContainer =
-      document.getElementById("recuerdos-container");
-
-    const recuerdosTodosContainer =
-      document.getElementById(
-        "recuerdos-todos-container"
-      );
-
-    const verTodosRecuerdos =
-      document.getElementById(
-        "ver-todos-recuerdos"
-      );
-
-
-    /* CARTAS */
-
-    const abrirCarta =
-      document.getElementById("abrir-carta");
-
-    const cartaForm =
-      document.getElementById("carta-form");
-
-    const cartaTitulo =
-      document.getElementById("carta-titulo");
-
-    const cartaContenido =
-      document.getElementById("carta-contenido");
-
-    const guardarCarta =
-      document.getElementById("guardar-carta");
-
-    const cancelarCarta =
-      document.getElementById("cancelar-carta");
-
-    const cartaStatus =
-      document.getElementById("carta-status");
-
-    const cartasContainer =
-      document.getElementById("cartas-container");
-
-    const cartasTodosContainer =
-      document.getElementById(
-        "cartas-todos-container"
-      );
-
-    const verTodasCartas =
-      document.getElementById(
-        "ver-todas-cartas"
-      );
-
-
-    /* HISTORIA */
-
-    const historiaContainer =
-      document.getElementById(
-        "historia-container"
-      );
-
-    const abrirCapitulo =
-      document.getElementById(
-        "abrir-capitulo"
-      );
-
-    const capituloForm =
-      document.getElementById(
-        "capitulo-form"
-      );
-
-    const capituloFecha =
-      document.getElementById(
-        "capitulo-fecha"
-      );
-
-    const capituloTitulo =
-      document.getElementById(
-        "capitulo-titulo"
-      );
-
-    const capituloHistoria =
-      document.getElementById(
-        "capitulo-historia"
-      );
-
-    const capituloFotoInput =
-      document.getElementById(
-        "capitulo-foto-input"
-      );
-
-    const capituloPreview =
-      document.getElementById(
-        "capitulo-preview"
-      );
-
-    const capituloPreviewImg =
-      document.getElementById(
-        "capitulo-preview-img"
-      );
-
-    const guardarCapitulo =
-      document.getElementById(
-        "guardar-capitulo"
-      );
-
-    const cancelarCapitulo =
-      document.getElementById(
-        "cancelar-capitulo"
-      );
-
-    const capituloStatus =
-      document.getElementById(
-        "capitulo-status"
-      );
-
-
-    /* MODALES */
-
-    const recuerdoModal =
-      document.getElementById(
-        "recuerdo-modal"
-      );
-
-    const cerrarRecuerdoModal =
-      document.getElementById(
-        "cerrar-recuerdo-modal"
-      );
-
-    const modalRecuerdoImg =
-      document.getElementById(
-        "modal-recuerdo-img"
-      );
-
-    const modalRecuerdoFecha =
-      document.getElementById(
-        "modal-recuerdo-fecha"
-      );
-
-    const modalRecuerdoTitulo =
-      document.getElementById(
-        "modal-recuerdo-titulo"
-      );
-
-    const modalRecuerdoTexto =
-      document.getElementById(
-        "modal-recuerdo-texto"
-      );
-
-
-    const cartaModal =
-      document.getElementById(
-        "carta-modal"
-      );
-
-    const cerrarCartaModal =
-      document.getElementById(
-        "cerrar-carta-modal"
-      );
-
-    const modalCartaFecha =
-      document.getElementById(
-        "modal-carta-fecha"
-      );
-
-    const modalCartaTitulo =
-      document.getElementById(
-        "modal-carta-titulo"
-      );
-
-    const modalCartaAutor =
-      document.getElementById(
-        "modal-carta-autor"
-      );
-
-    const modalCartaTexto =
-      document.getElementById(
-        "modal-carta-texto"
-      );
-
-
-    /* =====================================================
-       UTILIDADES
-    ===================================================== */
-
-    function escaparHtml(texto) {
-
-      const div =
-        document.createElement("div");
-
-      div.textContent =
-        texto ?? "";
-
-      return div.innerHTML;
+    if(
+        t === "cumpleaños" ||
+        t === "cumpleanos"
+    ){
+        return "🎂";
     }
 
+    if(t === "aniversario"){
+        return "❤️";
+    }
 
-    function formatearFecha(fecha) {
+    if(t === "viaje"){
+        return "✈️";
+    }
 
-      if (!fecha) {
+    return "✨";
+}
+
+
+function prettyDate(value){
+
+    if(!value){
         return "";
-      }
+    }
 
-      const fechaObjeto =
+    const d =
         new Date(
-          String(fecha) +
-          "T00:00:00"
+            String(value).length <= 10
+            ? String(value)+"T00:00:00"
+            : value
         );
 
-      if (
+    if(
         isNaN(
-          fechaObjeto.getTime()
+            d.getTime()
         )
-      ) {
-
-        return String(fecha);
-
-      }
-
-      return fechaObjeto.toLocaleDateString(
-        "es-MX",
-        {
-          day: "numeric",
-          month: "long",
-          year: "numeric"
-        }
-      );
+    ){
+        return String(value);
     }
 
-
-    function formatearFechaCreacion(fecha) {
-
-      if (!fecha) {
-        return "";
-      }
-
-      const fechaObjeto =
-        new Date(fecha);
-
-      if (
-        isNaN(
-          fechaObjeto.getTime()
-        )
-      ) {
-
-        return "";
-
-      }
-
-      return fechaObjeto.toLocaleDateString(
+    return d.toLocaleDateString(
         "es-MX",
         {
-          day: "numeric",
-          month: "long",
-          year: "numeric"
+            day:"numeric",
+            month:"long",
+            year:"numeric"
         }
-      );
-    }
+    );
+}
 
 
-    function mostrarStatus(elemento, mensaje, tipo) {
+function showStatus(
+    element,
+    message,
+    type
+){
 
-      elemento.textContent =
-        mensaje;
+    element.textContent =
+        message;
 
-      elemento.className =
+    element.className =
         "status show " +
-        tipo;
-    }
+        type;
+}
 
 
-    function ocultarStatus(elemento) {
+function hideStatus(element){
 
-      elemento.textContent =
-        "";
-
-      elemento.className =
+    element.className =
         "status";
+
+    element.textContent = "";
+}
+
+
+function openModal(id){
+
+    const modal =
+        document.getElementById(id);
+
+    modal.classList.add("active");
+
+    modal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    document.body.classList.add(
+        "modal-open"
+    );
+}
+
+
+function closeModal(id){
+
+    const modal =
+        document.getElementById(id);
+
+    modal.classList.remove(
+        "active"
+    );
+
+    modal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    if(
+        !document.querySelector(
+            ".modal.active"
+        )
+    ){
+
+        document.body.classList.remove(
+            "modal-open"
+        );
+
     }
+}
 
 
-    /* =====================================================
-       SESIÓN
-    ===================================================== */
+/* =========================================================
+   SESIÓN
+========================================================= */
 
-    async function verificarSesion() {
+async function requireSession(){
 
-      try {
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+        .auth
+        .getSession();
 
-        const {
-          data,
-          error
-        } =
-          await supabaseClient.auth.getSession();
+    if(
+        error ||
+        !data.session
+    ){
 
-        if (
-          error ||
-          !data.session
-        ) {
-
-          window.location.replace(
+        window.location.replace(
             "login.html"
-          );
-
-          return;
-
-        }
-
-        await cargarRecuerdos();
-
-        await cargarCartas();
-
-        await cargarHistoria();
-
-      } catch (error) {
-
-        console.error(
-          "ERROR INICIANDO:",
-          error
         );
 
-      }
-
+        return null;
     }
 
+    return data.session;
+}
 
-    /* =====================================================
-       FORMULARIO RECUERDO
-    ===================================================== */
 
-    abrirUpload.addEventListener(
-      "click",
-      function() {
+/* =========================================================
+   STORAGE
+========================================================= */
 
-        recuerdoEditando = null;
+function storagePublicUrl(path){
 
-        limpiarFormularioRecuerdo();
+    return supabaseClient
+        .storage
+        .from("Recuerdos")
+        .getPublicUrl(path)
+        .data
+        .publicUrl;
+}
 
-        uploadForm.classList.toggle(
-          "active"
-        );
 
-        if (
-          uploadForm.classList.contains(
-            "active"
-          )
-        ) {
+/* =========================================================
+   RECUERDOS
+========================================================= */
 
-          tituloInput.focus();
+const memoryForm =
+document.getElementById(
+    "memory-form"
+);
 
-          uploadForm.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-          });
+const memoryFile =
+document.getElementById(
+    "memory-file"
+);
 
-        }
+const memoryTitle =
+document.getElementById(
+    "memory-title"
+);
 
-      }
+const memoryDate =
+document.getElementById(
+    "memory-date"
+);
+
+const memoryDescription =
+document.getElementById(
+    "memory-description"
+);
+
+const memoryPreview =
+document.getElementById(
+    "memory-preview"
+);
+
+const memoryPreviewImg =
+document.getElementById(
+    "memory-preview-img"
+);
+
+const memoryStatus =
+document.getElementById(
+    "memory-status"
+);
+
+
+function resetMemoryForm(){
+
+    editingMemoryId = null;
+
+    selectedMemoryFile = null;
+
+    memoryFile.value = "";
+
+    memoryTitle.value = "";
+
+    memoryDate.value = "";
+
+    memoryDescription.value = "";
+
+    memoryPreview.classList.remove(
+        "active"
     );
 
+    memoryPreviewImg.src = "";
 
-    fotoInput.addEventListener(
-      "change",
-      function(event) {
+    memoryForm.classList.remove(
+        "active"
+    );
 
-        const archivo =
-          event.target.files[0];
+    hideStatus(
+        memoryStatus
+    );
+}
 
-        if (!archivo) {
-          return;
-        }
 
-        if (
-          !archivo.type.startsWith(
+function openMemoryForm(
+    memory = null
+){
+
+    memoryForm.classList.add(
+        "active"
+    );
+
+    hideStatus(
+        memoryStatus
+    );
+
+    editingMemoryId =
+        memory?.id || null;
+
+    memoryTitle.value =
+        memory?.titulo || "";
+
+    memoryDate.value =
+        memory?.fecha || "";
+
+    memoryDescription.value =
+        memory?.descripcion ||
+        memory?.mensaje ||
+        "";
+
+    selectedMemoryFile = null;
+
+    memoryFile.value = "";
+
+    memoryPreview.classList.remove(
+        "active"
+    );
+
+    memoryPreviewImg.src = "";
+
+    memoryTitle.focus();
+
+    document
+        .getElementById("recuerdos")
+        .scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+}
+
+
+document
+    .getElementById(
+        "top-add-memory"
+    )
+    .onclick =
+        () => openMemoryForm();
+
+
+memoryFile.onchange =
+function(event){
+
+    const file =
+        event.target.files[0];
+
+    if(!file){
+        return;
+    }
+
+    if(
+        !file.type.startsWith(
             "image/"
-          )
-        ) {
+        )
+    ){
 
-          mostrarStatus(
-            uploadStatus,
-            "Selecciona una imagen válida.",
+        showStatus(
+            memoryStatus,
+            "Selecciona una imagen.",
             "error"
-          );
-
-          fotoInput.value = "";
-
-          return;
-        }
-
-        if (
-          archivo.size >
-          10 * 1024 * 1024
-        ) {
-
-          mostrarStatus(
-            uploadStatus,
-            "La imagen no puede superar 10 MB.",
-            "error"
-          );
-
-          fotoInput.value = "";
-
-          return;
-        }
-
-        archivoSeleccionado =
-          archivo;
-
-        const reader =
-          new FileReader();
-
-        reader.onload =
-          function(e) {
-
-            previewImg.src =
-              e.target.result;
-
-            preview.classList.add(
-              "active"
-            );
-
-          };
-
-        reader.readAsDataURL(
-          archivo
         );
 
-      }
+        return;
+    }
+
+    if(
+        file.size >
+        10 * 1024 * 1024
+    ){
+
+        showStatus(
+            memoryStatus,
+            "La foto debe pesar máximo 10 MB.",
+            "error"
+        );
+
+        return;
+    }
+
+    selectedMemoryFile =
+        file;
+
+    const reader =
+        new FileReader();
+
+    reader.onload =
+        function(event){
+
+            memoryPreviewImg.src =
+                event.target.result;
+
+            memoryPreview.classList.add(
+                "active"
+            );
+        };
+
+    reader.readAsDataURL(
+        file
     );
+};
 
 
-    cancelarUpload.addEventListener(
-      "click",
-      function() {
-
-        limpiarFormularioRecuerdo();
-
-      }
-    );
+document
+    .getElementById(
+        "cancel-memory"
+    )
+    .onclick =
+        resetMemoryForm;
 
 
-    function limpiarFormularioRecuerdo() {
+/* =========================================================
+   GUARDAR RECUERDO
+========================================================= */
 
-      archivoSeleccionado =
-        null;
+async function saveMemory(){
 
-      recuerdoEditando =
-        null;
+    const session =
+        await requireSession();
 
-      tituloInput.value =
-        "";
+    if(!session){
+        return;
+    }
 
-      fechaInput.value =
-        "";
+    const title =
+        memoryTitle.value.trim();
 
-      descripcionInput.value =
-        "";
+    const date =
+        memoryDate.value;
 
-      fotoInput.value =
-        "";
+    const description =
+        memoryDescription.value.trim();
 
-      previewImg.src =
-        "";
 
-      preview.classList.remove(
-        "active"
-      );
+    if(!title){
 
-      uploadForm.classList.remove(
-        "active"
-      );
+        showStatus(
+            memoryStatus,
+            "Ponle un título al recuerdo ❤️",
+            "error"
+        );
 
-      ocultarStatus(
-        uploadStatus
-      );
-
-      guardarUpload.textContent =
-        "❤️ Guardar recuerdo";
-
+        return;
     }
 
 
-    /* =====================================================
-       SUBIR RECUERDO
-    ===================================================== */
+    if(!date){
 
-    guardarUpload.addEventListener(
-      "click",
-      subirRecuerdo
-    );
-
-
-    async function subirRecuerdo() {
-
-      const titulo =
-        tituloInput.value.trim();
-
-      const fecha =
-        fechaInput.value;
-
-      const descripcion =
-        descripcionInput.value.trim();
-
-
-      if (!titulo) {
-
-        mostrarStatus(
-          uploadStatus,
-          "Ponle un título al recuerdo ❤️",
-          "error"
-        );
-
-        tituloInput.focus();
-
-        return;
-      }
-
-
-      if (!fecha) {
-
-        mostrarStatus(
-          uploadStatus,
-          "Selecciona la fecha del recuerdo 📅",
-          "error"
-        );
-
-        fechaInput.focus();
-
-        return;
-      }
-
-
-      if (
-        !recuerdoEditando &&
-        !archivoSeleccionado
-      ) {
-
-        mostrarStatus(
-          uploadStatus,
-          "Selecciona una foto 📸",
-          "error"
+        showStatus(
+            memoryStatus,
+            "Selecciona la fecha del recuerdo 📅",
+            "error"
         );
 
         return;
-      }
+    }
 
 
-      try {
-
-        guardarUpload.disabled =
-          true;
-
-        cancelarUpload.disabled =
-          true;
-
-
-        mostrarStatus(
-          uploadStatus,
-          recuerdoEditando
-            ? "Actualizando recuerdo... ❤️"
-            : "Subiendo nuestro recuerdo... ❤️",
-          "success"
+    const button =
+        document.getElementById(
+            "save-memory"
         );
 
-
-        const {
-          data: sessionData,
-          error: sessionError
-        } =
-          await supabaseClient.auth.getSession();
+    button.disabled = true;
 
 
-        if (
-          sessionError ||
-          !sessionData.session
-        ) {
+    try{
 
-          throw new Error(
-            "Tu sesión expiró. Vuelve a iniciar sesión."
-          );
-
-        }
+        let url = null;
 
 
-        /* =================================================
-           EDITAR
-        ================================================= */
-
-        if (recuerdoEditando) {
-
-          let urlNueva =
-            recuerdoEditando.Url ||
-            recuerdoEditando.url ||
-            recuerdoEditando.foto_url ||
-            recuerdoEditando.imagen ||
-            "";
-
-
-          if (archivoSeleccionado) {
+        if(selectedMemoryFile){
 
             const extension =
-              archivoSeleccionado.name
+                selectedMemoryFile
+                .name
                 .split(".")
                 .pop()
                 .toLowerCase();
 
-            const nombreArchivo =
-              "recuerdo_" +
-              Date.now() +
-              "_" +
-              Math.random()
-                .toString(36)
-                .substring(2, 10) +
-              "." +
-              extension;
+
+            const path =
+                "recuerdo_" +
+                Date.now() +
+                "_" +
+                Math.random()
+                    .toString(36)
+                    .slice(2,9) +
+                "." +
+                extension;
 
 
             const {
-              data: storageData,
-              error: storageError
+                data,
+                error
             } =
-              await supabaseClient.storage
+                await supabaseClient
+                .storage
                 .from("Recuerdos")
                 .upload(
-                  nombreArchivo,
-                  archivoSeleccionado,
-                  {
-                    cacheControl: "3600",
-                    upsert: false
-                  }
+                    path,
+                    selectedMemoryFile,
+                    {
+                        cacheControl:"3600",
+                        upsert:false
+                    }
                 );
 
 
-            if (storageError) {
+            if(error){
+                throw error;
+            }
 
-              throw new Error(
-                "No se pudo subir la nueva foto: " +
-                storageError.message
-              );
 
+            url =
+                storagePublicUrl(
+                    data.path
+                );
+        }
+
+
+        if(editingMemoryId){
+
+            const update = {
+
+                titulo:title,
+
+                descripcion:
+                    description,
+
+                fecha:date
+
+            };
+
+
+            if(url){
+                update.Url = url;
             }
 
 
             const {
-              data: publicData
+                error
             } =
-              supabaseClient.storage
-                .from("Recuerdos")
-                .getPublicUrl(
-                  storageData.path
-                );
-
-
-            urlNueva =
-              publicData.publicUrl;
-
-          }
-
-
-          const datosActualizar = {
-
-            titulo:
-              titulo,
-
-            descripcion:
-              descripcion,
-
-            Url:
-              urlNueva
-
-          };
-
-
-          /*
-             Intentamos guardar también la fecha.
-             Si tu tabla todavía no tiene la columna fecha,
-             hacemos el update sin ella.
-          */
-
-          let resultadoUpdate =
-            await supabaseClient
-              .from("recuerdos")
-              .update({
-                ...datosActualizar,
-                fecha: fecha
-              })
-              .eq(
-                "id",
-                recuerdoEditando.id
-              );
-
-
-          if (
-            resultadoUpdate.error &&
-            (
-              resultadoUpdate.error.message
-                .toLowerCase()
-                .includes("fecha") ||
-              resultadoUpdate.error.code === "PGRST204"
-            )
-          ) {
-
-            resultadoUpdate =
-              await supabaseClient
+                await supabaseClient
                 .from("recuerdos")
-                .update(
-                  datosActualizar
-                )
+                .update(update)
                 .eq(
-                  "id",
-                  recuerdoEditando.id
+                    "id",
+                    editingMemoryId
                 );
 
-          }
+
+            if(error){
+                throw error;
+            }
 
 
-          if (
-            resultadoUpdate.error
-          ) {
-
-            throw new Error(
-              resultadoUpdate.error.message
+            showStatus(
+                memoryStatus,
+                "¡Recuerdo actualizado! ❤️",
+                "success"
             );
 
-          }
+        }else{
+
+            const {
+                error
+            } =
+                await supabaseClient
+                .from("recuerdos")
+                .insert([
+
+                    {
+                        titulo:title,
+
+                        descripcion:
+                            description,
+
+                        fecha:date,
+
+                        Url:url || ""
+
+                    }
+
+                ]);
 
 
-          mostrarStatus(
-            uploadStatus,
-            "¡Recuerdo actualizado! ❤️",
-            "success"
-          );
+            if(error){
+                throw error;
+            }
 
 
-          await cargarRecuerdos();
-
-
-          setTimeout(
-            function() {
-
-              limpiarFormularioRecuerdo();
-
-              document
-                .getElementById(
-                  "recuerdos"
-                )
-                .scrollIntoView({
-                  behavior: "smooth"
-                });
-
-            },
-            900
-          );
-
-
-          return;
-
-        }
-
-
-        /* =================================================
-           NUEVO RECUERDO
-        ================================================= */
-
-        const extension =
-          archivoSeleccionado.name
-            .split(".")
-            .pop()
-            .toLowerCase();
-
-
-        const nombreArchivo =
-          "recuerdo_" +
-          Date.now() +
-          "_" +
-          Math.random()
-            .toString(36)
-            .substring(2, 10) +
-          "." +
-          extension;
-
-
-        const {
-          data: storageData,
-          error: storageError
-        } =
-          await supabaseClient.storage
-            .from("Recuerdos")
-            .upload(
-              nombreArchivo,
-              archivoSeleccionado,
-              {
-                cacheControl: "3600",
-                upsert: false
-              }
+            showStatus(
+                memoryStatus,
+                "¡Recuerdo guardado! ❤️",
+                "success"
             );
-
-
-        if (storageError) {
-
-          throw new Error(
-            storageError.message
-          );
-
         }
 
 
-        const {
-          data: publicData
-        } =
-          supabaseClient.storage
-            .from("Recuerdos")
-            .getPublicUrl(
-              storageData.path
-            );
-
-
-        const url =
-          publicData.publicUrl;
-
-
-        let datosInsertar = {
-
-          titulo:
-            titulo,
-
-          descripcion:
-            descripcion,
-
-          Url:
-            url,
-
-          fecha:
-            fecha
-
-        };
-
-
-        let resultadoInsert =
-          await supabaseClient
-            .from("recuerdos")
-            .insert([
-              datosInsertar
-            ])
-            .select();
-
-
-        /*
-           Si la tabla no tiene fecha todavía,
-           insertamos sin esa columna.
-        */
-
-        if (
-          resultadoInsert.error &&
-          (
-            resultadoInsert.error.message
-              .toLowerCase()
-              .includes("fecha") ||
-            resultadoInsert.error.code === "PGRST204"
-          )
-        ) {
-
-          datosInsertar = {
-
-            titulo:
-              titulo,
-
-            descripcion:
-              descripcion,
-
-            Url:
-              url
-
-          };
-
-
-          resultadoInsert =
-            await supabaseClient
-              .from("recuerdos")
-              .insert([
-                datosInsertar
-              ])
-              .select();
-
-        }
-
-
-        if (
-          resultadoInsert.error
-        ) {
-
-          throw new Error(
-            resultadoInsert.error.message
-          );
-
-        }
-
-
-        mostrarStatus(
-          uploadStatus,
-          "¡Recuerdo guardado! ❤️",
-          "success"
-        );
-
-
-        await cargarRecuerdos();
+        await loadMemories();
 
 
         setTimeout(
-          function() {
-
-            limpiarFormularioRecuerdo();
-
-            document
-              .getElementById(
-                "recuerdos"
-              )
-              .scrollIntoView({
-                behavior: "smooth"
-              });
-
-          },
-          900
+            resetMemoryForm,
+            900
         );
 
+    }catch(error){
 
-      } catch (error) {
-
-        console.error(
-          "ERROR GUARDANDO RECUERDO:",
-          error
+        showStatus(
+            memoryStatus,
+            "No se pudo guardar: " +
+            error.message,
+            "error"
         );
 
-        mostrarStatus(
-          uploadStatus,
-          "No se pudo guardar: " +
-          error.message,
-          "error"
-        );
+    }finally{
 
-      } finally {
-
-        guardarUpload.disabled =
-          false;
-
-        cancelarUpload.disabled =
-          false;
-
-      }
+        button.disabled = false;
 
     }
+}
 
 
-    /* =====================================================
-       CARGAR RECUERDOS
-    ===================================================== */
-
-    async function cargarRecuerdos() {
-
-      try {
-
-        const {
-          data,
-          error
-        } =
-          await supabaseClient
-            .from("recuerdos")
-            .select("*")
-            .order(
-              "created_at",
-              {
-                ascending: false
-              }
-            );
+document
+    .getElementById(
+        "save-memory"
+    )
+    .onclick =
+        saveMemory;
 
 
-        if (error) {
+/* =========================================================
+   CARGAR RECUERDOS
+========================================================= */
 
-          throw error;
+async function loadMemories(){
 
+    const box =
+        document.getElementById(
+            "memories-list"
+        );
+
+
+    try{
+
+        const session =
+            await requireSession();
+
+        if(!session){
+            return;
         }
 
 
-        recuerdosData =
-          data || [];
+        const {
+            data,
+            error
+        } =
+            await supabaseClient
+            .from("recuerdos")
+            .select("*")
+            .order(
+                "fecha",
+                {
+                    ascending:false
+                }
+            )
+            .order(
+                "created_at",
+                {
+                    ascending:false
+                }
+            );
 
 
-        mostrarRecuerdos();
+        if(error){
+            throw error;
+        }
 
 
-      } catch (error) {
+        box.innerHTML = "";
 
-        console.error(
-          "ERROR CARGANDO RECUERDOS:",
-          error
+
+        if(
+            !data ||
+            !data.length
+        ){
+
+            box.innerHTML = `
+
+                <div class="card date-card">
+
+                    📸
+                    <br><br>
+
+                    Todavía no hay recuerdos
+                    para mostrar.
+
+                </div>
+
+            `;
+
+            return;
+        }
+
+
+        data.forEach(
+            function(memory){
+
+                const card =
+                    document.createElement(
+                        "article"
+                    );
+
+                card.className =
+                    "card memory-card";
+
+
+                const imageWrap =
+                    document.createElement(
+                        "div"
+                    );
+
+                imageWrap.className =
+                    "memory-image-wrap";
+
+
+                const image =
+                    document.createElement(
+                        "img"
+                    );
+
+                image.className =
+                    "memory-image";
+
+
+                const url =
+                    memory.Url ||
+                    memory.url ||
+                    memory.foto_url ||
+                    memory.imagen ||
+                    "";
+
+
+                image.src = url;
+
+                image.alt =
+                    memory.titulo ||
+                    "Nuestro recuerdo ❤️";
+
+
+                image.loading =
+                    "lazy";
+
+
+                if(!url){
+
+                    image.style.display =
+                        "none";
+                }
+
+
+                imageWrap.appendChild(
+                    image
+                );
+
+
+                const info =
+                    document.createElement(
+                        "div"
+                    );
+
+                info.className =
+                    "memory-info";
+
+
+                const date =
+                    document.createElement(
+                        "div"
+                    );
+
+                date.className =
+                    "memory-date";
+
+
+                date.textContent =
+                    prettyDate(
+                        memory.fecha ||
+                        memory.created_at
+                    );
+
+
+                const title =
+                    document.createElement(
+                        "div"
+                    );
+
+                title.className =
+                    "memory-title";
+
+
+                title.textContent =
+                    memory.titulo ||
+                    "Nuestro recuerdo ❤️";
+
+
+                const description =
+                    document.createElement(
+                        "div"
+                    );
+
+                description.className =
+                    "memory-desc";
+
+
+                description.textContent =
+                    memory.descripcion ||
+                    memory.mensaje ||
+                    "";
+
+
+                const actions =
+                    document.createElement(
+                        "div"
+                    );
+
+                actions.className =
+                    "memory-actions";
+
+
+                const view =
+                    document.createElement(
+                        "button"
+                    );
+
+                view.className =
+                    "small-button";
+
+                view.textContent =
+                    "Ver recuerdo";
+
+
+                view.onclick =
+                    function(){
+
+                        document
+                            .getElementById(
+                                "modal-memory-date"
+                            )
+                            .textContent =
+                            date.textContent;
+
+
+                        document
+                            .getElementById(
+                                "modal-memory-title"
+                            )
+                            .textContent =
+                            "❤️ " +
+                            title.textContent;
+
+
+                        document
+                            .getElementById(
+                                "modal-memory-text"
+                            )
+                            .textContent =
+                            description.textContent;
+
+
+                        const modalImage =
+                            document
+                            .getElementById(
+                                "modal-memory-image"
+                            );
+
+
+                        modalImage.src =
+                            url;
+
+
+                        modalImage.style.display =
+                            url
+                            ? "block"
+                            : "none";
+
+
+                        openModal(
+                            "memory-modal"
+                        );
+
+                    };
+
+
+                const edit =
+                    document.createElement(
+                        "button"
+                    );
+
+                edit.className =
+                    "action";
+
+                edit.textContent =
+                    "✏️ Editar";
+
+
+                edit.onclick =
+                    () =>
+                        openMemoryForm(
+                            memory
+                        );
+
+
+                const deleteButton =
+                    document.createElement(
+                        "button"
+                    );
+
+                deleteButton.className =
+                    "action delete";
+
+                deleteButton.textContent =
+                    "🗑️ Eliminar";
+
+
+                deleteButton.onclick =
+                    () =>
+                        deleteMemory(
+                            memory.id
+                        );
+
+
+                actions.append(
+                    view,
+                    edit,
+                    deleteButton
+                );
+
+
+                info.append(
+                    date,
+                    title,
+                    description,
+                    actions
+                );
+
+
+                card.append(
+                    imageWrap,
+                    info
+                );
+
+
+                box.appendChild(
+                    card
+                );
+
+            }
         );
 
 
-        recuerdosContainer.innerHTML = `
+    }catch(error){
 
-          <div class="empty">
+        console.error(error);
 
-            ❤️<br><br>
+        box.innerHTML = `
 
-            Todavía no hay recuerdos para mostrar.
+            <div class="card date-card">
 
-          </div>
+                ❤️ No se pudieron cargar
+                los recuerdos.
+
+            </div>
 
         `;
+    }
+}
 
-      }
 
+/* =========================================================
+   ELIMINAR RECUERDO
+========================================================= */
+
+async function deleteMemory(id){
+
+    if(
+        !confirm(
+            "¿Quieres eliminar este recuerdo?"
+        )
+    ){
+        return;
     }
 
 
-    /* =====================================================
-       MOSTRAR RECUERDOS
-    ===================================================== */
+    const {
+        error
+    } =
+        await supabaseClient
+        .from("recuerdos")
+        .delete()
+        .eq(
+            "id",
+            id
+        );
 
-    function mostrarRecuerdos() {
 
-      recuerdosContainer.innerHTML =
+    if(error){
+
+        alert(
+            "No se pudo eliminar: " +
+            error.message
+        );
+
+    }else{
+
+        loadMemories();
+
+    }
+}
+
+
+/* =========================================================
+   FECHAS
+========================================================= */
+
+const dateForm =
+document.getElementById(
+    "date-form"
+);
+
+const dateStatus =
+document.getElementById(
+    "date-status"
+);
+
+
+function resetDateForm(){
+
+    editingDateId = null;
+
+    document
+        .getElementById(
+            "date-value"
+        )
+        .value = "";
+
+
+    document
+        .getElementById(
+            "date-type"
+        )
+        .value = "especial";
+
+
+    document
+        .getElementById(
+            "date-title"
+        )
+        .value = "";
+
+
+    document
+        .getElementById(
+            "date-message"
+        )
+        .value = "";
+
+
+    dateForm.classList.remove(
+        "active"
+    );
+
+
+    hideStatus(
+        dateStatus
+    );
+}
+
+
+function openDateForm(
+    row = null
+){
+
+    dateForm.classList.add(
+        "active"
+    );
+
+    hideStatus(
+        dateStatus
+    );
+
+
+    editingDateId =
+        row?.id || null;
+
+
+    document
+        .getElementById(
+            "date-value"
+        )
+        .value =
+        row?.fecha || "";
+
+
+    document
+        .getElementById(
+            "date-type"
+        )
+        .value =
+        row?.tipo || "especial";
+
+
+    document
+        .getElementById(
+            "date-title"
+        )
+        .value =
+        row?.titulo || "";
+
+
+    document
+        .getElementById(
+            "date-message"
+        )
+        .value =
+        row?.mensaje ||
+        row?.descripcion ||
         "";
 
 
-      if (
-        recuerdosData.length === 0
-      ) {
+    document
+        .getElementById(
+            "date-title"
+        )
+        .focus();
+}
 
-        recuerdosContainer.innerHTML = `
 
-          <div class="empty">
+document
+    .getElementById(
+        "open-date-form"
+    )
+    .onclick =
+        () =>
+            openDateForm();
 
-            📷<br><br>
 
-            Todavía no hay recuerdos.
-            <br><br>
-            ¡Agrega el primero! ❤️
+document
+    .getElementById(
+        "cancel-date"
+    )
+    .onclick =
+        resetDateForm;
 
-          </div>
 
-        `;
+/* =========================================================
+   GUARDAR FECHA
+========================================================= */
 
-        recuerdosTodosContainer.style.display =
-          "none";
+async function saveDate(){
+
+    const session =
+        await requireSession();
+
+    if(!session){
+        return;
+    }
+
+
+    const fecha =
+        document
+        .getElementById(
+            "date-value"
+        )
+        .value;
+
+
+    const tipo =
+        document
+        .getElementById(
+            "date-type"
+        )
+        .value;
+
+
+    const titulo =
+        document
+        .getElementById(
+            "date-title"
+        )
+        .value
+        .trim();
+
+
+    const mensaje =
+        document
+        .getElementById(
+            "date-message"
+        )
+        .value
+        .trim();
+
+
+    if(!fecha){
+
+        showStatus(
+            dateStatus,
+            "Selecciona la fecha 📅",
+            "error"
+        );
 
         return;
-
-      }
-
-
-      const cantidad =
-        mostrandoTodosRecuerdos
-          ? recuerdosData.length
-          : Math.min(
-              2,
-              recuerdosData.length
-            );
-
-
-      recuerdosData
-        .slice(
-          0,
-          cantidad
-        )
-        .forEach(
-          recuerdo => {
-
-            recuerdosContainer.appendChild(
-              crearTarjetaRecuerdo(
-                recuerdo
-              )
-            );
-
-          }
-        );
-
-
-      if (
-        recuerdosData.length > 2
-      ) {
-
-        recuerdosTodosContainer.style.display =
-          "flex";
-
-        verTodosRecuerdos.textContent =
-          mostrandoTodosRecuerdos
-            ? "Mostrar menos recuerdos"
-            : "Ver todos los recuerdos";
-
-      } else {
-
-        recuerdosTodosContainer.style.display =
-          "none";
-
-      }
-
     }
 
 
-    /* =====================================================
-       CREAR TARJETA RECUERDO
-    ===================================================== */
+    if(!titulo){
 
-    function crearTarjetaRecuerdo(
-      recuerdo
-    ) {
+        showStatus(
+            dateStatus,
+            "Ponle un título ❤️",
+            "error"
+        );
 
-      const card =
-        document.createElement("article");
-
-      card.className =
-        "recuerdo-card";
+        return;
+    }
 
 
-      const imagenDiv =
-        document.createElement("div");
+    const button =
+        document.getElementById(
+            "save-date"
+        );
 
-      imagenDiv.className =
-        "recuerdo-imagen";
-
-
-      const imagen =
-        document.createElement("img");
+    button.disabled = true;
 
 
-      const urlFoto =
-        recuerdo.Url ||
-        recuerdo.url ||
-        recuerdo.foto_url ||
-        recuerdo.imagen ||
-        "";
+    try{
 
+        const payload = {
 
-      if (urlFoto) {
+            fecha:fecha,
 
-        imagen.src =
-          urlFoto;
+            tipo:tipo,
 
-      } else {
+            titulo:titulo,
 
-        imagen.style.display =
-          "none";
+            mensaje:mensaje,
 
-      }
+            descripcion:mensaje,
 
-
-      imagen.alt =
-        recuerdo.titulo ||
-        "Nuestro recuerdo ❤️";
-
-      imagen.loading =
-        "lazy";
-
-
-      imagen.onerror =
-        function() {
-
-          this.style.display =
-            "none";
+            activo:true
 
         };
 
 
-      imagenDiv.appendChild(
-        imagen
-      );
+        let result;
 
 
-      const contenido =
-        document.createElement("div");
+        if(editingDateId){
 
-      contenido.className =
-        "recuerdo-contenido";
+            result =
+                await supabaseClient
+                .from("fechas_especiales")
+                .update(payload)
+                .eq(
+                    "id",
+                    editingDateId
+                );
 
+        }else{
 
-      const fecha =
-        document.createElement("div");
-
-      fecha.className =
-        "recuerdo-fecha";
-
-
-      const fechaReal =
-        recuerdo.fecha ||
-        (
-          recuerdo.created_at
-            ? recuerdo.created_at.substring(
-                0,
-                10
-              )
-            : ""
-        );
-
-
-      fecha.textContent =
-        formatearFecha(
-          fechaReal
-        );
-
-
-      const titulo =
-        document.createElement("h3");
-
-      titulo.className =
-        "recuerdo-titulo";
-
-      titulo.textContent =
-        recuerdo.titulo ||
-        "Nuestro recuerdo ❤️";
-
-
-      const descripcion =
-        document.createElement("div");
-
-      descripcion.className =
-        "recuerdo-descripcion";
-
-      descripcion.textContent =
-        recuerdo.descripcion ||
-        recuerdo.mensaje ||
-        "";
-
-
-      const ver =
-        document.createElement("button");
-
-      ver.className =
-        "recuerdo-ver";
-
-      ver.type =
-        "button";
-
-      ver.textContent =
-        "Ver recuerdo";
-
-
-      ver.addEventListener(
-        "click",
-        function(event) {
-
-          event.stopPropagation();
-
-          abrirRecuerdoCompleto(
-            recuerdo
-          );
+            result =
+                await supabaseClient
+                .from("fechas_especiales")
+                .insert([
+                    payload
+                ]);
 
         }
-      );
 
 
-      contenido.appendChild(
-        fecha
-      );
-
-      contenido.appendChild(
-        titulo
-      );
-
-      contenido.appendChild(
-        descripcion
-      );
-
-      contenido.appendChild(
-        ver
-      );
-
-
-      /* =================================================
-         ACCIONES
-      ================================================= */
-
-      const acciones =
-        document.createElement("div");
-
-      acciones.className =
-        "recuerdo-acciones";
-
-
-      const editar =
-        document.createElement("button");
-
-      editar.type =
-        "button";
-
-      editar.className =
-        "accion-recuerdo";
-
-      editar.textContent =
-        "✏️ Editar";
-
-
-      editar.addEventListener(
-        "click",
-        function() {
-
-          editarRecuerdo(
-            recuerdo
-          );
-
-        }
-      );
-
-
-      const eliminar =
-        document.createElement("button");
-
-      eliminar.type =
-        "button";
-
-      eliminar.className =
-        "accion-recuerdo accion-eliminar";
-
-      eliminar.textContent =
-        "🗑️ Eliminar";
-
-
-      eliminar.addEventListener(
-        "click",
-        function() {
-
-          eliminarRecuerdo(
-            recuerdo
-          );
-
-        }
-      );
-
-
-      acciones.appendChild(
-        editar
-      );
-
-      acciones.appendChild(
-        eliminar
-      );
-
-
-      card.appendChild(
-        imagenDiv
-      );
-
-      card.appendChild(
-        contenido
-      );
-
-      card.appendChild(
-        acciones
-      );
-
-
-      return card;
-
-    }
-
-
-    /* =====================================================
-       VER RECUERDO
-    ===================================================== */
-
-    function abrirRecuerdoCompleto(
-      recuerdo
-    ) {
-
-      const urlFoto =
-        recuerdo.Url ||
-        recuerdo.url ||
-        recuerdo.foto_url ||
-        recuerdo.imagen ||
-        "";
-
-
-      modalRecuerdoImg.src =
-        urlFoto;
-
-      modalRecuerdoFecha.textContent =
-        formatearFecha(
-          recuerdo.fecha ||
-          (
-            recuerdo.created_at
-              ? recuerdo.created_at.substring(
-                  0,
-                  10
-                )
-              : ""
-          )
-        );
-
-      modalRecuerdoTitulo.textContent =
-        "❤️ " +
-        (
-          recuerdo.titulo ||
-          "Nuestro recuerdo"
-        );
-
-      modalRecuerdoTexto.textContent =
-        recuerdo.descripcion ||
-        recuerdo.mensaje ||
-        "";
-
-
-      recuerdoModal.classList.add(
-        "active"
-      );
-
-      recuerdoModal.setAttribute(
-        "aria-hidden",
-        "false"
-      );
-
-      document.body.style.overflow =
-        "hidden";
-
-    }
-
-
-    function cerrarRecuerdoCompleto() {
-
-      recuerdoModal.classList.remove(
-        "active"
-      );
-
-      recuerdoModal.setAttribute(
-        "aria-hidden",
-        "true"
-      );
-
-      document.body.style.overflow =
-        "";
-
-    }
-
-
-    cerrarRecuerdoModal.addEventListener(
-      "click",
-      cerrarRecuerdoCompleto
-    );
-
-
-    recuerdoModal.addEventListener(
-      "click",
-      function(event) {
-
-        if (
-          event.target ===
-          recuerdoModal
-        ) {
-
-          cerrarRecuerdoCompleto();
-
+        if(result.error){
+            throw result.error;
         }
 
-      }
-    );
 
+        showStatus(
+            dateStatus,
 
-    /* =====================================================
-       EDITAR RECUERDO
-    ===================================================== */
+            editingDateId
+            ? "¡Fecha actualizada! ❤️"
+            : "¡Fecha guardada! ❤️",
 
-    function editarRecuerdo(
-      recuerdo
-    ) {
-
-      recuerdoEditando =
-        recuerdo;
-
-
-      tituloInput.value =
-        recuerdo.titulo ||
-        "";
-
-
-      fechaInput.value =
-        recuerdo.fecha ||
-        (
-          recuerdo.created_at
-            ? recuerdo.created_at.substring(
-                0,
-                10
-              )
-            : ""
+            "success"
         );
 
 
-      descripcionInput.value =
-        recuerdo.descripcion ||
-        "";
+        await loadDates();
 
 
-      archivoSeleccionado =
-        null;
+        setTimeout(
+            resetDateForm,
+            900
+        );
 
 
-      fotoInput.value =
-        "";
+    }catch(error){
 
+        showStatus(
+            dateStatus,
+            "No se pudo guardar: " +
+            error.message,
+            "error"
+        );
 
-      uploadForm.classList.add(
-        "active"
-      );
+    }finally{
 
-
-      guardarUpload.textContent =
-        "💾 Guardar cambios";
-
-
-      mostrarStatus(
-        uploadStatus,
-        "Editando este recuerdo ❤️",
-        "success"
-      );
-
-
-      uploadForm.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
-
-
-      tituloInput.focus();
+        button.disabled = false;
 
     }
+}
 
 
-    /* =====================================================
-       ELIMINAR RECUERDO
-    ===================================================== */
+document
+    .getElementById(
+        "save-date"
+    )
+    .onclick =
+        saveDate;
 
-    async function eliminarRecuerdo(
-      recuerdo
-    ) {
 
-      const confirmado =
-        confirm(
-          "¿Seguro que quieres eliminar este recuerdo? ❤️\n\nEsta acción no se puede deshacer."
+/* =========================================================
+   CARGAR FECHAS
+========================================================= */
+
+async function loadDates(){
+
+    const box =
+        document.getElementById(
+            "dates-list"
         );
 
 
-      if (!confirmado) {
-        return;
-      }
+    try{
 
+        const session =
+            await requireSession();
 
-      try {
+        if(!session){
+            return;
+        }
+
 
         const {
-          error
+            data,
+            error
         } =
-          await supabaseClient
-            .from("recuerdos")
-            .delete()
+            await supabaseClient
+            .from("fechas_especiales")
+            .select("*")
             .eq(
-              "id",
-              recuerdo.id
+                "activo",
+                true
+            )
+            .order(
+                "fecha",
+                {
+                    ascending:true
+                }
             );
 
 
-        if (error) {
-
-          throw error;
-
+        if(error){
+            throw error;
         }
 
 
-        /*
-           Intentamos eliminar también la foto
-           del Storage.
-        */
-
-        const urlFoto =
-          recuerdo.Url ||
-          recuerdo.url ||
-          recuerdo.foto_url ||
-          "";
+        box.innerHTML = "";
 
 
-        if (urlFoto) {
+        if(
+            !data ||
+            !data.length
+        ){
 
-          const path =
-            obtenerPathStorage(
-              urlFoto
-            );
+            box.innerHTML = `
 
+                <div class="card date-card">
 
-          if (path) {
+                    📅
+                    <br><br>
 
-            await supabaseClient.storage
-              .from("Recuerdos")
-              .remove([
-                path
-              ]);
+                    Todavía no hay
+                    fechas especiales.
 
-          }
+                </div>
 
+            `;
+
+            return;
         }
 
 
-        await cargarRecuerdos();
+        data.forEach(
+            function(dateRow){
+
+                const card =
+                    document.createElement(
+                        "article"
+                    );
+
+                card.className =
+                    "card date-card";
 
 
-      } catch (error) {
+                const top =
+                    document.createElement(
+                        "div"
+                    );
 
-        console.error(
-          "ERROR ELIMINANDO:",
-          error
+                top.className =
+                    "date-top";
+
+
+                const icon =
+                    document.createElement(
+                        "div"
+                    );
+
+                icon.className =
+                    "date-icon";
+
+                icon.textContent =
+                    iconForType(
+                        dateRow.tipo
+                    );
+
+
+                const content =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                const date =
+                    document.createElement(
+                        "div"
+                    );
+
+                date.className =
+                    "date-label";
+
+                date.textContent =
+                    prettyDate(
+                        dateRow.fecha
+                    );
+
+
+                const title =
+                    document.createElement(
+                        "div"
+                    );
+
+                title.className =
+                    "date-title";
+
+                title.textContent =
+                    dateRow.titulo ||
+                    "Momento especial";
+
+
+                const message =
+                    document.createElement(
+                        "div"
+                    );
+
+                message.className =
+                    "date-message";
+
+                message.textContent =
+                    dateRow.mensaje ||
+                    dateRow.descripcion ||
+                    "";
+
+
+                content.append(
+                    date,
+                    title,
+                    message
+                );
+
+
+                top.append(
+                    icon,
+                    content
+                );
+
+
+                card.append(
+                    top
+                );
+
+
+                const actions =
+                    document.createElement(
+                        "div"
+                    );
+
+                actions.className =
+                    "date-actions";
+
+
+                const edit =
+                    document.createElement(
+                        "button"
+                    );
+
+                edit.className =
+                    "action";
+
+                edit.textContent =
+                    "✏️ Editar";
+
+                edit.onclick =
+                    () =>
+                        openDateForm(
+                            dateRow
+                        );
+
+
+                const deleteButton =
+                    document.createElement(
+                        "button"
+                    );
+
+                deleteButton.className =
+                    "action delete";
+
+                deleteButton.textContent =
+                    "🗑️ Eliminar";
+
+                deleteButton.onclick =
+                    () =>
+                        deleteDate(
+                            dateRow.id
+                        );
+
+
+                actions.append(
+                    edit,
+                    deleteButton
+                );
+
+
+                card.append(
+                    actions
+                );
+
+
+                box.appendChild(
+                    card
+                );
+
+            }
         );
 
+
+    }catch(error){
+
+        console.error(error);
+
+        box.innerHTML = `
+
+            <div class="card date-card">
+
+                ❤️ No se pudieron cargar
+                las fechas.
+
+            </div>
+
+        `;
+    }
+}
+
+
+/* =========================================================
+   ELIMINAR FECHA
+========================================================= */
+
+async function deleteDate(id){
+
+    if(
+        !confirm(
+            "¿Quieres eliminar esta fecha especial?"
+        )
+    ){
+        return;
+    }
+
+
+    const {
+        error
+    } =
+        await supabaseClient
+        .from("fechas_especiales")
+        .delete()
+        .eq(
+            "id",
+            id
+        );
+
+
+    if(error){
 
         alert(
-          "No se pudo eliminar el recuerdo:\n\n" +
-          error.message
+            "No se pudo eliminar: " +
+            error.message
         );
 
-      }
+    }else{
 
+        loadDates();
+
+    }
+}
+
+
+/* =========================================================
+   HISTORIA / CAPÍTULOS
+========================================================= */
+
+const chapterForm =
+document.getElementById(
+    "chapter-form"
+);
+
+const chapterStatus =
+document.getElementById(
+    "chapter-status"
+);
+
+const chapterFile =
+document.getElementById(
+    "chapter-file"
+);
+
+
+function resetChapter(){
+
+    editingChapterId = null;
+
+    selectedChapterFile = null;
+
+
+    document
+        .getElementById(
+            "chapter-date"
+        )
+        .value = "";
+
+
+    document
+        .getElementById(
+            "chapter-title"
+        )
+        .value = "";
+
+
+    document
+        .getElementById(
+            "chapter-text"
+        )
+        .value = "";
+
+
+    chapterFile.value = "";
+
+
+    document
+        .getElementById(
+            "chapter-preview"
+        )
+        .classList.remove(
+            "active"
+        );
+
+
+    chapterForm.classList.remove(
+        "active"
+    );
+
+
+    hideStatus(
+        chapterStatus
+    );
+}
+
+
+document
+    .getElementById(
+        "open-chapter"
+    )
+    .onclick =
+        function(){
+
+            chapterForm.classList.add(
+                "active"
+            );
+
+            document
+                .getElementById(
+                    "chapter-title"
+                )
+                .focus();
+
+        };
+
+
+document
+    .getElementById(
+        "cancel-chapter"
+    )
+    .onclick =
+        resetChapter;
+
+
+chapterFile.onchange =
+function(event){
+
+    const file =
+        event.target.files[0];
+
+    if(!file){
+        return;
     }
 
 
-    function obtenerPathStorage(
-      url
-    ) {
+    if(
+        file.size >
+        10 * 1024 * 1024
+    ){
 
-      try {
+        showStatus(
+            chapterStatus,
+            "Máximo 10 MB.",
+            "error"
+        );
 
-        const marker =
-          "/storage/v1/object/public/Recuerdos/";
-
-        const posicion =
-          url.indexOf(marker);
+        return;
+    }
 
 
-        if (
-          posicion === -1
-        ) {
+    selectedChapterFile =
+        file;
 
-          return null;
+
+    const reader =
+        new FileReader();
+
+
+    reader.onload =
+        function(event){
+
+            document
+                .getElementById(
+                    "chapter-preview-img"
+                )
+                .src =
+                event.target.result;
+
+
+            document
+                .getElementById(
+                    "chapter-preview"
+                )
+                .classList.add(
+                    "active"
+                );
+
+        };
+
+
+    reader.readAsDataURL(
+        file
+    );
+
+};
+
+
+/* =========================================================
+   GUARDAR CAPÍTULO
+========================================================= */
+
+async function saveChapter(){
+
+    const session =
+        await requireSession();
+
+    if(!session){
+        return;
+    }
+
+
+    const fecha =
+        document
+        .getElementById(
+            "chapter-date"
+        )
+        .value;
+
+
+    const titulo =
+        document
+        .getElementById(
+            "chapter-title"
+        )
+        .value
+        .trim();
+
+
+    const historia =
+        document
+        .getElementById(
+            "chapter-text"
+        )
+        .value
+        .trim();
+
+
+    if(!fecha){
+
+        showStatus(
+            chapterStatus,
+            "Selecciona la fecha 📅",
+            "error"
+        );
+
+        return;
+    }
+
+
+    if(!titulo){
+
+        showStatus(
+            chapterStatus,
+            "Ponle un título ❤️",
+            "error"
+        );
+
+        return;
+    }
+
+
+    if(!historia){
+
+        showStatus(
+            chapterStatus,
+            "Escribe la historia 💌",
+            "error"
+        );
+
+        return;
+    }
+
+
+    const button =
+        document.getElementById(
+            "save-chapter"
+        );
+
+    button.disabled = true;
+
+
+    try{
+
+        let foto_url = null;
+
+
+        if(selectedChapterFile){
+
+            const extension =
+                selectedChapterFile
+                .name
+                .split(".")
+                .pop()
+                .toLowerCase();
+
+
+            const path =
+                "historia_" +
+                Date.now() +
+                "_" +
+                Math.random()
+                    .toString(36)
+                    .slice(2,9) +
+                "." +
+                extension;
+
+
+            const {
+                data,
+                error
+            } =
+                await supabaseClient
+                .storage
+                .from("Recuerdos")
+                .upload(
+                    path,
+                    selectedChapterFile,
+                    {
+                        cacheControl:"3600",
+                        upsert:false
+                    }
+                );
+
+
+            if(error){
+                throw error;
+            }
+
+
+            foto_url =
+                storagePublicUrl(
+                    data.path
+                );
 
         }
 
 
-        return decodeURIComponent(
-          url.substring(
-            posicion +
-            marker.length
-          )
+        const payload = {
+
+            fecha:fecha,
+
+            titulo:titulo,
+
+            historia:historia
+
+        };
+
+
+        if(foto_url){
+
+            payload.foto_url =
+                foto_url;
+
+        }
+
+
+        let result;
+
+
+        if(editingChapterId){
+
+            result =
+                await supabaseClient
+                .from("historia")
+                .update(payload)
+                .eq(
+                    "id",
+                    editingChapterId
+                );
+
+        }else{
+
+            result =
+                await supabaseClient
+                .from("historia")
+                .insert([
+                    payload
+                ]);
+
+        }
+
+
+        if(result.error){
+            throw result.error;
+        }
+
+
+        showStatus(
+            chapterStatus,
+            "¡Capítulo guardado! ❤️",
+            "success"
         );
 
-      } catch {
 
-        return null;
+        await loadHistory();
 
-      }
+
+        setTimeout(
+            resetChapter,
+            900
+        );
+
+
+    }catch(error){
+
+        showStatus(
+            chapterStatus,
+            "No se pudo guardar: " +
+            error.message,
+            "error"
+        );
+
+    }finally{
+
+        button.disabled = false;
 
     }
+}
 
 
-    /* =====================================================
-       VER TODOS RECUERDOS
-    ===================================================== */
-
-    verTodosRecuerdos.addEventListener(
-      "click",
-      function() {
-
-        mostrandoTodosRecuerdos =
-          !mostrandoTodosRecuerdos;
-
-        mostrarRecuerdos();
-
-      }
-    );
+document
+    .getElementById(
+        "save-chapter"
+    )
+    .onclick =
+        saveChapter;
 
 
-    /* =====================================================
-       CARTAS
-    ===================================================== */
+/* =========================================================
+   CARGAR HISTORIA
+========================================================= */
 
-    abrirCarta.addEventListener(
-      "click",
-      function() {
+async function loadHistory(){
 
-        cartaForm.classList.add(
-          "active"
+    const box =
+        document.getElementById(
+            "history-list"
         );
 
-        ocultarStatus(
-          cartaStatus
-        );
 
-        cartaTitulo.focus();
+    try{
 
-        cartaForm.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
+        const session =
+            await requireSession();
 
-      }
-    );
-
-
-    cancelarCarta.addEventListener(
-      "click",
-      limpiarCarta
-    );
-
-
-    function limpiarCarta() {
-
-      cartaTitulo.value =
-        "";
-
-      cartaContenido.value =
-        "";
-
-      cartaForm.classList.remove(
-        "active"
-      );
-
-      ocultarStatus(
-        cartaStatus
-      );
-
-    }
-
-
-    /* =====================================================
-       GUARDAR CARTA
-    ===================================================== */
-
-    guardarCarta.addEventListener(
-      "click",
-      guardarNuevaCarta
-    );
-
-
-    async function guardarNuevaCarta() {
-
-      const titulo =
-        cartaTitulo.value.trim();
-
-      const mensaje =
-        cartaContenido.value.trim();
-
-
-      if (!titulo) {
-
-        mostrarStatus(
-          cartaStatus,
-          "Ponle un título a la carta ❤️",
-          "error"
-        );
-
-        cartaTitulo.focus();
-
-        return;
-
-      }
-
-
-      if (!mensaje) {
-
-        mostrarStatus(
-          cartaStatus,
-          "Escribe algo en tu carta 💌",
-          "error"
-        );
-
-        cartaContenido.focus();
-
-        return;
-
-      }
-
-
-      try {
-
-        guardarCarta.disabled =
-          true;
-
-        cancelarCarta.disabled =
-          true;
-
-
-        mostrarStatus(
-          cartaStatus,
-          "Guardando nuestra carta... ❤️",
-          "success"
-        );
+        if(!session){
+            return;
+        }
 
 
         const {
-          data: userData,
-          error: userError
+            data,
+            error
         } =
-          await supabaseClient.auth.getUser();
+            await supabaseClient
+            .from("historia")
+            .select("*")
+            .order(
+                "fecha",
+                {
+                    ascending:true
+                }
+            );
 
 
-        if (userError) {
-
-          throw userError;
-
+        if(error){
+            throw error;
         }
 
 
-        const usuario =
-          userData.user;
+        box.innerHTML = "";
 
 
-        if (!usuario) {
+        const timeline =
+            document.createElement(
+                "div"
+            );
 
-          throw new Error(
-            "Tu sesión expiró."
-          );
+        timeline.className =
+            "timeline";
+
+
+        if(
+            !data ||
+            !data.length
+        ){
+
+            timeline.innerHTML = `
+
+                <div class="timeline-item">
+
+                    <div class="memory-date">
+
+                        NUESTRO COMIENZO ❤️
+
+                    </div>
+
+                    <div class="timeline-title">
+
+                        Nuestra historia
+
+                    </div>
+
+                    <div class="timeline-text">
+
+                        Aquí vamos a guardar cada
+                        capítulo de nuestra historia.
+
+                    </div>
+
+                </div>
+
+            `;
+
+            box.appendChild(
+                timeline
+            );
+
+            return;
+        }
+
+
+        data.forEach(
+            function(history){
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+                item.className =
+                    "timeline-item";
+
+
+                const date =
+                    document.createElement(
+                        "div"
+                    );
+
+                date.className =
+                    "memory-date";
+
+                date.textContent =
+                    prettyDate(
+                        history.fecha
+                    ) ||
+                    "UN MOMENTO ESPECIAL";
+
+
+                const title =
+                    document.createElement(
+                        "div"
+                    );
+
+                title.className =
+                    "timeline-title";
+
+                title.textContent =
+                    "❤️ " +
+                    (
+                        history.titulo ||
+                        "Un capítulo de nosotros"
+                    );
+
+
+                const text =
+                    document.createElement(
+                        "div"
+                    );
+
+                text.className =
+                    "timeline-text";
+
+                text.textContent =
+                    history.historia ||
+                    history.descripcion ||
+                    history.mensaje ||
+                    "";
+
+
+                item.append(
+                    date,
+                    title,
+                    text
+                );
+
+
+                const url =
+                    history.foto_url ||
+                    history.url ||
+                    history.Url ||
+                    history.imagen ||
+                    "";
+
+
+                if(url){
+
+                    const image =
+                        document.createElement(
+                            "img"
+                        );
+
+                    image.className =
+                        "history-image";
+
+                    image.src =
+                        url;
+
+                    image.loading =
+                        "lazy";
+
+                    item.appendChild(
+                        image
+                    );
+
+                }
+
+
+                const actions =
+                    document.createElement(
+                        "div"
+                    );
+
+                actions.className =
+                    "date-actions";
+
+
+                const edit =
+                    document.createElement(
+                        "button"
+                    );
+
+                edit.className =
+                    "action";
+
+                edit.textContent =
+                    "✏️ Editar";
+
+
+                edit.onclick =
+                    function(){
+
+                        editingChapterId =
+                            history.id;
+
+
+                        chapterForm.classList.add(
+                            "active"
+                        );
+
+
+                        document
+                            .getElementById(
+                                "chapter-date"
+                            )
+                            .value =
+                            history.fecha ||
+                            "";
+
+
+                        document
+                            .getElementById(
+                                "chapter-title"
+                            )
+                            .value =
+                            history.titulo ||
+                            "";
+
+
+                        document
+                            .getElementById(
+                                "chapter-text"
+                            )
+                            .value =
+                            history.historia ||
+                            history.descripcion ||
+                            "";
+
+
+                        document
+                            .getElementById(
+                                "historia"
+                            )
+                            .scrollIntoView({
+                                behavior:"smooth"
+                            });
+
+                    };
+
+
+                const deleteButton =
+                    document.createElement(
+                        "button"
+                    );
+
+                deleteButton.className =
+                    "action delete";
+
+                deleteButton.textContent =
+                    "🗑️ Eliminar";
+
+
+                deleteButton.onclick =
+                    () =>
+                        deleteChapter(
+                            history.id
+                        );
+
+
+                actions.append(
+                    edit,
+                    deleteButton
+                );
+
+
+                item.append(
+                    actions
+                );
+
+
+                timeline.appendChild(
+                    item
+                );
+
+            }
+        );
+
+
+        box.appendChild(
+            timeline
+        );
+
+
+    }catch(error){
+
+        console.error(error);
+
+        box.innerHTML = `
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <div class="timeline-title">
+
+                        Nuestra historia
+
+                    </div>
+
+                    <div class="timeline-text">
+
+                        No se pudo cargar la historia.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+}
+
+
+/* =========================================================
+   ELIMINAR CAPÍTULO
+========================================================= */
+
+async function deleteChapter(id){
+
+    if(
+        !confirm(
+            "¿Quieres eliminar este capítulo?"
+        )
+    ){
+        return;
+    }
+
+
+    const {
+        error
+    } =
+        await supabaseClient
+        .from("historia")
+        .delete()
+        .eq(
+            "id",
+            id
+        );
+
+
+    if(error){
+
+        alert(
+            "No se pudo eliminar: " +
+            error.message
+        );
+
+    }else{
+
+        loadHistory();
+
+    }
+}
+
+
+/* =========================================================
+   CARTAS
+========================================================= */
+
+const letterForm =
+document.getElementById(
+    "letter-form"
+);
+
+const letterStatus =
+document.getElementById(
+    "letter-status"
+);
+
+
+function openLetterForm(
+    row = null
+){
+
+    letterForm.classList.add(
+        "active"
+    );
+
+    hideStatus(
+        letterStatus
+    );
+
+
+    editingLetterId =
+        row?.id || null;
+
+
+    document
+        .getElementById(
+            "letter-title"
+        )
+        .value =
+        row?.titulo || "";
+
+
+    document
+        .getElementById(
+            "letter-text"
+        )
+        .value =
+        row?.mensaje ||
+        row?.contenido ||
+        "";
+
+
+    document
+        .getElementById(
+            "letter-title"
+        )
+        .focus();
+}
+
+
+function resetLetter(){
+
+    editingLetterId = null;
+
+
+    document
+        .getElementById(
+            "letter-title"
+        )
+        .value = "";
+
+
+    document
+        .getElementById(
+            "letter-text"
+        )
+        .value = "";
+
+
+    letterForm.classList.remove(
+        "active"
+    );
+
+
+    hideStatus(
+        letterStatus
+    );
+}
+
+
+document
+    .getElementById(
+        "open-letter"
+    )
+    .onclick =
+        () =>
+            openLetterForm();
+
+
+document
+    .getElementById(
+        "open-letter-2"
+    )
+    .onclick =
+        () =>
+            openLetterForm();
+
+
+document
+    .getElementById(
+        "cancel-letter"
+    )
+    .onclick =
+        resetLetter;
+
+
+/* =========================================================
+   GUARDAR CARTA
+========================================================= */
+
+async function saveLetter(){
+
+    const session =
+        await requireSession();
+
+    if(!session){
+        return;
+    }
+
+
+    const titulo =
+        document
+        .getElementById(
+            "letter-title"
+        )
+        .value
+        .trim();
+
+
+    const mensaje =
+        document
+        .getElementById(
+            "letter-text"
+        )
+        .value
+        .trim();
+
+
+    if(!titulo){
+
+        showStatus(
+            letterStatus,
+            "Ponle un título a la carta ❤️",
+            "error"
+        );
+
+        return;
+    }
+
+
+    if(!mensaje){
+
+        showStatus(
+            letterStatus,
+            "Escribe tu carta 💌",
+            "error"
+        );
+
+        return;
+    }
+
+
+    const button =
+        document.getElementById(
+            "save-letter"
+        );
+
+    button.disabled = true;
+
+
+    try{
+
+        const {
+            data:userData
+        } =
+            await supabaseClient
+            .auth
+            .getUser();
+
+
+        const user =
+            userData.user;
+
+
+        if(!user){
+
+            throw new Error(
+                "Tu sesión expiró."
+            );
 
         }
 
 
         const metadata =
-          usuario.user_metadata ||
-          {};
+            user.user_metadata ||
+            {};
 
 
         const nombre =
-          metadata.full_name ||
-          metadata.name ||
-          metadata.nombre ||
-          usuario.email ||
-          "Usuario";
+            metadata.full_name ||
+            metadata.name ||
+            metadata.nombre ||
+            user.email ||
+            "Usuario";
 
 
-        const datosCarta = {
+        const payload = {
 
-          titulo:
-            titulo,
+            titulo:titulo,
 
-          mensaje:
-            mensaje,
+            mensaje:mensaje,
 
-          contenido:
-            mensaje,
+            contenido:mensaje,
 
-          autor_nombre:
-            nombre,
+            autor_nombre:nombre,
 
-          autor_email:
-            usuario.email ||
-            ""
+            autor_email:
+                user.email || ""
 
         };
 
 
-        const {
-          error
-        } =
-          await supabaseClient
-            .from("cartas")
-            .insert(
-              datosCarta
-            );
+        let result;
 
 
-        if (error) {
+        if(editingLetterId){
 
-          throw error;
+            result =
+                await supabaseClient
+                .from("cartas")
+                .update(payload)
+                .eq(
+                    "id",
+                    editingLetterId
+                );
+
+        }else{
+
+            result =
+                await supabaseClient
+                .from("cartas")
+                .insert([
+                    payload
+                ]);
 
         }
 
 
-        mostrarStatus(
-          cartaStatus,
-          "¡Carta guardada para siempre! 💌❤️",
-          "success"
+        if(result.error){
+            throw result.error;
+        }
+
+
+        showStatus(
+            letterStatus,
+            "¡Carta guardada para siempre! 💌❤️",
+            "success"
         );
 
 
-        await cargarCartas();
+        await loadLetters();
 
 
         setTimeout(
-          function() {
-
-            limpiarCarta();
-
-            document
-              .getElementById(
-                "cartas"
-              )
-              .scrollIntoView({
-                behavior: "smooth"
-              });
-
-          },
-          900
-        );
-
-
-      } catch (error) {
-
-        console.error(
-          "ERROR GUARDANDO CARTA:",
-          error
-        );
-
-
-        mostrarStatus(
-          cartaStatus,
-          "No se pudo guardar: " +
-          error.message,
-          "error"
-        );
-
-      } finally {
-
-        guardarCarta.disabled =
-          false;
-
-        cancelarCarta.disabled =
-          false;
-
-      }
-
-    }
-
-
-    /* =====================================================
-       CARGAR CARTAS
-    ===================================================== */
-
-    async function cargarCartas() {
-
-      try {
-
-        const {
-          data,
-          error
-        } =
-          await supabaseClient
-            .from("cartas")
-            .select(
-              "id,titulo,mensaje,contenido,autor_nombre,autor_email,created_at"
-            )
-            .order(
-              "created_at",
-              {
-                ascending: false
-              }
-            );
-
-
-        if (error) {
-
-          throw error;
-
-        }
-
-
-        cartasData =
-          data || [];
-
-
-        mostrarCartas();
-
-
-      } catch (error) {
-
-        console.error(
-          "ERROR CARGANDO CARTAS:",
-          error
-        );
-
-
-        cartasContainer.innerHTML = `
-
-          <div class="empty">
-
-            💌<br><br>
-
-            Todavía no hay cartas para mostrar.
-
-          </div>
-
-        `;
-
-      }
-
-    }
-
-
-    /* =====================================================
-       MOSTRAR CARTAS
-    ===================================================== */
-
-    function mostrarCartas() {
-
-      cartasContainer.innerHTML =
-        "";
-
-
-      if (
-        cartasData.length === 0
-      ) {
-
-        cartasContainer.innerHTML = `
-
-          <div class="empty">
-
-            💌<br><br>
-
-            Todavía no hay cartas.
-            <br><br>
-            Tal vez podrías ser la primera persona
-            en dejar una. ❤️
-
-          </div>
-
-        `;
-
-        cartasTodosContainer.style.display =
-          "none";
-
-        return;
-
-      }
-
-
-      const cantidad =
-        mostrandoTodasCartas
-          ? cartasData.length
-          : Math.min(
-              1,
-              cartasData.length
-            );
-
-
-      cartasData
-        .slice(
-          0,
-          cantidad
-        )
-        .forEach(
-          carta => {
-
-            cartasContainer.appendChild(
-              crearTarjetaCarta(
-                carta
-              )
-            );
-
-          }
-        );
-
-
-      if (
-        cartasData.length > 1
-      ) {
-
-        cartasTodosContainer.style.display =
-          "flex";
-
-        verTodasCartas.textContent =
-          mostrandoTodasCartas
-            ? "Mostrar menos cartas"
-            : "Ver todas las cartas";
-
-      } else {
-
-        cartasTodosContainer.style.display =
-          "none";
-
-      }
-
-    }
-
-
-    /* =====================================================
-       CREAR CARTA
-    ===================================================== */
-
-    function crearTarjetaCarta(
-      carta
-    ) {
-
-      const card =
-        document.createElement("article");
-
-      card.className =
-        "carta-guardada";
-
-
-      const info =
-        document.createElement("div");
-
-      info.className =
-        "carta-info";
-
-
-      const fecha =
-        document.createElement("div");
-
-      fecha.className =
-        "carta-fecha";
-
-      fecha.textContent =
-        formatearFechaCreacion(
-          carta.created_at
-        );
-
-
-      const titulo =
-        document.createElement("h3");
-
-      titulo.className =
-        "carta-titulo";
-
-      titulo.textContent =
-        "💌 " +
-        (
-          carta.titulo ||
-          "Una carta para ti"
-        );
-
-
-      const autor =
-        document.createElement("div");
-
-      autor.className =
-        "carta-autor";
-
-      autor.textContent =
-        "✍️ Escrita por " +
-        (
-          carta.autor_nombre ||
-          carta.autor_email ||
-          "Nosotros"
-        );
-
-
-      const contenido =
-        document.createElement("div");
-
-      contenido.className =
-        "carta-preview";
-
-      contenido.textContent =
-        carta.mensaje ||
-        carta.contenido ||
-        "";
-
-
-      info.appendChild(
-        fecha
-      );
-
-      info.appendChild(
-        titulo
-      );
-
-      info.appendChild(
-        autor
-      );
-
-      info.appendChild(
-        contenido
-      );
-
-
-      /* =================================================
-         ACCIONES CARTA
-      ================================================= */
-
-      const acciones =
-        document.createElement("div");
-
-      acciones.className =
-        "carta-acciones";
-
-
-      const leer =
-        document.createElement("button");
-
-      leer.type =
-        "button";
-
-      leer.className =
-        "carta-action";
-
-      leer.textContent =
-        "💌 Leer carta";
-
-
-      leer.addEventListener(
-        "click",
-        function() {
-
-          abrirCartaCompleta(
-            carta
-          );
-
-        }
-      );
-
-
-      const editar =
-        document.createElement("button");
-
-      editar.type =
-        "button";
-
-      editar.className =
-        "carta-action";
-
-      editar.textContent =
-        "✏️ Editar";
-
-
-      editar.addEventListener(
-        "click",
-        function() {
-
-          editarCarta(
-            carta
-          );
-
-        }
-      );
-
-
-      const eliminar =
-        document.createElement("button");
-
-      eliminar.type =
-        "button";
-
-      eliminar.className =
-        "carta-action eliminar";
-
-      eliminar.textContent =
-        "🗑️ Eliminar";
-
-
-      eliminar.addEventListener(
-        "click",
-        function() {
-
-          eliminarCarta(
-            carta
-          );
-
-        }
-      );
-
-
-      acciones.appendChild(
-        leer
-      );
-
-      acciones.appendChild(
-        editar
-      );
-
-      acciones.appendChild(
-        eliminar
-      );
-
-
-      card.appendChild(
-        info
-      );
-
-      card.appendChild(
-        acciones
-      );
-
-
-      return card;
-
-    }
-
-
-    /* =====================================================
-       ABRIR CARTA
-    ===================================================== */
-
-    function abrirCartaCompleta(
-      carta
-    ) {
-
-      modalCartaFecha.textContent =
-        formatearFechaCreacion(
-          carta.created_at
-        );
-
-      modalCartaTitulo.textContent =
-        "💌 " +
-        (
-          carta.titulo ||
-          "Una carta para ti"
-        );
-
-      modalCartaAutor.textContent =
-        "✍️ Escrita por " +
-        (
-          carta.autor_nombre ||
-          carta.autor_email ||
-          "Nosotros"
-        );
-
-      modalCartaTexto.textContent =
-        carta.mensaje ||
-        carta.contenido ||
-        "";
-
-
-      cartaModal.classList.add(
-        "active"
-      );
-
-      cartaModal.setAttribute(
-        "aria-hidden",
-        "false"
-      );
-
-      document.body.style.overflow =
-        "hidden";
-
-    }
-
-
-    function cerrarCartaCompleta() {
-
-      cartaModal.classList.remove(
-        "active"
-      );
-
-      cartaModal.setAttribute(
-        "aria-hidden",
-        "true"
-      );
-
-      document.body.style.overflow =
-        "";
-
-    }
-
-
-    cerrarCartaModal.addEventListener(
-      "click",
-      cerrarCartaCompleta
-    );
-
-
-    cartaModal.addEventListener(
-      "click",
-      function(event) {
-
-        if (
-          event.target ===
-          cartaModal
-        ) {
-
-          cerrarCartaCompleta();
-
-        }
-
-      }
-    );
-
-
-    /* =====================================================
-       EDITAR CARTA
-    ===================================================== */
-
-    function editarCarta(
-      carta
-    ) {
-
-      cartaForm.classList.add(
-        "active"
-      );
-
-
-      cartaTitulo.value =
-        carta.titulo ||
-        "";
-
-
-      cartaContenido.value =
-        carta.mensaje ||
-        carta.contenido ||
-        "";
-
-
-      cartaForm.dataset.editandoId =
-        carta.id;
-
-
-      guardarCarta.textContent =
-        "💾 Guardar cambios";
-
-
-      mostrarStatus(
-        cartaStatus,
-        "Editando esta carta ❤️",
-        "success"
-      );
-
-
-      cartaForm.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
-
-
-      cartaTitulo.focus();
-
-    }
-
-
-    /* =====================================================
-       MODIFICAR GUARDADO CARTA PARA EDITAR
-    ===================================================== */
-
-    const guardarCartaOriginal =
-      guardarNuevaCarta;
-
-
-    guardarCarta.removeEventListener(
-      "click",
-      guardarNuevaCarta
-    );
-
-
-    guardarCarta.addEventListener(
-      "click",
-      guardarCartaNuevaFuncion
-    );
-
-
-    async function guardarCartaNuevaFuncion() {
-
-      const editandoId =
-        cartaForm.dataset.editandoId;
-
-
-      if (!editandoId) {
-
-        await guardarNuevaCarta();
-
-        return;
-
-      }
-
-
-      const titulo =
-        cartaTitulo.value.trim();
-
-      const mensaje =
-        cartaContenido.value.trim();
-
-
-      if (!titulo) {
-
-        mostrarStatus(
-          cartaStatus,
-          "Ponle un título a la carta ❤️",
-          "error"
-        );
-
-        return;
-
-      }
-
-
-      if (!mensaje) {
-
-        mostrarStatus(
-          cartaStatus,
-          "Escribe algo en tu carta 💌",
-          "error"
-        );
-
-        return;
-
-      }
-
-
-      try {
-
-        guardarCarta.disabled =
-          true;
-
-        cancelarCarta.disabled =
-          true;
-
-
-        mostrarStatus(
-          cartaStatus,
-          "Actualizando carta... ❤️",
-          "success"
-        );
-
-
-        const {
-          error
-        } =
-          await supabaseClient
-            .from("cartas")
-            .update({
-
-              titulo:
-                titulo,
-
-              mensaje:
-                mensaje,
-
-              contenido:
-                mensaje
-
-            })
-            .eq(
-              "id",
-              editandoId
-            );
-
-
-        if (error) {
-
-          throw error;
-
-        }
-
-
-        mostrarStatus(
-          cartaStatus,
-          "¡Carta actualizada! 💌❤️",
-          "success"
-        );
-
-
-        delete cartaForm.dataset.editandoId;
-
-
-        await cargarCartas();
-
-
-        setTimeout(
-          function() {
-
-            limpiarCarta();
-
-            guardarCarta.textContent =
-              "❤️ Guardar carta";
-
-          },
-          800
-        );
-
-
-      } catch (error) {
-
-        console.error(
-          "ERROR EDITANDO CARTA:",
-          error
-        );
-
-
-        mostrarStatus(
-          cartaStatus,
-          "No se pudo actualizar: " +
-          error.message,
-          "error"
-        );
-
-      } finally {
-
-        guardarCarta.disabled =
-          false;
-
-        cancelarCarta.disabled =
-          false;
-
-      }
-
-    }
-
-
-    /* =====================================================
-       ELIMINAR CARTA
-    ===================================================== */
-
-    async function eliminarCarta(
-      carta
-    ) {
-
-      const confirmado =
-        confirm(
-          "¿Seguro que quieres eliminar esta carta? 💌\n\nEsta acción no se puede deshacer."
-        );
-
-
-      if (!confirmado) {
-        return;
-      }
-
-
-      try {
-
-        const {
-          error
-        } =
-          await supabaseClient
-            .from("cartas")
-            .delete()
-            .eq(
-              "id",
-              carta.id
-            );
-
-
-        if (error) {
-
-          throw error;
-
-        }
-
-
-        await cargarCartas();
-
-
-      } catch (error) {
-
-        console.error(
-          "ERROR ELIMINANDO CARTA:",
-          error
-        );
-
-
-        alert(
-          "No se pudo eliminar la carta:\n\n" +
-          error.message
-        );
-
-      }
-
-    }
-
-
-    /* =====================================================
-       VER TODAS CARTAS
-    ===================================================== */
-
-    verTodasCartas.addEventListener(
-      "click",
-      function() {
-
-        mostrandoTodasCartas =
-          !mostrandoTodasCartas;
-
-        mostrarCartas();
-
-      }
-    );
-
-
-    /* =====================================================
-       HISTORIA
-    ===================================================== */
-
-    abrirCapitulo.addEventListener(
-      "click",
-      function() {
-
-        capituloForm.classList.toggle(
-          "active"
-        );
-
-        if (
-          capituloForm.classList.contains(
-            "active"
-          )
-        ) {
-
-          capituloTitulo.focus();
-
-          capituloForm.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-          });
-
-        }
-
-      }
-    );
-
-
-    capituloFotoInput.addEventListener(
-      "change",
-      function(event) {
-
-        const archivo =
-          event.target.files[0];
-
-        if (!archivo) {
-          return;
-        }
-
-
-        if (
-          !archivo.type.startsWith(
-            "image/"
-          )
-        ) {
-
-          mostrarStatus(
-            capituloStatus,
-            "Selecciona una imagen válida.",
-            "error"
-          );
-
-          capituloFotoInput.value =
-            "";
-
-          return;
-
-        }
-
-
-        if (
-          archivo.size >
-          10 * 1024 * 1024
-        ) {
-
-          mostrarStatus(
-            capituloStatus,
-            "La foto no puede superar 10 MB.",
-            "error"
-          );
-
-          capituloFotoInput.value =
-            "";
-
-          return;
-
-        }
-
-
-        capituloFotoSeleccionada =
-          archivo;
-
-
-        const reader =
-          new FileReader();
-
-
-        reader.onload =
-          function(e) {
-
-            capituloPreviewImg.src =
-              e.target.result;
-
-            capituloPreview.classList.add(
-              "active"
-            );
-
-          };
-
-
-        reader.readAsDataURL(
-          archivo
-        );
-
-      }
-    );
-
-
-    cancelarCapitulo.addEventListener(
-      "click",
-      limpiarCapitulo
-    );
-
-
-    function limpiarCapitulo() {
-
-      capituloFecha.value =
-        "";
-
-      capituloTitulo.value =
-        "";
-
-      capituloHistoria.value =
-        "";
-
-      capituloFotoInput.value =
-        "";
-
-      capituloFotoSeleccionada =
-        null;
-
-      capituloPreviewImg.src =
-        "";
-
-      capituloPreview.classList.remove(
-        "active"
-      );
-
-      capituloForm.classList.remove(
-        "active"
-      );
-
-      ocultarStatus(
-        capituloStatus
-      );
-
-    }
-
-
-    /* =====================================================
-       GUARDAR CAPÍTULO
-    ===================================================== */
-
-    guardarCapitulo.addEventListener(
-      "click",
-      async function() {
-
-        const fecha =
-          capituloFecha.value;
-
-        const titulo =
-          capituloTitulo.value.trim();
-
-        const historia =
-          capituloHistoria.value.trim();
-
-
-        if (!fecha) {
-
-          mostrarStatus(
-            capituloStatus,
-            "Selecciona la fecha 📅",
-            "error"
-          );
-
-          return;
-
-        }
-
-
-        if (!titulo) {
-
-          mostrarStatus(
-            capituloStatus,
-            "Ponle un título ❤️",
-            "error"
-          );
-
-          return;
-
-        }
-
-
-        if (!historia) {
-
-          mostrarStatus(
-            capituloStatus,
-            "Escribe qué pasó en este capítulo 💌",
-            "error"
-          );
-
-          return;
-
-        }
-
-
-        try {
-
-          guardarCapitulo.disabled =
-            true;
-
-          mostrarStatus(
-            capituloStatus,
-            "Guardando capítulo... ❤️",
-            "success"
-          );
-
-
-          let fotoUrl =
-            "";
-
-
-          if (
-            capituloFotoSeleccionada
-          ) {
-
-            const extension =
-              capituloFotoSeleccionada.name
-                .split(".")
-                .pop()
-                .toLowerCase();
-
-
-            const nombreArchivo =
-              "historia_" +
-              Date.now() +
-              "_" +
-              Math.random()
-                .toString(36)
-                .substring(2, 10) +
-              "." +
-              extension;
-
-
-            const {
-              data: storageData,
-              error: storageError
-            } =
-              await supabaseClient.storage
-                .from("Recuerdos")
-                .upload(
-                  nombreArchivo,
-                  capituloFotoSeleccionada,
-                  {
-                    cacheControl: "3600",
-                    upsert: false
-                  }
-                );
-
-
-            if (storageError) {
-
-              throw storageError;
-
-            }
-
-
-            const {
-              data: publicData
-            } =
-              supabaseClient.storage
-                .from("Recuerdos")
-                .getPublicUrl(
-                  storageData.path
-                );
-
-
-            fotoUrl =
-              publicData.publicUrl;
-
-          }
-
-
-          const datos =
-            {
-
-              fecha:
-                fecha,
-
-              titulo:
-                titulo,
-
-              historia:
-                historia
-
-            };
-
-
-          if (fotoUrl) {
-
-            datos.foto_url =
-              fotoUrl;
-
-          }
-
-
-          const {
-            error
-          } =
-            await supabaseClient
-              .from("historia")
-              .insert([
-                datos
-              ]);
-
-
-          if (error) {
-
-            throw error;
-
-          }
-
-
-          mostrarStatus(
-            capituloStatus,
-            "¡Capítulo guardado! ❤️",
-            "success"
-          );
-
-
-          await cargarHistoria();
-
-
-          setTimeout(
-            limpiarCapitulo,
+            resetLetter,
             900
-          );
+        );
 
 
-        } catch (error) {
+    }catch(error){
 
-          console.error(
-            "ERROR CAPÍTULO:",
-            error
-          );
-
-
-          mostrarStatus(
-            capituloStatus,
+        showStatus(
+            letterStatus,
             "No se pudo guardar: " +
             error.message,
             "error"
-          );
+        );
 
-        } finally {
+    }finally{
 
-          guardarCapitulo.disabled =
-            false;
+        button.disabled = false;
 
-        }
-
-      }
-    );
+    }
+}
 
 
-    /* =====================================================
-       CARGAR HISTORIA
-    ===================================================== */
-
-    async function cargarHistoria() {
-
-      try {
-
-        const {
-          data,
-          error
-        } =
-          await supabaseClient
-            .from("historia")
-            .select("*");
+document
+    .getElementById(
+        "save-letter"
+    )
+    .onclick =
+        saveLetter;
 
 
-        if (error) {
+/* =========================================================
+   CARGAR CARTAS
+========================================================= */
 
-          throw error;
+async function loadLetters(){
 
-        }
-
-
-        historiaContainer.innerHTML =
-          "";
-
-
-        if (
-          !data ||
-          data.length === 0
-        ) {
-
-          historiaContainer.innerHTML = `
-
-            <div class="empty">
-
-              📖<br><br>
-
-              Aquí vamos a guardar cada capítulo
-              de nuestra historia. ❤️
-
-            </div>
-
-          `;
-
-          return;
-
-        }
-
-
-        data.sort(
-          function(a, b) {
-
-            return String(
-              a.fecha || ""
-            ).localeCompare(
-              String(
-                b.fecha || ""
-              )
-            );
-
-          }
+    const box =
+        document.getElementById(
+            "letters-list"
         );
 
 
-        const timeline =
-          document.createElement(
-            "div"
-          );
+    try{
 
-        timeline.className =
-          "timeline";
+        const session =
+            await requireSession();
+
+        if(!session){
+            return;
+        }
+
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient
+            .from("cartas")
+            .select("*")
+            .order(
+                "created_at",
+                {
+                    ascending:false
+                }
+            );
+
+
+        if(error){
+            throw error;
+        }
+
+
+        box.innerHTML = "";
+
+
+        if(
+            !data ||
+            !data.length
+        ){
+
+            box.innerHTML = `
+
+                <div class="card date-card">
+
+                    💌
+                    <br><br>
+
+                    Todavía no hay cartas.
+
+                </div>
+
+            `;
+
+            return;
+        }
 
 
         data.forEach(
-          capitulo => {
+            function(letter){
 
-            const item =
-              document.createElement(
-                "article"
-              );
+                const card =
+                    document.createElement(
+                        "article"
+                    );
 
-            item.className =
-              "timeline-item";
-
-
-            const fecha =
-              document.createElement(
-                "div"
-              );
-
-            fecha.className =
-              "timeline-date";
-
-            fecha.textContent =
-              formatearFecha(
-                capitulo.fecha
-              );
+                card.className =
+                    "card saved-letter";
 
 
-            const titulo =
-              document.createElement(
-                "h3"
-              );
+                const date =
+                    document.createElement(
+                        "div"
+                    );
 
-            titulo.textContent =
-              "❤️ " +
-              (
-                capitulo.titulo ||
-                "Un capítulo de nosotros"
-              );
+                date.className =
+                    "memory-date";
 
-
-            const texto =
-              document.createElement(
-                "p"
-              );
-
-            texto.textContent =
-              capitulo.historia ||
-              capitulo.descripcion ||
-              capitulo.mensaje ||
-              "";
+                date.textContent =
+                    prettyDate(
+                        letter.created_at
+                    );
 
 
-            item.appendChild(
-              fecha
-            );
+                const title =
+                    document.createElement(
+                        "h3"
+                    );
 
-            item.appendChild(
-              titulo
-            );
-
-            item.appendChild(
-              texto
-            );
-
-
-            const foto =
-              capitulo.foto_url ||
-              capitulo.url ||
-              capitulo.Url ||
-              capitulo.imagen ||
-              "";
+                title.textContent =
+                    "💌 " +
+                    (
+                        letter.titulo ||
+                        "Una carta para ti"
+                    );
 
 
-            if (foto) {
+                const author =
+                    document.createElement(
+                        "div"
+                    );
 
-              const imagen =
-                document.createElement(
-                  "img"
+                author.className =
+                    "letter-author";
+
+                author.textContent =
+                    "✍️ Escrita por " +
+                    (
+                        letter.autor_nombre ||
+                        letter.autor_email ||
+                        "Nosotros"
+                    );
+
+
+                const text =
+                    document.createElement(
+                        "div"
+                    );
+
+                text.className =
+                    "letter-preview";
+
+                text.textContent =
+                    letter.mensaje ||
+                    letter.contenido ||
+                    "";
+
+
+                const actions =
+                    document.createElement(
+                        "div"
+                    );
+
+                actions.className =
+                    "letter-actions";
+
+
+                const view =
+                    document.createElement(
+                        "button"
+                    );
+
+                view.className =
+                    "small-button";
+
+                view.textContent =
+                    "💌 Leer carta";
+
+
+                view.onclick =
+                    function(){
+
+                        document
+                            .getElementById(
+                                "modal-letter-date"
+                            )
+                            .textContent =
+                            date.textContent;
+
+
+                        document
+                            .getElementById(
+                                "modal-letter-title"
+                            )
+                            .textContent =
+                            title.textContent;
+
+
+                        document
+                            .getElementById(
+                                "modal-letter-author"
+                            )
+                            .textContent =
+                            author.textContent;
+
+
+                        document
+                            .getElementById(
+                                "modal-letter-text"
+                            )
+                            .textContent =
+                            text.textContent;
+
+
+                        openModal(
+                            "letter-modal"
+                        );
+
+                    };
+
+
+                const edit =
+                    document.createElement(
+                        "button"
+                    );
+
+                edit.className =
+                    "action";
+
+                edit.textContent =
+                    "✏️ Editar";
+
+
+                edit.onclick =
+                    () =>
+                        openLetterForm(
+                            letter
+                        );
+
+
+                const deleteButton =
+                    document.createElement(
+                        "button"
+                    );
+
+                deleteButton.className =
+                    "action delete";
+
+                deleteButton.textContent =
+                    "🗑️ Eliminar";
+
+
+                deleteButton.onclick =
+                    () =>
+                        deleteLetter(
+                            letter.id
+                        );
+
+
+                actions.append(
+                    view,
+                    edit,
+                    deleteButton
                 );
 
-              imagen.className =
-                "historia-foto";
 
-              imagen.src =
-                foto;
+                card.append(
+                    date,
+                    title,
+                    author,
+                    text,
+                    actions
+                );
 
-              imagen.alt =
-                capitulo.titulo ||
-                "Momento de nuestra historia";
 
-              imagen.loading =
-                "lazy";
-
-              item.appendChild(
-                imagen
-              );
+                box.appendChild(
+                    card
+                );
 
             }
-
-
-            timeline.appendChild(
-              item
-            );
-
-          }
         );
 
 
-        historiaContainer.appendChild(
-          timeline
-        );
+    }catch(error){
 
+        console.error(error);
 
-      } catch (error) {
+        box.innerHTML = `
 
-        console.error(
-          "ERROR HISTORIA:",
-          error
-        );
+            <div class="card date-card">
 
+                ❤️ No se pudieron cargar
+                las cartas.
 
-        historiaContainer.innerHTML = `
-
-          <div class="empty">
-
-            📖<br><br>
-
-            No se pudo cargar nuestra historia.
-
-          </div>
+            </div>
 
         `;
+    }
+}
 
-      }
 
+/* =========================================================
+   ELIMINAR CARTA
+========================================================= */
+
+async function deleteLetter(id){
+
+    if(
+        !confirm(
+            "¿Quieres eliminar esta carta?"
+        )
+    ){
+        return;
     }
 
 
-    /* =====================================================
-       CERRAR SESIÓN
-    ===================================================== */
+    const {
+        error
+    } =
+        await supabaseClient
+        .from("cartas")
+        .delete()
+        .eq(
+            "id",
+            id
+        );
 
-    document
-      .getElementById("logout")
-      .addEventListener(
-        "click",
-        async function() {
 
-          try {
+    if(error){
 
-            await supabaseClient.auth.signOut();
+        alert(
+            "No se pudo eliminar: " +
+            error.message
+        );
 
-          } catch (error) {
+    }else{
 
-            console.error(
-              error
-            );
+        loadLetters();
 
-          }
+    }
+}
 
-          window.location.replace(
-            "login.html"
-          );
+
+/* =========================================================
+   MODALES
+========================================================= */
+
+document
+    .querySelectorAll(
+        "[data-close]"
+    )
+    .forEach(
+        function(button){
+
+            button.onclick =
+                function(){
+
+                    closeModal(
+                        button.dataset.close
+                    );
+
+                };
 
         }
-      );
-
-
-    /* =====================================================
-       ESC
-    ===================================================== */
-
-    document.addEventListener(
-      "keydown",
-      function(event) {
-
-        if (
-          event.key !== "Escape"
-        ) {
-          return;
-        }
-
-        cerrarRecuerdoCompleto();
-
-        cerrarCartaCompleta();
-
-      }
     );
 
 
-    /* =====================================================
-       INICIAR
-    ===================================================== */
+document
+    .querySelectorAll(
+        ".modal"
+    )
+    .forEach(
+        function(modal){
 
-    verificarSesion();
+            modal.addEventListener(
+                "click",
+                function(event){
 
-  </script>
+                    if(
+                        event.target ===
+                        modal
+                    ){
+
+                        closeModal(
+                            modal.id
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Escape"
+        ){
+
+            document
+                .querySelectorAll(
+                    ".modal.active"
+                )
+                .forEach(
+                    function(modal){
+
+                        closeModal(
+                            modal.id
+                        );
+
+                    }
+                );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   VER TODOS LOS RECUERDOS
+========================================================= */
+
+document
+    .getElementById(
+        "show-all-memories"
+    )
+    .onclick =
+        function(){
+
+            document
+                .getElementById(
+                    "memories-list"
+                )
+                .scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
+
+        };
+
+
+/* =========================================================
+   CERRAR SESIÓN
+========================================================= */
+
+document
+    .getElementById(
+        "logout"
+    )
+    .onclick =
+        async function(){
+
+            await supabaseClient
+                .auth
+                .signOut();
+
+            window.location.replace(
+                "login.html"
+            );
+
+        };
+
+
+/* =========================================================
+   INICIAR
+========================================================= */
+
+async function init(){
+
+    const session =
+        await requireSession();
+
+    if(!session){
+        return;
+    }
+
+
+    await Promise.all([
+
+        loadMemories(),
+
+        loadDates(),
+
+        loadHistory(),
+
+        loadLetters()
+
+    ]);
+
+}
+
+
+init();
+
+</script>
 
 </body>
-
 </html>
