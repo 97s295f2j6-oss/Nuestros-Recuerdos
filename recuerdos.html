@@ -31,10 +31,10 @@ body{
 
   background:
     radial-gradient(
-      circle at 50% -10%,
-      #351522 0%,
-      #1a0b14 28%,
-      #0b080d 65%,
+      circle at 50% -15%,
+      #4a1729 0%,
+      #24101a 25%,
+      #100a10 58%,
       #050507 100%
     );
 
@@ -44,6 +44,26 @@ body{
     Georgia,
     "Times New Roman",
     serif;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+
+  background:
+    radial-gradient(
+      circle at 15% 30%,
+      rgba(170,45,85,.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(170,45,85,.06),
+      transparent 30%
+    );
 }
 
 body.modal-open{
@@ -66,18 +86,16 @@ button:disabled{
   cursor:not-allowed;
 }
 
-
 /* =========================================================
    CONTENEDOR
 ========================================================= */
 
 .container{
   width:100%;
-  max-width:1050px;
+  max-width:1080px;
   margin:auto;
-  padding:24px 25px 60px;
+  padding:24px 25px 65px;
 }
-
 
 /* =========================================================
    HEADER
@@ -88,17 +106,24 @@ button:disabled{
   align-items:center;
   justify-content:space-between;
   gap:20px;
+
   padding:4px 2px 28px;
 }
 
 .brand{
   display:flex;
   align-items:center;
-  gap:9px;
+  gap:10px;
 }
 
 .brand-heart{
-  font-size:25px;
+  font-size:27px;
+
+  filter:
+    drop-shadow(
+      0 5px 12px
+      rgba(220,60,100,.25)
+    );
 }
 
 .brand h1{
@@ -108,84 +133,68 @@ button:disabled{
   letter-spacing:.2px;
 }
 
-.add-top{
-  border:0;
-  border-radius:40px;
-  padding:13px 24px;
-  color:#fff;
-
-  background:
-    linear-gradient(
-      135deg,
-      #b83f68,
-      #852744
-    );
-
-  box-shadow:
-    0 10px 30px
-    rgba(190,55,100,.22);
-
-  transition:.2s;
-}
-
-.add-top:hover{
-  transform:translateY(-2px);
-}
-
-
-/* =========================================================
-   TARJETAS
-========================================================= */
-
-.card{
-  border:
-    1px solid
-    rgba(255,255,255,.13);
-
-  border-radius:22px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(27,18,24,.92),
-      rgba(11,9,12,.95)
-    );
-
-  box-shadow:
-    0 20px 55px
-    rgba(0,0,0,.35);
-
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-}
-
-
 /* =========================================================
    BOTONES
 ========================================================= */
 
-.pink-button{
-  border:0;
+.add-top{
+  border:1px solid rgba(230,100,140,.25);
   border-radius:40px;
-  padding:13px 25px;
+
+  padding:13px 24px;
+
   color:#fff;
 
   background:
     linear-gradient(
       135deg,
-      #c54370,
-      #922c51
+      #bd426d,
+      #76213e
+    );
+
+  box-shadow:
+    0 12px 35px
+    rgba(190,55,100,.22);
+
+  transition:.25s;
+}
+
+.add-top:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 16px 40px
+    rgba(190,55,100,.30);
+}
+
+.pink-button{
+  border:1px solid rgba(255,130,165,.18);
+  border-radius:40px;
+
+  padding:13px 25px;
+
+  color:#fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c94b77,
+      #8d294e
     );
 
   box-shadow:
     0 10px 30px
     rgba(194,60,105,.20);
 
-  transition:.2s;
+  transition:.25s;
 }
 
 .pink-button:hover{
   transform:translateY(-2px);
+
+  box-shadow:
+    0 14px 35px
+    rgba(194,60,105,.30);
 }
 
 .small-button,
@@ -201,9 +210,9 @@ button:disabled{
     20px;
 
   background:
-    rgba(105,27,51,.07);
+    rgba(105,27,51,.08);
 
-  color:#d58aa2;
+  color:#d98da5;
 
   transition:.2s;
 }
@@ -211,23 +220,60 @@ button:disabled{
 .small-button:hover,
 .action:hover{
   background:
-    rgba(150,40,75,.15);
+    rgba(150,40,75,.17);
+
+  border-color:
+    rgba(205,70,110,.75);
+
+  color:#fff;
 }
 
 .action.delete{
   border-color:
     rgba(155,48,65,.52);
 
-  color:#cc8796;
+  color:#d98a99;
 }
 
+.action.delete:hover{
+  background:
+    rgba(150,35,55,.16);
+
+  color:#ffadb9;
+}
+
+/* =========================================================
+   TARJETAS
+========================================================= */
+
+.card{
+  border:
+    1px solid
+    rgba(255,255,255,.10);
+
+  border-radius:22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(30,18,25,.94),
+      rgba(10,8,12,.96)
+    );
+
+  box-shadow:
+    0 20px 55px
+    rgba(0,0,0,.35);
+
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
 
 /* =========================================================
    SECCIONES
 ========================================================= */
 
 .section{
-  margin-top:30px;
+  margin-top:34px;
 }
 
 .section-heading{
@@ -245,6 +291,7 @@ button:disabled{
 .section-heading:before,
 .section-heading:after{
   content:"";
+
   height:1px;
   flex:1;
 
@@ -271,127 +318,88 @@ button:disabled{
 
 .section-subtitle{
   text-align:center;
+
   color:#a99ba2;
+
   font-size:17px;
+
   margin-bottom:22px;
 }
-
-
-/* =========================================================
-   BIENVENIDA
-========================================================= */
-
-.welcome-section{
-  margin-top:0;
-  margin-bottom:38px;
-}
-
-.welcome-intro{
-  padding:
-    38px
-    25px
-    30px;
-
-  text-align:center;
-
-  border:
-    1px solid
-    rgba(194,57,96,.72);
-
-  border-radius:24px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(37,13,25,.97),
-      rgba(12,9,13,.98)
-    );
-
-  box-shadow:
-    0 20px 60px
-    rgba(0,0,0,.35);
-}
-
-.welcome-heart{
-  font-size:68px;
-  line-height:1;
-  margin-bottom:20px;
-
-  filter:
-    drop-shadow(
-      0 10px 20px
-      rgba(220,50,90,.30)
-    );
-}
-
-.welcome-intro h2{
-  font-size:clamp(32px,6vw,48px);
-  line-height:1.15;
-  margin-bottom:14px;
-}
-
-.welcome-line{
-  width:80px;
-  height:1px;
-  margin:22px auto;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      #c34c70,
-      transparent
-    );
-}
-
-.welcome-intro p{
-  max-width:720px;
-  margin:auto;
-
-  color:#cfc1c8;
-
-  font-size:18px;
-  line-height:1.75;
-}
-
 
 /* =========================================================
    COSAS QUE AMO
 ========================================================= */
 
 .hannia-section{
-  margin-top:38px;
+  margin-top:8px;
 }
 
 .hannia-intro{
+  position:relative;
+  overflow:hidden;
+
   padding:
-    38px
+    42px
     25px
-    30px;
+    32px;
 
   text-align:center;
 
   border:
     1px solid
-    rgba(194,57,96,.72);
+    rgba(194,57,96,.65);
 
-  border-radius:24px;
+  border-radius:26px;
 
   background:
     linear-gradient(
       145deg,
-      rgba(37,13,25,.97),
-      rgba(12,9,13,.98)
+      rgba(47,14,29,.97),
+      rgba(13,8,14,.99)
     );
 
   box-shadow:
-    0 20px 60px
-    rgba(0,0,0,.35);
+    0 25px 70px
+    rgba(0,0,0,.38);
+}
+
+.hannia-intro:before{
+  content:"❤️";
+
+  position:absolute;
+
+  left:-20px;
+  top:-35px;
+
+  font-size:130px;
+
+  opacity:.035;
+
+  pointer-events:none;
+}
+
+.hannia-intro:after{
+  content:"❤️";
+
+  position:absolute;
+
+  right:-15px;
+  bottom:-40px;
+
+  font-size:130px;
+
+  opacity:.035;
+
+  pointer-events:none;
 }
 
 .hannia-heart{
+  position:relative;
+  z-index:1;
+
   font-size:68px;
   line-height:1;
+
   margin-bottom:20px;
 
   filter:
@@ -402,31 +410,36 @@ button:disabled{
 }
 
 .hannia-intro h2{
+  position:relative;
+  z-index:1;
+
   font-size:clamp(32px,6vw,48px);
   line-height:1.15;
+
   margin-bottom:14px;
 }
 
-.hannia-intro h2 span{
-  color:#fff;
-}
-
 .hannia-line{
-  width:80px;
+  width:85px;
   height:1px;
+
   margin:22px auto;
 
   background:
     linear-gradient(
       90deg,
       transparent,
-      #c34c70,
+      #d05a7e,
       transparent
     );
 }
 
 .hannia-intro p{
+  position:relative;
+  z-index:1;
+
   max-width:720px;
+
   margin:auto;
 
   color:#cfc1c8;
@@ -435,14 +448,13 @@ button:disabled{
   line-height:1.75;
 }
 
-
 /* =========================================================
-   COSAS QUE AMO - FORM
+   FORM COSAS QUE AMO
 ========================================================= */
 
 .love-form{
   margin-top:18px;
-  padding:25px;
+  padding:26px;
 }
 
 .love-form h3{
@@ -495,34 +507,42 @@ button:disabled{
 
 .love-card{
   display:grid;
+
   grid-template-columns:120px 1fr;
+
   align-items:center;
+
   gap:20px;
 
   min-height:180px;
+
   padding:25px;
 
   border:
     1px solid
-    rgba(255,255,255,.13);
+    rgba(255,255,255,.11);
 
   border-radius:22px;
 
   background:
     linear-gradient(
       145deg,
-      rgba(27,18,24,.92),
-      rgba(11,9,12,.95)
+      rgba(29,18,25,.93),
+      rgba(10,8,12,.96)
     );
 
-  transition:.2s;
+  transition:.25s;
 }
 
 .love-card:hover{
   border-color:
-    rgba(190,59,99,.72);
+    rgba(190,59,99,.68);
 
   transform:translateY(-2px);
+
+  box-shadow:
+    0 20px 50px
+    rgba(0,0,0,.28);
 }
 
 .love-icon{
@@ -538,7 +558,11 @@ button:disabled{
   border-radius:50%;
 
   background:
-    rgba(128,30,63,.16);
+    radial-gradient(
+      circle,
+      rgba(170,40,80,.20),
+      rgba(100,20,50,.07)
+    );
 
   font-size:48px;
 
@@ -553,22 +577,31 @@ button:disabled{
 
 .love-title{
   color:#fff;
+
   font-size:27px;
+
   line-height:1.25;
+
   margin-bottom:9px;
 }
 
 .love-description{
   color:#c7bbc1;
+
   font-size:17px;
+
   line-height:1.7;
+
   white-space:pre-wrap;
 }
 
 .love-actions{
   display:flex;
+
   gap:8px;
+
   margin-top:17px;
+
   flex-wrap:wrap;
 }
 
@@ -578,7 +611,9 @@ button:disabled{
 
 .empty-love{
   padding:35px 25px;
+
   text-align:center;
+
   color:#a99ba2;
 
   border:
@@ -607,9 +642,8 @@ button:disabled{
   line-height:1.6;
 }
 
-
 /* =========================================================
-   CONTADOR ❤️
+   CONTADOR
 ========================================================= */
 
 .counter-section{
@@ -621,28 +655,28 @@ button:disabled{
   overflow:hidden;
 
   padding:
-    42px
+    45px
     30px
-    35px;
+    37px;
 
   text-align:center;
 
   border:
     1px solid
-    rgba(194,57,96,.72);
+    rgba(194,57,96,.68);
 
-  border-radius:24px;
+  border-radius:26px;
 
   background:
     linear-gradient(
       145deg,
-      rgba(37,13,25,.97),
-      rgba(12,9,13,.98)
+      rgba(47,14,29,.97),
+      rgba(12,8,13,.99)
     );
 
   box-shadow:
-    0 20px 60px
-    rgba(0,0,0,.35);
+    0 25px 70px
+    rgba(0,0,0,.42);
 }
 
 .counter-card:before{
@@ -680,6 +714,7 @@ button:disabled{
   z-index:1;
 
   font-size:68px;
+
   line-height:1;
 
   margin-bottom:17px;
@@ -744,6 +779,8 @@ button:disabled{
   margin-bottom:25px;
 }
 
+/* AHORA SON 4 */
+
 .counter-values{
   position:relative;
   z-index:1;
@@ -751,11 +788,11 @@ button:disabled{
   display:grid;
 
   grid-template-columns:
-    repeat(3,1fr);
+    repeat(4,1fr);
 
-  gap:20px;
+  gap:14px;
 
-  max-width:900px;
+  max-width:950px;
 
   margin:
     0
@@ -764,7 +801,7 @@ button:disabled{
 }
 
 .counter-unit{
-  min-height:180px;
+  min-height:170px;
 
   display:flex;
 
@@ -774,16 +811,16 @@ button:disabled{
 
   justify-content:center;
 
-  padding:20px 15px;
+  padding:20px 12px;
 
   border:
     1px solid
     rgba(165,49,84,.65);
 
-  border-radius:24px;
+  border-radius:22px;
 
   background:
-    rgba(12,7,12,.48);
+    rgba(12,7,12,.50);
 
   box-shadow:
     inset 0 0 30px
@@ -801,7 +838,7 @@ button:disabled{
 }
 
 .counter-number{
-  font-size:clamp(52px,7vw,78px);
+  font-size:clamp(46px,6vw,72px);
 
   line-height:1;
 
@@ -815,9 +852,9 @@ button:disabled{
 .counter-label{
   color:#d15a7e;
 
-  font-size:16px;
+  font-size:14px;
 
-  letter-spacing:5px;
+  letter-spacing:4px;
 
   text-transform:uppercase;
 }
@@ -837,52 +874,63 @@ button:disabled{
   color:#fff;
 }
 
-
 /* =========================================================
    RECUERDOS
 ========================================================= */
 
 .memories{
   display:grid;
-  gap:15px;
+  gap:16px;
 }
 
 .memory-card{
   display:grid;
+
   grid-template-columns:50% 50%;
 
-  min-height:270px;
+  min-height:275px;
+
   overflow:hidden;
 
   border:
     1px solid
     rgba(135,44,75,.58);
 
-  border-radius:20px;
+  border-radius:22px;
 
   background:#0d0a0e;
 
-  transition:.2s;
+  transition:.25s;
 }
 
 .memory-card:hover{
   border-color:
     rgba(190,59,99,.72);
+
+  box-shadow:
+    0 20px 50px
+    rgba(0,0,0,.30);
 }
 
 .memory-image-wrap{
-  min-height:270px;
+  min-height:275px;
+
   overflow:hidden;
+
   background:#08070a;
 }
 
 .memory-image{
   display:block;
+
   width:100%;
   height:100%;
-  min-height:270px;
+
+  min-height:275px;
+
   object-fit:cover;
-  transition:.35s;
+
+  transition:.4s;
 }
 
 .memory-card:hover .memory-image{
@@ -891,57 +939,94 @@ button:disabled{
 
 .memory-info{
   display:flex;
+
   flex-direction:column;
+
   align-items:flex-start;
-  padding:24px 25px;
+
+  padding:25px;
 }
 
+/* IMPORTANTE:
+   FECHA EN SU PROPIO RENGLÓN
+*/
+
 .memory-date{
+  display:block;
+
+  width:100%;
+
   color:#d15a7e;
+
   text-transform:uppercase;
+
   letter-spacing:3px;
+
   font-size:12px;
+
+  line-height:1.4;
+
   margin-bottom:10px;
 }
 
 .memory-title{
+  display:block;
+
+  width:100%;
+
   color:#fff;
+
   font-size:27px;
-  line-height:1.2;
+
+  line-height:1.25;
+
   margin-bottom:12px;
 }
 
 .memory-desc{
+  display:block;
+
+  width:100%;
+
   color:#c7bbc1;
+
   font-size:17px;
+
   line-height:1.65;
+
   white-space:pre-wrap;
 }
 
 .memory-actions{
   display:flex;
+
   gap:8px;
+
   width:100%;
+
   margin-top:auto;
+
   padding-top:18px;
 }
 
 .memory-actions .action,
 .memory-actions .small-button{
   flex:1;
+
   text-align:center;
 }
 
 .center-action{
   display:flex;
+
   justify-content:center;
-  margin:17px 0 0;
+
+  margin:18px 0 0;
 }
 
 #show-all-memories{
   min-width:280px;
 }
-
 
 /* =========================================================
    FORMULARIOS
@@ -949,7 +1034,9 @@ button:disabled{
 
 .form-panel{
   display:none;
+
   padding:24px;
+
   margin-bottom:17px;
 }
 
@@ -959,8 +1046,11 @@ button:disabled{
 
 label{
   display:block;
+
   color:#cdbec5;
+
   font-size:14px;
+
   margin:16px 0 7px;
 }
 
@@ -971,7 +1061,7 @@ select{
 
   border:
     1px solid
-    rgba(255,255,255,.14);
+    rgba(255,255,255,.13);
 
   border-radius:13px;
 
@@ -982,6 +1072,8 @@ select{
   padding:13px;
 
   outline:none;
+
+  transition:.2s;
 }
 
 input::placeholder,
@@ -1001,13 +1093,17 @@ select:focus{
 
 textarea{
   min-height:130px;
+
   resize:vertical;
+
   line-height:1.6;
 }
 
 .form-row{
   display:flex;
+
   gap:10px;
+
   margin-top:20px;
 }
 
@@ -1017,9 +1113,13 @@ textarea{
 
 .status{
   display:none;
+
   margin-top:15px;
+
   padding:12px;
+
   border-radius:12px;
+
   text-align:center;
 }
 
@@ -1039,8 +1139,11 @@ textarea{
 
 .preview{
   display:none;
+
   margin-top:15px;
+
   overflow:hidden;
+
   border-radius:17px;
 }
 
@@ -1050,11 +1153,13 @@ textarea{
 
 .preview img{
   width:100%;
+
   max-height:350px;
+
   object-fit:cover;
+
   display:block;
 }
-
 
 /* =========================================================
    FECHAS
@@ -1067,64 +1172,90 @@ textarea{
 
 .date-card{
   position:relative;
+
   padding:23px 25px;
+
   overflow:hidden;
 }
 
 .date-card:after{
   content:"❤️";
+
   position:absolute;
+
   right:23px;
   top:19px;
+
   font-size:34px;
+
   opacity:.12;
 }
 
 .date-top{
   display:flex;
+
   gap:15px;
+
   align-items:flex-start;
 }
 
 .date-icon{
   font-size:32px;
+
   line-height:1;
 }
 
 .date-title{
   color:#fff;
+
   font-size:26px;
+
   line-height:1.2;
+
   margin-bottom:8px;
+
   padding-right:40px;
 }
 
 .date-message{
   color:#c2b6bd;
+
   font-size:16px;
+
   line-height:1.65;
 }
 
 .date-label{
   color:#d15a7e;
+
   text-transform:uppercase;
+
   letter-spacing:3px;
+
   font-size:12px;
+
   margin-bottom:9px;
 }
 
 .date-actions{
   display:flex;
+
   gap:8px;
+
   flex-wrap:wrap;
+
   margin-top:15px;
 }
 
 .add-date{
   text-align:center;
+
   padding:25px;
+
   margin-top:15px;
-  border-color:rgba(165,49,84,.48);
+
+  border-color:
+    rgba(165,49,84,.48);
 }
 
 .add-date h3{
@@ -1133,20 +1264,23 @@ textarea{
 
 .add-date p{
   color:#a99da3;
+
   line-height:1.6;
+
   margin:9px 0 19px;
 }
 
 .date-form{
   display:none;
+
   text-align:left;
+
   margin-top:20px;
 }
 
 .date-form.active{
   display:block;
 }
-
 
 /* =========================================================
    NUESTROS LUGARES
@@ -1157,70 +1291,93 @@ textarea{
 }
 
 .places-intro{
-  padding:38px 25px 30px;
+  position:relative;
+  overflow:hidden;
+
+  padding:
+    42px
+    25px
+    32px;
+
   text-align:center;
 
   border:
     1px solid
-    rgba(194,57,96,.72);
+    rgba(194,57,96,.65);
 
-  border-radius:24px;
+  border-radius:26px;
 
   background:
     linear-gradient(
       145deg,
-      rgba(37,13,25,.97),
-      rgba(12,9,13,.98)
+      rgba(47,14,29,.97),
+      rgba(12,8,13,.99)
     );
 
   box-shadow:
-    0 20px 60px
-    rgba(0,0,0,.35);
+    0 25px 70px
+    rgba(0,0,0,.38);
 }
 
 .places-globe{
   font-size:65px;
+
   line-height:1;
+
   margin-bottom:15px;
 }
 
 .places-intro h2{
   font-size:clamp(31px,6vw,46px);
+
   line-height:1.15;
+
   margin-bottom:15px;
 }
 
 .places-intro p{
   max-width:720px;
+
   margin:auto;
 
   color:#cfc1c8;
+
   font-size:18px;
+
   line-height:1.7;
 }
 
 .places-form{
   margin-top:18px;
+
   padding:25px;
 }
 
 .places-form h3{
   font-size:25px;
+
   margin-bottom:5px;
 }
 
 .places-form-subtitle{
   color:#a99ba2;
+
   font-size:15px;
+
   line-height:1.5;
+
   margin-bottom:15px;
 }
 
 .place-status{
   display:none;
+
   margin-top:15px;
+
   padding:12px;
+
   border-radius:12px;
+
   text-align:center;
 }
 
@@ -1230,23 +1387,29 @@ textarea{
 
 .place-status.success{
   background:rgba(70,160,105,.10);
+
   color:#91d7ab;
 }
 
 .place-status.error{
   background:rgba(190,45,65,.10);
+
   color:#ff9aa9;
 }
 
 .place-form-row{
   display:grid;
+
   grid-template-columns:1fr 1fr;
+
   gap:12px;
 }
 
 .place-form-buttons{
   display:flex;
+
   gap:10px;
+
   margin-top:20px;
 }
 
@@ -1256,13 +1419,17 @@ textarea{
 
 .place-list{
   display:grid;
+
   gap:15px;
+
   margin-top:18px;
 }
 
 .place-card{
   position:relative;
+
   overflow:hidden;
+
   padding:24px 25px;
 
   border:
@@ -1290,7 +1457,9 @@ textarea{
 
 .place-card-top{
   display:flex;
+
   align-items:flex-start;
+
   gap:17px;
 }
 
@@ -1301,7 +1470,9 @@ textarea{
   flex-shrink:0;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   border-radius:50%;
@@ -1314,6 +1485,7 @@ textarea{
 
 .place-card-content{
   min-width:0;
+
   flex:1;
 }
 
@@ -1333,40 +1505,55 @@ textarea{
 
 .place-title{
   color:#fff;
+
   font-size:26px;
+
   line-height:1.2;
+
   margin-bottom:7px;
 }
 
 .place-location{
   color:#c9bbc2;
+
   font-size:16px;
+
   line-height:1.5;
 }
 
 .place-description{
   color:#c0b4bb;
+
   font-size:16px;
+
   line-height:1.65;
+
   white-space:pre-wrap;
+
   margin-top:14px;
 }
 
 .place-actions{
   display:flex;
+
   gap:8px;
+
   flex-wrap:wrap;
+
   margin-top:18px;
 }
 
 .place-actions button{
   flex:1;
+
   min-width:130px;
+
   text-align:center;
 }
 
 .place-empty{
   padding:35px 25px;
+
   text-align:center;
 
   color:#a99ba2;
@@ -1383,17 +1570,21 @@ textarea{
 
 .place-empty-icon{
   font-size:43px;
+
   margin-bottom:10px;
 }
 
 .place-empty h3{
   color:#fff;
+
   font-size:23px;
+
   margin-bottom:8px;
 }
 
 .place-empty p{
   font-size:16px;
+
   line-height:1.6;
 }
 
@@ -1403,17 +1594,21 @@ textarea{
 
 .places-subsection-title{
   text-align:center;
+
   font-size:26px;
+
   margin-bottom:12px;
 }
 
 .places-counter{
   text-align:center;
+
   color:#a99ba2;
+
   font-size:15px;
+
   margin-bottom:15px;
 }
-
 
 /* =========================================================
    HISTORIA
@@ -1425,6 +1620,7 @@ textarea{
 
 .timeline{
   position:relative;
+
   padding-left:30px;
 
   border-left:
@@ -1434,6 +1630,7 @@ textarea{
 
 .timeline-item{
   position:relative;
+
   margin-bottom:42px;
 }
 
@@ -1445,6 +1642,7 @@ textarea{
   content:"♥";
 
   position:absolute;
+
   left:-43px;
   top:-3px;
 
@@ -1452,37 +1650,51 @@ textarea{
   height:25px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   color:#d4577e;
+
   background:#120b10;
+
   border-radius:50%;
+
   font-size:14px;
 }
 
 .timeline-title{
   font-size:27px;
+
   line-height:1.2;
+
   margin-bottom:10px;
 }
 
 .timeline-text{
   color:#c4b9bf;
+
   font-size:17px;
+
   line-height:1.75;
+
   white-space:pre-wrap;
 }
 
 .history-image{
   display:block;
+
   width:100%;
+
   max-height:430px;
+
   object-fit:cover;
+
   border-radius:17px;
+
   margin-top:18px;
 }
-
 
 /* =========================================================
    CARTAS
@@ -1494,63 +1706,85 @@ textarea{
 
 .letter-list{
   display:grid;
+
   gap:14px;
 }
 
 .saved-letter{
   position:relative;
+
   padding:23px 25px;
+
   overflow:hidden;
 }
 
 .saved-letter:before{
   content:"💌";
+
   position:absolute;
+
   right:23px;
   top:17px;
+
   font-size:31px;
+
   opacity:.13;
 }
 
 .saved-letter h3{
   font-size:26px;
+
   line-height:1.25;
+
   margin-bottom:8px;
+
   padding-right:45px;
 }
 
 .letter-author{
   color:#91868d;
+
   font-size:13px;
+
   margin-bottom:14px;
 }
 
 .letter-preview{
   color:#cec4c9;
+
   font-size:17px;
+
   line-height:1.75;
+
   font-style:italic;
+
   white-space:pre-wrap;
 
   display:-webkit-box;
+
   -webkit-line-clamp:3;
+
   -webkit-box-orient:vertical;
+
   overflow:hidden;
 }
 
 .letter-actions{
   display:flex;
+
   gap:8px;
+
   margin-top:16px;
+
   flex-wrap:wrap;
 }
 
 .letter-actions .action,
 .letter-actions .small-button{
   flex:1;
+
   text-align:center;
 }
-
 
 /* =========================================================
    FUTURO
@@ -1558,10 +1792,13 @@ textarea{
 
 .future{
   position:relative;
+
   overflow:hidden;
+
   text-align:center;
 
-  padding:43px 25px;
+  padding:45px 25px;
+
   margin-top:48px;
 }
 
@@ -1569,10 +1806,12 @@ textarea{
   content:"❤️";
 
   position:absolute;
+
   left:7%;
   top:15px;
 
   font-size:100px;
+
   opacity:.07;
 }
 
@@ -1580,34 +1819,42 @@ textarea{
   content:"❤️";
 
   position:absolute;
+
   right:7%;
   bottom:10px;
 
   font-size:100px;
+
   opacity:.07;
 }
 
 .future h2{
   position:relative;
+
   z-index:1;
 
   font-size:31px;
+
   line-height:1.2;
+
   margin-bottom:16px;
 }
 
 .future p{
   position:relative;
+
   z-index:1;
 
   max-width:750px;
+
   margin:auto;
 
   color:#c4b8be;
+
   font-size:18px;
+
   line-height:1.8;
 }
-
 
 /* =========================================================
    LOGOUT / FOOTER
@@ -1615,6 +1862,7 @@ textarea{
 
 .logout{
   display:block;
+
   margin:35px auto 0;
 
   border:
@@ -1626,16 +1874,28 @@ textarea{
   padding:11px 23px;
 
   color:#9d9298;
+
   background:transparent;
+
+  transition:.2s;
+}
+
+.logout:hover{
+  color:#fff;
+
+  border-color:
+    rgba(200,70,110,.55);
 }
 
 .footer{
   text-align:center;
+
   color:#655c62;
+
   font-size:13px;
+
   margin-top:25px;
 }
-
 
 /* =========================================================
    MODALES
@@ -1643,11 +1903,15 @@ textarea{
 
 .modal{
   position:fixed;
+
   inset:0;
+
   z-index:9999;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   padding:15px;
@@ -1656,9 +1920,11 @@ textarea{
     rgba(3,2,5,.88);
 
   backdrop-filter:blur(12px);
+
   -webkit-backdrop-filter:blur(12px);
 
   opacity:0;
+
   visibility:hidden;
 
   transition:.25s;
@@ -1666,6 +1932,7 @@ textarea{
 
 .modal.active{
   opacity:1;
+
   visibility:visible;
 }
 
@@ -1673,7 +1940,9 @@ textarea{
   position:relative;
 
   width:100%;
+
   max-width:850px;
+
   max-height:92vh;
 
   overflow:auto;
@@ -1710,6 +1979,7 @@ textarea{
 
 .close{
   position:absolute;
+
   right:15px;
   top:13px;
 
@@ -1732,11 +2002,15 @@ textarea{
 
 .modal-date{
   text-align:center;
+
   color:#d25b7f;
 
   text-transform:uppercase;
+
   letter-spacing:3px;
+
   font-size:12px;
+
   margin-bottom:12px;
 }
 
@@ -1746,31 +2020,41 @@ textarea{
   font-size:clamp(31px,6vw,52px);
 
   line-height:1.15;
+
   margin-bottom:18px;
 }
 
 .modal-author{
   text-align:center;
+
   color:#9e9299;
+
   font-size:14px;
+
   margin-bottom:25px;
 }
 
 .modal-line{
   width:70px;
+
   height:1px;
+
   background:#91465f;
+
   margin:0 auto 27px;
 }
 
 .modal-text{
   color:#d9cfd4;
+
   font-size:19px;
+
   line-height:1.9;
+
   white-space:pre-wrap;
+
   font-style:italic;
 }
-
 
 /* =========================================================
    CELULAR
@@ -1803,24 +2087,6 @@ textarea{
     font-size:14px;
   }
 
-  .welcome-intro{
-    padding:32px 18px 27px;
-  }
-
-  .welcome-heart{
-    font-size:58px;
-    margin-bottom:15px;
-  }
-
-  .welcome-intro h2{
-    font-size:32px;
-  }
-
-  .welcome-intro p{
-    font-size:16px;
-    line-height:1.7;
-  }
-
   .section{
     margin-top:28px;
   }
@@ -1843,7 +2109,7 @@ textarea{
   /* COSAS QUE AMO */
 
   .hannia-section{
-    margin-top:30px;
+    margin-top:5px;
   }
 
   .hannia-intro{
@@ -1882,13 +2148,16 @@ textarea{
 
   .love-card{
     grid-template-columns:1fr;
+
     text-align:center;
+
     padding:24px 19px;
   }
 
   .love-icon{
     width:82px;
     height:82px;
+
     font-size:42px;
   }
 
@@ -1915,7 +2184,7 @@ textarea{
   }
 
   .counter-card{
-    padding:32px 17px 28px;
+    padding:32px 13px 28px;
   }
 
   .counter-hourglass{
@@ -1943,28 +2212,36 @@ textarea{
   }
 
   .counter-values{
+    grid-template-columns:repeat(2,1fr);
+
     gap:8px;
+
     margin-bottom:23px;
   }
 
   .counter-unit{
-    min-height:130px;
+    min-height:125px;
+
     padding:15px 5px;
+
     border-radius:18px;
   }
 
   .counter-number{
     font-size:43px;
+
     margin-bottom:12px;
   }
 
   .counter-label{
     font-size:10px;
+
     letter-spacing:2px;
   }
 
   .counter-final{
     font-size:19px;
+
     line-height:1.5;
   }
 
@@ -1972,16 +2249,19 @@ textarea{
 
   .memory-card{
     grid-template-columns:1fr;
+
     min-height:0;
   }
 
   .memory-image-wrap{
     height:280px;
+
     min-height:280px;
   }
 
   .memory-image{
     height:280px;
+
     min-height:280px;
   }
 
@@ -1989,8 +2269,14 @@ textarea{
     padding:20px;
   }
 
+  .memory-date{
+    margin-bottom:9px;
+  }
+
   .memory-title{
     font-size:25px;
+
+    margin-bottom:11px;
   }
 
   .memory-desc{
@@ -2004,11 +2290,13 @@ textarea{
   .memory-actions .action,
   .memory-actions .small-button{
     padding:10px 12px;
+
     font-size:14px;
   }
 
   #show-all-memories{
     min-width:0;
+
     width:100%;
   }
 
@@ -2034,7 +2322,7 @@ textarea{
     padding:23px 18px;
   }
 
-  /* NUESTROS LUGARES */
+  /* LUGARES */
 
   .places-section{
     margin-top:35px;
@@ -2067,6 +2355,7 @@ textarea{
 
   .place-form-row{
     grid-template-columns:1fr;
+
     gap:0;
   }
 
@@ -2085,6 +2374,7 @@ textarea{
   .place-icon{
     width:55px;
     height:55px;
+
     font-size:27px;
   }
 
@@ -2108,6 +2398,8 @@ textarea{
     width:100%;
   }
 
+  /* HISTORIA */
+
   #history-list{
     padding:22px 18px;
   }
@@ -2127,6 +2419,8 @@ textarea{
   .timeline-text{
     font-size:16px;
   }
+
+  /* CARTAS */
 
   .saved-letter{
     padding:21px 20px;
@@ -2171,7 +2465,6 @@ textarea{
 
 }
 
-
 /* =========================================================
    PANTALLAS MUY PEQUEÑAS
 ========================================================= */
@@ -2184,11 +2477,8 @@ textarea{
 
   .add-top{
     padding:10px 13px;
-    font-size:13px;
-  }
 
-  .welcome-intro h2{
-    font-size:29px;
+    font-size:13px;
   }
 
   .counter-title{
@@ -2208,7 +2498,7 @@ textarea{
   }
 
   .counter-unit{
-    min-height:115px;
+    min-height:110px;
   }
 
   .counter-number{
@@ -2217,6 +2507,7 @@ textarea{
 
   .counter-label{
     font-size:8px;
+
     letter-spacing:1px;
   }
 
@@ -2227,6 +2518,7 @@ textarea{
   .memory-image-wrap,
   .memory-image{
     height:245px;
+
     min-height:245px;
   }
 
@@ -2240,14 +2532,27 @@ textarea{
 
 }
 
+/* =========================================================
+   ACCESIBILIDAD
+========================================================= */
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible{
+  outline:
+    2px solid
+    rgba(213,90,126,.75);
+
+  outline-offset:2px;
+}
+
 </style>
 </head>
-
 
 <body>
 
 <div class="container">
-
 
 <!-- =========================================================
      HEADER
@@ -2262,7 +2567,7 @@ textarea{
     </div>
 
     <h1>
-      Bienvenida a nuestra historia ❤️
+      Cartas & Recuerdos
     </h1>
 
   </div>
@@ -2276,38 +2581,6 @@ textarea{
   </button>
 
 </header>
-
-
-<!-- =========================================================
-     BIENVENIDA
-========================================================= -->
-
-<section
-  class="welcome-section"
-  id="bienvenida">
-
-  <div class="welcome-intro">
-
-    <div class="welcome-heart">
-      ❤️
-    </div>
-
-    <h2>
-      Bienvenida a nuestra historia ❤️
-    </h2>
-
-    <div class="welcome-line"></div>
-
-    <p>
-      Un pequeño espacio para guardar cada
-      momento, cada recuerdo y cada capítulo
-      que vayamos escribiendo juntos.
-    </p>
-
-  </div>
-
-</section>
-
 
 <!-- =========================================================
      COSAS QUE AMO
@@ -2336,7 +2609,6 @@ textarea{
     </p>
 
   </div>
-
 
   <div
     class="card love-form"
@@ -2426,7 +2698,6 @@ textarea{
 
 </section>
 
-
 <!-- =========================================================
      CONTADOR
 ========================================================= -->
@@ -2471,7 +2742,6 @@ textarea{
 
       </div>
 
-
       <div class="counter-unit">
 
         <div
@@ -2485,7 +2755,6 @@ textarea{
         </div>
 
       </div>
-
 
       <div class="counter-unit">
 
@@ -2501,6 +2770,20 @@ textarea{
 
       </div>
 
+      <div class="counter-unit">
+
+        <div
+          class="counter-number"
+          id="counter-seconds">
+          00
+        </div>
+
+        <div class="counter-label">
+          Segundos
+        </div>
+
+      </div>
+
     </div>
 
     <div class="counter-final">
@@ -2510,7 +2793,6 @@ textarea{
   </div>
 
 </section>
-
 
 <!-- =========================================================
      RECUERDOS
@@ -2633,7 +2915,6 @@ textarea{
   </div>
 
 </section>
-
 
 <!-- =========================================================
      FECHAS ESPECIALES
@@ -2772,7 +3053,6 @@ textarea{
 
 </section>
 
-
 <!-- =========================================================
      NUESTROS LUGARES
 ========================================================= -->
@@ -2801,7 +3081,6 @@ textarea{
 
   </div>
 
-
   <div
     class="card places-form"
     id="place-form">
@@ -2814,7 +3093,6 @@ textarea{
       Tú decides qué lugares quieres guardar
       en nuestra historia.
     </div>
-
 
     <div class="place-form-row">
 
@@ -2831,7 +3109,6 @@ textarea{
 
       </div>
 
-
       <div>
 
         <label for="place-location">
@@ -2846,7 +3123,6 @@ textarea{
       </div>
 
     </div>
-
 
     <div class="place-form-row">
 
@@ -2882,7 +3158,6 @@ textarea{
 
       </div>
 
-
       <div>
 
         <label for="place-date">
@@ -2897,7 +3172,6 @@ textarea{
 
     </div>
 
-
     <label for="place-description">
       💌 ¿Por qué es importante?
     </label>
@@ -2907,7 +3181,6 @@ textarea{
       maxlength="1000"
       placeholder="Cuéntame qué significa este lugar para ustedes..."></textarea>
 
-
     <label for="place-maps">
       🗺️ Link de Google Maps opcional
     </label>
@@ -2916,7 +3189,6 @@ textarea{
       id="place-maps"
       type="url"
       placeholder="Pega aquí el enlace de Google Maps">
-
 
     <div class="place-form-buttons">
 
@@ -2929,7 +3201,6 @@ textarea{
 
       </button>
 
-
       <button
         class="pink-button"
         id="save-place">
@@ -2940,14 +3211,12 @@ textarea{
 
     </div>
 
-
     <div
       class="place-status"
       id="place-status">
     </div>
 
   </div>
-
 
   <div class="places-subsection">
 
@@ -2967,7 +3236,6 @@ textarea{
     </div>
 
   </div>
-
 
   <div class="places-subsection">
 
@@ -2989,7 +3257,6 @@ textarea{
   </div>
 
 </section>
-
 
 <!-- =========================================================
      HISTORIA
@@ -3036,7 +3303,6 @@ textarea{
     </div>
 
   </div>
-
 
   <div
     class="card add-date"
@@ -3138,7 +3404,6 @@ textarea{
   </div>
 
 </section>
-
 
 <!-- =========================================================
      CARTAS
@@ -3250,7 +3515,6 @@ textarea{
 
 </section>
 
-
 <!-- =========================================================
      FUTURO
 ========================================================= -->
@@ -3274,7 +3538,6 @@ textarea{
 
 </div>
 
-
 <button
   class="logout"
   id="logout">
@@ -3283,14 +3546,11 @@ textarea{
 
 </button>
 
-
 <div class="footer">
   Hecho para el amor de mi vida ❤️
 </div>
 
-
 </div>
-
 
 <!-- =========================================================
      MODAL RECUERDO
@@ -3342,7 +3602,6 @@ textarea{
 
 </div>
 
-
 <!-- =========================================================
      MODAL CARTA
 ========================================================= -->
@@ -3387,7 +3646,6 @@ textarea{
 
 </div>
 
-
 <script>
 
 /* =========================================================
@@ -3406,7 +3664,6 @@ window.supabase.createClient(
   SUPABASE_KEY
 );
 
-
 /* =========================================================
    VARIABLES
 ========================================================= */
@@ -3421,7 +3678,6 @@ let selectedChapterFile = null;
 
 let editingLoveId = null;
 let editingPlaceId = null;
-
 
 /* =========================================================
    UTILIDADES
@@ -3451,7 +3707,6 @@ function iconForType(type){
   return "✨";
 }
 
-
 function iconForPlace(type){
 
   if(type === "conocimos"){
@@ -3472,7 +3727,6 @@ function iconForPlace(type){
 
   return "❤️";
 }
-
 
 function prettyDate(value){
 
@@ -3501,7 +3755,6 @@ function prettyDate(value){
   );
 }
 
-
 function showStatus(
   el,
   msg,
@@ -3515,7 +3768,6 @@ function showStatus(
     type;
 }
 
-
 function hideStatus(el){
 
   el.className =
@@ -3523,7 +3775,6 @@ function hideStatus(el){
 
   el.textContent = "";
 }
-
 
 function openModal(id){
 
@@ -3545,7 +3796,6 @@ function openModal(id){
     "modal-open"
   );
 }
-
 
 function closeModal(id){
 
@@ -3576,7 +3826,6 @@ function closeModal(id){
   }
 }
 
-
 /* =========================================================
    SESIÓN
 ========================================================= */
@@ -3606,7 +3855,6 @@ async function requireSession(){
   return data.session;
 }
 
-
 /* =========================================================
    STORAGE
 ========================================================= */
@@ -3621,7 +3869,6 @@ function storagePublicUrl(path){
     .publicUrl;
 }
 
-
 /* =========================================================
    CONTADOR
 ========================================================= */
@@ -3630,7 +3877,6 @@ const relationshipStart =
 new Date(
   "2026-08-02T00:00:00"
 );
-
 
 function updateCounter(){
 
@@ -3641,51 +3887,37 @@ function updateCounter(){
     now.getTime() -
     relationshipStart.getTime();
 
-
   if(difference < 0){
-
     difference = 0;
-
   }
-
 
   const totalSeconds =
     Math.floor(
       difference / 1000
     );
 
-
-  const totalMinutes =
-    Math.floor(
-      totalSeconds / 60
-    );
-
-
-  const totalHours =
-    Math.floor(
-      totalMinutes / 60
-    );
-
-
   const days =
     Math.floor(
-      totalHours / 24
+      totalSeconds / 86400
     );
 
-
   const hours =
-    totalHours % 24;
-
+    Math.floor(
+      (totalSeconds % 86400) / 3600
+    );
 
   const minutes =
-    totalMinutes % 60;
+    Math.floor(
+      (totalSeconds % 3600) / 60
+    );
 
+  const seconds =
+    totalSeconds % 60;
 
   document.getElementById(
     "counter-days"
   ).textContent =
     String(days);
-
 
   document.getElementById(
     "counter-hours"
@@ -3693,15 +3925,19 @@ function updateCounter(){
     String(hours)
     .padStart(2,"0");
 
-
   document.getElementById(
     "counter-minutes"
   ).textContent =
     String(minutes)
     .padStart(2,"0");
 
-}
+  document.getElementById(
+    "counter-seconds"
+  ).textContent =
+    String(seconds)
+    .padStart(2,"0");
 
+}
 
 updateCounter();
 
@@ -3710,13 +3946,9 @@ setInterval(
   1000
 );
 
-
 /* =========================================================
-   ❤️ COSAS QUE AMO
+   ❤️ COSAS QUE AMO - SUPABASE
 ========================================================= */
-
-const LOVE_STORAGE_KEY =
-"hannia_cosas_que_amo_v1";
 
 const loveForm =
 document.getElementById("love-form");
@@ -3742,44 +3974,147 @@ document.getElementById("save-love");
 const cancelLoveButton =
 document.getElementById("cancel-love");
 
+/*
+   Compatibilidad con los datos antiguos.
+   Si ya tenías cosas guardadas en localStorage,
+   se intentan migrar automáticamente.
+*/
 
-function getLoveItems(){
+const LOVE_STORAGE_KEY =
+"hannia_cosas_que_amo_v1";
+
+async function migrateLoveItems(){
+
+  const session =
+    await requireSession();
+
+  if(!session){
+    return;
+  }
+
+  let saved;
 
   try{
 
-    const saved =
+    saved =
       localStorage.getItem(
         LOVE_STORAGE_KEY
       );
 
-    if(!saved){
-      return [];
-    }
+  }catch(error){
 
-    const parsed =
+    return;
+
+  }
+
+  if(!saved){
+    return;
+  }
+
+  let items;
+
+  try{
+
+    items =
       JSON.parse(saved);
-
-    return Array.isArray(parsed)
-      ? parsed
-      : [];
 
   }catch(error){
 
-    return [];
+    return;
 
   }
+
+  if(
+    !Array.isArray(items) ||
+    !items.length
+  ){
+    return;
+  }
+
+  const {
+    data:existing,
+    error
+  } =
+    await supabaseClient
+    .from("cosas_que_amo")
+    .select("titulo,descripcion,emoji")
+    .eq(
+      "user_id",
+      session.user.id
+    );
+
+  if(error){
+    console.error(
+      "No se pudo revisar migración:",
+      error
+    );
+    return;
+  }
+
+  const rows = [];
+
+  items.forEach(item => {
+
+    const duplicate =
+      (existing || []).some(
+        row =>
+          row.titulo === item.title &&
+          row.descripcion === item.description
+      );
+
+    if(!duplicate){
+
+      rows.push({
+
+        user_id:
+          session.user.id,
+
+        emoji:
+          item.emoji || "❤️",
+
+        titulo:
+          item.title ||
+          "Algo que amo de ti",
+
+        descripcion:
+          item.description || ""
+
+      });
+
+    }
+
+  });
+
+  if(!rows.length){
+    return;
+  }
+
+  const {
+    error:insertError
+  } =
+    await supabaseClient
+    .from("cosas_que_amo")
+    .insert(rows);
+
+  if(insertError){
+
+    console.error(
+      "Error migrando cosas que amo:",
+      insertError
+    );
+
+    return;
+  }
+
+  try{
+
+    localStorage.removeItem(
+      LOVE_STORAGE_KEY
+    );
+
+  }catch(error){}
+
 }
-
-
-function saveLoveItems(items){
-
-  localStorage.setItem(
-    LOVE_STORAGE_KEY,
-    JSON.stringify(items)
-  );
-
-}
-
 
 function resetLoveForm(){
 
@@ -3796,31 +4131,42 @@ function resetLoveForm(){
     "none";
 
   hideStatus(loveStatus);
-
 }
 
+async function editLoveItem(id){
 
-function editLoveItem(id){
+  const {
+    data,
+    error
+  } =
+    await supabaseClient
+    .from("cosas_que_amo")
+    .select("*")
+    .eq(
+      "id",
+      id
+    )
+    .single();
 
-  const item =
-    getLoveItems().find(
-      row => row.id === id
+  if(error || !data){
+
+    alert(
+      "No se pudo cargar este detalle."
     );
 
-  if(!item){
     return;
   }
 
   editingLoveId = id;
 
   loveTitle.value =
-    item.title || "";
+    data.titulo || "";
 
   loveDescription.value =
-    item.description || "";
+    data.descripcion || "";
 
   loveEmoji.value =
-    item.emoji || "❤️";
+    data.emoji || "❤️";
 
   saveLoveButton.textContent =
     "❤️ Guardar cambios";
@@ -3832,11 +4178,9 @@ function editLoveItem(id){
     behavior:"smooth",
     block:"center"
   });
-
 }
 
-
-function deleteLoveItem(id){
+async function deleteLoveItem(id){
 
   if(
     !confirm(
@@ -3846,26 +4190,180 @@ function deleteLoveItem(id){
     return;
   }
 
-  const items =
-    getLoveItems().filter(
-      item => item.id !== id
+  const {
+    error
+  } =
+    await supabaseClient
+    .from("cosas_que_amo")
+    .delete()
+    .eq(
+      "id",
+      id
     );
 
-  saveLoveItems(items);
+  if(error){
 
-  renderLoveItems();
+    alert(
+      "No se pudo eliminar: " +
+      error.message
+    );
 
+    return;
+  }
+
+  await loadLoveItems();
 }
 
+function createLoveCard(item){
 
-function renderLoveItems(){
+  const card =
+    document.createElement("article");
 
-  const items =
-    getLoveItems();
+  card.className =
+    "love-card";
+
+  const icon =
+    document.createElement("div");
+
+  icon.className =
+    "love-icon";
+
+  icon.textContent =
+    item.emoji || "❤️";
+
+  const content =
+    document.createElement("div");
+
+  content.className =
+    "love-content";
+
+  const title =
+    document.createElement("div");
+
+  title.className =
+    "love-title";
+
+  title.textContent =
+    item.titulo ||
+    "Algo que amo de ti";
+
+  const description =
+    document.createElement("div");
+
+  description.className =
+    "love-description";
+
+  description.textContent =
+    item.descripcion || "";
+
+  const actions =
+    document.createElement("div");
+
+  actions.className =
+    "love-actions";
+
+  const edit =
+    document.createElement("button");
+
+  edit.className =
+    "action";
+
+  edit.textContent =
+    "✏️ Editar";
+
+  edit.onclick =
+    () =>
+      editLoveItem(item.id);
+
+  const del =
+    document.createElement("button");
+
+  del.className =
+    "action delete";
+
+  del.textContent =
+    "🗑️ Eliminar";
+
+  del.onclick =
+    () =>
+      deleteLoveItem(item.id);
+
+  actions.append(
+    edit,
+    del
+  );
+
+  content.append(
+    title,
+    description,
+    actions
+  );
+
+  card.append(
+    icon,
+    content
+  );
+
+  return card;
+}
+
+async function loadLoveItems(){
+
+  const session =
+    await requireSession();
+
+  if(!session){
+    return;
+  }
 
   loveList.innerHTML = "";
 
-  if(!items.length){
+  const {
+    data,
+    error
+  } =
+    await supabaseClient
+    .from("cosas_que_amo")
+    .select("*")
+    .eq(
+      "user_id",
+      session.user.id
+    )
+    .order(
+      "created_at",
+      {
+        ascending:false
+      }
+    );
+
+  if(error){
+
+    console.error(error);
+
+    loveList.innerHTML = `
+
+      <div class="empty-love">
+
+        <div class="empty-love-heart">
+          ❤️
+        </div>
+
+        <h3>
+          No se pudieron cargar
+        </h3>
+
+        <p>
+          Revisa la conexión con Supabase.
+        </p>
+
+      </div>
+
+    `;
+
+    return;
+  }
+
+  if(!data || !data.length){
 
     loveList.innerHTML = `
 
@@ -3892,112 +4390,24 @@ function renderLoveItems(){
     return;
   }
 
+  data.forEach(item => {
 
-  items.forEach(item => {
-
-    const card =
-      document.createElement("article");
-
-    card.className =
-      "love-card";
-
-
-    const icon =
-      document.createElement("div");
-
-    icon.className =
-      "love-icon";
-
-    icon.textContent =
-      item.emoji || "❤️";
-
-
-    const content =
-      document.createElement("div");
-
-    content.className =
-      "love-content";
-
-
-    const title =
-      document.createElement("div");
-
-    title.className =
-      "love-title";
-
-    title.textContent =
-      item.title ||
-      "Algo que amo de ti";
-
-
-    const description =
-      document.createElement("div");
-
-    description.className =
-      "love-description";
-
-    description.textContent =
-      item.description || "";
-
-
-    const actions =
-      document.createElement("div");
-
-    actions.className =
-      "love-actions";
-
-
-    const edit =
-      document.createElement("button");
-
-    edit.className =
-      "action";
-
-    edit.textContent =
-      "✏️ Editar";
-
-    edit.onclick =
-      () => editLoveItem(item.id);
-
-
-    const del =
-      document.createElement("button");
-
-    del.className =
-      "action delete";
-
-    del.textContent =
-      "🗑️ Eliminar";
-
-    del.onclick =
-      () => deleteLoveItem(item.id);
-
-
-    actions.append(
-      edit,
-      del
+    loveList.appendChild(
+      createLoveCard(item)
     );
-
-    content.append(
-      title,
-      description,
-      actions
-    );
-
-    card.append(
-      icon,
-      content
-    );
-
-    loveList.appendChild(card);
 
   });
-
 }
 
-
 saveLoveButton.onclick =
-function(){
+async function(){
+
+  const session =
+    await requireSession();
+
+  if(!session){
+    return;
+  }
 
   const title =
     loveTitle.value.trim();
@@ -4008,7 +4418,6 @@ function(){
   const emoji =
     loveEmoji.value.trim() ||
     "❤️";
-
 
   if(!title){
 
@@ -4021,7 +4430,6 @@ function(){
     return;
   }
 
-
   if(!description){
 
     showStatus(
@@ -4033,89 +4441,105 @@ function(){
     return;
   }
 
+  saveLoveButton.disabled = true;
 
-  const items =
-    getLoveItems();
+  try{
 
+    if(editingLoveId){
 
-  if(editingLoveId){
+      const {
+        error
+      } =
+        await supabaseClient
+        .from("cosas_que_amo")
+        .update({
 
-    const index =
-      items.findIndex(
-        item =>
-          item.id === editingLoveId
+          emoji,
+          titulo:title,
+          descripcion:description
+
+        })
+        .eq(
+          "id",
+          editingLoveId
+        )
+        .eq(
+          "user_id",
+          session.user.id
+        );
+
+      if(error){
+        throw error;
+      }
+
+      showStatus(
+        loveStatus,
+        "¡Detalle actualizado! ❤️",
+        "success"
       );
 
-    if(index !== -1){
+    }else{
 
-      items[index] = {
-        ...items[index],
-        title,
-        description,
-        emoji
-      };
+      const {
+        error
+      } =
+        await supabaseClient
+        .from("cosas_que_amo")
+        .insert([{
+
+          user_id:
+            session.user.id,
+
+          emoji,
+
+          titulo:title,
+
+          descripcion:description
+
+        }]);
+
+      if(error){
+        throw error;
+      }
+
+      showStatus(
+        loveStatus,
+        "¡Agregado a las cosas que amas de ella! ❤️",
+        "success"
+      );
 
     }
 
-    saveLoveItems(items);
+    await loadLoveItems();
+
+    setTimeout(
+      resetLoveForm,
+      800
+    );
+
+  }catch(error){
 
     showStatus(
       loveStatus,
-      "¡Detalle actualizado! ❤️",
-      "success"
+      "No se pudo guardar: " +
+      error.message,
+      "error"
     );
 
-  }else{
+  }finally{
 
-    items.unshift({
-
-      id:
-        Date.now().toString() +
-        Math.random()
-        .toString(36)
-        .slice(2,8),
-
-      title,
-      description,
-      emoji,
-
-      createdAt:
-        new Date().toISOString()
-
-    });
-
-    saveLoveItems(items);
-
-    showStatus(
-      loveStatus,
-      "¡Agregado a las cosas que amas de ella! ❤️",
-      "success"
-    );
+    saveLoveButton.disabled = false;
 
   }
 
-
-  renderLoveItems();
-
-  setTimeout(
-    resetLoveForm,
-    700
-  );
-
 };
-
 
 cancelLoveButton.onclick =
 resetLoveForm;
 
-
 /* =========================================================
-   🌎 NUESTROS LUGARES
+   🌎 NUESTROS LUGARES - SUPABASE
 ========================================================= */
-
-const PLACES_STORAGE_KEY =
-"hannia_nuestros_lugares_v1";
-
 
 const placeName =
 document.getElementById(
@@ -4162,44 +4586,162 @@ document.getElementById(
   "cancel-place"
 );
 
+const PLACES_STORAGE_KEY =
+"hannia_nuestros_lugares_v1";
 
-function getPlaces(){
+async function migratePlaces(){
+
+  const session =
+    await requireSession();
+
+  if(!session){
+    return;
+  }
+
+  let saved;
 
   try{
 
-    const saved =
+    saved =
       localStorage.getItem(
         PLACES_STORAGE_KEY
       );
 
-    if(!saved){
-      return [];
-    }
+  }catch(error){
 
-    const parsed =
+    return;
+
+  }
+
+  if(!saved){
+    return;
+  }
+
+  let items;
+
+  try{
+
+    items =
       JSON.parse(saved);
-
-    return Array.isArray(parsed)
-      ? parsed
-      : [];
 
   }catch(error){
 
-    return [];
+    return;
 
   }
+
+  if(
+    !Array.isArray(items) ||
+    !items.length
+  ){
+    return;
+  }
+
+  const {
+    data:existing,
+    error
+  } =
+    await supabaseClient
+    .from("lugares")
+    .select(
+      "nombre,ubicacion,tipo,fecha"
+    )
+    .eq(
+      "user_id",
+      session.user.id
+    );
+
+  if(error){
+
+    console.error(
+      "No se pudo revisar migración:",
+      error
+    );
+
+    return;
+  }
+
+  const rows = [];
+
+  items.forEach(item => {
+
+    const duplicate =
+      (existing || []).some(
+        row =>
+          row.nombre === item.name &&
+          row.ubicacion === item.location &&
+          row.fecha === (
+            item.date || null
+          )
+      );
+
+    if(!duplicate){
+
+      rows.push({
+
+        user_id:
+          session.user.id,
+
+        nombre:
+          item.name ||
+          "Lugar especial",
+
+        ubicacion:
+          item.location ||
+          "Ubicación no especificada",
+
+        tipo:
+          item.type ||
+          "especial",
+
+        fecha:
+          item.date ||
+          null,
+
+        descripcion:
+          item.description ||
+          null,
+
+        maps:
+          item.maps ||
+          null
+
+      });
+
+    }
+
+  });
+
+  if(!rows.length){
+    return;
+  }
+
+  const {
+    error:insertError
+  } =
+    await supabaseClient
+    .from("lugares")
+    .insert(rows);
+
+  if(insertError){
+
+    console.error(
+      "Error migrando lugares:",
+      insertError
+    );
+
+    return;
+  }
+
+  try{
+
+    localStorage.removeItem(
+      PLACES_STORAGE_KEY
+    );
+
+  }catch(error){}
+
 }
-
-
-function savePlaces(items){
-
-  localStorage.setItem(
-    PLACES_STORAGE_KEY,
-    JSON.stringify(items)
-  );
-
-}
-
 
 function resetPlaceForm(){
 
@@ -4222,40 +4764,51 @@ function resetPlaceForm(){
     "place-status";
 
   placeStatus.textContent = "";
-
 }
 
+async function editPlace(id){
 
-function editPlace(id){
+  const {
+    data,
+    error
+  } =
+    await supabaseClient
+    .from("lugares")
+    .select("*")
+    .eq(
+      "id",
+      id
+    )
+    .single();
 
-  const item =
-    getPlaces().find(
-      place => place.id === id
+  if(error || !data){
+
+    alert(
+      "No se pudo cargar este lugar."
     );
 
-  if(!item){
     return;
   }
 
   editingPlaceId = id;
 
   placeName.value =
-    item.name || "";
+    data.nombre || "";
 
   placeLocation.value =
-    item.location || "";
+    data.ubicacion || "";
 
   placeType.value =
-    item.type || "especial";
+    data.tipo || "especial";
 
   placeDate.value =
-    item.date || "";
+    data.fecha || "";
 
   placeDescription.value =
-    item.description || "";
+    data.descripcion || "";
 
   placeMaps.value =
-    item.maps || "";
+    data.maps || "";
 
   savePlaceButton.textContent =
     "❤️ Guardar cambios";
@@ -4269,11 +4822,9 @@ function editPlace(id){
       behavior:"smooth",
       block:"center"
     });
-
 }
 
-
-function deletePlace(id){
+async function deletePlace(id){
 
   if(
     !confirm(
@@ -4283,22 +4834,295 @@ function deletePlace(id){
     return;
   }
 
-  const items =
-    getPlaces().filter(
-      place => place.id !== id
+  const {
+    error
+  } =
+    await supabaseClient
+    .from("lugares")
+    .delete()
+    .eq(
+      "id",
+      id
     );
 
-  savePlaces(items);
+  if(error){
 
-  renderPlaces();
+    alert(
+      "No se pudo eliminar: " +
+      error.message
+    );
 
+    return;
+  }
+
+  await loadPlaces();
 }
 
+function createPlaceCard(
+  place,
+  container
+){
 
-function renderPlaces(){
+  const card =
+    document.createElement(
+      "article"
+    );
 
-  const places =
-    getPlaces();
+  card.className =
+    "place-card";
+
+  const top =
+    document.createElement(
+      "div"
+    );
+
+  top.className =
+    "place-card-top";
+
+  const icon =
+    document.createElement(
+      "div"
+    );
+
+  icon.className =
+    "place-icon";
+
+  icon.textContent =
+    iconForPlace(place.tipo);
+
+  const content =
+    document.createElement(
+      "div"
+    );
+
+  content.className =
+    "place-card-content";
+
+  const statusLabel =
+    document.createElement(
+      "div"
+    );
+
+  statusLabel.className =
+    "place-status-label";
+
+  statusLabel.textContent =
+    place.tipo === "pendiente"
+    ? "LUGAR QUE NOS FALTA"
+    : "PARTE DE NUESTRA HISTORIA";
+
+  const title =
+    document.createElement(
+      "div"
+    );
+
+  title.className =
+    "place-title";
+
+  title.textContent =
+    place.nombre ||
+    "Lugar especial";
+
+  const location =
+    document.createElement(
+      "div"
+    );
+
+  location.className =
+    "place-location";
+
+  location.textContent =
+    "📍 " +
+    (
+      place.ubicacion ||
+      "Ubicación no especificada"
+    );
+
+  content.append(
+    statusLabel,
+    title,
+    location
+  );
+
+  top.append(
+    icon,
+    content
+  );
+
+  card.append(
+    top
+  );
+
+  if(place.fecha){
+
+    const date =
+      document.createElement(
+        "div"
+      );
+
+    date.className =
+      "place-location";
+
+    date.style.marginTop =
+      "9px";
+
+    date.textContent =
+      "📅 " +
+      prettyDate(
+        place.fecha
+      );
+
+    card.append(
+      date
+    );
+
+  }
+
+  if(place.descripcion){
+
+    const description =
+      document.createElement(
+        "div"
+      );
+
+    description.className =
+      "place-description";
+
+    description.textContent =
+      place.descripcion;
+
+    card.append(
+      description
+    );
+
+  }
+
+  const actions =
+    document.createElement(
+      "div"
+    );
+
+  actions.className =
+    "place-actions";
+
+  if(place.maps){
+
+    const maps =
+      document.createElement(
+        "button"
+      );
+
+    maps.className =
+      "small-button";
+
+    maps.textContent =
+      "🗺️ Ver en mapa";
+
+    maps.onclick =
+      function(){
+
+        window.open(
+          place.maps,
+          "_blank"
+        );
+
+      };
+
+    actions.append(
+      maps
+    );
+
+  }else if(place.ubicacion){
+
+    const maps =
+      document.createElement(
+        "button"
+      );
+
+    maps.className =
+      "small-button";
+
+    maps.textContent =
+      "🗺️ Buscar mapa";
+
+    maps.onclick =
+      function(){
+
+        const query =
+          encodeURIComponent(
+            place.ubicacion
+          );
+
+        window.open(
+          "https://www.google.com/maps/search/?api=1&query=" +
+          query,
+          "_blank"
+        );
+
+      };
+
+    actions.append(
+      maps
+    );
+
+  }
+
+  const edit =
+    document.createElement(
+      "button"
+    );
+
+  edit.className =
+    "action";
+
+  edit.textContent =
+    "✏️ Editar";
+
+  edit.onclick =
+    () =>
+      editPlace(
+        place.id
+      );
+
+  const del =
+    document.createElement(
+      "button"
+    );
+
+  del.className =
+    "action delete";
+
+  del.textContent =
+    "🗑️ Eliminar";
+
+  del.onclick =
+    () =>
+      deletePlace(
+        place.id
+      );
+
+  actions.append(
+    edit,
+    del
+  );
+
+  card.append(
+    actions
+  );
+
+  container.appendChild(
+    card
+  );
+}
+
+async function loadPlaces(){
+
+  const session =
+    await requireSession();
+
+  if(!session){
+    return;
+  }
 
   const visited =
     document.getElementById(
@@ -4313,20 +5137,66 @@ function renderPlaces(){
   visited.innerHTML = "";
   pending.innerHTML = "";
 
+  const {
+    data,
+    error
+  } =
+    await supabaseClient
+    .from("lugares")
+    .select("*")
+    .eq(
+      "user_id",
+      session.user.id
+    )
+    .order(
+      "created_at",
+      {
+        ascending:false
+      }
+    );
+
+  if(error){
+
+    console.error(error);
+
+    visited.innerHTML = `
+
+      <div class="place-empty">
+
+        <div class="place-empty-icon">
+          ❤️
+        </div>
+
+        <h3>
+          No se pudieron cargar
+          los lugares
+        </h3>
+
+        <p>
+          Revisa la conexión con Supabase.
+        </p>
+
+      </div>
+
+    `;
+
+    return;
+  }
+
+  const places =
+    data || [];
 
   const visitedPlaces =
     places.filter(
       place =>
-        place.type !== "pendiente"
+        place.tipo !== "pendiente"
     );
-
 
   const pendingPlaces =
     places.filter(
       place =>
-        place.type === "pendiente"
+        place.tipo === "pendiente"
     );
-
 
   document.getElementById(
     "visited-counter"
@@ -4338,7 +5208,6 @@ function renderPlaces(){
       : " lugares guardados"
     );
 
-
   document.getElementById(
     "pending-counter"
   ).textContent =
@@ -4348,7 +5217,6 @@ function renderPlaces(){
       ? " lugar pendiente"
       : " lugares pendientes"
     );
-
 
   if(!visitedPlaces.length){
 
@@ -4385,7 +5253,6 @@ function renderPlaces(){
 
   }
 
-
   if(!pendingPlaces.length){
 
     pending.innerHTML = `
@@ -4420,289 +5287,17 @@ function renderPlaces(){
     );
 
   }
-
 }
-
-
-function createPlaceCard(
-  place,
-  container
-){
-
-  const card =
-    document.createElement(
-      "article"
-    );
-
-  card.className =
-    "place-card";
-
-
-  const top =
-    document.createElement(
-      "div"
-    );
-
-  top.className =
-    "place-card-top";
-
-
-  const icon =
-    document.createElement(
-      "div"
-    );
-
-  icon.className =
-    "place-icon";
-
-  icon.textContent =
-    iconForPlace(place.type);
-
-
-  const content =
-    document.createElement(
-      "div"
-    );
-
-  content.className =
-    "place-card-content";
-
-
-  const statusLabel =
-    document.createElement(
-      "div"
-    );
-
-  statusLabel.className =
-    "place-status-label";
-
-  statusLabel.textContent =
-    place.type === "pendiente"
-    ? "LUGAR QUE NOS FALTA"
-    : "PARTE DE NUESTRA HISTORIA";
-
-
-  const title =
-    document.createElement(
-      "div"
-    );
-
-  title.className =
-    "place-title";
-
-  title.textContent =
-    place.name ||
-    "Lugar especial";
-
-
-  const location =
-    document.createElement(
-      "div"
-    );
-
-  location.className =
-    "place-location";
-
-  location.textContent =
-    "📍 " +
-    (
-      place.location ||
-      "Ubicación no especificada"
-    );
-
-
-  content.append(
-    statusLabel,
-    title,
-    location
-  );
-
-
-  top.append(
-    icon,
-    content
-  );
-
-
-  card.append(
-    top
-  );
-
-
-  if(place.date){
-
-    const date =
-      document.createElement(
-        "div"
-      );
-
-    date.className =
-      "place-location";
-
-    date.style.marginTop =
-      "9px";
-
-    date.textContent =
-      "📅 " +
-      prettyDate(
-        place.date
-      );
-
-    card.append(
-      date
-    );
-
-  }
-
-
-  if(place.description){
-
-    const description =
-      document.createElement(
-        "div"
-      );
-
-    description.className =
-      "place-description";
-
-    description.textContent =
-      place.description;
-
-    card.append(
-      description
-    );
-
-  }
-
-
-  const actions =
-    document.createElement(
-      "div"
-    );
-
-  actions.className =
-    "place-actions";
-
-
-  if(place.maps){
-
-    const maps =
-      document.createElement(
-        "button"
-      );
-
-    maps.className =
-      "small-button";
-
-    maps.textContent =
-      "🗺️ Ver en mapa";
-
-    maps.onclick =
-      function(){
-
-        window.open(
-          place.maps,
-          "_blank"
-        );
-
-      };
-
-    actions.append(
-      maps
-    );
-
-  }else if(place.location){
-
-    const maps =
-      document.createElement(
-        "button"
-      );
-
-    maps.className =
-      "small-button";
-
-    maps.textContent =
-      "🗺️ Buscar mapa";
-
-    maps.onclick =
-      function(){
-
-        const query =
-          encodeURIComponent(
-            place.location
-          );
-
-        window.open(
-          "https://www.google.com/maps/search/?api=1&query=" +
-          query,
-          "_blank"
-        );
-
-      };
-
-    actions.append(
-      maps
-    );
-
-  }
-
-
-  const edit =
-    document.createElement(
-      "button"
-    );
-
-  edit.className =
-    "action";
-
-  edit.textContent =
-    "✏️ Editar";
-
-  edit.onclick =
-    () =>
-      editPlace(
-        place.id
-      );
-
-
-  const del =
-    document.createElement(
-      "button"
-    );
-
-  del.className =
-    "action delete";
-
-  del.textContent =
-    "🗑️ Eliminar";
-
-  del.onclick =
-    () =>
-      deletePlace(
-        place.id
-      );
-
-
-  actions.append(
-    edit,
-    del
-  );
-
-
-  card.append(
-    actions
-  );
-
-
-  container.appendChild(
-    card
-  );
-
-}
-
 
 savePlaceButton.onclick =
-function(){
+async function(){
+
+  const session =
+    await requireSession();
+
+  if(!session){
+    return;
+  }
 
   const name =
     placeName.value.trim();
@@ -4714,14 +5309,15 @@ function(){
     placeType.value;
 
   const date =
-    placeDate.value;
+    placeDate.value ||
+    null;
 
   const description =
     placeDescription.value.trim();
 
   const maps =
-    placeMaps.value.trim();
-
+    placeMaps.value.trim() ||
+    null;
 
   if(!name){
 
@@ -4734,7 +5330,6 @@ function(){
     return;
   }
 
-
   if(!location){
 
     placeStatus.textContent =
@@ -4746,98 +5341,105 @@ function(){
     return;
   }
 
+  savePlaceButton.disabled = true;
 
-  const places =
-    getPlaces();
+  try{
 
+    const payload = {
 
-  if(editingPlaceId){
+      nombre:name,
 
-    const index =
-      places.findIndex(
-        place =>
-          place.id === editingPlaceId
-      );
+      ubicacion:location,
 
+      tipo:type,
 
-    if(index !== -1){
+      fecha:date,
 
-      places[index] = {
+      descripcion:
+        description || null,
 
-        ...places[index],
+      maps,
 
-        name,
-        location,
-        type,
-        date,
-        description,
-        maps
+      user_id:
+        session.user.id
 
-      };
+    };
+
+    if(editingPlaceId){
+
+      delete payload.user_id;
+
+      const {
+        error
+      } =
+        await supabaseClient
+        .from("lugares")
+        .update(payload)
+        .eq(
+          "id",
+          editingPlaceId
+        )
+        .eq(
+          "user_id",
+          session.user.id
+        );
+
+      if(error){
+        throw error;
+      }
+
+      placeStatus.textContent =
+        "¡Lugar actualizado! ❤️";
+
+    }else{
+
+      const {
+        error
+      } =
+        await supabaseClient
+        .from("lugares")
+        .insert([
+          payload
+        ]);
+
+      if(error){
+        throw error;
+      }
+
+      placeStatus.textContent =
+        "¡Lugar guardado en nuestra historia! ❤️";
 
     }
 
+    placeStatus.className =
+      "place-status show success";
 
-    savePlaces(
-      places
+    await loadPlaces();
+
+    setTimeout(
+      resetPlaceForm,
+      800
     );
 
+  }catch(error){
 
     placeStatus.textContent =
-      "¡Lugar actualizado! ❤️";
+      "No se pudo guardar: " +
+      error.message;
 
-  }else{
+    placeStatus.className =
+      "place-status show error";
 
-    places.unshift({
+  }finally{
 
-      id:
-        Date.now().toString() +
-        Math.random()
-        .toString(36)
-        .slice(2,8),
-
-      name,
-      location,
-      type,
-      date,
-      description,
-      maps,
-
-      createdAt:
-        new Date().toISOString()
-
-    });
-
-
-    savePlaces(
-      places
-    );
-
-
-    placeStatus.textContent =
-      "¡Lugar guardado en nuestra historia! ❤️";
+    savePlaceButton.disabled = false;
 
   }
 
-
-  placeStatus.className =
-    "place-status show success";
-
-
-  renderPlaces();
-
-
-  setTimeout(
-    resetPlaceForm,
-    800
-  );
-
 };
-
 
 cancelPlaceButton.onclick =
 resetPlaceForm;
-
 
 /* =========================================================
    RECUERDOS
@@ -4883,10 +5485,10 @@ document.getElementById(
   "memory-status"
 );
 
-
 function resetMemoryForm(){
 
   editingMemoryId = null;
+
   selectedMemoryFile = null;
 
   memoryFile.value = "";
@@ -4908,7 +5510,6 @@ function resetMemoryForm(){
     memoryStatus
   );
 }
-
 
 function openMemoryForm(
   memory = null
@@ -4946,6 +5547,28 @@ function openMemoryForm(
 
   memoryPreviewImg.src = "";
 
+  if(memory){
+
+    const url =
+      memory.Url ||
+      memory.url ||
+      memory.foto_url ||
+      memory.imagen ||
+      "";
+
+    if(url){
+
+      memoryPreviewImg.src =
+        url;
+
+      memoryPreview.classList.add(
+        "active"
+      );
+
+    }
+
+  }
+
   memoryTitle.focus();
 
   document
@@ -4954,9 +5577,7 @@ function openMemoryForm(
       behavior:"smooth",
       block:"start"
     });
-
 }
-
 
 document
   .getElementById(
@@ -4965,7 +5586,6 @@ document
   .onclick =
     () =>
       openMemoryForm();
-
 
 memoryFile.onchange =
 function(event){
@@ -5022,9 +5642,7 @@ function(event){
     };
 
   reader.readAsDataURL(file);
-
 };
-
 
 document
   .getElementById(
@@ -5032,7 +5650,6 @@ document
   )
   .onclick =
     resetMemoryForm;
-
 
 /* =========================================================
    GUARDAR RECUERDO
@@ -5056,7 +5673,6 @@ async function saveMemory(){
   const description =
     memoryDescription.value.trim();
 
-
   if(!title){
 
     showStatus(
@@ -5067,7 +5683,6 @@ async function saveMemory(){
 
     return;
   }
-
 
   if(!date){
 
@@ -5080,7 +5695,6 @@ async function saveMemory(){
     return;
   }
 
-
   const button =
     document.getElementById(
       "save-memory"
@@ -5088,11 +5702,9 @@ async function saveMemory(){
 
   button.disabled = true;
 
-
   try{
 
     let url = null;
-
 
     if(selectedMemoryFile){
 
@@ -5101,7 +5713,6 @@ async function saveMemory(){
         .split(".")
         .pop()
         .toLowerCase();
-
 
       const path =
         "recuerdo_" +
@@ -5112,7 +5723,6 @@ async function saveMemory(){
         .slice(2,9) +
         "." +
         extension;
-
 
       const {
         data,
@@ -5130,35 +5740,31 @@ async function saveMemory(){
           }
         );
 
-
       if(error){
         throw error;
       }
-
 
       url =
         storagePublicUrl(
           data.path
         );
-
     }
-
 
     if(editingMemoryId){
 
       const update = {
 
         titulo:title,
+
         descripcion:description,
+
         fecha:date
 
       };
 
-
       if(url){
         update.Url = url;
       }
-
 
       const {
         error
@@ -5171,11 +5777,9 @@ async function saveMemory(){
           editingMemoryId
         );
 
-
       if(error){
         throw error;
       }
-
 
       showStatus(
         memoryStatus,
@@ -5190,31 +5794,28 @@ async function saveMemory(){
       } =
         await supabaseClient
         .from("recuerdos")
-        .insert([
+        .insert([{
 
-          {
-            titulo:title,
-            descripcion:description,
-            fecha:date,
-            Url:url || ""
-          }
+          titulo:title,
 
-        ]);
+          descripcion:description,
 
+          fecha:date,
+
+          Url:url || ""
+
+        }]);
 
       if(error){
         throw error;
       }
-
 
       showStatus(
         memoryStatus,
         "¡Recuerdo guardado! ❤️",
         "success"
       );
-
     }
-
 
     await loadMemories();
 
@@ -5222,7 +5823,6 @@ async function saveMemory(){
       resetMemoryForm,
       900
     );
-
 
   }catch(error){
 
@@ -5238,9 +5838,7 @@ async function saveMemory(){
     button.disabled = false;
 
   }
-
 }
-
 
 document
   .getElementById(
@@ -5248,7 +5846,6 @@ document
   )
   .onclick =
     saveMemory;
-
 
 /* =========================================================
    CARGAR RECUERDOS
@@ -5261,7 +5858,6 @@ async function loadMemories(){
       "memories-list"
     );
 
-
   try{
 
     const session =
@@ -5270,7 +5866,6 @@ async function loadMemories(){
     if(!session){
       return;
     }
-
 
     const {
       data,
@@ -5292,14 +5887,11 @@ async function loadMemories(){
         }
       );
 
-
     if(error){
       throw error;
     }
 
-
     box.innerHTML = "";
-
 
     if(
       !data ||
@@ -5323,7 +5915,6 @@ async function loadMemories(){
       return;
     }
 
-
     data.forEach(
       function(memory){
 
@@ -5335,7 +5926,6 @@ async function loadMemories(){
         card.className =
           "card memory-card";
 
-
         const imageWrap =
           document.createElement(
             "div"
@@ -5343,7 +5933,6 @@ async function loadMemories(){
 
         imageWrap.className =
           "memory-image-wrap";
-
 
         const image =
           document.createElement(
@@ -5353,14 +5942,12 @@ async function loadMemories(){
         image.className =
           "memory-image";
 
-
         const url =
           memory.Url ||
           memory.url ||
           memory.foto_url ||
           memory.imagen ||
           "";
-
 
         image.src = url;
 
@@ -5370,17 +5957,16 @@ async function loadMemories(){
 
         image.loading = "lazy";
 
-
         if(!url){
+
           image.style.display =
             "none";
-        }
 
+        }
 
         imageWrap.appendChild(
           image
         );
-
 
         const info =
           document.createElement(
@@ -5390,6 +5976,10 @@ async function loadMemories(){
         info.className =
           "memory-info";
 
+        /*
+          FECHA SEPARADA
+          DEL TÍTULO
+        */
 
         const date =
           document.createElement(
@@ -5405,7 +5995,6 @@ async function loadMemories(){
             memory.created_at
           );
 
-
         const title =
           document.createElement(
             "div"
@@ -5417,7 +6006,6 @@ async function loadMemories(){
         title.textContent =
           memory.titulo ||
           "Nuestro recuerdo ❤️";
-
 
         const description =
           document.createElement(
@@ -5432,7 +6020,6 @@ async function loadMemories(){
           memory.mensaje ||
           "";
 
-
         const actions =
           document.createElement(
             "div"
@@ -5440,7 +6027,6 @@ async function loadMemories(){
 
         actions.className =
           "memory-actions";
-
 
         const view =
           document.createElement(
@@ -5452,7 +6038,6 @@ async function loadMemories(){
 
         view.textContent =
           "Ver recuerdo";
-
 
         view.onclick =
           function(){
@@ -5484,7 +6069,8 @@ async function loadMemories(){
                 "modal-memory-image"
               );
 
-            modalImage.src = url;
+            modalImage.src =
+              url;
 
             modalImage.style.display =
               url
@@ -5496,7 +6082,6 @@ async function loadMemories(){
             );
 
           };
-
 
         const edit =
           document.createElement(
@@ -5515,7 +6100,6 @@ async function loadMemories(){
               memory
             );
 
-
         const deleteButton =
           document.createElement(
             "button"
@@ -5533,13 +6117,11 @@ async function loadMemories(){
               memory.id
             );
 
-
         actions.append(
           view,
           edit,
           deleteButton
         );
-
 
         info.append(
           date,
@@ -5548,12 +6130,10 @@ async function loadMemories(){
           actions
         );
 
-
         card.append(
           imageWrap,
           info
         );
-
 
         box.appendChild(
           card
@@ -5561,7 +6141,6 @@ async function loadMemories(){
 
       }
     );
-
 
   }catch(error){
 
@@ -5582,7 +6161,6 @@ async function loadMemories(){
 
 }
 
-
 async function deleteMemory(id){
 
   if(
@@ -5592,7 +6170,6 @@ async function deleteMemory(id){
   ){
     return;
   }
-
 
   const {
     error
@@ -5604,7 +6181,6 @@ async function deleteMemory(id){
       "id",
       id
     );
-
 
   if(error){
 
@@ -5618,9 +6194,7 @@ async function deleteMemory(id){
     await loadMemories();
 
   }
-
 }
-
 
 /* =========================================================
    FECHAS
@@ -5635,7 +6209,6 @@ const dateStatus =
 document.getElementById(
   "date-status"
 );
-
 
 function resetDateForm(){
 
@@ -5664,9 +6237,7 @@ function resetDateForm(){
   hideStatus(
     dateStatus
   );
-
 }
-
 
 function openDateForm(
   row = null
@@ -5683,24 +6254,20 @@ function openDateForm(
   editingDateId =
     row?.id || null;
 
-
   document.getElementById(
     "date-value"
   ).value =
     row?.fecha || "";
-
 
   document.getElementById(
     "date-type"
   ).value =
     row?.tipo || "especial";
 
-
   document.getElementById(
     "date-title"
   ).value =
     row?.titulo || "";
-
 
   document.getElementById(
     "date-message"
@@ -5708,9 +6275,7 @@ function openDateForm(
     row?.mensaje ||
     row?.descripcion ||
     "";
-
 }
-
 
 document.getElementById(
   "open-date-form"
@@ -5718,12 +6283,10 @@ document.getElementById(
   () =>
     openDateForm();
 
-
 document.getElementById(
   "cancel-date"
 ).onclick =
   resetDateForm;
-
 
 async function saveDate(){
 
@@ -5733,7 +6296,6 @@ async function saveDate(){
   if(!session){
     return;
   }
-
 
   const fecha =
     document.getElementById(
@@ -5755,7 +6317,6 @@ async function saveDate(){
       "date-message"
     ).value.trim();
 
-
   if(!fecha){
 
     showStatus(
@@ -5766,7 +6327,6 @@ async function saveDate(){
 
     return;
   }
-
 
   if(!titulo){
 
@@ -5779,14 +6339,12 @@ async function saveDate(){
     return;
   }
 
-
   const button =
     document.getElementById(
       "save-date"
     );
 
   button.disabled = true;
-
 
   try{
 
@@ -5800,9 +6358,7 @@ async function saveDate(){
 
     };
 
-
     let result;
-
 
     if(editingDateId){
 
@@ -5826,11 +6382,9 @@ async function saveDate(){
 
     }
 
-
     if(result.error){
       throw result.error;
     }
-
 
     showStatus(
       dateStatus,
@@ -5840,15 +6394,12 @@ async function saveDate(){
       "success"
     );
 
-
     await loadDates();
-
 
     setTimeout(
       resetDateForm,
       900
     );
-
 
   }catch(error){
 
@@ -5864,15 +6415,12 @@ async function saveDate(){
     button.disabled = false;
 
   }
-
 }
-
 
 document.getElementById(
   "save-date"
 ).onclick =
   saveDate;
-
 
 async function loadDates(){
 
@@ -5880,7 +6428,6 @@ async function loadDates(){
     document.getElementById(
       "dates-list"
     );
-
 
   try{
 
@@ -5890,7 +6437,6 @@ async function loadDates(){
     if(!session){
       return;
     }
-
 
     const {
       data,
@@ -5910,14 +6456,11 @@ async function loadDates(){
         }
       );
 
-
     if(error){
       throw error;
     }
 
-
     box.innerHTML = "";
-
 
     if(
       !data ||
@@ -5941,7 +6484,6 @@ async function loadDates(){
       return;
     }
 
-
     data.forEach(
       function(dateRow){
 
@@ -5953,7 +6495,6 @@ async function loadDates(){
         card.className =
           "card date-card";
 
-
         const top =
           document.createElement(
             "div"
@@ -5961,7 +6502,6 @@ async function loadDates(){
 
         top.className =
           "date-top";
-
 
         const icon =
           document.createElement(
@@ -5976,12 +6516,10 @@ async function loadDates(){
             dateRow.tipo
           );
 
-
         const content =
           document.createElement(
             "div"
           );
-
 
         const date =
           document.createElement(
@@ -5996,7 +6534,6 @@ async function loadDates(){
             dateRow.fecha
           );
 
-
         const title =
           document.createElement(
             "div"
@@ -6008,7 +6545,6 @@ async function loadDates(){
         title.textContent =
           dateRow.titulo ||
           "Momento especial";
-
 
         const message =
           document.createElement(
@@ -6023,24 +6559,20 @@ async function loadDates(){
           dateRow.descripcion ||
           "";
 
-
         content.append(
           date,
           title,
           message
         );
 
-
         top.append(
           icon,
           content
         );
 
-
         card.append(
           top
         );
-
 
         const actions =
           document.createElement(
@@ -6049,7 +6581,6 @@ async function loadDates(){
 
         actions.className =
           "date-actions";
-
 
         const edit =
           document.createElement(
@@ -6068,7 +6599,6 @@ async function loadDates(){
               dateRow
             );
 
-
         const del =
           document.createElement(
             "button"
@@ -6086,7 +6616,6 @@ async function loadDates(){
               dateRow.id
             );
 
-
         actions.append(
           edit,
           del
@@ -6103,7 +6632,6 @@ async function loadDates(){
       }
     );
 
-
   }catch(error){
 
     box.innerHTML = `
@@ -6118,9 +6646,7 @@ async function loadDates(){
     `;
 
   }
-
 }
-
 
 async function deleteDate(id){
 
@@ -6132,7 +6658,6 @@ async function deleteDate(id){
     return;
   }
 
-
   const {
     error
   } =
@@ -6143,7 +6668,6 @@ async function deleteDate(id){
       "id",
       id
     );
-
 
   if(error){
 
@@ -6157,9 +6681,7 @@ async function deleteDate(id){
     await loadDates();
 
   }
-
 }
-
 
 /* =========================================================
    HISTORIA
@@ -6179,7 +6701,6 @@ const chapterFile =
 document.getElementById(
   "chapter-file"
 );
-
 
 function resetChapter(){
 
@@ -6206,6 +6727,10 @@ function resetChapter(){
     "active"
   );
 
+  document.getElementById(
+    "chapter-preview-img"
+  ).src = "";
+
   chapterForm.classList.remove(
     "active"
   );
@@ -6213,9 +6738,7 @@ function resetChapter(){
   hideStatus(
     chapterStatus
   );
-
 }
-
 
 document.getElementById(
   "open-chapter"
@@ -6229,15 +6752,12 @@ function(){
   document.getElementById(
     "chapter-title"
   ).focus();
-
 };
-
 
 document.getElementById(
   "cancel-chapter"
 ).onclick =
 resetChapter;
-
 
 chapterFile.onchange =
 function(event){
@@ -6278,10 +6798,8 @@ function(event){
 
   selectedChapterFile = file;
 
-
   const reader =
     new FileReader();
-
 
   reader.onload =
     function(event){
@@ -6291,7 +6809,6 @@ function(event){
       ).src =
         event.target.result;
 
-
       document.getElementById(
         "chapter-preview"
       ).classList.add(
@@ -6300,11 +6817,8 @@ function(event){
 
     };
 
-
   reader.readAsDataURL(file);
-
 };
-
 
 async function saveChapter(){
 
@@ -6314,7 +6828,6 @@ async function saveChapter(){
   if(!session){
     return;
   }
-
 
   const fecha =
     document.getElementById(
@@ -6331,7 +6844,6 @@ async function saveChapter(){
       "chapter-text"
     ).value.trim();
 
-
   if(!fecha){
 
     showStatus(
@@ -6342,7 +6854,6 @@ async function saveChapter(){
 
     return;
   }
-
 
   if(!titulo){
 
@@ -6355,7 +6866,6 @@ async function saveChapter(){
     return;
   }
 
-
   if(!historia){
 
     showStatus(
@@ -6367,7 +6877,6 @@ async function saveChapter(){
     return;
   }
 
-
   const button =
     document.getElementById(
       "save-chapter"
@@ -6375,11 +6884,9 @@ async function saveChapter(){
 
   button.disabled = true;
 
-
   try{
 
     let foto_url = null;
-
 
     if(selectedChapterFile){
 
@@ -6390,7 +6897,6 @@ async function saveChapter(){
         .pop()
         .toLowerCase();
 
-
       const path =
         "historia_" +
         Date.now() +
@@ -6400,7 +6906,6 @@ async function saveChapter(){
         .slice(2,9) +
         "." +
         extension;
-
 
       const {
         data,
@@ -6418,19 +6923,15 @@ async function saveChapter(){
           }
         );
 
-
       if(error){
         throw error;
       }
-
 
       foto_url =
         storagePublicUrl(
           data.path
         );
-
     }
-
 
     const payload = {
 
@@ -6440,7 +6941,6 @@ async function saveChapter(){
 
     };
 
-
     if(foto_url){
 
       payload.foto_url =
@@ -6448,9 +6948,7 @@ async function saveChapter(){
 
     }
 
-
     let result;
-
 
     if(editingChapterId){
 
@@ -6474,11 +6972,9 @@ async function saveChapter(){
 
     }
 
-
     if(result.error){
       throw result.error;
     }
-
 
     showStatus(
       chapterStatus,
@@ -6486,15 +6982,12 @@ async function saveChapter(){
       "success"
     );
 
-
     await loadHistory();
-
 
     setTimeout(
       resetChapter,
       900
     );
-
 
   }catch(error){
 
@@ -6510,15 +7003,12 @@ async function saveChapter(){
     button.disabled = false;
 
   }
-
 }
-
 
 document.getElementById(
   "save-chapter"
 ).onclick =
 saveChapter;
-
 
 async function loadHistory(){
 
@@ -6526,7 +7016,6 @@ async function loadHistory(){
     document.getElementById(
       "history-list"
     );
-
 
   try{
 
@@ -6536,7 +7025,6 @@ async function loadHistory(){
     if(!session){
       return;
     }
-
 
     const {
       data,
@@ -6552,14 +7040,11 @@ async function loadHistory(){
         }
       );
 
-
     if(error){
       throw error;
     }
 
-
     box.innerHTML = "";
-
 
     const timeline =
       document.createElement(
@@ -6568,7 +7053,6 @@ async function loadHistory(){
 
     timeline.className =
       "timeline";
-
 
     if(
       !data ||
@@ -6596,14 +7080,12 @@ async function loadHistory(){
 
       `;
 
-
       box.appendChild(
         timeline
       );
 
       return;
     }
-
 
     data.forEach(
       function(history){
@@ -6615,7 +7097,6 @@ async function loadHistory(){
 
         item.className =
           "timeline-item";
-
 
         const date =
           document.createElement(
@@ -6629,7 +7110,6 @@ async function loadHistory(){
           prettyDate(
             history.fecha
           );
-
 
         const title =
           document.createElement(
@@ -6646,7 +7126,6 @@ async function loadHistory(){
             "Un capítulo de nosotros"
           );
 
-
         const text =
           document.createElement(
             "div"
@@ -6661,13 +7140,11 @@ async function loadHistory(){
           history.mensaje ||
           "";
 
-
         item.append(
           date,
           title,
           text
         );
-
 
         const url =
           history.foto_url ||
@@ -6675,7 +7152,6 @@ async function loadHistory(){
           history.Url ||
           history.imagen ||
           "";
-
 
         if(url){
 
@@ -6696,9 +7172,7 @@ async function loadHistory(){
           item.appendChild(
             image
           );
-
         }
-
 
         const actions =
           document.createElement(
@@ -6707,7 +7181,6 @@ async function loadHistory(){
 
         actions.className =
           "date-actions";
-
 
         const edit =
           document.createElement(
@@ -6720,30 +7193,25 @@ async function loadHistory(){
         edit.textContent =
           "✏️ Editar";
 
-
         edit.onclick =
           function(){
 
             editingChapterId =
               history.id;
 
-
             chapterForm.classList.add(
               "active"
             );
-
 
             document.getElementById(
               "chapter-date"
             ).value =
               history.fecha || "";
 
-
             document.getElementById(
               "chapter-title"
             ).value =
               history.titulo || "";
-
 
             document.getElementById(
               "chapter-text"
@@ -6752,7 +7220,6 @@ async function loadHistory(){
               history.descripcion ||
               "";
 
-
             document.getElementById(
               "historia"
             ).scrollIntoView({
@@ -6760,7 +7227,6 @@ async function loadHistory(){
             });
 
           };
-
 
         const del =
           document.createElement(
@@ -6779,17 +7245,14 @@ async function loadHistory(){
               history.id
             );
 
-
         actions.append(
           edit,
           del
         );
 
-
         item.append(
           actions
         );
-
 
         timeline.appendChild(
           item
@@ -6798,11 +7261,9 @@ async function loadHistory(){
       }
     );
 
-
     box.appendChild(
       timeline
     );
-
 
   }catch(error){
 
@@ -6827,9 +7288,7 @@ async function loadHistory(){
     `;
 
   }
-
 }
-
 
 async function deleteChapter(id){
 
@@ -6841,7 +7300,6 @@ async function deleteChapter(id){
     return;
   }
 
-
   const {
     error
   } =
@@ -6852,7 +7310,6 @@ async function deleteChapter(id){
       "id",
       id
     );
-
 
   if(error){
 
@@ -6866,9 +7323,7 @@ async function deleteChapter(id){
     await loadHistory();
 
   }
-
 }
-
 
 /* =========================================================
    CARTAS
@@ -6883,7 +7338,6 @@ const letterStatus =
 document.getElementById(
   "letter-status"
 );
-
 
 function openLetterForm(
   row = null
@@ -6900,12 +7354,10 @@ function openLetterForm(
   editingLetterId =
     row?.id || null;
 
-
   document.getElementById(
     "letter-title"
   ).value =
     row?.titulo || "";
-
 
   document.getElementById(
     "letter-text"
@@ -6913,41 +7365,28 @@ function openLetterForm(
     row?.mensaje ||
     row?.contenido ||
     "";
-
-
 }
-
 
 function resetLetter(){
 
   editingLetterId = null;
 
-
   document.getElementById(
     "letter-title"
   ).value = "";
-
 
   document.getElementById(
     "letter-text"
   ).value = "";
 
-
   letterForm.classList.remove(
     "active"
   );
 
-
   hideStatus(
     letterStatus
   );
-
 }
-
-
-/* =========================================================
-   ABRIR CARTA
-========================================================= */
 
 document.getElementById(
   "open-letter-2"
@@ -6955,12 +7394,10 @@ document.getElementById(
   () =>
     openLetterForm();
 
-
 document.getElementById(
   "cancel-letter"
 ).onclick =
   resetLetter;
-
 
 async function saveLetter(){
 
@@ -6971,18 +7408,15 @@ async function saveLetter(){
     return;
   }
 
-
   const titulo =
     document.getElementById(
       "letter-title"
     ).value.trim();
 
-
   const mensaje =
     document.getElementById(
       "letter-text"
     ).value.trim();
-
 
   if(!titulo){
 
@@ -6995,7 +7429,6 @@ async function saveLetter(){
     return;
   }
 
-
   if(!mensaje){
 
     showStatus(
@@ -7007,14 +7440,12 @@ async function saveLetter(){
     return;
   }
 
-
   const button =
     document.getElementById(
       "save-letter"
     );
 
   button.disabled = true;
-
 
   try{
 
@@ -7025,10 +7456,8 @@ async function saveLetter(){
       .auth
       .getUser();
 
-
     const user =
       userData.user;
-
 
     if(!user){
 
@@ -7038,11 +7467,9 @@ async function saveLetter(){
 
     }
 
-
     const metadata =
       user.user_metadata ||
       {};
-
 
     const nombre =
       metadata.full_name ||
@@ -7050,7 +7477,6 @@ async function saveLetter(){
       metadata.nombre ||
       user.email ||
       "Usuario";
-
 
     const payload = {
 
@@ -7065,9 +7491,7 @@ async function saveLetter(){
 
     };
 
-
     let result;
-
 
     if(editingLetterId){
 
@@ -7091,11 +7515,9 @@ async function saveLetter(){
 
     }
 
-
     if(result.error){
       throw result.error;
     }
-
 
     showStatus(
       letterStatus,
@@ -7103,15 +7525,12 @@ async function saveLetter(){
       "success"
     );
 
-
     await loadLetters();
-
 
     setTimeout(
       resetLetter,
       900
     );
-
 
   }catch(error){
 
@@ -7127,15 +7546,12 @@ async function saveLetter(){
     button.disabled = false;
 
   }
-
 }
-
 
 document.getElementById(
   "save-letter"
 ).onclick =
 saveLetter;
-
 
 async function loadLetters(){
 
@@ -7143,7 +7559,6 @@ async function loadLetters(){
     document.getElementById(
       "letters-list"
     );
-
 
   try{
 
@@ -7153,7 +7568,6 @@ async function loadLetters(){
     if(!session){
       return;
     }
-
 
     const {
       data,
@@ -7169,14 +7583,11 @@ async function loadLetters(){
         }
       );
 
-
     if(error){
       throw error;
     }
 
-
     box.innerHTML = "";
-
 
     if(
       !data ||
@@ -7199,7 +7610,6 @@ async function loadLetters(){
       return;
     }
 
-
     data.forEach(
       function(letter){
 
@@ -7210,7 +7620,6 @@ async function loadLetters(){
 
         card.className =
           "card saved-letter";
-
 
         const date =
           document.createElement(
@@ -7225,7 +7634,6 @@ async function loadLetters(){
             letter.created_at
           );
 
-
         const title =
           document.createElement(
             "h3"
@@ -7237,7 +7645,6 @@ async function loadLetters(){
             letter.titulo ||
             "Una carta para ti"
           );
-
 
         const author =
           document.createElement(
@@ -7255,7 +7662,6 @@ async function loadLetters(){
             "Nosotros"
           );
 
-
         const text =
           document.createElement(
             "div"
@@ -7269,7 +7675,6 @@ async function loadLetters(){
           letter.contenido ||
           "";
 
-
         const actions =
           document.createElement(
             "div"
@@ -7277,7 +7682,6 @@ async function loadLetters(){
 
         actions.className =
           "letter-actions";
-
 
         const view =
           document.createElement(
@@ -7290,7 +7694,6 @@ async function loadLetters(){
         view.textContent =
           "💌 Leer carta";
 
-
         view.onclick =
           function(){
 
@@ -7299,31 +7702,26 @@ async function loadLetters(){
             ).textContent =
               date.textContent;
 
-
             document.getElementById(
               "modal-letter-title"
             ).textContent =
               title.textContent;
-
 
             document.getElementById(
               "modal-letter-author"
             ).textContent =
               author.textContent;
 
-
             document.getElementById(
               "modal-letter-text"
             ).textContent =
               text.textContent;
-
 
             openModal(
               "letter-modal"
             );
 
           };
-
 
         const edit =
           document.createElement(
@@ -7336,13 +7734,11 @@ async function loadLetters(){
         edit.textContent =
           "✏️ Editar";
 
-
         edit.onclick =
           () =>
             openLetterForm(
               letter
             );
-
 
         const del =
           document.createElement(
@@ -7355,20 +7751,17 @@ async function loadLetters(){
         del.textContent =
           "🗑️ Eliminar";
 
-
         del.onclick =
           () =>
             deleteLetter(
               letter.id
             );
 
-
         actions.append(
           view,
           edit,
           del
         );
-
 
         card.append(
           date,
@@ -7378,14 +7771,12 @@ async function loadLetters(){
           actions
         );
 
-
         box.appendChild(
           card
         );
 
       }
     );
-
 
   }catch(error){
 
@@ -7401,9 +7792,7 @@ async function loadLetters(){
     `;
 
   }
-
 }
-
 
 async function deleteLetter(id){
 
@@ -7415,7 +7804,6 @@ async function deleteLetter(id){
     return;
   }
 
-
   const {
     error
   } =
@@ -7426,7 +7814,6 @@ async function deleteLetter(id){
       "id",
       id
     );
-
 
   if(error){
 
@@ -7440,9 +7827,7 @@ async function deleteLetter(id){
     await loadLetters();
 
   }
-
 }
-
 
 /* =========================================================
    MODALES
@@ -7466,7 +7851,6 @@ document
 
     }
   );
-
 
 document
   .querySelectorAll(
@@ -7495,7 +7879,6 @@ document
     }
   );
 
-
 document.addEventListener(
   "keydown",
   function(event){
@@ -7523,7 +7906,6 @@ document.addEventListener(
   }
 );
 
-
 /* =========================================================
    VER TODOS
 ========================================================= */
@@ -7546,7 +7928,6 @@ document
 
     };
 
-
 /* =========================================================
    LOGOUT
 ========================================================= */
@@ -7568,15 +7949,9 @@ document
 
     };
 
-
 /* =========================================================
    INICIAR
 ========================================================= */
-
-renderLoveItems();
-
-renderPlaces();
-
 
 async function init(){
 
@@ -7587,8 +7962,23 @@ async function init(){
     return;
   }
 
+  /*
+     Primero migramos los datos antiguos.
+  */
+
+  await migrateLoveItems();
+
+  await migratePlaces();
+
+  /*
+     Después cargamos todo.
+  */
 
   await Promise.all([
+
+    loadLoveItems(),
+
+    loadPlaces(),
 
     loadMemories(),
 
@@ -7601,7 +7991,6 @@ async function init(){
   ]);
 
 }
-
 
 init();
 
