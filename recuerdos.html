@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nuestra Historia ❤️</title>
+<title>Cartas & Recuerdos ❤️</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
 
 /* =========================================================
-   RESET
+   BASE
 ========================================================= */
 
 *{
@@ -28,32 +29,21 @@ body{
   min-height:100vh;
   overflow-x:hidden;
 
-  color:#30252a;
-
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
   background:
     radial-gradient(
-      circle at 20% 0%,
-      rgba(255,215,225,.9),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 100% 20%,
-      rgba(255,231,237,.8),
-      transparent 30%
-    ),
-    linear-gradient(
-      135deg,
-      #fff8fa 0%,
-      #fff1f5 45%,
-      #f9e7ed 100%
+      circle at 50% -10%,
+      #351522 0%,
+      #1a0b14 28%,
+      #0b080d 65%,
+      #050507 100%
     );
+
+  color:#fff;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 }
 
 body.modal-open{
@@ -78,65 +68,14 @@ button:disabled{
 
 
 /* =========================================================
-   FONDO DECORATIVO
-========================================================= */
-
-body::before{
-  content:"";
-  position:fixed;
-  width:420px;
-  height:420px;
-
-  top:-180px;
-  left:-150px;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(244,137,165,.20),
-      transparent 70%
-    );
-
-  pointer-events:none;
-}
-
-body::after{
-  content:"";
-  position:fixed;
-  width:500px;
-  height:500px;
-
-  right:-220px;
-  bottom:-200px;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(227,157,180,.20),
-      transparent 70%
-    );
-
-  pointer-events:none;
-}
-
-
-/* =========================================================
    CONTENEDOR
 ========================================================= */
 
 .container{
   width:100%;
-  max-width:1150px;
-
+  max-width:1050px;
   margin:auto;
-
-  padding:
-    30px
-    24px
-    80px;
-
-  position:relative;
-  z-index:1;
+  padding:24px 25px 60px;
 }
 
 
@@ -148,149 +87,62 @@ body::after{
   display:flex;
   align-items:center;
   justify-content:space-between;
-
-  gap:25px;
+  gap:20px;
 
   padding:
-    10px
-    0
-    45px;
+    4px
+    2px
+    28px;
 }
 
 .brand{
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:9px;
 }
 
 .brand-heart{
-  width:58px;
-  height:58px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  border-radius:20px;
-
-  font-size:29px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #fff,
-      #ffe1e9
-    );
-
-  box-shadow:
-    0 12px 35px
-    rgba(196,89,120,.18);
-
-  transform:rotate(-4deg);
+  font-size:25px;
 }
 
 .brand h1{
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size:
-    clamp(35px,6vw,58px);
-
-  line-height:.9;
-
-  letter-spacing:-2px;
-
-  color:#34272d;
+  font-size:30px;
+  line-height:1;
+  font-weight:700;
+  letter-spacing:.2px;
 }
 
 .brand h1 span{
-  display:block;
+  display:inline;
 }
 
-.brand h1 span:last-child{
-  color:#c34f73;
-}
-
-
-/* =========================================================
-   BOTONES
-========================================================= */
-
-.add-top,
-.pink-button{
+.add-top{
   border:0;
 
-  color:white;
+  border-radius:40px;
+
+  padding:
+    13px
+    24px;
+
+  color:#fff;
 
   background:
     linear-gradient(
       135deg,
-      #df6488,
-      #b83e67
+      #b83f68,
+      #852744
     );
 
   box-shadow:
-    0 12px 28px
-    rgba(191,69,105,.23);
-
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease;
-}
-
-.add-top:hover,
-.pink-button:hover{
-  transform:translateY(-2px);
-
-  box-shadow:
-    0 16px 35px
-    rgba(191,69,105,.30);
-}
-
-.add-top{
-  border-radius:18px;
-
-  padding:
-    14px
-    22px;
-
-  font-weight:700;
-}
-
-.pink-button{
-  border-radius:14px;
-
-  padding:
-    14px
-    22px;
-
-  font-weight:700;
-}
-
-.small-button{
-  border:
-    1px solid
-    rgba(194,76,113,.25);
-
-  border-radius:12px;
-
-  padding:
-    10px
-    16px;
-
-  color:#b54468;
-
-  background:#fff;
-
-  font-weight:600;
+    0 10px 30px
+    rgba(190,55,100,.22);
 
   transition:.2s;
 }
 
-.small-button:hover{
-  background:#fff3f6;
+.add-top:hover{
+  transform:translateY(-2px);
 }
 
 
@@ -301,163 +153,186 @@ body::after{
 .card{
   border:
     1px solid
-    rgba(170,96,119,.12);
+    rgba(255,255,255,.13);
 
-  border-radius:26px;
+  border-radius:22px;
 
   background:
-    rgba(255,255,255,.72);
+    linear-gradient(
+      145deg,
+      rgba(27,18,24,.92),
+      rgba(11,9,12,.95)
+    );
 
   box-shadow:
-    0 20px 60px
-    rgba(116,55,76,.09);
+    0 20px 55px
+    rgba(0,0,0,.35);
 
-  backdrop-filter:blur(15px);
-  -webkit-backdrop-filter:blur(15px);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
 }
 
 
 /* =========================================================
-   HERO
+   BOTONES
+========================================================= */
+
+.pink-button{
+  border:0;
+
+  border-radius:40px;
+
+  padding:
+    13px
+    25px;
+
+  color:#fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c54370,
+      #922c51
+    );
+
+  box-shadow:
+    0 10px 30px
+    rgba(194,60,105,.20);
+
+  transition:.2s;
+}
+
+.pink-button:hover{
+  transform:translateY(-2px);
+}
+
+.small-button{
+  border:
+    1px solid
+    rgba(184,58,96,.65);
+
+  border-radius:30px;
+
+  padding:
+    10px
+    20px;
+
+  color:#d98ba5;
+
+  background:
+    rgba(130,32,63,.08);
+
+  transition:.2s;
+}
+
+.small-button:hover{
+  background:
+    rgba(150,40,75,.16);
+}
+
+.action{
+  border:
+    1px solid
+    rgba(177,54,91,.58);
+
+  border-radius:30px;
+
+  padding:
+    10px
+    20px;
+
+  background:
+    rgba(105,27,51,.07);
+
+  color:#d58aa2;
+
+  transition:.2s;
+}
+
+.action:hover{
+  background:
+    rgba(150,40,75,.15);
+}
+
+.action.delete{
+  border-color:
+    rgba(155,48,65,.52);
+
+  color:#cc8796;
+}
+
+
+/* =========================================================
+   CARTA PRINCIPAL
 ========================================================= */
 
 .letter-hero{
   position:relative;
+
+  min-height:240px;
+
   overflow:hidden;
 
-  min-height:420px;
-
   padding:
-    55px
-    47% 
-    55px
-    55px;
+    34px
+    300px
+    34px
+    30px;
 
-  display:flex;
-  align-items:center;
+  border:
+    1px solid
+    rgba(194,57,96,.72);
+
+  border-radius:20px;
 
   background:
     linear-gradient(
       120deg,
-      #fff,
-      #fff0f4
-    );
-
-  border:
-    1px solid
-    rgba(211,91,125,.20);
-}
-
-.letter-hero::before{
-  content:"";
-
-  position:absolute;
-
-  width:420px;
-  height:420px;
-
-  right:-110px;
-  top:-150px;
-
-  border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(231,105,139,.18),
-      transparent 68%
+      rgba(37,13,25,.96),
+      rgba(12,9,13,.98)
     );
 }
 
 .letter-hero h2{
-  position:relative;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
   font-size:
-    clamp(38px,6vw,63px);
+    clamp(
+      30px,
+      4.5vw,
+      42px
+    );
 
-  line-height:1.02;
+  line-height:1.15;
 
-  letter-spacing:-2px;
-
-  color:#34272d;
-
-  margin-bottom:22px;
+  margin-bottom:15px;
 }
 
 .letter-hero p{
-  position:relative;
+  color:#d0c3c9;
 
-  max-width:530px;
+  font-size:18px;
 
-  color:#77656d;
+  line-height:1.6;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  max-width:550px;
 
-  font-size:20px;
-
-  line-height:1.65;
-
-  margin-bottom:28px;
+  margin-bottom:22px;
 }
 
 .envelope-art{
   position:absolute;
 
-  right:7%;
+  right:38px;
   top:50%;
 
-  transform:
-    translateY(-50%)
-    rotate(7deg);
+  transform:translateY(-50%);
 
-  width:280px;
-  height:220px;
+  font-size:125px;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  font-size:135px;
-
-  border-radius:45px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #fff,
-      #ffe1e9
+  filter:
+    drop-shadow(
+      0 15px 25px
+      rgba(190,50,90,.22)
     );
-
-  box-shadow:
-    0 35px 70px
-    rgba(173,69,101,.18);
-
-  animation:
-    floatEnvelope 4s ease-in-out infinite;
-}
-
-@keyframes floatEnvelope{
-
-  0%,100%{
-    transform:
-      translateY(-50%)
-      rotate(7deg);
-  }
-
-  50%{
-    transform:
-      translateY(-55%)
-      rotate(4deg);
-  }
-
 }
 
 
@@ -466,32 +341,32 @@ body::after{
 ========================================================= */
 
 .section{
-  margin-top:75px;
+  margin-top:30px;
 }
 
 .section-heading{
   display:flex;
   align-items:center;
 
-  gap:16px;
+  gap:15px;
 
-  margin-bottom:10px;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  margin:
+    0
+    0
+    8px;
 
   font-size:
-    clamp(32px,5vw,48px);
+    clamp(
+      29px,
+      4vw,
+      38px
+    );
 
-  letter-spacing:-1px;
-
-  color:#34272d;
+  text-align:center;
 }
 
-.section-heading::before,
-.section-heading::after{
+.section-heading:before,
+.section-heading:after{
   content:"";
 
   height:1px;
@@ -502,15 +377,15 @@ body::after{
     linear-gradient(
       90deg,
       transparent,
-      rgba(190,76,111,.28)
+      #713047
     );
 }
 
-.section-heading::after{
+.section-heading:after{
   background:
     linear-gradient(
       90deg,
-      rgba(190,76,111,.28),
+      #713047,
       transparent
     );
 }
@@ -522,16 +397,156 @@ body::after{
 .section-subtitle{
   text-align:center;
 
-  color:#8a747c;
+  color:#a99ba2;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-size:17px;
 
-  font-size:18px;
+  margin-bottom:22px;
+}
 
-  margin-bottom:30px;
+
+/* =========================================================
+   RECUERDOS
+========================================================= */
+
+.memories{
+  display:grid;
+
+  gap:15px;
+}
+
+.memory-card{
+  display:grid;
+
+  grid-template-columns:
+    50%
+    50%;
+
+  min-height:270px;
+
+  overflow:hidden;
+
+  border:
+    1px solid
+    rgba(135,44,75,.58);
+
+  border-radius:20px;
+
+  background:
+    #0d0a0e;
+
+  transition:.2s;
+}
+
+.memory-card:hover{
+  border-color:
+    rgba(190,59,99,.72);
+}
+
+.memory-image-wrap{
+  min-height:270px;
+
+  overflow:hidden;
+
+  background:#08070a;
+}
+
+.memory-image{
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  min-height:270px;
+
+  object-fit:cover;
+
+  transition:.35s;
+}
+
+.memory-card:hover .memory-image{
+  transform:scale(1.025);
+}
+
+.memory-info{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+
+  padding:
+    24px
+    25px;
+}
+
+.memory-date{
+  color:#d15a7e;
+
+  text-transform:uppercase;
+
+  letter-spacing:3px;
+
+  font-size:12px;
+
+  margin-bottom:10px;
+}
+
+.memory-title{
+  color:#fff;
+
+  font-size:27px;
+
+  line-height:1.2;
+
+  margin-bottom:12px;
+}
+
+.memory-desc{
+  color:#c7bbc1;
+
+  font-size:17px;
+
+  line-height:1.65;
+
+  white-space:pre-wrap;
+}
+
+.memory-actions{
+  display:flex;
+
+  gap:8px;
+
+  width:100%;
+
+  margin-top:auto;
+
+  padding-top:18px;
+}
+
+.memory-actions .action,
+.memory-actions .small-button{
+  flex:1;
+
+  text-align:center;
+}
+
+
+/* =========================================================
+   BOTÓN TODOS
+========================================================= */
+
+.center-action{
+  display:flex;
+
+  justify-content:center;
+
+  margin:
+    17px
+    0
+    0;
+}
+
+#show-all-memories{
+  min-width:280px;
 }
 
 
@@ -542,47 +557,26 @@ body::after{
 .form-panel{
   display:none;
 
-  padding:28px;
+  padding:24px;
 
-  margin:
-    20px
-    0;
+  margin-bottom:17px;
 }
 
 .form-panel.active{
   display:block;
-
-  animation:
-    formAppear .25s ease;
-}
-
-@keyframes formAppear{
-
-  from{
-    opacity:0;
-    transform:translateY(-8px);
-  }
-
-  to{
-    opacity:1;
-    transform:none;
-  }
-
 }
 
 label{
   display:block;
 
-  color:#604c55;
+  color:#cdbec5;
 
   font-size:14px;
 
-  font-weight:700;
-
   margin:
-    18px
+    16px
     0
-    8px;
+    7px;
 }
 
 input,
@@ -592,31 +586,33 @@ select{
 
   border:
     1px solid
-    rgba(120,75,91,.16);
+    rgba(255,255,255,.14);
 
-  border-radius:14px;
+  border-radius:13px;
 
-  background:#fff;
+  background:
+    #100b10;
 
-  color:#3b3035;
+  color:#fff;
 
-  padding:14px 15px;
+  padding:13px;
 
   outline:none;
+}
 
-  transition:
-    border .2s,
-    box-shadow .2s;
+input::placeholder,
+textarea::placeholder{
+  color:#756c72;
 }
 
 input:focus,
 textarea:focus,
 select:focus{
-  border-color:#d46184;
+  border-color:#bd4b70;
 
   box-shadow:
-    0 0 0 4px
-    rgba(212,97,132,.09);
+    0 0 0 3px
+    rgba(190,65,105,.08);
 }
 
 textarea{
@@ -632,44 +628,11 @@ textarea{
 
   gap:10px;
 
-  margin-top:22px;
+  margin-top:20px;
 }
 
 .form-row>*{
   flex:1;
-}
-
-.action{
-  border:
-    1px solid
-    rgba(194,76,113,.20);
-
-  border-radius:12px;
-
-  padding:
-    10px
-    17px;
-
-  color:#a74364;
-
-  background:#fff5f7;
-
-  font-weight:600;
-
-  transition:.2s;
-}
-
-.action:hover{
-  background:#ffe9ef;
-}
-
-.action.delete{
-  color:#b84252;
-
-  border-color:
-    rgba(190,60,75,.16);
-
-  background:#fff3f3;
 }
 
 .status{
@@ -677,15 +640,11 @@ textarea{
 
   margin-top:15px;
 
-  padding:13px;
+  padding:12px;
 
   border-radius:12px;
 
   text-align:center;
-
-  font-size:14px;
-
-  font-weight:600;
 }
 
 .status.show{
@@ -693,13 +652,17 @@ textarea{
 }
 
 .status.success{
-  background:#eefaf2;
-  color:#388254;
+  background:
+    rgba(70,160,105,.10);
+
+  color:#91d7ab;
 }
 
 .status.error{
-  background:#fff0f1;
-  color:#bb4a58;
+  background:
+    rgba(190,45,65,.10);
+
+  color:#ff9aa9;
 }
 
 .preview{
@@ -707,9 +670,9 @@ textarea{
 
   margin-top:15px;
 
-  border-radius:18px;
-
   overflow:hidden;
+
+  border-radius:17px;
 }
 
 .preview.active{
@@ -728,226 +691,82 @@ textarea{
 
 
 /* =========================================================
-   RECUERDOS
-========================================================= */
-
-.memories{
-  display:grid;
-
-  gap:22px;
-}
-
-.memory-card{
-  display:grid;
-
-  grid-template-columns:
-    42%
-    58%;
-
-  overflow:hidden;
-
-  min-height:310px;
-
-  transition:
-    transform .25s ease,
-    box-shadow .25s ease;
-}
-
-.memory-card:hover{
-  transform:translateY(-4px);
-
-  box-shadow:
-    0 25px 65px
-    rgba(116,55,76,.14);
-}
-
-.memory-image-wrap{
-  min-height:310px;
-
-  overflow:hidden;
-
-  background:#f6e8ec;
-}
-
-.memory-image{
-  width:100%;
-  height:100%;
-
-  min-height:310px;
-
-  object-fit:cover;
-
-  display:block;
-
-  transition:
-    transform .5s ease;
-}
-
-.memory-card:hover .memory-image{
-  transform:scale(1.035);
-}
-
-.memory-info{
-  padding:32px;
-
-  display:flex;
-  flex-direction:column;
-
-  align-items:flex-start;
-}
-
-.memory-date,
-.date-label{
-  color:#c35476;
-
-  text-transform:uppercase;
-
-  letter-spacing:2px;
-
-  font-size:11px;
-
-  font-weight:800;
-
-  margin-bottom:12px;
-}
-
-.memory-title{
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size:32px;
-
-  line-height:1.15;
-
-  color:#34272d;
-
-  margin-bottom:15px;
-}
-
-.memory-desc{
-  color:#75656b;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size:18px;
-
-  line-height:1.7;
-
-  white-space:pre-wrap;
-}
-
-.memory-actions{
-  display:flex;
-
-  gap:8px;
-
-  flex-wrap:wrap;
-
-  margin-top:auto;
-
-  padding-top:25px;
-}
-
-.center-action{
-  text-align:center;
-
-  margin:28px 0;
-}
-
-
-/* =========================================================
    FECHAS
 ========================================================= */
 
 .dates{
   display:grid;
 
-  gap:18px;
+  gap:14px;
 }
 
 .date-card{
   position:relative;
 
-  padding:27px 30px;
+  padding:
+    23px
+    25px;
 
   overflow:hidden;
 }
 
-.date-card::after{
-  content:"";
+.date-card:after{
+  content:"❤️";
 
   position:absolute;
 
-  width:100px;
-  height:100px;
+  right:23px;
+  top:19px;
 
-  right:-35px;
-  top:-35px;
+  font-size:34px;
 
-  border-radius:50%;
-
-  background:
-    rgba(218,92,126,.07);
+  opacity:.12;
 }
 
 .date-top{
   display:flex;
 
-  gap:18px;
+  gap:15px;
 
   align-items:flex-start;
 }
 
 .date-icon{
-  width:58px;
-  height:58px;
+  font-size:32px;
 
-  flex:none;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  border-radius:18px;
-
-  background:#fff0f4;
-
-  font-size:28px;
-
-  box-shadow:
-    inset 0 0 0 1px
-    rgba(202,82,115,.08);
+  line-height:1;
 }
 
 .date-title{
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  color:#fff;
 
-  color:#3a2c32;
+  font-size:26px;
 
-  font-size:27px;
+  line-height:1.2;
 
   margin-bottom:8px;
+
+  padding-right:40px;
 }
 
 .date-message{
-  color:#796970;
+  color:#c2b6bd;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size:17px;
+  font-size:16px;
 
   line-height:1.65;
+}
+
+.date-label{
+  color:#d15a7e;
+
+  text-transform:uppercase;
+
+  letter-spacing:3px;
+
+  font-size:12px;
+
+  margin-bottom:9px;
 }
 
 .date-actions{
@@ -955,43 +774,35 @@ textarea{
 
   gap:8px;
 
-  margin-top:18px;
-
   flex-wrap:wrap;
+
+  margin-top:15px;
 }
 
 .add-date{
-  padding:34px;
-
   text-align:center;
 
-  margin-top:20px;
+  padding:25px;
 
-  border:
-    1px solid
-    rgba(197,78,113,.16);
+  margin-top:15px;
+
+  border-color:
+    rgba(165,49,84,.48);
 }
 
 .add-date h3{
-  color:#3a2c32;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-size:25px;
 }
 
 .add-date p{
-  color:#88747c;
-
-  margin:
-    10px
-    auto
-    22px;
-
-  max-width:620px;
+  color:#a99da3;
 
   line-height:1.6;
+
+  margin:
+    9px
+    0
+    19px;
 }
 
 .date-form{
@@ -999,20 +810,11 @@ textarea{
 
   text-align:left;
 
-  margin-top:25px;
-
-  padding-top:10px;
-
-  border-top:
-    1px solid
-    rgba(150,90,110,.10);
+  margin-top:20px;
 }
 
 .date-form.active{
   display:block;
-
-  animation:
-    formAppear .25s ease;
 }
 
 
@@ -1021,104 +823,84 @@ textarea{
 ========================================================= */
 
 #history-list{
-  padding:38px;
+  padding:27px;
 }
 
 .timeline{
   position:relative;
 
-  padding-left:38px;
+  padding-left:30px;
 
   border-left:
-    2px solid
-    rgba(202,85,117,.18);
+    1px solid
+    #653044;
 }
 
 .timeline-item{
   position:relative;
 
-  margin-bottom:52px;
+  margin-bottom:42px;
 }
 
 .timeline-item:last-child{
   margin-bottom:0;
 }
 
-.timeline-item::before{
+.timeline-item:before{
   content:"♥";
 
   position:absolute;
 
-  left:-54px;
+  left:-43px;
   top:-3px;
 
-  width:30px;
-  height:30px;
+  width:25px;
+  height:25px;
 
   display:flex;
+
   align-items:center;
   justify-content:center;
 
+  color:#d4577e;
+
+  background:#120b10;
+
   border-radius:50%;
 
-  color:white;
-
-  background:
-    linear-gradient(
-      145deg,
-      #df668b,
-      #b64067
-    );
-
-  font-size:13px;
-
-  box-shadow:
-    0 6px 15px
-    rgba(190,65,103,.20);
+  font-size:14px;
 }
 
 .timeline-title{
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-size:27px;
 
-  color:#382a30;
+  line-height:1.2;
 
-  font-size:30px;
-
-  margin-bottom:12px;
+  margin-bottom:10px;
 }
 
 .timeline-text{
-  color:#76656c;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  color:#c4b9bf;
 
   font-size:17px;
 
-  line-height:1.8;
+  line-height:1.75;
 
   white-space:pre-wrap;
 }
 
 .history-image{
+  display:block;
+
   width:100%;
 
   max-height:430px;
 
   object-fit:cover;
 
-  border-radius:20px;
+  border-radius:17px;
 
-  margin-top:22px;
-
-  box-shadow:
-    0 15px 35px
-    rgba(80,40,55,.10);
+  margin-top:18px;
 }
 
 
@@ -1127,86 +909,74 @@ textarea{
 ========================================================= */
 
 .letters{
-  margin-top:85px;
+  margin-top:52px;
 }
 
 .letter-list{
   display:grid;
 
-  gap:18px;
+  gap:14px;
 }
 
 .saved-letter{
   position:relative;
 
-  padding:30px;
+  padding:
+    23px
+    25px;
 
   overflow:hidden;
-
-  transition:
-    transform .2s ease;
 }
 
-.saved-letter:hover{
-  transform:translateY(-3px);
-}
-
-.saved-letter::before{
-  content:"";
+.saved-letter:before{
+  content:"💌";
 
   position:absolute;
 
-  left:0;
-  top:0;
-  bottom:0;
+  right:23px;
+  top:17px;
 
-  width:4px;
+  font-size:31px;
 
-  background:
-    linear-gradient(
-      #df668b,
-      #b84168
-    );
+  opacity:.13;
 }
 
 .saved-letter h3{
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-size:26px;
 
-  color:#382a30;
+  line-height:1.25;
 
-  font-size:29px;
+  margin-bottom:8px;
 
-  margin-bottom:9px;
-
-  padding-right:40px;
+  padding-right:45px;
 }
 
 .letter-author{
-  color:#947e86;
+  color:#91868d;
 
   font-size:13px;
 
-  margin-bottom:17px;
+  margin-bottom:14px;
 }
 
 .letter-preview{
-  color:#695961;
+  color:#cec4c9;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-size:17px;
 
-  font-size:18px;
-
-  line-height:1.8;
+  line-height:1.75;
 
   font-style:italic;
 
   white-space:pre-wrap;
+
+  display:-webkit-box;
+
+  -webkit-line-clamp:3;
+
+  -webkit-box-orient:vertical;
+
+  overflow:hidden;
 }
 
 .letter-actions{
@@ -1214,9 +984,16 @@ textarea{
 
   gap:8px;
 
-  margin-top:20px;
+  margin-top:16px;
 
   flex-wrap:wrap;
+}
+
+.letter-actions .action,
+.letter-actions .small-button{
+  flex:1;
+
+  text-align:center;
 }
 
 
@@ -1232,68 +1009,62 @@ textarea{
   text-align:center;
 
   padding:
-    65px
-    30px;
+    43px
+    25px;
 
-  margin-top:80px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #fff,
-      #fff0f4
-    );
+  margin-top:48px;
 }
 
-.future::before,
-.future::after{
+.future:before{
   content:"❤️";
 
   position:absolute;
 
-  opacity:.07;
+  left:7%;
+
+  top:15px;
 
   font-size:100px;
+
+  opacity:.07;
 }
 
-.future::before{
-  left:7%;
-  top:25px;
-}
+.future:after{
+  content:"❤️";
 
-.future::after{
+  position:absolute;
+
   right:7%;
+
   bottom:10px;
+
+  font-size:100px;
+
+  opacity:.07;
 }
 
 .future h2{
   position:relative;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  z-index:1;
 
-  color:#382a30;
+  font-size:31px;
 
-  font-size:35px;
+  line-height:1.2;
 
-  margin-bottom:17px;
+  margin-bottom:16px;
 }
 
 .future p{
   position:relative;
 
-  max-width:720px;
+  z-index:1;
+
+  max-width:750px;
 
   margin:auto;
 
-  color:#796870;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  color:#c4b8be;
 
   font-size:18px;
 
@@ -1309,41 +1080,33 @@ textarea{
   display:block;
 
   margin:
-    45px
+    35px
     auto
     0;
 
   border:
     1px solid
-    rgba(130,95,108,.18);
+    rgba(255,255,255,.14);
 
-  border-radius:13px;
+  border-radius:30px;
 
   padding:
-    12px
-    22px;
+    11px
+    23px;
 
-  color:#866f78;
+  color:#9d9298;
 
-  background:rgba(255,255,255,.55);
-
-  transition:.2s;
-}
-
-.logout:hover{
-  background:#fff;
-
-  color:#bd4d70;
+  background:transparent;
 }
 
 .footer{
   text-align:center;
 
-  color:#a18b93;
+  color:#655c62;
 
   font-size:13px;
 
-  margin-top:28px;
+  margin-top:25px;
 }
 
 
@@ -1361,22 +1124,21 @@ textarea{
   display:flex;
 
   align-items:center;
-
   justify-content:center;
 
-  padding:18px;
+  padding:15px;
 
   background:
-    rgba(44,25,33,.55);
+    rgba(3,2,5,.88);
 
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
 
   opacity:0;
 
   visibility:hidden;
 
-  transition:.3s ease;
+  transition:.25s;
 }
 
 .modal.active{
@@ -1397,32 +1159,32 @@ textarea{
   overflow:auto;
 
   padding:
-    45px
-    35px
+    38px
+    30px
     40px;
 
-  border-radius:28px;
+  border-radius:25px;
 
   background:
     linear-gradient(
       145deg,
-      #fff,
-      #fff5f7
+      #191116,
+      #0d090d
     );
 
   border:
     1px solid
-    rgba(190,78,111,.15);
+    rgba(190,59,98,.52);
 
   box-shadow:
-    0 35px 100px
-    rgba(49,23,34,.30);
+    0 30px 90px
+    rgba(0,0,0,.70);
 
   transform:
-    translateY(25px)
-    scale(.97);
+    translateY(20px)
+    scale(.98);
 
-  transition:.35s ease;
+  transition:.3s;
 }
 
 .modal.active .modal-box{
@@ -1433,64 +1195,50 @@ textarea{
   position:absolute;
 
   right:15px;
-  top:15px;
+  top:13px;
 
-  width:42px;
-  height:42px;
-
-  border:
-    1px solid
-    rgba(120,80,95,.12);
+  width:40px;
+  height:40px;
 
   border-radius:50%;
 
-  color:#745b64;
+  border:
+    1px solid
+    rgba(255,255,255,.14);
 
-  background:#fff;
+  color:#fff;
 
-  font-size:24px;
+  background:
+    rgba(255,255,255,.06);
 
-  line-height:1;
-
-  transition:.2s;
-}
-
-.close:hover{
-  background:#fff0f4;
-
-  color:#c04d70;
+  font-size:23px;
 }
 
 .modal-date{
   text-align:center;
 
-  color:#c25274;
-
-  letter-spacing:2px;
+  color:#d25b7f;
 
   text-transform:uppercase;
 
+  letter-spacing:3px;
+
   font-size:12px;
 
-  font-weight:800;
-
-  margin-bottom:13px;
+  margin-bottom:12px;
 }
 
 .modal h2{
   text-align:center;
 
-  color:#382a30;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
   font-size:
-    clamp(32px,7vw,55px);
+    clamp(
+      31px,
+      6vw,
+      52px
+    );
 
-  line-height:1.05;
+  line-height:1.15;
 
   margin-bottom:18px;
 }
@@ -1498,75 +1246,36 @@ textarea{
 .modal-author{
   text-align:center;
 
-  color:#957f87;
+  color:#9e9299;
+
+  font-size:14px;
 
   margin-bottom:25px;
 }
 
 .modal-line{
-  width:65px;
+  width:70px;
 
-  height:2px;
+  height:1px;
 
-  background:
-    linear-gradient(
-      90deg,
-      #df668b,
-      #b84168
-    );
+  background:#91465f;
 
   margin:
     0
     auto
-    28px;
-
-  border-radius:10px;
+    27px;
 }
 
 .modal-text{
-  color:#685860;
+  color:#d9cfd4;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-size:19px;
 
-  font-size:20px;
-
-  line-height:2;
+  line-height:1.9;
 
   white-space:pre-wrap;
 
   font-style:italic;
-}
-
-#modal-memory-image{
-  box-shadow:
-    0 20px 45px
-    rgba(70,35,48,.14);
-}
-
-
-/* =========================================================
-   SCROLLBAR
-========================================================= */
-
-::-webkit-scrollbar{
-  width:9px;
-}
-
-::-webkit-scrollbar-track{
-  background:#f8e9ee;
-}
-
-::-webkit-scrollbar-thumb{
-  background:#d7839d;
-
-  border-radius:20px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-  background:#bd5d7d;
 }
 
 
@@ -1580,157 +1289,143 @@ textarea{
     padding:
       18px
       14px
-      55px;
+      50px;
   }
 
   .site-header{
-    align-items:center;
-
-    padding-bottom:28px;
+    padding-bottom:22px;
   }
 
   .brand{
-    gap:10px;
+    gap:7px;
   }
 
   .brand-heart{
-    width:45px;
-    height:45px;
-
-    border-radius:15px;
-
-    font-size:23px;
+    font-size:22px;
   }
 
   .brand h1{
-    font-size:34px;
-
-    letter-spacing:-1.5px;
+    font-size:25px;
   }
 
   .add-top{
     padding:
       11px
-      14px;
+      17px;
 
-    border-radius:13px;
-
-    font-size:13px;
+    font-size:14px;
   }
 
   .letter-hero{
-    min-height:500px;
+    min-height:310px;
 
     padding:
-      35px
-      25px
-      165px;
-
-    display:block;
+      27px
+      22px
+      125px;
   }
 
   .letter-hero h2{
-    font-size:43px;
+    font-size:32px;
   }
 
   .letter-hero p{
-    font-size:18px;
+    font-size:17px;
   }
 
   .envelope-art{
-    width:190px;
-    height:135px;
+    font-size:90px;
 
-    right:20px;
-    bottom:20px;
+    right:22px;
+    bottom:10px;
+
     top:auto;
 
-    transform:rotate(5deg);
-
-    font-size:85px;
+    transform:none;
   }
 
   .section{
-    margin-top:60px;
+    margin-top:28px;
   }
 
   .section-heading{
-    font-size:31px;
-
     gap:8px;
-  }
 
-  .section-heading::before,
-  .section-heading::after{
-    display:none;
+    font-size:29px;
   }
 
   .section-heading span{
     white-space:normal;
 
-    width:100%;
-
-    text-align:center;
+    line-height:1.15;
   }
 
   .section-subtitle{
-    font-size:16px;
+    font-size:15px;
 
     line-height:1.5;
-
-    padding:
-      0
-      10px;
   }
 
   .memory-card{
     grid-template-columns:1fr;
 
-    min-height:auto;
+    min-height:0;
   }
 
-  .memory-image-wrap,
-  .memory-image{
-    min-height:280px;
-
+  .memory-image-wrap{
     height:280px;
+
+    min-height:280px;
+  }
+
+  .memory-image{
+    height:280px;
+
+    min-height:280px;
   }
 
   .memory-info{
-    padding:24px;
+    padding:
+      20px
+      20px
+      21px;
   }
 
   .memory-title{
-    font-size:28px;
+    font-size:25px;
   }
 
   .memory-desc{
-    font-size:17px;
+    font-size:16px;
   }
 
   .memory-actions{
-    margin-top:20px;
+    margin-top:17px;
+  }
+
+  .memory-actions .action,
+  .memory-actions .small-button{
+    padding:
+      10px
+      12px;
+
+    font-size:14px;
+  }
+
+  #show-all-memories{
+    min-width:0;
+
+    width:100%;
   }
 
   .form-row{
     flex-direction:column;
   }
 
-  .form-row button{
-    width:100%;
-  }
-
   .date-card{
-    padding:22px;
-  }
-
-  .date-icon{
-    width:48px;
-    height:48px;
-
-    border-radius:15px;
-
-    font-size:23px;
+    padding:
+      21px
+      20px;
   }
 
   .date-title{
@@ -1738,30 +1433,27 @@ textarea{
   }
 
   .date-message{
-    font-size:16px;
+    font-size:15px;
   }
 
   .add-date{
-    padding:25px 20px;
+    padding:23px 18px;
   }
 
   #history-list{
-    padding:25px 20px;
+    padding:22px 18px;
   }
 
   .timeline{
     padding-left:25px;
   }
 
-  .timeline-item::before{
-    left:-41px;
-
-    width:27px;
-    height:27px;
+  .timeline-item:before{
+    left:-38px;
   }
 
   .timeline-title{
-    font-size:26px;
+    font-size:24px;
   }
 
   .timeline-text{
@@ -1769,46 +1461,50 @@ textarea{
   }
 
   .saved-letter{
-    padding:25px 22px;
+    padding:
+      21px
+      20px;
   }
 
   .saved-letter h3{
-    font-size:26px;
+    font-size:23px;
   }
 
   .letter-preview{
-    font-size:17px;
+    font-size:16px;
+  }
+
+  .letter-actions{
+    flex-direction:row;
   }
 
   .future{
     padding:
-      45px
-      22px;
+      35px
+      20px;
   }
 
   .future h2{
-    font-size:29px;
+    font-size:28px;
   }
 
   .future p{
-    font-size:17px;
-  }
-
-  .modal{
-    padding:10px;
+    font-size:16px;
   }
 
   .modal-box{
     padding:
-      45px
-      20px
+      37px
+      21px
       30px;
+  }
 
-    border-radius:23px;
+  .modal h2{
+    font-size:31px;
   }
 
   .modal-text{
-    font-size:18px;
+    font-size:17px;
 
     line-height:1.8;
   }
@@ -1817,24 +1513,39 @@ textarea{
 
 
 /* =========================================================
-   ANIMACIÓN INICIAL
+   PANTALLAS MUY PEQUEÑAS
 ========================================================= */
 
-.container{
-  animation:
-    pageIn .5s ease;
-}
+@media(max-width:390px){
 
-@keyframes pageIn{
-
-  from{
-    opacity:0;
-    transform:translateY(10px);
+  .brand h1{
+    font-size:22px;
   }
 
-  to{
-    opacity:1;
-    transform:none;
+  .add-top{
+    padding:
+      10px
+      13px;
+
+    font-size:13px;
+  }
+
+  .letter-hero h2{
+    font-size:29px;
+  }
+
+  .memory-image-wrap,
+  .memory-image{
+    height:245px;
+    min-height:245px;
+  }
+
+  .memory-actions{
+    flex-direction:column;
+  }
+
+  .letter-actions{
+    flex-direction:column;
   }
 
 }
@@ -1842,60 +1553,57 @@ textarea{
 </style>
 </head>
 
+
 <body>
 
 <div class="container">
 
 
-<!-- =====================================================
+<!-- =========================================================
      HEADER
-===================================================== -->
+========================================================= -->
 
 <header class="site-header">
 
   <div class="brand">
 
     <div class="brand-heart">
-      ❤️
+      💌
     </div>
 
     <h1>
-      <span>Nuestra</span>
-      <span>historia</span>
+      Cartas &amp; Recuerdos ❤️
     </h1>
 
   </div>
+
 
   <button
     class="add-top"
     id="top-add-memory">
 
-    + Agregar<br>
-    recuerdo
+    + Agregar recuerdo
 
   </button>
 
 </header>
 
 
-<!-- =====================================================
-     CARTA HERO
-===================================================== -->
+<!-- =========================================================
+     CARTA DESTACADA
+========================================================= -->
 
 <section class="card letter-hero">
 
   <div>
 
     <h2>
-      ¿Quieres<br>
-      dejarme una<br>
-      carta? 💌
+      ¿Quieres dejarme una carta? 💌
     </h2>
 
     <p>
-      Escribe algo que quieras que
-      quede guardado para siempre
-      en nuestra historia.
+      Escribe algo que quieras que quede
+      guardado en nuestra historia.
     </p>
 
     <button
@@ -1908,6 +1616,7 @@ textarea{
 
   </div>
 
+
   <div class="envelope-art">
     💌
   </div>
@@ -1915,9 +1624,9 @@ textarea{
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      RECUERDOS
-===================================================== -->
+========================================================= -->
 
 <section
   class="section"
@@ -1931,14 +1640,18 @@ textarea{
 
   </h2>
 
+
   <div class="section-subtitle">
     Todos esos momentos que queremos guardar.
   </div>
 
 
+  <!-- FORMULARIO RECUERDO -->
+
   <div
     class="card form-panel"
     id="memory-form">
+
 
     <div
       class="preview"
@@ -2000,6 +1713,7 @@ textarea{
 
       </button>
 
+
       <button
         class="pink-button"
         id="save-memory">
@@ -2018,6 +1732,8 @@ textarea{
 
   </div>
 
+
+  <!-- LISTA -->
 
   <div
     class="memories"
@@ -2050,9 +1766,9 @@ textarea{
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      FECHAS ESPECIALES
-===================================================== -->
+========================================================= -->
 
 <section
   class="section"
@@ -2065,6 +1781,7 @@ textarea{
     </span>
 
   </h2>
+
 
   <div class="section-subtitle">
     Las fechas que queremos guardar para siempre.
@@ -2089,16 +1806,14 @@ textarea{
 
   <div class="card add-date">
 
-    <h3 style="font-size:26px">
-
+    <h3>
       ➕ Agregar una fecha especial
-
     </h3>
 
     <p>
-      Guarda un cumpleaños,
-      aniversario, viaje o cualquier
-      día importante para ustedes.
+      Guarda un cumpleaños, aniversario,
+      viaje o cualquier día importante
+      para ustedes.
     </p>
 
 
@@ -2114,6 +1829,7 @@ textarea{
     <div
       class="date-form"
       id="date-form">
+
 
       <label for="date-value">
         📅 Fecha
@@ -2179,6 +1895,7 @@ textarea{
 
         </button>
 
+
         <button
           class="pink-button"
           id="save-date">
@@ -2202,9 +1919,9 @@ textarea{
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      HISTORIA
-===================================================== -->
+========================================================= -->
 
 <section
   class="section"
@@ -2217,6 +1934,7 @@ textarea{
     </span>
 
   </h2>
+
 
   <div class="section-subtitle">
     Cada capítulo de nosotros merece ser recordado.
@@ -2252,9 +1970,9 @@ textarea{
 
   <div
     class="card add-date"
-    style="margin-top:20px">
+    style="margin-top:16px">
 
-    <h3 style="font-size:26px">
+    <h3>
       📖❤️ Agregar un capítulo
     </h3>
 
@@ -2276,6 +1994,7 @@ textarea{
     <div
       class="date-form"
       id="chapter-form">
+
 
       <label for="chapter-date">
         📅 Fecha
@@ -2337,6 +2056,7 @@ textarea{
 
         </button>
 
+
         <button
           class="pink-button"
           id="save-chapter">
@@ -2360,9 +2080,9 @@ textarea{
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      CARTAS
-===================================================== -->
+========================================================= -->
 
 <section
   class="letters"
@@ -2376,6 +2096,7 @@ textarea{
 
   </h2>
 
+
   <div class="section-subtitle">
     Porque hay cosas que es más bonito
     escribirlas que decirlas.
@@ -2384,7 +2105,7 @@ textarea{
 
   <div class="card add-date">
 
-    <h3 style="font-size:26px">
+    <h3>
       ¿Quieres dejarme una carta? 💌
     </h3>
 
@@ -2406,6 +2127,7 @@ textarea{
     <div
       class="date-form"
       id="letter-form">
+
 
       <label for="letter-title">
         ❤️ Título de la carta
@@ -2438,6 +2160,7 @@ textarea{
 
         </button>
 
+
         <button
           class="pink-button"
           id="save-letter">
@@ -2461,7 +2184,8 @@ textarea{
 
   <div
     class="letter-list"
-    id="letters-list">
+    id="letters-list"
+    style="margin-top:16px">
 
     <div class="card date-card">
 
@@ -2477,9 +2201,9 @@ textarea{
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      FUTURO
-===================================================== -->
+========================================================= -->
 
 <div class="card future">
 
@@ -2488,7 +2212,6 @@ textarea{
   </h2>
 
   <p>
-
     Viajes, aventuras, cumpleaños,
     días normales, días increíbles
     y todos esos momentos que todavía
@@ -2497,7 +2220,6 @@ textarea{
     <br><br>
 
     Nuestra historia apenas sigue comenzando. ❤️
-
   </p>
 
 </div>
@@ -2513,15 +2235,16 @@ textarea{
 
 
 <div class="footer">
-  Hecho con ❤️ para nuestra historia
+  Hecho con ❤️ para ti
 </div>
 
+
 </div>
 
 
-<!-- =====================================================
+<!-- =========================================================
      MODAL RECUERDO
-===================================================== -->
+========================================================= -->
 
 <div
   class="modal"
@@ -2559,8 +2282,8 @@ textarea{
         width:100%;
         max-height:500px;
         object-fit:cover;
-        border-radius:20px;
-        margin-bottom:25px;
+        border-radius:18px;
+        margin-bottom:23px;
       "
       alt="">
 
@@ -2575,9 +2298,9 @@ textarea{
 </div>
 
 
-<!-- =====================================================
+<!-- =========================================================
      MODAL CARTA
-===================================================== -->
+========================================================= -->
 
 <div
   class="modal"
@@ -2695,7 +2418,7 @@ function prettyDate(value){
   const d =
     new Date(
       String(value).length <= 10
-      ? String(value) + "T00:00:00"
+      ? String(value)+"T00:00:00"
       : value
     );
 
@@ -2732,7 +2455,8 @@ function showStatus(
 
 function hideStatus(el){
 
-  el.className = "status";
+  el.className =
+    "status";
 
   el.textContent = "";
 }
@@ -2740,12 +2464,16 @@ function hideStatus(el){
 
 function openModal(id){
 
-  const m =
+  const modal =
     document.getElementById(id);
 
-  m.classList.add("active");
+  if(!modal){
+    return;
+  }
 
-  m.setAttribute(
+  modal.classList.add("active");
+
+  modal.setAttribute(
     "aria-hidden",
     "false"
   );
@@ -2758,12 +2486,16 @@ function openModal(id){
 
 function closeModal(id){
 
-  const m =
+  const modal =
     document.getElementById(id);
 
-  m.classList.remove("active");
+  if(!modal){
+    return;
+  }
 
-  m.setAttribute(
+  modal.classList.remove("active");
+
+  modal.setAttribute(
     "aria-hidden",
     "true"
   );
@@ -2954,8 +2686,7 @@ document
     "top-add-memory"
   )
   .onclick =
-    () =>
-      openMemoryForm();
+    () => openMemoryForm();
 
 
 memoryFile.onchange =
@@ -3009,6 +2740,7 @@ function(event){
       memoryPreview.classList.add(
         "active"
       );
+
     };
 
   reader.readAsDataURL(file);
@@ -3045,6 +2777,7 @@ async function saveMemory(){
   const description =
     memoryDescription.value.trim();
 
+
   if(!title){
 
     showStatus(
@@ -3055,6 +2788,7 @@ async function saveMemory(){
 
     return;
   }
+
 
   if(!date){
 
@@ -3067,6 +2801,7 @@ async function saveMemory(){
     return;
   }
 
+
   const button =
     document.getElementById(
       "save-memory"
@@ -3074,9 +2809,11 @@ async function saveMemory(){
 
   button.disabled = true;
 
+
   try{
 
     let url = null;
+
 
     if(selectedMemoryFile){
 
@@ -3085,6 +2822,7 @@ async function saveMemory(){
         .split(".")
         .pop()
         .toLowerCase();
+
 
       const path =
         "recuerdo_" +
@@ -3095,6 +2833,7 @@ async function saveMemory(){
           .slice(2,9) +
         "." +
         extension;
+
 
       const {
         data,
@@ -3112,14 +2851,17 @@ async function saveMemory(){
           }
         );
 
+
       if(error){
         throw error;
       }
+
 
       url =
         storagePublicUrl(
           data.path
         );
+
     }
 
 
@@ -3136,9 +2878,11 @@ async function saveMemory(){
 
       };
 
+
       if(url){
         update.Url = url;
       }
+
 
       const {
         error
@@ -3151,9 +2895,11 @@ async function saveMemory(){
           editingMemoryId
         );
 
+
       if(error){
         throw error;
       }
+
 
       showStatus(
         memoryStatus,
@@ -3172,37 +2918,40 @@ async function saveMemory(){
 
           {
             titulo:title,
-
-            descripcion:
-              description,
-
+            descripcion:description,
             fecha:date,
-
             Url:url || ""
-
           }
 
         ]);
 
+
       if(error){
         throw error;
       }
+
 
       showStatus(
         memoryStatus,
         "¡Recuerdo guardado! ❤️",
         "success"
       );
+
     }
 
+
     await loadMemories();
+
 
     setTimeout(
       resetMemoryForm,
       900
     );
 
+
   }catch(error){
+
+    console.error(error);
 
     showStatus(
       memoryStatus,
@@ -3238,6 +2987,7 @@ async function loadMemories(){
       "memories-list"
     );
 
+
   try{
 
     const session =
@@ -3246,6 +2996,7 @@ async function loadMemories(){
     if(!session){
       return;
     }
+
 
     const {
       data,
@@ -3267,11 +3018,14 @@ async function loadMemories(){
         }
       );
 
+
     if(error){
       throw error;
     }
 
+
     box.innerHTML = "";
+
 
     if(
       !data ||
@@ -3332,6 +3086,7 @@ async function loadMemories(){
           memory.foto_url ||
           memory.imagen ||
           "";
+
 
         image.src = url;
 
@@ -3437,6 +3192,7 @@ async function loadMemories(){
               .textContent =
               date.textContent;
 
+
             document
               .getElementById(
                 "modal-memory-title"
@@ -3445,6 +3201,7 @@ async function loadMemories(){
               "❤️ " +
               title.textContent;
 
+
             document
               .getElementById(
                 "modal-memory-text"
@@ -3452,10 +3209,13 @@ async function loadMemories(){
               .textContent =
               description.textContent;
 
+
             const modalImage =
-              document.getElementById(
+              document
+              .getElementById(
                 "modal-memory-image"
               );
+
 
             modalImage.src = url;
 
@@ -3463,6 +3223,7 @@ async function loadMemories(){
               url
               ? "block"
               : "none";
+
 
             openModal(
               "memory-modal"
@@ -3482,6 +3243,7 @@ async function loadMemories(){
         edit.textContent =
           "✏️ Editar";
 
+
         edit.onclick =
           () =>
             openMemoryForm(
@@ -3499,6 +3261,7 @@ async function loadMemories(){
 
         deleteButton.textContent =
           "🗑️ Eliminar";
+
 
         deleteButton.onclick =
           () =>
@@ -3535,6 +3298,7 @@ async function loadMemories(){
       }
     );
 
+
   }catch(error){
 
     console.error(error);
@@ -3549,6 +3313,7 @@ async function loadMemories(){
       </div>
 
     `;
+
   }
 }
 
@@ -3567,6 +3332,7 @@ async function deleteMemory(id){
     return;
   }
 
+
   const {
     error
   } =
@@ -3578,6 +3344,7 @@ async function deleteMemory(id){
       id
     );
 
+
   if(error){
 
     alert(
@@ -3587,7 +3354,7 @@ async function deleteMemory(id){
 
   }else{
 
-    loadMemories();
+    await loadMemories();
 
   }
 }
@@ -3613,19 +3380,27 @@ function resetDateForm(){
   editingDateId = null;
 
   document
-    .getElementById("date-value")
+    .getElementById(
+      "date-value"
+    )
     .value = "";
 
   document
-    .getElementById("date-type")
+    .getElementById(
+      "date-type"
+    )
     .value = "especial";
 
   document
-    .getElementById("date-title")
+    .getElementById(
+      "date-title"
+    )
     .value = "";
 
   document
-    .getElementById("date-message")
+    .getElementById(
+      "date-message"
+    )
     .value = "";
 
   dateForm.classList.remove(
@@ -3638,7 +3413,9 @@ function resetDateForm(){
 }
 
 
-function openDateForm(row = null){
+function openDateForm(
+  row = null
+){
 
   dateForm.classList.add(
     "active"
@@ -3651,30 +3428,45 @@ function openDateForm(row = null){
   editingDateId =
     row?.id || null;
 
+
   document
-    .getElementById("date-value")
+    .getElementById(
+      "date-value"
+    )
     .value =
     row?.fecha || "";
 
+
   document
-    .getElementById("date-type")
+    .getElementById(
+      "date-type"
+    )
     .value =
     row?.tipo || "especial";
 
+
   document
-    .getElementById("date-title")
+    .getElementById(
+      "date-title"
+    )
     .value =
     row?.titulo || "";
 
+
   document
-    .getElementById("date-message")
+    .getElementById(
+      "date-message"
+    )
     .value =
     row?.mensaje ||
     row?.descripcion ||
     "";
 
+
   document
-    .getElementById("date-title")
+    .getElementById(
+      "date-title"
+    )
     .focus();
 }
 
@@ -3709,27 +3501,40 @@ async function saveDate(){
     return;
   }
 
+
   const fecha =
     document
-    .getElementById("date-value")
+    .getElementById(
+      "date-value"
+    )
     .value;
+
 
   const tipo =
     document
-    .getElementById("date-type")
+    .getElementById(
+      "date-type"
+    )
     .value;
+
 
   const titulo =
     document
-    .getElementById("date-title")
+    .getElementById(
+      "date-title"
+    )
     .value
     .trim();
 
+
   const mensaje =
     document
-    .getElementById("date-message")
+    .getElementById(
+      "date-message"
+    )
     .value
     .trim();
+
 
   if(!fecha){
 
@@ -3742,6 +3547,7 @@ async function saveDate(){
     return;
   }
 
+
   if(!titulo){
 
     showStatus(
@@ -3753,12 +3559,14 @@ async function saveDate(){
     return;
   }
 
+
   const button =
     document.getElementById(
       "save-date"
     );
 
   button.disabled = true;
+
 
   try{
 
@@ -3776,7 +3584,9 @@ async function saveDate(){
 
     };
 
+
     let result;
+
 
     if(editingDateId){
 
@@ -3800,9 +3610,11 @@ async function saveDate(){
 
     }
 
+
     if(result.error){
       throw result.error;
     }
+
 
     showStatus(
       dateStatus,
@@ -3814,12 +3626,15 @@ async function saveDate(){
       "success"
     );
 
+
     await loadDates();
+
 
     setTimeout(
       resetDateForm,
       900
     );
+
 
   }catch(error){
 
@@ -3857,6 +3672,7 @@ async function loadDates(){
       "dates-list"
     );
 
+
   try{
 
     const session =
@@ -3865,6 +3681,7 @@ async function loadDates(){
     if(!session){
       return;
     }
+
 
     const {
       data,
@@ -3884,11 +3701,14 @@ async function loadDates(){
         }
       );
 
+
     if(error){
       throw error;
     }
 
+
     box.innerHTML = "";
+
 
     if(
       !data ||
@@ -4033,6 +3853,7 @@ async function loadDates(){
         edit.textContent =
           "✏️ Editar";
 
+
         edit.onclick =
           () =>
             openDateForm(
@@ -4051,6 +3872,7 @@ async function loadDates(){
         deleteButton.textContent =
           "🗑️ Eliminar";
 
+
         deleteButton.onclick =
           () =>
             deleteDate(
@@ -4063,9 +3885,11 @@ async function loadDates(){
           deleteButton
         );
 
+
         card.append(
           actions
         );
+
 
         box.appendChild(
           card
@@ -4073,6 +3897,7 @@ async function loadDates(){
 
       }
     );
+
 
   }catch(error){
 
@@ -4088,6 +3913,7 @@ async function loadDates(){
       </div>
 
     `;
+
   }
 }
 
@@ -4106,6 +3932,7 @@ async function deleteDate(id){
     return;
   }
 
+
   const {
     error
   } =
@@ -4117,6 +3944,7 @@ async function deleteDate(id){
       id
     );
 
+
   if(error){
 
     alert(
@@ -4126,7 +3954,7 @@ async function deleteDate(id){
 
   }else{
 
-    loadDates();
+    await loadDates();
 
   }
 }
@@ -4158,29 +3986,44 @@ function resetChapter(){
 
   selectedChapterFile = null;
 
-  document
-    .getElementById("chapter-date")
-    .value = "";
 
   document
-    .getElementById("chapter-title")
+    .getElementById(
+      "chapter-date"
+    )
     .value = "";
 
+
   document
-    .getElementById("chapter-text")
+    .getElementById(
+      "chapter-title"
+    )
     .value = "";
+
+
+  document
+    .getElementById(
+      "chapter-text"
+    )
+    .value = "";
+
 
   chapterFile.value = "";
 
+
   document
-    .getElementById("chapter-preview")
+    .getElementById(
+      "chapter-preview"
+    )
     .classList.remove(
       "active"
     );
 
+
   chapterForm.classList.remove(
     "active"
   );
+
 
   hideStatus(
     chapterStatus
@@ -4226,10 +4069,9 @@ function(event){
     return;
   }
 
+
   if(
-    !file.type.startsWith(
-      "image/"
-    )
+    !file.type.startsWith("image/")
   ){
 
     showStatus(
@@ -4240,6 +4082,7 @@ function(event){
 
     return;
   }
+
 
   if(
     file.size >
@@ -4255,11 +4098,13 @@ function(event){
     return;
   }
 
-  selectedChapterFile =
-    file;
+
+  selectedChapterFile = file;
+
 
   const reader =
     new FileReader();
+
 
   reader.onload =
     function(event){
@@ -4271,6 +4116,7 @@ function(event){
         .src =
         event.target.result;
 
+
       document
         .getElementById(
           "chapter-preview"
@@ -4281,9 +4127,8 @@ function(event){
 
     };
 
-  reader.readAsDataURL(
-    file
-  );
+
+  reader.readAsDataURL(file);
 
 };
 
@@ -4301,22 +4146,32 @@ async function saveChapter(){
     return;
   }
 
+
   const fecha =
     document
-    .getElementById("chapter-date")
+    .getElementById(
+      "chapter-date"
+    )
     .value;
+
 
   const titulo =
     document
-    .getElementById("chapter-title")
+    .getElementById(
+      "chapter-title"
+    )
     .value
     .trim();
 
+
   const historia =
     document
-    .getElementById("chapter-text")
+    .getElementById(
+      "chapter-text"
+    )
     .value
     .trim();
+
 
   if(!fecha){
 
@@ -4329,6 +4184,7 @@ async function saveChapter(){
     return;
   }
 
+
   if(!titulo){
 
     showStatus(
@@ -4339,6 +4195,7 @@ async function saveChapter(){
 
     return;
   }
+
 
   if(!historia){
 
@@ -4351,6 +4208,7 @@ async function saveChapter(){
     return;
   }
 
+
   const button =
     document.getElementById(
       "save-chapter"
@@ -4358,9 +4216,11 @@ async function saveChapter(){
 
   button.disabled = true;
 
+
   try{
 
     let foto_url = null;
+
 
     if(selectedChapterFile){
 
@@ -4371,6 +4231,7 @@ async function saveChapter(){
         .pop()
         .toLowerCase();
 
+
       const path =
         "historia_" +
         Date.now() +
@@ -4380,6 +4241,7 @@ async function saveChapter(){
           .slice(2,9) +
         "." +
         extension;
+
 
       const {
         data,
@@ -4397,14 +4259,17 @@ async function saveChapter(){
           }
         );
 
+
       if(error){
         throw error;
       }
+
 
       foto_url =
         storagePublicUrl(
           data.path
         );
+
     }
 
 
@@ -4429,6 +4294,7 @@ async function saveChapter(){
 
     let result;
 
+
     if(editingChapterId){
 
       result =
@@ -4451,9 +4317,11 @@ async function saveChapter(){
 
     }
 
+
     if(result.error){
       throw result.error;
     }
+
 
     showStatus(
       chapterStatus,
@@ -4461,12 +4329,15 @@ async function saveChapter(){
       "success"
     );
 
+
     await loadHistory();
+
 
     setTimeout(
       resetChapter,
       900
     );
+
 
   }catch(error){
 
@@ -4504,6 +4375,7 @@ async function loadHistory(){
       "history-list"
     );
 
+
   try{
 
     const session =
@@ -4512,6 +4384,7 @@ async function loadHistory(){
     if(!session){
       return;
     }
+
 
     const {
       data,
@@ -4527,11 +4400,14 @@ async function loadHistory(){
         }
       );
 
+
     if(error){
       throw error;
     }
 
+
     box.innerHTML = "";
+
 
     const timeline =
       document.createElement(
@@ -4567,6 +4443,7 @@ async function loadHistory(){
         </div>
 
       `;
+
 
       box.appendChild(
         timeline
@@ -4699,25 +4576,27 @@ async function loadHistory(){
             editingChapterId =
               history.id;
 
+
             chapterForm.classList.add(
               "active"
             );
+
 
             document
               .getElementById(
                 "chapter-date"
               )
               .value =
-              history.fecha ||
-              "";
+              history.fecha || "";
+
 
             document
               .getElementById(
                 "chapter-title"
               )
               .value =
-              history.titulo ||
-              "";
+              history.titulo || "";
+
 
             document
               .getElementById(
@@ -4727,6 +4606,7 @@ async function loadHistory(){
               history.historia ||
               history.descripcion ||
               "";
+
 
             document
               .getElementById(
@@ -4750,6 +4630,7 @@ async function loadHistory(){
         deleteButton.textContent =
           "🗑️ Eliminar";
 
+
         deleteButton.onclick =
           () =>
             deleteChapter(
@@ -4762,9 +4643,11 @@ async function loadHistory(){
           deleteButton
         );
 
+
         item.append(
           actions
         );
+
 
         timeline.appendChild(
           item
@@ -4821,6 +4704,7 @@ async function deleteChapter(id){
     return;
   }
 
+
   const {
     error
   } =
@@ -4832,6 +4716,7 @@ async function deleteChapter(id){
       id
     );
 
+
   if(error){
 
     alert(
@@ -4841,7 +4726,7 @@ async function deleteChapter(id){
 
   }else{
 
-    loadHistory();
+    await loadHistory();
 
   }
 }
@@ -4874,23 +4759,33 @@ function openLetterForm(
     letterStatus
   );
 
+
   editingLetterId =
     row?.id || null;
 
+
   document
-    .getElementById("letter-title")
+    .getElementById(
+      "letter-title"
+    )
     .value =
     row?.titulo || "";
 
+
   document
-    .getElementById("letter-text")
+    .getElementById(
+      "letter-text"
+    )
     .value =
     row?.mensaje ||
     row?.contenido ||
     "";
 
+
   document
-    .getElementById("letter-title")
+    .getElementById(
+      "letter-title"
+    )
     .focus();
 }
 
@@ -4899,17 +4794,25 @@ function resetLetter(){
 
   editingLetterId = null;
 
-  document
-    .getElementById("letter-title")
-    .value = "";
 
   document
-    .getElementById("letter-text")
+    .getElementById(
+      "letter-title"
+    )
     .value = "";
+
+
+  document
+    .getElementById(
+      "letter-text"
+    )
+    .value = "";
+
 
   letterForm.classList.remove(
     "active"
   );
+
 
   hideStatus(
     letterStatus
@@ -4956,17 +4859,24 @@ async function saveLetter(){
     return;
   }
 
+
   const titulo =
     document
-    .getElementById("letter-title")
+    .getElementById(
+      "letter-title"
+    )
     .value
     .trim();
 
+
   const mensaje =
     document
-    .getElementById("letter-text")
+    .getElementById(
+      "letter-text"
+    )
     .value
     .trim();
+
 
   if(!titulo){
 
@@ -4979,6 +4889,7 @@ async function saveLetter(){
     return;
   }
 
+
   if(!mensaje){
 
     showStatus(
@@ -4990,12 +4901,14 @@ async function saveLetter(){
     return;
   }
 
+
   const button =
     document.getElementById(
       "save-letter"
     );
 
   button.disabled = true;
+
 
   try{
 
@@ -5006,8 +4919,10 @@ async function saveLetter(){
       .auth
       .getUser();
 
+
     const user =
       userData.user;
+
 
     if(!user){
 
@@ -5017,9 +4932,11 @@ async function saveLetter(){
 
     }
 
+
     const metadata =
       user.user_metadata ||
       {};
+
 
     const nombre =
       metadata.full_name ||
@@ -5027,6 +4944,7 @@ async function saveLetter(){
       metadata.nombre ||
       user.email ||
       "Usuario";
+
 
     const payload = {
 
@@ -5043,7 +4961,9 @@ async function saveLetter(){
 
     };
 
+
     let result;
+
 
     if(editingLetterId){
 
@@ -5067,9 +4987,11 @@ async function saveLetter(){
 
     }
 
+
     if(result.error){
       throw result.error;
     }
+
 
     showStatus(
       letterStatus,
@@ -5077,12 +4999,15 @@ async function saveLetter(){
       "success"
     );
 
+
     await loadLetters();
+
 
     setTimeout(
       resetLetter,
       900
     );
+
 
   }catch(error){
 
@@ -5120,6 +5045,7 @@ async function loadLetters(){
       "letters-list"
     );
 
+
   try{
 
     const session =
@@ -5128,6 +5054,7 @@ async function loadLetters(){
     if(!session){
       return;
     }
+
 
     const {
       data,
@@ -5143,11 +5070,14 @@ async function loadLetters(){
         }
       );
 
+
     if(error){
       throw error;
     }
 
+
     box.innerHTML = "";
+
 
     if(
       !data ||
@@ -5272,12 +5202,14 @@ async function loadLetters(){
               .textContent =
               date.textContent;
 
+
             document
               .getElementById(
                 "modal-letter-title"
               )
               .textContent =
               title.textContent;
+
 
             document
               .getElementById(
@@ -5286,12 +5218,14 @@ async function loadLetters(){
               .textContent =
               author.textContent;
 
+
             document
               .getElementById(
                 "modal-letter-text"
               )
               .textContent =
               text.textContent;
+
 
             openModal(
               "letter-modal"
@@ -5311,6 +5245,7 @@ async function loadLetters(){
         edit.textContent =
           "✏️ Editar";
 
+
         edit.onclick =
           () =>
             openLetterForm(
@@ -5328,6 +5263,7 @@ async function loadLetters(){
 
         deleteButton.textContent =
           "🗑️ Eliminar";
+
 
         deleteButton.onclick =
           () =>
@@ -5358,6 +5294,7 @@ async function loadLetters(){
 
       }
     );
+
 
   }catch(error){
 
@@ -5392,6 +5329,7 @@ async function deleteLetter(id){
     return;
   }
 
+
   const {
     error
   } =
@@ -5403,6 +5341,7 @@ async function deleteLetter(id){
       id
     );
 
+
   if(error){
 
     alert(
@@ -5412,7 +5351,7 @@ async function deleteLetter(id){
 
   }else{
 
-    loadLetters();
+    await loadLetters();
 
   }
 }
@@ -5556,6 +5495,7 @@ async function init(){
     return;
   }
 
+
   await Promise.all([
 
     loadMemories(),
@@ -5569,6 +5509,7 @@ async function init(){
   ]);
 
 }
+
 
 init();
 
