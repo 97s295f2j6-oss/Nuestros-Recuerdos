@@ -26,6 +26,7 @@ html{
 
 body{
     min-height:100vh;
+
     background:
         radial-gradient(
             circle at 50% 0%,
@@ -33,8 +34,14 @@ body{
             #190b14 30%,
             #08080b 72%
         );
+
     color:#fff;
-    font-family:Georgia,"Times New Roman",serif;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
     overflow-x:hidden;
 }
 
@@ -57,29 +64,52 @@ button{
     width:100%;
     max-width:1050px;
     margin:auto;
-    padding:28px 22px 70px;
+
+    padding:
+        28px
+        22px
+        70px;
 }
+
 
 /* =========================
    HEADER
 ========================= */
 
 .site-header{
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:20px;
-    padding:10px 4px 38px;
+
+    padding:
+        10px
+        4px
+        38px;
 }
 
 .brand{
+
     display:flex;
+
     align-items:flex-start;
+
     gap:10px;
 }
 
 .brand h1{
-    font-size:clamp(34px,6vw,55px);
+
+    font-size:
+        clamp(
+            34px,
+            6vw,
+            55px
+        );
+
     line-height:.95;
 }
 
@@ -88,14 +118,22 @@ button{
 }
 
 .brand-heart{
+
     font-size:42px;
+
     line-height:1;
 }
 
 .add-top{
+
     border:0;
+
     border-radius:50px;
-    padding:18px 30px;
+
+    padding:
+        18px
+        30px;
+
     color:white;
 
     background:
@@ -110,6 +148,7 @@ button{
         rgba(215,91,125,.25);
 }
 
+
 /* =========================
    SECCIONES
 ========================= */
@@ -119,10 +158,17 @@ button{
 }
 
 .section-heading{
+
     display:flex;
+
     align-items:center;
+
     gap:15px;
-    margin:0 0 25px;
+
+    margin:
+        0
+        0
+        25px;
 
     color:white;
 
@@ -136,24 +182,37 @@ button{
 
 .section-heading:before,
 .section-heading:after{
+
     content:"";
+
     height:1px;
+
     background:#713249;
+
     flex:1;
 }
 
 .section-heading span{
+
     white-space:nowrap;
 }
 
 .section-subtitle{
+
     text-align:center;
+
     color:#bcaeb4;
+
     font-size:18px;
-    margin:-8px 0 28px;
+
+    margin:
+        -8px
+        0
+        28px;
 }
 
 .card{
+
     border:
         1px solid
         rgba(255,255,255,.13);
@@ -168,15 +227,19 @@ button{
         rgba(0,0,0,.28);
 
     backdrop-filter:blur(12px);
+
     -webkit-backdrop-filter:blur(12px);
 }
+
 
 /* =========================
    CARTA PRINCIPAL
 ========================= */
 
 .letter-hero{
+
     position:relative;
+
     overflow:hidden;
 
     padding:
@@ -200,6 +263,7 @@ button{
 }
 
 .letter-hero h2{
+
     font-size:
         clamp(
             35px,
@@ -208,20 +272,27 @@ button{
         );
 
     line-height:1.08;
+
     margin-bottom:25px;
 }
 
 .letter-hero p{
+
     color:#d2c6cb;
+
     font-size:20px;
+
     line-height:1.65;
+
     margin-bottom:28px;
 }
 
 .envelope-art{
+
     position:absolute;
 
     right:35px;
+
     top:50%;
 
     transform:
@@ -237,7 +308,9 @@ button{
 }
 
 .pink-button{
+
     border:0;
+
     border-radius:50px;
 
     padding:
@@ -265,6 +338,7 @@ button{
 }
 
 .small-button{
+
     border:
         1px solid
         rgba(215,91,125,.6);
@@ -281,13 +355,17 @@ button{
         rgba(215,91,125,.06);
 }
 
+
 /* =========================
    FORMULARIOS
 ========================= */
 
 .form-panel{
+
     display:none;
+
     padding:25px;
+
     margin-top:18px;
 }
 
@@ -296,15 +374,23 @@ button{
 }
 
 label{
+
     display:block;
+
     color:#d9c7ce;
+
     font-size:15px;
-    margin:17px 0 8px;
+
+    margin:
+        17px
+        0
+        8px;
 }
 
 input,
 textarea,
 select{
+
     width:100%;
 
     border:
@@ -326,18 +412,25 @@ select{
 input:focus,
 textarea:focus,
 select:focus{
+
     border-color:#d75b7d;
 }
 
 textarea{
+
     min-height:130px;
+
     resize:vertical;
+
     line-height:1.6;
 }
 
 .form-row{
+
     display:flex;
+
     gap:10px;
+
     margin-top:20px;
 }
 
@@ -346,10 +439,15 @@ textarea{
 }
 
 .status{
+
     display:none;
+
     margin-top:15px;
+
     padding:12px;
+
     border-radius:13px;
+
     text-align:center;
 }
 
@@ -358,19 +456,29 @@ textarea{
 }
 
 .status.success{
-    background:rgba(80,180,120,.12);
+
+    background:
+        rgba(80,180,120,.12);
+
     color:#9be4b8;
 }
 
 .status.error{
-    background:rgba(220,70,90,.12);
+
+    background:
+        rgba(220,70,90,.12);
+
     color:#ff9ba8;
 }
 
 .preview{
+
     display:none;
+
     margin-top:15px;
+
     border-radius:18px;
+
     overflow:hidden;
 }
 
@@ -379,21 +487,28 @@ textarea{
 }
 
 .preview img{
+
     width:100%;
+
     max-height:350px;
+
     object-fit:cover;
 }
+
 
 /* =========================
    RECUERDOS
 ========================= */
 
 .memories{
+
     display:grid;
+
     gap:18px;
 }
 
 .memory-card{
+
     display:grid;
 
     grid-template-columns:
@@ -401,17 +516,23 @@ textarea{
         57%;
 
     overflow:hidden;
+
     min-height:270px;
 }
 
 .memory-image-wrap{
+
     min-height:270px;
+
     background:#160d13;
 }
 
 .memory-image{
+
     width:100%;
+
     height:100%;
+
     min-height:270px;
 
     object-fit:cover;
@@ -420,15 +541,21 @@ textarea{
 }
 
 .memory-info{
-    padding:27px 28px;
+
+    padding:
+        27px
+        28px;
 
     display:flex;
+
     flex-direction:column;
+
     align-items:flex-start;
 }
 
 .memory-date,
 .date-label{
+
     color:#d75b7d;
 
     text-transform:uppercase;
@@ -441,13 +568,16 @@ textarea{
 }
 
 .memory-title{
+
     font-size:30px;
+
     line-height:1.15;
 
     margin-bottom:14px;
 }
 
 .memory-desc{
+
     color:#d0c5ca;
 
     font-size:18px;
@@ -458,15 +588,20 @@ textarea{
 }
 
 .memory-actions{
+
     display:flex;
+
     gap:9px;
+
     flex-wrap:wrap;
 
     margin-top:auto;
+
     padding-top:20px;
 }
 
 .action{
+
     border:
         1px solid
         rgba(215,91,125,.48);
@@ -484,25 +619,34 @@ textarea{
 }
 
 .action.delete{
+
     border-color:
         rgba(220,70,90,.45);
 }
 
 .center-action{
+
     text-align:center;
-    margin:25px 0;
+
+    margin:
+        25px
+        0;
 }
+
 
 /* =========================
    FECHAS ESPECIALES
 ========================= */
 
 .dates{
+
     display:grid;
+
     gap:16px;
 }
 
 .date-card{
+
     position:relative;
 
     padding:
@@ -513,11 +657,13 @@ textarea{
 }
 
 .date-card:after{
+
     content:"❤️";
 
     position:absolute;
 
     right:25px;
+
     top:22px;
 
     opacity:.15;
@@ -526,8 +672,11 @@ textarea{
 }
 
 .date-top{
+
     display:flex;
+
     gap:15px;
+
     align-items:flex-start;
 }
 
@@ -536,6 +685,7 @@ textarea{
 }
 
 .date-title{
+
     font-size:27px;
 
     margin-bottom:8px;
@@ -544,6 +694,7 @@ textarea{
 }
 
 .date-message{
+
     color:#cfc6ca;
 
     font-size:17px;
@@ -554,6 +705,7 @@ textarea{
 }
 
 .date-actions{
+
     display:flex;
 
     gap:9px;
@@ -564,6 +716,7 @@ textarea{
 }
 
 .add-date{
+
     padding:28px;
 
     text-align:center;
@@ -575,6 +728,7 @@ textarea{
 }
 
 .add-date p{
+
     color:#cfc6ca;
 
     margin:
@@ -584,6 +738,7 @@ textarea{
 }
 
 .date-form{
+
     display:none;
 
     text-align:left;
@@ -595,11 +750,13 @@ textarea{
     display:block;
 }
 
+
 /* =========================
    HISTORIA
 ========================= */
 
 .timeline{
+
     position:relative;
 
     padding-left:34px;
@@ -610,17 +767,20 @@ textarea{
 }
 
 .timeline-item{
+
     position:relative;
 
     margin-bottom:45px;
 }
 
 .timeline-item:before{
+
     content:"♥";
 
     position:absolute;
 
     left:-46px;
+
     top:0;
 
     color:#d75b7d;
@@ -637,12 +797,14 @@ textarea{
 }
 
 .timeline-title{
+
     font-size:28px;
 
     margin-bottom:12px;
 }
 
 .timeline-text{
+
     color:#cfc6ca;
 
     font-size:17px;
@@ -653,6 +815,7 @@ textarea{
 }
 
 .history-image{
+
     width:100%;
 
     max-height:430px;
@@ -664,6 +827,7 @@ textarea{
     margin-top:20px;
 }
 
+
 /* =========================
    CARTAS
 ========================= */
@@ -673,11 +837,14 @@ textarea{
 }
 
 .letter-list{
+
     display:grid;
+
     gap:16px;
 }
 
 .saved-letter{
+
     position:relative;
 
     padding:
@@ -688,11 +855,13 @@ textarea{
 }
 
 .saved-letter:before{
+
     content:"💌";
 
     position:absolute;
 
     right:24px;
+
     top:18px;
 
     font-size:32px;
@@ -701,6 +870,7 @@ textarea{
 }
 
 .saved-letter h3{
+
     font-size:28px;
 
     margin-bottom:9px;
@@ -709,6 +879,7 @@ textarea{
 }
 
 .letter-author{
+
     color:#bcaeb4;
 
     font-size:14px;
@@ -717,6 +888,7 @@ textarea{
 }
 
 .letter-preview{
+
     color:#d8d0d4;
 
     font-size:18px;
@@ -729,6 +901,7 @@ textarea{
 }
 
 .letter-actions{
+
     display:flex;
 
     gap:9px;
@@ -738,11 +911,13 @@ textarea{
     flex-wrap:wrap;
 }
 
+
 /* =========================
    MODALES
 ========================= */
 
 .modal{
+
     position:fixed;
 
     inset:0;
@@ -770,11 +945,14 @@ textarea{
 }
 
 .modal.active{
+
     opacity:1;
+
     visibility:visible;
 }
 
 .modal-box{
+
     width:100%;
 
     max-width:850px;
@@ -813,16 +991,20 @@ textarea{
 }
 
 .modal.active .modal-box{
+
     transform:none;
 }
 
 .close{
+
     position:absolute;
 
     right:17px;
+
     top:14px;
 
     width:42px;
+
     height:42px;
 
     border-radius:50%;
@@ -840,6 +1022,7 @@ textarea{
 }
 
 .modal-date{
+
     text-align:center;
 
     color:#d75b7d;
@@ -854,6 +1037,7 @@ textarea{
 }
 
 .modal h2{
+
     text-align:center;
 
     font-size:
@@ -867,6 +1051,7 @@ textarea{
 }
 
 .modal-author{
+
     text-align:center;
 
     color:#bcaeb4;
@@ -875,7 +1060,9 @@ textarea{
 }
 
 .modal-line{
+
     width:70px;
+
     height:1px;
 
     background:#9b5269;
@@ -887,6 +1074,7 @@ textarea{
 }
 
 .modal-text{
+
     font-size:20px;
 
     line-height:2;
@@ -898,25 +1086,31 @@ textarea{
     font-style:italic;
 }
 
+
 /* =========================
    FINAL
 ========================= */
 
 .future{
+
     text-align:center;
 
-    padding:45px 25px;
+    padding:
+        45px
+        25px;
 
     margin-top:55px;
 }
 
 .future h2{
+
     font-size:31px;
 
     margin-bottom:15px;
 }
 
 .future p{
+
     color:#cfc6ca;
 
     font-size:18px;
@@ -925,6 +1119,7 @@ textarea{
 }
 
 .logout{
+
     display:block;
 
     margin:
@@ -948,6 +1143,7 @@ textarea{
 }
 
 .footer{
+
     text-align:center;
 
     color:#746b70;
@@ -957,122 +1153,739 @@ textarea{
     margin-top:35px;
 }
 
-/* =========================
+
+/* =========================================================
    CELULAR
-========================= */
+   DISEÑO COMPACTO
+========================================================= */
 
 @media(max-width:700px){
 
     .container{
+
         padding:
-            20px
-            15px
-            55px;
+            18px
+            14px
+            50px;
     }
 
+
+    /* =========================
+       HEADER
+    ========================= */
+
     .site-header{
+
         align-items:center;
 
-        padding-bottom:25px;
+        gap:10px;
+
+        padding:
+            8px
+            2px
+            25px;
+    }
+
+    .brand{
+
+        gap:7px;
     }
 
     .brand-heart{
-        font-size:32px;
+
+        font-size:29px;
     }
 
     .brand h1{
-        font-size:35px;
+
+        font-size:32px;
+
+        line-height:.95;
     }
 
     .add-top{
+
         padding:
-            14px
+            11px
+            16px;
+
+        font-size:14px;
+
+        line-height:1.15;
+    }
+
+
+    /* =========================
+       CARTA PRINCIPAL
+    ========================= */
+
+    .letter-hero{
+
+        padding:
+            28px
+            23px
+            125px;
+
+        min-height:395px;
+
+        border-radius:25px;
+    }
+
+    .letter-hero h2{
+
+        font-size:34px;
+
+        line-height:1.06;
+
+        margin-bottom:18px;
+    }
+
+    .letter-hero p{
+
+        font-size:16px;
+
+        line-height:1.55;
+
+        margin-bottom:22px;
+
+        max-width:330px;
+    }
+
+    .pink-button{
+
+        padding:
+            13px
             20px;
 
         font-size:15px;
     }
 
-    .letter-hero{
-
-        padding:
-            32px
-            25px
-            150px;
-
-        min-height:470px;
-    }
-
-    .letter-hero h2{
-        font-size:39px;
-    }
-
-    .letter-hero p{
-        font-size:18px;
-    }
-
     .envelope-art{
 
-        font-size:100px;
+        font-size:78px;
 
-        right:25px;
+        right:22px;
 
         top:auto;
-        bottom:20px;
+
+        bottom:17px;
 
         transform:none;
     }
 
+
+    /* =========================
+       SECCIONES
+    ========================= */
+
+    .section{
+
+        margin-top:30px;
+    }
+
     .section-heading{
-        font-size:32px;
+
+        font-size:28px;
+
         gap:8px;
+
+        margin-bottom:18px;
     }
 
     .section-heading span{
+
         white-space:normal;
+
         text-align:center;
     }
 
+    .section-subtitle{
+
+        font-size:15px;
+
+        line-height:1.5;
+
+        margin:
+            -3px
+            0
+            21px;
+    }
+
+
+    /* =========================
+       RECUERDOS
+       HORIZONTAL EN CELULAR
+    ========================= */
+
+    .memories{
+
+        gap:14px;
+    }
+
     .memory-card{
-        grid-template-columns:1fr;
+
+        display:grid;
+
+        grid-template-columns:
+            40%
+            60%;
+
+        min-height:215px;
+
+        border-radius:22px;
+    }
+
+    .memory-image-wrap{
+
+        min-height:215px;
+
+        height:215px;
+    }
+
+    .memory-image{
+
+        min-height:215px;
+
+        height:215px;
+
+        object-fit:cover;
+    }
+
+    .memory-info{
+
+        padding:
+            17px
+            15px;
+
+        min-width:0;
+    }
+
+    .memory-date,
+    .date-label{
+
+        font-size:9px;
+
+        letter-spacing:1.7px;
+
+        margin-bottom:7px;
+
+        line-height:1.3;
+    }
+
+    .memory-title{
+
+        font-size:21px;
+
+        line-height:1.12;
+
+        margin-bottom:8px;
+    }
+
+    .memory-desc{
+
+        font-size:13px;
+
+        line-height:1.45;
+
+        display:-webkit-box;
+
+        -webkit-line-clamp:4;
+
+        -webkit-box-orient:vertical;
+
+        overflow:hidden;
+    }
+
+    .memory-actions{
+
+        gap:6px;
+
+        margin-top:10px;
+
+        padding-top:0;
+    }
+
+    .small-button,
+    .action{
+
+        padding:
+            7px
+            12px;
+
+        font-size:12px;
+    }
+
+    .center-action{
+
+        margin:
+            19px
+            0;
+    }
+
+
+    /* =========================
+       FORMULARIOS
+    ========================= */
+
+    .form-panel{
+
+        padding:19px;
+
+        border-radius:22px;
+    }
+
+    label{
+
+        font-size:14px;
+
+        margin:
+            14px
+            0
+            7px;
+    }
+
+    input,
+    textarea,
+    select{
+
+        padding:12px;
+
+        font-size:15px;
+
+        border-radius:13px;
+    }
+
+    textarea{
+
+        min-height:115px;
+    }
+
+    .form-row{
+
+        flex-direction:column;
+
+        gap:8px;
+    }
+
+    .form-row > *{
+
+        width:100%;
+    }
+
+
+    /* =========================
+       FECHAS
+    ========================= */
+
+    .dates{
+
+        gap:12px;
+    }
+
+    .date-card{
+
+        padding:
+            19px
+            18px;
+
+        border-radius:21px;
+    }
+
+    .date-card:after{
+
+        right:17px;
+
+        top:17px;
+
+        font-size:28px;
+    }
+
+    .date-top{
+
+        gap:11px;
+    }
+
+    .date-icon{
+
+        font-size:27px;
+    }
+
+    .date-title{
+
+        font-size:21px;
+
+        line-height:1.15;
+
+        margin-bottom:7px;
+
+        padding-right:25px;
+    }
+
+    .date-message{
+
+        font-size:14px;
+
+        line-height:1.5;
+    }
+
+    .date-actions{
+
+        gap:7px;
+
+        margin-top:13px;
+    }
+
+    .add-date{
+
+        padding:
+            24px
+            18px;
+
+        border-radius:22px;
+    }
+
+    .add-date h3{
+
+        font-size:22px !important;
+
+        line-height:1.2;
+    }
+
+    .add-date p{
+
+        font-size:15px;
+
+        line-height:1.5;
+    }
+
+
+    /* =========================
+       HISTORIA
+    ========================= */
+
+    #history-list{
+
+        padding:21px !important;
+
+        border-radius:22px;
+    }
+
+    .timeline{
+
+        padding-left:24px;
+    }
+
+    .timeline-item{
+
+        margin-bottom:32px;
+    }
+
+    .timeline-item:before{
+
+        left:-36px;
+
+        font-size:15px;
+    }
+
+    .timeline-title{
+
+        font-size:24px;
+
+        line-height:1.15;
+
+        margin-bottom:9px;
+    }
+
+    .timeline-text{
+
+        font-size:14px;
+
+        line-height:1.65;
+    }
+
+    .history-image{
+
+        max-height:300px;
+
+        margin-top:15px;
+
+        border-radius:17px;
+    }
+
+
+    /* =========================
+       CARTAS
+    ========================= */
+
+    .letters{
+
+        margin-top:48px;
+    }
+
+    .saved-letter{
+
+        padding:
+            20px
+            18px;
+
+        border-radius:21px;
+    }
+
+    .saved-letter:before{
+
+        right:17px;
+
+        top:14px;
+
+        font-size:27px;
+    }
+
+    .saved-letter h3{
+
+        font-size:22px;
+
+        line-height:1.2;
+
+        padding-right:30px;
+
+        margin-bottom:7px;
+    }
+
+    .letter-author{
+
+        font-size:12px;
+
+        margin-bottom:13px;
+    }
+
+    .letter-preview{
+
+        font-size:14px;
+
+        line-height:1.6;
+    }
+
+    .letter-actions{
+
+        gap:7px;
+
+        margin-top:14px;
+    }
+
+
+    /* =========================
+       FUTURO
+    ========================= */
+
+    .future{
+
+        padding:
+            32px
+            18px;
+
+        margin-top:40px;
+
+        border-radius:22px;
+    }
+
+    .future h2{
+
+        font-size:26px;
+
+        line-height:1.15;
+
+        margin-bottom:13px;
+    }
+
+    .future p{
+
+        font-size:15px;
+
+        line-height:1.65;
+    }
+
+
+    /* =========================
+       LOGOUT / FOOTER
+    ========================= */
+
+    .logout{
+
+        margin:
+            35px
+            auto
+            0;
+
+        padding:
+            10px
+            21px;
+
+        font-size:14px;
+    }
+
+    .footer{
+
+        font-size:12px;
+
+        margin-top:25px;
+    }
+
+
+    /* =========================
+       MODALES
+    ========================= */
+
+    .modal{
+
+        padding:10px;
+    }
+
+    .modal-box{
+
+        max-height:94vh;
+
+        padding:
+            30px
+            20px
+            28px;
+
+        border-radius:23px;
+    }
+
+    .modal h2{
+
+        font-size:31px;
+
+        line-height:1.1;
+    }
+
+    .modal-text{
+
+        font-size:16px;
+
+        line-height:1.8;
+    }
+
+}
+
+
+/* =========================
+   IPHONE MUY PEQUEÑO
+========================= */
+
+@media(max-width:390px){
+
+    .container{
+
+        padding-left:11px;
+
+        padding-right:11px;
+    }
+
+    .brand h1{
+
+        font-size:29px;
+    }
+
+    .brand-heart{
+
+        font-size:26px;
+    }
+
+    .add-top{
+
+        padding:
+            10px
+            13px;
+
+        font-size:13px;
+    }
+
+    .letter-hero{
+
+        padding:
+            25px
+            20px
+            115px;
+
+        min-height:370px;
+    }
+
+    .letter-hero h2{
+
+        font-size:31px;
+    }
+
+    .letter-hero p{
+
+        font-size:15px;
+    }
+
+    .envelope-art{
+
+        font-size:70px;
+
+        right:18px;
+    }
+
+    .section-heading{
+
+        font-size:26px;
+    }
+
+    .memory-card{
+
+        grid-template-columns:
+            39%
+            61%;
+
+        min-height:200px;
     }
 
     .memory-image-wrap,
     .memory-image{
-        min-height:300px;
-        height:300px;
+
+        min-height:200px;
+
+        height:200px;
     }
 
     .memory-info{
-        padding:22px;
+
+        padding:
+            14px
+            12px;
     }
 
     .memory-title{
-        font-size:27px;
+
+        font-size:19px;
     }
 
-    .memory-actions{
-        margin-top:18px;
+    .memory-desc{
+
+        font-size:12px;
+
+        -webkit-line-clamp:3;
     }
 
-    .form-row{
-        flex-direction:column;
+    .memory-date{
+
+        font-size:8px;
+
+        letter-spacing:1.3px;
     }
 
-    .date-card{
-        padding:23px;
+    .small-button,
+    .action{
+
+        padding:
+            6px
+            9px;
+
+        font-size:11px;
     }
 
-    .date-title{
-        font-size:24px;
-    }
-
-    .timeline{
-        padding-left:28px;
-    }
-
-    .timeline-item:before{
-        left:-40px;
-    }
 }
 
 </style>
@@ -1081,6 +1894,7 @@ textarea{
 <body>
 
 <div class="container">
+
 
 <!-- =========================
      HEADER
