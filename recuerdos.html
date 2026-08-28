@@ -1866,6 +1866,49 @@ textarea{
 
 
 /* =========================================================
+   📱 CORRECCIÓN FECHAS EN IPHONE / IOS
+========================================================= */
+
+input[type="date"]{
+  width:100%;
+  min-height:48px;
+
+  -webkit-appearance:none;
+  appearance:none;
+
+  text-align:left;
+  text-align-last:left;
+
+  padding:13px;
+
+  line-height:1.2;
+
+  color:#fff;
+}
+
+input[type="date"]::-webkit-date-and-time-value{
+  text-align:left;
+  min-height:1.2em;
+}
+
+input[type="date"]::-webkit-datetime-edit{
+  padding:0;
+  margin:0;
+  text-align:left;
+}
+
+input[type="date"]::-webkit-datetime-edit-fields-wrapper{
+  padding:0;
+  margin:0;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator{
+  opacity:.8;
+  margin-left:auto;
+}
+
+
+/* =========================================================
    PANTALLAS MUY PEQUEÑAS
 ========================================================= */
 
@@ -2380,10 +2423,6 @@ textarea{
   </div>
 
 
-  <!-- =======================================================
-       FORMULARIO
-  ======================================================= -->
-
   <div
     class="card places-form"
     id="place-form">
@@ -2531,10 +2570,6 @@ textarea{
   </div>
 
 
-  <!-- =======================================================
-       VISITADOS
-  ======================================================= -->
-
   <div class="places-subsection">
 
     <div class="places-subsection-title">
@@ -2554,10 +2589,6 @@ textarea{
 
   </div>
 
-
-  <!-- =======================================================
-       PENDIENTES
-  ======================================================= -->
 
   <div class="places-subsection">
 
@@ -3064,21 +3095,81 @@ function iconForPlace(type){
 }
 
 
+/* =========================================================
+   FECHA SEGURA PARA EVITAR CAMBIOS DE DÍA
+========================================================= */
+
 function prettyDate(value){
 
   if(!value){
     return "";
   }
 
+  const raw =
+    String(value);
+
+  /*
+    Si Supabase entrega una fecha YYYY-MM-DD,
+    la construimos manualmente para evitar que
+    Safari/iPhone aplique conversión de zona horaria.
+  */
+
+  if(
+    /^\d{4}-\d{2}-\d{2}$/.test(raw)
+  ){
+
+    const parts =
+      raw.split("-");
+
+    const year =
+      Number(parts[0]);
+
+    const month =
+      Number(parts[1]);
+
+    const day =
+      Number(parts[2]);
+
+    const months = [
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre"
+    ];
+
+    if(
+      month >= 1 &&
+      month <= 12 &&
+      day >= 1 &&
+      day <= 31
+    ){
+
+      return (
+        day +
+        " de " +
+        months[month - 1] +
+        " de " +
+        year
+      );
+
+    }
+
+  }
+
+
   const d =
-    new Date(
-      String(value).length <= 10
-      ? String(value)+"T00:00:00"
-      : value
-    );
+    new Date(raw);
 
   if(isNaN(d.getTime())){
-    return String(value);
+    return raw;
   }
 
   return d.toLocaleDateString(
@@ -3089,6 +3180,7 @@ function prettyDate(value){
       year:"numeric"
     }
   );
+
 }
 
 
@@ -3269,6 +3361,7 @@ function getLoveItems(){
     return [];
 
   }
+
 }
 
 
@@ -3689,6 +3782,7 @@ function getPlaces(){
     return [];
 
   }
+
 }
 
 
@@ -6414,7 +6508,6 @@ function openLetterForm(
     row?.mensaje ||
     row?.contenido ||
     "";
-
 
 }
 
