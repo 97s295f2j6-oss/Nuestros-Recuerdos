@@ -779,7 +779,9 @@ button:disabled{
   margin-bottom:25px;
 }
 
-/* AHORA SON 4 */
+/* =========================================================
+   CONTADOR - 4 UNIDADES
+========================================================= */
 
 .counter-values{
   position:relative;
@@ -947,14 +949,14 @@ button:disabled{
   padding:25px;
 }
 
-/* IMPORTANTE:
-   FECHA EN SU PROPIO RENGLÓN
-*/
+/* FECHA SIEMPRE EN SU PROPIO RENGLÓN */
 
 .memory-date{
   display:block;
 
   width:100%;
+
+  flex-basis:100%;
 
   color:#d15a7e;
 
@@ -2615,13 +2617,8 @@ select:focus-visible{
     id="love-form">
 
     <h3>
-      ❤️ Agregar algo que amo de ti
+      ❤️ Lo que amo de ti
     </h3>
-
-    <div class="love-form-subtitle">
-      Tú decides qué quieres guardar aquí.
-      Puedes agregar todos los detalles que quieras.
-    </div>
 
     <div class="love-form-grid">
 
@@ -3974,12 +3971,6 @@ document.getElementById("save-love");
 const cancelLoveButton =
 document.getElementById("cancel-love");
 
-/*
-   Compatibilidad con los datos antiguos.
-   Si ya tenías cosas guardadas en localStorage,
-   se intentan migrar automáticamente.
-*/
-
 const LOVE_STORAGE_KEY =
 "hannia_cosas_que_amo_v1";
 
@@ -4037,17 +4028,21 @@ async function migrateLoveItems(){
   } =
     await supabaseClient
     .from("cosas_que_amo")
-    .select("titulo,descripcion,emoji")
+    .select(
+      "titulo,descripcion,emoji"
+    )
     .eq(
       "user_id",
       session.user.id
     );
 
   if(error){
+
     console.error(
       "No se pudo revisar migración:",
       error
     );
+
     return;
   }
 
@@ -4135,6 +4130,13 @@ function resetLoveForm(){
 
 async function editLoveItem(id){
 
+  const session =
+    await requireSession();
+
+  if(!session){
+    return;
+  }
+
   const {
     data,
     error
@@ -4145,6 +4147,10 @@ async function editLoveItem(id){
     .eq(
       "id",
       id
+    )
+    .eq(
+      "user_id",
+      session.user.id
     )
     .single();
 
@@ -4182,6 +4188,13 @@ async function editLoveItem(id){
 
 async function deleteLoveItem(id){
 
+  const session =
+    await requireSession();
+
+  if(!session){
+    return;
+  }
+
   if(
     !confirm(
       "¿Quieres eliminar este detalle de Hannia? ❤️"
@@ -4199,6 +4212,10 @@ async function deleteLoveItem(id){
     .eq(
       "id",
       id
+    )
+    .eq(
+      "user_id",
+      session.user.id
     );
 
   if(error){
@@ -4338,7 +4355,10 @@ async function loadLoveItems(){
 
   if(error){
 
-    console.error(error);
+    console.error(
+      "Error cargando cosas que amo:",
+      error
+    );
 
     loveList.innerHTML = `
 
@@ -4518,6 +4538,11 @@ async function(){
     );
 
   }catch(error){
+
+    console.error(
+      "Error guardando cosas que amo:",
+      error
+    );
 
     showStatus(
       loveStatus,
@@ -4768,6 +4793,13 @@ function resetPlaceForm(){
 
 async function editPlace(id){
 
+  const session =
+    await requireSession();
+
+  if(!session){
+    return;
+  }
+
   const {
     data,
     error
@@ -4778,6 +4810,10 @@ async function editPlace(id){
     .eq(
       "id",
       id
+    )
+    .eq(
+      "user_id",
+      session.user.id
     )
     .single();
 
@@ -4826,6 +4862,13 @@ async function editPlace(id){
 
 async function deletePlace(id){
 
+  const session =
+    await requireSession();
+
+  if(!session){
+    return;
+  }
+
   if(
     !confirm(
       "¿Quieres eliminar este lugar? ❤️"
@@ -4843,6 +4886,10 @@ async function deletePlace(id){
     .eq(
       "id",
       id
+    )
+    .eq(
+      "user_id",
+      session.user.id
     );
 
   if(error){
@@ -5157,7 +5204,10 @@ async function loadPlaces(){
 
   if(error){
 
-    console.error(error);
+    console.error(
+      "Error cargando lugares:",
+      error
+    );
 
     visited.innerHTML = `
 
@@ -5367,14 +5417,29 @@ async function(){
 
     if(editingPlaceId){
 
-      delete payload.user_id;
+      const updatePayload = {
+
+        nombre:name,
+
+        ubicacion:location,
+
+        tipo:type,
+
+        fecha:date,
+
+        descripcion:
+          description || null,
+
+        maps
+
+      };
 
       const {
         error
       } =
         await supabaseClient
         .from("lugares")
-        .update(payload)
+        .update(updatePayload)
         .eq(
           "id",
           editingPlaceId
@@ -5422,6 +5487,11 @@ async function(){
     );
 
   }catch(error){
+
+    console.error(
+      "Error guardando lugar:",
+      error
+    );
 
     placeStatus.textContent =
       "No se pudo guardar: " +
@@ -5975,11 +6045,6 @@ async function loadMemories(){
 
         info.className =
           "memory-info";
-
-        /*
-          FECHA SEPARADA
-          DEL TÍTULO
-        */
 
         const date =
           document.createElement(
